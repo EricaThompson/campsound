@@ -6,23 +6,23 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 import SignUpForm from './sign_up_form';
 
-const mapStateToProps = ({ errors }) => {
-    return {
-        formType: 'an Artist Account',
-    };
-};
+// const mapStateToProps = ({ errors }) => {
+//     return {
+//         formType: 'an Artist Account',
+//     };
+// };
 
 const mapDispatchToProps = dispatch => {
     return {
         signupUser: (user) => dispatch(signupUser(user)),
-        processForm: (user) => dispatch(signup(user)),
-        otherForm: (
-            <button onClick={() => dispatch(openModal('login'))}>
-                Login
-            </button>
-        ),
+        // processForm: (user) => dispatch(signup(user)),
+        // otherForm: (
+        //     <button onClick={() => dispatch(openModal('login'))}>
+        //         Login
+        //     </button>
+        // ),
         closeModal: () => dispatch(closeModal())
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);
+export default connect(null, mapDispatchToProps)(SignUpForm);

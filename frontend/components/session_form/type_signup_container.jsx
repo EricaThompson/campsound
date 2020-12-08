@@ -14,12 +14,12 @@ import TypeSignup from './type_signup';
 const mapDispatchToProps = dispatch => {
     return {
         openModal: (modal) => dispatch(openModal(modal)),
-        processForm: (user) => dispatch(signup(user)),
-        otherForm: (
-            <button onClick={() => dispatch(openModal('signup'))}>
-                Sign up
-            </button>
-        ),
+        // processForm: (user) => dispatch(signup(user)),
+        // otherForm: (
+        //     <button onClick={() => dispatch(openModal('signup'))}>
+        //         Sign up
+        //     </button>
+        // ),
         closeModal: () => dispatch(closeModal())
     };
 };

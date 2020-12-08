@@ -21,10 +21,15 @@ class LogInForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.loginUser({ user: this.state })
+        setTimeout(()=>location.reload(), 500)
 
         // const user = Object.assign({}, this.state);
         // this.props.processForm(user).then(this.props.closeModal);
     }
+
+    // modalClose() {
+    //     
+    // }
 
     // renderErrors() {
     //     return (

@@ -11,7 +11,7 @@ export default ({ logout, openModal, closeModal }) => {
 
     ) : (
             <div>
-                <button onClick={()=>openModal('signup')}>sign up</button>  
+                <button onClick={()=>openModal('type-signup')}>sign up</button>  
                 <button onClick={()=>openModal('login')}>log In</button> 
             </div>
         );

@@ -2,12 +2,12 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { closeModal } from '../../actions/modal_actions';
 
-class SignUpForm extends React.Component {
+class TypeSignup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
-            password: ''
+            username: 'test',
+            password: 'password'
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -20,11 +20,8 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.signupUser({user:this.state})
-
-        // const user = Object.assign({}, this.state);
-        // this.props.processForm(user).then(this.props.closeModal);
-
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user).then(this.props.closeModal);
     }
 
     // renderErrors() {
@@ -42,32 +39,18 @@ class SignUpForm extends React.Component {
     render() {
         return (
             <div className="signup-form-container">
-                <form onSubmit={this.handleSubmit}>
-                    <h1>Sign Up for {this.props.formType}</h1>
-                    <label>Artist/Band name</label>
-                    <input type="text" defaultValue='Add to db?'/>
-                    < br/>
-                    <label>Username</label>
-                    <input autoFocus onChange={this.handleChange('username')} type="text" value={this.state.username} />
-                    < br />
-                    <label>Password</label>
-                    <input onChange={this.handleChange('password')} type="password" value={this.state.password} />
-                    < br />
-                    <p><input type="checkbox" />I have read and agree to the Terms of Use.</p>
-                    <button type="submit">Sign up</button>
-                    <p>Already have an account? Log in.</p>
+                <h3>Sign up for a CampSound account &#10007;</h3>
+                <button onClick={()=>this.props.openModal('signup')}>Sign up as an artist</button>
+                <p>Sell directly to your fans with total
+                control over your music and pricing.
+                Easy access to your customers’ data,
+                real-time stats, music chart reporting,
+                and more. learn more
+                </p>
 
-                </form>
-                {/* <h3>Sign up for a CampSound account &#10007;</h3>
-                <button onClick={this.props.closeModal}>Sign up as an artist</button>
-                <p>Sell directly to your fans with total 
-                    control over your music and pricing. 
-                    Easy access to your customers’ data, 
-                    real-time stats, music chart reporting, 
-                    and more. learn more
-                </p> */}
-
-                
+                {/* <p><input type="checkbox" />I have read and agree to the Terms of Use.</p>
+                <button onClick={this.props.closeModal}>Sign up</button>
+                <p>Already have an account? Log in.</p> */}
 
 
 
@@ -104,4 +87,4 @@ class SignUpForm extends React.Component {
     }
 }
 
-export default withRouter(SignUpForm);
+export default withRouter(TypeSignup);

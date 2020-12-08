@@ -3,7 +3,8 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
-import { render } from 'react-dom';
+import TypeSignupContainer from '../session_form/type_signup_container';
+// import { render } from 'react-dom';
 
 class Modal extends React.Component {
     render() {
@@ -15,6 +16,9 @@ class Modal extends React.Component {
         switch (this.props.modal) {
             case 'login':
                 component = <LoginFormContainer />;
+                break;
+            case 'type-signup':
+                component = <TypeSignupContainer />;
                 break;
             case 'signup':
                 component = <SignupFormContainer />;

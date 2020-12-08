@@ -4,14 +4,10 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import TypeSignupContainer from '../session_form/type_signup_container';
-// import { render } from 'react-dom';
+
 
 class Modal extends React.Component {
     render() {
-
-        // if (this.props.modal) {
-        //     return "null";
-        // }
         let component;
         switch (this.props.modal) {
             case 'login':
@@ -37,7 +33,6 @@ class Modal extends React.Component {
     }
 }
 
-// export default Modal;
 
 const mapStateToProps = state => {
     return {

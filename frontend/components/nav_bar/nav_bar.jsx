@@ -1,13 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
-class NavBar extends React.Component {
-    render() {
-        return (
+export default ({ logout }) => {
+
+    const display = window.currentUser ? (
+        <div>
+            <p>Hello, {window.currentUser.username}</p>
+            <button onClick={logout}>Log Out</button>
+        </div>
+
+    ) : (
             <div>
-                <h1>🏕 CampSound</h1>
+                <button>sign Up</button>  
+                <button>log In</button> 
             </div>
-        )
-    }
+        );
+
+    return (
+        <div>
+            <h1>🏕 CampSound</h1>
+            {display}
+        </div>
+    )
 }
 
-export default NavBar;
+// export default NavBar;

@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Campsound</title>
+    <title>CampSound</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <% if current_user %>
+    <script>
+      window.currentUser = {
+        "id": <%= current_user.id %>,
+        "username": "<%= current_user.username %>"
+      };
+    </script>
+    <% end %>
   </head>
 
   <body>

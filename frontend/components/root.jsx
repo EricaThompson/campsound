@@ -4,7 +4,7 @@ class Root extends React.Component {
 
     render(){
         return(
-            <h1>🏕 CampSound </h1>
+            <h1>🏕 CampSound</h1>
         )
     }
 

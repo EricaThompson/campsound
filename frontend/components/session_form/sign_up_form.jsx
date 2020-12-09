@@ -24,6 +24,11 @@ class SignUpForm extends React.Component {
             // .then(setTimeout(() => location.reload(), 500))
     }
 
+    openAndClear(){
+        this.props.openModal("login")
+        this.props.clearSessionErrors()
+    }
+
     render() {
         return (
             <div className="session-form-box">
@@ -57,9 +62,14 @@ class SignUpForm extends React.Component {
                     < br />
                     <br />
                     <div className='session-helper'>
-                        <p className="top-helper"><input className="checkbox" type="checkbox" />I have read and agree to the <a href="#">Terms of Use</a>.</p>
+                        <p className="top-helper"><input className="checkbox" 
+                            type="checkbox" />
+                            I have read and agree to the 
+                                <a href="#">
+                                Terms of Use</a>.
+                        </p>
                         <button className="submit-button" type="submit">Sign up</button>
-                        <p className="bottom-helper">Already have an account? <a onClick={()=>this.props.openModal("login")}>Log in</a>.</p>
+                        <p className="bottom-helper">Already have an account? <a onClick={()=>this.openAndClear()}>Log in</a>.</p>
                     </div>
                 </form>
             </div>

@@ -32,6 +32,11 @@ class LogInForm extends React.Component {
         
     }
 
+    openAndClear() {
+        this.props.openModal("signup")
+        this.props.clearSessionErrors()
+    }
+
     render() {
         return (
             <div className="session-form-box">
@@ -55,14 +60,14 @@ class LogInForm extends React.Component {
                         value={this.state.password}
                     />
                     < br/>
-                    <p className="error">{this.props.errors.map(error => <div>{error}</div>)}</p>
+                    <p className="error">{this.props.errors.map(error2 => <div>{error2}</div>)}</p>
                     < br />
                     <button onClick={this.handleSubmit} className="submit-button" type="submit">Log in</button>
                     <div onClick={this.demoLogin}className="submit-button demo">DEMO</div>
                     <div className='session-helper'>
                         <a href="#" onClick={() => this.props.openModal('signup')}>Forgot your password?</a>
                         <p className="change-auth">Don't have an account? 
-                        Sign up as <a href="#" onClick={()=>this.props.openModal('signup')}>an artist</a>.</p>
+                        Sign up as <a href="#" onClick={()=>this.openAndClear()}>an artist</a>.</p>
                     </div>
                     
                 </form>

@@ -6,6 +6,11 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+textarea:focus, input:focus{
+    outline: none;
+    background-color: #E7F0FE;
+}
+
 .logo {
     font-size: 18px;
     align-self: center;
@@ -38,4 +43,147 @@ p {
     font-size: 16px;
     margin: 6px;
 }
+
+.modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.modal-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.session-form-box {
+    // outline: 1px solid black;
+    padding: 20px;
+    background: #f3f3f3;
+    position: relative;
+    border-radius: 5px;
+    width: 400px;
+    min-height: 400px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.title {
+    border-bottom: 2px dotted #ccc;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+
+}
+
+.session-label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+input {
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 10px;
+    width: 225px;
+    margin-top: 50px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+.checkbox {
+    width: 10px;
+}
+
+input:active {
+    border: 1px solid #ccc;
+}
+
+.submit-button {
+    width: 245px;
+    background-color: #00A1C6;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.change-auth {
+    color: #919294
+}
+
+a {
+    color: #00A1C6;
+    text-decoration: none;
+}
+
+.session-helper, .session-helper > p {
+    text-align: center;
+    font-size: 12px;
+}
+
+.top-helper {
+    margin-top: -70px;
+    margin-bottom: 30px;
+}
+
+.bottom-helper {
+    margin-top: -20px;
+}
+
+.shift-left {
+    margin-left: -10px;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.error {
+    color: #c43329;
+    font-size: 16px;
+    text-align: center;
+}
+
+.type {
+    color: #818285;
+    margin-top: 90px;
+}
+
+.type-link > a{
+    color: #6E943B;
+}
+
+.type-button {
+    color: #6E943C;
+    border: 1px solid #6E943C;
+    border-radius: 5px;;
+    font-weight: 500;
+    width: 95%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+.type-button:hover {
+    // background-color: #f3f3f3;
+    // border: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 

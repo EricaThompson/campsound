@@ -9,11 +9,13 @@ class App extends React.Component {
     render(){
         // const main = 
         return(
-            <div className="top">
-                <Modal />
-                <Route key={Math.random()} path="/" component={NavBarContainer} />
-                {/* <Route exact path="/" /> */}
-                {/* <img id="main-story" src={require('../../app/assets/images/pexels.jpg')} alt="main story image" /> */}
+            <div className="container">
+                <div className="top">
+                    <Modal />
+                    <Route key={Math.random()} path="/" component={NavBarContainer} />
+                    {/* <Route exact path="/" /> */}
+                    {/* <img id="main-story" src={require('../../app/assets/images/pexels.jpg')} alt="main story image" /> */}
+                </div>
             </div>
         )
     }

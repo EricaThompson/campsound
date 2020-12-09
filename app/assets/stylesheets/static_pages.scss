@@ -2,8 +2,84 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
+    line-height: 1;
+    margin: 0;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+
+// * {
+//     border: 1px solid red;
+// }
+
+html {
     font-family: 'Roboto', sans-serif;
+    // border: 1px solid turquoise;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    // border: 1px solid purple;
+}
+
+h2 {
+    font-size: 15px;
+    font-weight: 300;
+    width: 500px;
+    height: 10px;
+    align-self: center;
 }
 
 textarea:focus, input:focus{
@@ -12,28 +88,105 @@ textarea:focus, input:focus{
 }
 
 .logo {
-    font-size: 18px;
+    font-size: 20px;
     align-self: center;
     margin-left: 10px;
+    margin-top: 30px;
 }
 
 .nav-bar {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.nav-top {
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid #eee;
+    
+    input {
+        background-color: #F3F3F3;
+        border: none;
+        border-radius: 3px;
+        margin-right: 16px;
+        width: 255px;
+        padding-left: 15px;
+        font-size: 14px;
+        color: #333;
+
+    }
+    
+    input:focus{
+        outline: none;
+        border: none;
+    }
+
+    ::placeholder {
+        color: #7c7c7c;
+        font-size: 14px;
+        // padding: 5px;
+    }
+
+    .fa-search {
+        position: absolute; 
+        top: 31px;
+        right: 90px;
+        color: #888888;
+        font-size: 14px;
+    }
 }
+
+.nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+
+    .support {
+        background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
+        background-size: 100%;
+        background-repeat: repeat;
+        font-weight: 500;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        background-clip: text;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+    }
+}
+
+.nav-bar-links {
+    display: flex;
+    // justify-content: flex-end;
+}
+
 
 .auth-links {
     display: flex;
+    justify-self: flex-end;
+    position: absolute;
+    right: 62px;
 }
 
 .announce {
     text-align: center;
-    padding: 5px;
+    // padding: 5px;
+    margin: 0;
+    display: flex;
+    align-self: center;
+
+    font-size: 17px;
+    background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
+    background-size: 92%;
+    background-repeat: repeat;
+    font-weight: 500;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
 }
 
 #main-story {
-    width: 104%;
+    // width: 104%;
     margin-left: -10px;
 }
 
@@ -41,7 +194,7 @@ p {
     justify-content: flex-end;
     padding: 10px;
     font-size: 16px;
-    margin: 6px;
+    // margin: 6px;
 }
 
 .modal-background {

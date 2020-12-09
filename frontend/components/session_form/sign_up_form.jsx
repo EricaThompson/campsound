@@ -29,8 +29,8 @@ class SignUpForm extends React.Component {
             <div className="session-form-box">
                 <form onSubmit={this.handleSubmit}>
                     <h1 className="title" >Sign Up for {this.props.formType}</h1>
-                    <label className="session-label shift-left">Artist name</label>
-                    <input type="text" defaultValue='Add to db?'/>
+                    {/* <label className="session-label shift-left">Artist name</label> */}
+                    {/* <input type="text" defaultValue='Add to db?'/> */}
                     < br/>
                     < br />
                     <label className="session-label">Username</label>

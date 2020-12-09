@@ -12,6 +12,7 @@ class App extends React.Component {
                 <Modal />
                 <Route key={Math.random()} path="/" component={NavBarContainer} />
                 {/* <Route exact path="/" /> */}
+
             </div>
         )
     }

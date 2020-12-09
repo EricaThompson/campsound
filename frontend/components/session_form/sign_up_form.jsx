@@ -20,10 +20,12 @@ class SignUpForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.signupUser({user:this.state})
-        setTimeout(() => location.reload(), 500)
+            .then(this.props.closeModal)
+            .then(setTimeout(() => location.reload(), 500))
     }
 
     render() {
+
         return (
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit}>
@@ -32,10 +34,22 @@ class SignUpForm extends React.Component {
                     <input type="text" defaultValue='Add to db?'/>
                     < br/>
                     <label>Username</label>
-                    <input autoFocus onChange={this.handleChange('username')} type="text" value={this.state.username} />
+                    <input 
+                        autoFocus 
+                        onChange={this.handleChange('username')} 
+                        type="text" 
+                        value={this.state.username} 
+                    />
                     < br />
+                    
                     <label>Password</label>
-                    <input onChange={this.handleChange('password')} type="password" value={this.state.password} />
+                    <input 
+                        onChange={this.handleChange('password')} 
+                        type="password" 
+                        value={this.state.password} 
+                    />
+                    < br />
+                    {this.props.errors.responseJSON}
                     < br />
                     <p><input type="checkbox" />I have read and agree to the Terms of Use.</p>
                     <button type="submit">Sign up</button>

@@ -15,23 +15,26 @@ class NavBar extends React.Component {
 
     render(){
     const display = window.currentUser ? (
-        <div>
+        <div className='auth-links'>
             <p>Hello, {window.currentUser.username}</p>
             <button onClick={this.logoutRefresh}>Log Out</button>
-        </div>
+        </div >
 
     ) : (
-            <div>
-                <button onClick={()=>this.props.openModal('type-signup')}>sign up</button>  
-                <button onClick={()=>this.props.openModal('login')}>log In</button> 
+            <div className='auth-links'>
+                <p onClick={()=>this.props.openModal('type-signup')}>sign up</p>  
+                <p onClick={()=>this.props.openModal('login')}>log in</p> 
             </div>
         );
     
     return (
-        <div>
-            <h1>🏕 CampSound</h1>
-            {display}
-        </div>
+            <div>
+                <p className="announce">Announcement</p>
+                <div className='nav-bar'>
+                    <h1 className='logo'>🏕 campsound</h1>
+                    {display}
+                </div>
+            </div>
     )
     }
 }

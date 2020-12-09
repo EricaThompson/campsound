@@ -8,7 +8,6 @@ class LogInForm extends React.Component {
             username: 'Demo User',
             password: 'Password'
         };
-        const error = '';
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -21,6 +20,8 @@ class LogInForm extends React.Component {
     handleSubmit(e) {      
         e.preventDefault();
         this.props.loginUser({ user: this.state })
+            .then(this.props.closeModal)
+            .then(setTimeout(() => location.reload(), 200))
     }
 
     render() {
@@ -30,10 +31,19 @@ class LogInForm extends React.Component {
                 <h1>Log in</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Username</label>
-                    <input autoFocus onChange={this.handleChange('username')} type="text" value={this.state.username}/>
+                    <input 
+                        autoFocus 
+                        onChange={this.handleChange('username')} 
+                        type="text" 
+                        value={this.state.username}
+                    />
                     < br />
                     <label>Password</label>
-                    <input onChange={this.handleChange('password')} type="password" value={this.state.password}/>
+                    <input 
+                        onChange={this.handleChange('password')} 
+                        type="password" 
+                        value={this.state.password}
+                    />
                     < br/>
                     {this.props.errors.responseJSON}
                     < br />

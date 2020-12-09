@@ -1,3 +1,36 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+    font-size: 18px;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+}
+
+.auth-links {
+    display: flex;
+}
+
+.announce {
+    text-align: center;
+    padding: 5px;
+}
+
+p {
+    justify-content: flex-end;
+    padding: 10px;
+    font-size: 16px;
+    margin: 6px;
+}
+

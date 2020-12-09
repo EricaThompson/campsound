@@ -13,7 +13,7 @@ class App extends React.Component {
                 <Modal />
                 <Route key={Math.random()} path="/" component={NavBarContainer} />
                 {/* <Route exact path="/" /> */}
-                <img id="main-story" src={require('../../app/assets/images/pexels.jpg')} alt="main story image" />
+                {/* <img id="main-story" src={require('../../app/assets/images/pexels.jpg')} alt="main story image" /> */}
             </div>
         )
     }

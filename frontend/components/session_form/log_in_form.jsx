@@ -8,6 +8,7 @@ class LogInForm extends React.Component {
             username: 'Demo User',
             password: 'Password'
         };
+        const error = '';
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -17,13 +18,13 @@ class LogInForm extends React.Component {
         });
     }
 
-    handleSubmit(e) {
+    handleSubmit(e) {      
         e.preventDefault();
         this.props.loginUser({ user: this.state })
-        setTimeout(()=>location.reload(), 500)
     }
 
     render() {
+        
         return (
             <div className="signup-form-container">
                 <h1>Log in</h1>
@@ -33,6 +34,8 @@ class LogInForm extends React.Component {
                     < br />
                     <label>Password</label>
                     <input onChange={this.handleChange('password')} type="password" value={this.state.password}/>
+                    < br/>
+                    {this.props.errors.responseJSON}
                     < br />
                     <button type="submit">Log in</button>
                     <p>Forgot your password?</p>

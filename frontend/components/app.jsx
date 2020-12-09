@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import NavBarContainer from './nav_bar/nav_bar_container';
-import pexels from '../../app/assets/images/pexels.jpg'
 // import { AuthRoute } from '../util/route_util';
 // import { ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';

@@ -15,8 +15,13 @@ module.exports = {
                 options: {
                     presets: ['@babel/env', '@babel/react']
                 }
-            }
-        ]
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+        ],
+        
     },
     devtool: 'source-map',
     resolve: {

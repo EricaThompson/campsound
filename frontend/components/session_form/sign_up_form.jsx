@@ -58,7 +58,7 @@ class SignUpForm extends React.Component {
                     <div className='session-helper'>
                         <p className="top-helper"><input className="checkbox" type="checkbox" />I have read and agree to the <a href="#">Terms of Use</a>.</p>
                         <button className="submit-button" type="submit">Sign up</button>
-                        <p className="bottom-helper">Already have an account? <a>Log in</a>.</p>
+                        <p className="bottom-helper">Already have an account? <a onClick={()=>this.props.openModal("login")}>Log in</a>.</p>
                     </div>
                 </form>
             </div>

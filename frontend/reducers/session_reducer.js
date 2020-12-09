@@ -4,7 +4,7 @@ import {
 } from '../actions/session';
 
 const _nullSession = {
-    currentUser: null,
+    currentUser: {username: '', password: '', id: Math.random()},
 }
 
 export default (state = _nullSession, action) => {

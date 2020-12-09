@@ -5,10 +5,11 @@ class LogInForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: 'Demo User',
-            password: 'Password'
+            username: '',
+            password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
 
     handleChange(field) {
@@ -22,6 +23,13 @@ class LogInForm extends React.Component {
         this.props.loginUser({ user: this.state })
             .then(this.props.closeModal)
             // .then(setTimeout(() => location.reload(), 200))
+    }
+
+    demoLogin(){
+        // e.preventDefault()
+        this.setState({ username: 'Demo User', password: 'Password' }, ()=>this.props.loginUser({ user: this.state })
+            .then(this.props.closeModal))
+        
     }
 
     render() {
@@ -47,9 +55,10 @@ class LogInForm extends React.Component {
                         value={this.state.password}
                     />
                     < br/>
-                    <p className="error">{this.props.errors.responseJSON}</p>
+                    <p className="error">{this.props.errors.map(error => <div>{error}</div>)}</p>
                     < br />
-                    <button className="submit-button" type="submit">Log in</button>
+                    <button onClick={this.handleSubmit} className="submit-button" type="submit">Log in</button>
+                    <div onClick={this.demoLogin}className="submit-button demo">DEMO</div>
                     <div className='session-helper'>
                         <a href="#" onClick={() => this.props.openModal('signup')}>Forgot your password?</a>
                         <p className="change-auth">Don't have an account? 

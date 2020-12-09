@@ -21,20 +21,16 @@ export const receiveSessionErrors = errors => ({
 export const signupUser = (user) => dispatch => {
     return signup(user)
         .then(res => dispatch(receiveCurrentUser(res)
-        ), err => dispatch(receiveSessionErrors(err)))
+        ), err => dispatch(receiveSessionErrors(err.responseJSON)))
 }
 
 export const loginUser = (user) => dispatch => {
     return login(user)
         .then(res => dispatch(receiveCurrentUser(res)
-        ), err => dispatch(receiveSessionErrors(err)))
+        ), err => dispatch(receiveSessionErrors(err.responseJSON)))
 }
 
 export const logoutUser = () => dispatch => {
     return logout()
         .then(()=> dispatch(logoutCurrentUser()))
 }
-
-// SessionApiUtil.login(user)
-//     .then(res => dispatch(receiveCurrentUser(user)), err => dispatch(receiveSessionErrors(err)))
-

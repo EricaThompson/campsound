@@ -7,6 +7,8 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => ({
     currentUser: state.session.currentUser,
+    id: state.session.currentUser.id,
+    // test: 'test'
 });
 
 const mapDispatchToProps = dispatch => ({

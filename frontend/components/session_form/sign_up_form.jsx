@@ -52,7 +52,8 @@ class SignUpForm extends React.Component {
                     />
                     < br />
                     <br />
-                    <p className="error">{this.props.errors.responseJSON}</p>
+                    <div className="error">{this.props.errors.map(error => <div>{error}</div>)}</div>
+                    < br />
                     < br />
                     <br />
                     <div className='session-helper'>

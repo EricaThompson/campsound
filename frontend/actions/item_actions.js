@@ -38,7 +38,7 @@ export const createItem = (item) => dispatch => {
 
 export const updateItem = (item) => dispatch => {
     return ItemAPIUtil.updateItem(item)
-        .then(res => dispatch(updateMusicItem(res)))
+        .then(res => dispatch(readMusicItem(res)))
 }
 
 export const deleteItem = (itemId) => dispatch => {

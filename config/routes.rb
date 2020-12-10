@@ -1,6 +1,14 @@
 # == Route Map
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
+#                 api_items GET    /api/items(.:format)                                                                     api/items#index {:format=>:json}
+#                           POST   /api/items(.:format)                                                                     api/items#create {:format=>:json}
+#              new_api_item GET    /api/items/new(.:format)                                                                 api/items#new {:format=>:json}
+#             edit_api_item GET    /api/items/:id/edit(.:format)                                                            api/items#edit {:format=>:json}
+#                  api_item GET    /api/items/:id(.:format)                                                                 api/items#show {:format=>:json}
+#                           PATCH  /api/items/:id(.:format)                                                                 api/items#update {:format=>:json}
+#                           PUT    /api/items/:id(.:format)                                                                 api/items#update {:format=>:json}
+#                           DELETE /api/items/:id(.:format)                                                                 api/items#destroy {:format=>:json}
 #                 api_users POST   /api/users(.:format)                                                                     api/users#create {:format=>:json}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
@@ -15,6 +23,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   namespace :api, defaults: { format: :json } do 
+    resources :items
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
   end

@@ -22,7 +22,7 @@ class ArtistHomepage extends React.Component {
                 <br />
                 <br />
                 <div className="add">
-                    <Link to="/:id/new"> Add an album or add a track </Link>
+                    <Link to="/new"> Add an album or add a track </Link>
                 </div>
                 <br />
                 <br />

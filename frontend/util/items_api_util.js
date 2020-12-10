@@ -31,7 +31,7 @@ export const updateItem = (item) => (
 
 export const deleteItem = (itemId) => (
     $.ajax({
-        url: `/api/items/${itemId}`,
+        url: `/api/items/${1}`,
         method: 'DELETE',
     })
 )

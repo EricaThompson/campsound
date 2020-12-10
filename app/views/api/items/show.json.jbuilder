@@ -1,0 +1,1 @@
+json.extract! @item, :id, :owner_id, :title, :genre, :price, :released, :about, :collection_id

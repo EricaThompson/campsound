@@ -7,7 +7,8 @@
 #                           PATCH  /api/items/:id(.:format)                                                                 api/items#update {:format=>:json}
 #                           PUT    /api/items/:id(.:format)                                                                 api/items#update {:format=>:json}
 #                           DELETE /api/items/:id(.:format)                                                                 api/items#destroy {:format=>:json}
-#                 api_users POST   /api/users(.:format)                                                                     api/users#create {:format=>:json}
+#                 api_users GET    /api/users(.:format)                                                                     api/users#index {:format=>:json}
+#                           POST   /api/users(.:format)                                                                     api/users#create {:format=>:json}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
 #                      root GET    /                                                                                        static_pages#root
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do 
     resources :items, except: [:new, :edit]
-    resources :users, only: [:create]
+    resources :users, only: [:create, :index]
     resource :session, only: [:create, :destroy]
   end
 

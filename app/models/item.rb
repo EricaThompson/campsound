@@ -15,8 +15,8 @@
 #
 class Item < ApplicationRecord
     validates :owner_id, presence: true
-    validates :title, presence: true, uniqueness: true
-    validates :released, presence: true, inclusion: [true, false]
+    validates :title, presence: true
+    validates :released, inclusion: [true, false]
 
     belongs_to :user,
         foreign_key: :owner_id,

@@ -8,12 +8,12 @@ class ZeroItems extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="zero-items">
                 <br />
                 <br />
-                <br />
-                <br />
-                <h1>This is your music's homepage.</h1>
+                <h1>This is your music<span>‛</span>s homepage<span className="period">▪</span>
+                </h1>
+                
                 <h2 className="slogan">
                     A tabula rasa! Completely unspoiled.
                     Deeply inhale the crisp,
@@ -22,7 +22,13 @@ class ZeroItems extends React.Component {
                 <br />
                 <br />
                 <div className="add">
-                    <Link to="/new"> Add an album or add a track </Link>
+                    <Link to="/new">
+                        <div>Add an album </div>
+                    </Link>
+                    <Link to="/new">
+                        <div className="track">or add a track</div> 
+                    </Link>
+                    
                 </div>
 
             </div>

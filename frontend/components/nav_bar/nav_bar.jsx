@@ -10,6 +10,7 @@ class NavBar extends React.Component {
     logoutRefresh(){
         this.props.logout()
         setTimeout(() => location.reload(), 200)
+
     }
 
     render(){
@@ -19,8 +20,8 @@ class NavBar extends React.Component {
         let authNav = null;
 
         if (window.currentUser || this.props.currentUser.username !== "" ){
-            avatar = <div onClick={() => this.logoutRefresh()} className="avatar">&#10007;</div>
-            authNav = <Link to='/1'>artist page</Link>
+            avatar = <Link to="/"> <div onClick={() => this.logoutRefresh()} className="avatar">&#10007;</div> </Link>
+            authNav = <Link to='/1'><div onClick={()=>setTimeout(()=>location.reload(), 200)}>artist page</div></Link>
         } else {
             auth = <p onClick={() => this.props.openModal('login')}>log in</p> 
             signup = 'sign up'

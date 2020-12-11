@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ArtistHomepage from './artist_homepage';
 
-import { logoutUser } from '../../actions/session';
+import { logoutUser } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { 
     readAllItems, 

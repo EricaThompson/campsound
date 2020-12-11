@@ -6,6 +6,13 @@ export const signup = (user) => (
     })
 )
 
+export const getUser = (user) => (
+    $.ajax({
+        url: `api/users${user.id}`,
+        data: user
+    })
+)
+
 export const allUsers = () => (
     $.ajax({
         url: 'api/users'

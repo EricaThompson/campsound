@@ -10,10 +10,12 @@ class ArtistHomepage extends React.Component {
         }
     }
 
-    uploadImage(){
-        this.setState({image: e.target.files[0]})
-        //then send to active storage
-    }
+    // uploadImage(){
+    //     this.setState({image: e.target.files[0]})
+    //     //then send to active storage
+    // }
+
+    
 
     render(){
 
@@ -24,9 +26,18 @@ class ArtistHomepage extends React.Component {
                 component = <ShowItems>
             }
         */}
-        console.log("image:", this.state.image)
+
+        // let userImage;
+
+        // if (currentUser.userImg){
+
+        // }
+
+        
         return (
             <div className='artist-home'>
+                <br />
+                <br />
                 {component}
                 <br />
                 <br />

@@ -4,14 +4,25 @@ import { Link } from 'react-router-dom'
 class NavBar extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            img: ''
+        }
         this.logoutRefresh = this.logoutRefresh.bind(this)
     }
 
     logoutRefresh(){
         this.props.logout()
         setTimeout(() => location.reload(), 200)
-
     }
+
+    setImage(){
+        if (this.props.currentUser.userImg !== ''){}
+        this.setState({img: this.props.currentUser.userImg})
+    }
+
+    // componentDidMount(){
+        
+    // }
 
     render(){
         let auth;
@@ -20,14 +31,22 @@ class NavBar extends React.Component {
         let authNav = null;
 
         if (window.currentUser || this.props.currentUser.username !== "" ){
-            avatar = <Link to="/"> <div onClick={() => this.logoutRefresh()} className="avatar">&#10007;</div> </Link>
+
+            if (this.props.currentUser.userImg){
+                avatar = <img className="avatar" onLoad={() => this.setImage()} src={this.props.currentUser.userImg} onClick={() => this.logoutRefresh()}/>
+            } else {
+                avatar = <Link to="/"> <div onLoad={() => this.setImage()} onClick={() => this.logoutRefresh()} className="avatar">&#10007;</div> </Link>
+            }
+
             authNav = <Link to='/1'><div onClick={()=>setTimeout(()=>location.reload(), 200)}>artist page</div></Link>
         } else {
             auth = <p onClick={() => this.props.openModal('login')}>log in</p> 
             signup = 'sign up'
             avatar = ''
         }
-            
+        // console.log("props:", this.props)
+        // let user = this.props.retrieveUser(this.props.currentUser)
+        console.log('user here:', this.state.img)
     return (
             <div className="nav-bar">
                 <div className="nav-top">

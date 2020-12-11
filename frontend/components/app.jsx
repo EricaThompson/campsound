@@ -7,6 +7,26 @@ import { ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
 
 class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            user: {}
+        };
+        this.getUser = this.fetchUser.bind(this);
+    }
+
+    fetchUser(){
+        $.ajax({
+            url: '/api/users/12'
+        }).then(user => {
+            this.setState.bind({user})
+        })
+    }
+
+    componentDidMount(){
+        this.fetchUser();
+    }
+
     render(){
  
         return(

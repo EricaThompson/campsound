@@ -19,6 +19,8 @@ class User < ApplicationRecord
         foreign_key: :owner_id,
         class_name: :Item
 
+    has_one_attached :user_img
+
     attr_reader :password
 
     after_initialize :ensure_session_token

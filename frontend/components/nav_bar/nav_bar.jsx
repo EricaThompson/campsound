@@ -20,9 +20,9 @@ class NavBar extends React.Component {
         this.setState({img: this.props.currentUser.userImg})
     }
 
-    componentDidMount(){
-        // this.props.retrieveUser(this.props.currentUser);
-    }
+    // componentDidMount(){
+    //     this.setState({img: this.props.user.userImg})
+    // }
     
 
     render(){
@@ -31,26 +31,14 @@ class NavBar extends React.Component {
         let signup = null;
         let authNav = null;
 
-
-        // console.log("nav bar console:", this.props.user.userImg)
         if (this.props.user){
-
-            // if (this.props.currentUser.userImg){
-                
-            // avatar = <img className="avatar" onLoad={() => this.setImage()} src={this.props.user.userImg} onClick={() => this.logoutRefresh()}/>
-            // } else {
             avatar = <Link to="/"> <div onClick={() => this.logoutRefresh()} className="avatar"><img className="avatar" src={this.props.user.userImg} /></div> </Link>
-            // }
-
             authNav = <Link to='/1'><div onClick={()=>setTimeout(()=>location.reload(), 200)}>artist page</div></Link>
         } else {
             auth = <p onClick={() => this.props.openModal('login')}>log in</p> 
             signup = 'sign up'
             avatar = ''
         }
-        // console.log("props:", this.props)
-        // let user = this.props.retrieveUser(this.props.currentUser)
-        console.log('user here:', this.state.img)
     return (
             <div className="nav-bar">
                 <div className="nav-top">

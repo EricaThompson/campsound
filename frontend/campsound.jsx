@@ -26,12 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
     
 });
 
-
+window.logout = logout;
 
 // window.signup = signup;
 // window.allUsers = allUsers;
 // window.login = login;
-// window.logout = logout;
+
 // window.getUser = getUser()
 
 // window.createItem = createItem;

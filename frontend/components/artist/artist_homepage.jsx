@@ -33,7 +33,14 @@ class ArtistHomepage extends React.Component {
 
         // }
 
-        
+        console.log("state",this.props.user.userImg)
+
+        let image = '';
+        if (this.props.user.userImg.includes('blobs')){
+            image = <img id="user-image" src={this.props.user.userImg} alt=""/>
+        }
+
+
         return (
             <div className='artist-home'>
                 <br />
@@ -44,10 +51,11 @@ class ArtistHomepage extends React.Component {
                 <div className="sidebar">
                     <div className="about">
                         <div className="image">
-                            <label htmlFor="user-image">add artist photo</label>
-                            <input id="user-image" type="file" onClick={this.uploadImage} />
+                            {image}
+                            {/* <label htmlFor="user-image">add artist photo</label>
+                            <input id="user-image" type="file" onClick={this.uploadImage} /> */}
                         </div>
-                        <div className="username">{window.currentUser.username}</div>
+                        <div className="username">{this.props.user.username}</div>
                         <div className="location">add location</div>
                         <div className="bio">add artist bio</div>
                     </div>

@@ -3,9 +3,10 @@ import ui from './ui_reducer';
 import session from './session_reducer';
 import errors from './errors_reducer';
 import items from './items_reducer';
+import users from './users_reducer';
 
 const RootReducer = combineReducers({
-    // users: {},
+    users,
     items,
     // stories: {},
     ui,

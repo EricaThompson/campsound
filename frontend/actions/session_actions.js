@@ -41,7 +41,7 @@ export const logoutUser = () => dispatch => {
         .then(()=> dispatch(logoutCurrentUser()))
 }
 
-export const retrieveUser = (user) => dispatch => {
-    return getUser(user)
+export const retrieveUser = (userId) => dispatch => {
+    return getUser(userId)
         .then((res)=> dispatch(receiveCurrentUser(res)));
 }

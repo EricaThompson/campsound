@@ -1,7 +1,3 @@
-# json.extract! @user, :id, :username
-
-# if @user.user_img
-    
-# end
+json.extract! @user, :id, :username
 
 json.userImg url_for(@user.user_img)

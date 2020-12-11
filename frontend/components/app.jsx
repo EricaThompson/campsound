@@ -10,24 +10,16 @@ class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            user: {}
+            user: ''
         };
-        this.getUser = this.fetchUser.bind(this);
+        // this.getUser = this.fetchUser.bind(this);
     }
 
-    fetchUser(){
-        $.ajax({
-            url: '/api/users/12'
-        }).then(user => {
-            this.setState.bind({user})
-        })
-    }
-
-    componentDidMount(){
-        this.fetchUser();
-    }
+    
 
     render(){
+        // console.log("app console",this.state.user)
+        // console.log("app console 2", this.state.currentUser.userImg)
  
         return(
             <div className="container">

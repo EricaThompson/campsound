@@ -20,9 +20,10 @@ class NavBar extends React.Component {
         this.setState({img: this.props.currentUser.userImg})
     }
 
-    // componentDidMount(){
-        
-    // }
+    componentDidMount(){
+        // this.props.retrieveUser(this.props.currentUser);
+    }
+    
 
     render(){
         let auth;
@@ -30,13 +31,16 @@ class NavBar extends React.Component {
         let signup = null;
         let authNav = null;
 
-        if (window.currentUser || this.props.currentUser.username !== "" ){
 
-            if (this.props.currentUser.userImg){
-                avatar = <img className="avatar" onLoad={() => this.setImage()} src={this.props.currentUser.userImg} onClick={() => this.logoutRefresh()}/>
-            } else {
+        console.log("nav bar console:", this.props.user)
+        if (this.props.user ){
+
+            // if (this.props.currentUser.userImg){
+                
+            //avatar = <img className="avatar" onLoad={() => this.setImage()} src={this.props.currentUser.userImg} onClick={() => this.logoutRefresh()}/>
+            // } else {
                 avatar = <Link to="/"> <div onLoad={() => this.setImage()} onClick={() => this.logoutRefresh()} className="avatar">&#10007;</div> </Link>
-            }
+            // }
 
             authNav = <Link to='/1'><div onClick={()=>setTimeout(()=>location.reload(), 200)}>artist page</div></Link>
         } else {

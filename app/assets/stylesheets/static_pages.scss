@@ -513,13 +513,21 @@ a {
                 display: flex;
                 color: #0887F5;
                 font-size: 12px;
-                margin-top: 15px;
-    
-                //! if added to DB add this className
-                .added {
-                    color: #888;
-                    font-weight: 300;
-                }
+                
+            }
+
+            .location-output, .bio-output {
+                margin-top: 10px;
+                font-size: 12px;
+                color: #888888;
+                font-weight: lighter;
+                word-wrap: normal;
+                width: 90px;
+                line-height: 1.2;
+            }
+
+            .bio-output {
+                color: #202020
             }
 
             .artist-form {
@@ -563,6 +571,8 @@ a {
                         color: #0887F4;
                 }
 
+                
+
                 .bio-input {
                     width: 115px;
                     height: 200px;
@@ -604,7 +614,7 @@ a {
             }
     
             .bio {
-                margin-top: 9px;
+                // margin-top: 9px;
                 color: #0887F5;
                 font-size: 12px;
             }

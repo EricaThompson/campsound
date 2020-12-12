@@ -9,9 +9,9 @@ class ArtistHomepage extends React.Component {
             status: null,
             image: this.props.user.userImg,
             locationFlag: false,
-            location: '',
+            location: this.props.user.location,
             bioFlag: false,
-            bio: '',
+            bio: this.props.user.bio,
             newImage: null,
             link: '',
         }
@@ -27,9 +27,6 @@ class ArtistHomepage extends React.Component {
 
         this.props.updateUser(formData, this.props.currentUser)
             this.setState({
-                location: '', 
-                bio: '', 
-                link: '',
                 locationFlag: false,
                 bioFlag: false
             })
@@ -45,7 +42,7 @@ class ArtistHomepage extends React.Component {
     flagChange(val){
         if (val === "locationFlag"){
             this.setState({ [val]: !this.state.locationFlag})
-            this.setState({location: ''})
+            // this.setState({location: ''})
         } else {
             this.setState({ [val]: !this.state.bioFlag})
             this.setState({bio: ''})
@@ -59,6 +56,7 @@ class ArtistHomepage extends React.Component {
     }
 
     render(){
+        console.log('user', this.props.user)
         let component = <ZeroItems/>
         let image = <img 
                 className="image" 
@@ -68,49 +66,67 @@ class ArtistHomepage extends React.Component {
         
         let location = null;
         let bio = null;
-        let locationDisabler = true;
-        let bioDisabler = true;
-
+        
         let locationCharCount = this.state.location.length;
         let locationCharLeft = 35 - locationCharCount;
         let bioCharCount = this.state.bio.length;
         let bioCharLeft = 400 - bioCharCount;
-
+        
+        
+        let locationDisabler = true;
         if (this.state.location.length > 0){
             locationDisabler = false
         } else {
             locationDisabler = true
         }
-
+        
+        let bioDisabler = true;
         if (this.state.bio.length > 0) {
             bioDisabler = false
         } else {
             bioDisabler = true
         }
+        
+        let locationAdded;
+        if (this.props.user.location.length > 0){
+            locationAdded = this.props.user.location
+        } else {
+            locationAdded = ''
+        }
 
-        // if (this.state.locationFlag) {
-        //     actualLocation = this.props.user.location
-        //     location = <div
-        //         onClick={() => this.flagChange('locationFlag')}
-        //         className="location">
-        //         {actualLocation}
-        //     </div>
-        // } else if (!this.state.locationFlag) {
+        let locationUpdater;
+        if (locationAdded.length === 0) {
+            locationUpdater = "add location"
+        } else {
+            locationUpdater = "edit location"
+        }
 
-        //     location = <div
-        //         onClick={() => this.flagChange('locationFlag')}
-        //         className="location">
-        //         add location
-        //     </div>
+        let bioAdded;
+        if (this.props.user.bio.length > 0) {
+            bioAdded = this.props.user.bio
+        } else {
+            bioAdded = ''
+        }
 
-
+        let bioUpdater;
+        if (bioAdded.length === 0) {
+            bioUpdater = "add bio"
+        } else {
+            bioUpdater = "edit bio"
+        }
 
 
         if (!this.state.locationFlag) {
-            location = <div 
-                            onClick={()=>this.flagChange('locationFlag')} 
-                            className="location">
-                                add location
+            location = <div className='location-output'>
+                            {locationAdded}
+                            <div
+                                className="location"
+                                onClick={() => this.flagChange('locationFlag')} 
+                            >
+                                <br />
+                                {locationUpdater}
+                                
+                            </div>
                         </div>
         } else {
             location = <form 
@@ -141,12 +157,18 @@ class ArtistHomepage extends React.Component {
         }
 
         if (!this.state.bioFlag) {
-            bio = <div 
+            bio = <div className='bio-output'>
+                    {bioAdded}    
+                    <div 
+                        className="bio" 
                         onClick={() => this.flagChange('bioFlag')} 
-                        className="bio">
-                            add artist bio
+                    >
+                    <br />
+                        {bioUpdater}
+                    </div>     
                 </div>
         } else {
+            let textValue = `${this.state.bio}`
             bio = <form 
                 className="artist-form" 
                 onSubmit={this.handleSubmit.bind(this)} 
@@ -156,9 +178,10 @@ class ArtistHomepage extends React.Component {
                         placeholder="Plain text only, no HTML." 
                         onChange={this.handleChange('bio')} 
                         className="bio-input" 
-                        type="text" 
-                        value={this.state.bio} 
-                    />
+                        type="text"
+                        value={textValue} 
+                    >
+                    </textarea>
                     <div className="count">{bioCharLeft} characters left</div>
                     
                     <button 

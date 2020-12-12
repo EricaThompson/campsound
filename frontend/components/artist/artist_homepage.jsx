@@ -9,29 +9,31 @@ class ArtistHomepage extends React.Component {
             status: null,
             image: this.props.user.userImg,
             locationFlag: false,
-            location: ''
+            location: '',
+            bioFlag: false,
+            bio: ''
         }
     }
-
-    // componentDidMount() {
-    //     this.setState({ img: this.props.user.userImg })
-    // }
-
-    // refresh(){
-    //     this.setState({})
-    // }
 
     handleSubmit(e){
         e.preventDefault();
         const formData = new FormData();
         formData.append('user[user_img]', e.currentTarget.files[0]);
         formData.append('user[location]', this.state.location)
+        formData.append('user[bio]', this.state.bio)
         this.props.updateUser(formData, this.props.currentUser)
-        // this.refresh()
     }
 
-    locationFlagChange(){
-        this.setState({locationFlag: !this.state.locationFlag})
+    flagChange(val){
+        if (val === "locationFlag"){
+            this.setState({ [val]: !this.state.locationFlag})
+            this.setState({location: ''})
+        } else {
+            this.setState({ [val]: !this.state.bioFlag})
+            this.setState({bio: ''})
+        }
+
+
     }
 
     handleChange(val){
@@ -40,30 +42,106 @@ class ArtistHomepage extends React.Component {
         }
     }
 
+
+
     render(){
 
         let component = <ZeroItems/>
-        let image = <img className="image" src={this.props.user.userImg} alt=""/>
+        let image = <img 
+                className="image" 
+                src={this.props.user.userImg} 
+                alt=""
+            />
         
         let location = null;
-        let disabler = true;
-        
+        let bio = null;
+        let locationDisabler = true;
+        let bioDisabler = true;
 
-        if (this.state.location){
-            disabler = true
+        let locationCharCount = this.state.location.length;
+        let locationCharLeft = 35 - locationCharCount;
+        let bioCharCount = this.state.bio.length;
+        let bioCharLeft = 400 - bioCharCount;
+
+        if (this.state.location.length > 0){
+            locationDisabler = false
         } else {
-            disabler = false
+            locationDisabler = true
         }
-        // const variableAttr = {[disabled]: disabled}
+
+        if (this.state.bio.length > 0) {
+            bioDisabler = false
+        } else {
+            bioDisabler = true
+        }
 
         if (!this.state.locationFlag) {
-            location = <div onClick={()=>this.locationFlagChange()} className="location">add location</div>
+            location = <div 
+                            onClick={()=>this.flagChange('locationFlag')} 
+                            className="location">
+                                add location
+                        </div>
         } else {
-            location = <form className="location-form" onSubmit={() => this.locationFlagChange()} >
-                <input onChange={this.handleChange('location')} className="location-input" type="text" value={this.state.location}/>
-                <br />
-                <button disabled={`${[disabler]}`} className="save" type='submit'>save</button> <button className="cancel" type="button" onClick={() => this.locationFlagChange()}>cancel</button>
+            location = <form 
+                            className="artist-form" 
+                            onSubmit={() => this.flagChange('locationFlag')} 
+                        >
+                <input 
+                    maxlength="35" 
+                    onChange={this.handleChange('location')} 
+                    className="location-input" 
+                    type="text" 
+                    value={this.state.location}
+                />
+                <div className="count">{locationCharLeft} characters left</div>
+                <button 
+                    disabled={locationDisabler} 
+                    className="save" 
+                    type='submit'>
+                        save
+                </button> 
+                <button 
+                    className="cancel" 
+                    type="button" 
+                    onClick={() => this.flagChange('locationFlag')}>
+                        cancel
+                </button>
             </form>
+        }
+
+        if (!this.state.bioFlag) {
+            bio = <div 
+                        onClick={() => this.flagChange('bioFlag')} 
+                        className="bio">
+                            add artist bio
+                </div>
+        } else {
+            bio = <form 
+                className="artist-form" 
+                onSubmit={() => this.flagChange('bioFlag')} 
+                >
+                    <textarea 
+                        maxlength="400" 
+                        placeholder="Plain text only, no HTML." 
+                        onChange={this.handleChange('bio')} 
+                        className="bio-input" 
+                        type="text" 
+                        value={this.state.bio} 
+                    />
+                    <div className="count">{bioCharLeft} characters left</div>
+                    
+                    <button 
+                        disabled={bioDisabler} 
+                        className="save" 
+                        type='submit'>save
+                    </button> 
+                    <button 
+                        className="cancel" 
+                        type="button" 
+                        onClick={() => this.flagChange('bioFlag')}>
+                            cancel
+                    </button>
+                </form>
         }
 
         return (
@@ -84,9 +162,12 @@ class ArtistHomepage extends React.Component {
                             />
                             <div className="change-image">↻</div>
                         </div>
-                        <div className="username">{this.props.user.username}</div>
+                        <div 
+                            className="username">
+                                {this.props.user.username}
+                        </div>
                         {location}
-                        <div className="bio">add artist bio</div>
+                        {bio}
                     </div>
                 </div>
             </div>

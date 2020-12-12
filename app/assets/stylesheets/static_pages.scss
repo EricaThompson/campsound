@@ -522,12 +522,15 @@ a {
                 }
             }
 
-            .location-form {
+            .artist-form {
                 // display: flex;
 
                 .location-input {
-                    width: 100px;
+                    width: 109px;
                     height: 10px;
+                    color: #595959;
+                    font-weight: lighter;
+                    font-family: 'Roboto', sans-serif;
                 }
 
                 button {
@@ -559,6 +562,45 @@ a {
                         background-color: #fff;
                         color: #0887F4;
                 }
+
+                .bio-input {
+                    width: 115px;
+                    height: 200px;
+                    text-align: top;
+                    border-radius: 0%;
+                    border-top-color: #9C9C9C;
+                    border-right-color: #9C9C9C;
+                    border-left-color: #CCCCCC;
+                    border-bottom-color: #CCCCCC;
+                    margin-top: 15px;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: lighter;
+                    padding: 7px;
+                    color: #595959;
+
+
+                    &::placeholder {
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: lighter;
+                        padding: 4px;
+                        color: #B0B0B0;
+                    }
+
+                    
+                }
+                .count {
+                    font-size: 10px;
+                    width: 131px;
+                    height: 14px;
+                    background-color: #F2F2F2;
+                    font-weight: lighter;
+                    text-align: center;
+                    color: #444444;
+                    margin-top: -5px;
+                    padding-top: 7px;
+                    padding-bottom: 0px;
+                }
+
             }
     
             .bio {

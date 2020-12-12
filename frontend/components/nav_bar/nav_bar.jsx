@@ -32,7 +32,7 @@ class NavBar extends React.Component {
         let authNav = null;
 
         if (this.props.user){
-            avatar = <Link to="/"> <div onClick={() => this.logoutRefresh()} className="avatar"><img className="avatar" src={this.state.img} /></div> </Link>
+            avatar = <Link to="/"> <div onClick={() => this.logoutRefresh()} className="avatar"><img className="avatar" src={this.props.user.userImg} /></div> </Link>
             authNav = <Link to={`${this.props.user.id}`}><div onClick={()=>setTimeout(()=>location.reload(), 200)}>artist page</div></Link>
         } else {
             auth = <p onClick={() => this.props.openModal('login')}>log in</p> 

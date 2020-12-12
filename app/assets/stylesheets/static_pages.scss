@@ -194,7 +194,6 @@ textarea:focus, input:focus{
     margin: 0;
     display: flex;
     align-self: center;
-
     font-size: 17px;
     background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
     background-size: 92%;
@@ -487,14 +486,6 @@ a {
                     bottom: 3px;
 
                 }
-    
-                label {
-                    align-self: center;
-                    color: #0887F5;
-                    font-size: 12px;
-                    margin: 0 auto;
-                }
-                
                 #user-image {
                     height: 5px;
                     width: 5px;
@@ -504,6 +495,14 @@ a {
                     bottom: 3px;
                     right: 3px;
                 }
+    
+                label {
+                    align-self: center;
+                    color: #0887F5;
+                    font-size: 12px;
+                    margin: 0 auto;
+                }
+                
             }       
             .username {
                 font-size: 14px;
@@ -520,6 +519,45 @@ a {
                 .added {
                     color: #888;
                     font-weight: 300;
+                }
+            }
+
+            .location-form {
+                // display: flex;
+
+                .location-input {
+                    width: 100px;
+                    height: 10px;
+                }
+
+                button {
+                    margin-top: 3px;
+                    border: none;
+                    width: 60px;
+                    height: 25px;
+                    
+                    &:hover {
+                            text-decoration: underline;
+                            cursor: pointer;
+                    }
+
+
+                }
+
+                .save {
+                    color: white;
+                    background-color: #0887F4;
+
+                    &:disabled {
+                        background-color: #BDDBFC;
+                        text-decoration: none;
+                        cursor: default;
+                    }
+                }
+
+                .cancel {
+                        background-color: #fff;
+                        color: #0887F4;
                 }
             }
     

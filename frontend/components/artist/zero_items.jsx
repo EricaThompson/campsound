@@ -11,7 +11,8 @@ class ZeroItems extends React.Component {
             <div className="zero-items">
                 <br />
                 <br />
-                <h1>This is your music<span>‛</span>s homepage<span className="period">▪</span>
+                <h1>This is your music<span>‛</span>s homepage<span 
+                    className="period">▪</span>
                 </h1>
                 
                 <h2 className="slogan">

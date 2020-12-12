@@ -42,7 +42,6 @@ class ArtistHomepage extends React.Component {
     flagChange(val){
         if (val === "locationFlag"){
             this.setState({ [val]: !this.state.locationFlag})
-            // this.setState({location: ''})
         } else {
             this.setState({ [val]: !this.state.bioFlag})
             this.setState({bio: ''})

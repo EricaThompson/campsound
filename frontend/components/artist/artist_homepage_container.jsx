@@ -11,12 +11,9 @@ import {
     updateItem, 
     deleteItem } from '../../actions/item_actions';
 
-// import { updateUser } from '../../actions/session_actions';
-
 const mapStateToProps = state => ({
     currentUser: state.session.currentUser,
     user: state.users[state.session.currentUser],
-    // location: state.users[state.session.currentUser].location
 });
 
 const mapDispatchToProps = dispatch => ({

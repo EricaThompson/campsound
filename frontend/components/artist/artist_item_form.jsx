@@ -8,7 +8,7 @@ class ArtistItemForm extends React.Component {
 
     render(){
         return (
-            <div>Artist Item Form</div>
+            <div>Artist Item Form on Heroku</div>
         )
     }
 

@@ -22,10 +22,10 @@ class ZeroItems extends React.Component {
                 <br />
                 <br />
                 <div className="add">
-                    <Link to="/new">
+                    <Link to={`/${this.props.userId}/new`}>
                         <div>Add an album </div>
                     </Link>
-                    <Link to="/new">
+                    <Link to={`/${this.props.userId}/new`}>
                         <div className="track">or add a track</div> 
                     </Link>
                     

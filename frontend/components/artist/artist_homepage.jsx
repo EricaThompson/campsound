@@ -56,8 +56,8 @@ class ArtistHomepage extends React.Component {
     }
 
     render(){
-        console.log('user', this.props.user)
-        let component = <ZeroItems/>
+        
+        let component = <ZeroItems userId={this.props.currentUser}/>
         let image = <img 
                 className="image" 
                 src={this.props.user.userImg} 

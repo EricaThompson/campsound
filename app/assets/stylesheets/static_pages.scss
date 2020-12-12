@@ -477,7 +477,16 @@ a {
                 display: flex;
                 height: 102px;
                 width: 120px;
-                border: 1px dashed #C0C0C0;
+                position: relative;
+                // border: 1px dashed #C0C0C0;
+
+                .change-image {
+                    background-color: yellow;
+                    position: absolute;
+                    right: 3px;
+                    bottom: 3px;
+
+                }
     
                 label {
                     align-self: center;
@@ -485,10 +494,15 @@ a {
                     font-size: 12px;
                     margin: 0 auto;
                 }
+                
                 #user-image {
+                    height: 5px;
+                    width: 5px;
                     opacity: 0;
                     position: absolute;
-                    z-index: -1;
+                    z-index: 1;
+                    bottom: 3px;
+                    right: 3px;
                 }
             }       
             .username {

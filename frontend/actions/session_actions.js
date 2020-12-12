@@ -1,4 +1,4 @@
-import { signup, login, logout, getUser } from '../util/session_api_util';
+import { signup, login, logout, getUser, update } from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
@@ -38,10 +38,15 @@ export const loginUser = (user) => dispatch => {
 
 export const logoutUser = () => dispatch => {
     return logout()
-        .then(()=> dispatch(logoutCurrentUser()))
+        .then(() => dispatch(logoutCurrentUser()))
 }
 
 export const retrieveUser = (userId) => dispatch => {
     return getUser(userId)
-        .then((res)=> dispatch(receiveCurrentUser(res)));
+        .then((res) => dispatch(receiveCurrentUser(res)));
+}
+
+export const updateUser = (user, id) => dispatch => {
+    return update(user, id)
+        .then((res) => dispatch(receiveCurrentUser(res)))
 }

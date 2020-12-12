@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ArtistHomepage from './artist_homepage';
 
-import { logoutUser } from '../../actions/session_actions';
+import { logoutUser, updateUser } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { 
     readAllItems, 
@@ -10,6 +10,8 @@ import {
     createItem, 
     updateItem, 
     deleteItem } from '../../actions/item_actions';
+
+// import { updateUser } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
     currentUser: state.session.currentUser,
@@ -24,7 +26,8 @@ const mapDispatchToProps = dispatch => ({
     readItem: (itemId) => dispatch(readItem(itemId)),
     createItem: (item) => dispatch(createItem(item)),
     updateItem: (item) => dispatch(updateItem(item)),
-    deleteItem: (itemId) => dispatch(deleteItem(itemId))
+    deleteItem: (itemId) => dispatch(deleteItem(itemId)),
+    updateUser: (user, id) => dispatch(updateUser(user, id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArtistHomepage);

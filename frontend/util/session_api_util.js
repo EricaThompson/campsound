@@ -13,6 +13,16 @@ export const getUser = (userId) => (
     })
 )
 
+export const update = (user, id) => {
+    return $.ajax({
+        url: `api/users/${id}`,
+        method: 'PATCH',
+        data: user,
+        contentType: false,
+        processData: false
+    })
+}
+
 export const allUsers = () => (
     $.ajax({
         url: 'api/users'

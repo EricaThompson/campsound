@@ -6,5 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: 'Demo User', password: 'Password')
+User.destroy_all
+# puts 'all destroyed'
+user = User.create(username: 'Demo User', password: 'Password')
+user.user_img.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/images/tape.png"), filename: "tape.png")
 puts "User created!"
+
+

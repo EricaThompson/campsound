@@ -6,39 +6,34 @@ class ArtistHomepage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            image: []
+            status: null
         }
     }
 
-    // uploadImage(){
-    //     this.setState({image: e.target.files[0]})
-    //     //then send to active storage
-    // }
+    componentDidMount() {
+        this.setState({ img: this.props.user.userImg })
+    }
 
-    
+    refresh(){
+        this.setState({})
+    }
+
+    handleSubmit(e){
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('user[user_img]', e.currentTarget.files[0]);
+        this.props.updateUser(formData, this.props.currentUser)
+        this.refresh()
+    }
+
+
 
     render(){
 
-        let component;
-        {/* if (search for db items with the index of user returns zero items){*/ }
-                component = <ZeroItems/>
-        {/* } else {
-                component = <ShowItems>
-            }
-        */}
-
-        // let userImage;
-
-        // if (currentUser.userImg){
-
-        // }
-
+        let component = <ZeroItems/>
         console.log("state",this.props.user.userImg)
+        let image = <img className="image" src={this.state.img} alt=""/>
 
-        let image = '';
-        if (this.props.user.userImg.includes('blobs')){
-            image = <img id="user-image" src={this.props.user.userImg} alt=""/>
-        }
 
 
         return (
@@ -52,8 +47,14 @@ class ArtistHomepage extends React.Component {
                     <div className="about">
                         <div className="image">
                             {image}
-                            {/* <label htmlFor="user-image">add artist photo</label>
-                            <input id="user-image" type="file" onClick={this.uploadImage} /> */}
+                            {/* <label htmlFor="user-image">add artist photo</label> */}
+                            {/* <label htmlFor="user-image">↻</label> */}
+                            <input 
+                                id="user-image" 
+                                type="file" 
+                                onChange={this.handleSubmit.bind(this)}
+                            />
+                            <div className="change-image">↻</div>
                         </div>
                         <div className="username">{this.props.user.username}</div>
                         <div className="location">add location</div>

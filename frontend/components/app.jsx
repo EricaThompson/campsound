@@ -20,7 +20,7 @@ class App extends React.Component {
     render(){
         // console.log("app console",this.state.user)
         // console.log("app console 2", this.state.currentUser.userImg)
- 
+
         return(
             <div className="container">
                 <div className="top">

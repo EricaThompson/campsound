@@ -20,9 +20,9 @@ class NavBar extends React.Component {
     //     this.setState({img: this.props.currentUser.userImg})
     // }
 
-    componentDidMount(){
-        this.setState({img: this.props.user.userImg})
-    }
+    // componentDidMount(){
+    //     this.setState({img: this.props.user.userImg})
+    // }
     
 
     render(){

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 currentUser: window.currentUser.id
             },
             users: {
-                [window.currentUser.id]: window.currentUser
+                [window.currentUser.id]: window.currentUser,
             }
         };
     }
@@ -30,7 +30,7 @@ window.logout = logout;
 
 // window.signup = signup;
 // window.allUsers = allUsers;
-// window.login = login;
+window.login = login;
 
 // window.getUser = getUser()
 

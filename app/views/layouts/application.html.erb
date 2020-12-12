@@ -18,7 +18,11 @@
       window.currentUser = {
         "id": <%= current_user.id %>,
         "username": "<%= current_user.username %>",
-        "userImg": "<%= url_for(current_user.user_img) %>"
+        "userImg": "<%= url_for(current_user.user_img) %>",
+        "bio": "<%= current_user.bio %>",
+        "location": "<%= current_user.location %>",
+        "type": "<%= current_user.type %>",
+        "link": "<%= current_user.link %>", 
       };
     </script>
     <% end %>

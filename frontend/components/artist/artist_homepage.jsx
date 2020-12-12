@@ -11,16 +11,34 @@ class ArtistHomepage extends React.Component {
             locationFlag: false,
             location: '',
             bioFlag: false,
-            bio: ''
+            bio: '',
+            newImage: null,
+            link: '',
         }
     }
 
     handleSubmit(e){
         e.preventDefault();
+
         const formData = new FormData();
-        formData.append('user[user_img]', e.currentTarget.files[0]);
         formData.append('user[location]', this.state.location)
         formData.append('user[bio]', this.state.bio)
+        formData.append('user[link]', this.state.link)
+
+        this.props.updateUser(formData, this.props.currentUser)
+            this.setState({
+                location: '', 
+                bio: '', 
+                link: '',
+                locationFlag: false,
+                bioFlag: false
+            })
+    }
+    
+    imageSubmit(e){
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('user[user_img]', e.currentTarget.files[0]);
         this.props.updateUser(formData, this.props.currentUser)
     }
 
@@ -32,8 +50,6 @@ class ArtistHomepage extends React.Component {
             this.setState({ [val]: !this.state.bioFlag})
             this.setState({bio: ''})
         }
-
-
     }
 
     handleChange(val){
@@ -42,10 +58,7 @@ class ArtistHomepage extends React.Component {
         }
     }
 
-
-
     render(){
-
         let component = <ZeroItems/>
         let image = <img 
                 className="image" 
@@ -75,6 +88,24 @@ class ArtistHomepage extends React.Component {
             bioDisabler = true
         }
 
+        // if (this.state.locationFlag) {
+        //     actualLocation = this.props.user.location
+        //     location = <div
+        //         onClick={() => this.flagChange('locationFlag')}
+        //         className="location">
+        //         {actualLocation}
+        //     </div>
+        // } else if (!this.state.locationFlag) {
+
+        //     location = <div
+        //         onClick={() => this.flagChange('locationFlag')}
+        //         className="location">
+        //         add location
+        //     </div>
+
+
+
+
         if (!this.state.locationFlag) {
             location = <div 
                             onClick={()=>this.flagChange('locationFlag')} 
@@ -84,10 +115,10 @@ class ArtistHomepage extends React.Component {
         } else {
             location = <form 
                             className="artist-form" 
-                            onSubmit={() => this.flagChange('locationFlag')} 
+                            onSubmit={this.handleSubmit.bind(this)} 
                         >
                 <input 
-                    maxlength="35" 
+                    maxLength="35" 
                     onChange={this.handleChange('location')} 
                     className="location-input" 
                     type="text" 
@@ -118,10 +149,10 @@ class ArtistHomepage extends React.Component {
         } else {
             bio = <form 
                 className="artist-form" 
-                onSubmit={() => this.flagChange('bioFlag')} 
+                onSubmit={this.handleSubmit.bind(this)} 
                 >
                     <textarea 
-                        maxlength="400" 
+                        maxLength="400" 
                         placeholder="Plain text only, no HTML." 
                         onChange={this.handleChange('bio')} 
                         className="bio-input" 
@@ -158,7 +189,7 @@ class ArtistHomepage extends React.Component {
                             <input 
                                 id="user-image" 
                                 type="file" 
-                                onChange={this.handleSubmit.bind(this)}
+                                onChange={this.imageSubmit.bind(this)}
                             />
                             <div className="change-image">↻</div>
                         </div>

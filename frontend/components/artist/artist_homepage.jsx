@@ -9,7 +9,7 @@ class ArtistHomepage extends React.Component {
             status: null,
             image: this.props.user.userImg,
             locationFlag: false,
-            location: '',
+            location: this.props.user.location,
             bioFlag: false,
             bio: this.props.user.bio,
             newImage: null,

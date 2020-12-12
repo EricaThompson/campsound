@@ -12,18 +12,7 @@ class NavBar extends React.Component {
 
     logoutRefresh(){
         this.props.logout()
-        // setTimeout(() => location.reload(), 200)
     }
-
-    // setImage(){
-    //     if (this.props.currentUser.userImg !== ''){}
-    //     this.setState({img: this.props.currentUser.userImg})
-    // }
-
-    // componentDidMount(){
-    //     this.setState({img: this.props.user.userImg})
-    // }
-    
 
     render(){
         let auth;

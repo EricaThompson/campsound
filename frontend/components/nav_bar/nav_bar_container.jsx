@@ -7,10 +7,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => ({
     currentUser: state.session.currentUser,
-    // id: state.session.currentUser.id,
     user: state.users[state.session.currentUser]
-    // img: this.state.user
-    // test: 'test'
 });
 
 const mapDispatchToProps = dispatch => ({

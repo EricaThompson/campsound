@@ -26,22 +26,3 @@ document.addEventListener("DOMContentLoaded", () => {
     
 });
 
-window.logout = logout;
-
-// window.signup = signup;
-// window.allUsers = allUsers;
-window.login = login;
-
-// window.getUser = getUser()
-
-// window.createItem = createItem;
-// window.readItem = readItem;
-// window.readAllItems = readAllItems;
-// window.updateItem = updateItem;
-// window.deleteItem = deleteItem;
-
-// // window.readItem = ItemsActions.readItem;
-// // window.readAllItems = ItemsActions.readAllItems;
-// // window.createItem = ItemsActions.createItem;
-// // window.updateItem = ItemsActions.updateItem;
-// // window.deleteItem = ItemsActions.deleteItem;

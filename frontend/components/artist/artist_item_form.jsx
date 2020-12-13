@@ -10,7 +10,6 @@ class ArtistItemForm extends React.Component {
             artistName: this.props.user.username,
             genre: '',
             about: ''
-
         }
     }
 

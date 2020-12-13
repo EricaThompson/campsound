@@ -22,7 +22,7 @@ class NavBar extends React.Component {
 
         if (this.props.user){
             avatar = <Link to="/"> <div onClick={() => this.logoutRefresh()} className="avatar"><img className="avatar" src={this.props.user.userImg} /></div> </Link>
-            authNav = <Link to={`${this.props.user.id}`}><div onClick={()=>setTimeout(()=>location.reload(), 200)}>artist page</div></Link>
+            authNav = <Link to={`/${this.props.user.id}`}><div onClick={()=>setTimeout(()=>location.reload(), 200)}>artist page</div></Link>
         } else {
             auth = <p onClick={() => this.props.openModal('login')}>log in</p> 
             signup = 'sign up'
@@ -31,7 +31,7 @@ class NavBar extends React.Component {
     return (
             <div className="nav-bar">
                 <div className="nav-top">
-                    <h1 className='logo'>🏕 campsound</h1>
+                <Link to="/"><h1 className='logo'>🏕 campsound</h1></Link>
                     <div>
                         <input placeholder="Search and discover music" type="text" />
                         <i className="fas fa-search"></i>

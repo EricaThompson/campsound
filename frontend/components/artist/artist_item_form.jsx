@@ -5,9 +5,11 @@ class ArtistItemForm extends React.Component {
         super(props);
         this.state = {
             trackTitle: '',
-            price: '',
+            price: 'free',
             releaseDate: '',
-            artistName: this.props.user.username, 
+            artistName: this.props.user.username,
+            genre: '',
+            about: ''
 
         }
     }
@@ -30,7 +32,7 @@ class ArtistItemForm extends React.Component {
     // }
 
     render(){
-        console.log(this.props)
+        console.log(this.state)
 
         let trackTitle;
         if (this.state.trackTitle == ''){
@@ -39,16 +41,16 @@ class ArtistItemForm extends React.Component {
             trackTitle = this.state.trackTitle
         }
 
-        let priceFormat;
-        // let numbers = '12345677890'
-        if (this.state.price.length > 3 && this.state.price.includes(".")){
-            priceFormat = this.state.price
-        } else if (this.state.price === '') {
-            // priceFormat = 'name your price (no minimum)'
-            priceFormat = 'free'
-        } else {
-            priceFormat = `${this.state.price}.00`
-        }
+        // let priceFormat;
+        // // let numbers = '12345677890'
+        // if (this.state.price.length > 3 && this.state.price.includes(".")){
+        //     priceFormat = this.state.price
+        // } else if (this.state.price === '') {
+        //     // priceFormat = 'name your price (no minimum)'
+        //     priceFormat = 'free'
+        // } else {
+        //     priceFormat = `${this.state.price}.00`
+        // }
 
     
 
@@ -57,26 +59,48 @@ class ArtistItemForm extends React.Component {
                 <form action="">
                     <div className="left-side">
                         <div className='preview'>
-                            <img src="" alt=""/>
+                            <img src={this.props.user.userImg} alt=""/>
                             <div className = 'details'>
                                 <div className="top">{trackTitle}</div>
-                                <div>by {this.state.artistName}</div>
-                                <div>{priceFormat}</div>
+                                <div><div className="by">by </div> {this.state.artistName}</div>
+                                <div className='genre'>{this.state.genre}</div>
+                                <div className="price">{this.state.price}</div>
                             </div>
                         </div>
+                        <br />
                         <div>
-                            <div>AUDIO</div>
-                            <div>add audio 291MB max, lossless .wav, .aif or .flac</div>
-                            <div>Uploading a lot of audio? Campsound Pro features batch album upload, private streaming, and more. Get details...</div>
-                            <div><input type="checkbox"/> part of an album, EP, what have you <select disabled name="album-picker" id=""></select></div>
-                            <div><button>Save</button> cancel</div>
+                            <div className="audio">AUDIO</div>
+                            <br />
+                            <div><div className="add-audio blue">add audio</div> <span className="helper">291MB <span className="blue">max</span>, lossless <span className="blue">.wav, .aif or .flac</span></span></div>
+                            <div className="pro">Uploading a lot of audio? <span className="blue">Campsound Pro</span> features batch album upload, private streaming, and more. <span hidden>Get details...</span></div>
+                            <div className="album-info">
+                                <input 
+                                    className="checkbox" 
+                                    type="checkbox"
+                                /> 
+                                part of an album, EP, what have you<span> </span>  
+                                <select 
+                                    disabled 
+                                    name="album-picker" 
+                                    id="album-picker"
+                                    // size="1"
+                                >
+                                    <optgroup label='Choose Album'>
+                                    <option selected value="">no albums</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div className='submit-item-form-buttons'><button className="save">Save</button> <span className="cancel blue">cancel</span></div>
                         </div>
                     </div>
 
                     <div className="right-side">
+                        <div className="input-helper upper top">
+                            track name:
+                        </div>
                         <div className="track-group">
                             <div className='blue'>*</div>
-                            <input placeholder="track name" className="track-name" type="text" onChange={this.handleChange('trackTitle')} />
+                            <input placeholder="...." className="track-name" type="text" onChange={this.handleChange('trackTitle')} />
                         </div>
                         <div>
                             <div className="input-helper upper">
@@ -109,7 +133,20 @@ class ArtistItemForm extends React.Component {
                             />
                             {/* <div className="change-album-art">↻</div> */}
                         </div>
-
+                        <div>
+                            <div className="input-helper upper">
+                                genre:
+                            </div>
+                            <br />
+                            <input className="artist-item-input" placeholder="help fans find your music" type="text" onChange={this.handleChange('genre')} />
+                        </div>
+                        <div className ="about">
+                            <div className="input-helper upper">
+                                about this track:
+                            </div>
+                            <br />
+                            <textarea onInput={this.handleChange('about')} placeholder="(optional)" name="" id="" cols="51" rows="4"></textarea>
+                        </div>
                         <div hidden>
                             release date: 
                             <input type="text" /> 
@@ -126,11 +163,8 @@ class ArtistItemForm extends React.Component {
                         <div hidden>
                             add bonus item pdf liner note booklets, photos, videos, etc.
                         </div>
+                        
                         <div hidden>
-                            
-                            about this album:
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
-                            
                             album credits:
                             <textarea name="" id="" cols="30" rows="10"></textarea>
                             

@@ -82,6 +82,7 @@ h2 {
 textarea:focus, input:focus{
     outline: none;
     background-color: #E7F0FE;
+    border-radius: 2px;
 }
 
 .logo {
@@ -647,12 +648,24 @@ a {
     background-color: #F7F7F7;
     border-top: 1px solid #eee;
 
+    .blue {
+        color: #0887F4;
+    }
+
     form {
         display: flex;
         margin: 20px auto;
         width: 957px;
         height: 600px;
         padding-bottom: 50px;
+
+        input, textarea {
+            border-radius: 2px;
+
+            &:focus {
+                background-color: white;
+            }
+        }
         
 
         .left-side {
@@ -669,19 +682,108 @@ a {
                 margin-right: -21px;
                 position: relative;
                 z-index: 0;
+                font-size: 11px;
 
                 img {
                     height: 72px;
                     width: 72px;
                     float: left;
                     margin: 10px;
-                    border: 1px dashed #DBDBDB;
+                    // border: 1px dashed #DBDBDB;
+                    
                 }
 
                 .top {
-                    padding-top: 10px;
+                    font-size: 20px;
+                    font-weight: lighter;
+                    color: #363636;
+                    padding: 8px;
+                }
+
+                .by, .price {
+                    font-weight: lighter;
+                    margin-bottom: 6px;
+                    display: inline-block;
+                }
+
+                .genre {
+                    margin-bottom: 5px;
+                    color: #8b8b8b;
+                    font-weight: 300;
+                }
+
+                .price {
+                    color: #939393;
+                }
+
+            }
+
+            .audio {
+                color: #808080;
+                font-size: 11px;
+                font-weight: bolder;
+            }
+
+            .add-audio {
+                display: inline-block;
+                margin-right: 20px;
+                margin-bottom: 20px;
+
+            }
+
+            .helper {
+                font-size: 12px;
+                color: #909090;
+                font-weight: lighter;
+            }
+
+            .pro {
+                color: #408294;
+                font-size: 12px;
+                font-weight: lighter;
+                margin-bottom: 10px;
+            }
+            .album-info {
+                font-size: 12px;
+                font-weight: lighter;
+                margin-bottom: 30px;
+                
+                .checkbox{
+                    margin-left: 0;
                 }
             }
+
+            .submit-item-form-buttons {
+                display: flex;
+                justify-content: space-between;
+                
+                .save {
+                    background-color: #0687f5;
+                    border: 1px solid #2072b8;
+                    color: white;                    width: 108px;
+                    height: 32px;
+                    font-size: 14px;
+                    font-weight: bold;
+
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+                
+                .cancel {
+                    font-weight: lighter;
+                    font-size: 12px;
+
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+            
+            }
+
+            
         }
 
         .right-side {
@@ -689,8 +791,9 @@ a {
             padding: 20px;
             background-color: #fff;
             margin-top: -20px;
-            padding-top: 20px;
-            border-left: 1px solid #DEDEDE;
+            border-left: 1px solid #DADADA;
+            box-shadow: -3px 0 7px -3px #dadada;
+            height: 630px;
 
             .track-group {
                 display: flex;
@@ -710,9 +813,12 @@ a {
             }
 
             .track-name {
+                width: 410px;
                 
                 &::placeholder {
                     color: #B0B0B0;
+                    font-size: 18px;
+                    // margin-top: 4px;
                 }
             }
 
@@ -741,6 +847,10 @@ a {
             .under {
                 color: #999999;
             }
+
+            .top {
+                margin-top: 0px;
+            }
             
 
             .album-art{
@@ -753,9 +863,16 @@ a {
 
                 
 
+                
+
                 .upload {
                     color: #0887F4;
-                    font-weight: lighter;
+                    font-weight: 300;
+
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
                 }
             
                 .helper {
@@ -769,6 +886,25 @@ a {
                 
                 #album-image {
                     opacity: 0;
+                }
+
+            }
+            .about {
+
+                textarea{
+                    border-top: 1px solid #ccc;
+                    border-right: 1px solid #ccc;
+                    border-left: 1px solid #e5e5e5;
+                    border-bottom: 1px solid #e5e5e5;
+                    // border-radius: 2px;
+                    // margin-bottom: 50px;
+
+
+                    &::placeholder{
+                            color: #B0B0B0;
+                            font-family: Arial, Helvetica, sans-serif;
+    
+                    }
                 }
             }
         }

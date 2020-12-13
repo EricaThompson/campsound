@@ -19,7 +19,7 @@ class User < ApplicationRecord
         foreign_key: :owner_id,
         class_name: :Item
 
-    has_one_attached :user_img, dependent: false
+    has_one_attached :user_img, dependent: true
 
     attr_reader :password
 

@@ -21,4 +21,7 @@ class Item < ApplicationRecord
     belongs_to :user,
         foreign_key: :owner_id,
         class_name: :User
+
+    has_one_attached :song, dependent: true
+    
 end

@@ -611,8 +611,55 @@ a {
     }
 }
 
+//Artist Input Form
 
+.artist-input-form {
+    margin: 0 auto;
+    background-color: #F7F7F7;
+    border-top: 1px solid #eee;
 
+    form {
+        display: flex;
+        margin: 20px auto;
+        width: 957px;
+        
+
+        .left-side {
+            width: 478px;
+            padding: 20px;
+            
+
+            .preview {
+                border-left: 1px solid #0887F4;
+                height: 94px;
+                border-top: 1px solid #DBDBDB;
+                border-bottom: 1px solid #DBDBDB;
+                background-color: #fff;
+                margin-right: -20px;
+
+                img {
+                    height: 72px;
+                    width: 72px;
+                    float: left;
+                    margin: 10px;
+                    border: 1px dashed #DBDBDB;
+                }
+
+                .top {
+                    padding-top: 10px;
+                }
+            }
+        }
+
+        .right-side {
+            width: 478px;
+            padding: 20px;
+            background-color: #fff;
+            margin-top: -20px;
+            padding-top: 20px;
+        }
+    }
+}
 
 
 

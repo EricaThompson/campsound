@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import ArtistHomepageContainer from './artist/artist_homepage_container';
 import ArtistItemForm from './artist/artist_item_form';
-// import { AuthRoute } from '../util/route_util';
 import { ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
 
@@ -14,8 +13,6 @@ class App extends React.Component {
             user: ''
         };
     }
-
-    
 
     render(){
         return(

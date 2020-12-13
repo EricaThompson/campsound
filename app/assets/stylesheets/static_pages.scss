@@ -89,6 +89,34 @@ textarea:focus, input:focus{
     align-self: center;
     margin-left: 10px;
     margin-top: 30px;
+    // background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
+    
+    // background-size: 100%;
+    // background-repeat: repeat;
+    // font-weight: 500;
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent; 
+    // background-clip: text;
+    // -moz-background-clip: text;
+    // -moz-text-fill-color: transparent;
+
+    // text-align: center;
+    background: linear-gradient(45deg, darkgray 5%, blue 30%, teal 60%, darkgray 99%);
+    background-size: 200% auto;
+    
+    color: #000;
+    background-clip: text;
+    // text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    animation: shine 10s linear infinite;
+    @keyframes shine {
+        to {
+        background-position: 200% center;
+        }
+    }
+
 }
 
 .nav-bar {
@@ -256,6 +284,7 @@ p {
     margin-right: 10px;
 }
 
+//!fix this
 input {
     border:none;
     background-image:none;
@@ -622,20 +651,24 @@ a {
         display: flex;
         margin: 20px auto;
         width: 957px;
+        height: 600px;
+        padding-bottom: 50px;
         
 
         .left-side {
             width: 478px;
             padding: 20px;
+            height: 100%;
             
-
             .preview {
                 border-left: 1px solid #0887F4;
                 height: 94px;
                 border-top: 1px solid #DBDBDB;
                 border-bottom: 1px solid #DBDBDB;
                 background-color: #fff;
-                margin-right: -20px;
+                margin-right: -21px;
+                position: relative;
+                z-index: 0;
 
                 img {
                     height: 72px;
@@ -657,6 +690,87 @@ a {
             background-color: #fff;
             margin-top: -20px;
             padding-top: 20px;
+            border-left: 1px solid #DEDEDE;
+
+            .track-group {
+                display: flex;
+                border-bottom: 1px dotted #D9D9D9;
+                padding-bottom: 30px;
+
+                .blue {
+                    color: #50A1E6;
+                    font-size: 14px;
+                    // padding-bottom: 20px;
+                    // display: block;
+                    padding-top: 20px;
+                    margin-left: -12px;
+                    padding-right: 6px;
+                }
+
+            }
+
+            .track-name {
+                
+                &::placeholder {
+                    color: #B0B0B0;
+                }
+            }
+
+            .artist-item-input {
+                margin-top: 0px;
+                margin-top: 0px;
+                width: 408px;
+
+                &::placeholder {
+                    color: #B0B0B0;
+                }
+            }
+
+            .input-helper {
+                font-size: 12px;
+                // font-weight: lighter;
+                margin-top: 8px;
+                font-weight: inherit;
+            }
+
+            .upper {
+                margin-top: 20px;
+                margin-bottom: -10px;
+            }
+
+            .under {
+                color: #999999;
+            }
+            
+
+            .album-art{
+                border: 1px dashed gray;
+                text-align: center;
+                font-size: 18px;
+                // padding: 40px;
+                width: 212px;
+                height: 200px;
+
+                
+
+                .upload {
+                    color: #0887F4;
+                    font-weight: lighter;
+                }
+            
+                .helper {
+                    display: block;
+                    color: #999999;
+                    font-size: 12px;
+                    width: 175px;
+                    margin: 0 auto;
+                    font-weight: lighter;
+                }
+                
+                #album-image {
+                    opacity: 0;
+                }
+            }
         }
     }
 }

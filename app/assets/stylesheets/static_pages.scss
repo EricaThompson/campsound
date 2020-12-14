@@ -858,6 +858,7 @@ a {
                 border-bottom: 1px dotted #D9D9D9;
                 padding-bottom: 28px;
                 .album-art{
+                    position: relative;
                     border: 1px dashed gray;
                     text-align: center;
                     font-size: 18px;
@@ -867,6 +868,7 @@ a {
                     .upload {
                         color: #0887F4;
                         font-weight: 300;
+                        // text-decoration: underline;
     
                         &:hover {
                             text-decoration: underline;
@@ -883,27 +885,46 @@ a {
                         font-weight: lighter;
                     }
                     
-                    #album-image {
+                    #add-album-image {
                         opacity: 0;
+                        width: 180px;
+                        position: absolute;
+                        // z-index: -1;
+                        top: 25px;
+                        left: 5px;
+                        height: 0px;
+                        cursor: pointer;
+                        padding-top: 30px;
+                        
+
+                        // input[type="file"] {
+                        //     cursor: pointer;
+                        // }
+
+                        // &:hover{
+                        //     // display: none;
+                        //     text-decoration: underline;
+                        //     color: red;
+                        //     // opacity: 1;
+                        // }
+                        
+                        &:hover, .upload:hover {
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
                     }
-    
                 }
             }
             .about {
-
                 textarea{
                     border-top: 1px solid #ccc;
                     border-right: 1px solid #ccc;
                     border-left: 1px solid #e5e5e5;
                     border-bottom: 1px solid #e5e5e5;
-                    // border-radius: 2px;
-                    // margin-bottom: 50px;
-
 
                     &::placeholder{
                             color: #B0B0B0;
                             font-family: Arial, Helvetica, sans-serif;
-    
                     }
                 }
             }

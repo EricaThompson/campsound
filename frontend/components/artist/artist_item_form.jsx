@@ -89,7 +89,7 @@ class ArtistItemForm extends React.Component {
                                     </optgroup>
                                 </select>
                             </div>
-                            <div className='submit-item-form-buttons'><button className="save">Save</button> <span className="cancel blue">cancel</span></div>
+                            <div className='submit-item-form-buttons'><button className="save">Save</button> <span onClick={()=>location.reload()}className="cancel blue">cancel</span></div>
                         </div>
                     </div>
 
@@ -126,7 +126,7 @@ class ArtistItemForm extends React.Component {
                                     .jpg, .gif or .png, 10MB max
                                 </div>
                                 <input
-                                    id="album-image"
+                                    id="add-album-image"
                                     type="file"
                                     // onChange={this.imageSubmit.bind(this)}
                                 />

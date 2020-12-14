@@ -111,26 +111,27 @@ class ArtistItemForm extends React.Component {
                             <div className="input-helper under"> for compilations, labels, etc.</div>
                         </div>
                         <br />
-
-                        <div className="album-art">
-                            <br />
-                            <br />
-                            <br />
-                            <span className="upload">Upload Album Art</span> 
-                            <br/>
-                            <br />
-                            <div className="helper"> 1400 x 1400 pixels minimum
-                                (bigger is better)
+                        <div className="album-art-section">
+                            <div className="album-art">
                                 <br />
                                 <br />
-                                .jpg, .gif or .png, 10MB max
+                                <br />
+                                <span className="upload">Upload Album Art</span> 
+                                <br/>
+                                <br />
+                                <div className="helper"> 1400 x 1400 pixels minimum
+                                    (bigger is better)
+                                    <br />
+                                    <br />
+                                    .jpg, .gif or .png, 10MB max
+                                </div>
+                                <input
+                                    id="album-image"
+                                    type="file"
+                                    // onChange={this.imageSubmit.bind(this)}
+                                />
+                                {/* <div className="change-album-art">↻</div> */}
                             </div>
-                            <input
-                                id="album-image"
-                                type="file"
-                                // onChange={this.imageSubmit.bind(this)}
-                            />
-                            {/* <div className="change-album-art">↻</div> */}
                         </div>
                         <div>
                             <div className="input-helper upper">
@@ -144,7 +145,7 @@ class ArtistItemForm extends React.Component {
                                 about this track:
                             </div>
                             <br />
-                            <textarea onInput={this.handleChange('about')} placeholder="(optional)" name="" id="" cols="51" rows="4"></textarea>
+                            <textarea onInput={this.handleChange('about')} placeholder="(optional)" name="" id="" cols="52" rows="4"></textarea>
                         </div>
                         <div hidden>
                             release date: 

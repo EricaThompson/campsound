@@ -56,7 +56,8 @@ class Api::ItemsController < ApplicationController
             :price, 
             :released, 
             :about, 
-            :collection_id
+            :collection_id,
+            :song
         )
     end
 end

@@ -815,7 +815,7 @@ a {
             }
 
             .track-name {
-                width: 410px;
+                width: 100%;
                 
                 &::placeholder {
                     color: #B0B0B0;
@@ -827,7 +827,7 @@ a {
             .artist-item-input {
                 margin-top: 0px;
                 margin-top: 0px;
-                width: 408px;
+                width: 417px;
 
                 &::placeholder {
                     color: #B0B0B0;
@@ -854,42 +854,40 @@ a {
                 margin-top: 0px;
             }
             
-
-            .album-art{
-                border: 1px dashed gray;
-                text-align: center;
-                font-size: 18px;
-                // padding: 40px;
-                width: 212px;
-                height: 200px;
-
-                
-
-                
-
-                .upload {
-                    color: #0887F4;
-                    font-weight: 300;
-
-                    &:hover {
-                        text-decoration: underline;
-                        cursor: pointer;
+            .album-art-section{
+                border-bottom: 1px dotted #D9D9D9;
+                padding-bottom: 28px;
+                .album-art{
+                    border: 1px dashed gray;
+                    text-align: center;
+                    font-size: 18px;
+                    width: 212px;
+                    height: 200px;
+    
+                    .upload {
+                        color: #0887F4;
+                        font-weight: 300;
+    
+                        &:hover {
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
                     }
-                }
-            
-                .helper {
-                    display: block;
-                    color: #999999;
-                    font-size: 12px;
-                    width: 175px;
-                    margin: 0 auto;
-                    font-weight: lighter;
-                }
                 
-                #album-image {
-                    opacity: 0;
+                    .helper {
+                        display: block;
+                        color: #999999;
+                        font-size: 12px;
+                        width: 175px;
+                        margin: 0 auto;
+                        font-weight: lighter;
+                    }
+                    
+                    #album-image {
+                        opacity: 0;
+                    }
+    
                 }
-
             }
             .about {
 

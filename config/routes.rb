@@ -2,11 +2,12 @@
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
 #                 api_items GET    /api/items(.:format)                                                                     api/items#index {:format=>:json}
-#                           POST   /api/items(.:format)                                                                     api/items#create {:format=>:json}
-#                  api_item GET    /api/items/:id(.:format)                                                                 api/items#show {:format=>:json}
-#                           PATCH  /api/items/:id(.:format)                                                                 api/items#update {:format=>:json}
-#                           PUT    /api/items/:id(.:format)                                                                 api/items#update {:format=>:json}
-#                           DELETE /api/items/:id(.:format)                                                                 api/items#destroy {:format=>:json}
+#            api_user_items GET    /api/users/:user_id/items(.:format)                                                      api/items#index {:format=>:json}
+#                           POST   /api/users/:user_id/items(.:format)                                                      api/items#create {:format=>:json}
+#             api_user_item GET    /api/users/:user_id/items/:id(.:format)                                                  api/items#show {:format=>:json}
+#                           PATCH  /api/users/:user_id/items/:id(.:format)                                                  api/items#update {:format=>:json}
+#                           PUT    /api/users/:user_id/items/:id(.:format)                                                  api/items#update {:format=>:json}
+#                           DELETE /api/users/:user_id/items/:id(.:format)                                                  api/items#destroy {:format=>:json}
 #                 api_users GET    /api/users(.:format)                                                                     api/users#index {:format=>:json}
 #                           POST   /api/users(.:format)                                                                     api/users#create {:format=>:json}
 #                  api_user GET    /api/users/:id(.:format)                                                                 api/users#show {:format=>:json}
@@ -24,9 +25,11 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  namespace :api, defaults: { format: :json } do 
-    resources :items, except: [:new, :edit]
-    resources :users, only: [:create, :index, :show, :update]
+  namespace :api, defaults: { format: :json } do
+    resources :items, only: [:index] 
+    resources :users, only: [:create, :index, :show, :update] do 
+      resources :items, only: [:index, :create, :show, :update, :destroy]
+    end
     resource :session, only: [:create, :destroy]
   end
 

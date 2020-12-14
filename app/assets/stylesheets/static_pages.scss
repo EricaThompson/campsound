@@ -762,7 +762,8 @@ a {
                 .save {
                     background-color: #0687f5;
                     border: 1px solid #2072b8;
-                    color: white;                    width: 108px;
+                    color: white;                    
+                    width: 108px;
                     height: 32px;
                     font-size: 14px;
                     font-weight: bold;
@@ -784,8 +785,6 @@ a {
                 }
             
             }
-
-            
         }
 
         .right-side {
@@ -857,6 +856,18 @@ a {
             .album-art-section{
                 border-bottom: 1px dotted #D9D9D9;
                 padding-bottom: 28px;
+                display: relative;
+                
+                
+                img {
+                    display: absolute;
+                    margin-top: -140px;
+                    margin-left: -2px;
+                    // top: 50px;
+                    // width: 190px;
+                    height: 204px;
+                    width: 216px;
+                }
                 .album-art{
                     position: relative;
                     border: 1px dashed gray;
@@ -890,9 +901,9 @@ a {
                         width: 180px;
                         position: absolute;
                         // z-index: -1;
-                        top: 25px;
+                        top: -20px;
                         left: 5px;
-                        height: 0px;
+                        height: 165px;
                         cursor: pointer;
                         padding-top: 30px;
                         

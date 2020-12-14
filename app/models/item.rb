@@ -22,6 +22,6 @@ class Item < ApplicationRecord
         foreign_key: :owner_id,
         class_name: :User
 
-    has_one_attached :song, dependent: true
+    # has_one_attached :song, dependent: true
     
 end

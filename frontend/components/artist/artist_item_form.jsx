@@ -21,6 +21,15 @@ class ArtistItemForm extends React.Component {
         }
     }
 
+    imageSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('user[user_img]', e.currentTarget.files[0]);
+        this.props.updateUser(formData, this.props.currentUser)
+    }
+
+
+
     // handlePrice(){
     //     const numbers = '1234567890';
     //     return e => {
@@ -31,7 +40,7 @@ class ArtistItemForm extends React.Component {
     // }
 
     render(){
-        console.log(this.state)
+        console.log(this.props.currentUser)
 
         let trackTitle;
         if (this.state.trackTitle == ''){
@@ -125,10 +134,11 @@ class ArtistItemForm extends React.Component {
                                     <br />
                                     .jpg, .gif or .png, 10MB max
                                 </div>
+                                <img src={this.props.user.userImg} alt="" />
                                 <input
                                     id="add-album-image"
                                     type="file"
-                                    // onChange={this.imageSubmit.bind(this)}
+                                    onChange={this.imageSubmit.bind(this)}
                                 />
                                 {/* <div className="change-album-art">↻</div> */}
                             </div>

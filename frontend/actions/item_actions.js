@@ -6,8 +6,6 @@ export const DELETE_ITEM = 'DELETE_ITEM';
 export const ALL_CURRENT_USER_ITEMS = 'ALL_CURRENT_USER_ITEMS';
 export const CURRENT_USER_ITEM = 'CURRENT_USER_ITEM';
 
-
-
 const readMusicItem = (item) => ({
     type: READ_ITEM,
     item: item
@@ -42,6 +40,7 @@ export const readAllItems = () => dispatch => {
         .then(res => dispatch(readAllMusicItems(res)))
 }
 
+//! Is this necessary?
 export const readCurrentUserItem = (userId) => dispatch => {
     return ItemAPIUtil.readItem(userId)
         .then(res => dispatch(readCurrentUserMusicItem(res)))
@@ -51,8 +50,6 @@ export const readAllCurrentUserItems = (userId) => dispatch => {
     return ItemAPIUtil.readAllItems(userId)
         .then(res => dispatch(readAllCurrentUserMusicItems(res)) )
 }
-
-
 
 export const createItem = (userId, item) => dispatch => {
     return ItemAPIUtil.createItem(userId, item)
@@ -68,7 +65,3 @@ export const deleteItem = (userId, itemId) => dispatch => {
     return ItemAPIUtil.deleteItem(userId, itemId)
         .then(res => dispatch(deleteMusicItem(res)))
 }
-
-
-
-

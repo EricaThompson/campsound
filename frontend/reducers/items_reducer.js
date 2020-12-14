@@ -2,6 +2,8 @@ import {READ_ITEM, READ_ALL_ITEMS, DELETE_ITEM, ALL_CURRENT_USER_ITEMS, CURRENT_
 
 const ItemsReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
+    // const items = {}
+    const userItems = {}
 
     switch (action.type) {
         case READ_ALL_ITEMS:
@@ -9,9 +11,14 @@ const ItemsReducer = (oldState = {}, action) => {
         case READ_ITEM:
             return Object.assign({}, oldState, { [action.item.id]: action.item })
         case ALL_CURRENT_USER_ITEMS:
-            
-        case CURRENT_USER_ITEM:
-
+            // action.items.forEach((item)=> {
+            //     userItems.push(item)
+            // })
+            action.items.forEach((item)=> {
+                userItems[item.id] = item
+            })
+            return userItems
+        // case CURRENT_USER_ITEM:
         case DELETE_ITEM:
             let nextState = Object.assign({}, oldState)
             delete nextState[action.itemId]

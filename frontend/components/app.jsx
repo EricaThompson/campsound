@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import ArtistHomepageContainer from './artist/artist_homepage_container';
-import ArtistItemContainer from './artist/artist_item_container';
+import ArtistItemContainer from './artist/artist_item_form_container';
 import { ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
 

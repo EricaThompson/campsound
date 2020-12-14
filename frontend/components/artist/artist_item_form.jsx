@@ -9,8 +9,29 @@ class ArtistItemForm extends React.Component {
             releaseDate: '',
             artistName: this.props.user.username,
             genre: '',
-            about: ''
+            about: '',
+            collection_id: null
         }
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+        const formData = new FormData();
+        formData.append('item[song]', e.currentTarget.files[0])
+        formData.append('item[owner_id]', this.props.currentUser)
+        formData.append('item[title]', this.state.trackTitle)
+        formData.append('item[genre]', this.state.genre)
+        formData.append('item[price]', 'free')
+        formData.append('item[about]', this.state.about)
+        formData.append('item[released]', true)
+        formData.append('item[collection_id]', null)
+
+        this.props.createItem(formData, this.props.currentUser)
+        // this.setState({
+        //     locationFlag: false,
+        //     bioFlag: false
+        // })
     }
 
     handleChange(val){
@@ -27,6 +48,7 @@ class ArtistItemForm extends React.Component {
         formData.append('user[user_img]', e.currentTarget.files[0]);
         this.props.updateUser(formData, this.props.currentUser)
     }
+
 
 
 
@@ -64,7 +86,7 @@ class ArtistItemForm extends React.Component {
 
         return (
             <div className="artist-input-form">
-                <form action="">
+                <form onSubmit={this.handleSubmit.bind(this)}>
                     <div className="left-side">
                         <div className='preview'>
                             <img src={this.props.user.userImg} alt=""/>

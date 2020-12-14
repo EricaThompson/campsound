@@ -35,8 +35,8 @@ export const readItem = (userId, itemId) => dispatch => {
     return ItemAPIUtil.readItem(userId, itemId)
         .then(res => dispatch(readMusicItem(res)))
 }
-export const readAllItems = () => dispatch => {
-    return ItemAPIUtil.readAllItems()
+export const readAllUserItems = (userId) => dispatch => {
+    return ItemAPIUtil.readAllUserItems(userId)
         .then(res => dispatch(readAllMusicItems(res)))
 }
 
@@ -47,7 +47,7 @@ export const readCurrentUserItem = (userId) => dispatch => {
 }
 
 export const readAllCurrentUserItems = (userId) => dispatch => {
-    return ItemAPIUtil.readAllItems(userId)
+    return ItemAPIUtil.readAllUserItems(userId)
         .then(res => dispatch(readAllCurrentUserMusicItems(res)) )
 }
 

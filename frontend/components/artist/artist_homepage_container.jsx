@@ -5,7 +5,7 @@ import ArtistHomepage from './artist_homepage';
 import { logoutUser, updateUser } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { 
-    readAllItems, 
+    readAllUserItems, 
     readItem, 
     createItem, 
     updateItem, 
@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logoutUser()),
     openModal: (modal) => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
-    readAllItems: () => dispatch(readAllItems()),
+    readAllUserItems: (userId) => dispatch(readAllUserItems(userId)),
     readItem: (itemId) => dispatch(readItem(itemId)),
     createItem: (item) => dispatch(createItem(item)),
     updateItem: (item) => dispatch(updateItem(item)),

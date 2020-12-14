@@ -5,7 +5,7 @@ import ArtistItemForm from './artist_item_form';
 import { updateUser } from '../../actions/session_actions';
 // import { openModal, closeModal } from '../../actions/modal_actions';
 import {
-    readAllItems,
+    readAllUserItems,
     readItem,
     createItem,
     updateItem,
@@ -21,11 +21,11 @@ const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logoutUser()),
     openModal: (modal) => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
-    readAllItems: () => dispatch(readAllItems()),
-    readItem: (itemId) => dispatch(readItem(itemId)),
-    createItem: (item) => dispatch(createItem(item)),
-    updateItem: (item) => dispatch(updateItem(item)),
-    deleteItem: (itemId) => dispatch(deleteItem(itemId)),
+    readAllUserItems: (userId) => dispatch(readAllUserItems(userId)),
+    readItem: (userId, itemId) => dispatch(readItem(userId, itemId)),
+    createItem: (userId, item) => dispatch(createItem(userId, item)),
+    updateItem: (userId, item) => dispatch(updateItem(userId, item)),
+    deleteItem: (userId, itemId) => dispatch(deleteItem(userId, itemId)),
     updateUser: (user, id) => dispatch(updateUser(user, id))
 });
 

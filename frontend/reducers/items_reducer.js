@@ -7,15 +7,17 @@ const ItemsReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case READ_ALL_ITEMS:
-            return Object.assign({}, oldState, action.items)
+            return Object.assign({}, action.items)
         case READ_ITEM:
-            return Object.assign({}, oldState, { [action.item.id]: action.item })
+            return Object.assign({}, { [action.item.id]: action.item })
         case ALL_CURRENT_USER_ITEMS:
             // action.items.forEach((item)=> {
             //     userItems.push(item)
             // })
             action.items.forEach((item)=> {
-                userItems[item.id] = item
+                if (item.owner_id = action.user_id){
+                    userItems[item.id] = item
+                }
             })
             return userItems
         // case CURRENT_USER_ITEM:

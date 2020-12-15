@@ -394,7 +394,6 @@ a {
     margin: 0 auto;
     margin-bottom: 50px;
     font-family: 'Roboto', sans-serif;
-    // background-image: linear-gradient(45deg, red,5%,#5E47FD, 45%, #1E9FC4,10%,#1ec4b9);
     background-image: linear-gradient(45deg, red,5%,#5E47FD, 45%, #1E9FC4,#1ec4b9,);
     background-size: 100%;
     background-repeat: repeat;
@@ -421,12 +420,10 @@ a {
     }
 }
 
-//Artist Homepage
+//* Artist Homepage
 
 .artist-home {
-    // width: 100%;
     display: relative;
-    // border: 1px solid red;
     display: flex;
     height: 800px;
     width: 968px;
@@ -496,7 +493,6 @@ a {
             }
 
             .artist-form {
-                // display: flex;
 
                 .location-input {
                     width: 109px;
@@ -615,16 +611,11 @@ a {
         }
 
         .add {
-            
-            // padding: 15px;
             width: 275px;
             font-size: 13px;
-            // height: 50px;
             text-align: center;
             display: flex;
             align-items: center;
-            // justify-content: space-evenly;
-            // justify-content: space-between;
             
             a {
                 color: #0887F5;
@@ -652,7 +643,6 @@ a {
         float: left;
         display: flex;
         width: 975px;
-        // margin: 0 auto;
 
         .item-display {
             margin: 0 30px;

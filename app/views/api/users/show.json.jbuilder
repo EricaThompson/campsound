@@ -1,30 +1,56 @@
 json.extract! @user, :id, :username, :type, :link, :bio, :location
-# json.extract! @items, :id, :title, :cover, :song
 
-# json.set
+# @user.items.each do |item|
+#     json.set! item.id do
+#         json.id item.id
+#         json.title item.title
+#         # json.artist item.artist
+#         json.cover url_for(item.cover)
+#         json.song url_for(item.song)
 
-# json.id @clip.id
-# json.user_id @clip.user_id
-# json.category @clip.category
-# json.title @clip.title
-# json.video_clip url_for(@clip.video_clip)
-
-# @categories.each do |category|
-#     json.set! category.id do
-#         json.id category.id
-#         json.title category.title
-#         json.image url_for(category.image)
 #     end
 # end
 
-json.array! @items do |item|
-    json.id item.id
-    json.owner_id item.owner_id
-    json.cover item.cover
-    json.title item.title
-    json.cover url_for(item.cover)
-    json.song url_for(item.song)
-end
+# json.extract! @items, :id, :title, :cover, :song
+
+# json.array! @items do |item|
+#     json.title item.title
+#     # json.artist item.artist
+#     # json.cover item.cover
+#     json.id item.id
+#     json.owner_id item.owner_id
+#     json.cover url_for(item.cover)
+#     # json.song url_for(item.song)
+# end
+
+
+
+# json.(@items, :id, :title)
+
+# json.items @items.items, :title, :id, :owner_id
+
+# json.attachments @items.attachments do |attachment|
+#     json.file attachment.filename
+#     json.cover url_for(attachment)
+# end
+
+
+# json.set
+
+# json.id @items.id
+# json.user_id @items.user_id
+# json.category @items.category
+# json.title @items.title
+
+# json.content format_content(@items.each)
+
+# json.array! @items do |item|
+#     url_for(item.cover)
+# end
+
+# json.covers @items.each url_for(@items.cover)
+
+
 
 
 # if @user.user_img.present?

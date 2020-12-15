@@ -21,8 +21,8 @@ class ArtistHomepage extends React.Component {
 
 
     componentDidMount() {
-        this.props.readAllUserItems(71)
-            .then(res => this.setState({ items: res }))
+        this.props.readAllUserItems(this.props.currentUser)
+            // .then(res => this.setState({ items: res }))
     }
 
     handleSubmit(e){
@@ -63,12 +63,13 @@ class ArtistHomepage extends React.Component {
     }
 
     render(){
+        console.log('props.items', !this.props.items)
         
         let component;
-        if (!this.state.items) {
+        if (Object.values(this.props.items).length === 0) {
             component = <ZeroItems userId={this.props.currentUser} />
         } else {
-            component = <ShowItems items={this.state.items} />
+            component = <ShowItems items={this.props.items} />
         }        
             
         let image = <img 

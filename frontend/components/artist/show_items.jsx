@@ -15,7 +15,8 @@ class ShowItems extends React.Component {
     // }
 
     render() {
-        console.log('props', this.props.items.items[0])
+        console.log('props', this.props.items.items)
+        console.log('state', this.state)
         // console.log('state', this.state.items.items[0])
         return (
             <div className="show-items">

@@ -31,13 +31,23 @@ class NavBar extends React.Component {
                                 />
                         </div> 
                     </Link>
-            authNav = <Link 
+            authNav = <div>
+                        <Link 
                             to={`/${this.props.user.id}`}>
                                 <div 
                                     onClick={()=>setTimeout(()=>location.reload(), 200)}>
                                     artist page
                                 </div>
                         </Link>
+                        <Link
+                            to={`/${this.props.user.id}/new`}>
+                            <div
+                                onClick={() => setTimeout(() => location.reload(), 200)}>
+                                add new song
+                            </div>
+                        </Link>
+                    </div>
+                        
         } else {
             auth = <p onClick={() => this.props.openModal('login')}>log in</p> 
             signup = 'sign up'

@@ -14,6 +14,7 @@ import {
 const mapStateToProps = state => ({
     currentUser: state.session.currentUser,
     user: state.users[state.session.currentUser],
+    items: state.items
 });
 
 const mapDispatchToProps = dispatch => ({

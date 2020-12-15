@@ -18,7 +18,7 @@ class Item < ApplicationRecord
     validates :title, presence: true
     validates :released, inclusion: [true, false]
 
-    belongs_to :user,
+    belongs_to :artist,
         foreign_key: :owner_id,
         class_name: :User
 

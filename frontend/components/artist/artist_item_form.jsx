@@ -28,9 +28,6 @@ class ArtistItemForm extends React.Component {
         // debugger
         
         e.preventDefault();
-
-        
-        
         
         const formData = new FormData();
         // formData.append('item[song]', this.state.songFile)

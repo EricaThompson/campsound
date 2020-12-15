@@ -19,7 +19,6 @@ class ArtistHomepage extends React.Component {
         }
     }
 
-
     componentDidMount() {
         this.props.readAllUserItems(this.props.currentUser)
             // .then(res => this.setState({ items: res }))
@@ -63,7 +62,7 @@ class ArtistHomepage extends React.Component {
     }
 
     render(){
-        console.log('props.items', !this.props.items)
+        // console.log('props.items', !this.props.items)
         
         let component;
         if (Object.values(this.props.items).length === 0) {
@@ -129,7 +128,6 @@ class ArtistHomepage extends React.Component {
             bioUpdater = "edit bio"
         }
 
-
         if (!this.state.locationFlag) {
             location = <div className='location-output'>
                             {locationAdded}
@@ -147,27 +145,27 @@ class ArtistHomepage extends React.Component {
                             className="artist-form" 
                             onSubmit={this.handleSubmit.bind(this)} 
                         >
-                <input 
-                    maxLength="35" 
-                    onChange={this.handleChange('location')} 
-                    className="location-input" 
-                    type="text" 
-                    value={this.state.location}
-                />
-                <div className="count">{locationCharLeft} characters left</div>
-                <button 
-                    disabled={locationDisabler} 
-                    className="save" 
-                    type='submit'>
-                        save
-                </button> 
-                <button 
-                    className="cancel" 
-                    type="button" 
-                    onClick={() => this.flagChange('locationFlag')}>
-                        cancel
-                </button>
-            </form>
+                            <input 
+                                maxLength="35" 
+                                onChange={this.handleChange('location')} 
+                                className="location-input" 
+                                type="text" 
+                                value={this.state.location}
+                            />
+                            <div className="count">{locationCharLeft} characters left</div>
+                            <button 
+                                disabled={locationDisabler} 
+                                className="save" 
+                                type='submit'>
+                                    save
+                            </button> 
+                            <button 
+                                className="cancel" 
+                                type="button" 
+                                onClick={() => this.flagChange('locationFlag')}>
+                                    cancel
+                            </button>
+                        </form>
         }
 
         if (!this.state.bioFlag) {
@@ -211,11 +209,24 @@ class ArtistHomepage extends React.Component {
                     </button>
                 </form>
         }
+        
+        let songs = [];
+        Object.values(this.props.items).forEach(item => {
+            songs.push(item.song)
+        })
+
+        let downloads = songs.map((song) => {
+                            return <a href={`${song}`} download>Click to download</a>
+                        })
+
+    
+    
 
         return (
             <div className='artist-home'>
                 <br />
                 <br />
+                {downloads}
                 {component}
                 <br />
                 <br />
@@ -230,9 +241,8 @@ class ArtistHomepage extends React.Component {
                             />
                             <div className="change-image">↻</div>
                         </div>
-                        <div 
-                            className="username">
-                                {this.props.user.username}
+                        <div className="username">
+                            {this.props.user.username}
                         </div>
                         {location}
                         {bio}

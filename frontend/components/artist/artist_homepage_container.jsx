@@ -11,11 +11,16 @@ import {
     updateItem, 
     deleteItem } from '../../actions/item_actions';
 
-const mapStateToProps = state => ({
-    currentUser: state.session.currentUser,
-    user: state.users[state.session.currentUser],
-    items: state.items
-});
+const mapStateToProps = state => {
+    // debugger
+    return {
+        currentUser: state.session.currentUser,
+        user: state.users[state.session.currentUser],
+        items: state.items
+    };
+
+}
+
 
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logoutUser()),

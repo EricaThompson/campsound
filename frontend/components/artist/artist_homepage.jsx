@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ZeroItems from './zero_items';
+import ShowItems from './show_items';
 
 class ArtistHomepage extends React.Component {
     constructor(props) {
@@ -14,7 +15,14 @@ class ArtistHomepage extends React.Component {
             bio: this.props.user.bio,
             newImage: null,
             link: '',
+            items: null
         }
+    }
+
+
+    componentDidMount() {
+        this.props.readAllUserItems(71)
+            .then(res => this.setState({ items: res }))
     }
 
     handleSubmit(e){
@@ -56,12 +64,18 @@ class ArtistHomepage extends React.Component {
 
     render(){
         
-        let component = <ZeroItems userId={this.props.currentUser}/>
+        let component;
+        if (!this.state.items) {
+            component = <ZeroItems userId={this.props.currentUser} />
+        } else {
+            component = <ShowItems items={this.state.items} />
+        }        
+            
         let image = <img 
-                className="image" 
-                src={this.props.user.userImg} 
-                alt=""
-            />
+            className="image" 
+            src={this.props.user.userImg} 
+            alt=""
+        />
         
         let location = null;
         let bio = null;

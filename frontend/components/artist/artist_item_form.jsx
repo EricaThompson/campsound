@@ -40,7 +40,7 @@ class ArtistItemForm extends React.Component {
             formData.append('item[cover]', this.state.coverFile)
         } 
         if (this.state.songFile) {
-            formData.append('item[cover]', this.state.coverFile)
+            formData.append('item[song]', this.state.songFile)
         } 
         formData.append('item[owner_id]', this.props.currentUserId)
         formData.append('item[title]', this.state.trackTitle)

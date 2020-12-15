@@ -63,7 +63,8 @@ class Api::ItemsController < ApplicationController
             :released, 
             :about, 
             :collection_id,
-            :cover
+            :cover,
+            :song
         )
     end
 end

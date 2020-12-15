@@ -5,10 +5,13 @@ import NavBar from './nav_bar';
 import { signupUser, loginUser, logoutUser, retrieveUser } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
-const mapStateToProps = state => ({
-    currentUser: state.session.currentUser,
-    user: state.users[state.session.currentUser]
-});
+const mapStateToProps = state => {
+    // debugger
+    return {
+        currentUser: state.session.currentUser,
+        user: state.users[state.session.currentUser]
+    }
+};
 
 const mapDispatchToProps = dispatch => ({
     signup: (user) => dispatch(signupUser(user)),

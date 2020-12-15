@@ -23,5 +23,6 @@ class Item < ApplicationRecord
         class_name: :User
 
     # has_one_attached :song, dependent: true
+    has_one_attached :cover, dependent: true
     
 end

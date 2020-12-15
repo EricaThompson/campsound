@@ -2,7 +2,9 @@ export const createItem = (userId, item) => (
     $.ajax({
         url: `/api/users/${userId}/items`,
         method: 'POST',
-        data: item
+        data: item,
+        contentType: false,
+        processData: false
     })
 )
 

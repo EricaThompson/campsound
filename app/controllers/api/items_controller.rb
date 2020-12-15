@@ -23,7 +23,13 @@ class Api::ItemsController < ApplicationController
     end
     
     def index
-        @items = Item.all
+        if params[:user_id]
+            # active record
+            @items = Item.where(owner_id: params[:user_id])
+        else
+            @items = Item.all
+        end
+        
         render :index
     end
 
@@ -57,7 +63,7 @@ class Api::ItemsController < ApplicationController
             :released, 
             :about, 
             :collection_id,
-            :song
+            :cover
         )
     end
 end

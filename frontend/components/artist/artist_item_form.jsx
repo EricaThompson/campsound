@@ -1,36 +1,70 @@
 import React from 'react';
+import { Link, Redirect} from 'react-router-dom';
 
 class ArtistItemForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            trackTitle: '',
+            trackTitle: 'Untitled',
             price: 'free',
             releaseDate: '',
             artistName: this.props.user.username,
             genre: '',
             about: '',
-            collection_id: null
+            collection_id: null,
+            playerView: false,
+            coverFile: null,
+            coverPreviewUrl: null,
+            songFile: null,
+            songPreviewUrl: null
         }
     }
 
+    // consoleClick(){
+    //     console.log("clicked!")
+    // }
+
     handleSubmit(e) {
+        // debugger
+        
         e.preventDefault();
 
+        
+        
+        
         const formData = new FormData();
-        formData.append('item[song]', e.currentTarget.files[0])
-        formData.append('item[owner_id]', this.props.currentUser)
+        // formData.append('item[song]', this.state.songFile)
+        
+        
+        if (this.state.coverFile){
+            formData.append('item[cover]', this.state.coverFile)
+        } 
+        if (this.state.songFile) {
+            formData.append('item[cover]', this.state.coverFile)
+        } 
+        formData.append('item[owner_id]', this.props.currentUserId)
         formData.append('item[title]', this.state.trackTitle)
         formData.append('item[genre]', this.state.genre)
         formData.append('item[price]', 'free')
         formData.append('item[about]', this.state.about)
         formData.append('item[released]', true)
         formData.append('item[collection_id]', null)
-
-        this.props.createItem(formData, this.props.currentUser)
+        // console.log("click2")
+        this.props.createItem(this.props.currentUserId, formData)
+        // const history = useHistory
+        
+        console.log("item created!")
         // this.setState({
         //     locationFlag: false,
         //     bioFlag: false
+        // })
+
+        // $.ajax({
+        //     url: `/api/users/${this.props.currentUserId}/items`,
+        //     method: 'POST',
+        //     data: formData,
+        //     contentType: false,
+        //     processData: false
         // })
     }
 
@@ -42,15 +76,35 @@ class ArtistItemForm extends React.Component {
         }
     }
 
-    imageSubmit(e) {
+    imageHandler(e) {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('user[user_img]', e.currentTarget.files[0]);
-        this.props.updateUser(formData, this.props.currentUser)
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            this.setState({ coverFile: file, coverPreviewUrl: fileReader.result})
+        };
+
+        if (file){
+            fileReader.readAsDataURL(file);
+        };
+    };
+
+    songHandler(e){
+
+        
+        e.preventDefault();
+        this.setState({songFile: e.currentTarget.files[0], playerView: false})
+
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            this.setState({ songFile: file, songPreviewUrl: fileReader.result, playerView: true })
+        };
+
+        if (file) {
+            fileReader.readAsDataURL(file);
+        }
     }
-
-
-
 
     // handlePrice(){
     //     const numbers = '1234567890';
@@ -62,7 +116,7 @@ class ArtistItemForm extends React.Component {
     // }
 
     render(){
-        console.log(this.props.currentUser)
+        console.log("state", this.state)
 
         let trackTitle;
         if (this.state.trackTitle == ''){
@@ -82,14 +136,24 @@ class ArtistItemForm extends React.Component {
         //     priceFormat = `${this.state.price}.00`
         // }
 
+
+        let component;
+        if (this.state.playerView){
+            component = <audio controls>
+                            {/* <source src="horse.ogg" type="audio/ogg" /> */}
+                            <source src={`${this.state.songPreviewUrl}`} type="audio/mpeg" />
+                            Your browser does not support the audio tag.
+                        </audio>
+        }
+
     
 
         return (
             <div className="artist-input-form">
-                <form onSubmit={this.handleSubmit.bind(this)}>
+                <form noValidate>
                     <div className="left-side">
                         <div className='preview'>
-                            <img src={this.props.user.userImg} alt=""/>
+                            <img src={this.state.coverPreviewUrl} alt=""/>
                             <div className = 'details'>
                                 <div className="top">{trackTitle}</div>
                                 <div><div className="by">by </div> {this.state.artistName}</div>
@@ -101,8 +165,34 @@ class ArtistItemForm extends React.Component {
                         <div>
                             <div className="audio">AUDIO</div>
                             <br />
-                            <div><div className="add-audio blue">add audio</div> <span className="helper">291MB <span className="blue">max</span>, lossless <span className="blue">.wav, .aif or .flac</span></span></div>
-                            <div className="pro">Uploading a lot of audio? <span className="blue">Campsound Pro</span> features batch album upload, private streaming, and more. <span hidden>Get details...</span></div>
+                            {component}
+                            <br />
+                            <br />
+                            <div>
+                                <div className="add-audio blue">
+                                    add audio
+                                    <input
+                                        id="add-audio"
+                                        type="file"
+                                        onChange={this.songHandler.bind(this)}
+                                    />
+                                </div> 
+                                <span className="helper">
+                                    291MB <span className="blue">
+                                    max
+                                </span>
+                                , lossless 
+                                    <span className="blue">
+                                        .wav, .aif or .flac
+                                    </span>
+                                </span>
+                            </div>
+                            <div className="pro">
+                                Uploading a lot of audio? 
+                                <span className="blue">Campsound Pro</span> 
+                                features batch album upload, private streaming, and more. 
+                                <span hidden>Get details...</span>
+                            </div>
                             <div className="album-info">
                                 <input 
                                     className="checkbox" 
@@ -111,7 +201,7 @@ class ArtistItemForm extends React.Component {
                                 part of an album, EP, what have you<span> </span>  
                                 <select 
                                     disabled 
-                                    name="album-picker" 
+                                    className="album-picker" 
                                     id="album-picker"
                                     // size="1"
                                 >
@@ -120,7 +210,16 @@ class ArtistItemForm extends React.Component {
                                     </optgroup>
                                 </select>
                             </div>
-                            <div className='submit-item-form-buttons'><button className="save">Save</button> <span onClick={()=>location.reload()}className="cancel blue">cancel</span></div>
+                            <div className='submit-item-form-buttons'>
+                                <button onClick={this.handleSubmit.bind(this)} type="button" className="save">
+                                    <Link to={`/${this.props.currentUserId}`}>
+                                        Save
+                                    </Link> 
+                                </button>
+                                <Link to={`/${this.props.currentUser}`}>
+                                    <span className="cancel blue">cancel</span>
+                                </Link>
+                            </div>
                         </div>
                     </div>
 
@@ -142,8 +241,8 @@ class ArtistItemForm extends React.Component {
                             <div className="input-helper under"> for compilations, labels, etc.</div>
                         </div>
                         <br />
-                        <div className="album-art-section">
-                            <div className="album-art">
+                        <div className="song-art-section">
+                            <div className="song-art">
                                 <br />
                                 <br />
                                 <br />
@@ -156,11 +255,12 @@ class ArtistItemForm extends React.Component {
                                     <br />
                                     .jpg, .gif or .png, 10MB max
                                 </div>
-                                <img src={this.props.user.userImg} alt="" />
+
+                                <img src={this.state.coverPreviewUrl} alt="" />
                                 <input
-                                    id="add-album-image"
+                                    id="add-track-image"
                                     type="file"
-                                    onChange={this.imageSubmit.bind(this)}
+                                    onChange={this.imageHandler.bind(this)}
                                 />
                                 {/* <div className="change-album-art">↻</div> */}
                             </div>
@@ -177,7 +277,7 @@ class ArtistItemForm extends React.Component {
                                 about this track:
                             </div>
                             <br />
-                            <textarea onInput={this.handleChange('about')} placeholder="(optional)" name="" id="" cols="52" rows="4"></textarea>
+                            <textarea onInput={this.handleChange('about')} placeholder="(optional)" cols="52" rows="4"></textarea>
                         </div>
                         <div hidden>
                             release date: 
@@ -198,7 +298,7 @@ class ArtistItemForm extends React.Component {
                         
                         <div hidden>
                             album credits:
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <textarea cols="30" rows="10"></textarea>
                             
                             tags: Alternative, and...
                             <input type="text"/>
@@ -209,15 +309,10 @@ class ArtistItemForm extends React.Component {
                             album UPC/EAN code:
                             <input type="text"/>
                             e.g., "027616 852809" more info
-
                             catelog number:
                             <input type="text"/>
                             shows up in your sales report more info
                         </div>
-
-                        
-
-
                     </div>
                 </form>
             </div>

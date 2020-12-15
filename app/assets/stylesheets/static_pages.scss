@@ -760,7 +760,8 @@ a {
                 justify-content: space-between;
                 
                 .save {
-                    background-color: #0687f5;
+                    // background-color: #0687f5;
+                    background-color: white;
                     border: 1px solid #2072b8;
                     color: white;                    
                     width: 108px;
@@ -853,7 +854,7 @@ a {
                 margin-top: 0px;
             }
             
-            .album-art-section{
+            .song-art-section{
                 border-bottom: 1px dotted #D9D9D9;
                 padding-bottom: 28px;
                 display: relative;
@@ -868,7 +869,7 @@ a {
                     height: 204px;
                     width: 216px;
                 }
-                .album-art{
+                .song-art{
                     position: relative;
                     border: 1px dashed gray;
                     text-align: center;
@@ -896,7 +897,7 @@ a {
                         font-weight: lighter;
                     }
                     
-                    #add-album-image {
+                    #add-track-image {
                         opacity: 0;
                         width: 180px;
                         position: absolute;

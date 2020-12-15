@@ -1,15 +1,20 @@
 import {READ_ITEM, READ_ALL_ITEMS, DELETE_ITEM, ALL_CURRENT_USER_ITEMS, CURRENT_USER_ITEM} from '../actions/item_actions';
 
+// const _nullItem = {
+//     item: null
+// }
+
+
 const ItemsReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
     // const items = {}
     const userItems = {}
 
     switch (action.type) {
+        case READ_ITEM:
+            return Object.assign({}, { currentItemId: action.item.id })
         case READ_ALL_ITEMS:
             return Object.assign({}, action.items)
-        case READ_ITEM:
-            return Object.assign({}, { [action.item.id]: action.item })
         case ALL_CURRENT_USER_ITEMS:
             // action.items.forEach((item)=> {
             //     userItems.push(item)

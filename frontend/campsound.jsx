@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from './store/store';
 import Root from './components/root';
-import {deleteItem} from './actions/item_actions';
+// import {deleteItem} from './actions/item_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const store = configureStore(preloadedState);
     window.getState = store.getState;
-    window.readAllUserItems = Actions.readAllUserItems
-    window.readAllCurrentUserItems = Actions.readAllCurrentUserItems
-    window.updateItem = Actions.updateItem
+    // window.readAllUserItems = Actions.readAllUserItems
+    // window.readAllCurrentUserItems = Actions.readAllCurrentUserItems
+    // window.updateItem = Actions.updateItem
     ReactDOM.render(<Root store={store} />, root);
 });
 
-window.deleteItem = deleteItem
+// window.deleteItem = deleteItem

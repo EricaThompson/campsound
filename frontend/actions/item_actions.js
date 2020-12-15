@@ -8,27 +8,27 @@ export const CURRENT_USER_ITEM = 'CURRENT_USER_ITEM';
 
 const readMusicItem = (item) => ({
     type: READ_ITEM,
-    item: item
+    item
 })
 
 const readAllMusicItems = (items) => ({
     type: READ_ALL_ITEMS,
-    items: items
+    items
 })
 
 const readCurrentUserMusicItem = (item) => ({
     type: CURRENT_USER_ITEM,
-    item: item
+    item
 })
 
 const readAllCurrentUserMusicItems = (items) => ({
     type: ALL_CURRENT_USER_ITEMS,
-    items: items
+    items
 })
 
 const deleteMusicItem = (itemId) => ({
     type: DELETE_ITEM,
-    itemId: itemId
+    itemId
 })
 
 export const readItem = (userId, itemId) => dispatch => {
@@ -61,7 +61,7 @@ export const updateItem = (userId, item) => dispatch => {
         .then(res => dispatch(readMusicItem(res)))
 }
 
-export const deleteItem = (userId, itemId) => dispatch => {
-    return ItemAPIUtil.deleteItem(userId, itemId)
+export const deleteItem = (itemId) => dispatch => {
+    return ItemAPIUtil.deleteItem(itemId)
         .then(res => dispatch(deleteMusicItem(res)))
 }

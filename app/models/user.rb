@@ -23,7 +23,14 @@ class User < ApplicationRecord
 
     attr_reader :password
 
-    after_initialize :ensure_session_token
+    after_initialize :ensure_session_token, :ensure_image
+
+    def ensure_image
+        if !self.user_img.attached?
+            require 'open-uri'
+            self.user_img.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/1UgpAJLPjiBqKF3Qy9EKr6XE"), filename: 'default_image_name')   
+        end
+    end
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)

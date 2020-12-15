@@ -12,9 +12,13 @@ import {
     deleteItem
 } from '../../actions/item_actions';
 
+// import { createItem } from '../../util/items_api_util';
+
 const mapStateToProps = state => ({
-    currentUser: state.session.currentUser,
+    currentUserId: state.session.currentUser,
     user: state.users[state.session.currentUser],
+    currentItemId: state.items.currentItemId,
+    item: state.items[state.items.currentItemId]
 });
 
 const mapDispatchToProps = dispatch => ({

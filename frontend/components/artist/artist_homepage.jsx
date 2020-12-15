@@ -63,12 +63,16 @@ class ArtistHomepage extends React.Component {
 
     render(){
         // console.log('props.items', !this.props.items)
-        
+        let items = [];
+        Object.values(this.props.items).forEach(item => {
+            items.push(item)
+        })
+
         let component;
         if (Object.values(this.props.items).length === 0) {
             component = <ZeroItems userId={this.props.currentUser} />
         } else {
-            component = <ShowItems items={this.props.items} />
+            component = <ShowItems items={items} />
         }        
             
         let image = <img 
@@ -209,29 +213,17 @@ class ArtistHomepage extends React.Component {
                     </button>
                 </form>
         }
-        
-        let songs = [];
-        Object.values(this.props.items).forEach(item => {
-            songs.push(item.song)
-        })
-
-        let downloads = songs.map((song) => {
-                            return <a href={`${song}`} download>Click to download</a>
-                        })
-
-    
-    
 
         return (
             <div className='artist-home'>
-                <br />
-                <br />
-                {downloads}
+            
+                
                 {component}
-                <br />
-                <br />
                 <div className="sidebar">
                     <div className="about">
+                        <div className="username">
+                            {this.props.user.username}
+                        </div>
                         <div className="image">
                             {image}
                             <input 
@@ -241,13 +233,12 @@ class ArtistHomepage extends React.Component {
                             />
                             <div className="change-image">↻</div>
                         </div>
-                        <div className="username">
-                            {this.props.user.username}
-                        </div>
+                        
                         {location}
                         {bio}
                     </div>
                 </div>
+                
             </div>
         )
     }

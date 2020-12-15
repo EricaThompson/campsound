@@ -15,15 +15,22 @@ class ShowItems extends React.Component {
     // }
 
     render() {
-        console.log('props', this.props.items.items)
-        console.log('state', this.state)
+        // console.log('props', this.props.items.items)
+        // console.log('state', this.state)
         // console.log('state', this.state.items.items[0])
+
+        let itemDisplay = this.props.items.map((item) => {
+            return <div className="item-display">
+                        <a href={`${item.song}`} download>
+                            <img src={`${item.cover}`} alt="" />
+                        </a>
+                        <h5 className="home-title">{item.title}</h5>
+                        <h5 className="home-artist">{item.artist}</h5>
+                    </div>
+        })
         return (
             <div className="show-items">
-                {/* {this.state.items.title} */}
-                {/* {this.props.items.map(item => {
-                    item.title
-                })} */}
+                {itemDisplay}
             </div>
         )
     }

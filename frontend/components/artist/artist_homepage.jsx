@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import ZeroItems from './zero_items';
 import ShowItems from './show_items';
+import MusicPlayer from '../music_player/music_player';
 
 class ArtistHomepage extends React.Component {
     constructor(props) {
@@ -215,28 +216,31 @@ class ArtistHomepage extends React.Component {
         }
 
         return (
-            <div className='artist-home'>
-                {component}
-                <div className="sidebar">
-                    <div className="about">
-                        <div className="username">
-                            {this.props.user.username}
+            <div>
+                <div className='artist-home'>
+                    {component}
+                    <div className="sidebar">
+                        <div className="about">
+                            <div className="username">
+                                {this.props.user.username}
+                            </div>
+                            <div className="image">
+                                {image}
+                                <input
+                                    id="user-image"
+                                    type="file"
+                                    onChange={this.imageSubmit.bind(this)}
+                                />
+                                <div className="change-image">↻</div>
+                            </div>
+
+                            {location}
+                            {bio}
                         </div>
-                        <div className="image">
-                            {image}
-                            <input 
-                                id="user-image" 
-                                type="file" 
-                                onChange={this.imageSubmit.bind(this)}
-                            />
-                            <div className="change-image">↻</div>
-                        </div>
-                        
-                        {location}
-                        {bio}
-                    </div>
+                    </div>   
                 </div>
-                
+
+                <MusicPlayer />
             </div>
         )
     }

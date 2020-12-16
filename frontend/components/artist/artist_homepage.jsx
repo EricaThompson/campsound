@@ -63,7 +63,6 @@ class ArtistHomepage extends React.Component {
     }
 
     render(){
-        // console.log('props.items', !this.props.items)
         let items = [];
         Object.values(this.props.items).forEach(item => {
             items.push(item)

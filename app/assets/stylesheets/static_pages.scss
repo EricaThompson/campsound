@@ -659,6 +659,11 @@ a {
                 height: 168px;
                 border: 1px solid #F1F1F1;
             }
+
+            .add:hover {
+                cursor: pointer;
+                color: #7ea2b5;
+            }
             .home-text, home-text {
                 font-weight: lighter;
                 margin: 6px;
@@ -1019,6 +1024,8 @@ a {
         width: 100%;
     }
 
+    
+
 
     .song-in-playlist {
         display: flex;
@@ -1035,10 +1042,15 @@ a {
             color: white;
             font-weight: lighter;
         }
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .i1{
         background-color: #536976;
+        
     }
     .i2{
         background-color: #4e6271;

@@ -9,18 +9,9 @@ class ShowItems extends React.Component {
             songList: [],
             currentSong: null,
             playerView: false
-            // items: null
         }
     }
 
-    // componentDidMount() {
-    //     this.props.readAllUserItems(71)
-    //         .then(res => this.setState({ items: res }))
-    // }
-
-    // clicker(){
-    //     console.log('clicked')
-    // }
 
     addToItemList(song){
         let copy = this.state.itemList
@@ -29,14 +20,10 @@ class ShowItems extends React.Component {
             this.setState({itemList: copy })
         }
 
-        // let songCopy = this.state.songList
-        // songCopy.push(song.song)
-        // this.setState({songList: songCopy})
     }
 
     playSong(song){
         console.log('playsong()',song)
-        // this.setState({playerView: false})
         this.setState({ currentSong: song, playerView: true })
     }
 
@@ -75,13 +62,9 @@ class ShowItems extends React.Component {
                         <img src={`${item.cover}`} alt="" />
                         <h5 className="home-text top">{item.title}</h5>
                         <h5 className="home-text">{item.artist}</h5>
-                        <h5 onClick={() => this.addToItemList(item)} className="home-text">Add to Playlist</h5>
+                        <h5 onClick={() => this.addToItemList(item)} className="home-text add">Add to Playlist</h5>
                         <h5 className="home-text"><a href={`${item.song}`} download>Download</a></h5>
-                        {/* <h5 className="home-text">Play</h5> */}
-                        {/* <audio className="single-player" controls>
-                            <source src={`${item.song}`} type="audio/mpeg" />
-                            Your browser does not support the audio tag.
-                        </audio> */}
+
                     </div>
         })
         let current = 'current';
@@ -95,9 +78,7 @@ class ShowItems extends React.Component {
                         <div>
                             {idx + 1 + "."}
                         </div>
-                        <div>
-                            {/* {song.song.duration} */}
-                        </div>
+
                         <div
                             className={current} 
                             >
@@ -112,7 +93,6 @@ class ShowItems extends React.Component {
                     </div>
         })
 
-        console.log('player', this.state.currentSong)
         let player = <audio key={this.state.currentSong} onEnded={()=>this.nextSong(this.state.currentSong)} autoPlay={true} id="single-player" controls>
                         <source src={this.state.currentSong} type="audio/mpeg" />
                         Your browser does not support the audio tag.

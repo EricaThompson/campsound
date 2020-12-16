@@ -215,9 +215,9 @@ class ArtistHomepage extends React.Component {
             songs.push(item.song)
         })
 
-        let downloads = songs.map((song) => {
-                            return <a href={`${song}`} download>Click to download</a>
-                        })
+        // let downloads = songs.map((song) => {
+        //                     return <a href={`${song}`} download>Click to download</a>
+        //                 })
 
     
     
@@ -226,7 +226,7 @@ class ArtistHomepage extends React.Component {
             <div className='artist-home'>
                 <br />
                 <br />
-                {downloads}
+                {/* {downloads} */}
                 {component}
                 <br />
                 <br />

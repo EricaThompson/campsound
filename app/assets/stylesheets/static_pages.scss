@@ -760,14 +760,24 @@ a {
                 justify-content: space-between;
                 
                 .save {
-                    // background-color: #0687f5;
-                    background-color: white;
+                    background-color: #0687f5;
+                    // background-color: white;
                     border: 1px solid #2072b8;
                     color: white;                    
                     width: 108px;
                     height: 32px;
                     font-size: 14px;
                     font-weight: bold;
+
+                    .spinner {
+                        font-size: 22px;
+                        margin-top: 2px;
+                    }
+
+                    p {
+                        padding: 0px;
+                        color: white;
+                    }
 
                     &:hover {
                         text-decoration: underline;
@@ -943,6 +953,10 @@ a {
         }
     }
 }
+
+// .dark-text {
+//     color: #0887F4;
+// }
 
 
 

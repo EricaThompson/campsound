@@ -2,7 +2,7 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import ZeroItems from './zero_items';
 import ShowItems from './show_items';
-import MusicPlayer from '../music_player/music_player';
+// import MusicPlayer from '../music_player/music_player';
 
 class ArtistHomepage extends React.Component {
     constructor(props) {
@@ -240,7 +240,7 @@ class ArtistHomepage extends React.Component {
                     </div>   
                 </div>
 
-                <MusicPlayer />
+                {/* <MusicPlayer items={items} /> */}
             </div>
         )
     }

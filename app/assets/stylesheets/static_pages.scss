@@ -432,6 +432,7 @@ a {
     width: 968px;
     margin: 0 auto;
     margin-top: 45px;
+    
 
     
     .sidebar {
@@ -653,28 +654,51 @@ a {
         display: flex;
         width: 975px;
         // margin: 0 auto;
+        flex-wrap: wrap;
 
         .item-display {
-            margin: 0 30px;
-            
+            margin: 0 15px;
+            flex-wrap: wrap;
             display: absolute;
             right: 50px;
-
+            color: rgb(52, 52, 52);
+            
+            font-size: 14px;
             img {
                 width: 168px;
                 height: 168px;
                 border: 1px solid #F1F1F1;
-            
             }
-            .home-title, .home-artist {
-                font-size: 14px;
-                color: rgb(52, 52, 52);
+            .home-text, home-text {
+                font-weight: lighter;
+                margin: 6px;
+                padding: 0px;
             }
 
-            .home-title {
+            .top {
                 font-weight: bolder;
-                margin-bottom: 4px;
+                
             }
+
+            .single-player {
+                width: 168px;
+                background-color: white;
+
+                
+            }
+
+            audio::-webkit-media-controls-panel{
+                // background-color: white;
+                background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
+
+            }
+
+            
+
+            // .home-title, .home-artist {
+            //     // font-size: 14px;
+            // }
+
         }
 
         .home-artist {
@@ -682,9 +706,6 @@ a {
             margin-top: 0;
         }
     }
-
-
-
 }
 
 //*Artist Input Form
@@ -707,13 +728,11 @@ a {
 
         input, textarea {
             border-radius: 2px;
-
             &:focus {
                 background-color: white;
             }
         }
         
-
         .left-side {
             width: 478px;
             padding: 20px;
@@ -722,7 +741,6 @@ a {
             .preview {
                 border-left: 1px solid #0887F4;
                 // box-shadow: -3px 0 3px -3px #0887F4;
-
                 height: 94px;
                 border-top: 1px solid #DBDBDB;
                 border-bottom: 1px solid #DBDBDB;

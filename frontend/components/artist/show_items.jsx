@@ -44,8 +44,7 @@ class ShowItems extends React.Component {
         this.state.itemList.forEach(item => {
             songList.push(item.song)
         })
-        
-        console.log('songList', songList)
+
         let index = songList.indexOf(song)
         let nextIdx = 0;
         if (index + 1 < songList.length){
@@ -55,7 +54,7 @@ class ShowItems extends React.Component {
         this.setState({playerView: false})
         this.playSong(songList[nextIdx])
         
-
+        this.removeSong(this.state.itemList[index])
 
     }
 

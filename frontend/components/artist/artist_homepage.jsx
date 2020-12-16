@@ -216,8 +216,6 @@ class ArtistHomepage extends React.Component {
 
         return (
             <div className='artist-home'>
-            
-                
                 {component}
                 <div className="sidebar">
                     <div className="about">

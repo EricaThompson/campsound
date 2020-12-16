@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {withRouter} from 'react-router';
 
 class ArtistItemForm extends React.Component {
     constructor(props) {
@@ -16,7 +17,10 @@ class ArtistItemForm extends React.Component {
             coverFile: null,
             coverPreviewUrl: null,
             songFile: null,
-            songPreviewUrl: null
+
+            
+            songPreviewUrl: null,
+            spinnerShow: false
         }
     }
 
@@ -25,14 +29,13 @@ class ArtistItemForm extends React.Component {
     // }
 
     handleSubmit(e) {
-        // debugger
-        
+
         e.preventDefault();
+
+        this.setState({spinnerShow: true});
         
         const formData = new FormData();
-        // formData.append('item[song]', this.state.songFile)
-        
-        
+    
         if (this.state.coverFile){
             formData.append('item[cover]', this.state.coverFile)
         } 
@@ -46,23 +49,12 @@ class ArtistItemForm extends React.Component {
         formData.append('item[about]', this.state.about)
         formData.append('item[released]', true)
         formData.append('item[collection_id]', null)
-        // console.log("click2")
+
         this.props.createItem(this.props.currentUserId, formData)
-        // const history = useHistory
+            .then(()=>this.props.history.push(`${this.props.currentUserId}`), ()=>this.setState({spinnerShow: false}))
         
         console.log("item created!")
-        // this.setState({
-        //     locationFlag: false,
-        //     bioFlag: false
-        // })
 
-        // $.ajax({
-        //     url: `/api/users/${this.props.currentUserId}/items`,
-        //     method: 'POST',
-        //     data: formData,
-        //     contentType: false,
-        //     processData: false
-        // })
     }
 
     handleChange(val){
@@ -95,7 +87,7 @@ class ArtistItemForm extends React.Component {
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-            this.setState({ songFile: file, songPreviewUrl: fileReader.result, playerView: true })
+            this.setState({ songFile: file, songPreviewUrl: fileReader.result, playerView: true})
         };
 
         if (file) {
@@ -137,10 +129,30 @@ class ArtistItemForm extends React.Component {
         let component;
         if (this.state.playerView){
             component = <audio controls>
-                            {/* <source src="horse.ogg" type="audio/ogg" /> */}
                             <source src={`${this.state.songPreviewUrl}`} type="audio/mpeg" />
                             Your browser does not support the audio tag.
                         </audio>
+        }
+
+        let spinner = <i className="fas fa-compact-disc fa-spin"></i>
+        let save = <p>Save</p> 
+        let disabler;
+        let link;
+
+        if (this.state.spinnerShow){
+
+            disabler = true
+            link = <div className="spinner">
+                        {spinner}        
+                    </div>
+        } else {
+            spinner = null;
+            disabler = false
+            link = <div>
+                        {/* <Link to={`/${this.props.currentUserId}`}> */}
+                            {save}
+                        {/* </Link> */}
+                    </div>
         }
 
     
@@ -203,15 +215,13 @@ class ArtistItemForm extends React.Component {
                                     // size="1"
                                 >
                                     <optgroup label='Choose Album'>
-                                    <option selected value="">no albums</option>
+                                    <option defaultValue >no albums</option>
                                     </optgroup>
                                 </select>
                             </div>
                             <div className='submit-item-form-buttons'>
-                                <button onClick={this.handleSubmit.bind(this)} type="button" className="save">
-                                    <Link to={`/${this.props.currentUserId}`}>
-                                        Save
-                                    </Link> 
+                                <button disabled={disabler} onClick={this.handleSubmit.bind(this)} type="button" className="save">                                  
+                                    {link}
                                 </button>
                                 <Link to={`/${this.props.currentUser}`}>
                                     <span className="cancel blue">cancel</span>
@@ -318,4 +328,4 @@ class ArtistItemForm extends React.Component {
 
 }
 
-export default ArtistItemForm;
+export default withRouter(ArtistItemForm);

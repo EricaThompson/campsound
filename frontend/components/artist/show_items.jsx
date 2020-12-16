@@ -67,9 +67,7 @@ class ShowItems extends React.Component {
     
 
     render() {
-        // console.log('props', this.props.items.items)
-        // console.log('state', this.state)
-        // console.log('state', this.state.items.items[0])
+
         let itemDisplay = this.props.items.map((item) => {
             return <div key={item.id} className="item-display">
                         <img src={`${item.cover}`} alt="" />
@@ -78,10 +76,10 @@ class ShowItems extends React.Component {
                         <h5 onClick={() => this.addToItemList(item)} className="home-text">Add to Playlist</h5>
                         <h5 className="home-text"><a href={`${item.song}`} download>Download</a></h5>
                         <h5 className="home-text">Play</h5>
-                        <audio className="single-player" controls>
+                        {/* <audio className="single-player" controls>
                             <source src={`${item.song}`} type="audio/mpeg" />
                             Your browser does not support the audio tag.
-                        </audio>
+                        </audio> */}
                     </div>
         })
         let current = 'current';
@@ -97,38 +95,18 @@ class ShowItems extends React.Component {
                     </div>
         })
 
-        //! .onend // shift from top // remove song
-        // console.log('state itemList',this.state.itemList)
-        // console.log('songlist', this.state.currentSong)
-
-        // let songArray = this.state.songList;
-        // let currentSongIndex = 
-        
-        // console.log('songArray.shift', songArray.shift())
-
         console.log('player', this.state.currentSong)
-        let player = <div>
-                        <audio key={this.state.currentSong} onEnded={()=>this.nextSong(this.state.currentSong)} autoPlay={true} id="single-player" controls>
-                            <source src={this.state.currentSong} type="audio/mpeg" />
-                            Your browser does not support the audio tag.
-                        </audio>
-                        {/* <div>next</div> */}
-                    </div>
+        let player = <audio key={this.state.currentSong} onEnded={()=>this.nextSong(this.state.currentSong)} autoPlay={true} id="single-player" controls>
+                        <source src={this.state.currentSong} type="audio/mpeg" />
+                        Your browser does not support the audio tag.
+                    </audio>
+                
                     
-        if (!this.state.playerView){
+        if (!this.state.playerView || Object.values(this.state.itemList).length === 0){
             player = null
 
         } 
 
-
-
-        
-        
-        // this.props.items.map((item) => {
-        //     playlist.push(<div>{item.title}</div>)
-        // })
-
-        // console.log("song",this.state.currentSong)
 
         return (
             <div className="show-items">

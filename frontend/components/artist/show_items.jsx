@@ -21,11 +21,16 @@ class ShowItems extends React.Component {
 
         let itemDisplay = this.props.items.map((item) => {
             return <div className="item-display">
-                        <a href={`${item.song}`} download>
-                            <img src={`${item.cover}`} alt="" />
-                        </a>
+                        <img src={`${item.cover}`} alt="" />
                         <h5 className="home-title">{item.title}</h5>
                         <h5 className="home-artist">{item.artist}</h5>
+                        <h5>Add to Playlist</h5>
+                        <h5><a href={`${item.song}`} download>Download</a></h5>
+                        <h5>Play</h5>
+                        <audio controls>
+                            <source src={`${item.song}`} type="audio/mpeg" />
+                            Your browser does not support the audio tag.
+                        </audio>
                     </div>
         })
         return (

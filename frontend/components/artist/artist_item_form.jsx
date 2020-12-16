@@ -44,6 +44,7 @@ class ArtistItemForm extends React.Component {
         } 
         formData.append('item[owner_id]', this.props.currentUserId)
         formData.append('item[title]', this.state.trackTitle)
+        formData.append('item[artist]', this.state.artistName)
         formData.append('item[genre]', this.state.genre)
         formData.append('item[price]', 'free')
         formData.append('item[about]', this.state.about)

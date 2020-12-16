@@ -1009,15 +1009,63 @@ a {
 //* Music Player
 .music-player {
     width: 100%;
+
+    .playlistTitle {
+        font-weight: lighter;
+        color: #292e49;
+    }
+    
     audio {
         width: 100%;
     }
 
+
     .song-in-playlist {
         display: flex;
+        
         div {
             padding: 7px;
         }
+    }
+
+    .i1,.i2,.i3,.i4,.i5,.i6,.i7,.i8,.i9,.i10 {
+        display: flex;
+        div {
+            padding: 7px;
+            color: white;
+            font-weight: lighter;
+        }
+    }
+
+    .i1{
+        background-color: #536976;
+    }
+    .i2{
+        background-color: #4e6271;
+    }
+    .i3{
+        background-color: #495b6c;
+    }
+    .i4{
+        background-color: #455567;
+    }
+    .i5{
+        background-color: #404e62;
+    }
+    .i6{
+        background-color: #3b485d;
+    }
+    .i7{
+        background-color: #374158;
+    }
+    .i8{
+        background-color: #323b53;
+    }
+    .i9{
+        background-color: #2d344e;
+    }
+    .i10{
+        background-color: #292e49;
     }
 }
 

@@ -24,8 +24,10 @@ class ShowItems extends React.Component {
 
     addToItemList(song){
         let copy = this.state.itemList
-        copy.push(song)
-        this.setState({itemList: copy })
+        if (this.state.itemList.length < 10){
+            copy.push(song)
+            this.setState({itemList: copy })
+        }
 
         // let songCopy = this.state.songList
         // songCopy.push(song.song)
@@ -75,7 +77,7 @@ class ShowItems extends React.Component {
                         <h5 className="home-text">{item.artist}</h5>
                         <h5 onClick={() => this.addToItemList(item)} className="home-text">Add to Playlist</h5>
                         <h5 className="home-text"><a href={`${item.song}`} download>Download</a></h5>
-                        <h5 className="home-text">Play</h5>
+                        {/* <h5 className="home-text">Play</h5> */}
                         {/* <audio className="single-player" controls>
                             <source src={`${item.song}`} type="audio/mpeg" />
                             Your browser does not support the audio tag.
@@ -83,15 +85,30 @@ class ShowItems extends React.Component {
                     </div>
         })
         let current = 'current';
-        let playlist = this.state.itemList.map(song => {
-            return <div key={Math.random()} className="song-in-playlist">
+        // let indices = []
+        let playlist = this.state.itemList.map((song, idx) => {
+            return <div key={Math.random()} className={`i${idx + 1}`}>
+                    {/* {indices.push(idx)} */}
+                    <div onClick={() => this.setState({ playerView: false }, () => this.playSong(song.song))}>
+                            ▶
+                        </div>
+                        <div>
+                            {idx + 1 + "."}
+                        </div>
+                        <div>
+                            {/* {song.song.duration} */}
+                        </div>
                         <div
                             className={current} 
-                            onClick={() => this.setState({ playerView: false }, () => this.playSong(song.song))}>
-                                {song.title}
-                                
+                            >
+                            {song.title} by {song.artist}
                         </div>
-                <div onClick={() => this.removeSong(song)}>✘</div>
+                        <div>
+                            
+                        </div>
+                        <div onClick={() => this.removeSong(song)}>
+                            ✘
+                        </div>
                     </div>
         })
 
@@ -104,8 +121,11 @@ class ShowItems extends React.Component {
                     
         if (!this.state.playerView || Object.values(this.state.itemList).length === 0){
             player = null
-
         } 
+        let playerTitle;
+        if (Object.values(this.state.itemList).length > 0){
+            playerTitle = <div className="playlistTitle">playlist</div>
+        }
 
 
         return (
@@ -115,6 +135,7 @@ class ShowItems extends React.Component {
                     {/* {itemDisplay} */}
                     {/* Music Player */}
                     <br />
+                    {playerTitle}
                     {player}
                     {playlist}
                 </div>

@@ -17,8 +17,15 @@ class Search extends React.Component {
         $.ajax({
             url: `/api/items?${genre}`
         }).then(res => this.setState({result: res}))
-
     }
+
+    browseAll(){
+        this.showDropdown()
+        $.ajax({
+            url: `/api/items`
+        }).then(res => this.setState({ result: res }))
+    }
+
 
     showDropdown(){
         this.setState({dropdownHidden: !this.state.dropdownHidden})
@@ -43,7 +50,7 @@ class Search extends React.Component {
                         <div onClick={()=>this.genreSearch('punk')} className="punk">punk<span className="caret">&#62;</span></div>
                         <div onClick={()=>this.genreSearch('pop')} className="pop">pop<span className="caret">&#62;</span></div>
                         <div onClick={()=>this.genreSearch('ambient')} className="ambient">ambient<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.genreSearch('browse')} className="browse">browse all<span className="caret">&#62;</span></div>
+                        <div onClick={()=>this.browseAll()} className="browse">browse all<span className="caret">&#62;</span></div>
                     </div>
         return (
             <div className="search-bar">

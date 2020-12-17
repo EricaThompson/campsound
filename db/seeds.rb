@@ -7,9 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Item.destroy_all
 # puts 'all destroyed'
 user = User.create(username: 'Demo User', password: 'Password')
 # user.user_img.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/images/tape.png"), filename: "tape.png")
+puts "All Items Destroyed!"
 puts "User created!"
 
 

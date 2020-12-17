@@ -56,7 +56,7 @@ class ShowItems extends React.Component {
     
 
     render() {
-        console.log("props items",)
+        console.log("props items",this.props.items)
         let itemDisplay = this.props.items.map((item) => {
             return <div key={item.id} className="item-display">
                         <img src={`${item.cover}`} alt="" />

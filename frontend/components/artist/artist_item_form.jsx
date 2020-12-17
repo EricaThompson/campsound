@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {withRouter} from 'react-router';
+import {withRouter } from 'react-router';
+import {useHistory} from 'react-router-dom';
 
 class ArtistItemForm extends React.Component {
     constructor(props) {
@@ -17,11 +18,10 @@ class ArtistItemForm extends React.Component {
             coverFile: null,
             coverPreviewUrl: null,
             songFile: null,
-
-            
             songPreviewUrl: null,
             spinnerShow: false
         }
+        
     }
 
     // consoleClick(){
@@ -44,7 +44,7 @@ class ArtistItemForm extends React.Component {
         } 
         formData.append('item[owner_id]', this.props.currentUserId)
         formData.append('item[title]', this.state.trackTitle)
-        formData.append('item[artist]', this.state.artistName)
+        formData.append('item[artist_name]', this.state.artistName)
         formData.append('item[genre]', this.state.genre)
         formData.append('item[price]', 'free')
         formData.append('item[about]', this.state.about)
@@ -52,8 +52,10 @@ class ArtistItemForm extends React.Component {
         formData.append('item[collection_id]', null)
 
         this.props.createItem(this.props.currentUserId, formData)
-            .then(()=>this.setState({spinnerShow: false}))
+            .then(()=>this.props.history.replace(`/${this.props.currentUserId}`), ()=>this.setState({spinnerShow: false}))
         
+        console.log("item created!")
+
     }
 
     handleChange(val){
@@ -104,6 +106,7 @@ class ArtistItemForm extends React.Component {
     // }
 
     render(){
+        console.log("state", this.state)
 
         let trackTitle;
         if (this.state.trackTitle == ''){

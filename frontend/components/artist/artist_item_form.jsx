@@ -52,10 +52,8 @@ class ArtistItemForm extends React.Component {
         formData.append('item[collection_id]', null)
 
         this.props.createItem(this.props.currentUserId, formData)
-            .then(()=>this.props.history.push(`${this.props.currentUserId}`), ()=>this.setState({spinnerShow: false}))
+            .then(()=>this.setState({spinnerShow: false}))
         
-        console.log("item created!")
-
     }
 
     handleChange(val){
@@ -106,7 +104,6 @@ class ArtistItemForm extends React.Component {
     // }
 
     render(){
-        console.log("state", this.state)
 
         let trackTitle;
         if (this.state.trackTitle == ''){

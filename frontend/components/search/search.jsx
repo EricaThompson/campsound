@@ -11,6 +11,11 @@ class Search extends React.Component {
         this.hideDropdown = this.hideDropdown.bind(this)
     }
 
+    // genreSearch(genre){
+    //     $.ajax({
+    //         url: `/api/items?${genre}`
+    //     })
+    // }
 
     showDropdown(){
         this.setState({dropdownHidden: !this.state.dropdownHidden})
@@ -24,10 +29,6 @@ class Search extends React.Component {
 
 
     render() {
-
-        // if (!this.state.dropdownHidden){
-        //     window.addEventListener('click', this.hideDropdown);
-        // }
         
         let dropdown = <div className="dropdown">
                         <Link to={"/search/electronic"}><div onClick={()=>this.showDropdown()} className="electronic"><span>electronic</span><span className="caret">&#62;</span></div></Link>

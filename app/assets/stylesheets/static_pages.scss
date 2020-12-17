@@ -64,6 +64,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    background-image: linear-gradient(to top, #6f757f, 35%, white);
 }
 
 .container {
@@ -680,6 +681,7 @@ a {
     margin: 0 auto;
     background-color: #F7F7F7;
     border-top: 1px solid #eee;
+    height: 1400px;
 
     .blue {
         color: #0887F4;

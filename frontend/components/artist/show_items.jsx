@@ -56,7 +56,7 @@ class ShowItems extends React.Component {
     
 
     render() {
-
+        console.log("props items",)
         let itemDisplay = this.props.items.map((item) => {
             return <div key={item.id} className="item-display">
                         <img src={`${item.cover}`} alt="" />
@@ -68,7 +68,7 @@ class ShowItems extends React.Component {
                     </div>
         })
         let current = 'current';
-        // let indices = []
+        
         let playlist = this.state.itemList.map((song, idx) => {
             return <div key={Math.random()} className={`i${idx + 1}`}>
                     {/* {indices.push(idx)} */}

@@ -24,13 +24,11 @@ class Api::ItemsController < ApplicationController
     end
     
     def index
-        debugger
+        # debugger
         if params[:user_id]
             # active record
             @items = Item.where(owner_id: params[:user_id])
-        elsif !request.query_string.blank?
-            req = request.query_string
-            @items = Item.where("genre ~ ?", req)
+        
             # @items = Item.where(genre: params[:genre])
         else
             @items = Item.all

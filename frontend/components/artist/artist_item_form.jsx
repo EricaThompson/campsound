@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {withRouter } from 'react-router';
 import {useHistory} from 'react-router-dom';
 
+
 class ArtistItemForm extends React.Component {
     constructor(props) {
         super(props);

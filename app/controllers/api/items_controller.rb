@@ -30,7 +30,8 @@ class Api::ItemsController < ApplicationController
             @items = Item.where(owner_id: params[:user_id])
         elsif !request.query_string.blank?
             @items = Item.where('genre ~ ?', request.query_string)
-            # @items = Item.where(genre: params[:genre])
+        # elsif !request.query_string['genre']
+        #     @items = Item.where('genre ~ ?', request.query_string.value)
         else
             @items = Item.all
         end

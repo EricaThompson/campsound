@@ -5,17 +5,20 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            dropdownHidden: true
+            dropdownHidden: true,
+            result: null
         }
 
         this.hideDropdown = this.hideDropdown.bind(this)
     }
 
-    // genreSearch(genre){
-    //     $.ajax({
-    //         url: `/api/items?${genre}`
-    //     })
-    // }
+    genreSearch(genre){
+        this.showDropdown()
+        $.ajax({
+            url: `/api/items?${genre}`
+        }).then(res => this.setState({result: res}))
+
+    }
 
     showDropdown(){
         this.setState({dropdownHidden: !this.state.dropdownHidden})
@@ -29,18 +32,18 @@ class Search extends React.Component {
 
 
     render() {
-        
+        console.log('result?', this.state.result)
         let dropdown = <div className="dropdown">
-                        <Link to={"/search/electronic"}><div onClick={()=>this.showDropdown()} className="electronic"><span>electronic</span><span className="caret">&#62;</span></div></Link>
-                        <div onClick={()=>this.showDropdown()} className="metal">metal<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.showDropdown()} className="rock">rock<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.showDropdown()} className="alt">alternative<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.showDropdown()} className="hip-hop">hip-hop/rap<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.showDropdown()} className="exp">experimental<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.showDropdown()} className="punk">punk<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.showDropdown()} className="pop">pop<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.showDropdown()} className="ambient">ambient<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.showDropdown()} className="browse">browse all<span className="caret">&#62;</span></div>
+            <div onClick={() => this.genreSearch('electronic')} className="electronic"><span>electronic</span><span className="caret">&#62;</span></div>
+                        <div onClick={()=>this.genreSearch('metal')} className="metal">metal<span className="caret">&#62;</span></div>
+                        <div onClick={()=>this.genreSearch('rock')} className="rock">rock<span className="caret">&#62;</span></div>
+                        <div onClick={()=>this.genreSearch('alt')} className="alt">alternative<span className="caret">&#62;</span></div>
+                        <div onClick={()=>this.genreSearch('hip-hop')} className="hip-hop">hip-hop/rap<span className="caret">&#62;</span></div>
+                        <div onClick={()=>this.genreSearch('exp')} className="exp">experimental<span className="caret">&#62;</span></div>
+                        <div onClick={()=>this.genreSearch('punk')} className="punk">punk<span className="caret">&#62;</span></div>
+                        <div onClick={()=>this.genreSearch('pop')} className="pop">pop<span className="caret">&#62;</span></div>
+                        <div onClick={()=>this.genreSearch('ambient')} className="ambient">ambient<span className="caret">&#62;</span></div>
+                        <div onClick={()=>this.genreSearch('browse')} className="browse">browse all<span className="caret">&#62;</span></div>
                     </div>
         return (
             <div className="search-bar">

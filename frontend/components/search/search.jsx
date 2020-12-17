@@ -5,32 +5,31 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            dropdown: true
+            dropdownHidden: true
         }
+
+        this.hideDropdown = this.hideDropdown.bind(this)
     }
 
 
     showDropdown(){
-        this.setState({dropdown: !this.state.dropdown})
+        this.setState({dropdownHidden: !this.state.dropdownHidden})
     }
 
     hideDropdown(){
-        this.setState({dropdown: true})
+        // e.stopPropagation();
+        this.setState({dropdownHidden: true})
     }
 
 
 
     render() {
 
-        // if (!this.state.dropdown){
-        //     window.addEventListener('click', this.hideDropdown());
+        // if (!this.state.dropdownHidden){
+        //     window.addEventListener('click', this.hideDropdown);
         // }
         
-
-
-    
-    
-    let dropdown = <div className="dropdown">
+        let dropdown = <div className="dropdown">
                         <Link to={"/search/electronic"}><div onClick={()=>this.showDropdown()} className="electronic"><span>electronic</span><span className="caret">&#62;</span></div></Link>
                         <div onClick={()=>this.showDropdown()} className="metal">metal<span className="caret">&#62;</span></div>
                         <div onClick={()=>this.showDropdown()} className="rock">rock<span className="caret">&#62;</span></div>
@@ -51,7 +50,7 @@ class Search extends React.Component {
                     />
                     <i className="fas fa-search"></i>
                 </div>
-                <div hidden={this.state.dropdown}>{dropdown}</div>
+                <div hidden={this.state.dropdownHidden}>{dropdown}</div>
             </div>
         )
     }

@@ -23,7 +23,6 @@ class ShowItems extends React.Component {
     }
 
     playSong(song){
-        console.log('playsong()',song)
         this.setState({ currentSong: song, playerView: true })
     }
 
@@ -56,7 +55,6 @@ class ShowItems extends React.Component {
     
 
     render() {
-        console.log("props items",this.props.items)
         let itemDisplay = this.props.items.map((item) => {
             return <div key={item.id} className="item-display">
                         <img src={`${item.cover}`} alt="" />
@@ -71,7 +69,6 @@ class ShowItems extends React.Component {
         
         let playlist = this.state.itemList.map((song, idx) => {
             return <div key={Math.random()} className={`i${idx + 1}`}>
-                    {/* {indices.push(idx)} */}
                     <div onClick={() => this.setState({ playerView: false }, () => this.playSong(song.song))}>
                             ▶
                         </div>

@@ -23,7 +23,7 @@ class Search extends React.Component {
         this.showDropdown()
         this.props.genreSearch(genre)
             .then(() => this.props.history.replace(`/search/${genre}`))
-        // .then(res => this.setState({results: res}), console.log(this.state.results))
+        // .then(res => this.setState({results: res}))
 
     }
 
@@ -39,7 +39,6 @@ class Search extends React.Component {
         //         window.alert('key pressed')
         // }
 
-        console.log('clicked')
         
         if (this.state.typedSearch.length > 0){
             this.props.anySearch(this.state.typedSearch)
@@ -47,9 +46,6 @@ class Search extends React.Component {
         } 
         this.showDropdown()
 
-        // $.ajax({
-        //     url: `/api/items?any=${this.state.typedSearch}`
-        // }).then(res => this.setState({ results: res }))
     }
 
     handleChange(){
@@ -64,15 +60,13 @@ class Search extends React.Component {
     }
 
     hideDropdown(){
-        // e.stopPropagation();
         this.setState({dropdownHidden: true})
     }
 
 
 
     render() {
-        // console.log('result?', this.state.results)
-        // console.log('typedSearch', this.state.typedSearch)
+
         let dropdown = <div className="dropdown">
             <div onClick={() => this.genreSearch('electronic')} className="electronic"><span>electronic</span><span className="caret">&#62;</span></div>
                         <div onClick={()=>this.genreSearch('metal')} className="metal">metal<span className="caret">&#62;</span></div>
@@ -88,7 +82,6 @@ class Search extends React.Component {
 
 
         let component = null;
-        // console.log('state items',this.props.items)
         // if (this.props.items){
         //     component = <Results 
         //                     // results={this.props.items}

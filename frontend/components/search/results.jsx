@@ -15,9 +15,6 @@ class Results extends React.Component {
     render() {
         let searchTitle;
         let arrayOfResults = [];
-        // let noResults = ''
-
-        // if (this.props.params)
         
         Object.values(this.props.items).forEach(result => {
             arrayOfResults.push(result)
@@ -25,7 +22,6 @@ class Results extends React.Component {
 
         
         
-        console.log('arrayofresults', arrayOfResults)
         let results = arrayOfResults.map(result=> {
             if (result.genre === 'rock' || 
                 result.genre === 'electronic' || 
@@ -50,15 +46,11 @@ class Results extends React.Component {
                             <h5 className="home-text top">{result.title}</h5>
                             <h5 className="home-text">{result.artist}</h5>
                             <h5 
-                                // onClick={() => this.addToresultList(result)} 
                                 className="home-text add">Add to Playlist
                             </h5>
                             <h5 className="home-text"><a href={`${result.song}`} download>Download</a></h5>
                             <h5 className="home-text">Listen</h5>
-                            {/* <audio className="single-player" controls>
-                                <source src={`${result.song}`} type="audio/mpeg" />
-                                Your browser does not support the audio tag.
-                            </audio> */}
+                        
                         </div>
 
                     </div>

@@ -25,10 +25,6 @@ class ArtistItemForm extends React.Component {
         
     }
 
-    // consoleClick(){
-    //     console.log("clicked!")
-    // }
-
     handleSubmit(e) {
 
         e.preventDefault();
@@ -55,7 +51,6 @@ class ArtistItemForm extends React.Component {
         this.props.createItem(this.props.currentUserId, formData)
             .then(()=>this.props.history.replace(`/${this.props.currentUserId}`), ()=>this.setState({spinnerShow: false}))
         
-        console.log("item created!")
 
     }
 
@@ -107,7 +102,7 @@ class ArtistItemForm extends React.Component {
     // }
 
     render(){
-        console.log("state", this.state)
+    
 
         let trackTitle;
         if (this.state.trackTitle == ''){

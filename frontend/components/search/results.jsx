@@ -8,23 +8,32 @@ class Results extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            dropdownHidden: true,
-            results: this.props.items,
-            typedSearch: ''
+            searchTitle: '',
         }
     }
 
 
     render() {
-        console.log('results comp props', this.props.items)
+        let searchTitle;
+
+
+
 
         let arrayOfResults = []
         
         Object.values(this.props.items).forEach(result => {
             arrayOfResults.push(result)
         })
+        console.log('arrayofresults', arrayOfResults)
 
         let results = arrayOfResults.map(result=> {
+            if (result.genre === 'rock' || result.genre === 'electronic' || result.genre === 'metal'){
+                searchTitle = result.genre
+            } else if (Object.values(this.props.items).length > 0){
+                searchTitle = 'all results'
+            } else {
+                searchTitle = 'no results, add one..'
+            }
             return <div key={result.id} className="result-parent">
                         <div key={result.id} className="result-display">
                             <img src={`${result.cover}`} alt="" />
@@ -42,8 +51,12 @@ class Results extends React.Component {
 
         return (
             <div className="results">
+                <br />
+                <br />
+                <div className="search-title">{searchTitle}</div>
+                <br />
+                <br />
                 {results}
-                {/* Results.. */}
             </div>
         )
     }

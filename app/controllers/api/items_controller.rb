@@ -15,6 +15,7 @@ class Api::ItemsController < ApplicationController
 
     def show
         @item = Item.find(params[:id])
+        
         if @item
             render :show
         else
@@ -26,6 +27,9 @@ class Api::ItemsController < ApplicationController
         if params[:user_id]
             # active record
             @items = Item.where(owner_id: params[:user_id])
+        elsif !request.query_string.blank?
+            @items = Item.where(genre: "LIKE request.query_string" )
+            # @items = Item.where(genre: params[:genre])
         else
             @items = Item.all
         end

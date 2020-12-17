@@ -57,13 +57,6 @@ class NavBar extends React.Component {
             <div className="nav-bar">
                 <div className="nav-top">
                 <Link to="/"><h1 className='logo'>🏕 campsound</h1></Link>
-                    <div>
-                        <input 
-                            placeholder="Search and discover music" 
-                            type="text" 
-                        />
-                        <i className="fas fa-search"></i>
-                    </div>
                 </div>
                 <div className='nav-bar-links'>
                     <div className="nav-bottom">

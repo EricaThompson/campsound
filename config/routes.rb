@@ -1,6 +1,7 @@
 # == Route Map
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
+#          api_search_index GET    /api/search(.:format)                                                                    api/search#index {:format=>:json}
 #                 api_items GET    /api/items(.:format)                                                                     api/items#index {:format=>:json}
 #            api_user_items GET    /api/users/:user_id/items(.:format)                                                      api/items#index {:format=>:json}
 #                           POST   /api/users/:user_id/items(.:format)                                                      api/items#create {:format=>:json}
@@ -26,7 +27,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   namespace :api, defaults: { format: :json } do
-    resources :items, only: [:index] 
+    resources :search, only: [:index]
+    resources :items, only: [:index]
     resources :users, only: [:create, :index, :show, :update] do 
       resources :items, only: [:index, :create, :show, :update, :destroy]
     end

@@ -129,36 +129,7 @@ textarea:focus, input:focus{
     display: flex;
     justify-content: space-between;
     
-    input {
-        background-color: #F3F3F3;
-        border: none;
-        border-radius: 3px;
-        margin-right: 16px;
-        width: 255px;
-        padding-left: 15px;
-        font-size: 14px;
-        color: #333;
-
-    }
     
-    input:focus{
-        outline: none;
-        border: none;
-    }
-
-    ::placeholder {
-        color: #7c7c7c;
-        font-size: 14px;
-        // padding: 5px;
-    }
-
-    .fa-search {
-        position: absolute; 
-        top: 31px;
-        right: 90px;
-        color: #888888;
-        font-size: 14px;
-    }
 }
 
 .nav-bottom {
@@ -1079,6 +1050,116 @@ a {
     .i10{
         background-color: #292e49;
     }
+}
+
+//* Search
+.search-bar {
+
+    position: absolute; 
+    // top: 5px;
+    right: 40px;
+    z-index: 1;
+
+    input {
+        background-color: #F3F3F3;
+        border: none;
+        border-radius: 3px;
+        margin-right: 16px;
+        width: 260px;
+        padding: 15px;
+        font-size: 14px;
+        color: #333;
+
+    }
+    
+    input:focus{
+        outline: none;
+        border: none;
+    }
+
+    ::placeholder {
+        color: #7c7c7c;
+        font-size: 14px;
+        // padding: 5px;
+    }
+
+    .fa-search {
+        position: absolute; 
+        top: 38px;
+        right: 30px;
+        color: #888888;
+        font-size: 14px;
+    }
+
+    .caret {
+        font-weight: bold;
+        // font-size: 20px;
+    }
+    .dropdown{
+        // display: none;
+        // z-index: 1;
+        div {
+            width: 253px;
+            display: flex;
+            justify-content: space-between;
+            // height: 50px;
+            padding: 18px;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+
+        }
+        
+        .fa-greater-than {
+            font-weight: lighter;
+        }
+
+        .electronic {
+            background-color: #F7A663
+        }
+
+        .metal {
+            background-color: #F57356
+        }
+
+        .rock {
+            background-color: #DF2635
+        }
+
+        .alt {
+            background-color: #D4356D;
+        }
+
+        .hip-hop {
+            background-color: #C13EA2
+        }
+
+        .exp {
+            background-color: #9C62C0
+        }
+
+        .punk {
+            background-color: #8172B1
+        }
+
+        .pop {
+            background-color: #8690CB
+        }
+
+        .ambient {
+            background-color: #88A8C5
+        }
+
+        .browse {
+            background-color: #333333
+        }
+    }
+
+    .show {
+        display: block;
+    }
+
 }
 
 

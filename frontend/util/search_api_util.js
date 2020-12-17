@@ -14,7 +14,7 @@ export const browseAll = () => (
 
 export const anySearch = (term) => (
     $.ajax({
-        url: `/api/items?${term}`,
+        url: `/api/items?any=${term}`,
         method: 'GET'
     })
 )

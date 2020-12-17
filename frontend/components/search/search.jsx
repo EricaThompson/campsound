@@ -15,6 +15,8 @@ class Search extends React.Component {
         }
 
         this.hideDropdown = this.hideDropdown.bind(this)
+        this.showDropdown = this.showDropdown.bind(this)
+        this.typedSearch = this.typedSearch.bind(this)
     }
 
     genreSearch(genre){
@@ -32,10 +34,22 @@ class Search extends React.Component {
     }
 
     typedSearch(){
-        // this.showDropdown()
-        $.ajax({
-            url: `/api/items?${this.state.typedSearch}`
-        }).then(res => this.setState({ results: res }))
+        // if (e){
+
+        //         window.alert('key pressed')
+        // }
+
+        console.log('clicked')
+        
+        if (this.state.typedSearch.length > 0){
+            this.props.anySearch(this.state.typedSearch)
+            .then(() => this.props.history.replace(`/search/${this.state.typedSearch}`))
+        } 
+        this.showDropdown()
+
+        // $.ajax({
+        //     url: `/api/items?any=${this.state.typedSearch}`
+        // }).then(res => this.setState({ results: res }))
     }
 
     handleChange(){
@@ -88,13 +102,14 @@ class Search extends React.Component {
             <div className="search-bar">
                 <div onClick={()=>this.showDropdown()}>
                     <input
-                        // onKeyDown={this.typedSearch}
+                        // onKeyDown={()=>this.typedSearch()}
+                        // onClick={this.typedSearch}
                         onChange={this.handleChange()}
                         placeholder="Search and discover music"
                         type="text"
                     />
                     <i 
-                        // onClick={()=>this.typedSearch()} 
+                        onClick={this.typedSearch} 
                         className="fas fa-search">
                     </i>
                 </div>

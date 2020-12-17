@@ -6,7 +6,8 @@ class Search extends React.Component {
         super(props);
         this.state = {
             dropdownHidden: true,
-            result: null
+            result: null,
+            typedSearch: ''
         }
 
         this.hideDropdown = this.hideDropdown.bind(this)
@@ -26,6 +27,22 @@ class Search extends React.Component {
         }).then(res => this.setState({ result: res }))
     }
 
+    typedSearch(){
+        // this.showDropdown()
+        console.log("e",event)
+        if (event.key == 'Enter'){
+            $.ajax({
+                url: `/api/items?${this.state.typedSearch}`
+            }).then(res => this.setState({ result: res }))
+        }
+    }
+
+    handleChange(){
+        return e => {
+            this.setState({typedSearch: e.currentTarget.value})
+        }
+    }
+
 
     showDropdown(){
         this.setState({dropdownHidden: !this.state.dropdownHidden})
@@ -39,7 +56,8 @@ class Search extends React.Component {
 
 
     render() {
-        console.log('result?', this.state.result)
+        // console.log('result?', this.state.result)
+        // console.log('typedSearch', this.state.typedSearch)
         let dropdown = <div className="dropdown">
             <div onClick={() => this.genreSearch('electronic')} className="electronic"><span>electronic</span><span className="caret">&#62;</span></div>
                         <div onClick={()=>this.genreSearch('metal')} className="metal">metal<span className="caret">&#62;</span></div>
@@ -52,14 +70,18 @@ class Search extends React.Component {
                         <div onClick={()=>this.genreSearch('ambient')} className="ambient">ambient<span className="caret">&#62;</span></div>
                         <div onClick={()=>this.browseAll()} className="browse">browse all<span className="caret">&#62;</span></div>
                     </div>
+
+        
         return (
             <div className="search-bar">
                 <div onClick={()=>this.showDropdown()}>
                     <input
+                        onKeyDown={this.typedSearch}
+                        onChange={this.handleChange()}
                         placeholder="Search and discover music"
                         type="text"
                     />
-                    <i className="fas fa-search"></i>
+                    <i onClick={()=>this.typedSearch()} className="fas fa-search"></i>
                 </div>
                 <div hidden={this.state.dropdownHidden}>{dropdown}</div>
             </div>

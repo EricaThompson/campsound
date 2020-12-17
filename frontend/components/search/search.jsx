@@ -19,17 +19,16 @@ class Search extends React.Component {
 
     genreSearch(genre){
         this.showDropdown()
-        $.ajax({
-            // url: `/api/items?genre=${genre}`
-            url: `/api/items?${genre}`
-        }).then(res => this.setState({ results: res })).then(() => this.props.history.replace(`/search/${genre}`))
+        this.props.genreSearch(genre)
+            .then(() => this.props.history.replace(`/search/${genre}`))
+        // .then(res => this.setState({results: res}), console.log(this.state.results))
+
     }
 
     browseAll(){
         this.showDropdown()
-        $.ajax({
-            url: `/api/items`
-        }).then(res => this.setState({ results: res }))
+        this.props.browseAll()
+            .then(() => this.props.history.replace(`/search/browse-all`))
     }
 
     typedSearch(){
@@ -58,7 +57,7 @@ class Search extends React.Component {
 
 
     render() {
-        console.log('result?', this.state.results)
+        // console.log('result?', this.state.results)
         // console.log('typedSearch', this.state.typedSearch)
         let dropdown = <div className="dropdown">
             <div onClick={() => this.genreSearch('electronic')} className="electronic"><span>electronic</span><span className="caret">&#62;</span></div>
@@ -74,13 +73,15 @@ class Search extends React.Component {
                     </div>
 
 
-        let component;
-
-        if (this.state.results){
-            component = <Results results={this.state.results}/>
-        } else {
-            component = null;
-        }
+        let component = null;
+        // console.log('state items',this.props.items)
+        // if (this.props.items){
+        //     component = <Results 
+        //                     // results={this.props.items}
+        //                 />
+        // } else {
+        //     component = null;
+        // }
 
         
         return (

@@ -1,4 +1,5 @@
 import * as ItemAPIUtil from '../util/items_api_util';
+import * as SearchAPIUtil from '../util/search_api_util';
 
 export const READ_ITEM = 'READ_ITEM';
 export const READ_ALL_ITEMS = 'READ_ALL_ITEMS';
@@ -30,6 +31,21 @@ const deleteMusicItem = (itemId) => ({
     type: DELETE_ITEM,
     itemId
 })
+
+export const genreSearch = (genre) => dispatch => {
+    return SearchAPIUtil.genreSearch(genre)
+        .then(res => dispatch(readAllMusicItems(res)))
+}
+
+export const browseAll = () => dispatch => {
+    return SearchAPIUtil.browseAll()
+        .then(res => dispatch(readAllMusicItems(res)))
+}
+
+export const anySearch = (term) => dispatch => {
+    return SearchAPIUtil.anySearch(term)
+        .then(res => dispatch(readAllMusicItems(res)))
+}
 
 export const readItem = (userId, itemId) => dispatch => {
     return ItemAPIUtil.readItem(userId, itemId)

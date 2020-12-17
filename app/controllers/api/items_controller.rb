@@ -28,16 +28,18 @@ class Api::ItemsController < ApplicationController
         if params[:user_id]
             # active record
             @items = Item.where(owner_id: params[:user_id])
-        elsif !request.query_string.blank?
-            @items = Item.where('genre ~ ?', request.query_string)
-        # elsif !request.query_string['genre']
-        #     @items = Item.where('genre ~ ?', request.query_string.value)
+        elsif params['genre']
+            @items = Item.where('genre ~ ?', params['genre'])
+            #sql
+        # elsif !request.query_string.blank?
+        #     @items = Item.where(' ~ ?', request.query_string)
         else
             @items = Item.all
         end
         
         render :index
     end
+    
 
     def edit
         @item = Item.find(params[:id])

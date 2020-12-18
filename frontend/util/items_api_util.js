@@ -15,6 +15,7 @@ export const readItem = (userId, itemId) => (
     })
 )
 
+
 export const readAllUserItems = (userId) => (
     $.ajax({
         url: `/api/users/${userId}/items`,

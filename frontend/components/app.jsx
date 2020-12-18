@@ -5,8 +5,10 @@ import ArtistHomepageContainer from './artist/artist_homepage_container';
 import ArtistItemContainer from './artist/artist_item_form_container';
 import SearchContainer from './search/search_container';
 import ResultsContainer from './search/results_container';
+import HomeContainer from './home/home_container';
 import { ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
+// import Home from './home/home';
 
 class App extends React.Component {
     constructor(props){
@@ -23,6 +25,7 @@ class App extends React.Component {
                     <Modal />
                     <Route path="/" component={SearchContainer}/>
                     <Route key={Math.random()} path="/" component={NavBarContainer} />
+                    <Route exact path="/" component={HomeContainer} />
                     <Route path="/search/:result" component={ResultsContainer} />
                     <Route exact path="/:userId" component={ArtistHomepageContainer} />
                     <Route exact path="/:userId/new" component={ArtistItemContainer} />

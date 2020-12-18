@@ -125,7 +125,7 @@ class ArtistItemForm extends React.Component {
 
         let component;
         if (this.state.playerView){
-            component = <audio controls>
+            component = <audio className="song-preview" controls>
                             <source src={`${this.state.songPreviewUrl}`} type="audio/mpeg" />
                             Your browser does not support the audio tag.
                         </audio>
@@ -152,7 +152,14 @@ class ArtistItemForm extends React.Component {
                     </div>
         }
 
-    
+        let helper = null;
+        
+        let white;
+
+        if (this.state.coverPreviewUrl){
+             white = { color: 'white' }
+        } 
+
 
         return (
             <div className="artist-input-form">
@@ -194,9 +201,7 @@ class ArtistItemForm extends React.Component {
                                 </span>
                             </div>
                             <div className="pro">
-                                Uploading a lot of audio? 
-                                <span className="blue">Campsound Pro</span> 
-                                features batch album upload, private streaming, and more. 
+                                Uploading a lot of audio? <span className="blue">Campsound Pro</span> features batch album upload, private streaming, and more. 
                                 <span hidden>Get details...</span>
                             </div>
                             <div className="album-info">
@@ -250,10 +255,10 @@ class ArtistItemForm extends React.Component {
                                 <br />
                                 <br />
                                 <br />
-                                <span className="upload">Upload Album Art</span> 
+                                <span style={white} className="upload">Upload Album Art</span> 
                                 <br/>
                                 <br />
-                                <div className="helper"> 1400 x 1400 pixels minimum
+                                <div style={white} className="helper"> 1400 x 1400 pixels minimum
                                     (bigger is better)
                                     <br />
                                     <br />

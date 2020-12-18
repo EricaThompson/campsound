@@ -43,6 +43,10 @@ table {
 	border-spacing: 0;
 }
 
+audio:focus {
+    outline: none;
+}
+
 p {
     padding: 0;
     margin: 0;
@@ -791,6 +795,7 @@ a {
                 color: #808080;
                 font-size: 11px;
                 font-weight: bolder;
+                
             }
 
             .add-audio {
@@ -798,6 +803,16 @@ a {
                 margin-right: 20px;
                 margin-bottom: 20px;
 
+            }
+            div {
+                
+                #add-audio{
+                    position: absolute;
+                    left: 170px;
+                    top: 310px;
+                    z-index: 1;
+                    opacity: 0;
+                }
             }
 
             .helper {
@@ -825,6 +840,7 @@ a {
             .submit-item-form-buttons {
                 display: flex;
                 justify-content: space-between;
+                margin-top: 90px;
                 
                 .save {
                     background-color: #0687f5;
@@ -934,6 +950,8 @@ a {
                 border-bottom: 1px dotted #D9D9D9;
                 padding-bottom: 28px;
                 display: relative;
+
+
                 
                 
                 img {
@@ -947,11 +965,17 @@ a {
                 }
                 .song-art{
                     position: relative;
-                    border: 1px dashed gray;
+                    // border: 1px dashed gray;
                     text-align: center;
                     font-size: 18px;
                     width: 212px;
                     height: 200px;
+
+                    // #add-track-image{
+                    //     position: absolute;
+                    //     top: 400px;
+                    //     background-color: red;
+                    // }
     
                     .upload {
                         color: #0887F4;

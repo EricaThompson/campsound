@@ -58,13 +58,15 @@ class NavBar extends React.Component {
                     </div>
                         <br />
                         </Link>
-                        {/* <Link
+                        <Link
                             to={`/${this.props.user.id}/new`}>
-                            <div
-                                onClick={() => setTimeout(() => location.reload(), 200)}>
-                                edit profile
-                            </div>
-                        </Link> */}
+                            <p>
+                                <div
+                                    onClick={() => setTimeout(() => location.reload(), 200)}>
+                                    add new song
+                                </div>  
+                            </p>
+                        </Link>
                             <Link
                                 to={`/`}>
                                 <p>

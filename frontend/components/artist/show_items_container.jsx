@@ -18,7 +18,7 @@ const mapStateToProps = state => ({
     currentUserId: state.session.currentUser,
     user: state.users[state.session.currentUser],
     currentItemId: state.items.currentItemId,
-    item: state.items[state.items.currentItemId]
+    items: state.items
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -29,7 +29,7 @@ const mapDispatchToProps = dispatch => ({
     readItem: (userId, itemId) => dispatch(readItem(userId, itemId)),
     createItem: (userId, item) => dispatch(createItem(userId, item)),
     updateItem: (userId, item) => dispatch(updateItem(userId, item)),
-    deleteItem: (userId, itemId) => dispatch(deleteItem(userId, itemId)),
+    deleteItem: (itemId) => dispatch(deleteItem(itemId)),
     updateUser: (user, id) => dispatch(updateUser(user, id))
 });
 

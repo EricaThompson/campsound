@@ -811,10 +811,14 @@ a {
                 
                 #add-audio{
                     position: absolute;
-                    left: 170px;
-                    top: 310px;
+                    left: 60px;
+                    top: 410px;
                     z-index: 1;
                     opacity: 0;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
             }
 

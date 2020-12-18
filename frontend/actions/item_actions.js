@@ -79,7 +79,7 @@ export const updateItem = (userId, item) => dispatch => {
         .then(res => dispatch(readMusicItem(res)))
 }
 
-export const deleteItem = (itemId) => dispatch => {
-    return ItemAPIUtil.deleteItem(itemId)
+export const deleteItem = (userId, itemId) => dispatch => {
+    return ItemAPIUtil.deleteItem(userId, itemId)
         .then(res => dispatch(deleteMusicItem(res)))
 }

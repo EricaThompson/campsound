@@ -6,6 +6,7 @@ import ArtistItemContainer from './artist/artist_item_form_container';
 import SearchContainer from './search/search_container';
 import ResultsContainer from './search/results_container';
 import HomeContainer from './home/home_container';
+// import ShowItemsContainer from './artist/show_items_container';
 import { ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
 // import Home from './home/home';
@@ -32,7 +33,9 @@ class App extends React.Component {
                     <Route exact path="/" component={HomeContainer} />
                     <Route path="/search/:result" component={ResultsContainer} />
                     <Route exact path="/:userId" component={ArtistHomepageContainer} />
+                    {/* <Route exact path="/:userId" component={ShowItemsContainer} /> */}
                     <Route exact path="/:userId/new" component={ArtistItemContainer} />
+                    
                 </div>
             </div>
         )

@@ -12,6 +12,12 @@ class ShowItems extends React.Component {
         }
     }
 
+    deleteSong(song){
+        this.removeSong(song)
+        this.props.deleteItem(this.props.currentUserId,song.id)
+            .then(location.reload())
+    }
+
 
     addToItemList(song){
         let copy = this.state.itemList
@@ -23,6 +29,7 @@ class ShowItems extends React.Component {
     }
 
     playSong(song){
+        console.log('playsong()',song)
         this.setState({ currentSong: song, playerView: true })
     }
 
@@ -55,6 +62,7 @@ class ShowItems extends React.Component {
     
 
     render() {
+        console.log("props items",this.props.items)
         let itemDisplay = this.props.items.map((item) => {
             return <div key={item.id} className="item-display">
                         <img src={`${item.cover}`} alt="" />
@@ -62,6 +70,7 @@ class ShowItems extends React.Component {
                         <h5 className="home-text">{item.artist}</h5>
                         <h5 onClick={() => this.addToItemList(item)} className="home-text add">Add to Playlist</h5>
                         <h5 className="home-text"><a href={`${item.song}`} download>Download</a></h5>
+                        <h5 onClick={()=>this.deleteSong(item)}>Delete</h5>
 
                     </div>
         })
@@ -69,6 +78,7 @@ class ShowItems extends React.Component {
         
         let playlist = this.state.itemList.map((song, idx) => {
             return <div key={Math.random()} className={`i${idx + 1}`}>
+                    {/* {indices.push(idx)} */}
                     <div onClick={() => this.setState({ playerView: false }, () => this.playSong(song.song))}>
                             ▶
                         </div>

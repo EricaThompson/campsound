@@ -10,7 +10,12 @@ class Results extends React.Component {
         super(props);
         this.state = {
             searchTitle: '',
+            audioPlayer: false
         }
+    }
+
+    toggleAudioPlayer(){
+        this.setState({audioPlayer: !this.state.audioPlayer})
     }
 
     render() {
@@ -20,6 +25,8 @@ class Results extends React.Component {
         Object.values(this.props.items).forEach(result => {
             arrayOfResults.push(result)
         })
+
+        // let player = 
 
         
         
@@ -50,8 +57,11 @@ class Results extends React.Component {
                                 className="home-text add">Add to Playlist
                             </h5>
                             <h5 className="home-text"><a href={`${result.song}`} download>Download</a></h5>
-                            <h5 className="home-text">Listen</h5>
-                        
+                            {/* <h5 onClick={()=>this.toggleAudioPlayer()} className="home-text">Listen</h5> */}
+                            <audio key={result.id} id="results-single-player" controls>
+                                <source src={result.song} type="audio/mpeg" />
+                                Your browser does not support the audio tag.
+                            </audio>
                         </div>
 
                     </div>

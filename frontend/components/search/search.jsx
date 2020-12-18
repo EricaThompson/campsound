@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import { useHistory } from 'react-router-dom';
-import Results from './results';
+// import Results from './results';
 
 
 class Search extends React.Component {
@@ -63,16 +63,16 @@ class Search extends React.Component {
     render() {
 
         let dropdown = <div className="dropdown">
-            <div onClick={() => this.genreSearch('electronic')} className="electronic"><span>electronic</span><span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.genreSearch('metal')} className="metal">metal<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.genreSearch('rock')} className="rock">rock<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.genreSearch('alternative')} className="alt">alternative<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.genreSearch('hip-hop')} className="hip-hop">hip-hop/rap<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.genreSearch('expermimental')} className="exp">experimental<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.genreSearch('punk')} className="punk">punk<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.genreSearch('pop')} className="pop">pop<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.genreSearch('ambient')} className="ambient">ambient<span className="caret">&#62;</span></div>
-                        <div onClick={()=>this.browseAll()} className="browse">browse all<span className="caret">&#62;</span></div>
+            <div onClick={() => this.genreSearch('electronic')} className="electronic"><span>electronic</span><span className="caret"><i class="fas fa-chevron-right"></i></span></div>
+                        <div onClick={()=>this.genreSearch('metal')} className="metal">metal<span className="caret"><i class="fas fa-chevron-right"></i></span></div>
+                        <div onClick={()=>this.genreSearch('rock')} className="rock">rock<span className="caret"><i class="fas fa-chevron-right"></i></span></div>
+                        <div onClick={()=>this.genreSearch('alternative')} className="alt">alternative<span className="caret"><i class="fas fa-chevron-right"></i></span></div>
+                        <div onClick={()=>this.genreSearch('hip-hop')} className="hip-hop">hip-hop/rap<span className="caret"><i class="fas fa-chevron-right"></i></span></div>
+                        <div onClick={()=>this.genreSearch('expermimental')} className="exp">experimental<span className="caret"><i class="fas fa-chevron-right"></i></span></div>
+                        <div onClick={()=>this.genreSearch('punk')} className="punk">punk<span className="caret"><i class="fas fa-chevron-right"></i></span></div>
+                        <div onClick={()=>this.genreSearch('pop')} className="pop">pop<span className="caret"><i class="fas fa-chevron-right"></i></span></div>
+                        <div onClick={()=>this.genreSearch('ambient')} className="ambient">ambient<span className="caret"><i class="fas fa-chevron-right"></i></span></div>
+                        <div onClick={()=>this.browseAll()} className="browse">browse all<span className="caret"><i class="fas fa-chevron-right"></i></span></div>
                     </div>
 
 

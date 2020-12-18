@@ -67,10 +67,10 @@ class ShowItems extends React.Component {
             return <div key={item.id} className="item-display">
                         <img src={`${item.cover}`} alt="" />
                         <h5 className="home-text top">{item.title}</h5>
-                        <h5 className="home-text">{item.artist}</h5>
+                        <h5 className="home-text artist">{item.artist}</h5>
                         <h5 onClick={() => this.addToItemList(item)} className="home-text add">Add to Playlist</h5>
                         <h5 className="home-text"><a href={`${item.song}`} download>Download</a></h5>
-                        <h5 onClick={()=>this.deleteSong(item)}>Delete</h5>
+                <h5 className="home-text delete" onClick={()=>this.deleteSong(item)}>Delete</h5>
 
                     </div>
         })

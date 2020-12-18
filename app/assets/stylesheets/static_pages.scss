@@ -677,15 +677,23 @@ a {
                 cursor: pointer;
                 color: #7ea2b5;
             }
-            .home-text, home-text {
+            .home-text {
                 font-weight: lighter;
                 margin: 6px;
                 padding: 0px;
+                
+            }
+            .delete:hover {
+                color: rgb(170, 0, 0);
+                cursor: pointer;
+            }
+            .artist {
+                cursor: default;
             }
 
             .top {
                 font-weight: bolder;
-                
+                cursor: default;
             }
 
             .single-player {
@@ -1372,11 +1380,13 @@ a {
                 cursor: pointer;
                 color: #7ea2b5;
             }
-            .home-text, home-text {
+            .home-text {
                 font-weight: lighter;
                 margin: 6px;
                 padding: 0px;
             }
+
+            
         
             .top {
                 font-weight: bolder;

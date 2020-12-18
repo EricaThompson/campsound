@@ -1155,43 +1155,74 @@ a {
         }
 
         .electronic {
-            background-color: #F7A663
+            background-color: #F7A663;
+            
+            &:hover {
+                background-color:#F8B37B;
+            }
         }
 
         .metal {
-            background-color: #F57356
+            background-color: #F57356;
+            &:hover {
+                background-color:#F78A71;
+            }
         }
 
         .rock {
-            background-color: #DF2635
+            background-color: #DF2635;
+            &:hover {
+                background-color:#E64D55;
+            }
         }
 
         .alt {
             background-color: #D4356D;
+            &:hover {
+                background-color:#DB5683;
+            }
         }
 
         .hip-hop {
-            background-color: #C13EA2
+            background-color: #C13EA2;
+            &:hover {
+                background-color:#CB5CB0;
+            }
         }
 
         .exp {
-            background-color: #9C62C0
+            background-color: #9C62C0;
+            &:hover {
+                background-color:#AB7ACA;
+            }
         }
 
         .punk {
-            background-color: #8172B1
+            background-color: #8172B1;
+            &:hover {
+                background-color:#9487BD;
+            }
         }
 
         .pop {
-            background-color: #8690CB
+            background-color: #8690CB;
+            &:hover {
+                background-color:#99A0D3;
+            }
         }
 
         .ambient {
-            background-color: #88A8C5
+            background-color: #88A8C5;
+            &:hover {
+                background-color:#99A0D3;
+            }
         }
 
         .browse {
-            background-color: #333333
+            background-color: #333333;
+            &:hover {
+                background-color:#525252;
+            }
         }
     }
 

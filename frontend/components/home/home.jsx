@@ -6,9 +6,9 @@ class Home extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.browseAll()
-    }
+    // componentDidMount() {
+    //     this.props.browseAll()
+    // }
 
     render() {
     

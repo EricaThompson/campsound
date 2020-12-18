@@ -23,7 +23,6 @@ class Search extends React.Component {
         this.showDropdown()
         this.props.genreSearch(genre)
             .then(() => this.props.history.replace(`/search/${genre}`))
-
     }
 
     browseAll(){
@@ -31,7 +30,6 @@ class Search extends React.Component {
         this.props.browseAll()
             .then(() => this.props.history.replace(`/search/browse-all`))
     }
-
     typedSearch(){
         // if (e){
 
@@ -44,7 +42,6 @@ class Search extends React.Component {
             .then(() => this.props.history.replace(`/search/${this.state.typedSearch}`))
         } 
         this.showDropdown()
-
     }
 
     handleChange(){
@@ -52,7 +49,6 @@ class Search extends React.Component {
             this.setState({typedSearch: e.currentTarget.value})
         }
     }
-
 
     showDropdown(){
         this.setState({dropdownHidden: !this.state.dropdownHidden})
@@ -94,8 +90,6 @@ class Search extends React.Component {
             <div className="search-bar">
                 <div onClick={()=>this.showDropdown()}>
                     <input
-                        // onKeyDown={()=>this.typedSearch()}
-                        // onClick={this.typedSearch}
                         onChange={this.handleChange()}
                         placeholder="Search and discover music"
                         type="text"

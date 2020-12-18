@@ -5,13 +5,19 @@ class NavBar extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            img: ''
+            img: '',
+            authDropdown: false
         }
         this.logoutRefresh = this.logoutRefresh.bind(this)
     }
 
     logoutRefresh(){
         this.props.logout()
+        this.setState({authDropdown: false})
+    }
+
+    toggleDropdown(){
+        this.setState({authDropdown: !this.state.authDropdown})
     }
 
     render(){
@@ -21,37 +27,64 @@ class NavBar extends React.Component {
         let authNav = null;
 
         if (this.props.user){
-            avatar = <Link to="/"> 
+            avatar = 
                         <div 
-                            onClick={() => this.logoutRefresh()} 
+                            onClick={() => this.toggleDropdown()} 
                             className="avatar">
                                 <img 
                                     className="avatar" 
                                     src={this.props.user.userImg} 
                                 />
                         </div> 
-                    </Link>
-            authNav = <div>
-                        <Link 
-                            to={`/${this.props.user.id}`}>
-                                <div 
-                                    onClick={()=>setTimeout(()=>location.reload(), 200)}>
-                                    artist page
-                                </div>
+                    
+            authNav = <div className="auth-nav">
+                        <Link to={`/${this.props.user.id}`}>
+                    <div onClick={()=>this.toggleDropdown()}>
+                        
+                        <p>{this.props.user.username}
+                            <img
+                                className="avatar"
+                                src={this.props.user.userImg}
+                            />
+                        </p>
+
+                        <p>
+                                {/* className="view-site" */}
+                                {/* onClick={()=>setTimeout(()=>location.reload(), 200)}> */}
+                                view site
+
+                        </p>
+
+                    </div>
+                        <br />
                         </Link>
-                        <Link
+                        {/* <Link
                             to={`/${this.props.user.id}/new`}>
                             <div
                                 onClick={() => setTimeout(() => location.reload(), 200)}>
-                                add new song
+                                edit profile
                             </div>
-                        </Link>
+                        </Link> */}
+                            <Link
+                                to={`/`}>
+                                <p>
+                                <div
+                                    onClick={() => this.logoutRefresh()}>
+                                    logout
+                                </div>
+                                </p>
+                            </Link>
+
                     </div>
                         
         } else {
             auth = <p onClick={() => this.props.openModal('login')}>log in</p> 
             signup = 'sign up'
             avatar = ''
+        }
+
+        if (!this.state.authDropdown){
+            authNav = null;
         }
     return (
             <div className="nav-bar">

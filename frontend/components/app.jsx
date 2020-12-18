@@ -25,12 +25,14 @@ class App extends React.Component {
                     <Modal />
                     <Route path="/" component={SearchContainer}/>
                     <Route key={Math.random()} path="/" component={NavBarContainer} />
+                    {/* <Route exact path="/" /> */}
+                    {/* <img id="main-story" src={require('../../app/assets/images/pexels.jpg')} alt="main story image" /> */}
+                {/* </div> */}
+               
                     <Route exact path="/" component={HomeContainer} />
                     <Route path="/search/:result" component={ResultsContainer} />
                     <Route exact path="/:userId" component={ArtistHomepageContainer} />
                     <Route exact path="/:userId/new" component={ArtistItemContainer} />
-                    {/* <Route exact path="/" /> */}
-                    {/* <img id="main-story" src={require('../../app/assets/images/pexels.jpg')} alt="main story image" /> */}
                 </div>
             </div>
         )

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import { useHistory } from 'react-router-dom';
+import MusicPlayer from '../music_player/music_player';
 
 
 class Results extends React.Component {
@@ -68,7 +69,7 @@ class Results extends React.Component {
                 <br />
                 <br />
                 {results}
-                
+                {/* <MusicPlayer /> */}
             </div>
         )
     }

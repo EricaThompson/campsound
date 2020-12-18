@@ -245,7 +245,7 @@ class ArtistItemForm extends React.Component {
                                 artist:
                             </div>
                             <br />
-                            <input className="artist-item-input" placeholder="leave blank to use artist name" type="text" onChange={this.handleChange('artistName')} />
+                            <input className="artist-item-input" placeholder="leave blank to use username" type="text" onChange={this.handleChange('artistName')} />
                             <br/>
                             <div className="input-helper under"> for compilations, labels, etc.</div>
                         </div>

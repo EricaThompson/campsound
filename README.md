@@ -28,4 +28,6 @@ Search feature:
 Challenges:
 * The search was challenging as it was my first time implimenting one. It was a great journey to learn more about SQL which was used to filter the backend results to the user.
 
-
+## Future Directions
+* Add a payment feature where artists can set a price for a download or give their fans the ability to name their price.
+* Add item pages for songs and albums to display lyrics and copyrights.

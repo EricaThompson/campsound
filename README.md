@@ -8,6 +8,7 @@ A live link to the site hosted on Heroku is here: https://campsound.herokuapp.co
 ## Technologies
 
 ## Feature Highlight No. 1
+![screenshot of artist page](https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-22+at+10.55.11+PM.png)
 The artist page encapilates most of the most important technical features included in this site including: 
 * Linking to forms that enable users to upload their song with searchable genre, artist name which will default to their username, an about for each song as well as album art. On this form, the user is also able to preview any songs before uploading to be sure of the correct file being uploaded. This page also includes a live preview area of all of the information input by the user.
 * Conditionally if the user has music uploaded and released or not, the entire page will render and index of all of their released audio files or a welcome to upload, respectively.
@@ -18,6 +19,7 @@ Challenges:
 
 
 ## Feature Highlight No. 2
+![screenshot of search featue](https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-22+at+10.46.05+PM.png)
 Search feature:
 * The search feature, a pixel and color perfect clone of the search feature on bandcamp.com allows the user to quickly search by predetermined genres.
 * Users are also able to type a search for artist names and title names of released audio.

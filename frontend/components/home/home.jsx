@@ -63,9 +63,9 @@ class Home extends React.Component {
 
                 <div className="footer">
                     <div className="links">
-                        <a href=""><i class="fab fa-github"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fas fa-at"></i></a>
+                        <a href=""><i className="fab fa-github"></i></a>
+                        <a href=""><i className="fab fa-twitter"></i></a>
+                        <a href=""><i className="fas fa-at"></i></a>
                         <p>ericathompson.io</p>
                     </div>
                 </div>

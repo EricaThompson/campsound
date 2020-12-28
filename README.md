@@ -71,7 +71,6 @@ if (this.state.spinnerShow){
 Artist Collection Index: I added a music player to their index page so that fans will be able to create their own experiences with each artist's released audio.
 ```
 playSong(song){
-    console.log('playsong()',song)
     this.setState({ currentSong: song, playerView: true })
 }
 

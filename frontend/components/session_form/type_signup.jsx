@@ -23,7 +23,7 @@ class TypeSignup extends React.Component {
                                 keep a wishlist, get instant streaming of your 
                                 purchases, showcase your collection, and explore 
                                 the music of like-minded fans
-                            <a className="type-link" href=""> learn more</a>
+                            <a className="type-link" onClick={() => this.props.openModal('signup')}> learn more</a>
                             </p>
                         </div>
                     </div>
@@ -44,7 +44,7 @@ class TypeSignup extends React.Component {
                                 Easy access to your customers’ data,
                                 real-time stats, music chart reporting,
                                 and more.
-                            <a className="type-link" href=""> learn more</a>
+                            <a className="type-link" onClick={() => this.props.openModal('signup')}> learn more</a>
                             </p>
                         </div>
                     </div>
@@ -64,7 +64,7 @@ class TypeSignup extends React.Component {
                                 artists, a single fulfillment interface for 
                                 all your merch, direct payments on a per-release 
                                 basis, and a whole lot more.
-                            <a className="type-link" href=""> learn more</a>
+                            <a className="type-link" onClick={() => this.props.openModal('signup')}> learn more</a>
                             </p>
                         </div>
                     </div>

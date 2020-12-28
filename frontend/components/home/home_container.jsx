@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Home from './home';
+import { openModal } from '../../actions/modal_actions';
 
 import {browseAll} from '../../actions/item_actions';
 
@@ -15,7 +16,8 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = dispatch => ({
-    browseAll: () => dispatch(browseAll())
+    browseAll: () => dispatch(browseAll()),
+    openModal: (modal) => dispatch(openModal(modal)),
 
 });
 

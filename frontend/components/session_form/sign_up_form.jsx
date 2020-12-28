@@ -39,6 +39,8 @@ class SignUpForm extends React.Component {
                     {/* <input type="text" defaultValue='Add to db?'/> */}
                     < br/>
                     < br />
+                    < br />
+                    < br />
                     <label className="session-label">Username</label>
                     <input
                         className="center"  

@@ -5,19 +5,75 @@ class TypeSignup extends React.Component {
         return (
             <div className="session-form-box">
                 <h3 className="title">Sign up for a Campsound account</h3>
-                <p className="session-helper type">
-                    Sell directly to your fans with total
-                    control over your music and pricing.
-                    Easy access to your customers’ data,
-                    real-time stats, music chart reporting,
-                    and more. 
-                    <a className="type-link" href=""> learn more</a>
-                </p>
-                <p
-                    className="type-button" 
-                    onClick={()=>this.props.openModal('signup')}>
-                    Sign up as an artist
-                </p>
+                
+                <div className="choices">
+                    <div className="fan">
+                        <div className="art">
+                            <div className="circle"></div>
+                            <img className="headphones" src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-17+at+8.57.07+PM.png" alt="headphones" />
+                        </div>
+                        <div className="info">
+                            <p
+                                className="session-type-button"
+                                onClick={() => this.props.openModal('signup')}>
+                                Sign up as a fan
+                        </p>
+                            <p className="session-helper">
+                                Follow your favorite artists, 
+                                keep a wishlist, get instant streaming of your 
+                                purchases, showcase your collection, and explore 
+                                the music of like-minded fans
+                            <a className="type-link" href=""> learn more</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='artist'>
+                        <div className="art">
+                            <div className="circle"></div>
+                            <img className="mic" src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-17+at+9.03.10+PM.png" alt="microphone" />
+                        </div>
+                        <div className="info">
+                            <p
+                                className="session-type-button"
+                                onClick={() => this.props.openModal('signup')}>
+                                Sign up as an artist
+                        </p>
+                            <p className="session-helper">
+                                Sell directly to your fans with total
+                                control over your music and pricing.
+                                Easy access to your customers’ data,
+                                real-time stats, music chart reporting,
+                                and more.
+                            <a className="type-link" href=""> learn more</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="label">
+                        <div className="art">
+                            <div className="circle"></div>
+                            <img className="gramophone" src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-17+at+9.15.00+PM.png" alt="gramophone" />
+                        </div>
+                        <div className="info">
+                            <p
+                                className="session-type-button"
+                                onClick={() => this.props.openModal('signup')}>
+                                Sign up as a label
+                        </p>
+                            <p className="session-helper">
+                                Unified accounting and stats across all your 
+                                artists, a single fulfillment interface for 
+                                all your merch, direct payments on a per-release 
+                                basis, and a whole lot more.
+                            <a className="type-link" href=""> learn more</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+                
+                
             </div>
         );
     }

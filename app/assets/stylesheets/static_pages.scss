@@ -272,15 +272,161 @@ p {
 .session-form-box {
     // outline: 1px solid black;
     padding: 20px;
-    background: #f3f3f3;
+    // background: #f3f3f3;
+    background: white;
     position: relative;
     border-radius: 5px;
     width: 400px;
     min-height: 400px;
+    height: 590px;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    // display: flex;
+    // justify-content: center;
 
+    // .session-title {
+    //     background-color: #F5F5F5;
+    // }
+
+    .choices {
+        height: 140px;
+        color: #808285;
+        line-height: 16px;
+        font-size: 12px;
+        
+        
+        .artist, .label, .fan {
+            display: flex;
+            position: relative;
+            padding-bottom: 25px;
+            margin-top: 30px;
+            border-bottom: 1px solid #CCCCCC;
+
+            .art {
+                float: left;
+                position: relative;
+                .mic {
+                    position: absolute;
+                    width: 80px;
+                    left: 13px;
+                    top: 13px;
+                    bottom: 10px;
+                    transform: rotate(30deg);
+                }
+
+                .circle {
+                    position: absolute;
+                    bottom: 7px;
+                    z-index: 3;
+                    background-color: #F1FAE7;
+                    opacity: .7;
+                    width: 105px;
+                    height: 105px;
+                    // padding: 10px;
+                    border-radius: 55%;
+                }
+            }
+
+            .session-type-button {
+                color: #9CB67C;
+                border: 1px solid #9CB67C;
+                border-radius: 4px;
+                font-weight: 500;
+                width: 220px;
+                padding-top: 10px;
+                text-align: center;
+                margin-left: 10px;
+            }
+
+            .info {
+                // right: 44px;
+                width: 261px;
+                margin-left: 120px;
+                
+            
+            }
+
+            .session-helper {
+                text-align: left;
+            }
+
+            a {
+                color: #9CB67C;
+                // font-weight: bolder;
+            }
+            
+            
+
+
+
+        }
+
+        // .art::before, .headphones::before, .gramophone::before {
+        //     position: absolute;
+        //     z-index: 3;
+        //     background-color: black;
+        //     width: 105px;
+        //     height: 105px;
+        //     padding: 10px;
+        //     border-radius: 55%;
+
+        // }
+
+        .fan {
+            .art {
+                position: relative;
+                .headphones {
+                    position: absolute;
+                    left: 18px;
+                    top: 27px;
+                    width: 70px;
+                    transform: rotate(-30deg);
+                }
+
+                .circle { 
+                    background-color: #EDF7FA;
+                }
+            }
+
+            .session-type-button {
+                color: #5CB8D4;
+                border-color: #5CB8D4;
+            }
+
+            a {
+                color: #5CB8D4;
+            }
+            
+        }
+
+        .label {
+            border-bottom: none;
+            .art {
+                position: relative;
+                .gramophone {
+                    position: absolute;
+                    width: 65px;
+                    left: 20px;
+                    top: 30px;
+                }
+
+                .circle {
+                    background-color: #F9F2FF;          
+                }
+            }
+
+            .session-type-button {
+                color: #8B6BB2;
+                border-color: #8B6BB2;
+            }
+            
+            a {
+                color: #8B6BB2;
+            }
+            
+        }
+    }
 }
 
 .title {
@@ -380,16 +526,7 @@ a {
     color: #6E943B;
 }
 
-.type-button {
-    color: #6E943C;
-    border: 1px solid #6E943C;
-    border-radius: 5px;;
-    font-weight: 500;
-    width: 95%;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    text-align: center;
-}
+
 
 .type-button:hover {
     cursor: pointer;
@@ -1528,7 +1665,14 @@ a {
             margin: 0 80px;
 
             .headphones {
-                padding-right: 10px;
+                
+                position: absolute;
+                right: 77px;
+                // display: none;
+            }
+
+            .headphones-copy {
+                margin-top: 115px;
             }
 
             .mic {

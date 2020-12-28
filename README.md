@@ -6,6 +6,10 @@ CampSound, a Bandcamp clone, is a music/camp sound distribution service connecti
 A live link to the site hosted on Heroku is here: https://campsound.herokuapp.com/#/
 
 ## Technologies
+This fullstack single-page application was created with Ruby on Rails, React, Redux, Node.js, SQL, Active Record, Active Storage, AWS, AJAX, JSX, Jbuilder, CSS3 and JSX.
+
+## Instructions
+To run this application, after cloning the repository fun `npm install` in the root directory to add the node dependencies. In one terminal run `npm start`, with Ruby on Rails installed, run `rails server` in another terminal, navigate to `localhost:3000` in your web browser.
 
 ## Feature Highlight No. 1
 ![screenshot of artist page](https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-22+at+10.55.11+PM.png)

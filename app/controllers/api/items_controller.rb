@@ -29,9 +29,9 @@ class Api::ItemsController < ApplicationController
             # active record
             @items = Item.where(owner_id: params[:user_id])
         elsif params['genre']
-            @items = Item.where('genre ~ ?', lower(params['genre']))
+            @items = Item.where('genre ~ ?', params['genre'])
         elsif params['any']
-            @items = Item.where('artist_name ~ ?', lower(params['any'])).or(Item.where('title ~ ?', lower(params['any'])))
+            @items = Item.where('artist_name ~ ?', params['any']).or(Item.where('title ~ ?', params['any']))
         #     @items = Item.where('title ~ ?', params['any'] 'or artist_name ~ ?', params['any'])
         # elsif !request.query_string.blank?
         #     @items = Item.where(' ~ ?', request.query_string)

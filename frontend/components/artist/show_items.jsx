@@ -29,7 +29,6 @@ class ShowItems extends React.Component {
     }
 
     playSong(song){
-        console.log('playsong()',song)
         this.setState({ currentSong: song, playerView: true })
     }
 
@@ -62,7 +61,6 @@ class ShowItems extends React.Component {
     
 
     render() {
-        console.log("props items",this.props.items)
         let itemDisplay = this.props.items.map((item) => {
             return <div key={item.id} className="item-display">
                         <img src={`${item.cover}`} alt="" />

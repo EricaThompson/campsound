@@ -5,6 +5,7 @@ class TypeSignup extends React.Component {
         return (
             <div className="session-form-box">
                 <h3 className="title">Sign up for a Campsound account</h3>
+                {/* <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-17+at+9.03.10+PM.png" alt=""/> */}
                 <p className="session-helper type">
                     Sell directly to your fans with total
                     control over your music and pricing.

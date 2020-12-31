@@ -20,7 +20,9 @@ class ArtistItemForm extends React.Component {
             coverPreviewUrl: null,
             songFile: null,
             songPreviewUrl: null,
-            spinnerShow: false
+            spinnerShow: false,
+            songError: '',
+            coverError: ''
         }
         
     }
@@ -29,7 +31,7 @@ class ArtistItemForm extends React.Component {
 
         e.preventDefault();
 
-        this.setState({spinnerShow: true});
+        this.setState({spinnerShow: true, coverError: '', songError: ''});
         
         const formData = new FormData();
     
@@ -39,6 +41,7 @@ class ArtistItemForm extends React.Component {
         if (this.state.songFile) {
             formData.append('item[song]', this.state.songFile)
         } 
+
         formData.append('item[owner_id]', this.props.currentUserId)
         formData.append('item[title]', this.state.trackTitle)
         formData.append('item[artist_name]', this.state.artistName)
@@ -48,10 +51,20 @@ class ArtistItemForm extends React.Component {
         formData.append('item[released]', true)
         formData.append('item[collection_id]', null)
 
-        this.props.createItem(this.props.currentUserId, formData)
-            .then(()=>this.props.history.replace(`/${this.props.currentUserId}`), ()=>this.setState({spinnerShow: false}))
-        
+        if (this.state.songFile && this.state.coverFile){
+            this.props.createItem(this.props.currentUserId, formData)
+                .then(() => this.props.history.replace(`/${this.props.currentUserId}`), () => this.setState({ spinnerShow: false }))
+        } 
 
+        if (!this.state.songFile) {
+            // console.log("song file is required")
+            this.setState({ songError: "song file is required", spinnerShow: false })
+        }
+
+        if (!this.state.coverFile){
+            // console.log('album art is required!')
+            this.setState({ coverError: "album art is required", spinnerShow: false })
+        }
     }
 
     handleChange(val){
@@ -72,6 +85,7 @@ class ArtistItemForm extends React.Component {
 
         if (file){
             fileReader.readAsDataURL(file);
+            this.setState({coverError: ''})
         };
     };
 
@@ -84,11 +98,16 @@ class ArtistItemForm extends React.Component {
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-            this.setState({ songFile: file, songPreviewUrl: fileReader.result, playerView: true})
+            this.setState({ 
+                songFile: file, 
+                songPreviewUrl: fileReader.result, 
+                playerView: true
+            })
         };
 
         if (file) {
             fileReader.readAsDataURL(file);
+            this.setState({ songError: '' })
         }
     }
 
@@ -110,6 +129,8 @@ class ArtistItemForm extends React.Component {
         } else {
             trackTitle = this.state.trackTitle
         }
+
+
 
         // let priceFormat;
         // // let numbers = '12345677890'
@@ -148,16 +169,17 @@ class ArtistItemForm extends React.Component {
             link = <div>
                         {/* <Link to={`/${this.props.currentUserId}`}> */}
                             {save}
+
                         {/* </Link> */}
                     </div>
         }
 
-        let helper = null;
+        // let helper = null;
         
         let white;
 
         if (this.state.coverPreviewUrl){
-             white = { color: 'white' }
+            white = { color: 'white' }
         } 
 
 
@@ -229,6 +251,11 @@ class ArtistItemForm extends React.Component {
                                     <span className="cancel blue">cancel</span>
                                 </Link>
                             </div>
+                            <h4>
+                                {this.state.songError}
+                                <br />
+                                {this.state.coverError}
+                            </h4>
                         </div>
                     </div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Item extends React.Component {
     constructor(props) {
@@ -69,8 +69,8 @@ class Item extends React.Component {
     // }
 
     render() {
-        console.log('prop item', this.props.items.length)
-        console.log('state item', this.state.item.title)
+        // console.log('prop item', this.props.items.length)
+        console.log('json response', this.props)
 
         // let values = Object.keys(this.props.items).map(function(e){
         //     return this.props.items[e]
@@ -127,28 +127,73 @@ class Item extends React.Component {
         //     playerTitle = <div className="playlistTitle">playlist</div>
         // }
 
-        console.log('props', this.props.items)
+        // console.log('props', this.props.items)
+        // let date = new Date(parseInt(this.state.item.created_at, 16) * 1000)
+        // let month = date.getMonth()
+        // // console.log(this.state.item.created_at)
+        // switch (month) {
+        //     case 0:
+        //         month = "Jan"
+        //         break;
+        //     case 1:
+        //         month = "Feb"
+        //         break;
+        //     case 2:
+        //         month = "Mar"
+        //         break;
+        //     case 3:
+        //         month = "Apr"
+        //         break;
+        //     case 4:
+        //         month = "May"
+        //         break;
+        //     case 5:
+        //         month = "Jun"
+        //         break;
+        //     case 6:
+        //         month = "Jul"
+        //         break;
+        //     case 7:
+        //         month = "Aug"
+        //         break;
+        //     case 8:
+        //         month = "Sep"
+        //         break;
+        //     case 9:
+        //         month = "Oct"
+        //         break;
+        //     case 10:
+        //         month = "Nov"
+        //         break;
+        //     case 11:
+        //         month = "Dec"
+        //         break;
+
+        //     default:
+        //         break;
+        // }
         return (
             <div className="item-container">
-                <div className='item-info'>
+                <div className='about-item'>
                     <h1>{this.state.item.title}</h1>
-                    <p>by {this.state.item.artist_name}</p>
+                    <p className='artist'>by <Link to={`/${this.state.item.owner_id}`}>{this.state.item.artist_name}</Link></p>
                     <button>Delete</button>
+                    <br />
                     <audio id="item-player" controls>
                         <source src={this.state.item.song} type="audio/mpeg" />
                         Your browser does not support the audio tag.
                     </audio>
-                    <h3>Digital Track</h3>
-                    <h4>Streaming + Download</h4>
-                    <p>Includes unlimited streaming via the free Bandcamp app, plus high-
+                    <h3 className="digital">Digital Track</h3>
+                    <h4 className='availability'>Streaming + Download</h4>
+                    <p className="inclusion">Includes unlimited streaming via the free Bandcamp app, plus high-
                         <br />
                         quality download in MP3, FLAC and more.
                     </p>
-                    <a href={`${this.state.item.song}`} download>Buy Digital Track {this.state.item.price}</a>
-                    <p>released ..</p>
-                    <p>© all rights reserved</p>
+                    <a className="download" href={`${this.state.item.song}`} download>Download Digital Track </a><span className="price">{this.state.item.price}</span>
+                    <p className="release-date" >released {this.state.item.date}</p>
+                    <p className="copyright" >© all rights reserved</p>
                 </div>
-                <img src={this.state.item.cover} alt=""/>                
+                {/* <img src={this.state.item.cover} alt=""/>                 */}
             </div>
         )
     }

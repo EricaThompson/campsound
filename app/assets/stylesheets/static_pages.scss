@@ -1786,5 +1786,87 @@ a {
     }
 }
 
+.item-container {
+    background-color: white;
+    // color: hotpink;
+    width: 978px;
+    margin: 37px auto;
+    padding: 29px;
+    padding-top: 19px;
+
+    .about-item {
+        color: #363636;
+        h1 {
+            font-size: 28px;
+            font-weight: lighter;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 0;
+        }
+        .artist {
+            font-weight: lighter;
+        }
+        p {
+            padding-left: 0;
+        }
+
+        button {
+            background-color: #FFFFE0;
+            color: #0887F4;
+            border: none;
+            border: 1px solid#C0C0C0;
+            padding: 3px 10px;
+            font-size: 12px;
+            margin-bottom: 24px;
+
+        }
+
+        .digital {
+            font-size: 14px;
+        }
+
+        .availability {
+            font-size: 12px;
+            color: #888888;
+            font-weight: lighter;
+            margin-top: -8px;
+        }
+
+        .inclusion {
+            font-weight: lighter;
+            // color: #363636;
+            font-size: 12px;
+            margin-top: -15px;
+        }
+        
+        a {
+            color:#0887F4;
+            font-weight: bolder;
+            font-size: 18px;
+        }
+
+        .price {
+            color: #363636;
+            padding-left: 8px;
+            font-size: 18px;
+        }
+
+        .release-date, .copyright {
+            font-weight: lighter;
+            font-size: 12px;
+            // color: #363636;
+            margin-top: 13px;
+        }
+
+        // .copyright {
+        //     margin-top: 14px;
+        // }
+
+
+        // #item-player {
+        //     background-color: white;
+        // }
+    }
+}
+
 
 

@@ -10,13 +10,13 @@ class Results extends React.Component {
         super(props);
         this.state = {
             searchTitle: '',
-            audioPlayer: false
+            // audioPlayer: false
         }
     }
 
-    toggleAudioPlayer(){
-        this.setState({audioPlayer: !this.state.audioPlayer})
-    }
+    // toggleAudioPlayer(){
+    //     this.setState({audioPlayer: !this.state.audioPlayer})
+    // }
 
     render() {
         let searchTitle;

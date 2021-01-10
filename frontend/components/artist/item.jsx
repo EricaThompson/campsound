@@ -25,6 +25,28 @@ class Item extends React.Component {
         this.setState({ audioPlayer: !this.state.audioPlayer })
     }
 
+    play(){
+        document.getElementById('item-player').play()
+    }
+
+    pause(){
+        document.getElementById('item-player').pause()
+    }
+
+    volumeUp(){
+        if (document.getElementById('item-player').volume < 1){
+            document.getElementById('item-player').volume += 0.1
+        }
+    }
+
+    volumeDown(){
+        if (document.getElementById('item-player').volume >= .1){
+            document.getElementById('item-player').volume -= 0.1
+        }
+    }
+
+
+
     render() {
         // console.log('prop item', this.props.items.length)
         console.log('state song', this.state.item.song)
@@ -37,10 +59,20 @@ class Item extends React.Component {
 
         // setTimeout(() => {
             if (this.state.audioPlayer){
-                renderPlayer = <audio id="item-player" controls>
-                                    <source src={this.state.item.song} type="audio/mpeg" />
-                                    Your browser does not support the audio tag.
-                            </audio>
+                renderPlayer = <div>
+                                    <audio id="item-player" controls="controls">
+                                            <source src={this.state.item.song} type="audio/mpeg" />
+                                            Your browser does not support the audio tag.
+                                    </audio>
+                                    <div>
+                                        <button onClick={()=>this.play()}><i className="fas fa-play"></i></button>
+                                        <button onClick={()=>this.pause()}>Pause</button>
+                                        <button onClick={()=>this.volumeUp()}>Volume Up</button>
+                                        <button onClick={()=>this.volumeDown()}>Volume Down</button>
+                                    </div>
+                                </div>
+
+                            
             }
         //     console.log('now')
         // }, 5000);
@@ -54,12 +86,7 @@ class Item extends React.Component {
                     <br />
                     {renderPlayer}
                     {/* hello */}
-                    {/* <div>
-                        <button onclick="document.getElementById('item-player').play()">Play</button>
-                        <button onclick="document.getElementById('item-player').pause()">Pause</button>
-                        <button onclick="document.getElementById('item-player').volume+=0.1">Volume Up</button>
-                        <button onclick="document.getElementById('item-player').volume-=0.1">Volume Down</button>
-                    </div> */}
+                    
                     <h3 className="digital">Digital Track</h3>
                     <h4 className='availability'>Streaming + Download</h4>
                     <p className="inclusion">Includes unlimited streaming via the free Bandcamp app, plus high-

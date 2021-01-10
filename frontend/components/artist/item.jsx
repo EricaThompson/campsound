@@ -7,15 +7,17 @@ class Item extends React.Component {
         this.state = {
             item: 'item',
             playerView: false,
-            audioPlayer: false
+            audioPlayer: false,
+            playShow: true,
+            pauseShow: false
         }
     }
 
-    componentWillMount(){
+    componentDidMount(){
         this.props.readItem(this.props.match.params.userId,this.props.match.params.itemId)
             .then(res => this.setState({ item: res.item }))
         // this.props.readAllUserItems(this.props.match.params.userId)
-        console.log('items',this.props.items)
+        // console.log('items',this.props.items)
         setTimeout(() => {
             this.setState({audioPlayer: true})
         }, 500);
@@ -27,14 +29,16 @@ class Item extends React.Component {
 
     play(){
         document.getElementById('item-player').play()
-        document.querySelector('.fa-play').classList.add('disappear')
-        document.querySelector('.fa-pause').classList.remove('disappear')
+        this.setState({playShow: false})
+        // document.querySelector('.fa-play').classList.add('disappear')
+        // document.querySelector('.fa-pause').classList.remove('disappear')
     }
 
     pause(){
         document.getElementById('item-player').pause()
-        document.querySelector('.fa-play').classList.remove('disappear')
-        document.querySelector('.fa-pause').classList.add('disappear')
+        this.setState({playShow: true})
+        // document.querySelector('.fa-play').classList.remove('disappear')
+        // document.querySelector('.fa-pause').classList.add('disappear')
     }
 
     volumeUp(){
@@ -53,24 +57,28 @@ class Item extends React.Component {
 
     render() {
         // console.log('prop item', this.props.items.length)
-        console.log('state song', this.state.item.song)
+        // console.log('state song', this.state.item.song)
 
         let renderPlayer;
-        // let player = <audio id="item-player" controls>
-        //                 <source src={this.state.item.song} type="audio/mpeg" />
-        //                 Your browser does not support the audio tag.
-        //             </audio>
+        let currentButton;
 
-        // setTimeout(() => {
+        if (this.state.playShow){
+            currentButton = <div className='play-button' onClick={() => this.play()}><i className="fas fa-play"></i></div>
+        } else {
+            currentButton = <div className='pause-button' onClick={() => this.pause()}><i className="fas fa-pause"></i></div>
+        }
+        
             if (this.state.audioPlayer){
+
                 renderPlayer = <div>
                                     <audio id="item-player" controls="controls">
                                             <source src={this.state.item.song} type="audio/mpeg" />
                                             Your browser does not support the audio tag.
                                     </audio>
-                                    <div>
-                                        <div onClick={()=>this.play()}><i className="fas fa-play"></i></div>
-                                        <div onClick={() => this.pause()}><i className="fas fa-pause disappear"></i></div>
+                                    <div className="controls">
+                                        <div className="play-pause">
+                                            {currentButton}                                            
+                                        </div>
                                         <div onClick={()=>this.volumeUp()}>Volume Up</div>
                                         <div onClick={()=>this.volumeDown()}>Volume Down</div>
                                     </div>
@@ -78,8 +86,7 @@ class Item extends React.Component {
 
                             
             }
-        //     console.log('now')
-        // }, 5000);
+
 
         return (
             <div className="item-container">

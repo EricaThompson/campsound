@@ -1824,23 +1824,53 @@ a {
             opacity: .5;
         }
 
-        .fa-play {
-            border: 1px solid hotpink;
+        .controls {
+            width: 315px;
+            
+            .play-pause {
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                float: left;
+
+                .fa-play, .fa-pause {
+                    // display: flex;
+                    justify-content: center;
+                    align-items: center; 
+                    // border: 1px solid hotpink;
+                    border-radius: 2px;
+                    // min-height: 50px;
+                    // min-width: 54px;
+                }
+                
+                .pause-button, .play-button {
+                    display: flex;
+                    justify-content: center;
+                    border: 1px solid #d9d9d9;
+                    cursor: pointer;
+                    align-items: center;
+                    // min-height: 50px;
+                    // min-width: 54px;
+                }
+
+
+            }
         }
 
-        audio {
-            &::-webkit-media-controls-panel {
-                background-color: white;
-            }
-            &::-webkit-media-controls-play-button {
-                -webkit-appearance: media-play-button;
-                border: 1px solid #D9D9D9;
-                border-radius: 4px;
-                color: red;
-                width: 25px;
-                height: 25px;
-            }
-        }
+
+        // audio {
+        //     &::-webkit-media-controls-panel {
+        //         background-color: white;
+        //     }
+        //     &::-webkit-media-controls-play-button {
+        //         -webkit-appearance: media-play-button;
+        //         border: 1px solid #D9D9D9;
+        //         border-radius: 4px;
+        //         color: red;
+        //         width: 25px;
+        //         height: 25px;
+        //     }
+        // }
 
         .disappear{
             display: none;

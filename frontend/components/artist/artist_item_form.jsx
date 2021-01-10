@@ -57,12 +57,10 @@ class ArtistItemForm extends React.Component {
         } 
 
         if (!this.state.songFile) {
-            // console.log("song file is required")
-            this.setState({ songError: "song file is required", spinnerShow: false })
+            this.setState({ songError: "audio is required", spinnerShow: false })
         }
 
         if (!this.state.coverFile){
-            // console.log('album art is required!')
             this.setState({ coverError: "album art is required", spinnerShow: false })
         }
     }

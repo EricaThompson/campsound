@@ -900,6 +900,7 @@ a {
             width: 478px;
             padding: 20px;
             height: 100%;
+            position: relative;
             
             .preview {
                 border-left: 1px solid #0887F4;
@@ -957,14 +958,15 @@ a {
                 display: inline-block;
                 margin-right: 20px;
                 margin-bottom: 20px;
+                
 
             }
             div {
                 
                 #add-audio{
                     position: absolute;
-                    left: 60px;
-                    top: 410px;
+                    left: -80px;
+                    top: 180px;
                     z-index: 1;
                     opacity: 0;
 

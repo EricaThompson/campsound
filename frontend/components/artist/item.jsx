@@ -27,10 +27,14 @@ class Item extends React.Component {
 
     play(){
         document.getElementById('item-player').play()
+        document.querySelector('.fa-play').classList.add('disappear')
+        document.querySelector('.fa-pause').classList.remove('disappear')
     }
 
     pause(){
         document.getElementById('item-player').pause()
+        document.querySelector('.fa-play').classList.remove('disappear')
+        document.querySelector('.fa-pause').classList.add('disappear')
     }
 
     volumeUp(){
@@ -65,10 +69,10 @@ class Item extends React.Component {
                                             Your browser does not support the audio tag.
                                     </audio>
                                     <div>
-                                        <button onClick={()=>this.play()}><i className="fas fa-play"></i></button>
-                                        <button onClick={()=>this.pause()}>Pause</button>
-                                        <button onClick={()=>this.volumeUp()}>Volume Up</button>
-                                        <button onClick={()=>this.volumeDown()}>Volume Down</button>
+                                        <div onClick={()=>this.play()}><i className="fas fa-play"></i></div>
+                                        <div onClick={() => this.pause()}><i className="fas fa-pause disappear"></i></div>
+                                        <div onClick={()=>this.volumeUp()}>Volume Up</div>
+                                        <div onClick={()=>this.volumeDown()}>Volume Down</div>
                                     </div>
                                 </div>
 

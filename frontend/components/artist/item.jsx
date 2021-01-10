@@ -9,13 +9,16 @@ class Item extends React.Component {
             playerView: false,
             audioPlayer: false,
             playShow: true,
-            pauseShow: false
+            pauseShow: false,
+            duration: 'time',
+            currentTime: 'current',
+            timeRendered: false,
         }
     }
 
     componentDidMount(){
         this.props.readItem(this.props.match.params.userId,this.props.match.params.itemId)
-            .then(res => this.setState({ item: res.item }))
+            .then(res => this.setState({ item: res.item}))
         // this.props.readAllUserItems(this.props.match.params.userId)
         // console.log('items',this.props.items)
         setTimeout(() => {
@@ -41,24 +44,62 @@ class Item extends React.Component {
         // document.querySelector('.fa-pause').classList.add('disappear')
     }
 
-    volumeUp(){
-        if (document.getElementById('item-player').volume < 1){
-            document.getElementById('item-player').volume += 0.1
+    timeUpdate(){
+        let player = document.getElementById('elapsed-time')
+        // console.log(player.currentTime)
+        this.getDuration()
+        let second;
+        let minute;
+        let ct = this.state.currentTime
+        if (ct % 60 === 0 || ct > 60 ) {
+            minute = Math.floor(ct / 60)
+            second = Math.floor(ct - (minute * 60))
+        } else {
+            minute = 0
         }
+
+        if (ct < 10){
+            player.innerHTML = `0:0${Math.floor(ct)}`;
+        } else if (ct < 60){
+            player.innerHTML = `0:${Math.floor(ct)}`;
+        } else {
+            if (second < 10){
+                player.innerHTML = `${minute}:0${second}`;
+            } else {
+                player.innerHTML = `${minute}:${second}`
+            }
+        }
+
+        
+        
     }
 
-    volumeDown(){
-        if (document.getElementById('item-player').volume >= .1){
-            document.getElementById('item-player').volume -= 0.1
-        }
+    // volumeUp(){
+    //     if (document.getElementById('item-player').volume < 1){
+    //         document.getElementById('item-player').volume += 0.1
+    //     }
+    // }
+
+    // volumeDown(){
+    //     if (document.getElementById('item-player').volume >= .1){
+    //         document.getElementById('item-player').volume -= 0.1
+    //     }
+    // }
+
+    getDuration(){
+        // let time = document.getElementById('item-player').duration
+        
+
+        this.setState({duration: document.getElementById('item-player').duration})
+        this.setState({ currentTime: document.getElementById('item-player').currentTime})
+        this.setState({timeRendered: true})
+        return this.state.currentTime
     }
-
-
 
     render() {
         // console.log('prop item', this.props.items.length)
         // console.log('state song', this.state.item.song)
-
+        // console.log(this.state.duration)
         let renderPlayer;
         let currentButton;
 
@@ -67,25 +108,81 @@ class Item extends React.Component {
         } else {
             currentButton = <div className='pause-button' onClick={() => this.pause()}><i className="fas fa-pause"></i></div>
         }
+
+        let remainder;
+        let minute;
+        let second;
+        let timeDuration = Math.round(this.state.duration)
+        let durationRender;
+        // console.log(time)
+        if (timeDuration > 59) {
+            minute = Math.floor(timeDuration / 60)
+            remainder = minute * 60
+            second = timeDuration - remainder
+            durationRender = <span>{minute}:{second}</span>
+        }
         
-            if (this.state.audioPlayer){
-
-                renderPlayer = <div>
-                                    <audio id="item-player" controls="controls">
-                                            <source src={this.state.item.song} type="audio/mpeg" />
-                                            Your browser does not support the audio tag.
-                                    </audio>
-                                    <div className="controls">
-                                        <div className="play-pause">
-                                            {currentButton}                                            
-                                        </div>
-                                        <div onClick={()=>this.volumeUp()}>Volume Up</div>
-                                        <div onClick={()=>this.volumeDown()}>Volume Down</div>
+        // console.log(this.state.currentTime)
+        // let timeLeft = this.state.currentTime
+        // while (this.state.pauseShow){
+        //     num = 0
+        //     this.getDuration()
+        // }
+        // let currentTimeRender;
+        // let counter;
+        // if (timeLeft === 0){
+        //     counter = 0
+        //     while(this.state.pauseShow){
+        //         setTimeout(() => {
+        //             counter += 1
+        //         }, 1000)
+        //     }
+        //     currentTimeRender = <span>{counter}</span>
+        // }
+        // else if (timeLeft > 59){
+        //     minute = Math.floor(timeLeft / 60)
+        //     remainder = minute * 60
+        //     second = timeLeft - remainder
+        //     currentTimeRender = <span>{minute}:{second}</span>
+        // } else {
+        //     minute = Math.floor(timeLeft / 60)
+        //     remainder = minute * 60
+        //     second = timeLeft - remainder
+        //     currentTimeRender = <span>{minute}:{second}</span>
+        // }
+        
+        if (this.state.audioPlayer){
+            // console.log('time?')
+            renderPlayer = <div>
+                                <audio 
+                                    id="item-player" 
+                                    controls="controls"
+                                    onTimeUpdate={()=>this.timeUpdate()}
+                                >
+                                        <source src={this.state.item.song} type="audio/mpeg" />
+                                        Your browser does not support the audio tag.
+                                </audio>
+                                <div className="controls">
+                                    <div className="play-pause">
+                                        {currentButton}                                            
                                     </div>
+                                    <div>
+                                        <div className="time"><span id='elapsed-time'>0:00</span> / {durationRender}</div>
+                                        <div className="time-location"></div>
+                                    </div>
+                                    {/* <div onClick={()=>this.volumeUp()}>Volume Up</div>
+                                    <div onClick={()=>this.volumeDown()}>Volume Down</div> */}
                                 </div>
-
-                            
+                            </div>
+            if (!this.state.timeRendered){
+                setTimeout(() => {
+                    this.getDuration();
+                    // console.log(this.state.currentTime)
+                }, 1000);
+                
             }
+        
+        }
 
 
         return (
@@ -96,6 +193,10 @@ class Item extends React.Component {
                     <button>Delete</button>
                     <br />
                     {renderPlayer}
+                    <br />
+                    <br />
+                    <br />
+                    {/* <br /> */}
                     {/* hello */}
                     
                     <h3 className="digital">Digital Track</h3>

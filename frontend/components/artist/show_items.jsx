@@ -1,4 +1,5 @@
 import React from 'react';
+// import Item from './item';
 import { Link } from 'react-router-dom';
 
 class ShowItems extends React.Component {
@@ -61,9 +62,14 @@ class ShowItems extends React.Component {
     
 
     render() {
+        console.log('props', this.props)
+
         let itemDisplay = this.props.items.map((item) => {
             return <div key={item.id} className="item-display">
-                        <img src={`${item.cover}`} alt="" />
+                        {/* <Item /> */}
+                        <Link to={`${this.props.currentUserId}/${item.id}`}>
+                            <img src={`${item.cover}`} alt="" />
+                        </Link>
                         <h5 className="home-text top">{item.title}</h5>
                         <h5 className="home-text artist">{item.artist}</h5>
                         <h5 onClick={() => this.addToItemList(item)} className="home-text add">Add to Playlist</h5>

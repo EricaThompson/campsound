@@ -72,14 +72,14 @@ class ArtistHomepage extends React.Component {
         if (Object.values(this.props.items).length === 0) {
             component = <ZeroItems userId={this.props.currentUser} />
         } else {
-            component = <ShowItems items={items} deleteItem={this.props.deleteItem}/>
+            component = <ShowItems currentUserId={this.props.currentUser} items={items} deleteItem={this.props.deleteItem}/>
         }        
             
         let image = <img 
-            className="image" 
-            src={this.props.user.userImg} 
-            alt=""
-        />
+                        className="image" 
+                        src={this.props.user.userImg} 
+                        alt=""
+                    />
         
         let location = null;
         let bio = null;

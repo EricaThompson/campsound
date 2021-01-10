@@ -6,6 +6,7 @@ import ArtistItemContainer from './artist/artist_item_form_container';
 import SearchContainer from './search/search_container';
 import ResultsContainer from './search/results_container';
 import HomeContainer from './home/home_container';
+import ItemContainer from './artist/item_container';
 // import ShowItemsContainer from './artist/show_items_container';
 import { ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
@@ -29,7 +30,7 @@ class App extends React.Component {
                     {/* <Route exact path="/" /> */}
                     {/* <img id="main-story" src={require('../../app/assets/images/pexels.jpg')} alt="main story image" /> */}
                     {/* </div> */}
-               
+                    <Route exact path="/:userId/:itemId" component={ItemContainer}/>
                     <Route exact path="/" component={HomeContainer} />
                     <Route path="/search/:result" component={ResultsContainer} />
                     <Route exact path="/:userId" component={ArtistHomepageContainer} />

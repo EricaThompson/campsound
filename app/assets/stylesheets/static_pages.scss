@@ -1786,172 +1786,217 @@ a {
     }
 }
 
-.item-container {
-    background-color: white;
-    // color: hotpink;
+//* Item show
+
+.item-show {
     width: 978px;
-    margin: 37px auto;
-    padding: 29px;
-    padding-top: 19px;
-    position: relative;
+    margin: 0px auto;
+    border: 1px solid #E5E5E5;
 
-
-    .about-item {
-        background-color: white;
-        color: #363636;
-        // float: left;
-        h1 {
-            font-size: 28px;
-            font-weight: lighter;
-            font-family: Arial, Helvetica, sans-serif;
-            margin-bottom: 0;
-        }
-        .artist {
-            font-weight: lighter;
-        }
-        p {
-            padding-left: 0;
-        }
-
-        button {
-            background-color: #FFFFE0;
-            color: #0887F4;
-            border: none;
-            border: 1px solid#C0C0C0;
-            padding: 3px 10px;
-            font-size: 12px;
-            margin-bottom: 24px;
-
-        }
-
-        #item-player {
-            display: none;
-        }
-
-        
-
-
-
-        .controls {
-            width: 315px;
-            .right-side {
-                padding-top: 10px;
-                width: 254px;
-                float: right;
-                .time {
-                    padding-left: 10px;
-                    color: #888888;
-                    font-weight: lighter;
-                    font-size: 12px;
-                }
-
-            }
-            .play-pause {
-                // display: flex;
-                // justify-content: center;
-                // align-items: center;
-                float: left;
-
-                .fa-play, .fa-pause {
-                    // display: flex;
-                    justify-content: center;
-                    align-items: center; 
-                    // border: 1px solid hotpink;
-                    // min-height: 50px;
-                    // min-width: 54px;
-                }
-                
-                .pause-button, .play-button {
-                    display: flex;
-                    justify-content: center;
-                    border: 1px solid #d9d9d9;
-                    border-radius: 2px;
-                    cursor: pointer;
-                    align-items: center;
-                    min-height: 50px;
-                    min-width: 54px;
-                    
-                }
-
-            }
-        }
-
-
-        // audio {
-        //     &::-webkit-media-controls-panel {
-        //         background-color: white;
-        //     }
-        //     &::-webkit-media-controls-play-button {
-        //         -webkit-appearance: media-play-button;
-        //         border: 1px solid #D9D9D9;
-        //         border-radius: 4px;
-        //         color: red;
-        //         width: 25px;
-        //         height: 25px;
-        //     }
-        // }
-
-        .disappear{
-            display: none;
-        }
-
-
-        .digital {
-            font-size: 14px;
-        }
-
-        .availability {
-            font-size: 12px;
-            color: #888888;
-            font-weight: lighter;
-            margin-top: -8px;
-        }
-
-        .inclusion {
-            font-weight: lighter;
-            // color: #363636;
-            font-size: 12px;
-            margin-top: -15px;
-        }
-        
-        a {
-            color:#0887F4;
-            font-weight: bolder;
-            font-size: 18px;
-        }
-
-        .price {
-            color: #363636;
-            padding-left: 8px;
-            font-size: 18px;
-        }
-
-        .release-date, .copyright {
-            font-weight: lighter;
-            font-size: 12px;
-            // color: #363636;
-            margin-top: 13px;
-        }
-
-        // .copyright {
-        //     margin-top: 14px;
-        // }
-
-
-        // #item-player {
-        //     background-color: white;
-        // }
-    }
-
-    .item-cover {
+    .cover-art-header {
         position: absolute;
-        top: 40px;
-        right: 188px;
-        float: right;
-        width: 350px;
-        height: 350px;
+        z-index: -1;
+        width: 978px;
+        margin-top: -300px;
+
+        // height: 182px;
     }
-}
+
+    .item-nav-bar {
+        background-color: #F2F2F2;
+        color: #363636;
+        // width: 100%;
+        width: 978px;
+        height: 40px;
+        margin-top: 182px;
+        // padding: 10px;
+
+        .nav-music {
+            border-top: 2px solid #363636;
+            width: 70px;
+            // margin-top: 0 auto;
+            text-align: center;
+            font-size: 14px;
+            padding-top: 9px;
+            margin-left: 13px;
+            font-weight: bolder;
 
 
+            a {
+                color: #363636;
+            }
+        }
+    }
 
+    .item-container {
+        background-color: white;
+        // color: hotpink;
+        // margin: 3px auto;
+        padding: 29px;
+        padding-top: 19px;
+        position: relative;
+        height: 900px;
+        // margin-top: 40px;
+    
+    
+    
+        .about-item {
+            background-color: white;
+            color: #363636;
+            // float: left;
+            h1 {
+                font-size: 28px;
+                font-weight: lighter;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-bottom: 0;
+            }
+            .artist {
+                font-weight: lighter;
+            }
+            p {
+                padding-left: 0;
+            }
+    
+            button {
+                background-color: #FFFFE0;
+                color: #0887F4;
+                border: none;
+                border: 1px solid#C0C0C0;
+                padding: 3px 10px;
+                font-size: 12px;
+                margin-bottom: 24px;
+    
+            }
+    
+            #item-player {
+                display: none;
+            }
+    
+            
+    
+    
+    
+            .controls {
+                width: 315px;
+                .right-side {
+                    padding-top: 10px;
+                    width: 254px;
+                    float: right;
+                    .time {
+                        padding-left: 10px;
+                        color: #888888;
+                        font-weight: lighter;
+                        font-size: 12px;
+                    }
+    
+                }
+                .play-pause {
+                    // display: flex;
+                    // justify-content: center;
+                    // align-items: center;
+                    float: left;
+    
+                    .fa-play, .fa-pause {
+                        // display: flex;
+                        justify-content: center;
+                        align-items: center; 
+                        // border: 1px solid hotpink;
+                        // min-height: 50px;
+                        // min-width: 54px;
+                    }
+                    
+                    .pause-button, .play-button {
+                        display: flex;
+                        justify-content: center;
+                        border: 1px solid #d9d9d9;
+                        border-radius: 2px;
+                        cursor: pointer;
+                        align-items: center;
+                        min-height: 50px;
+                        min-width: 54px;
+                        
+                    }
+    
+                }
+            }
+    
+    
+            // audio {
+            //     &::-webkit-media-controls-panel {
+            //         background-color: white;
+            //     }
+            //     &::-webkit-media-controls-play-button {
+            //         -webkit-appearance: media-play-button;
+            //         border: 1px solid #D9D9D9;
+            //         border-radius: 4px;
+            //         color: red;
+            //         width: 25px;
+            //         height: 25px;
+            //     }
+            // }
+    
+            .disappear{
+                display: none;
+            }
+    
+    
+            .digital {
+                font-size: 14px;
+            }
+    
+            .availability {
+                font-size: 12px;
+                color: #888888;
+                font-weight: lighter;
+                margin-top: -8px;
+            }
+    
+            .inclusion {
+                font-weight: lighter;
+                // color: #363636;
+                font-size: 12px;
+                margin-top: -15px;
+            }
+            
+            a {
+                color:#0887F4;
+                font-weight: bolder;
+                font-size: 18px;
+            }
+    
+            .price {
+                color: #363636;
+                padding-left: 8px;
+                font-size: 18px;
+            }
+    
+            .release-date, .copyright {
+                font-weight: lighter;
+                font-size: 12px;
+                // color: #363636;
+                margin-top: 13px;
+            }
+    
+            // .copyright {
+            //     margin-top: 14px;
+            // }
+    
+    
+            // #item-player {
+            //     background-color: white;
+            // }
+        }
+    
+        .item-cover {
+            position: absolute;
+            top: 40px;
+            right: 188px;
+            float: right;
+            width: 350px;
+            height: 350px;
+        }
+    }
+    
+    
+
+}    

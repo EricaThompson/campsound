@@ -186,30 +186,34 @@ class Item extends React.Component {
 
 
         return (
-            <div className="item-container">
-                <div className='about-item'>
-                    <h1>{this.state.item.title}</h1>
-                    <p className='artist'>by <Link to={`/${this.state.item.owner_id}`}>{this.state.item.artist_name}</Link></p>
-                    <button>Delete</button>
-                    <br />
-                    {renderPlayer}
-                    <br />
-                    <br />
-                    <br />
-                    {/* <br /> */}
-                    {/* hello */}
-                    
-                    <h3 className="digital">Digital Track</h3>
-                    <h4 className='availability'>Streaming + Download</h4>
-                    <p className="inclusion">Includes unlimited streaming via the free Bandcamp app, plus high-
+            <div className="item-show">
+                <img className='cover-art-header' src={`${this.state.item.cover}`} alt=""/>
+                <div className='item-nav-bar'><div className="nav-music"><Link to={`/${this.state.item.owner_id}`}>music</Link></div></div>
+                <div className="item-container">
+                    <div className='about-item'>
+                        <h1>{this.state.item.title}</h1>
+                        <p className='artist'>by <Link to={`/${this.state.item.owner_id}`}>{this.state.item.artist_name}</Link></p>
+                        <button>Delete</button>
                         <br />
-                        quality download in MP3, FLAC and more.
-                    </p>
-                    <a className="download" href={`${this.state.item.song}`} download>Download Digital Track </a><span className="price">{this.state.item.price}</span>
-                    <p className="release-date" >released {this.state.item.date}</p>
-                    <p className="copyright" >© all rights reserved</p>
+                        {renderPlayer}
+                        <br />
+                        <br />
+                        <br />
+                        {/* <br /> */}
+                        {/* hello */}
+                        
+                        <h3 className="digital">Digital Track</h3>
+                        <h4 className='availability'>Streaming + Download</h4>
+                        <p className="inclusion">Includes unlimited streaming via the free Bandcamp app, plus high-
+                            <br />
+                            quality download in MP3, FLAC and more.
+                        </p>
+                        <a className="download" href={`${this.state.item.song}`} download>Download Digital Track </a><span className="price">{this.state.item.price}</span>
+                        <p className="release-date" >released {this.state.item.date}</p>
+                        <p className="copyright" >© all rights reserved</p>
+                    </div>
+                    <img className="item-cover" src={this.state.item.cover} alt="song cover"/>                
                 </div>
-                <img className="item-cover" src={this.state.item.cover} alt="song cover"/>                
             </div>
         )
     }

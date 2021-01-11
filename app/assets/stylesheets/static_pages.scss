@@ -1793,9 +1793,13 @@ a {
     margin: 37px auto;
     padding: 29px;
     padding-top: 19px;
+    position: relative;
+
 
     .about-item {
+        background-color: white;
         color: #363636;
+        // float: left;
         h1 {
             font-size: 28px;
             font-weight: lighter;
@@ -1869,8 +1873,6 @@ a {
                     
                 }
 
-               
-
             }
         }
 
@@ -1939,6 +1941,15 @@ a {
         // #item-player {
         //     background-color: white;
         // }
+    }
+
+    .item-cover {
+        position: absolute;
+        top: 40px;
+        right: 188px;
+        float: right;
+        width: 350px;
+        height: 350px;
     }
 }
 

@@ -209,7 +209,7 @@ class Item extends React.Component {
                     <p className="release-date" >released {this.state.item.date}</p>
                     <p className="copyright" >© all rights reserved</p>
                 </div>
-                {/* <img src={this.state.item.cover} alt=""/>                 */}
+                <img className="item-cover" src={this.state.item.cover} alt="song cover"/>                
             </div>
         )
     }

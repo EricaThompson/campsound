@@ -250,10 +250,10 @@ class Item extends React.Component {
                                 {/* <div className="change-image">↻</div> */}
                             </div>
 
-                            <p className='digital'>{this.props.user.username}</p>
-                            <p className="availability">{this.props.user.location}</p>
-                            <p className="copyright">{this.props.user.bio}</p>
-                            <p>discography</p>
+                            <p className='username'>{this.props.user.username}</p>
+                            <p className="location">{this.props.user.location}</p>
+                            <p className="side-bio">{this.props.user.bio}</p>
+                            <p className='discography'>discography</p>
                             {discography}
 
                             {/* {location}

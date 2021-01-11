@@ -166,7 +166,7 @@ class Item extends React.Component {
                                     <div className="play-pause">
                                         {currentButton}                                            
                                     </div>
-                                    <div>
+                                    <div className='right-side'>
                                         <div className="time"><span id='elapsed-time'>0:00</span> / {durationRender}</div>
                                         <div className="time-location"></div>
                                     </div>

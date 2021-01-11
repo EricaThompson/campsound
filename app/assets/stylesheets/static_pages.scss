@@ -1820,13 +1820,28 @@ a {
 
         }
 
-        // #item-player {
-        //     display: none;
-        // }
+        #item-player {
+            display: none;
+        }
+
+        
+
+
 
         .controls {
             width: 315px;
-            
+            .right-side {
+                padding-top: 10px;
+                width: 254px;
+                float: right;
+                .time {
+                    padding-left: 10px;
+                    color: #888888;
+                    font-weight: lighter;
+                    font-size: 12px;
+                }
+
+            }
             .play-pause {
                 // display: flex;
                 // justify-content: center;
@@ -1854,6 +1869,7 @@ a {
                     
                 }
 
+               
 
             }
         }

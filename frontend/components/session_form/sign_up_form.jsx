@@ -65,12 +65,12 @@ class SignUpForm extends React.Component {
                     < br />
                     <br />
                     <div className='session-helper'>
-                        <p className="top-helper"><input className="checkbox" 
+                        {/* <p className="top-helper"><input className="checkbox" 
                             type="checkbox" />
                             I have read and agree to the 
                                 <a href="#">
                                 Terms of Use</a>.
-                        </p>
+                        </p> */}
                         <button className="submit-button" type="submit">Sign up</button>
                         <p className="bottom-helper">Already have an account? <a onClick={()=>this.openAndClear()}>Log in</a>.</p>
                     </div>

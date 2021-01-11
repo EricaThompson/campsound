@@ -198,6 +198,8 @@ class Item extends React.Component {
         let discography = this.state.discography.map(item => {
             return <div>
                         <img className="discog-cover" src={`${item.cover}`} alt=""/>
+                        <p className="discog-title">{item.title}</p>
+                        <p className="discog-date">{item.date}</p>
                     </div>
         })
 

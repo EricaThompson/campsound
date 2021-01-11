@@ -141,6 +141,7 @@ textarea:focus, input:focus{
     display: flex;
     justify-content: space-between;
     width: 1239px;
+    background-color: white;
     
 }
 
@@ -148,6 +149,7 @@ textarea:focus, input:focus{
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+    background-color: white;;
 
     .slogan {
         margin-left: 54px;
@@ -169,6 +171,7 @@ textarea:focus, input:focus{
 .nav-bar-links {
     display: flex;
     width: 1239px;
+    background-color: white;
     // padding-right: 0px;
     // justify-content: flex-end;
 }

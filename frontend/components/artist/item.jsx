@@ -28,6 +28,12 @@ class Item extends React.Component {
         }, 500);
     }
 
+    refresh(){
+        setTimeout(() => {
+            window.location.reload()
+        }, 1);
+    }
+
     toggleAudioPlayer() {
         this.setState({ audioPlayer: !this.state.audioPlayer })
     }
@@ -196,18 +202,18 @@ class Item extends React.Component {
         console.log('discog', this.state.discography)
 
         let discography = this.state.discography.map(item => {
-            return <div>
-                        <img className="discog-cover" src={`${item.cover}`} alt=""/>
-                        <p className="discog-title">{item.title}</p>
+            return <div key={item.id}>
+                <Link to={`/artists/${this.props.user.id}/music/${item.id}`} ><img onClick={() => this.refresh()} className="discog-cover" src={`${item.cover}`} alt=""/></Link>
+                        <Link to={`/artists/${this.props.user.id}/music/${item.id}`} ><p onClick={()=>this.refresh()} className="discog-title">{item.title}</p></Link>
                         <p className="discog-date">{item.date}</p>
+                        {/* {console.log(this.props.user.id)} */}
                     </div>
         })
 
-        console.log()
 
 
         return (
-            <div className="item-show">
+            <div className="item-show" key={()=>Math.random()}>
                 <img className='cover-art-header' src={`${this.state.item.cover}`} alt=""/>
                 <div className='item-nav-bar'><div className="nav-music"><Link to={`/${this.state.item.owner_id}`}>music</Link></div></div>
                 <div className="item-container">
@@ -233,7 +239,7 @@ class Item extends React.Component {
                         <p className="release-date" >released {this.state.item.date}</p>
                         <p className="copyright" >© all rights reserved</p>
                     </div>
-                    <img className="item-cover" src={this.state.item.cover} alt="song cover"/>
+                    <img className="item-cover" src={this.state.item.cover} alt="song art"/>
                     
                     <div className="sidebar">
                         <div className="about">

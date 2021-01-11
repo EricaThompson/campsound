@@ -1,17 +1,72 @@
 import React from 'react';
 
-
 class Home extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            items: this.props.items
+        }
     }
 
-    // componentDidMount() {
-    //     this.props.browseAll()
-    // }
+    componentDidMount() {
+        this.props.browseAll()
+            .then(res => this.setState({items: res.items}))
+        
+        this.setState({items: this.props.items})
+    }
 
     render() {
+        // console.log(Object.values(this.props.items))
+        let items;
+        // let marquee = []
+
+        
+        items = Object.values(this.state.items).map((item, idx) => {
+            if (idx < 8){
+                return <div key={item.id}className="slide">
+                            <img src={`${item.cover}`} alt=""/>
+                            <p>{item.title}</p>
+                            <p>by {item.artist}</p>
+                            <p>{item.price}</p>
+                            <p>{item.date}</p>
+                        </div>
+            }
+        })
+
+        console.log(this.state.items)
+        
+        
+
+
+        // setTimeout(() => {
+        //     items = Object.values(this.state.items)
+
+        //     while(marquee.length < 9){
+        //         setTimeout(() => {
+        //             marquee.push(items.unshift())
+        //         }, 2000);
+        //     }
+
+        // }, 1000);
+
+        // let items = this.state.items
+        // let marquee = []
+        
+        // setTimeout(() => {
+        //     marquee.push(items.pop())
+        // }, 1000);
+
+        // Object.values(this.props.items).forEach(item => {
+        //     if (marquee.length < 9){
+        //         // console.log('a')
+        //         marquee.push(item)
+        //     }
+        // })
+
+        // console.log('items', items)
     
+        // const slideContainer = document.querySelector('slides')
+        // const slide
 
         return (
             <div className="home">
@@ -39,6 +94,36 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div className='slider'>
+                    <div className='slides'>
+                        {items}
+                        {/* <div className="slide">
+                            1
+                        </div>
+                        <div className="slide">
+                            2
+                        </div>
+                        <div className="slide">
+                            3
+                        </div>
+                        <div className="slide">
+                            4
+                        </div>
+                        <div className="slide">
+                            5
+                        </div>
+                        <div className="slide">
+                            6
+                        </div>
+                        <div className="slide">
+                            7
+                        </div>
+                        <div className="slide">
+                            8
+                        </div> */}
+
+                    </div>
+                </div>
 
                 <div className="learn-more">
                     <div>
@@ -60,6 +145,7 @@ class Home extends React.Component {
                         <button onClick={() => this.props.openModal('type-signup')}>Learn more</button>
                     </div>
                 </div>
+                
 
                 <div className="footer">
                     <div className="links">

@@ -1766,6 +1766,39 @@ a {
         
     }
 
+    .slider {
+        margin: 50px auto;
+        width: 994px;
+        position: relative;
+        height: 228px;
+        // border: 1px solid hotpink;
+        text-align: left;
+        margin-bottom: 0px;
+
+        .slides {
+            display: flex;
+            height: 100%;
+            
+        }
+
+        .slide {
+            min-width: 112px;
+            margin-right: 10px;
+            // border: 1px solid hotpink;
+            img {
+                width: 112px;
+                height: 112px;
+            }
+            p {
+                font-size: 11px;
+                margin: 0px;
+                padding: 0px;
+                margin-top: 7px;
+                font-weight: lighter;
+            }
+        }
+    }
+
     .footer {
         background-color: #467986;
         height: 160px;

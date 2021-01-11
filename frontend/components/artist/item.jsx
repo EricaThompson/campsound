@@ -13,13 +13,15 @@ class Item extends React.Component {
             duration: 'time',
             currentTime: 'current',
             timeRendered: false,
+            discography: []
         }
     }
 
     componentDidMount(){
         this.props.readItem(this.props.match.params.userId,this.props.match.params.itemId)
             .then(res => this.setState({ item: res.item}))
-        // this.props.readAllUserItems(this.props.match.params.userId)
+        this.props.readAllUserItems(this.props.match.params.userId)
+            .then(res => this.setState({discography: Object.values(res.items)}))
         // console.log('items',this.props.items)
         setTimeout(() => {
             this.setState({audioPlayer: true})
@@ -184,6 +186,23 @@ class Item extends React.Component {
         
         }
 
+        let image = <img
+            className="image"
+            src={this.props.user.userImg}
+            alt=""
+        />
+
+        console.log('single', this.state.item)
+        console.log('discog', this.state.discography)
+
+        let discography = this.state.discography.map(item => {
+            return <div>
+                        <img className="discog-cover" src={`${item.cover}`} alt=""/>
+                    </div>
+        })
+
+        console.log()
+
 
         return (
             <div className="item-show">
@@ -212,7 +231,33 @@ class Item extends React.Component {
                         <p className="release-date" >released {this.state.item.date}</p>
                         <p className="copyright" >© all rights reserved</p>
                     </div>
-                    <img className="item-cover" src={this.state.item.cover} alt="song cover"/>                
+                    <img className="item-cover" src={this.state.item.cover} alt="song cover"/>
+                    
+                    <div className="sidebar">
+                        <div className="about">
+                            {/* <div className="username">
+                                {this.state.item.owner_id}
+                            </div> */}
+                            <div className="image">
+                                {image}
+                                {/* <input
+                                    id="user-image"
+                                    type="file"
+                                    // onChange={this.imageSubmit.bind(this)}
+                                /> */}
+                                {/* <div className="change-image">↻</div> */}
+                            </div>
+
+                            <p className='digital'>{this.props.user.username}</p>
+                            <p className="availability">{this.props.user.location}</p>
+                            <p className="copyright">{this.props.user.bio}</p>
+                            <p>discography</p>
+                            {discography}
+
+                            {/* {location}
+                            {bio} */}
+                        </div>
+                    </div>                   
                 </div>
             </div>
         )

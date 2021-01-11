@@ -68,7 +68,8 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to top, #6f757f, 35%, white);
+    background-color: #F8F8F8;
+    // background-image: linear-gradient(to top, #6f757f, 35%, white);
 }
 
 .container {
@@ -1990,10 +1991,170 @@ a {
         .item-cover {
             position: absolute;
             top: 40px;
-            right: 188px;
-            float: right;
+            right: 200px;
+            // float: right;
             width: 350px;
             height: 350px;
+        }
+
+        .sidebar {
+            float: right;
+            position: absolute;
+            top: 40px;
+            right: 30px;
+            width: 120px;
+
+            .about {
+                .image {
+                    display: flex;
+                    height: 102px;
+                    width: 120px;
+                    position: relative;
+
+                    .change-image {
+                        background-color: yellow;
+                        position: absolute;
+                        right: 3px;
+                        bottom: 3px;
+
+                    }
+
+                    #user-image {
+                        height: 5px;
+                        width: 5px;
+                        opacity: 0;
+                        position: absolute;
+                        z-index: 1;
+                        bottom: 3px;
+                        right: 3px;
+                    }
+        
+                    label {
+                        align-self: center;
+                        color: #0887F5;
+                        font-size: 12px;
+                        margin: 0 auto;
+                    }
+                    
+                }       
+                .username {
+                    font-size: 14px;
+                    margin-top: 9px;
+                }
+        
+                .location {
+                    display: flex;
+                    color: #0887F5;
+                    font-size: 12px;
+                    
+                }
+
+                .location-output, .bio-output {
+                    margin-top: 10px;
+                    font-size: 12px;
+                    color: #888888;
+                    font-weight: lighter;
+                    word-wrap: normal;
+                    width: 90px;
+                    line-height: 1.2;
+                }
+
+                .bio-output {
+                    color: #202020
+                }
+
+                .artist-form {
+
+                    .location-input {
+                        width: 109px;
+                        height: 10px;
+                        color: #595959;
+                        font-weight: lighter;
+                        font-family: 'Roboto', sans-serif;
+                    }
+
+                    button {
+                        margin-top: 3px;
+                        border: none;
+                        width: 60px;
+                        height: 25px;
+                        
+                        &:hover {
+                                text-decoration: underline;
+                                cursor: pointer;
+                        }
+
+
+                    }
+
+                    .save {
+                        color: white;
+                        background-color: #0887F4;
+
+                        &:disabled {
+                            background-color: #BDDBFC;
+                            text-decoration: none;
+                            cursor: default;
+                        }
+                    }
+
+                    .cancel {
+                            background-color: #fff;
+                            color: #0887F4;
+                    }
+
+                    
+
+                    .bio-input {
+                        width: 115px;
+                        height: 200px;
+                        text-align: top;
+                        border-radius: 0%;
+                        border-top-color: #9C9C9C;
+                        border-right-color: #9C9C9C;
+                        border-left-color: #CCCCCC;
+                        border-bottom-color: #CCCCCC;
+                        margin-top: 15px;
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: lighter;
+                        padding: 7px;
+                        color: #595959;
+
+
+                        &::placeholder {
+                            font-family: 'Roboto', sans-serif;
+                            font-weight: lighter;
+                            padding: 4px;
+                            color: #B0B0B0;
+                        }
+
+                        
+                    }
+                    .count {
+                        font-size: 10px;
+                        width: 131px;
+                        height: 14px;
+                        background-color: #F2F2F2;
+                        font-weight: lighter;
+                        text-align: center;
+                        color: #444444;
+                        margin-top: -5px;
+                        padding-top: 7px;
+                        padding-bottom: 0px;
+                    }
+
+                }
+        
+                .bio {
+                    color: #0887F5;
+                    font-size: 12px;
+                }
+
+                .discog-cover {
+                    width: 120px;
+                    height: 120px;
+                }
+            }
         }
     }
     

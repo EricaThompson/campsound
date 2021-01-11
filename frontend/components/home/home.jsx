@@ -15,14 +15,29 @@ class Home extends React.Component {
         this.setState({items: this.props.items})
     }
 
+    // slider(){
+    //     let i = 0
+    //     while (i < 9) {
+    //         setTimeout(() => {
+    //             rotatedMap[i] = rotatedMap[i + 1]
+    //             i++
+
+    //         }, 1000);
+    //     }
+    //     this.slider()
+    // }
+
     render() {
         // console.log(Object.values(this.props.items))
-        let items;
+        let items = Object.values(this.state.items)
         // let marquee = []
 
+        items[0] = items[1]
+
         
-        items = Object.values(this.state.items).map((item, idx) => {
+        let map = Object.values(this.state.items).map((item, idx) => {
             if (idx < 8){
+
                 return <div key={item.id}className="slide">
                             <img src={`${item.cover}`} alt=""/>
                             <p>{item.title}</p>
@@ -32,6 +47,29 @@ class Home extends React.Component {
                         </div>
             }
         })
+
+        let rotatedMap = map
+        // let slot0 = rotatedMap[0]
+        // let slot1 = rotatedMap[1]
+        // let slot2 = rotatedMap[2]
+        // let slot3 = rotatedMap[3]
+        // let slots = [slot0, slot1, slot2, slot3]
+        
+        
+
+        // this.slider();
+
+        // while (i > -1){
+        //     rotatedMap[i] = rotatedMap[i + 1]
+        //     i--
+        // }
+        // rotatedMap[0] = slot1
+        // rotatedMap[1] = slot2
+        // rotatedMap[2] = slot3
+
+    
+
+
 
         console.log(this.state.items)
         
@@ -67,7 +105,7 @@ class Home extends React.Component {
     
         // const slideContainer = document.querySelector('slides')
         // const slide
-
+        let count = items.length
         return (
             <div className="home">
                 <div className="stories">
@@ -95,8 +133,9 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <div className='slider'>
+                        <p className='slider-info'>Artists have uploaded {count} songs using CampSound since established</p>
                     <div className='slides'>
-                        {items}
+                        {rotatedMap}
                         {/* <div className="slide">
                             1
                         </div>

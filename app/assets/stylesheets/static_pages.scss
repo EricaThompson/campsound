@@ -94,7 +94,7 @@ textarea:focus, input:focus{
 .logo {
     font-size: 20px;
     align-self: center;
-    margin-left: 10px;
+    margin-left: 54px;
     margin-top: 30px;
     // background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
     
@@ -126,20 +126,21 @@ textarea:focus, input:focus{
 
 }
 
-.nav-bar {
-    width: 100%;
-    margin: 0 auto;
-    // position: fixed;
-    z-index: 3;
-    background-color: white;
-    // margin-top: -100px;
-    padding-left: 20px;
-}
+// .nav-bar {
+//     width: 100%;
+//     // margin: 0 auto;
+//     // position: fixed;
+//     z-index: 3;
+//     background-color: white;
+//     // margin-top: -100px;
+//     padding-left: 20px;
+//     width: 1259px;
+// }
 
 .nav-top {
     display: flex;
     justify-content: space-between;
-    width: 1259px;
+    width: 1239px;
     
 }
 
@@ -147,6 +148,10 @@ textarea:focus, input:focus{
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+
+    .slogan {
+        margin-left: 54px;
+    }
 
     .support {
         background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
@@ -163,7 +168,8 @@ textarea:focus, input:focus{
 
 .nav-bar-links {
     display: flex;
-    width: 1259px;
+    width: 1239px;
+    // padding-right: 0px;
     // justify-content: flex-end;
 }
 

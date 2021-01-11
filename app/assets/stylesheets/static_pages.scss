@@ -139,7 +139,7 @@ textarea:focus, input:focus{
 .nav-top {
     display: flex;
     justify-content: space-between;
-    
+    width: 1259px;
     
 }
 
@@ -163,6 +163,7 @@ textarea:focus, input:focus{
 
 .nav-bar-links {
     display: flex;
+    width: 1259px;
     // justify-content: flex-end;
 }
 
@@ -1683,7 +1684,7 @@ a {
         background-color: white;
         justify-content: space-between;
         bottom: 281px;
-        width: 1261px;
+        width: 1259px;
         height: 421px;
         padding-top: 50px;
         margin: 0 auto;
@@ -1766,7 +1767,8 @@ a {
         text-align: center;
         font-size: 50px;
         padding-top: 80px;
-        width: 100%;
+        width: 1259px;
+        margin-right: 0px;
         // position: fixed;
         // bottom: 0;
         .links{

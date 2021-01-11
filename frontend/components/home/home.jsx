@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class Home extends React.Component {
     constructor(props) {
@@ -39,11 +40,13 @@ class Home extends React.Component {
             if (idx < 8){
 
                 return <div key={item.id}className="slide">
-                            <img src={`${item.cover}`} alt=""/>
-                            <p>{item.title}</p>
-                            <p>by {item.artist}</p>
-                            <p>{item.price}</p>
-                            <p>{item.date}</p>
+                            <Link to={`/artists/${item.owner_id}/music/${item.id}`}>
+                                <img src={`${item.cover}`} alt=""/>
+                                <p>{item.title}</p>
+                                <p>by {item.artist}</p>
+                                <p>{item.price}</p>
+                                <p>{item.date}</p>
+                            </Link>
                         </div>
             }
         })

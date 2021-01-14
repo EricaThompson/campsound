@@ -224,7 +224,8 @@ class ArtistItemForm extends React.Component {
                                 Uploading a lot of audio? <span className="blue">Campsound Pro</span> features batch album upload, private streaming, and more. 
                                 <span hidden>Get details...</span>
                             </div>
-                            <div className="album-info">
+                            //* to add to album
+                            {/* <div className="album-info">
                                 <input 
                                     className="checkbox" 
                                     type="checkbox"
@@ -240,7 +241,7 @@ class ArtistItemForm extends React.Component {
                                     <option defaultValue >no albums</option>
                                     </optgroup>
                                 </select>
-                            </div>
+                            </div> */}
                             <div className='submit-item-form-buttons'>
                                 <button disabled={disabler} onClick={this.handleSubmit.bind(this)} type="button" className="save">                                  
                                     {link}

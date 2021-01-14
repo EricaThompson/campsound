@@ -201,10 +201,14 @@ class Item extends React.Component {
             alt=""
         />
 
-        console.log('single', this.state.item)
-        console.log('discog', this.state.discography)
 
-        let discography = this.state.discography.map(item => {
+        let reversedDiscography = [];
+
+        for (let i = this.state.discography.length - 1; i > -1; i--){
+            reversedDiscography.push(this.state.discography[i])
+        }
+
+        let discography = reversedDiscography.map(item => {
             return <div key={item.id}>
                 <Link to={`/artists/${this.props.user.id}/music/${item.id}`} ><img onClick={() => this.refresh()} className="discog-cover" src={`${item.cover}`} alt=""/></Link>
                         <Link to={`/artists/${this.props.user.id}/music/${item.id}`} ><p onClick={()=>this.refresh()} className="discog-title">{item.title}</p></Link>
@@ -212,8 +216,6 @@ class Item extends React.Component {
                         {/* {console.log(this.props.user.id)} */}
                     </div>
         })
-
-
 
         return (
             <div className="item-show" key={()=>Math.random()}>

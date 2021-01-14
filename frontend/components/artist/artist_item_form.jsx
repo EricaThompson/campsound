@@ -224,7 +224,7 @@ class ArtistItemForm extends React.Component {
                                 Uploading a lot of audio? <span className="blue">Campsound Pro</span> features batch album upload, private streaming, and more. 
                                 <span hidden>Get details...</span>
                             </div>
-                            //* to add to album
+                            {/* to add to album */}
                             {/* <div className="album-info">
                                 <input 
                                     className="checkbox" 

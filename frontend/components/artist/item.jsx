@@ -122,11 +122,14 @@ class Item extends React.Component {
         let second;
         let timeDuration = Math.round(this.state.duration)
         let durationRender;
-        // console.log(time)
         if (timeDuration > 59) {
             minute = Math.floor(timeDuration / 60)
             remainder = minute * 60
             second = timeDuration - remainder
+            if (second < 10) {
+                second = `0${second}`
+            }
+
             durationRender = <span>{minute}:{second}</span>
         }
         

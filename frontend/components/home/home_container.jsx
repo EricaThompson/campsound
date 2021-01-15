@@ -6,6 +6,7 @@ import { openModal } from '../../actions/modal_actions';
 import {browseAll} from '../../actions/item_actions';
 
 const mapStateToProps = state => {
+    // console.log(state.items)
     return {
         currentUser: state.session.currentUser,
         user: state.users[state.session.currentUser],

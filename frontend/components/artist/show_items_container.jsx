@@ -29,7 +29,7 @@ const mapDispatchToProps = dispatch => ({
     readItem: (userId, itemId) => dispatch(readItem(userId, itemId)),
     createItem: (userId, item) => dispatch(createItem(userId, item)),
     updateItem: (userId, item) => dispatch(updateItem(userId, item)),
-    deleteItem: (itemId) => dispatch(deleteItem(itemId)),
+    deleteItem: (userId, itemId) => dispatch(deleteItem(userId, itemId)),
     updateUser: (user, id) => dispatch(updateUser(user, id))
 });
 

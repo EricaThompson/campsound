@@ -77,9 +77,6 @@ class Item extends React.Component {
                 player.innerHTML = `${minute}:${second}`
             }
         }
-
-        
-        
     }
 
     // volumeUp(){
@@ -102,6 +99,12 @@ class Item extends React.Component {
         this.setState({ currentTime: document.getElementById('item-player').currentTime})
         this.setState({timeRendered: true})
         return this.state.currentTime
+    }
+
+    deleteSong(){
+        this.props.deleteItem(this.props.currentUserId, this.state.item.id)
+        this.props.history.push(`/${this.props.match.params.artistId}`)
+        //!needs to refresh after getting there..
     }
 
     render() {
@@ -217,6 +220,15 @@ class Item extends React.Component {
                     </div>
         })
 
+        let deleteBtn;
+
+        if (this.state.item.owner_id === this.props.currentUserId){
+            deleteBtn = <button onClick={() => this.deleteSong()}>Delete</button>
+        }
+
+        console.log(this.state.item)
+        
+
         return (
             <div className="item-show" key={()=>Math.random()}>
                 <img className='cover-art-header' src={`${this.state.item.cover}`} alt=""/>
@@ -225,7 +237,8 @@ class Item extends React.Component {
                     <div className='about-item'>
                         <h1>{this.state.item.title}</h1>
                         <p className='artist'>by <Link to={`/${this.state.item.owner_id}`}>{this.state.item.artist_name}</Link></p>
-                        <button>Delete</button>
+                        {deleteBtn}
+                        
                         <br />
                         {renderPlayer}
                         <br />

@@ -69,12 +69,12 @@ class ShowItems extends React.Component {
                         {/* <Item /> */}
                         <Link to={`artists/${this.props.currentUserId}/music/${item.id}`}>
                             <img src={`${item.cover}`} alt="" />
+                            <h5 className="home-text top">{item.title}</h5>
                         </Link>
-                        <h5 className="home-text top">{item.title}</h5>
-                        <h5 className="home-text artist">{item.artist}</h5>
+                        {/* <h5 className="home-text artist">{item.artist}</h5> */}
                         <h5 onClick={() => this.addToItemList(item)} className="home-text add">Add to Playlist</h5>
-                        <h5 className="home-text"><a href={`${item.song}`} download>Download</a></h5>
-                <h5 className="home-text delete" onClick={()=>this.deleteSong(item)}>Delete</h5>
+                        {/* <h5 className="home-text"><a href={`${item.song}`} download>Download</a></h5> */}
+                {/* <h5 className="home-text delete" onClick={()=>this.deleteSong(item)}>Delete</h5> */}
 
                     </div>
         })

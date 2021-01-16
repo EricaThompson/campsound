@@ -28,6 +28,7 @@ class Search extends React.Component {
         this.showDropdown()
         this.props.genreSearch(genre)
             .then(() => this.props.history.replace(`/search/${genre}`))
+            .then(()=> window.location.reload())
     }
 
     browseAll(){

@@ -35,7 +35,7 @@ class App extends React.Component {
                     <Route path="/search/:result" component={ResultsContainer} />
                     <Route exact path="/:userId" component={ArtistHomepageContainer} />
                     {/* <Route exact path="/:userId" component={ShowItemsContainer} /> */}
-                    <Route exact path="/:userId/new" component={ArtistItemContainer} />
+                    <Route path="/:userId/new" component={ArtistItemContainer} />
                     
                 </div>
             </div>

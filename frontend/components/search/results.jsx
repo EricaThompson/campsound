@@ -10,6 +10,7 @@ class Results extends React.Component {
         super(props);
         this.state = {
             searchTitle: '',
+            discoverResults: []
             // audioPlayer: false
         }
     }
@@ -18,16 +19,19 @@ class Results extends React.Component {
     //     this.setState({audioPlayer: !this.state.audioPlayer})
     // }
 
-    // componentDidMount(){
-    //     this.props.genreSearch(this.props.match.params.genre)
-    //     console.log(this.props.match.params.genre)
-    // }
+    componentDidMount(){
+        this.props.genreSearch(this.props.match.params.result)
+            .then(res => this.setState({discoverResults: res.items}))
+        console.log(this.props)
+    }
 
     render() {
         let searchTitle;
         let arrayOfResults = [];
+        console.log(arrayOfResults)
+        console.log(this.state.discoverResults)
         
-        Object.values(this.props.items).forEach(result => {
+        Object.values(this.state.discoverResults).forEach(result => {
             arrayOfResults.push(result)
         })
 

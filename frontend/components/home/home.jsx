@@ -104,7 +104,7 @@ class Home extends React.Component {
         //     .then(res => this.setState({items: res.items}))
 
 
-        
+
         // this.setState({items: this.props.items})
 
         let sliderCopy = []
@@ -336,7 +336,7 @@ class Home extends React.Component {
                     <ul className="genres">
                         <li className='all'>all</li>
                         <Link to="/search/electronic"><li onClick={()=>this.props.genreSearch('electronic')}>electronic</li></Link>
-                        <Link to="/search/rock"><li>rock</li></Link>
+                        <Link to="/search/rock"><li onClick={() => this.props.genreSearch('rock')}>rock</li></Link>
                         <li>metal</li>
                         <li>alternative</li>
                         <li>hip-hop/rap</li>

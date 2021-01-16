@@ -1690,13 +1690,33 @@ a {
 
     .discover {
         width: 100%;
+
+        .discover-title {
+            width: 1095px;
+            margin: 0 auto;
+            margin-top: 39px;
+            margin-bottom: 20px;
+            font-weight: bolder;
+        }
+
+        
         .genres {
             background-color: #41A0BD;
             width: 100%;
             display: flex;
             justify-content: center;
         }
+        
+        .bar-two {
+            background-color: #4390A8;
+            height: 42px;
+        }
 
+        .bar-three {
+            background-color: #418194;
+            height: 42px;
+
+        }
         ul {
             // margin: 0 auto;
             display: flex;

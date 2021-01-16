@@ -338,6 +338,8 @@ class Home extends React.Component {
                         <li>world</li>
                         <li>jazz</li>
                     </ul>
+                    <div className='bar-two'></div>
+                    <div className='bar-three'></div>
                 </div>
                 <div className="learn-more">
                     <div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // import { anySearch } from '../../util/search_api_util';
-// import { genreSearch, browseAll, anySearch } from '../../actions/item_actions';
+import { genreSearch, browseAll, anySearch } from '../../actions/item_actions';
 import Results from './results';
 
 

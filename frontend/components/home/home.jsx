@@ -8,7 +8,9 @@ class Home extends React.Component {
             items: this.props.items,
             demo: [{
                 owner_id: 85, id: 155, title: "Test", artist: "test", genre: "electronic", date: "Dec 2020", cover: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ce8112185079b5f5c603e5bf3a66223b05ce0b83/pexels-cliford-mervil-2469122.jpg", song: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajRCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a2849dcaae069bb71f8428866d00819bf1027f9f/19-Spring-Day-Forest%20(1).mp3"
-                }, {
+                }, 
+                
+                {
                     id: 156,
                     title: 'Untitled',
                     artist: 'Demo User',
@@ -98,8 +100,11 @@ class Home extends React.Component {
         // let items = []
         let boolean = false;
 
-        this.props.browseAll()
-            .then(res => this.setState({items: res.items}))
+        // this.props.browseAll()
+        //     .then(res => this.setState({items: res.items}))
+
+
+        
         // this.setState({items: this.props.items})
 
         let sliderCopy = []
@@ -129,6 +134,12 @@ class Home extends React.Component {
         this.props.browseAll()
             .then(res => this.setState({ items: res.items, count: res.items.length}))
             // .then(res => this.setState({count: res.items.length}))
+    }
+
+    genreSearch(genre) {
+        // this.showDropdown()
+        this.props.genreSearch(genre)
+            .then(() => this.props.history.replace(`/search/${genre}`))
     }
 
     // slider(){
@@ -324,8 +335,8 @@ class Home extends React.Component {
                     <div className='discover-title'>Discover</div>
                     <ul className="genres">
                         <li className='all'>all</li>
-                        <li>electronic</li>
-                        <li>rock</li>
+                        <Link to="/search/electronic"><li onClick={()=>this.props.genreSearch('electronic')}>electronic</li></Link>
+                        <Link to="/search/rock"><li>rock</li></Link>
                         <li>metal</li>
                         <li>alternative</li>
                         <li>hip-hop/rap</li>

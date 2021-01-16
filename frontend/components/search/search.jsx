@@ -19,6 +19,11 @@ class Search extends React.Component {
         this.typedSearch = this.typedSearch.bind(this)
     }
 
+    componentDidMount(){
+        this.props.genreSearch(this.props.match.genre)
+            .then(() => this.props.history.replace(`/search/${this.props.match.genre}`))
+    }
+
     genreSearch(genre){
         this.showDropdown()
         this.props.genreSearch(genre)
@@ -95,7 +100,7 @@ class Search extends React.Component {
                         type="text"
                     />
                     <i 
-                        onClick={this.typedSearch} 
+                        onClick={()=>this.typedSearch} 
                         className="fas fa-search">
                     </i>
                 </div>

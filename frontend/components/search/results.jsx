@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router';
-import { useHistory } from 'react-router-dom';
+// import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import MusicPlayer from '../music_player/music_player';
 
 
@@ -16,6 +16,11 @@ class Results extends React.Component {
 
     // toggleAudioPlayer(){
     //     this.setState({audioPlayer: !this.state.audioPlayer})
+    // }
+
+    // componentDidMount(){
+    //     this.props.genreSearch(this.props.match.params.genre)
+    //     console.log(this.props.match.params.genre)
     // }
 
     render() {
@@ -86,4 +91,4 @@ class Results extends React.Component {
 }
 
 
-export default Results
+export default withRouter(Results)

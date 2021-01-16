@@ -1688,6 +1688,57 @@ a {
         }
     }
 
+    .discover {
+        width: 100%;
+        .genres {
+            background-color: #41A0BD;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        ul {
+            // margin: 0 auto;
+            display: flex;
+            height: 40px;
+            overflow: hidden;
+            text-align: center;
+            // border: 1px solid hotpink;
+            // width: 816px;
+            
+            .all {
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                background-color: #0E2026;
+                // width: 25px;
+                // height: 24px;
+            }
+            
+
+            li {
+
+                justify-content: center;
+                display: flex;
+                border-radius: 50px 50px 50px 50px;
+                padding: 5px;
+                padding: 5px 10px;
+                margin: 8px;
+                cursor: pointer;
+                color: white;
+                font-size: 14px;
+                position: relative;
+                z-index: 1;
+                transition: 0.4s;
+
+                &:hover {
+                    background-color: #21505f;
+                }
+            }
+        }
+        // border: 1px solid hotpink;
+    }
+
     .learn-more {
         display: flex;
         background-color: white;

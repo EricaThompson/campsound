@@ -320,7 +320,25 @@ class Home extends React.Component {
 
                     </div>
                 </div>
-
+                <div className='discover'>
+                    <div className='discover-title'>Discover</div>
+                    <ul className="genres">
+                        <li className='all'>all</li>
+                        <li>electronic</li>
+                        <li>rock</li>
+                        <li>metal</li>
+                        <li>alternative</li>
+                        <li>hip-hop/rap</li>
+                        <li>experimental</li>
+                        <li>punk</li>
+                        <li>folk</li>
+                        <li>pop</li>
+                        <li>ambient</li>
+                        <li>soundtrck</li>
+                        <li>world</li>
+                        <li>jazz</li>
+                    </ul>
+                </div>
                 <div className="learn-more">
                     <div>
                         <h3>Fans</h3>

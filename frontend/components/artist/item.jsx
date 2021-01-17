@@ -225,7 +225,7 @@ class Item extends React.Component {
 
         if (this.state.item.owner_id === this.props.currentUserId){
             deleteBtn = <button onClick={() => this.deleteSong()}>Delete</button>
-            editBtn = < button onClick={() => this.props.history.replace(`/item/${this.state.item.id}/edit`)}>Edit</button>
+            editBtn = < button onClick={() => this.props.history.replace(`/artists/${this.props.currentUserId}/music/${this.state.item.id}/edit`)}>Edit</button>
         }
 
         console.log(this.state.item)

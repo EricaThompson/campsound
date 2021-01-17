@@ -33,6 +33,7 @@ class ArtistItemForm extends React.Component {
                 releaseDate: this.props.item.date,
                 artistName: this.props.item.artist_name,
                 genre: this.props.item.genre,
+                id: this.props.item.id,
                 about: this.props.item.about,
                 collection_id: null,
                 playerView: false,
@@ -47,6 +48,8 @@ class ArtistItemForm extends React.Component {
             }
         }
 
+        // this.updateItem = this.props.updateItem.bind(this)
+
         
         
     }
@@ -54,15 +57,18 @@ class ArtistItemForm extends React.Component {
     componentDidMount(){
         if (this.props.match.path.includes('edit')){
             this.setState({playerView: true})
-            this.props.readItem(this.props.match.params.userId, this.props.match.params.itemId)
+            this.props.readItem(this.props.match.params.currentUserId, this.props.match.params.itemId)
                 .then(res => this.setState({
                     artistName: res.item.artist_name,
                     genre: res.item.genre,
                     about: res.item.about,
                     coverPreviewUrl: res.item.cover,
                     songPreviewUrl: res.item.song,
-                    trackTitle: res.item.title
+                    trackTitle: res.item.title,
+                    id: this.props.match.params.itemId
                 }))
+            // console.log('id', this.props.match.params.itemId)
+            
 
                 // .then(res => console.log('res: ',res))
         }
@@ -72,7 +78,7 @@ class ArtistItemForm extends React.Component {
 
         e.preventDefault();
 
-        this.setState({ spinnerShow: true, coverError: '', songError: '' });
+        // this.setState({ spinnerShow: true, coverError: '', songError: '' });
         const formData = new FormData();
 
         if (this.state.coverFile) {
@@ -91,6 +97,10 @@ class ArtistItemForm extends React.Component {
         formData.append('item[released]', true)
         formData.append('item[collection_id]', null)
 
+        // if (this.props.match.path.includes('edit')){
+        //     formData.append('item[id]', this.props.match.params.itemId)
+        // } 
+
         
 
         if (this.props.match.path.includes('new')) {
@@ -99,10 +109,9 @@ class ArtistItemForm extends React.Component {
                     .then(() => this.props.history.replace(`/${this.props.currentUserId}`), () => this.setState({ spinnerShow: false }))
             }
         } else if (this.props.match.path.includes('edit')){
-            console.log('edit!')
-            this.props.updateItem(this.props.currentUserId, formData)
-                .then(() => this.props.history.replace(`/${this.props.currentUserId}`), () => this.setState({ spinnerShow: false }))
-                .catch(err => console.log(err))
+            this.props.updateItem(this.props.currentUserId, this.props.match.params.itemId, formData)
+                this.props.history.replace(`/artists/${this.props.currentUserId}/music/${this.state.id}`)
+                // .catch(err => console.log(err))
         }
         
 
@@ -177,6 +186,7 @@ class ArtistItemForm extends React.Component {
     // }
 
     render(){
+        // console.log(this.updateItem)
     
 
         let trackTitle;
@@ -420,7 +430,7 @@ class ArtistItemForm extends React.Component {
             )
         } else if (this.props.match.path.includes('edit')) {
             let test = 'test';
-            console.log(this.state)
+            console.log('this state', this.state)
 
             let item;
             item = this.props.item
@@ -512,14 +522,14 @@ class ArtistItemForm extends React.Component {
                         </div>
                             <div className="track-group">
                                 <div className='blue'>*</div>
-                                <input placeholder="...." value={this.state.trackTitle} className="track-name" type="text" onChange={this.handleChange('trackTitle')} />
+                                <input placeholder="...." defaultValue={this.state.trackTitle} className="track-name" type="text" onChange={this.handleChange('trackTitle')} />
                             </div>
                             <div>
                                 <div className="input-helper upper">
                                     artist:
                             </div>
                                 <br />
-                                <input className="artist-item-input" value={this.state.artistName} placeholder="leave blank to use username" type="text" onChange={this.handleChange('artistName')} />
+                                <input className="artist-item-input" defaultValue={this.state.artistName} placeholder="leave blank to use username" type="text" onChange={this.handleChange('artistName')} />
                                 <br />
                                 <div className="input-helper under"> for compilations, labels, etc.</div>
                             </div>
@@ -559,7 +569,7 @@ class ArtistItemForm extends React.Component {
                             </div>
                                 <br />
                                 <input 
-                                    value={this.state.genre}
+                                    defaultValue={this.state.genre}
                                     className="artist-item-input" 
                                     placeholder="help fans find your music" 
                                     type="text" 

@@ -14,12 +14,14 @@ class Home extends React.Component {
                     id: 156,
                     title: 'Untitled',
                     artist: 'Demo User',
+                    owner_id: 91,
                     genre: '',
                     date: 'Dec 2020',
                     cover: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajhCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e921150245c0f7ccefb08eec97c950e9ebe17e7c/pexels-carlos-santos-3672355.jpg',
                     song: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBa0FCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--728e014fae0f1ad4a968b8af9d226d140044dde5/19-Spring-Day-Forest%20(1).mp3'
                 }, {
                     id: 157,
+                    owner_id: 91,
                     title: 'Untitled',
                     artist: 'Demo User',
                     genre: '',
@@ -28,6 +30,7 @@ class Home extends React.Component {
                     song: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBa0lCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--962e99ef0e21ef84781b64cd679ee19395d4a91b/19-Spring-Day-Forest%20(1).mp3'
                 }, {
                     id: 158,
+                    owner_id: 91,
                     title: 'Untitled',
                     artist: 'Demo User',
                     genre: '',
@@ -36,6 +39,7 @@ class Home extends React.Component {
                     song: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBa1FCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e492951d5fa0e4ddce3de92ac68a67d10d929ec7/Beach%20Sounds%20-%2012-17-20,%2010.47%20PM.mp3'
                 }, {
                     id: 160,
+                    owner_id: 91,
                     title: 'Untitled',
                     artist: 'Demo User',
                     genre: '',
@@ -44,6 +48,7 @@ class Home extends React.Component {
                     song: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBa2dCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0949fddc9115245964b7f2bbe3ebb26cb4488677/Screen%20Shot%202021-01-02%20at%2010.53.00%20PM.png'
                 }, {
                     id: 161,
+                    owner_id: 91,
                     title: 'Untitled',
                     artist: 'Demo User',
                     genre: '',
@@ -52,6 +57,7 @@ class Home extends React.Component {
                     song: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBa29CIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e78642b389a2222b9b587677c8d2bd1dd54aa733/Avicii%20-%20Peace%20Of%20Mind%20(1).mp3'
                 }, {
                     id: 162,
+                    owner_id: 91,
                     title: 'Untitled',
                     artist: 'Demo User',
                     genre: 'electronic',
@@ -60,6 +66,7 @@ class Home extends React.Component {
                     song: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBa3dCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--953b05f3471731984616d63ae90524eb707ae25b/Avicii%20-%20Peace%20Of%20Mind%20(1).mp3'
                 }, {
                     id: 163,
+                    owner_id: 91,
                     title: 'Untitled',
                     artist: 'Demo User',
                     genre: 'Electronic',
@@ -68,6 +75,7 @@ class Home extends React.Component {
                     song: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBazRCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8c73ef2489a30a091e38020fbae8725a4c9069e7/Avicii%20-%20Peace%20Of%20Mind%20(1).mp3'
                 }, {
                     id: 164,
+                    owner_id: 91,
                     title: 'Marquee',
                     artist: 'Artist',
                     genre: '',
@@ -76,6 +84,7 @@ class Home extends React.Component {
                     song: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbEFCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--858af4e708bfb6fd57f069b66675123e57af7867/Bassline.wav'
                 }, {
                     id: 165,
+                    owner_id: 91,
                     title: 'Untitled',
                     artist: 'Demo User',
                     genre: '',
@@ -172,7 +181,7 @@ class Home extends React.Component {
             // let wait = 3;
             // let second = 0;
 
-
+                console.log('home, item owner id', item.owner_id)
                 return <div key={idx}className="slide">
                             <Link to={`/artists/${item.owner_id}/music/${item.id}`}>
                                 <img src={`${item.cover}`} alt=""/>

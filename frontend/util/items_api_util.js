@@ -23,11 +23,13 @@ export const readAllUserItems = (userId) => (
     })
 )
 
-export const updateItem = (userId, item) => (
+export const updateItem = (userId, itemId, item) => (
     $.ajax({
-        url: `/api/users/${userId}/items/${item.id}`,
+        url: `/api/users/${userId}/items/${itemId}`,
         method: 'PATCH',
-        data: item
+        data: item,
+        contentType: false,
+        processData: false
     })
 )
 

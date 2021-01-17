@@ -2335,13 +2335,91 @@ a {
                 .bio {
                     color: #0887F5;
                     font-size: 12px;
-                }
-
-                
+                }               
             }
         }
     }
-    
+}  
+
+
+//* Stories
+
+.stories-container {
+    border-top: 1px solid #eee;
+    margin-top: 15px;
     
 
-}    
+    .stories-nav {
+        display: flex;
+        border-right: none;
+        border-left: none;
+        padding-left: 38px;
+        padding-top: 0px;
+        justify-content: space-between;
+        width: 55%;
+        height: 45px;
+        margin-bottom: 25px;
+        h1 {
+            font-size: 16.25px;
+            color: #909090;
+            padding-left: 15px;
+            padding-top: 4px;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            color: #909090;
+            font-size: 16.25px;
+            font-weight: lighter;
+            // float: center;
+        }
+    }
+
+    .main-story {
+        padding-left: 25px;
+        padding-bottom: 25px;
+        margin-top: -25px;
+        padding-top: 25px;
+        display: flex;
+        border-top: 1px solid #eee;
+
+        img {
+            height: 287px;
+            width: 540px;
+        }
+        .main-story-info {
+            margin: 16px;
+            width: 270px;
+
+            .main-story-date {
+                // display: flex;
+                text-align: center;
+                font-size: 15px;
+                color: #909090;
+                font-weight: lighter;
+                margin-bottom: 23px;
+            }
+
+            .main-story-title {
+                font-size: 21.725px;
+                color: #000;
+                margin-bottom: 23px;
+                text-transform: capitalize;
+            }
+
+            .main-story-summary {
+                font-size: 16px;
+                font-weight: lighter;
+                margin-bottom: 23px;
+            }
+
+            .main-story-author {
+                font-size: 15px;
+                color: #909090;
+                font-weight: lighter;
+            }
+
+        }
+    }
+}

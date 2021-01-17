@@ -10,6 +10,7 @@ class StoriesIndex extends React.Component {
             // songList: [],
             // currentSong: null,
             // playerView: false
+            mainStory: 1
         }
     }
 
@@ -17,7 +18,8 @@ class StoriesIndex extends React.Component {
         $.ajax({
             url: `/api/stories`,
             method: 'GET'
-        }).then(res => this.setState({ storyList: Object.values(Object.values(res))}))
+        }).then(res => this.setState({ mainStory: Object.values(Object.values(res))[0]}))
+        .then(res => this.setState({ storyList: Object.values(Object.values(res))}))
         // }).then(res => console.log(Object.values(Object.values(res))))
         // }).then(res => console.log(Object.values(Object.values(res))[0].text))
     }
@@ -130,8 +132,37 @@ class StoriesIndex extends React.Component {
 
         return (
             <div className="stories-container">
+                <div className='stories-nav'>
+                    <h1>Campsound Daily</h1>
+                    <ul>
+                        <li>
+                            stories · view all
+                        </li>
+
+                    </ul>
+                </div>
+                <div className="main-story">
+                    <img src="https://f4.bcbits.com/img/0023234048_180" alt="" />
+                    <div className='main-story-info'>
+                        <div className='main-story-date'>
+                            · {this.state.mainStory.date} ·
+                        </div>
+                        
+                        <div className='main-story-title'>
+                            {this.state.mainStory.title}
+                        </div>
+                        <div className='main-story-summary'>
+                            {this.state.mainStory.text}
+                        </div>
+                        <div className='main-story-author'>
+                            by {this.state.mainStory.author}
+                        </div>
+                    </div>
+                </div>
+
+                {/* <h1 className="stories-title">Stories</h1>
+                <h4>Count of items</h4> */}
                 {storyDisplay}
-                hello
             </div>
         )
     }

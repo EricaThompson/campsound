@@ -4,6 +4,6 @@
         json.title story.title
         json.author story.owner_id
         json.text story.text
-        json.date story.created_at.strftime("%b %Y")
+        json.date story.created_at.strftime("%B %d, %Y")
     end
 end

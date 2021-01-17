@@ -12,6 +12,8 @@
 #  collection_id :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  artist_name   :string
+#  bio           :text
 #
 require 'test_helper'
 

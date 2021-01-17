@@ -2394,11 +2394,16 @@ a {
 
             .main-story-date {
                 // display: flex;
-                text-align: center;
+                // text-align: center;
                 font-size: 15px;
                 color: #909090;
                 font-weight: lighter;
                 margin-bottom: 23px;
+                
+                .main-story-type {
+                    font-weight: bolder;
+                    text-transform: uppercase;
+                }
             }
 
             .main-story-title {

@@ -145,7 +145,7 @@ class StoriesIndex extends React.Component {
                     <img src="https://f4.bcbits.com/img/0023234048_180" alt="" />
                     <div className='main-story-info'>
                         <div className='main-story-date'>
-                            · {this.state.mainStory.date} ·
+                            <span className='main-story-type'>{this.state.mainStory.type}</span> · {this.state.mainStory.date}
                         </div>
                         
                         <div className='main-story-title'>
@@ -155,7 +155,7 @@ class StoriesIndex extends React.Component {
                             {this.state.mainStory.text}
                         </div>
                         <div className='main-story-author'>
-                            by {this.state.mainStory.author}
+                            By {this.state.mainStory.author}
                         </div>
                     </div>
                 </div>

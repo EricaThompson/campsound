@@ -69,7 +69,7 @@ def new
             :owner_id, 
             :title, 
             :story_type,
-            :story,
+            :text,
         )
     end
 

@@ -14,7 +14,7 @@ class Story < ApplicationRecord
     validates :owner_id, presence: true
     validates :title, presence: true
     validates :story_type, presence: true
-    validates :story, presence: true
+    validates :text, presence: true
 
     belongs_to :author,
         foreign_key: :owner_id,

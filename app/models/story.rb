@@ -19,5 +19,4 @@ class Story < ApplicationRecord
     belongs_to :author,
         foreign_key: :owner_id,
         class_name: :User
-        
 end

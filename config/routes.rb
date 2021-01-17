@@ -10,6 +10,12 @@
 #                           PATCH  /api/users/:user_id/items/:id(.:format)                                                  api/items#update {:format=>:json}
 #                           PUT    /api/users/:user_id/items/:id(.:format)                                                  api/items#update {:format=>:json}
 #                           DELETE /api/users/:user_id/items/:id(.:format)                                                  api/items#destroy {:format=>:json}
+#          api_user_stories GET    /api/users/:user_id/stories(.:format)                                                    api/stories#index {:format=>:json}
+#                           POST   /api/users/:user_id/stories(.:format)                                                    api/stories#create {:format=>:json}
+#            api_user_story GET    /api/users/:user_id/stories/:id(.:format)                                                api/stories#show {:format=>:json}
+#                           PATCH  /api/users/:user_id/stories/:id(.:format)                                                api/stories#update {:format=>:json}
+#                           PUT    /api/users/:user_id/stories/:id(.:format)                                                api/stories#update {:format=>:json}
+#                           DELETE /api/users/:user_id/stories/:id(.:format)                                                api/stories#destroy {:format=>:json}
 #                 api_users GET    /api/users(.:format)                                                                     api/users#index {:format=>:json}
 #                           POST   /api/users(.:format)                                                                     api/users#create {:format=>:json}
 #                  api_user GET    /api/users/:id(.:format)                                                                 api/users#show {:format=>:json}
@@ -32,6 +38,7 @@ Rails.application.routes.draw do
     resources :items, only: [:index]
     resources :users, only: [:create, :index, :show, :update] do 
       resources :items, only: [:index, :create, :show, :update, :destroy]
+      resources :stories, only: [:create, :index, :show, :update, :destroy]
     end
     resource :session, only: [:create, :destroy]
   end

@@ -221,9 +221,11 @@ class Item extends React.Component {
         })
 
         let deleteBtn;
+        let editBtn;
 
         if (this.state.item.owner_id === this.props.currentUserId){
             deleteBtn = <button onClick={() => this.deleteSong()}>Delete</button>
+            editBtn = <button>Edit</button>
         }
 
         console.log(this.state.item)
@@ -238,6 +240,7 @@ class Item extends React.Component {
                         <h1>{this.state.item.title}</h1>
                         <p className='artist'>by <Link to={`/${this.state.item.owner_id}`}>{this.state.item.artist_name}</Link></p>
                         {deleteBtn}
+                        {editBtn}
                         
                         <br />
                         {renderPlayer}

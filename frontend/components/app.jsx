@@ -33,7 +33,7 @@ class App extends React.Component {
                     {/* <img id="main-story" src={require('../../app/assets/images/pexels.jpg')} alt="main story image" /> */}
                     {/* </div> */}
                     <Route exact path="/artists/:userId/music/:itemId" component={ItemContainer}/>
-                    <Route path="/search/:result" component={ResultsContainer} />
+                    <Route exact path="/search/:result" component={ResultsContainer} />
                     <Route exact path="/:userId" component={ArtistHomepageContainer} />
                     {/* <Route exact path="/:userId" component={ShowItemsContainer} /> */}
                     

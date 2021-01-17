@@ -1763,6 +1763,16 @@ a {
         // border: 1px solid hotpink;
     }
 
+    .dots {
+        margin-top: 50px;
+        // border-top: 5px dotted #ADAF59;
+        height: 10px;
+        background-image: linear-gradient(to right, #6c9c9e64 20%, rgba(255,255,255,0) 0%);
+        background-position: bottom;
+        background-size: 17px 4px;
+        background-repeat: repeat-x;
+    }
+
     .learn-more {
         display: flex;
         background-color: white;
@@ -1775,6 +1785,7 @@ a {
         line-height: 18px;
         font-size: 18px;
         color: #2B2B2B;
+
 
         img {
             width: 100px;

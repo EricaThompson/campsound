@@ -110,6 +110,7 @@ class Home extends React.Component {
         let sliderCopy = []
         
         // let that = this;
+        //! this......
         this.timer = setInterval(() => {
             if (this.state.slider.length > 7) {
                 clearInterval(this.timer);
@@ -117,8 +118,8 @@ class Home extends React.Component {
             }
             sliderCopy.push(this.state.demo.pop())
             let tempItems = []
-            this.props.browseAll()
-                .then(res => tempItems = res.items)
+            // this.props.browseAll()
+            //     .then(res => tempItems = res.items)
 
 
             if (tempItems.length > 1){
@@ -130,17 +131,18 @@ class Home extends React.Component {
         
 
         }, 1000);
+        //!^^^^^
 
-        this.props.browseAll()
-            .then(res => this.setState({ items: res.items, count: res.items.length}))
+        // this.props.browseAll()
+        //     .then(res => this.setState({ items: res.items, count: res.items.length}))
             // .then(res => this.setState({count: res.items.length}))
     }
 
-    genreSearch(genre) {
-        // this.showDropdown()
-        this.props.genreSearch(genre)
-            .then(() => this.props.history.replace(`/search/${genre}`))
-    }
+    // genreSearch(genre) {
+    //     // this.showDropdown()
+    //     this.props.genreSearch(genre)
+    //         .then(() => this.props.history.replace(`/search/${genre}`))
+    // }
 
     // slider(){
     //     let i = 0
@@ -351,6 +353,9 @@ class Home extends React.Component {
                     </ul>
                     <div className='bar-two'></div>
                     <div className='bar-three'></div>
+                </div>
+                <div className="dots">
+                        
                 </div>
                 <div className="learn-more">
                     <div>

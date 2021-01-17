@@ -11,6 +11,10 @@ class NavBar extends React.Component {
         this.logoutRefresh = this.logoutRefresh.bind(this)
     }
 
+    componentDidMount(){
+        this.setState({ authDropdown: false })
+    }
+
     logoutRefresh(){
         this.props.logout()
         this.setState({authDropdown: false})

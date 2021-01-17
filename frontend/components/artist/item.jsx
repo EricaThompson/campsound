@@ -254,6 +254,9 @@ class Item extends React.Component {
                             quality download in MP3, FLAC and more.
                         </p>
                         <a className="download" href={`${this.state.item.song}`} download>Download Digital Track </a><span className="price">{this.state.item.price}</span>
+                        <br />
+                        <br />
+                        <p className='about'> {this.state.item.about}</p>
                         <p className="release-date" >released {this.state.item.date}</p>
                         <p className="copyright" >© all rights reserved</p>
                     </div>

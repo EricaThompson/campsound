@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from './store/store';
 import Root from './components/root';
+import * as StoryAPIUtil from './util/stories_api_util';
+import * as ItemAPIUtil from './util/items_api_util';
+// import Root from './components/root';
 // import {deleteItem} from './actions/item_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,4 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(<Root store={store} />, root);
 });
 
+window.createStory = StoryAPIUtil.createStory
+window.createItem = ItemAPIUtil.createItem
+// window.myConstant = 5;
 // window.deleteItem = deleteItem

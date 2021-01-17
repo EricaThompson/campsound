@@ -5,7 +5,7 @@ def new
     end
 
     def create
-        @story = Story.new(item_params)
+        @story = Story.new(story_params)
         if @story.save
             render :show
         else
@@ -31,7 +31,7 @@ def new
         elsif params['genre']
             @stories = Story.where('genre ~ ?', params['genre'])
         elsif params['any']
-            @stories = Story.where('artist_name ~ ?', params['any']).or(Item.where('title ~ ?', params['any']))
+            @stories = Story.where('artist_name ~ ?', params['any']).or(Story.where('title ~ ?', params['any']))
         #     @storys = Item.where('title ~ ?', params['any'] 'or artist_name ~ ?', params['any'])
         # elsif !request.query_string.blank?
         #     @storys = Item.where(' ~ ?', request.query_string)
@@ -49,8 +49,8 @@ def new
     end
 
     def update
-        @story = Item.find(params[:id])
-        if @story.update(item_params)
+        @story = Story.find(params[:id])
+        if @story.update(story_params)
             render :show
         else
             render json: @story.erros.full_messages, status: 401
@@ -58,26 +58,18 @@ def new
     end
 
     def destroy
-        item = Item.find_by(id: params[:id])
-        item.destroy if current_user.id == item.owner_id
+        story = Story.find_by(id: params[:id])
+        story.destroy if current_user.id == story.owner_id
         render :index
     end
 
     private
-    def item_params
-        params.require(:item).permit(
+    def story_params
+        params.require(:story).permit(
             :owner_id, 
             :title, 
-            :genre, 
-            :price, 
-            :released, 
-            :about, 
-            :collection_id,
-            :cover,
-            :song,
-            :artist_name,
-            :id
-            # remove from schema :bio
+            :story_type,
+            :story,
         )
     end
 

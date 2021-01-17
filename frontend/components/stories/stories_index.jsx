@@ -6,11 +6,20 @@ class StoriesIndex extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            itemList: [],
+            storyList: [],
             // songList: [],
             // currentSong: null,
             // playerView: false
         }
+    }
+
+    componentDidMount(){
+        $.ajax({
+            url: `/api/stories`,
+            method: 'GET'
+        }).then(res => this.setState({ storyList: Object.values(Object.values(res))}))
+        // }).then(res => console.log(Object.values(Object.values(res))))
+        // }).then(res => console.log(Object.values(Object.values(res))[0].text))
     }
 
     // deleteSong(song) {
@@ -64,22 +73,23 @@ class StoriesIndex extends React.Component {
     render() {
         console.log('props', this.props)
 
-        // let itemDisplay = this.props.items.map((item) => {
-        //     return <div key={item.id} className="item-display">
+        let storyDisplay = this.state.storyList.map((story) => {
+            return <div key={story.id} className="story-display">
                
-        //         <Link to={`artists/${this.props.currentUserId}/music/${item.id}`}>
-        //             <img src={`${item.cover}`} alt="" />
-        //             <h5 className="home-text top">{item.title}</h5>
-        //         </Link>
+                <Link to={`artists/${this.props.currentUserId}/music/${story.id}`}>
+                    {/* <img src={`${story.title}`} alt="" /> */}
+                    <h5>{story.title}</h5>
+                    <h5 className="home-text top">{story.text}</h5>
+                </Link>
                
-        //         <h5 onClick={() => this.addToItemList(item)} className="home-text add">Add to Playlist</h5>
+                {/* <h5 onClick={() => this.addTostoryList(story)} className="home-text add">Add to Playlist</h5> */}
                 
 
-        //     </div>
-        // })
+            </div>
+        })
         let current = 'current';
 
-        // let playlist = this.state.itemList.map((song, idx) => {
+        // let playlist = this.state.storyList.map((song, idx) => {
         //     return <div key={Math.random()} className={`i${idx + 1}`}>
         //         {/* {indices.push(idx)} */}
         //         <div onClick={() => this.setState({ playerView: false }, () => this.playSong(song.song))}>
@@ -120,7 +130,7 @@ class StoriesIndex extends React.Component {
 
         return (
             <div className="stories-container">
-                {/* {itemDisplay} */}
+                {storyDisplay}
                 hello
             </div>
         )

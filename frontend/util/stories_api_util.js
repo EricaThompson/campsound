@@ -7,3 +7,10 @@ export const createStory = (userId, story) => (
         // processData: false
     })
 )
+
+export const readAllStories = () => (
+    $.ajax({
+        url: `/api/stories`,
+        method: 'GET'
+    })
+)

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import StoriesIndex from './stories_index';
-
+// import { createStory } from './'
 // import { updateUser } from '../../actions/session_actions';
 // import { openModal, closeModal } from '../../actions/modal_actions';
 // import {
@@ -18,7 +18,8 @@ const mapStateToProps = state => ({
     currentUserId: state.session.currentUser,
     user: state.users[state.session.currentUser],
     currentItemId: state.items.currentItemId,
-    items: state.items
+    items: state.items,
+    // stories: state.stories
 });
 
 const mapDispatchToProps = dispatch => ({

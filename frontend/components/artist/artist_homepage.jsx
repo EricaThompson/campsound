@@ -230,7 +230,7 @@ class ArtistHomepage extends React.Component {
                                     type="file"
                                     onChange={this.imageSubmit.bind(this)}
                                 />
-                                <div className="change-image">↻</div>
+                                <div className="change-image">&#215;</div>
                             </div>
 
                             {location}

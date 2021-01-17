@@ -18,7 +18,7 @@ const mapStateToProps = state => ({
     currentUserId: state.session.currentUser,
     user: state.users[state.session.currentUser],
     currentItemId: state.items.currentItemId,
-    item: state.items[state.items.currentItemId]
+    item: Object.values(state.items)
 });
 
 const mapDispatchToProps = dispatch => ({

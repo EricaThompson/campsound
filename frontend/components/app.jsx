@@ -29,12 +29,14 @@ class App extends React.Component {
                     <Route key={Math.random()} path="/" component={NavBarContainer} />
                     <Route exact path="/" component={HomeContainer} />
                     <Route exact path="/:userId/new" component={ArtistItemContainer} />
+                    <Route exact path="/item/:itemId/edit" component={ArtistItemContainer} />
                     {/* <Route exact path="/" /> */}
                     {/* <img id="main-story" src={require('../../app/assets/images/pexels.jpg')} alt="main story image" /> */}
                     {/* </div> */}
                     <Route exact path="/artists/:userId/music/:itemId" component={ItemContainer}/>
                     <Route exact path="/search/:result" component={ResultsContainer} />
                     <Route exact path="/:userId" component={ArtistHomepageContainer} />
+
                     {/* <Route exact path="/:userId" component={ShowItemsContainer} /> */}
                     
                 </div>

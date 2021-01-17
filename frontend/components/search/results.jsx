@@ -22,14 +22,15 @@ class Results extends React.Component {
     componentDidMount(){
         this.props.genreSearch(this.props.match.params.result)
             .then(res => this.setState({discoverResults: res.items}))
-        console.log(this.props)
+        // console.log(this.props)
     }
 
     render() {
         let searchTitle;
         let arrayOfResults = [];
-        console.log(arrayOfResults)
-        console.log(this.state.discoverResults)
+        // console.log(arrayOfResults)
+        // console.log(this.state.discoverResults)
+        // console.log('currentUser', this.props.currentUser)
         
         Object.values(this.state.discoverResults).forEach(result => {
             arrayOfResults.push(result)
@@ -58,21 +59,26 @@ class Results extends React.Component {
             }
             return <div key={result.id} className="result-parent">
                         
-                        <div key={result.id} className="result-display">
-                            <img src={`${result.cover}`} alt="" />
-                            <h5 className="home-text top">{result.title}</h5>
-                            <h5 className="home-text">{result.artist}</h5>
-                            <h5 
-                                className="home-text add">Add to Playlist
-                            </h5>
-                            <h5 className="home-text"><a href={`${result.song}`} download>Download</a></h5>
-                            {/* <h5 onClick={()=>this.toggleAudioPlayer()} className="home-text">Listen</h5> */}
-                            <audio key={result.id} id="results-single-player" controls>
-                                <source src={result.song} type="audio/mpeg" />
-                                Your browser does not support the audio tag.
-                            </audio>
-                        </div>
-
+                <div key={result.id} className="result-display">
+                        {/* <Link to={`artists/${this.props.currentUserId}/music/${result.id}`}> */}
+                            <span onClick={() => this.props.history.replace(`/artists/${this.props.currentUserId}/music/${result.id}`)}>
+                                <img src={`${result.cover}`} alt="song cover art" />
+                                <h5 className="home-text top">{result.title}</h5>
+                            </span>
+                            <span onClick={() => this.props.history.replace(`/${this.props.currentUserId}`)}>
+                                <h5 className="home-text">{result.artist}</h5>
+                            </span>
+                                <h5 
+                                    className="home-text add">Add to Playlist
+                                </h5>
+                                <h5 className="home-text"><a href={`${result.song}`} download>Download</a></h5>
+                                {/* <h5 onClick={()=>this.toggleAudioPlayer()} className="home-text">Listen</h5> */}
+                                <audio key={result.id} id="results-single-player" controls>
+                                    <source src={result.song} type="audio/mpeg" />
+                                    Your browser does not support the audio tag.
+                                </audio>
+                        {/* </Link> */}
+                            </div>
                     </div>
         })
         

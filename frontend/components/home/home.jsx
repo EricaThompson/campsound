@@ -334,7 +334,7 @@ class Home extends React.Component {
                 <div className='discover'>
                     <div className='discover-title'>Discover</div>
                     <ul className="genres">
-                        <li className='all'>all</li>
+                        <Link to="/search/browse-all"><li className='all'>all</li></Link>
                         <Link to="/search/electronic"><li>electronic</li></Link>
                         <Link to="/search/rock"><li>rock</li></Link>
                         <Link to="/search/metal"><li>metal</li></Link>

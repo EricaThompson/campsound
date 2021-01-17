@@ -8,7 +8,7 @@ import Results from './results';
 
 const mapStateToProps = state => {
     return {
-        currentUser: state.session.currentUser,
+        currentUserId: state.session.currentUser,
         user: state.users[state.session.currentUser],
         items: state.items
     };

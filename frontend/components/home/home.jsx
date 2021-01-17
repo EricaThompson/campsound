@@ -287,11 +287,13 @@ class Home extends React.Component {
         return (
             <div className="home">
                 <div className="stories">
-                    <div className="main">
-                        <p>The Forest Through the Trees</p>
-                        <h6>Songs about healing and hope.</h6>
-                        <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-2395250.jpg" alt="blue flowers"/>
-                    </div>
+                    <Link to="/stories">
+                        <div className="main">
+                            <p>The Forest Through the Trees</p>
+                            <h6>Songs about healing and hope.</h6>
+                            <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-2395250.jpg" alt="blue flowers"/>
+                        </div>
+                    </Link>
                     <div className="side">
                         <div className='set'>
                             <p>Gold is in Bloom</p>

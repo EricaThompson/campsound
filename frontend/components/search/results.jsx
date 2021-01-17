@@ -65,7 +65,7 @@ class Results extends React.Component {
                                 <img src={`${result.cover}`} alt="song cover art" />
                                 <h5 className="home-text top">{result.title}</h5>
                             </span>
-                            <span onClick={() => this.props.history.replace(`/${this.props.currentUserId}`)}>
+                            <span onClick={() => this.props.history.replace(`/artists/${this.props.currentUserId}`)}>
                                 <h5 className="home-text">{result.artist}</h5>
                             </span>
                                 <h5 

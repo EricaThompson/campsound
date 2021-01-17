@@ -7,9 +7,11 @@ import SearchContainer from './search/search_container';
 import ResultsContainer from './search/results_container';
 import HomeContainer from './home/home_container';
 import ItemContainer from './artist/item_container';
+import StoriesIndexContainer from './stories/stories_index_container';
 // import ShowItemsContainer from './artist/show_items_container';
 import { ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
+import stories_index_container from './stories/stories_index_container';
 // import Home from './home/home';
 
 class App extends React.Component {
@@ -28,6 +30,7 @@ class App extends React.Component {
                     <Route path="/" component={SearchContainer}/>
                     <Route key={Math.random()} path="/" component={NavBarContainer} />
                     <Route exact path="/" component={HomeContainer} />
+                    <Route exact path="/stories" component={StoriesIndexContainer} />
                     <Route exact path="/:userId/new" component={ArtistItemContainer} />
                     <Route exact path="/artists/:userId/music/:itemId/edit" component={ArtistItemContainer} />
                     {/* <Route exact path="/" /> */}
@@ -35,7 +38,7 @@ class App extends React.Component {
                     {/* </div> */}
                     <Route exact path="/artists/:userId/music/:itemId" component={ItemContainer}/>
                     <Route exact path="/search/:result" component={ResultsContainer} />
-                    <Route exact path="/:userId" component={ArtistHomepageContainer} />
+                    <Route exact path="/artists/:userId" component={ArtistHomepageContainer} />
 
                     {/* <Route exact path="/:userId" component={ShowItemsContainer} /> */}
                     

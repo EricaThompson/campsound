@@ -76,6 +76,7 @@ class Api::ItemsController < ApplicationController
             :cover,
             :song,
             :artist_name,
+            :id
             # remove from schema :bio
         )
     end

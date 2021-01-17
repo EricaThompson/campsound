@@ -48,16 +48,14 @@ class ArtistItemForm extends React.Component {
             }
         }
 
-        // this.updateItem = this.props.updateItem.bind(this)
-
-        
-        
+        // this.updateItem = this.props.updateItem.bind(this)  
     }
 
     componentDidMount(){
         if (this.props.match.path.includes('edit')){
             this.setState({playerView: true})
-            this.props.readItem(this.props.match.params.currentUserId, this.props.match.params.itemId)
+            console.log(this.props.currentUserId, parseInt(this.props.match.params.itemId))
+            this.props.readItem(this.props.match.params.userId, parseInt(this.props.match.params.itemId))
                 .then(res => this.setState({
                     artistName: res.item.artist_name,
                     genre: res.item.genre,
@@ -67,6 +65,7 @@ class ArtistItemForm extends React.Component {
                     trackTitle: res.item.title,
                     id: this.props.match.params.itemId
                 }))
+                // .catch(err => console.log(err))
             // console.log('id', this.props.match.params.itemId)
             
 
@@ -110,7 +109,7 @@ class ArtistItemForm extends React.Component {
             }
         } else if (this.props.match.path.includes('edit')){
             this.props.updateItem(this.props.currentUserId, this.props.match.params.itemId, formData)
-                this.props.history.replace(`/artists/${this.props.currentUserId}/music/${this.state.id}`)
+                // this.props.history.replace(`/artists/${this.props.currentUserId}/music/${this.state.id}`)
                 // .catch(err => console.log(err))
         }
         
@@ -255,7 +254,7 @@ class ArtistItemForm extends React.Component {
         if (this.state.coverPreviewUrl){
             white = { color: 'white' }
         } 
-        console.log(this.props)
+        // console.log(this.props)
         if (this.props.match.path.includes('new')){
             return (
                 <div className="artist-input-form">
@@ -430,7 +429,7 @@ class ArtistItemForm extends React.Component {
             )
         } else if (this.props.match.path.includes('edit')) {
             let test = 'test';
-            console.log('this state', this.state)
+            // console.log('this state', this.state)
 
             let item;
             item = this.props.item

@@ -71,7 +71,8 @@ def new
             :story_type,
             :text,
             :id,
-            :summary
+            :summary,
+            :username
         )
     end
 

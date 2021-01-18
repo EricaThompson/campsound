@@ -17,6 +17,7 @@ class StoryForm extends React.Component {
                 genre: 'news',
                 date: Date.now(),
                 currentStory: [],
+                username: this.props.user.username,
 
                 
                 // releaseDate: '',
@@ -70,6 +71,10 @@ class StoryForm extends React.Component {
     }
 
     componentDidMount() {
+        // if (this.props.match.path.includes('new')){
+        //     console.log('props',this.props)
+        // }
+
         if (this.props.match.path.includes('edit')) {
             this.setState({ playerView: true })
             console.log(this.props.currentUserId, parseInt(this.props.match.params.itemId))
@@ -136,7 +141,8 @@ class StoryForm extends React.Component {
                     "title": this.state.title || 'Untitled',
                     "story_type": this.state.story || 'news', 
                     "text": this.state.text || 'Test text',
-                    "summary": this.state.summary 
+                    "summary": this.state.summary,
+                    "username": this.props.user.username 
             }}
 
             StoryAPIUtil.createStory(this.props.currentUserId, storyObj)

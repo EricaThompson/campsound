@@ -2605,6 +2605,14 @@ a {
         margin-bottom: 40px;
     }
 
+    .story-show-summary {
+        color: #909090;
+        margin-top: -30px;
+        margin-bottom: 30px;
+        font-style: italic;
+        
+    }
+
     .story-show-author {
         margin-bottom: 40px;
         color: #909090;
@@ -2618,6 +2626,10 @@ a {
                 cursor: pointer;
             }
         }
+    }
+
+    .story-show-image {
+        width: 150%;
     }
     
 

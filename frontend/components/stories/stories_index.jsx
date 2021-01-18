@@ -87,8 +87,8 @@ class StoriesIndex extends React.Component {
                 {/* <div className="story-image"></div> */}
                 <img 
                     className="story-image"
-                    onClick={() => this.props.history.replace(`/users/${story.owner_id}/stories/${story.id}/`)}
-                    src="https://f4.bcbits.com/img/0023241359_150.jpg" alt=""/>
+                    onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}/`)}
+                    src="https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620" alt=""/>
                 <div className='main-story-date'>
                     <span className='main-story-type'>{story.type}</span> · {story.date}
                 </div>
@@ -96,7 +96,7 @@ class StoriesIndex extends React.Component {
                 {/* <Link to={`stories/${this.props.currentUserId}/story/${story.id}`}> */}
                     {/* <img src={`${story.title}`} alt="" /> */}
                     <h5 
-                    onClick={() => this.props.history.replace(`/users/${story.owner_id}/stories/${story.id}/`)}
+                    onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}/`)}
                         className='main-story-title'>{story.title}</h5>
                     {/* <div className="main-story-summary">{story.text}</div> */}
 
@@ -124,8 +124,8 @@ class StoriesIndex extends React.Component {
                 <div className="main-story">
 
                     <img 
-                        onClick = {() => this.props.history.replace(`/users/${this.state.mainStory.owner_id}/stories/${this.state.mainStory.id}/`)}
-                        src="https://f4.bcbits.com/img/0023234048_180" 
+                        onClick={() => this.props.history.replace(`/users/${this.state.mainStory.author}/stories/${this.state.mainStory.id}/`)}
+                        src="https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620" 
                         alt="main-cover" 
                     />
                     <div className='main-story-info'>
@@ -133,13 +133,18 @@ class StoriesIndex extends React.Component {
                             <span className='main-story-type'>{this.state.mainStory.type}</span> · {this.state.mainStory.date}
                         </div>
                         
-                        <div className='main-story-title'>
-                            {this.state.mainStory.title}
+                        <div
+                            onClick={() => this.props.history.replace(`/users/${this.state.mainStory.author}/stories/${this.state.mainStory.id}/`)} 
+                            className='main-story-title'
+                        >
+                                {this.state.mainStory.title}
                         </div>
                         <div className='main-story-summary'>
                             {this.state.mainStory.summary}
                         </div>
-                        <div className='main-story-author'>
+                        <div
+                            onClick={()=> this.props.history.replace(`/artists/${this.state.mainStory.author}`)}
+                            className='main-story-author'>
                             By <span className='name'>{this.state.mainStory.author}</span>
                         </div>
                     </div>

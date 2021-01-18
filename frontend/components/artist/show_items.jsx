@@ -62,7 +62,9 @@ class ShowItems extends React.Component {
     
 
     render() {
-        console.log('props', this.props)
+        // console.log('props', this.props)
+
+        
 
         let itemDisplay = this.props.items.map((item) => {
             return <div key={item.id} className="item-display">

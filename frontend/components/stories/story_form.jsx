@@ -86,9 +86,11 @@ class StoryForm extends React.Component {
     }
 
     componentDidMount() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
         
         // if (this.props.match.path.includes('new')){
-            console.log('props',this.props)
+            // console.log('props',this.props)
         // }
 
         if (this.props.match.path.includes('edit')) {

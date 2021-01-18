@@ -60,6 +60,7 @@ html {
     width: 100%;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
     
 }
 
@@ -2507,6 +2508,28 @@ a {
             border: 1px solid #eee;
             margin-bottom: 20px; 
             cursor: pointer;
+        }
+
+        .buttons {
+            div {
+                display: flex;
+                justify-content: flex-end;
+                .edit {
+                    position: absolute;
+                    // top: -8px;
+                    // right: 15px;
+                    background-color: rgb(145, 176, 215);
+                    color: white;
+                    font-weight: bolder;
+                    padding: 6px 15px;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    // height: 15px;
+                    // width: 20px;
+                    text-align: center;
+                }
+            }
         }
 
             .main-story-date {

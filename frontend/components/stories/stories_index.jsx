@@ -80,15 +80,34 @@ class StoriesIndex extends React.Component {
     render() {
         console.log('storyList', this.state.mainStory)
 
+        
+
         // let storyListMinusMain = this.state.storyList.slice(1)
 
         let storyDisplay = this.state.storyList.slice(1).reverse().map((story) => {
+            let editBtn;
+            // console.log(story)
+            if (story.author === this.props.currentUserId) {
+                editBtn = <button
+                    onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}/edit`)}
+                    className="edit"
+                >
+                    edit
+                    </button>
+
+            }
+
             return <div key={story.id} className="story-display">
                 {/* <div className="story-image"></div> */}
                 <img 
                     className="story-image"
                     onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}/`)}
-                    src="https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620" alt=""/>
+                    src="https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620" alt=""
+                />
+                <div className='buttons'>
+                    <div>{editBtn}</div>
+                </div>
+                
                 <div className='main-story-date'>
                     <span className='main-story-type'>{story.type}</span> · {story.date}
                 </div>

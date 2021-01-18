@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import { useHistory } from 'react-router-dom';
-
+import * as StoryAPIUtil from '../../util/stories_api_util';
 
 class StoryForm extends React.Component {
     constructor(props) {
@@ -16,6 +16,7 @@ class StoryForm extends React.Component {
                 story_type: '',
                 genre: 'news',
                 date: Date.now(),
+                currentStory: [],
 
                 
                 // releaseDate: '',
@@ -106,9 +107,9 @@ class StoryForm extends React.Component {
 
         formData.append('story[owner_id]', this.props.currentUserId)
         formData.append('story[title]', this.state.title)
-        formData.append('story[text]')
-        formData.append('story[summary]')
-        formData.append('story[story_type]')
+        formData.append('story[text]', this.state.text)
+        formData.append('story[summary]', this.state.summary)
+        formData.append('story[story_type]', this.state.story_type)
         // formData.append('item[artist_name]', this.state.artistName)
         // formData.append('item[genre]', this.state.genre)
         // formData.append('item[price]', 'free')
@@ -123,10 +124,26 @@ class StoryForm extends React.Component {
 
 
         if (this.props.match.path.includes('new')) {
-            if (this.state.songFile && this.state.coverFile) {
-                this.props.createStory(this.props.currentUserId, formData)
-                    .then(() => this.props.history.replace(`/${this.props.currentUserId}`), () => this.setState({ spinnerShow: false }))
-            }
+            // $.ajax({
+
+
+            // })
+
+            console.log(this.props)
+
+            let storyObj = {"story": {
+                    "owner_id": this.props.currentUserId, 
+                    "title": this.state.title || 'Untitled',
+                    "story_type": this.state.story || 'news', 
+                    "text": this.state.text || 'Test text',
+                    "summary": this.state.summary 
+            }}
+
+            StoryAPIUtil.createStory(this.props.currentUserId, storyObj)
+                .then((res) => this.props.history.replace(`/users/${this.props.currentUserId}/stories/${res.id}`)) 
+
+            // this.props.createStory(this.props.currentUserId, formData)
+            
         } else if (this.props.match.path.includes('edit')) {
             this.props.updateStory(this.props.currentUserId, this.props.match.params.itemId, formData)
             // this.props.history.replace(`/artists/${this.props.currentUserId}/music/${this.state.id}`)
@@ -337,7 +354,12 @@ class StoryForm extends React.Component {
                                     rows="20">
                                 </textarea>
                                 <div>
-                                    <button type="submit">add</button>
+                                    <button
+                                        onClick={(e)=>this.handleSubmit(e)} 
+                                        type="submit"
+                                        >
+                                            add
+                                    </button>
 
                                 </div>
                             </div>

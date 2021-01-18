@@ -20,7 +20,7 @@ class StoriesIndex extends React.Component {
         $.ajax({
             url: `/api/stories`,
             method: 'GET'
-        }).then(res => this.setState({ mainStory: Object.values(Object.values(res))[0]}))
+        }).then(res => this.setState({ mainStory: Object.values(Object.values(res)).reverse()[0]}))
         $.ajax({
             url: `/api/stories`,
             method: 'GET'
@@ -82,7 +82,7 @@ class StoriesIndex extends React.Component {
 
         // let storyListMinusMain = this.state.storyList.slice(1)
 
-        let storyDisplay = this.state.storyList.slice(1).map((story) => {
+        let storyDisplay = this.state.storyList.slice(1).reverse().map((story) => {
             return <div key={story.id} className="story-display">
                 {/* <div className="story-image"></div> */}
                 <img 
@@ -137,7 +137,7 @@ class StoriesIndex extends React.Component {
                             {this.state.mainStory.title}
                         </div>
                         <div className='main-story-summary'>
-                            {this.state.mainStory.text}
+                            {this.state.mainStory.summary}
                         </div>
                         <div className='main-story-author'>
                             By <span className='name'>{this.state.mainStory.author}</span>

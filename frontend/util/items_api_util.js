@@ -28,8 +28,8 @@ export const updateItem = (userId, itemId, item) => (
         url: `/api/users/${userId}/items/${itemId}`,
         method: 'PATCH',
         data: item,
-        contentType: false,
-        processData: false
+        // contentType: false,
+        // processData: false
     })
 )
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {withRouter } from 'react-router';
 import {useHistory} from 'react-router-dom';
+import Item from './item';
 
 
 class ArtistItemForm extends React.Component {
@@ -100,6 +101,8 @@ class ArtistItemForm extends React.Component {
         //     formData.append('item[id]', this.props.match.params.itemId)
         // } 
 
+
+        let song;
         
 
         if (this.props.match.path.includes('new')) {
@@ -107,20 +110,33 @@ class ArtistItemForm extends React.Component {
                 this.props.createItem(this.props.currentUserId, formData)
                     .then(() => this.props.history.replace(`/${this.props.currentUserId}`), () => this.setState({ spinnerShow: false }))
             }
+
+            if (!this.state.songFile) {
+                this.setState({ songError: "audio is required", spinnerShow: false })
+            }
+
+            if (!this.state.coverFile) {
+                this.setState({ coverError: "album art is required", spinnerShow: false })
+            }
         } else if (this.props.match.path.includes('edit')){
-            this.props.updateItem(this.props.currentUserId, this.props.match.params.itemId, formData)
-                // this.props.history.replace(`/artists/${this.props.currentUserId}/music/${this.state.id}`)
+
+            song = {
+                item: {
+                    "owner_id": this.props.currentUserId,
+                    "title": this.state.trackTitle || 'Untitled',
+                    "genre": this.state.genre || 'electronic',
+                    "about": this.state.about || 'About text.',
+                    "username": this.state.artistName,
+                    // 'id': this.props.match.params.storyId
+                }
+            }
+            this.props.updateItem(this.props.currentUserId, this.props.match.params.itemId, song)
+            this.props.history.replace(`/artists/${this.props.currentUserId}/music/${this.state.id}`)
                 // .catch(err => console.log(err))
         }
         
 
-        if (!this.state.songFile) {
-            this.setState({ songError: "audio is required", spinnerShow: false })
-        }
-
-        if (!this.state.coverFile) {
-            this.setState({ coverError: "album art is required", spinnerShow: false })
-        }
+        
 
         
 
@@ -387,7 +403,14 @@ class ArtistItemForm extends React.Component {
                                     about this track:
                             </div>
                                 <br />
-                                <textarea onInput={this.handleChange('about')} placeholder="(optional)" cols="52" rows="4"></textarea>
+                                <textarea
+                                    defaultValue={this.state.about} 
+                                    onInput={this.handleChange('about')} 
+                                    // placeholder="(optional)" 
+                                    cols="52" 
+                                    rows="4">
+
+                                </textarea>
                             </div>
                             <div hidden>
                                 release date:
@@ -579,7 +602,14 @@ class ArtistItemForm extends React.Component {
                                     about this track:
                             </div>
                                 <br />
-                                <textarea onInput={this.handleChange('about')} placeholder="(optional)" cols="52" rows="4"></textarea>
+                                <textarea 
+                                    defaultValue={this.state.about} 
+                                    onInput={this.handleChange('about')} 
+                                    // placeholder="(optional)" 
+                                    cols="52" 
+                                    rows="4">
+                                        
+                                </textarea>
                             </div>
                             <div hidden>
                                 release date:

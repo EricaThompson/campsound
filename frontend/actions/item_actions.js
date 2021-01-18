@@ -74,8 +74,8 @@ export const createItem = (userId, item) => dispatch => {
         .then(res => dispatch(readMusicItem(res)))
 }
 
-export const updateItem = (userId, item) => dispatch => {
-    return ItemAPIUtil.updateItem(userId, item)
+export const updateItem = (userId, itemId, item) => dispatch => {
+    return ItemAPIUtil.updateItem(userId, itemId, item)
         .then(res => dispatch(readMusicItem(res)))
 }
 

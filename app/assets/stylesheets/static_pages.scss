@@ -89,6 +89,17 @@ textarea:focus, input:focus{
     outline: none;
     background-color: #E7F0FE;
     border-radius: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+textarea, input{
+    outline: none;
+    // background-color: #E7F0FE;
+    border-radius: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    border-color: #ccc;
 }
 
 .logo {
@@ -2625,13 +2636,18 @@ a {
     form {
         .left-side {
             height: 100%;
+            position: relative;
     
             .preview {
                 padding: 10px;
                 text-align: center;
                 // height: 500%;
                 // background-color: yellow;
-                height: 40%;
+                // height: 40%;
+                // height: 100%;
+                .details {
+                    background-color: rgba(255, 255, 255, 0.556);
+                }
     
                 div {
                     margin-bottom: 20px;
@@ -2645,7 +2661,7 @@ a {
                 .story-title {
                     font-weight: bolder;
                     font-weight: 3vw;
-                    font-size: 4vw;
+                    font-size: 2vw;
                     text-transform: capitalize;
                 }
     
@@ -2659,6 +2675,16 @@ a {
                     font-style: italic;
                 }
 
+                .story-text-input {
+                    border-color: #909090;
+                    height: 100%;
+
+                }
+                
+                textarea {
+                    font-family: Arial, Helvetica, sans-serif
+
+                }
                 .story-text {
                     width: 72%;
                     text-align: left;
@@ -2666,10 +2692,35 @@ a {
                     margin: 0 auto;
                     font-weight: lighter;
                     white-space: pre-wrap;
+                    padding-bottom: 50px;
                 }
             }
+
+            
     
         }
+
+        .right-side {
+            .story-text {
+                position: relative;
+
+                button {
+                    position: absolute;
+                    color: white;
+                    background-color: rgb(169, 54, 155);
+                    // border-color: purple;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 4px;
+                    font-weight: bolder;
+                    right: 0px;
+                    top: 338px;
+    
+                }
+            }
+        }
+
+        
     }
 
 

@@ -11,7 +11,7 @@ class StoryForm extends React.Component {
             this.state = {
                 title: '',
                 authorName: this.props.user.username,
-                text: 'What happened',
+                text: '....',
                 summary: 'tl;dr',
                 story_type: '',
                 genre: 'news',
@@ -299,7 +299,7 @@ class StoryForm extends React.Component {
                         <div className="right-side">
                             <div className="input-helper upper top">
                                 title:
-                        </div>
+                            </div>
                             <div className="track-group">
                                 <div className='blue'>*</div>
                                 <input 
@@ -324,54 +324,21 @@ class StoryForm extends React.Component {
                                 <br />
                                 <input onChange={this.handleChange('summary')} className="artist-item-input" placeholder="tl;dr" type="text" />
                             </div>
-                            <div className="text">
+                            <div className="story-text">
                                 <div className="input-helper upper">
                                     story:
-                            </div>
+                                </div>
                                 <br />
                                 <textarea 
-                                    className="artist-item-input"
+                                    className="story-text-input"
                                     onInput={this.handleChange('text')} 
-                                    placeholder=" what happened" 
-                                    cols="52" 
-                                    rows="4">
+                                    placeholder=" ...." 
+                                    cols="60" 
+                                    rows="20">
                                 </textarea>
+                                <button type="submit">add</button>
                             </div>
-                            <div hidden>
-                                release date:
-                            <input type="text" />
-                            mm/dd/yyyy
-                            leave blank to use publish date
-                        </div>
-                            <div hidden>pricing: What pricing performs best?
-                            <input maxLength="7" pattern="[0-9]*" onInput={this.handleChange('price')} type="text" defaultValue="7.00" /> US Dollars
-                            enter zero or more
-                            <input type="checkbox" /> let fans pay more if they want
-                            Payments will go directly to you. more info
-                            description tell your fans about bonus items, hidden tracks, etc.
-                        </div>
-                            <div hidden>
-                                add bonus item pdf liner note booklets, photos, videos, etc.
-                        </div>
-
-                            <div hidden>
-                                album credits:
-                            <textarea cols="30" rows="10"></textarea>
-
-                            tags: Alternative, and...
-                            <input type="text" />
-                            Why bother tagging?
-
-                        </div>
-                            <div hidden>
-                                album UPC/EAN code:
-                            <input type="text" />
-                            e.g., "027616 852809" more info
-                            catelog number:
-                            <input type="text" />
-                            shows up in your sales report more info
-                        </div>
-                        </div>
+                        </div> 
                     </form>
                 </div>
             )

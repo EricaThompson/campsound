@@ -84,7 +84,10 @@ class StoriesIndex extends React.Component {
 
         let storyDisplay = this.state.storyList.slice(1).map((story) => {
             return <div key={story.id} className="story-display">
-                <div className="story-image"></div>
+                {/* <div className="story-image"></div> */}
+                <img 
+                className="story-image"
+                    src="https://f4.bcbits.com/img/0023241359_150.jpg" alt=""/>
                 <div className='main-story-date'>
                     <span className='main-story-type'>{story.type}</span> · {story.date}
                 </div>
@@ -116,7 +119,12 @@ class StoriesIndex extends React.Component {
                     </ul>
                 </div>
                 <div className="main-story">
-                    <img src="https://f4.bcbits.com/img/0023234048_180" alt="" />
+
+                    <img 
+                        onClick = {() => this.props.history.replace(`/users/${this.state.mainStory.owner_id}/stories/${this.state.mainStory.id}/`)}
+                        src="https://f4.bcbits.com/img/0023234048_180" 
+                        alt="main-cover" 
+                    />
                     <div className='main-story-info'>
                         <div className='main-story-date'>
                             <span className='main-story-type'>{this.state.mainStory.type}</span> · {this.state.mainStory.date}

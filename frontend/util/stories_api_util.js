@@ -8,9 +8,17 @@ export const createStory = (userId, story) => (
     })
 )
 
+export const readStory = (storyId) => (
+    $.ajax({
+        url: `/api/stories/${storyId}`,
+        method: 'GET'
+    })
+)
+
 export const readAllStories = () => (
     $.ajax({
         url: `/api/stories`,
         method: 'GET'
     })
 )
+

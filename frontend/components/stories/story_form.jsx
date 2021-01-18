@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import * as StoryAPIUtil from '../../util/stories_api_util';
 
@@ -40,11 +40,25 @@ class StoryForm extends React.Component {
             }
         } else if (this.props.match.path.includes('edit')) {
             this.state = {
-                title: 'Untitled',
+                story: '',
+                title: '',
                 authorName: this.props.user.username,
-                text: '',
-                summary: '',
+                text: '....',
+                summary: 'tl;dr',
                 story_type: '',
+
+                // title: 'Untitled',
+                authorName: this.props.user.username,
+                // text: '',
+                // summary: '',
+                story_type: '',
+
+
+                
+                genre: 'news',
+                date: Date.now(),
+                currentStory: [],
+                username: this.props.user.username,
 
 
                 trackTitle: this.props.item.title,
@@ -71,23 +85,24 @@ class StoryForm extends React.Component {
     }
 
     componentDidMount() {
+        
         // if (this.props.match.path.includes('new')){
-        //     console.log('props',this.props)
+            console.log('props',this.props)
         // }
 
         if (this.props.match.path.includes('edit')) {
-            this.setState({ playerView: true })
-            console.log(this.props.currentUserId, parseInt(this.props.match.params.itemId))
-            this.props.readItem(this.props.match.params.userId, parseInt(this.props.match.params.itemId))
+            // this.setState({ playerView: true })
+            // console.log(this.props.currentUserId, parseInt(this.props.match.params.itemId))
+            StoryAPIUtil.readStory(this.props.match.params.authorId, this.props.match.params.storyId)
                 .then(res => this.setState({
-                    artistName: res.item.artist_name,
-                    genre: res.item.genre,
-                    about: res.item.about,
-                    coverPreviewUrl: res.item.cover,
-                    songPreviewUrl: res.item.song,
-                    trackTitle: res.item.title,
-                    id: this.props.match.params.itemId
+                    story: res,
+                    title: res.title,
+                    authorName: res.username,
+                    story_type: res.story_type,
+                    text: res.text,
+                    summary: res.summary,
                 }))
+
             // .catch(err => console.log(err))
             // console.log('id', this.props.match.params.itemId)
 
@@ -126,24 +141,18 @@ class StoryForm extends React.Component {
         //     formData.append('item[id]', this.props.match.params.itemId)
         // } 
 
-
+        let storyObj = {
+            "story": {
+                "owner_id": this.props.currentUserId,
+                "title": this.state.title || 'Untitled',
+                "story_type": this.state.story || 'news',
+                "text": this.state.text || 'Test text',
+                "summary": this.state.summary,
+                "username": this.props.user.username
+            }
+        }
 
         if (this.props.match.path.includes('new')) {
-            // $.ajax({
-
-
-            // })
-
-            console.log(this.props)
-
-            let storyObj = {"story": {
-                    "owner_id": this.props.currentUserId, 
-                    "title": this.state.title || 'Untitled',
-                    "story_type": this.state.story || 'news', 
-                    "text": this.state.text || 'Test text',
-                    "summary": this.state.summary,
-                    "username": this.props.user.username 
-            }}
 
             StoryAPIUtil.createStory(this.props.currentUserId, storyObj)
                 .then((res) => this.props.history.replace(`/users/${this.props.currentUserId}/stories/${res.id}`)) 
@@ -151,7 +160,7 @@ class StoryForm extends React.Component {
             // this.props.createStory(this.props.currentUserId, formData)
             
         } else if (this.props.match.path.includes('edit')) {
-            this.props.updateStory(this.props.currentUserId, this.props.match.params.itemId, formData)
+            this.props.updateStory(this.props.currentUserId, this.props.match.params.itemId, storyObj)
             // this.props.history.replace(`/artists/${this.props.currentUserId}/music/${this.state.id}`)
             // .catch(err => console.log(err))
         }
@@ -309,7 +318,7 @@ class StoryForm extends React.Component {
                                 {/* <img src={this.state.coverPreviewUrl} alt="" /> */}
                                 <div className='details'>
                                     <div className='story-type'>{this.state.genre}</div>
-                                    <div className="story-title">{title}</div>
+                                    {/* <div className="story-title">{this.state.title}</div> */}
                                     <div className="author"><div className="by">by </div> {this.state.artistName}</div>
                                     <div className="summary">{this.state.summary}</div>
                                     <div className="story-text">{this.state.text}</div>
@@ -327,7 +336,8 @@ class StoryForm extends React.Component {
                                 <div className='blue'>*</div>
                                 <input 
                                     placeholder="...." 
-                                    className="track-name" 
+                                    className="track-name"
+                                    defaultValue={this.state.title} 
                                     type="text" 
                                     onChange={this.handleChange('title')} 
                                 />
@@ -389,179 +399,83 @@ class StoryForm extends React.Component {
                     <form noValidate>
                         <div className="left-side">
                             <div className='preview'>
-                                <img src={this.state.coverPreviewUrl} alt="" />
                                 <div className='details'>
-                                    <div className="top">{title}</div>
-                                    <div><div className="by">by </div> {this.state.artistName}</div>
-                                    <div className='genre'>{this.state.genre}</div>
-                                    <div className="price">{this.state.price}</div>
+                                    <div className='story-type'>{this.state.story_type}</div>
+                                    <div className="story-title">{this.state.title}</div>
+                                    <div className="author"><div className="by">by </div> {this.state.authorName}</div>
+                                    <div className="summary">{this.state.summary}</div>
+                                    <div className="story-text">{this.state.text}</div>
                                 </div>
                             </div>
                             <br />
-                            <div>
-                                <div className="audio">AUDIO</div>
-                                <br />
-                                {component}
-                                <br />
-                                <br />
-                                <div>
-                                    <div className="add-audio blue">
-                                        add audio
-                                    <input
-                                            id="add-audio"
-                                            type="file"
-                                            onChange={this.songHandler.bind(this)}
-                                        />
-                                    </div>
-                                    <span className="helper">
-                                        291MB <span className="blue">
-                                            max
-                                </span>
-                                , lossless
-                                    <span className="blue">
-                                            .wav, .aif or .flac
-                                    </span>
-                                    </span>
-                                </div>
-                                <div className="pro">
-                                    Uploading a lot of audio? <span className="blue">Campsound Pro</span> features batch album upload, private streaming, and more.
-                                <span hidden>Get details...</span>
-                                </div>
-                                {/* to add to album */}
-                                {/* <div className="album-info">
-                                <input 
-                                    className="checkbox" 
-                                    type="checkbox"
-                                /> 
-                                part of an album, EP, what have you<span> </span>  
-                                <select 
-                                    disabled 
-                                    className="album-picker" 
-                                    id="album-picker"
-                                    // size="1"
-                                >
-                                    <optgroup label='Choose Album'>
-                                    <option defaultValue >no albums</option>
-                                    </optgroup>
-                                </select>
-                            </div> */}
-                                <div className='submit-item-form-buttons'>
-                                    <button disabled={disabler} onClick={this.handleSubmit.bind(this)} type="button" className="save">
-                                        {link}
-                                    </button>
-                                    <Link to={`/${this.props.currentUser}`}>
-                                        <span className="cancel blue">cancel</span>
-                                    </Link>
-                                </div>
-                                <h4>
-                                    {this.state.songError}
-                                    <br />
-                                    {this.state.coverError}
-                                </h4>
-                            </div>
+
                         </div>
 
                         <div className="right-side">
                             <div className="input-helper upper top">
-                                track name:
-                        </div>
+                                title:
+                            </div>
                             <div className="track-group">
                                 <div className='blue'>*</div>
-                                <input placeholder="...." defaultValue={this.state.trackTitle} className="track-name" type="text" onChange={this.handleChange('trackTitle')} />
+                                <input
+                                    defaultValue={this.state.title}
+                                    placeholder="...."
+                                    className="track-name"
+                                    type="text"
+                                    onChange={this.handleChange('title')}
+                                />
                             </div>
+
                             <div>
                                 <div className="input-helper upper">
-                                    artist:
-                            </div>
-                                <br />
-                                <input className="artist-item-input" defaultValue={this.state.artistName} placeholder="leave blank to use username" type="text" onChange={this.handleChange('artistName')} />
-                                <br />
-                                <div className="input-helper under"> for compilations, labels, etc.</div>
-                            </div>
-                            <br />
-                            <div className="song-art-section">
-                                <div className="song-art">
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <span style={white} className="upload">Upload Album Art</span>
-                                    <br />
-                                    <br />
-                                    <div style={white} className="helper"> 1400 x 1400 pixels minimum
-                                    (bigger is better)
-                                    <br />
-                                        <br />
-                                    .jpg, .gif or .png, 10MB max
+                                    story type:
                                 </div>
-
-                                    <img src={this.state.coverPreviewUrl} alt="" />
-                                    <input
-                                        id="add-track-image"
-                                        type="file"
-                                        onChange={this.imageHandler.bind(this)}
-                                    />
-                                    {/* <div className="change-album-art">↻</div> */}
-                                </div>
-                                {/* you shouldn't be too nervous for something, 
-                                is it the only thing that matters? 
-                                no, you have a lot of things you want to say, 
-                                don't let one thing keep you from the rest. */}
-
-                            </div>
-                            <div>
-                                <div className="input-helper upper">
-                                    genre:
-                            </div>
                                 <br />
                                 <input
-                                    defaultValue={this.state.genre}
-                                    className="artist-item-input"
-                                    placeholder="help fans find your music"
-                                    type="text"
-                                    onChange={this.handleChange('genre')} />
+                                    defaultValue={this.state.story_type}
+                                    className="artist-item-input" 
+                                    placeholder="review, news, blog.." 
+                                    type="dropdown" 
+                                    onChange={this.handleChange('story_type')} 
+                                />
                             </div>
-                            <div className="about">
+                            <div>
                                 <div className="input-helper upper">
-                                    about this track:
-                            </div>
+                                    summary:
+                                </div>
                                 <br />
-                                <textarea onInput={this.handleChange('about')} placeholder="(optional)" cols="52" rows="4"></textarea>
+                                <input 
+                                    defaultValue={this.state.summary}
+                                    onChange={this.handleChange('summary')} 
+                                    className="artist-item-input" 
+                                    placeholder="tl;dr" 
+                                    type="text" 
+                                />
                             </div>
-                            <div hidden>
-                                release date:
-                            <input type="text" />
-                            mm/dd/yyyy
-                            leave blank to use publish date
-                        </div>
-                            <div hidden>pricing: What pricing performs best?
-                            <input maxLength="7" pattern="[0-9]*" onInput={this.handleChange('price')} type="text" defaultValue="7.00" /> US Dollars
-                            enter zero or more
-                            <input type="checkbox" /> let fans pay more if they want
-                            Payments will go directly to you. more info
-                            description tell your fans about bonus items, hidden tracks, etc.
-                        </div>
-                            <div hidden>
-                                add bonus item pdf liner note booklets, photos, videos, etc.
-                        </div>
+                            <div className="story-text">
+                                <div className="input-helper upper">
+                                    story:
+                                </div>
+                                <br />
+                                <textarea
+                                    defaultValue={this.state.text}
+                                    className="story-text-input"
+                                    onInput={this.handleChange('text')}
+                                    placeholder=" ...."
+                                    cols="60"
+                                    rows="20">
+                                </textarea>
+                                <div>
+                                    <button
+                                        onClick={(e) => this.handleSubmit(e)}
+                                        type="submit"
+                                    >
+                                        update
+                                    </button>
 
-                            <div hidden>
-                                album credits:
-                            <textarea cols="30" rows="10"></textarea>
-
-                            tags: Alternative, and...
-                            <input type="text" />
-                            Why bother tagging?
-
-                        </div>
-                            <div hidden>
-                                album UPC/EAN code:
-                            <input type="text" />
-                            e.g., "027616 852809" more info
-                            catelog number:
-                            <input type="text" />
-                            shows up in your sales report more info
-                        </div>
-                        </div>
+                                </div>
+                            </div>
+                        </div> 
                     </form>
                 </div>
             )

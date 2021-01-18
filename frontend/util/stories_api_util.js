@@ -8,9 +8,9 @@ export const createStory = (userId, story) => (
     })
 )
 
-export const readStory = (storyId) => (
+export const readStory = (authorId, storyId) => (
     $.ajax({
-        url: `/api/stories/${storyId}`,
+        url: `/api/users/${authorId}/stories/${storyId}`,
         method: 'GET'
     })
 )

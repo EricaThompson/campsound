@@ -2619,3 +2619,59 @@ a {
         line-height: 1.76rem;
     }
 }
+
+.story-form {
+
+    form {
+        .left-side {
+            height: 100%;
+    
+            .preview {
+                padding: 10px;
+                text-align: center;
+                // height: 500%;
+                // background-color: yellow;
+                height: 40%;
+    
+                div {
+                    margin-bottom: 20px;
+                }
+    
+                .story-type {
+                    color: #909090;
+                    text-transform: uppercase;
+                }
+    
+                .story-title {
+                    font-weight: bolder;
+                    font-weight: 3vw;
+                    font-size: 4vw;
+                    text-transform: capitalize;
+                }
+    
+                .author {
+                    margin-top: 10px;
+                    color: #909090;
+                }
+
+                .summary {
+                    // color: red;
+                    font-style: italic;
+                }
+
+                .story-text {
+                    width: 72%;
+                    text-align: left;
+                    line-height: 1rem;
+                    margin: 0 auto;
+                    font-weight: lighter;
+                    white-space: pre-wrap;
+                }
+            }
+    
+        }
+    }
+
+
+    
+}

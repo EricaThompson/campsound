@@ -71,15 +71,24 @@ class NavBar extends React.Component {
                                 </div>  
                             </p>
                         </Link>
-                            <Link
-                                to={`/`}>
-                                <p>
+                        <Link
+                            to={`/users/${this.props.user.id}/stories/story/new`}>
+                            <p>
                                 <div
-                                    onClick={() => this.logoutRefresh()}>
-                                    logout
+                                    onClick={() => setTimeout(() => location.reload(), 200)}>
+                                    add new story
                                 </div>
-                                </p>
-                            </Link>
+                            </p>
+                        </Link>
+                        <Link
+                            to={`/`}>
+                            <p>
+                            <div
+                                onClick={() => this.logoutRefresh()}>
+                                logout
+                            </div>
+                            </p>
+                        </Link>
 
                     </div>
                         

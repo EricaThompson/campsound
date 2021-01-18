@@ -9,6 +9,7 @@ import HomeContainer from './home/home_container';
 import ItemContainer from './artist/item_container';
 import StoriesIndexContainer from './stories/stories_index_container';
 import StoryContainer from './stories/story_container';
+import StoryFormContainer from './stories/story_form_container';
 // import ShowItemsContainer from './artist/show_items_container';
 import { ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
@@ -32,6 +33,7 @@ class App extends React.Component {
                     <Route key={Math.random()} path="/" component={NavBarContainer} />
                     <Route exact path="/" component={HomeContainer} />
                     <Route exact path="/stories" component={StoriesIndexContainer} />
+                    <Route exact path='/users/:authorId/stories/story/new' component={StoryFormContainer}/>
                     <Route exact path='/users/:authorId/stories/:storyId' component={StoryContainer} />
                     <Route exact path="/:userId/new" component={ArtistItemContainer} />
                     <Route exact path="/artists/:userId/music/:itemId/edit" component={ArtistItemContainer} />

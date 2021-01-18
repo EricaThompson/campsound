@@ -70,7 +70,8 @@ def new
             :title, 
             :story_type,
             :text,
-            :id
+            :id,
+            :summary
         )
     end
 

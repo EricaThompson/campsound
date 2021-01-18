@@ -86,7 +86,8 @@ class StoriesIndex extends React.Component {
             return <div key={story.id} className="story-display">
                 {/* <div className="story-image"></div> */}
                 <img 
-                className="story-image"
+                    className="story-image"
+                    onClick={() => this.props.history.replace(`/users/${story.owner_id}/stories/${story.id}/`)}
                     src="https://f4.bcbits.com/img/0023241359_150.jpg" alt=""/>
                 <div className='main-story-date'>
                     <span className='main-story-type'>{story.type}</span> · {story.date}
@@ -94,7 +95,9 @@ class StoriesIndex extends React.Component {
                {/* <h5 >{story.type} · {story.date}</h5> */}
                 {/* <Link to={`stories/${this.props.currentUserId}/story/${story.id}`}> */}
                     {/* <img src={`${story.title}`} alt="" /> */}
-                    <h5 className='main-story-title'>{story.title}</h5>
+                    <h5 
+                    onClick={() => this.props.history.replace(`/users/${story.owner_id}/stories/${story.id}/`)}
+                        className='main-story-title'>{story.title}</h5>
                     {/* <div className="main-story-summary">{story.text}</div> */}
 
                 {/* </Link> */}

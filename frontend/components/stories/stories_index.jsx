@@ -78,7 +78,7 @@ class StoriesIndex extends React.Component {
 
 
     render() {
-        console.log('storyList', this.state.storyList)
+        console.log('storyList', this.state.mainStory)
 
         // let storyListMinusMain = this.state.storyList.slice(1)
 
@@ -145,7 +145,7 @@ class StoriesIndex extends React.Component {
                         <div
                             onClick={()=> this.props.history.replace(`/artists/${this.state.mainStory.author}`)}
                             className='main-story-author'>
-                            By <span className='name'>{this.state.mainStory.author}</span>
+                            By <span className='name'>{this.state.mainStory.username}</span>
                         </div>
                     </div>
                 </div>

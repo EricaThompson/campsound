@@ -19,7 +19,17 @@ class Story extends React.Component {
     }
 
     render() {
-        console.log(this.state.story)
+        // console.log(this.state.story)
+        let editBtn;
+        if (this.state.story.owner_id === this.props.currentUserId){
+            editBtn = <button 
+                        onClick={()=>this.props.history.replace(`/users/${this.state.story.owner_id}/stories/${this.state.story.id}/edit`)}
+                        className="edit"
+                    >
+                            edit
+                    </button>
+
+        }
         
         return (
             <div className="story-show" key={() => Math.random()}>
@@ -32,6 +42,7 @@ class Story extends React.Component {
 
                     </ul>
                 </div>
+                <div>{editBtn}</div>
                 <div className='story-show-type'>{this.state.story.story_type}</div>
                 <div className='story-show-title'>{this.state.story.title}</div>
                 <div className='story-show-summary'>{this.state.story.summary}</div>

@@ -18,6 +18,9 @@ class Item extends React.Component {
     }
 
     componentDidMount(){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+
         this.props.readItem(this.props.match.params.userId,this.props.match.params.itemId)
             .then(res => this.setState({ item: res.item}))
         this.props.readAllUserItems(this.props.match.params.userId)
@@ -103,7 +106,7 @@ class Item extends React.Component {
 
     deleteSong(){
         this.props.deleteItem(this.props.currentUserId, this.state.item.id)
-        this.props.history.push(`/${this.props.match.params.artistId}`)
+        this.props.history.push(`/artists/${this.props.match.params.authorId}`)
         //!needs to refresh after getting there..
     }
 

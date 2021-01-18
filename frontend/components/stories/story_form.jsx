@@ -336,7 +336,10 @@ class StoryForm extends React.Component {
                                     cols="60" 
                                     rows="20">
                                 </textarea>
-                                <button type="submit">add</button>
+                                <div>
+                                    <button type="submit">add</button>
+
+                                </div>
                             </div>
                         </div> 
                     </form>

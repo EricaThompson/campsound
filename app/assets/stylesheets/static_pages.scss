@@ -2702,10 +2702,10 @@ a {
 
         .right-side {
             .story-text {
-                position: relative;
+                // position: relative;
 
                 button {
-                    position: absolute;
+                    // position: absolute;
                     color: white;
                     background-color: rgb(169, 54, 155);
                     // border-color: purple;
@@ -2713,8 +2713,9 @@ a {
                     padding: 10px;
                     border-radius: 4px;
                     font-weight: bolder;
-                    right: 0px;
-                    top: 338px;
+                    // right: 0px;
+                    // top: 338px;
+                    float: right;
     
                 }
             }

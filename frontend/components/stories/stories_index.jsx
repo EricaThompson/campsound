@@ -1,6 +1,7 @@
 import React from 'react';
 // import Item from './item';
 import { Link } from 'react-router-dom';
+import * as StoryAPIUtil from '../../util/stories_api_util';
 
 import latest from '../../../app/assets/images/latest.png';
 
@@ -86,14 +87,24 @@ class StoriesIndex extends React.Component {
 
         let storyDisplay = this.state.storyList.slice(1).reverse().map((story) => {
             let editBtn;
+            let deleteBtn;
             // console.log(story)
             if (story.author === this.props.currentUserId) {
                 editBtn = <button
-                    onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}/edit`)}
-                    className="edit"
-                >
-                    edit
-                    </button>
+                                onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}/edit`)}
+                                className="edit"
+                            >
+                                edit
+                            </button>
+                deleteBtn = <button
+                                onClick={() => {
+                                    StoryAPIUtil.deleteStory(this.props.currentUserId, story.id)
+                                    window.location.reload()
+                                }}
+                                className="delete"
+                            >
+                                delete
+                            </button>
 
             }
 
@@ -106,6 +117,7 @@ class StoriesIndex extends React.Component {
                 />
                 <div className='buttons'>
                     <div>{editBtn}</div>
+                    <div>{deleteBtn}</div>
                 </div>
                 
                 <div className='main-story-date'>

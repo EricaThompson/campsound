@@ -107,7 +107,6 @@ class Item extends React.Component {
     deleteSong(){
         this.props.deleteItem(this.props.currentUserId, this.state.item.id)
         this.props.history.push(`/artists/${this.props.match.params.authorId}`)
-        //!needs to refresh after getting there..
     }
 
     render() {

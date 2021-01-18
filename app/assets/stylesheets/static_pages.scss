@@ -2666,10 +2666,7 @@ a {
             .preview {
                 padding: 10px;
                 text-align: center;
-                // height: 500%;
-                // background-color: yellow;
-                // height: 40%;
-                // height: 100%;
+
                 .details {
                     background-color: rgba(255, 255, 255, 0.556);
                 }
@@ -2681,29 +2678,40 @@ a {
                 .story-type {
                     color: #909090;
                     text-transform: uppercase;
+                    // margin-top: 8px;
+                    margin-bottom: 20px;
+                    margin-top: 4px;
                 }
-    
+                
                 .story-title {
+                    width: 230px;
+                    margin: 0 auto;
                     font-weight: bolder;
                     font-weight: 3vw;
                     font-size: 2vw;
                     text-transform: capitalize;
-                }
-    
-                .author {
-                    margin-top: 10px;
-                    color: #909090;
-                }
+                    // margin-bottom: 4px;
 
+                }
+                
                 .summary {
+                    margin-top: 10px;
                     // color: red;
                     font-style: italic;
                     width: 100%;
+                    margin-bottom: 10px;
                 }
+
+                .author {
+                    // margin-top: 10px;
+                    color: #909090;
+                }
+
 
                 .story-text-input {
                     border-color: #909090;
                     height: 100%;
+
 
                 }
                 
@@ -2719,11 +2727,9 @@ a {
                     font-weight: lighter;
                     white-space: pre-wrap;
                     padding-bottom: 50px;
+                    // padding-top: 7px;
                 }
             }
-
-            
-    
         }
 
         .right-side {

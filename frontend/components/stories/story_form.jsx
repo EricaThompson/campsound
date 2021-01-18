@@ -43,9 +43,10 @@ class StoryForm extends React.Component {
                 story: '',
                 title: '',
                 authorName: this.props.user.username,
-                text: '....',
-                summary: 'tl;dr',
+                text: '',
+                summary: '',
                 story_type: '',
+                date: '',
 
                 // title: 'Untitled',
                 authorName: this.props.user.username,
@@ -101,6 +102,7 @@ class StoryForm extends React.Component {
                     story_type: res.story_type,
                     text: res.text,
                     summary: res.summary,
+                    date: res.date
                 }))
 
             // .catch(err => console.log(err))
@@ -145,12 +147,15 @@ class StoryForm extends React.Component {
             "story": {
                 "owner_id": this.props.currentUserId,
                 "title": this.state.title || 'Untitled',
-                "story_type": this.state.story || 'news',
+                "story_type": this.state.story_type || 'news',
                 "text": this.state.text || 'Test text',
                 "summary": this.state.summary,
-                "username": this.props.user.username
+                "username": this.props.user.username,
+                'id': this.props.match.params.storyId
             }
         }
+
+        console.log('params',this.props.match.params)
 
         if (this.props.match.path.includes('new')) {
 
@@ -160,8 +165,8 @@ class StoryForm extends React.Component {
             // this.props.createStory(this.props.currentUserId, formData)
             
         } else if (this.props.match.path.includes('edit')) {
-            this.props.updateStory(this.props.currentUserId, this.props.match.params.itemId, storyObj)
-            // this.props.history.replace(`/artists/${this.props.currentUserId}/music/${this.state.id}`)
+            StoryAPIUtil.updateStory(this.props.currentUserId, storyObj)
+                .then(this.props.history.replace(`/users/${this.props.currentUserId}/stories/${storyObj.story.id}`))
             // .catch(err => console.log(err))
         }
 
@@ -310,6 +315,13 @@ class StoryForm extends React.Component {
             } else {
                 title = this.state.title
             } 
+
+
+            let newDate = new Date()
+            let date = newDate.getDate();
+            let month = newDate.getMonth() + 1;
+            let year = newDate.getFullYear();
+
             return (
                 <div className="artist-input-form story-form">
                     <form noValidate>
@@ -318,8 +330,8 @@ class StoryForm extends React.Component {
                                 {/* <img src={this.state.coverPreviewUrl} alt="" /> */}
                                 <div className='details'>
                                     <div className='story-type'>{this.state.genre}</div>
-                                    {/* <div className="story-title">{this.state.title}</div> */}
-                                    <div className="author"><div className="by">by </div> {this.state.artistName}</div>
+                                    <div className="story-title">{this.state.title}</div>
+                                    <div className="author"><div className="by">by </div> {this.state.artistName} · {this.state.date}</div>
                                     <div className="summary">{this.state.summary}</div>
                                     <div className="story-text">{this.state.text}</div>
                                 </div>
@@ -395,15 +407,15 @@ class StoryForm extends React.Component {
             // artistName = <div>{item.artist_name}</div>
 
             return (
-                <div className="artist-input-form">
+                <div className="artist-input-form story-form">
                     <form noValidate>
                         <div className="left-side">
                             <div className='preview'>
                                 <div className='details'>
                                     <div className='story-type'>{this.state.story_type}</div>
                                     <div className="story-title">{this.state.title}</div>
-                                    <div className="author"><div className="by">by </div> {this.state.authorName}</div>
                                     <div className="summary">{this.state.summary}</div>
+                                    <div className="author"><div className="by">by </div> {this.props.user.username} · {this.state.date}</div>
                                     <div className="story-text">{this.state.text}</div>
                                 </div>
                             </div>

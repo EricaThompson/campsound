@@ -8,6 +8,16 @@ export const createStory = (userId, story) => (
     })
 )
 
+export const updateStory = (authorId, story) => {
+    console.log(story.story.id)
+    return $.ajax({
+        url: `/api/users/${authorId}/stories/${story.story.id}`,
+        method: 'PATCH',
+        data: story
+    })
+}
+
+
 export const readStory = (authorId, storyId) => (
     $.ajax({
         url: `/api/users/${authorId}/stories/${storyId}`,

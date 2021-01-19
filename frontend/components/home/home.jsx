@@ -284,6 +284,24 @@ class Home extends React.Component {
         }
         // console.log(count)
         // console.log(count)
+
+        let things = ["1", "2", "1", "2", "1", "2", "1", "2", "1", "2",];
+        let last;
+        let stories = things.map((story, idx)=>{
+            if (idx === 9 || idx === 4){
+                last = 'last'
+            } else {
+                last = ''
+            }
+            return <div 
+                    className={`story ${last}`}
+                    key={idx}>
+                        <img src="https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125" alt=""/>
+                        <div className='story-title'>{story} title</div>
+                        <div className='story-author'>author</div>
+                        <div className='story-type'>story_type</div>
+                    </div>
+        })
         return (
             <div className="home">
                 <div className="stories">
@@ -342,6 +360,13 @@ class Home extends React.Component {
                             8
                         </div> */}
 
+                    </div>
+                </div>
+                <div className="campsound-daily-container">
+                    <div><h2>CAMPSOUND DAILY</h2></div>
+                    <div className="stories-container">
+
+                        {stories}
                     </div>
                 </div>
                 <div className='discover'>

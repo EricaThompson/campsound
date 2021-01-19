@@ -1594,6 +1594,7 @@ a {
     height: 100%;
     // border: 5px solid hotpink;
     // margin-top: 100px;
+    // background-color: #EEF2F3;
     
     .stories {
         // margin-top: 140px;
@@ -1704,13 +1705,109 @@ a {
         }
     }
 
+    .slider {
+        margin: 50px auto;
+        width: 994px;
+        position: relative;
+        height: 228px;
+        // border: 1px solid hotpink;
+        text-align: left;
+        margin-bottom: 0px;
+        padding-bottom: 50px;
+
+        a {
+            color: black;
+        }
+
+        .slider-info{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .slides {
+            display: flex;
+            height: 100%;
+            
+        }
+
+        .slide {
+            min-width: 112px;
+            margin-right: 10px;
+            // border: 1px solid hotpink;
+            img {
+                width: 112px;
+                height: 112px;
+            }
+            p {
+                font-size: 11px;
+                margin: 0px;
+                padding: 0px;
+                margin-top: 7px;
+                font-weight: lighter;
+            }
+        }
+    }
+
+    .campsound-daily-container {
+        background-color: #EEF2F3;
+        padding-top: 25px;
+
+        // width: 100%;
+        
+        div {
+            h2 {
+                font-weight: normal;
+                color: #408DA3;
+                margin-left: 134px;
+            }
+        }
+        .stories-container {
+            width: 993px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            padding-top: 15px;
+            padding-bottom: 100px;
+            font-size: 14px;
+
+            
+
+            .story {
+                margin-right: 22px;
+                margin-bottom: 22px;
+                // width: 185px;
+                background-color: white;
+                div {
+                    padding: 10px;
+                }
+
+                .story-author {
+                    font-weight: lighter;
+                    margin-top: -15px;
+                    font-size: 12px;
+                    color: #777;
+                }
+
+                .story-type {
+                    color: #777;
+                    font-size: 10px;
+                }
+            }
+
+            .last {
+                margin-right: -20px;
+            }
+        }
+    }
+
     .discover {
         width: 100%;
+        background-color: #EEF2F3;
 
         .discover-title {
             width: 1095px;
             margin: 0 auto;
-            margin-top: 39px;
+            padding-top: 10px;
             margin-bottom: 20px;
             font-weight: bolder;
         }
@@ -1776,7 +1873,7 @@ a {
     }
 
     .dots {
-        margin-top: 50px;
+        margin-top: 70px;
         // border-top: 5px dotted #ADAF59;
         height: 10px;
         background-image: linear-gradient(to right, #6c9c9e64 20%, rgba(255,255,255,0) 0%);
@@ -1785,6 +1882,9 @@ a {
         background-repeat: repeat-x;
     }
 
+    
+
+    
     .learn-more {
         display: flex;
         background-color: white;
@@ -1865,48 +1965,6 @@ a {
 
         }
         
-    }
-
-    .slider {
-        margin: 50px auto;
-        width: 994px;
-        position: relative;
-        height: 228px;
-        // border: 1px solid hotpink;
-        text-align: left;
-        margin-bottom: 0px;
-
-        a {
-            color: black;
-        }
-
-        .slider-info{
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .slides {
-            display: flex;
-            height: 100%;
-            
-        }
-
-        .slide {
-            min-width: 112px;
-            margin-right: 10px;
-            // border: 1px solid hotpink;
-            img {
-                width: 112px;
-                height: 112px;
-            }
-            p {
-                font-size: 11px;
-                margin: 0px;
-                padding: 0px;
-                margin-top: 7px;
-                font-weight: lighter;
-            }
-        }
     }
 
     .footer {

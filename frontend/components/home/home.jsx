@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import * as StoryAPIUtil from '../../util/stories_api_util';
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             items: this.props.items,
+            stories: [],
             demo: [{
                 owner_id: 85, id: 155, title: "Test", artist: "test", genre: "electronic", date: "Dec 2020", cover: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ce8112185079b5f5c603e5bf3a66223b05ce0b83/pexels-cliford-mervil-2469122.jpg", song: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajRCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a2849dcaae069bb71f8428866d00819bf1027f9f/19-Spring-Day-Forest%20(1).mp3"
                 }, 
@@ -93,7 +95,7 @@ class Home extends React.Component {
                     song: '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbElCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f3ab29aa1df73ccc41fbdb636ff521e692afda4a/Avicii%20-%20Peace%20Of%20Mind%20(1)%20(7).mp3'
                 }
                             
-],
+            ],
             slider: [],
             text: "Hello world",
             lastLetter: 0,
@@ -105,9 +107,15 @@ class Home extends React.Component {
     }
     
     componentDidMount() {
+        
+            // .then(res => console.log(Object.values(res)))
+
+
+
+
         // console.log(this.props)
         // let items = []
-        let boolean = false;
+        // let boolean = false;
 
         // this.props.browseAll()
         //     .then(res => this.setState({items: res.items}))
@@ -145,6 +153,12 @@ class Home extends React.Component {
         // this.props.browseAll()
         //     .then(res => this.setState({ items: res.items, count: res.items.length}))
             // .then(res => this.setState({count: res.items.length}))
+
+        StoryAPIUtil.readAllStories()
+            .then(res => this.setState({
+                stories: Object.values(res).reverse()
+            }))
+                // console.log(this.state.stories)))
     }
 
     // genreSearch(genre) {
@@ -181,7 +195,7 @@ class Home extends React.Component {
             // let wait = 3;
             // let second = 0;
 
-                console.log('home, item owner id', item.owner_id)
+                // console.log('home, item owner id', item.owner_id)
                 return <div key={idx}className="slide">
                             <Link to={`/artists/${item.owner_id}/music/${item.id}`}>
                                 <img src={`${item.cover}`} alt=""/>
@@ -287,21 +301,41 @@ class Home extends React.Component {
 
         let things = ["1", "2", "1", "2", "1", "2", "1", "2", "1", "2",];
         let last;
-        let stories = things.map((story, idx)=>{
-            if (idx === 9 || idx === 4){
+        let main;
+        let mainImg;
+        let mainText;
+        // let stories = this.state.stories.map((story, idx) => {
+        console.log(this.state.stories.story)
+        let reversedStories = this.state.stories;
+
+        let stories = reversedStories.map((story, idx)=>{
+            if (idx === 0){
+                main = 'main',
+                mainImg = 'mainImg',
+                mainText = 'mainText'
+            } else if (idx === 7 || idx === 2){
                 last = 'last'
             } else {
                 last = ''
+                main = ''
+                mainImg = ''
             }
+            console.log(story)
             return <div 
-                    className={`story ${last}`}
-                    key={idx}>
-                        <img src="https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125" alt=""/>
-                        <div className='story-title'>{story} title</div>
-                        <div className='story-author'>author</div>
-                        <div className='story-type'>story_type</div>
+                        onClick={()=>this.props.history.replace(`/users/${story.author}/stories/${story.id}`)}
+                        className={`story ${last} ${main}`}
+                        key={idx}
+                    >
+                        <img className={`${mainImg}`} src="https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125" alt=""/>
+                            <div className={`${mainText}`}>
+                            <div className='story-title'>{story.title}</div>
+                            <div className='story-author'>by {story.username}</div>
+                            <div className='story-type'>{story.type}</div>
+                        </div>
                     </div>
         })
+
+        console.log(this.state.stories)
         return (
             <div className="home">
                 <div className="stories">

@@ -1999,6 +1999,12 @@ a {
             color: #363636;
             width: 375px;
             // float: left;
+            a {
+                font-weight: lighter;
+                font-size: 14px;    
+                // background-color: green;
+            }
+
             h1 {
                 font-size: 28px;
                 font-weight: lighter;
@@ -2020,6 +2026,12 @@ a {
                 padding: 3px 10px;
                 font-size: 12px;
                 margin-bottom: 24px;
+                margin-right: 10px;
+
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
     
             }
     
@@ -2113,10 +2125,12 @@ a {
                 margin-top: -15px;
             }
             
-            a {
+            
+            
+            .download {
+                font-size: 18px;
                 color:#0887F4;
                 font-weight: bolder;
-                font-size: 18px;
             }
     
             .price {

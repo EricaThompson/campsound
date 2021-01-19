@@ -241,8 +241,8 @@ class Item extends React.Component {
                     <div className='about-item'>
                         <h1>{this.state.item.title}</h1>
                         <p className='artist'>by <Link to={`/artists/${this.state.item.owner_id}`}>{this.state.item.artist_name}</Link></p>
-                        {deleteBtn}
                         {editBtn}
+                        {deleteBtn}
                         
                         <br />
                         {renderPlayer}

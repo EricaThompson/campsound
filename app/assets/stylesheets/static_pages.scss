@@ -1767,7 +1767,7 @@ a {
             flex-wrap: wrap;
             margin: 0 auto;
             padding-top: 15px;
-            padding-bottom: 100px;
+            padding-bottom: 50px;
             font-size: 14px;
 
             .main {
@@ -1802,7 +1802,7 @@ a {
 
                     .story-type {
                         position: absolute;
-                        bottom: -175px;
+                        bottom: -225px;
                         width: 80%;
                     }
                 }
@@ -1815,13 +1815,15 @@ a {
                 margin-bottom: 25px;
                 // width: 185px;
                 background-color: white;
+                height: 280px;
                 div {
                     padding: 10px;
                 }
 
                 .story-author {
                     font-weight: lighter;
-                    margin-top: -15px;
+                    margin-top: -10px;
+                    margin-bottom: 40px;
                     font-size: 12px;
                     color: #777;
                 }

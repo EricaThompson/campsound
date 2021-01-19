@@ -8,6 +8,9 @@ class Home extends React.Component {
         this.state = {
             items: this.props.items,
             stories: [],
+            review: 'https://images.pexels.com/photos/2341290/pexels-photo-2341290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
+            news: 'https://images.pexels.com/photos/1029624/pexels-photo-1029624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=50&w=115',
+            switch: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
             demo: [{
                 owner_id: 85, id: 155, title: "Test", artist: "test", genre: "electronic", date: "Dec 2020", cover: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ce8112185079b5f5c603e5bf3a66223b05ce0b83/pexels-cliford-mervil-2469122.jpg", song: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajRCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a2849dcaae069bb71f8428866d00819bf1027f9f/19-Spring-Day-Forest%20(1).mp3"
                 }, 
@@ -117,8 +120,8 @@ class Home extends React.Component {
         // let items = []
         // let boolean = false;
 
-        // this.props.browseAll()
-        //     .then(res => this.setState({items: res.items}))
+        this.props.browseAll()
+            .then(res => this.setState({items: res.items}, console.log('here')))
 
 
 
@@ -128,6 +131,9 @@ class Home extends React.Component {
         
         // let that = this;
         //! this......
+
+
+
         this.timer = setInterval(() => {
             if (this.state.slider.length > 7) {
                 clearInterval(this.timer);
@@ -141,7 +147,7 @@ class Home extends React.Component {
 
             if (tempItems.length > 1){
                 sliderCopy.push(tempItems.pop())
-                console.log('prop items!')
+                // console.log('prop items!')
             }
 
             this.setState({slider: sliderCopy});
@@ -190,8 +196,8 @@ class Home extends React.Component {
 
         // items[0] = items[1]
 
-        
-        let map = Object.values(this.state.slider).map((item, idx) => {
+        //!this.state.slider instead
+        let map = Object.values(this.state.items).map((item, idx) => {
             // let wait = 3;
             // let second = 0;
 
@@ -304,8 +310,9 @@ class Home extends React.Component {
         let main;
         let mainImg;
         let mainText;
+        let img;
         // let stories = this.state.stories.map((story, idx) => {
-        console.log(this.state.stories.story)
+        // console.log(this.state.stories.story)
         let reversedStories = this.state.stories;
 
         let stories = reversedStories.map((story, idx)=>{
@@ -320,13 +327,19 @@ class Home extends React.Component {
                 main = ''
                 mainImg = ''
             }
+
+            if (story.type === 'news'){
+                img = this.state.news
+            } else {
+                img = this.state.review
+            }
             console.log(story)
             return <div 
                         onClick={()=>this.props.history.replace(`/users/${story.author}/stories/${story.id}`)}
                         className={`story ${last} ${main}`}
                         key={idx}
                     >
-                        <img className={`${mainImg}`} src="https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125" alt=""/>
+                        <img className={`${mainImg}`} src={img} alt=""/>
                             <div className={`${mainText}`}>
                             <div className='story-title'>{story.title}</div>
                             <div className='story-author'>by {story.username}</div>
@@ -335,7 +348,7 @@ class Home extends React.Component {
                     </div>
         })
 
-        console.log(this.state.stories)
+        // console.log(this.state.stories)
         return (
             <div className="home">
                 <div className="stories">

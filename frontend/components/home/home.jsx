@@ -197,7 +197,7 @@ class Home extends React.Component {
         // items[0] = items[1]
 
         //!this.state.slider instead
-        let map = Object.values(this.state.items).map((item, idx) => {
+        let map = Object.values(this.state.items).reverse().map((item, idx) => {
             // let wait = 3;
             // let second = 0;
 

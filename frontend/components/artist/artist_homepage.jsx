@@ -21,7 +21,7 @@ class ArtistHomepage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.readAllUserItems(this.props.currentUser)
+        this.props.readAllUserItems(this.props.match.params.userId)
             // .then(res => this.setState({ items: res }))
     }
 

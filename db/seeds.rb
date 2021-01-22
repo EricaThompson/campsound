@@ -33,7 +33,7 @@ story1 = Story.create(
                 "text": 'Story 1 review',
                 "summary": 'Summary of story 1',
                 "username": 'Demo User',
-                'id': 1)
+                )
 story2 = Story.create(
                 "owner_id": user2.id,
                 "title": 'Story 2',
@@ -41,7 +41,7 @@ story2 = Story.create(
                 "text": 'Story 2 news',
                 "summary": 'Summary of story 2',
                 "username": 'Rainforest Records',
-                'id': 2)
+                )
 story3 = Story.create(
                 "owner_id": user1.id,
                 "title": 'Story 3',
@@ -49,7 +49,7 @@ story3 = Story.create(
                 "text": 'Story 3 review',
                 "summary": 'Summary of story 3',
                 "username": 'Demo User',
-                'id': 3)
+                )
 story4 = Story.create(
                 "owner_id": user2.id,
                 "title": 'Story 4',
@@ -57,7 +57,7 @@ story4 = Story.create(
                 "text": 'Story 4 news',
                 "summary": 'Summary of story 4',
                 "username": 'Rainforest Records',
-                'id': 4)
+                )
 story5 = Story.create(
                 "owner_id": user1.id,
                 "title": 'Story 5',
@@ -65,7 +65,7 @@ story5 = Story.create(
                 "text": 'Story 5 review',
                 "summary": 'Summary of story 5',
                 "username": 'Demo User',
-                'id': 5)
+                )
 story6 = Story.create(
                 "owner_id": user2.id,
                 "title": 'Story 6',
@@ -73,7 +73,7 @@ story6 = Story.create(
                 "text": 'Story 6 news',
                 "summary": 'Summary of story 6',
                 "username": 'Rainforest Records',
-                'id': 6)
+                )
 story7 = Story.create(
                 "owner_id": user1.id,
                 "title": 'Story 7',
@@ -81,7 +81,7 @@ story7 = Story.create(
                 "text": 'Story 7 review',
                 "summary": 'Summary of story 7',
                 "username": 'Demo User',
-                'id': 7)
+                )
 story8 = Story.create(
                 "owner_id": user2.id,
                 "title": 'Story 8',
@@ -89,7 +89,7 @@ story8 = Story.create(
                 "text": 'Story 8 news',
                 "summary": 'Summary of story 8',
                 "username": 'Rainforest Records',
-                'id': 8)
+                )
 puts "8 stories created!"
 # user.user_img.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/images/tape.png"), filename: "tape.png")
 

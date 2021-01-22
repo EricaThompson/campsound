@@ -36,7 +36,7 @@ item2 = Item.create(
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
-                'artist_name': 'DU'
+                'artist_name': 'Rainy'
                 )
 item2.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/2.jpeg"), filename: "2.jpeg")
 item2.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/2.mp3"), filename: "2.mp3")
@@ -48,7 +48,7 @@ item3 = Item.create(
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
-                'artist_name': 'DU'
+                'artist_name': 'demo'
                 )
 item3.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/3.jpeg"), filename: "3.jpeg")
 item3.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/3.mp3"), filename: "3.mp3")
@@ -59,7 +59,7 @@ item4 = Item.create(
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
-                'artist_name': 'DU'
+                'artist_name': 'RNYDY'
                 )
 item4.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/4.jpeg"), filename: "4.jpeg")
 item4.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/4.mp3"), filename: "4.mp3")
@@ -70,7 +70,7 @@ item5 = Item.create(
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
-                'artist_name': 'DU'
+                'artist_name': 'DMO USR'
                 )
 item5.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/5.jpeg"), filename: "5.jpeg")
 item5.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/5.mp3"), filename: "5.mp3")
@@ -81,7 +81,7 @@ item6 = Item.create(
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
-                'artist_name': 'DU'
+                'artist_name': 'RaRe'
                 )
 item6.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/6.jpeg"), filename: "6.jpeg")
 item6.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/6.mp3"), filename: "6.mp3")
@@ -94,7 +94,7 @@ item7 = Item.create(
                 'released': true,
                 'artist_name': 'DU'
                 )
-item7.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/7.jpeg"), filename: "7.jpeg")
+item7.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/71.jpeg"), filename: "7.jpeg")
 item7.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/7.mp3"), filename: "7.mp3")
 
 item8 = Item.create(
@@ -103,7 +103,7 @@ item8 = Item.create(
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
-                'artist_name': 'DU'
+                'artist_name': 'Rainforest Records'
                 )
 item8.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/8.jpeg"), filename: "8.jpeg")
 item8.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/8.mp3"), filename: "8.mp3")
@@ -114,7 +114,7 @@ item9 = Item.create(
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
-                'artist_name': 'DU'
+                'artist_name': 'Demo User'
                 )
 item9.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/9.jpeg"), filename: "9.jpeg")
 item9.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/1.mp3"), filename: "1.mp3")
@@ -201,7 +201,25 @@ story8 = Story.create(
                 "summary": 'Summary of story 8',
                 "username": 'Rainforest Records',
                 )
-puts "8 stories created!"
+
+story9 = Story.create(
+                "owner_id": user1.id,
+                "title": 'Story 9',
+                "story_type": 'news',
+                "text": 'Story 9 news',
+                "summary": 'Summary of story 9',
+                "username": 'Rainforest Records',
+                )
+
+story10 = Story.create(
+                "owner_id": user2.id,
+                "title": 'Story 10',
+                "story_type": 'news',
+                "text": 'Story 10 news',
+                "summary": 'Summary of story 10',
+                "username": 'Rainforest Records',
+                )
+puts "10 stories created!"
 # user.user_img.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/images/tape.png"), filename: "tape.png")
 
 

@@ -722,6 +722,8 @@ a {
     .sidebar {
         float: right;
         .about {
+
+            
             .image {
                 display: flex;
                 height: 102px;
@@ -729,10 +731,14 @@ a {
                 position: relative;
 
                 .change-image {
-                    background-color: yellow;
+                    background-color: white;
                     position: absolute;
                     right: 3px;
                     bottom: 3px;
+                    // width: 12px;
+                    // height: 12px;
+                    // padding: 3px;
+                    padding: 1px 3.5px;
 
                 }
 
@@ -765,6 +771,15 @@ a {
                 font-size: 12px;
                 
             }
+
+            .side-location, .side-bio {
+                color: #888888;
+                font-size: 12px;
+                font-weight: lighter;
+                padding-left: 0px;
+            }
+
+            
 
             .location-output, .bio-output {
                 margin-top: 10px;
@@ -2393,7 +2408,7 @@ a {
                     position: relative;
 
                     .change-image {
-                        background-color: yellow;
+                        background-color: white;
                         position: absolute;
                         right: 3px;
                         bottom: 3px;

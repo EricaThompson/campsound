@@ -24,15 +24,15 @@ class ArtistHomepage extends React.Component {
     }
 
     componentDidMount() {
-        console.log('test')
+        ()=>window.location.reload()
         UserAPIUtil.getUser(this.props.match.params.userId)
-            .then(res => this.setState({user: res}))    
-            // .then(res => this.setState({ 
-            //     user: res, 
-            //     image: res.userImg, 
-            //     location: res.location,
-            //     bio: res.bio
-            // }))
+            .then(res => this.setState({ 
+                user: res, 
+                image: res.userImg, 
+                location: res.location || '',
+                bio: res.bio || ''
+            }))
+        // .then(res => this.setState({user: res}))    
 
         this.props.readAllUserItems(this.props.match.params.userId)
             // .then(res => this.setState({ items: res }))
@@ -125,13 +125,14 @@ class ArtistHomepage extends React.Component {
         if (typeof(this.state.user) !== 'string'){
             console.log('works')
 
-            if (this.state.user.location.length > 0) {
-                locationAdded = this.state.user.location
+            if (this.state.location.length > 0) {
+                locationAdded = this.state.location
             } else {
                 locationAdded = ''
             }
 
             let locationUpdater;
+
             if (locationAdded.length === 0) {
                 locationUpdater = "add location"
             } else {
@@ -139,8 +140,8 @@ class ArtistHomepage extends React.Component {
             }
 
             let bioAdded;
-            if (this.state.user.bio.length > 0) {
-                bioAdded = this.state.user.bio
+            if (this.state.bio.length > 0) {
+                bioAdded = this.state.bio
             } else {
                 bioAdded = ''
             }
@@ -234,9 +235,26 @@ class ArtistHomepage extends React.Component {
                 </form>
             }
         }
-        
 
-        console.log('this.state.user ', this.state.user)
+
+        let changeImage;
+
+        if ( this.state.user.id !== this.props.currentUser){
+            location = <p className='side-location'>{this.state.location}</p>
+            bio = <p className='side-bio'>{this.state.bio}</p>
+            
+        } else {
+            changeImage = <div>
+                <input
+                    id="user-image"
+                    type="file"
+                    onChange={this.imageSubmit.bind(this)}
+                />
+                <div className="change-image">&#215;</div>
+            </div>
+        }
+
+        console.log('this.props ', this.props)
         return (
             <div>
                 <div className='artist-home'>
@@ -248,12 +266,7 @@ class ArtistHomepage extends React.Component {
                             </div>
                             <div className="image">
                                 {image}
-                                <input
-                                    id="user-image"
-                                    type="file"
-                                    onChange={this.imageSubmit.bind(this)}
-                                />
-                                <div className="change-image">&#215;</div>
+                                {changeImage}
                             </div>
 
                             {location}

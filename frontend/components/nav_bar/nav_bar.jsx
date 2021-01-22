@@ -31,6 +31,8 @@ class NavBar extends React.Component {
         let authNav = null;
 
         if (this.props.currentUser){
+
+            console.log('currentUser', this.props.currentUser)
             avatar = 
                         <div 
                             onClick={() => this.toggleDropdown()} 

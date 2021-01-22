@@ -8,7 +8,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 const mapStateToProps = state => {
     // debugger
     return {
-        currentUser: state.session.currentUser,
+        currentUser: state.users[state.session.currentUser],
         user: state.users[state.session.currentUser]
     }
 };

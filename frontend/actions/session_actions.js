@@ -6,9 +6,9 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
 
 
-const receiveCurrentUser = user => ({
+const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,
-    user, //includes jbuilder stuff .userImg
+    currentUser, //includes jbuilder stuff .userImg
 });
 
 const logoutCurrentUser = () => ({
@@ -30,8 +30,8 @@ export const signupUser = (user) => dispatch => {
         ), err => dispatch(receiveSessionErrors(err.responseJSON))) //jbuilder comes in here
 }
 
-export const loginUser = (user) => dispatch => {
-    return login(user)
+export const loginUser = (currentUser) => dispatch => {
+    return login(currentUser)
         .then(res => dispatch(receiveCurrentUser(res)
         ), err => dispatch(receiveSessionErrors(err.responseJSON)))
 }

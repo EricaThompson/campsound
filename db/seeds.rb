@@ -188,10 +188,10 @@ story8 = Story.create(
 story9 = Story.create(
                 "owner_id": user1.id,
                 "title": 'Story 9',
-                "story_type": 'news',
-                "text": 'Story 9 news',
+                "story_type": 'review',
+                "text": 'Story 9 review',
                 "summary": 'Summary of story 9',
-                "username": 'Rainforest Records',
+                "username": 'Demo User',
                 )
 
 story10 = Story.create(

@@ -17,17 +17,17 @@ user2 = User.create(username: 'Rainforest Records', password: 'Password')
 puts "Users created!"
 
 item1 = Item.create(
-                "owner_id": 91,
+                "owner_id": user1.id,
                 "title": 'Song 1',
                 "genre": 'electronic',
                 "about": 'About text.')
 item2 = Item.create(
-                "owner_id": 92,
+                "owner_id": user2.id,
                 "title": 'Song 2',
                 "genre": 'rock',
                 "about": 'About text.')
 story1 = Story.create(
-                "owner_id": 91,
+                "owner_id": user1.id,
                 "title": 'Story 1',
                 "story_type": 'review',
                 "text": 'Story 1 review',
@@ -35,7 +35,7 @@ story1 = Story.create(
                 "username": 'Demo User',
                 'id': 1001)
 story2 = Story.create(
-                "owner_id": 92,
+                "owner_id": user2.id,
                 "title": 'Story 2',
                 "story_type": 'news',
                 "text": 'Story 2 news',

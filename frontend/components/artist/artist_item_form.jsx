@@ -78,7 +78,7 @@ class ArtistItemForm extends React.Component {
 
         e.preventDefault();
 
-        // this.setState({ spinnerShow: true, coverError: '', songError: '' });
+        this.setState({ spinnerShow: true, coverError: '', songError: '' });
         const formData = new FormData();
 
         if (this.state.coverFile) {
@@ -108,7 +108,7 @@ class ArtistItemForm extends React.Component {
         if (this.props.match.path.includes('new')) {
             if (this.state.songFile && this.state.coverFile) {
                 this.props.createItem(this.props.currentUserId, formData)
-                    .then(() => this.props.history.replace(`/${this.props.currentUserId}`), () => this.setState({ spinnerShow: false }))
+                    .then(() => this.props.history.replace(`/artists/${this.props.currentUserId}`), () => this.setState({ spinnerShow: false }))
             }
 
             if (!this.state.songFile) {

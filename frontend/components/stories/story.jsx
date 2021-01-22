@@ -6,7 +6,9 @@ class Story extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            story: []
+            story: [],
+            review: "https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620",
+            news: "https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620",
         }
     }
 
@@ -25,6 +27,7 @@ class Story extends React.Component {
         // console.log(this.state.story)
         let editBtn;
         let deleteBtn;
+        
         if (this.state.story.owner_id === this.props.currentUserId){
             editBtn = <button 
                             onClick={()=>this.props.history.replace(`/users/${this.state.story.owner_id}/stories/${this.state.story.id}/edit`)}
@@ -42,6 +45,14 @@ class Story extends React.Component {
                             delete
                         </button>
 
+        }
+
+        let img;
+
+        if (this.state.story.story_type === "news"){
+            img = this.state.news
+        } else {
+            img = this.state.review
         }
         
         return (
@@ -61,7 +72,7 @@ class Story extends React.Component {
                 <div className='story-show-title'>{this.state.story.title}</div>
                 <div className='story-show-summary'>{this.state.story.summary}</div>
                 <div className='story-show-author'>By <span className="author" onClick={() => this.props.history.replace(`/artists/${this.state.story.owner_id}`)}>{this.state.story.username}</span> · {this.state.story.date}</div>
-                <div className='story-show-img'><img src="https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620" alt=""/></div>
+                <div className='story-show-img'><img src={img} alt=""/></div>
                 <div className='story-show-text'>{this.state.story.text}</div>
             </div>
         )

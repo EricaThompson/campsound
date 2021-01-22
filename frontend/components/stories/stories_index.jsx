@@ -9,6 +9,8 @@ class StoriesIndex extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            news: `https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260`,
+            review:'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620',
             storyList: [],
             // songList: [],
             // currentSong: null,
@@ -85,10 +87,20 @@ class StoriesIndex extends React.Component {
 
         // let storyListMinusMain = this.state.storyList.slice(1)
 
+        
+        
+        let img;
+        
         let storyDisplay = this.state.storyList.slice(1).reverse().map((story) => {
             let editBtn;
             let deleteBtn;
-            // console.log(story)
+            
+            if (story.type === 'news'){
+                img = this.state.news
+            } else {
+                img = this.state.review
+            }
+
             if (story.author === this.props.currentUserId) {
                 editBtn = <button
                                 onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}/edit`)}
@@ -113,7 +125,7 @@ class StoriesIndex extends React.Component {
                 <img 
                     className="story-image"
                     onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}/`)}
-                    src="https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620" alt=""
+                    src={img} alt=""
                 />
                 <div className='buttons'>
                     <div>{editBtn}</div>
@@ -141,6 +153,14 @@ class StoriesIndex extends React.Component {
         // let current = 'current';
 
 
+
+        if (this.state.mainStory.type === 'news'){
+            img = this.state.news
+        } else {
+            img = this.state.review
+        }
+
+
         return (
             <div className="stories-container">
                 <div className='stories-nav'>
@@ -156,7 +176,7 @@ class StoriesIndex extends React.Component {
 
                     <img 
                         onClick={() => this.props.history.replace(`/users/${this.state.mainStory.author}/stories/${this.state.mainStory.id}/`)}
-                        src="https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620" 
+                        src={img}
                         alt="main-cover" 
                     />
                     <div className='main-story-info'>

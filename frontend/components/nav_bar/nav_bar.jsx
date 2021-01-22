@@ -114,7 +114,14 @@ class NavBar extends React.Component {
                             the artists who make it.
                         </h2>
                         <div className='auth-links'>
-                            <p className="announce">Announcements</p>
+                            <p 
+                                className="announce"
+                            >
+                                Announcements
+                            </p>
+                            <p className="announcement">
+                                My social links are in the footer!
+                            </p>
                             <p onClick={() => this.props.openModal('type-signup')}>
                                 {signup}
                             </p>

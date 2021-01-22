@@ -341,7 +341,7 @@ class Home extends React.Component {
                 console.log(story)
                 return <div
                     onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}`)}
-                    className={`story ${last} ${main}`}
+                    className={`story link ${last} ${main}`}
                     key={idx}
                 >
                     <img className={`${mainImg}`} src={img} alt="" />
@@ -419,7 +419,7 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <div className="campsound-daily-container">
-                    <div onClick={() => this.props.history.replace(`/stories`)}><h2>CAMPSOUND DAILY</h2></div>
+                    <div className="link" onClick={() => this.props.history.replace(`/stories`)}><h2>CAMPSOUND DAILY</h2></div>
                     <div className="stories-container">
 
                         {stories}

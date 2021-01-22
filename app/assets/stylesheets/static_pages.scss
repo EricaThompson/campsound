@@ -167,23 +167,53 @@ textarea, input{
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
-    background-color: white;;
+    background-color: white;
+
+    .support-note {
+            background-color: rgba(0, 0, 0, 0.466);
+            color: wheat;
+            font-weight: lighter;
+            border-radius: 4px;
+            position: absolute;
+            top: 40px;
+            left: -50px;
+            // right: 40px;
+            z-index: 2;
+            display: none;
+        }
+
+        .support-note {
+            top: 110px;
+            left: 270px;
+            // display: block;
+        }
 
     .slogan {
         margin-left: 54px;
+    
+    
+        .support {
+            background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
+            background-size: 100%;
+            background-repeat: repeat;
+            font-weight: 500;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            background-clip: text;
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
+            display: inline;
+            cursor: pointer;
+            // background-color: yellow;
+
+        }
+        
+        
+        &:hover + .support-note {
+                display: block;
+        }
     }
 
-    .support {
-        background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
-        background-size: 100%;
-        background-repeat: repeat;
-        font-weight: 500;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        background-clip: text;
-        -moz-background-clip: text;
-        -moz-text-fill-color: transparent;
-    }
 }
 
 .nav-bar-links {
@@ -289,8 +319,14 @@ textarea, input{
 
     &:hover + .announcement {
         display: block;
-    }
+    }    
 }
+
+
+
+// .support:hover + .support-note{
+//     display: block;
+// }
 
 
 

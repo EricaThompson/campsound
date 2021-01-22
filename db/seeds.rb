@@ -21,7 +21,7 @@ puts "Users created!"
 
 item1 = Item.create(
                 "owner_id": user1.id,
-                "title": 'Electronic',
+                "title": '1',
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
@@ -32,7 +32,7 @@ item1.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-
 
 item2 = Item.create(
                 "owner_id": user2.id,
-                "title": 'Electronic',
+                "title": '2',
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
@@ -44,7 +44,7 @@ item2.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-
 
 item3 = Item.create(
                 "owner_id": user1.id,
-                "title": 'Electronic',
+                "title": '3',
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
@@ -55,7 +55,7 @@ item3.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-
 
 item4 = Item.create(
                 "owner_id": user2.id,
-                "title": 'Electronic',
+                "title": '4',
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
@@ -66,7 +66,7 @@ item4.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-
 
 item5 = Item.create(
                 "owner_id": user1.id,
-                "title": 'Electronic',
+                "title": '5',
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
@@ -77,7 +77,7 @@ item5.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-
 
 item6 = Item.create(
                 "owner_id": user2.id,
-                "title": 'Electronic',
+                "title": '6',
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
@@ -88,7 +88,7 @@ item6.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-
 
 item7 = Item.create(
                 "owner_id": user1.id,
-                "title": 'Electronic',
+                "title": '7',
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
@@ -99,7 +99,7 @@ item7.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-
 
 item8 = Item.create(
                 "owner_id": user2.id,
-                "title": 'Electronic',
+                "title": '8',
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
@@ -110,7 +110,7 @@ item8.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-
 
 item9 = Item.create(
                 "owner_id": user1.id,
-                "title": 'Electronic',
+                "title": '9',
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,

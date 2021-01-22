@@ -110,9 +110,12 @@ class NavBar extends React.Component {
                     <div className="nav-bottom">
                         <h2 className="slogan">
                             Discover amazing new music and 
-                            <span className="support"> directly support </span> 
+                            <div className="support"> directly support </div> 
                             the artists who make it.
                         </h2>
+                        <p className="support-note">
+                            Sign up today!
+                        </p>
                         <div className='auth-links'>
                             <p 
                                 className="announce"

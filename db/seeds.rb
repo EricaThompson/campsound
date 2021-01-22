@@ -9,8 +9,8 @@
 # User.destroy_all
 # puts 'All Users Removed!'
 
-# Item.destroy_all
-# puts "All Items Destroyed!"
+Item.destroy_all
+puts "All Items Destroyed!"
 
 user1 = User.create(username: 'Demo User', password: 'Password')
 user2 = User.create(username: 'Rainforest Records', password: 'Password')
@@ -42,6 +42,55 @@ story2 = Story.create(
                 "summary": 'Summary of story 2',
                 "username": 'Rainforest Records',
                 'id': 1002)
+story3 = Story.create(
+                "owner_id": user1.id,
+                "title": 'Story 3',
+                "story_type": 'review',
+                "text": 'Story 3 review',
+                "summary": 'Summary of story 3',
+                "username": 'Demo User',
+                'id': 1001)
+story4 = Story.create(
+                "owner_id": user2.id,
+                "title": 'Story 4',
+                "story_type": 'news',
+                "text": 'Story 4 news',
+                "summary": 'Summary of story 4',
+                "username": 'Rainforest Records',
+                'id': 1002)
+story5 = Story.create(
+                "owner_id": user1.id,
+                "title": 'Story 5',
+                "story_type": 'review',
+                "text": 'Story 5 review',
+                "summary": 'Summary of story 5',
+                "username": 'Demo User',
+                'id': 1001)
+story6 = Story.create(
+                "owner_id": user2.id,
+                "title": 'Story 6',
+                "story_type": 'news',
+                "text": 'Story 6 news',
+                "summary": 'Summary of story 6',
+                "username": 'Rainforest Records',
+                'id': 1002)
+story7 = Story.create(
+                "owner_id": user1.id,
+                "title": 'Story 7',
+                "story_type": 'review',
+                "text": 'Story 7 review',
+                "summary": 'Summary of story 7',
+                "username": 'Demo User',
+                'id': 1001)
+story8 = Story.create(
+                "owner_id": user2.id,
+                "title": 'Story 8',
+                "story_type": 'news',
+                "text": 'Story 8 news',
+                "summary": 'Summary of story 8',
+                "username": 'Rainforest Records',
+                'id': 1002)
+puts "8 stories created!"
 # user.user_img.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/images/tape.png"), filename: "tape.png")
 
 

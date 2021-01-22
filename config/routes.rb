@@ -5,6 +5,7 @@
 #                api_search GET    /api/search/:id(.:format)                                                                api/search#show {:format=>:json}
 #                 api_items GET    /api/items(.:format)                                                                     api/items#index {:format=>:json}
 #               api_stories GET    /api/stories(.:format)                                                                   api/stories#index {:format=>:json}
+#                 api_story GET    /api/stories/:id(.:format)                                                               api/stories#show {:format=>:json}
 #            api_user_items GET    /api/users/:user_id/items(.:format)                                                      api/items#index {:format=>:json}
 #                           POST   /api/users/:user_id/items(.:format)                                                      api/items#create {:format=>:json}
 #             api_user_item GET    /api/users/:user_id/items/:id(.:format)                                                  api/items#show {:format=>:json}
@@ -22,8 +23,7 @@
 #                  api_user GET    /api/users/:id(.:format)                                                                 api/users#show {:format=>:json}
 #                           PATCH  /api/users/:id(.:format)                                                                 api/users#update {:format=>:json}
 #                           PUT    /api/users/:id(.:format)                                                                 api/users#update {:format=>:json}
-#               api_session GET    /api/session(.:format)                                                                   api/sessions#show {:format=>:json}
-#                           DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
+#               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
 #                      root GET    /                                                                                        static_pages#root
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :search, only: [:index, :show]
     resources :items, only: [:index]
-    resources :stories, only: [:index]
+    resources :stories, only: [:index, :show]
     resources :users, only: [:create, :index, :show, :update] do 
       resources :items, only: [:index, :create, :show, :update, :destroy]
       resources :stories, only: [:create, :index, :show, :update, :destroy]

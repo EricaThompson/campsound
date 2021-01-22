@@ -15,9 +15,16 @@ export const readStory = (authorId, storyId) => (
     })
 )
 
-export const readAllStories = () => (
+export const fetchAllStories = () => (
     $.ajax({
         url: `/api/stories`,
+        method: 'GET'
+    })
+)
+
+export const fetchAllUserStories = (userId) => (
+    $.ajax({
+        url: `/api/stories/${userId}`,
         method: 'GET'
     })
 )

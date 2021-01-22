@@ -49,7 +49,7 @@ story3 = Story.create(
                 "text": 'Story 3 review',
                 "summary": 'Summary of story 3',
                 "username": 'Demo User',
-                'id': 1001)
+                'id': 1003)
 story4 = Story.create(
                 "owner_id": user2.id,
                 "title": 'Story 4',
@@ -57,7 +57,7 @@ story4 = Story.create(
                 "text": 'Story 4 news',
                 "summary": 'Summary of story 4',
                 "username": 'Rainforest Records',
-                'id': 1002)
+                'id': 1004)
 story5 = Story.create(
                 "owner_id": user1.id,
                 "title": 'Story 5',
@@ -65,7 +65,7 @@ story5 = Story.create(
                 "text": 'Story 5 review',
                 "summary": 'Summary of story 5',
                 "username": 'Demo User',
-                'id': 1001)
+                'id': 1005)
 story6 = Story.create(
                 "owner_id": user2.id,
                 "title": 'Story 6',
@@ -73,7 +73,7 @@ story6 = Story.create(
                 "text": 'Story 6 news',
                 "summary": 'Summary of story 6',
                 "username": 'Rainforest Records',
-                'id': 1002)
+                'id': 1006)
 story7 = Story.create(
                 "owner_id": user1.id,
                 "title": 'Story 7',
@@ -81,7 +81,7 @@ story7 = Story.create(
                 "text": 'Story 7 review',
                 "summary": 'Summary of story 7',
                 "username": 'Demo User',
-                'id': 1001)
+                'id': 1007)
 story8 = Story.create(
                 "owner_id": user2.id,
                 "title": 'Story 8',
@@ -89,7 +89,7 @@ story8 = Story.create(
                 "text": 'Story 8 news',
                 "summary": 'Summary of story 8',
                 "username": 'Rainforest Records',
-                'id': 1002)
+                'id': 1008)
 puts "8 stories created!"
 # user.user_img.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/images/tape.png"), filename: "tape.png")
 

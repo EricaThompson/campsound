@@ -164,7 +164,10 @@ class StoriesIndex extends React.Component {
         return (
             <div className="stories-container">
                 <div className='stories-nav'>
-                    <h1>Campsound Daily</h1>
+                    <h1 
+                        className='link'
+                        onClick={()=>window.location.reload()}
+                        >Campsound Daily</h1>
                     <ul>
                         <li>
                             stories · view all

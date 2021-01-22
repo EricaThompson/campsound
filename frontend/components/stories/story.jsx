@@ -58,7 +58,9 @@ class Story extends React.Component {
         return (
             <div className="story-show" key={() => Math.random()}>
                 <div className='stories-nav'>
-                    <h1 onClick={() => this.props.history.replace('/stories')}>Campsound Daily</h1>
+                    <h1 
+                        className='link'
+                        onClick={() => this.props.history.replace('/stories')}>Campsound Daily</h1>
                     <ul>
                         <li>
                             <span onClick={() => this.props.history.replace('/stories')}>stories</span> · view all

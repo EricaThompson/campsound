@@ -220,6 +220,8 @@ class Item extends React.Component {
             alt=""
         />
 
+        console.log('user', this.state.user)
+
 
 
         let reversedDiscography = [];

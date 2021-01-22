@@ -190,7 +190,6 @@ class Home extends React.Component {
         const { items } = this.state;
         // const textToDisplay = text.slice(0, lastLetter + 1);
 
-        // console.log(Object.values(this.props.items))
         // let items = Object.values(this.state.items)
         // // let marquee = []
 

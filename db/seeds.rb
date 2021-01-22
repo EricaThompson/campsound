@@ -27,7 +27,7 @@ item1 = Item.create(
                 'released': true,
                 'artist_name': 'DU'
                 )
-item1.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/images/trees.jpeg"), filename: "trees.jpeg")
+item1.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/images/trees.png"), filename: "trees.png")
 item1.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/audio/trees.mp3"), filename: "trees.mp3")
 
 

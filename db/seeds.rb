@@ -12,15 +12,25 @@ puts 'All Users Removed!'
 Item.destroy_all
 puts "All Items Destroyed!"
 
+Story.destroy_all
+puts "All Stories Destroyed!"
+
 user1 = User.create(username: 'Demo User', password: 'Password')
 user2 = User.create(username: 'Rainforest Records', password: 'Password')
 puts "Users created!"
 
-# item1 = Item.create(
-#                 "owner_id": user1.id,
-#                 "title": 'Song 1',
-#                 "genre": 'electronic',
-#                 "about": 'About text.')
+item1 = Item.create(
+                "owner_id": user1.id,
+                "title": 'Electronic',
+                "genre": 'electronic',
+                "about": 'About text.',
+                'released': true,
+                'artist_name': 'DU'
+                )
+item1.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/images/trees.jpeg"), filename: "trees.jpeg")
+item1.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/audio/trees.mp3"), filename: "trees.mp3")
+
+
 # item2 = Item.create(
 #                 "owner_id": user2.id,
 #                 "title": 'Song 2',

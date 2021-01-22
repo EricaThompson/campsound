@@ -18,17 +18,23 @@ class Item extends React.Component {
     }
 
     componentDidMount(){
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+        
 
         this.props.readItem(this.props.match.params.userId,this.props.match.params.itemId)
             .then(res => this.setState({ item: res.item}))
+
         this.props.readAllUserItems(this.props.match.params.userId)
             .then(res => this.setState({discography: Object.values(res.items)}))
+
+        
+
         // console.log('items',this.props.items)
         setTimeout(() => {
             this.setState({audioPlayer: true})
         }, 500);
+
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     }
 
     refresh(){
@@ -200,11 +206,15 @@ class Item extends React.Component {
         
         }
 
+        console.log('props', this.props)
+
+
         let image = <img
             className="image"
             src={this.props.user.userImg}
             alt=""
         />
+
 
 
         let reversedDiscography = [];

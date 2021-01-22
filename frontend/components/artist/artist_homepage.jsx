@@ -2,18 +2,21 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import ZeroItems from './zero_items';
 import ShowItems from './show_items';
+import * as UserAPIUtil from '../../util/session_api_util';
+
 // import MusicPlayer from '../music_player/music_player';
 
 class ArtistHomepage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            user: 'user',
             status: null,
-            image: this.props.user.userImg,
+            image: '',
             locationFlag: false,
-            location: this.props.user.location,
+            location: '',
             bioFlag: false,
-            bio: this.props.user.bio,
+            bio: '',
             newImage: null,
             link: '',
             items: null
@@ -23,6 +26,14 @@ class ArtistHomepage extends React.Component {
     componentDidMount() {
         this.props.readAllUserItems(this.props.match.params.userId)
             // .then(res => this.setState({ items: res }))
+
+        UserAPIUtil.getUser(this.props.match.params.userId)
+            .then(res => this.setState({ 
+                user: res, 
+                image: res.userImg, 
+                location: res.location,
+                bio: res.bio
+            }))    
     }
 
     handleSubmit(e){
@@ -63,6 +74,7 @@ class ArtistHomepage extends React.Component {
     }
 
     render(){
+        console.log(this.props.user, this.state.user)
         let items = [];
         Object.values(this.props.items).forEach(item => {
             items.push(item)
@@ -77,7 +89,7 @@ class ArtistHomepage extends React.Component {
             
         let image = <img 
                         className="image" 
-                        src={this.props.user.userImg} 
+                        src={this.state.user.userImg} 
                         alt=""
                     />
         
@@ -106,7 +118,7 @@ class ArtistHomepage extends React.Component {
         
         let locationAdded;
         if (this.state.location.length > 0){
-            locationAdded = this.props.user.location
+            locationAdded = this.state.user.location
         } else {
             locationAdded = ''
         }
@@ -119,8 +131,8 @@ class ArtistHomepage extends React.Component {
         }
 
         let bioAdded;
-        if (this.props.user.bio.length > 0) {
-            bioAdded = this.props.user.bio
+        if (this.state.user.bio.length > 0) {
+            bioAdded = this.state.user.bio
         } else {
             bioAdded = ''
         }
@@ -221,7 +233,7 @@ class ArtistHomepage extends React.Component {
                     <div className="sidebar">
                         <div className="about">
                             <div className="username">
-                                {this.props.user.username}
+                                {this.state.user.username}
                             </div>
                             <div className="image">
                                 {image}

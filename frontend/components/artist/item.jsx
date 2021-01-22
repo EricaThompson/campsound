@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import * as UserAPIUtil from '../../util/session_api_util';
 
 class Item extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            item: 'item',
+            user: '',
+            item: '',
             playerView: false,
             audioPlayer: false,
             playShow: true,
@@ -18,6 +20,8 @@ class Item extends React.Component {
     }
 
     componentDidMount(){
+        UserAPIUtil.getUser(this.props.match.params.userId)
+            .then(res => this.setState({user: res}))
         
 
         this.props.readItem(this.props.match.params.userId,this.props.match.params.itemId)
@@ -116,7 +120,8 @@ class Item extends React.Component {
     }
 
     render() {
-        console.log('prop item', this.props.items)
+        console.log(this.state)
+        // console.log('prop item', this.props.items)
         // console.log('state song', this.state.item.song)
         // console.log(this.state.duration)
         let renderPlayer;
@@ -206,12 +211,12 @@ class Item extends React.Component {
         
         }
 
-        console.log('props', this.props)
+        // console.log('props', this.props)
 
 
         let image = <img
             className="image"
-            src={this.props.user.userImg}
+            src={this.state.user.userImg}
             alt=""
         />
 
@@ -225,8 +230,8 @@ class Item extends React.Component {
 
         let discography = reversedDiscography.map(item => {
             return <div key={item.id}>
-                <Link to={`/artists/${this.props.user.id}/music/${item.id}`} ><img onClick={() => this.refresh()} className="discog-cover" src={`${item.cover}`} alt=""/></Link>
-                        <Link to={`/artists/${this.props.user.id}/music/${item.id}`} ><p onClick={()=>this.refresh()} className="discog-title">{item.title}</p></Link>
+                <Link to={`/artists/${this.state.user.id}/music/${item.id}`} ><img onClick={() => this.refresh()} className="discog-cover" src={`${item.cover}`} alt=""/></Link>
+                        <Link to={`/artists/${this.state.user.id}/music/${item.id}`} ><p onClick={()=>this.refresh()} className="discog-title">{item.title}</p></Link>
                         <p className="discog-date">{item.date}</p>
                         {/* {console.log(this.props.user.id)} */}
                     </div>
@@ -240,7 +245,7 @@ class Item extends React.Component {
             editBtn = < button onClick={() => this.props.history.replace(`/artists/${this.props.currentUserId}/music/${this.state.item.id}/edit`)}>Edit</button>
         }
 
-        console.log(this.state.item)
+        // console.log(this.state.item)
         
 
         return (
@@ -292,9 +297,9 @@ class Item extends React.Component {
                                 {/* <div className="change-image">↻</div> */}
                             </div>
 
-                            <p className='username'>{this.props.user.username}</p>
-                            <p className="location">{this.props.user.location}</p>
-                            <p className="side-bio">{this.props.user.bio}</p>
+                            <p className='username'>{this.state.user.username}</p>
+                            <p className="location">{this.state.user.location}</p>
+                            <p className="side-bio">{this.state.user.bio}</p>
                             <p className='discography'>discography</p>
                             {discography}
 

@@ -30,25 +30,25 @@ class NavBar extends React.Component {
         let signup = null;
         let authNav = null;
 
-        if (this.props.user){
+        if (this.props.currentUser){
             avatar = 
                         <div 
                             onClick={() => this.toggleDropdown()} 
                             className="avatar">
                                 <img 
                                     className="avatar" 
-                                    src={this.props.user.userImg} 
+                                    src={this.props.currentUser.userImg} 
                                 />
                         </div> 
                     
             authNav = <div className="auth-nav">
-                        <Link to={`/artists/${this.props.user.id}`}>
+                        <Link to={`/artists/${this.props.currentUser.id}`}>
                     <div onClick={()=>this.toggleDropdown()}>
                         
-                        <p>{this.props.user.username}
+                        <p>{this.props.currentUser.username}
                             <img
                                 className="avatar"
-                                src={this.props.user.userImg}
+                                src={this.props.currentUser.userImg}
                             />
                         </p>
 
@@ -63,7 +63,7 @@ class NavBar extends React.Component {
                         <br />
                         </Link>
                         <Link
-                            to={`/${this.props.user.id}/new`}>
+                            to={`/${this.props.currentUser.id}/new`}>
                             <p>
                                 <div
                                     onClick={() => setTimeout(() => location.reload(), 200)}>
@@ -72,7 +72,7 @@ class NavBar extends React.Component {
                             </p>
                         </Link>
                         <Link
-                            to={`/users/${this.props.user.id}/stories/story/new`}>
+                            to={`/users/${this.props.currentUser.id}/stories/story/new`}>
                             <p>
                                 <div
                                     onClick={() => setTimeout(() => location.reload(), 200)}>

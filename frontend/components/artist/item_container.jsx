@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Item from './item';
 
-// import { updateUser } from '../../actions/session_actions';
+import { retrieveUser } from '../../actions/session_actions';
 // import { openModal, closeModal } from '../../actions/modal_actions';
 import {
     readAllUserItems,
@@ -30,7 +30,8 @@ const mapDispatchToProps = dispatch => ({
     // createItem: (userId, item) => dispatch(createItem(userId, item)),
     // updateItem: (userId, item) => dispatch(updateItem(userId, item)),
     deleteItem: (userId, itemId) => dispatch(deleteItem(userId, itemId)),
-    // updateUser: (user, id) => dispatch(updateUser(user, id))
+    // updateUser: (user, id) => dispatch(updateUser(user, id)),
+    retrieveUser: (userId) => dispatch(retrieveUser(userId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Item);

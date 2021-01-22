@@ -13,9 +13,10 @@ import {
 
 const mapStateToProps = state => {
     // debugger
+    console.log(state.users)
     return {
         currentUser: state.session.currentUser,
-        user: state.users[state.session.currentUser],
+        user: state.users,
         items: state.items
     };
 

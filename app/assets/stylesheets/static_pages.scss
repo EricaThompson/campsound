@@ -2186,8 +2186,9 @@ a {
         height: 40px;
         margin-top: 182px;
         // padding: 10px;
+        display: flex;
 
-        .nav-music {
+        .nav-music, .nav-stories {
             border-top: 2px solid #363636;
             width: 70px;
             // margin-top: 0 auto;
@@ -2201,7 +2202,15 @@ a {
             a {
                 color: #363636;
             }
+
+
         }
+
+        .on-page {
+            background-color:rgba(223, 223, 223, 0.63)
+        }
+
+        
     }
 
     .item-container {

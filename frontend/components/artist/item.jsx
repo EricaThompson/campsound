@@ -253,7 +253,20 @@ class Item extends React.Component {
         return (
             <div className="item-show" key={()=>Math.random()}>
                 <img className='cover-art-header' src={`${this.state.item.cover}`} alt=""/>
-                <div className='item-nav-bar'><div className="nav-music"><Link to={`/${this.state.item.owner_id}`}>music</Link></div></div>
+                <div className='item-nav-bar'>
+                    <div className="nav-music on-page">
+                        <Link to={`/artists/${this.state.item.owner_id}`}>
+                            music
+                        </Link>
+                        
+                    </div>
+                    <div className="nav-stories">
+                        <Link to={`/stories`}>
+                            stories
+                        </Link>
+
+                    </div>
+                </div>
                 <div className="item-container">
                     <div className='about-item'>
                         <h1>{this.state.item.title}</h1>

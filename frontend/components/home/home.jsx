@@ -123,7 +123,7 @@ class Home extends React.Component {
         // let boolean = false;
 
         this.props.browseAll()
-            .then(res => this.setState({items: res.items}, console.log('here')))
+            .then(res => this.setState({items: Object.values(res.items)}, console.log(res)))
 
 
 
@@ -304,7 +304,7 @@ class Home extends React.Component {
         // const slide
         let count;
         if (this.state.items.length > 1){
-            count = this.state.items.length
+            count = this.state.demo.length
         }
         // console.log(count)
         // console.log(count)
@@ -387,7 +387,7 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <div className='slider'>
-                        <p className='slider-info'>Artists have uploaded {this.state.slider.length}{count} songs using CampSound since established.</p>
+                        <p className='slider-info'>Artists have uploaded {this.state.items.length} songs using CampSound since established.</p>
                     <div className='slides'>
                         {/* {textToDisplay} */}
                         {map}

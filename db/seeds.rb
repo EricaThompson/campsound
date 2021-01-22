@@ -16,7 +16,7 @@ Story.destroy_all
 puts "All Stories Destroyed!"
 
 user1 = User.create(username: 'Demo User', password: 'Password')
-user2 = User.create(username: 'Rainforest Records', password: 'Password')
+user2 = User.create(username: 'Rainforest Records', password: 'Password', location: 'los angeles', bio: 'engineering!')
 puts "Users created!"
 
 # item1 = Item.create(

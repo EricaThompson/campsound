@@ -28,12 +28,13 @@ class ArtistHomepage extends React.Component {
             // .then(res => this.setState({ items: res }))
 
         UserAPIUtil.getUser(this.props.match.params.userId)
-            .then(res => this.setState({ 
-                user: res, 
-                image: res.userImg, 
-                location: res.location,
-                bio: res.bio
-            }))    
+            .then(res => console.log(res))    
+            // .then(res => this.setState({ 
+            //     user: res, 
+            //     image: res.userImg, 
+            //     location: res.location,
+            //     bio: res.bio
+            // }))
     }
 
     handleSubmit(e){
@@ -74,7 +75,8 @@ class ArtistHomepage extends React.Component {
     }
 
     render(){
-        console.log(this.props.user, this.state.user)
+        // console.log(this.props.user, this.state.user)
+        // console.log('props', this.props)
         let items = [];
         Object.values(this.props.items).forEach(item => {
             items.push(item)
@@ -89,7 +91,7 @@ class ArtistHomepage extends React.Component {
             
         let image = <img 
                         className="image" 
-                        src={this.state.user.userImg} 
+                        src={this.props.user.userImg} 
                         alt=""
                     />
         
@@ -117,7 +119,7 @@ class ArtistHomepage extends React.Component {
         }
         
         let locationAdded;
-        if (this.state.location.length > 0){
+        if (this.props.user.location.length > 0){
             locationAdded = this.state.user.location
         } else {
             locationAdded = ''
@@ -131,7 +133,7 @@ class ArtistHomepage extends React.Component {
         }
 
         let bioAdded;
-        if (this.state.user.bio.length > 0) {
+        if (this.props.user.bio.length > 0) {
             bioAdded = this.state.user.bio
         } else {
             bioAdded = ''
@@ -233,7 +235,7 @@ class ArtistHomepage extends React.Component {
                     <div className="sidebar">
                         <div className="about">
                             <div className="username">
-                                {this.state.user.username}
+                                {this.props.user.username}
                             </div>
                             <div className="image">
                                 {image}

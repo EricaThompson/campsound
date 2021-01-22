@@ -16,16 +16,16 @@ user1 = User.create(username: 'Demo User', password: 'Password')
 user2 = User.create(username: 'Rainforest Records', password: 'Password')
 puts "Users created!"
 
-item1 = Item.create(
-                "owner_id": user1.id,
-                "title": 'Song 1',
-                "genre": 'electronic',
-                "about": 'About text.')
-item2 = Item.create(
-                "owner_id": user2.id,
-                "title": 'Song 2',
-                "genre": 'rock',
-                "about": 'About text.')
+# item1 = Item.create(
+#                 "owner_id": user1.id,
+#                 "title": 'Song 1',
+#                 "genre": 'electronic',
+#                 "about": 'About text.')
+# item2 = Item.create(
+#                 "owner_id": user2.id,
+#                 "title": 'Song 2',
+#                 "genre": 'rock',
+#                 "about": 'About text.')
 story1 = Story.create(
                 "owner_id": user1.id,
                 "title": 'Story 1',

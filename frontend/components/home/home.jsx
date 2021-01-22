@@ -317,36 +317,41 @@ class Home extends React.Component {
         let reversedStories = this.state.stories;
 
         let stories = reversedStories.map((story, idx)=>{
-            if (idx === 0){
-                main = 'main',
-                mainImg = 'mainImg',
-                mainText = 'mainText'
-            } else if (idx === 7 || idx === 2){
-                last = 'last'
-            } else {
-                last = ''
-                main = ''
-                mainImg = ''
+            if (idx < 8){
+                if (idx === 0) {
+                    main = 'main',
+                        mainImg = 'mainImg',
+                        mainText = 'mainText'
+                } else if (idx === 7 || idx === 2) {
+                    last = 'last'
+                } else {
+                    last = ''
+                    main = ''
+                    mainImg = ''
+                }
+
+                if (story.type === 'news') {
+                    img = this.state.news
+                } else {
+                    img = this.state.review
+                }
+                console.log(story)
+                return <div
+                    onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}`)}
+                    className={`story ${last} ${main}`}
+                    key={idx}
+                >
+                    <img className={`${mainImg}`} src={img} alt="" />
+                    <div className={`${mainText}`}>
+                        <div className='story-title'>{story.title}</div>
+                        <div className='story-author'>by {story.username}</div>
+                        <div className='story-type'>{story.type}</div>
+                    </div>
+                </div>
+
             }
 
-            if (story.type === 'news'){
-                img = this.state.news
-            } else {
-                img = this.state.review
-            }
-            console.log(story)
-            return <div 
-                        onClick={()=>this.props.history.replace(`/users/${story.author}/stories/${story.id}`)}
-                        className={`story ${last} ${main}`}
-                        key={idx}
-                    >
-                        <img className={`${mainImg}`} src={img} alt=""/>
-                            <div className={`${mainText}`}>
-                            <div className='story-title'>{story.title}</div>
-                            <div className='story-author'>by {story.username}</div>
-                            <div className='story-type'>{story.type}</div>
-                        </div>
-                    </div>
+            
         })
 
         // console.log(this.state.stories)

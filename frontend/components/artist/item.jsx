@@ -289,7 +289,9 @@ class Item extends React.Component {
                             {/* <div className="username">
                                 {this.state.item.owner_id}
                             </div> */}
-                            <div className="image">
+                            <div
+                                onClick={() => this.props.history.replace(`/artists/${this.state.user.id}`)} 
+                                className="image link">
                                 {image}
                                 {/* <input
                                     id="user-image"
@@ -299,7 +301,10 @@ class Item extends React.Component {
                                 {/* <div className="change-image">↻</div> */}
                             </div>
 
-                            <p className='username'>{this.state.user.username}</p>
+                            <p 
+                                onClick={()=>this.props.history.replace(`/artists/${this.state.user.id}`)}
+                                className='username link'>{this.state.user.username}
+                            </p>
                             <p className="location">{this.state.user.location}</p>
                             <p className="side-bio">{this.state.user.bio}</p>
                             <p className='discography'>discography</p>

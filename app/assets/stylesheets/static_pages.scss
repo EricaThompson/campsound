@@ -2391,6 +2391,46 @@ a {
     border: 1px solid #E5E5E5;
     border-bottom: none;
     height: 100%;
+    background-color: rgba(255, 255, 255, 0.589);
+    position: relative;
+
+    .artist-stories-header {
+        position: absolute;
+        top: 80px;
+        left: 16px;
+        font-size: 40px;
+        font-weight: bolder;
+        text-transform: capitalize;
+        font-family: 'Roboto', helvetica, sans-serif;
+
+        span {
+            color: #909090;
+            font-style: italic;
+            font-weight: lighter;
+        }
+
+        .count {
+            font-size: 16px;
+            color: #909090;
+            margin-top: 25px;
+            text-transform: none;
+            font-weight: lighter;
+        }
+        // border-left: none;
+    }
+
+    // .contributer {
+    //     position: absolute;
+    //     top: 300px;
+    //     z-index: 1000;
+    // }
+    
+    // .stories-header {
+    //     // position: absolute;
+    //     z-index: 30;
+    //     // margin-top: 100px;
+    // }
+
 
     .cover-art-header {
         position: absolute;
@@ -2438,8 +2478,30 @@ a {
             background-color:rgba(223, 223, 223, 0.63)
         }
 
+
+
         
     }
+
+    .artist-stories-container {
+        display: flex;
+        width: 983px;
+        flex-wrap: wrap;
+        margin: 0 auto; 
+        justify-content: space-around;
+        background-color: white;
+
+        .story {
+            border: 1px solid hotpink;
+            // margin-right: 6px;
+            // margin-left: 6px;
+            width: 300px;
+            height: 286px;
+            margin-top: 47px;
+        }
+    }
+    
+
 
     .item-container {
         background-color: white;
@@ -2449,7 +2511,9 @@ a {
         padding-top: 19px;
         position: relative;
         height: 900px;
+        
         // margin-top: 40px;
+        // background-color: hotpink;
     
     
     

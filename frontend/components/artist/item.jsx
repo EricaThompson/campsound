@@ -17,7 +17,10 @@ class Item extends React.Component {
             duration: 'time',
             currentTime: 'current',
             timeRendered: false,
-            discography: []
+            discography: [],
+            news: 'https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            review: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620',
+            
         }
     }
 
@@ -275,10 +278,28 @@ class Item extends React.Component {
         }
 
         let stories;
+        let img;
+        let mostRecentStory;
+        if (this.state.stories.length > 0){
+            mostRecentStory = this.state.stories[0].type
+        }
+
+        
         // stories = this.state.stories
         if (this.state.stories !== '' && this.props.match.path.includes('stories')){
-            stories = this.state.stories.map((story, idx) => {
-                return <div key={idx}>{story.title}</div>
+        
+            stories = this.state.stories.reverse().map((story, idx) => {
+                if (story.type === "news"){
+                    img = this.state.news
+                    // mostRecentStory = story
+                } else {
+                    img = this.state.review
+                    // mostRecentStory = story
+                }
+                return <div key={idx} className='story'>
+                            {story.title}
+                    {/* <img src={img} alt=""/> */}
+                        </div>
             })
         } 
 
@@ -287,7 +308,9 @@ class Item extends React.Component {
         let page;
         // console.log(this.props)
         if(this.props.match.path.includes('stories')){
-            page = <div>{stories}Test</div>
+            page = <div className="artist-stories-container">
+                        {stories}
+                    </div>
         }else {
             page = <div className="item-container">
                 <div className='about-item'>
@@ -364,35 +387,74 @@ class Item extends React.Component {
 
         }
 
-        return (
-            <div className="item-show" key={()=>Math.random()}>
-                <img className='cover-art-header' src={`${this.state.item.cover}`} alt="" />
-                <div className='item-nav-bar'>
-                    <div 
-                        className={`nav-music ${onMusicPage}`}
-                        onClick={()=> this.switchToMusic()}
+        if (this.props.match.path.includes('stories')){
+            return (
+                <div className="item-show" key={() => Math.random()}>
+                    {/* <img className='cover-art-header stories-header' src={img} alt="" /> */}
+                    {/* <div>{username} Good {type} <span>Contributor</span></div> */}
+                    <div className='artist-stories-header'>
+                        <div>{this.state.user.username} <span>Good {mostRecentStory} Contributor</span></div>
+                        <div className='count'>1 to {this.state.stories.length}</div>
+                    </div>
+                    <div className='item-nav-bar'>
+                        <div
+                            className={`nav-music ${onMusicPage}`}
+                            onClick={() => this.switchToMusic()}
                         >
-                        <Link to={`/artists/${this.state.item.owner_id}/music/${this.state.item.id}`}>
-                            music
+                            <Link to={`/artists/${this.state.item.owner_id}/music/${this.state.item.id}`}>
+                                music
                         </Link>
 
-                    </div>
-                    <div 
-                        className={`nav-stories ${onStoriesPage}`}
-                        onClick={()=>this.switchToStories()}
+                        </div>
+                        <div
+                            className={`nav-stories ${onStoriesPage}`}
+                            onClick={() => this.switchToStories()}
                         >
-                        
-                        <Link to={`/artists/${this.state.user.id}/stories`}>
-                            stories
+
+                            <Link to={`/artists/${this.state.user.id}/stories`}>
+                                stories
                         </Link>
 
+                        </div>
                     </div>
+                    {page}
+
+
                 </div>
-                {page}
-                
-                
-            </div>
-        )
+            )
+        } else {
+            return (
+                <div className="item-show" key={() => Math.random()}>
+                    {/* <img className='cover-art-header' src={`${this.state.item.cover}`} alt="" /> */}
+                    <div className='item-nav-bar'>
+                        <div
+                            className={`nav-music ${onMusicPage}`}
+                            onClick={() => this.switchToMusic()}
+                        >
+                            <Link to={`/artists/${this.state.item.owner_id}/music/${this.state.item.id}`}>
+                                music
+                        </Link>
+
+                        </div>
+                        <div
+                            className={`nav-stories ${onStoriesPage}`}
+                            onClick={() => this.switchToStories()}
+                        >
+
+                            <Link to={`/artists/${this.state.user.id}/stories`}>
+                                stories
+                        </Link>
+
+                        </div>
+                    </div>
+                    {page}
+
+
+                </div>
+            )
+        }
+
+        
     }
 }
 

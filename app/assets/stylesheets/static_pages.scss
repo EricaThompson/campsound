@@ -2212,9 +2212,10 @@ a {
             }
 
             .middle {
-                margin-left: 25px;
-                margin-top: 50px;
+                margin-left: 145px;
+                margin-top: 30px;
                 font-size: 16px;
+                z-index: 2;
                 .location {
                     font-weight: lighter;
                     font-size: 14px;
@@ -2223,7 +2224,7 @@ a {
             }
 
             .right {
-                margin-top: 50px;
+                margin-top: 30px;
                 margin-left: 25px;
                 font-size: 14px;
                 .bio {
@@ -2242,6 +2243,7 @@ a {
             
             position: absolute;
             z-index: 1;
+            background-color: white;
             // left: -20px;
         }
     }

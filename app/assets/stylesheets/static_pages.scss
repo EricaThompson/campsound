@@ -144,6 +144,7 @@ textarea, input{
 
 }
 
+
 // .nav-bar {
 //     width: 100%;
 //     // margin: 0 auto;
@@ -1038,6 +1039,7 @@ a {
             .top {
                 font-weight: bolder;
                 cursor: default;
+                // margin-top: 264px;
             }
 
             .single-player {
@@ -2186,6 +2188,29 @@ a {
             // margin-top: 75px;
             display: flex;
 
+            .user1-triangle {
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                border-top: 60px solid transparent;
+                border-bottom: 80px solid transparent;
+                border-left: 180px solid #FFF39A;
+                transform: rotate(15deg);
+                z-index: 1;
+                // width: 150%;
+            }
+
+            .user2-triangle {
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                border-top: 60px solid transparent;
+                border-bottom: 80px solid transparent;
+                border-left: 180px solid #99F7FF;
+                transform: rotate(15deg);
+                z-index: 1;
+            }
+
             .middle {
                 margin-left: 25px;
                 margin-top: 50px;
@@ -2214,7 +2239,10 @@ a {
             height: 125px;
             width: 125px;
             border-radius: 55%;
-            // position: absolute;
+            
+            position: absolute;
+            z-index: 1;
+            // left: -20px;
         }
     }
 

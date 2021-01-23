@@ -73,7 +73,7 @@ class Story extends React.Component {
                 <div className='story-show-type'>{this.state.story.story_type}</div>
                 <div className='story-show-title'>{this.state.story.title}</div>
                 <div className='story-show-summary'>{this.state.story.summary}</div>
-                <div className='story-show-author'>By <span className="author" onClick={() => this.props.history.replace(`/artists/${this.state.story.owner_id}`)}>{this.state.story.username}</span> · {this.state.story.date}</div>
+                <div className='story-show-author'>By <span className="author" onClick={() => this.props.history.replace(`/artists/${this.state.story.owner_id}/stories`)}>{this.state.story.username}</span> · {this.state.story.date}</div>
                 <div className='story-show-img'><img src={img} alt=""/></div>
                 <div className='story-show-text'>{this.state.story.text}</div>
             </div>

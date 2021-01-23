@@ -377,7 +377,7 @@ class Home extends React.Component {
         if (this.state.users !== ''){
             user1 = <div className='about-user'>
                         <div className="user1-triangle"></div>
-                        {/* <img className="home-user-image" src={this.state.users[0].userImg} alt="alt"/> */}
+                        <img className="home-user-image" src={this.state.users[0].userImg} alt="alt"/>
                         <div className="middle">
                             <div className='username'>{this.state.users[0].username}</div>
                             <div className='location'>{this.state.users[0].location}</div>
@@ -387,7 +387,7 @@ class Home extends React.Component {
                     </div>
             user2 = <div className='about-user'>
                         <div className="user2-triangle"></div>
-                        {/* <img className="home-user-image" src={this.state.users[1].userImg} alt="alt"/> */}
+                        <img className="home-user-image" src={this.state.users[1].userImg} alt="alt"/>
                         <div className="middle">
                             <div className='username'>{this.state.users[1].username}</div>
                             <div className='location'>{this.state.users[1].location}</div>

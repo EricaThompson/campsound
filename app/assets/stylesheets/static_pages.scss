@@ -2183,6 +2183,7 @@ a {
         justify-content: space-around;
         text-align: left;
         position: relative;
+        padding-bottom: 30px;
 
         .about-user {
             // margin-top: 75px;
@@ -2243,7 +2244,9 @@ a {
             
             position: absolute;
             z-index: 1;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.664);
+            // left: 100px;
+            // bottom: -20px;
             // left: -20px;
         }
     }

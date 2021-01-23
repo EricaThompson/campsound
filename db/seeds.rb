@@ -129,6 +129,7 @@ item10 = Item.create(
                 )
 item10.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/10.jpeg"), filename: "cover-10")
 item10.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/2.mp3"), filename: "song-10")
+puts "Items created!"
 
 story1 = Story.create(
                 "owner_id": user1.id,

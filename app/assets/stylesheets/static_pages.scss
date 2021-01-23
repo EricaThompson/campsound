@@ -1907,9 +1907,29 @@ a {
             
         }
 
+        .slide-container {
+            height: 78%;
+            padding: 6px;
+            padding-right: 0px;
+            width: 30%;
+
+            &:hover {
+                background-color: #EDF1F2;
+                height: 80%;
+                width: 100%;
+                -webkit-transition: background-color, height 400ms linear;
+                -ms-transition: background-color, height 400ms linear;
+                transition: background-color, height 400ms linear;
+                
+
+            }
+
+        }
+
         .slide {
             min-width: 112px;
             margin-right: 10px;
+            height: 80%;
             // border: 1px solid hotpink;
             img {
                 width: 112px;
@@ -1922,6 +1942,7 @@ a {
                 margin-top: 7px;
                 font-weight: lighter;
             }
+
         }
     }
 

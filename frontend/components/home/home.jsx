@@ -205,15 +205,20 @@ class Home extends React.Component {
                 // console.log('home, item owner id', item.owner_id)
 
                 if (idx < 8){
-                    return <div key={idx}className="slide">
-                                <Link to={`/artists/${item.owner_id}/music/${item.id}`}>
-                                    <img src={`${item.cover}`} alt=""/>
-                                    <p>{item.title}</p>
-                                    <p>by {item.artist}</p>
-                                    <p>{item.price}</p>
-                                    <p>{item.date}</p>
-                                </Link>
+
+            
+                    return  <div className="slide-container">
+                                <div key={idx} className="slide">
+                                    <Link to={`/artists/${item.owner_id}/music/${item.id}`}>
+                                        <img src={`${item.cover}`} alt="" />
+                                        <p>{item.title}</p>
+                                        <p>by {item.artist}</p>
+                                        <p>{item.price}</p>
+                                        <p>{item.date}</p>
+                                    </Link>
+                                </div>
                             </div>
+                        
                 }
                 
                 // while( second < wait + 1){

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as UserAPIUtil from '../../util/session_api_util';
+import * as StoryAPIUtil from '../../util/stories_api_util';
 
 class Item extends React.Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class Item extends React.Component {
         this.state = {
             user: '',
             item: '',
+            stories: '',
             playerView: false,
             audioPlayer: false,
             playShow: true,
@@ -23,12 +25,13 @@ class Item extends React.Component {
         UserAPIUtil.getUser(this.props.match.params.userId)
             .then(res => this.setState({user: res}))
         
-
-        this.props.readItem(this.props.match.params.userId,this.props.match.params.itemId)
-            .then(res => this.setState({ item: res.item}))
-
-        this.props.readAllUserItems(this.props.match.params.userId)
-            .then(res => this.setState({discography: Object.values(res.items)}))
+        if (this.props.match.path.includes('music')) {
+            this.props.readItem(this.props.match.params.userId,this.props.match.params.itemId)
+                .then(res => this.setState({ item: res.item}))
+            this.props.readAllUserItems(this.props.match.params.userId)
+                .then(res => this.setState({discography: Object.values(res.items)}))
+        }
+        
 
         
 
@@ -41,11 +44,25 @@ class Item extends React.Component {
         document.documentElement.scrollTop = 0;
     }
 
+    switchToStories(){
+        console.log(this.props)
+        this.props.history.replace(`/artists/${this.props.match.params.userId}/stories`)
+        StoryAPIUtil.fetchAllUserStories(this.props.match.params.userId)
+            .then(res => console.log('story res', res))
+            
+    }
+
+    switchToMusic(){
+        this.props.history.replace(`/artists/${this.props.match.params.userId}`)
+    }
+
     refresh(){
         setTimeout(() => {
             window.location.reload()
         }, 1);
     }
+
+    
 
     toggleAudioPlayer() {
         this.setState({ audioPlayer: !this.state.audioPlayer })
@@ -72,24 +89,27 @@ class Item extends React.Component {
         let second;
         let minute;
         let ct = this.state.currentTime
-        if (ct % 60 === 0 || ct > 60 ) {
-            minute = Math.floor(ct / 60)
-            second = Math.floor(ct - (minute * 60))
-        } else {
-            minute = 0
-        }
-
-        if (ct < 10){
-            player.innerHTML = `0:0${Math.floor(ct)}`;
-        } else if (ct < 60){
-            player.innerHTML = `0:${Math.floor(ct)}`;
-        } else {
-            if (second < 10){
-                player.innerHTML = `${minute}:0${second}`;
+        if (this.props.match.path.includes('music')){
+            if (ct % 60 === 0 || ct > 60) {
+                minute = Math.floor(ct / 60)
+                second = Math.floor(ct - (minute * 60))
             } else {
-                player.innerHTML = `${minute}:${second}`
+                minute = 0
+            }
+
+            if (ct < 10) {
+                player.innerHTML = `0:0${Math.floor(ct)}`;
+            } else if (ct < 60) {
+                player.innerHTML = `0:${Math.floor(ct)}`;
+            } else {
+                if (second < 10) {
+                    player.innerHTML = `${minute}:0${second}`;
+                } else {
+                    player.innerHTML = `${minute}:${second}`
+                }
             }
         }
+        
     }
 
     // volumeUp(){
@@ -104,14 +124,17 @@ class Item extends React.Component {
     //     }
     // }
 
+
+
     getDuration(){
         // let time = document.getElementById('item-player').duration
         
-
-        this.setState({duration: document.getElementById('item-player').duration})
-        this.setState({ currentTime: document.getElementById('item-player').currentTime})
-        this.setState({timeRendered: true})
-        return this.state.currentTime
+        if (this.props.match.path.includes('music')) {
+            this.setState({duration: document.getElementById('item-player').duration})
+            this.setState({ currentTime: document.getElementById('item-player').currentTime})
+            this.setState({timeRendered: true})
+            return this.state.currentTime
+        }
     }
 
     deleteSong(){
@@ -120,7 +143,7 @@ class Item extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         // console.log('prop item', this.props.items)
         // console.log('state song', this.state.item.song)
         // console.log(this.state.duration)
@@ -220,7 +243,7 @@ class Item extends React.Component {
             alt=""
         />
 
-        console.log('user', this.state.user)
+        // console.log('user', this.state.user)
 
 
 
@@ -247,87 +270,108 @@ class Item extends React.Component {
             editBtn = < button onClick={() => this.props.history.replace(`/artists/${this.props.currentUserId}/music/${this.state.item.id}/edit`)}>Edit</button>
         }
 
+        let stories;
+        stories = this.state.stories
+        console.log('stories', stories)
+
+
         // console.log(this.state.item)
+        let page;
+        // console.log(this.props)
+        if(this.props.match.path.includes('stories')){
+            page = <div>test</div>
+        }else {
+            page = <div className="item-container">
+                <div className='about-item'>
+                    <h1>{this.state.item.title}</h1>
+                    <p className='artist'>by <Link to={`/artists/${this.state.item.owner_id}`}>{this.state.item.artist_name}</Link></p>
+                    {editBtn}
+                    {deleteBtn}
+
+                    <br />
+                    {renderPlayer}
+                    <br />
+                    <br />
+                    <br />
+                    {/* <br /> */}
+                    {/* hello */}
+
+                    <h3 className="digital">Digital Track</h3>
+                    <h4 className='availability'>Streaming + Download</h4>
+                    <p className="inclusion">Includes unlimited streaming via the free Bandcamp app, plus high-
+                            <br />
+                            quality download in MP3, FLAC and more.
+                        </p>
+                    <a className="download" href={`${this.state.item.song}`} download>Download Digital Track </a><span className="price">{this.state.item.price}</span>
+                    <br />
+                    <br />
+                    <p className='about'> {this.state.item.about}</p>
+                    <p className="release-date" >released {this.state.item.date}</p>
+                    <p className="copyright" >© all rights reserved</p>
+                </div>
+                <img className="item-cover" src={this.state.item.cover} alt="song art" />
+
+                <div className="sidebar">
+                    <div className="about">
+                        {/* <div className="username">
+                                {this.state.item.owner_id}
+                            </div> */}
+                        <div
+                            onClick={() => this.props.history.replace(`/artists/${this.state.user.id}`)}
+                            className="image link">
+                            {image}
+                            {/* <input
+                                    id="user-image"
+                                    type="file"
+                                    // onChange={this.imageSubmit.bind(this)}
+                                /> */}
+                            {/* <div className="change-image">↻</div> */}
+                        </div>
+
+                        <p
+                            onClick={() => this.props.history.replace(`/artists/${this.state.user.id}`)}
+                            className='username link'>{this.state.user.username}
+                        </p>
+                        <p className="location">{this.state.user.location}</p>
+                        <p className="side-bio">{this.state.user.bio}</p>
+                        <p className='discography'>discography</p>
+                        {discography}
+
+                        {/* {location}
+                            {bio} */}
+                    </div>
+                </div>
+            </div>
+        }
+
         
 
         return (
             <div className="item-show" key={()=>Math.random()}>
-                <img className='cover-art-header' src={`${this.state.item.cover}`} alt=""/>
+                <img className='cover-art-header' src={`${this.state.item.cover}`} alt="" />
                 <div className='item-nav-bar'>
-                    <div className="nav-music on-page">
-                        <Link to={`/artists/${this.state.item.owner_id}`}>
+                    <div 
+                        className="nav-music on-page"
+                        onClick={()=> this.switchToMusic()}
+                        >
+                        <Link to={`/artists/${this.state.item.owner_id}/music/${this.state.item.id}`}>
                             music
                         </Link>
-                        
+
                     </div>
-                    <div className="nav-stories">
-                        <Link to={`/stories`}>
+                    <div 
+                        className="nav-stories"
+                        onClick={()=>this.switchToStories()}
+                        >
+                        
+                        <Link to={`/artists/${this.state.user.id}/stories`}>
                             stories
                         </Link>
 
                     </div>
                 </div>
-                <div className="item-container">
-                    <div className='about-item'>
-                        <h1>{this.state.item.title}</h1>
-                        <p className='artist'>by <Link to={`/artists/${this.state.item.owner_id}`}>{this.state.item.artist_name}</Link></p>
-                        {editBtn}
-                        {deleteBtn}
-                        
-                        <br />
-                        {renderPlayer}
-                        <br />
-                        <br />
-                        <br />
-                        {/* <br /> */}
-                        {/* hello */}
-                        
-                        <h3 className="digital">Digital Track</h3>
-                        <h4 className='availability'>Streaming + Download</h4>
-                        <p className="inclusion">Includes unlimited streaming via the free Bandcamp app, plus high-
-                            <br />
-                            quality download in MP3, FLAC and more.
-                        </p>
-                        <a className="download" href={`${this.state.item.song}`} download>Download Digital Track </a><span className="price">{this.state.item.price}</span>
-                        <br />
-                        <br />
-                        <p className='about'> {this.state.item.about}</p>
-                        <p className="release-date" >released {this.state.item.date}</p>
-                        <p className="copyright" >© all rights reserved</p>
-                    </div>
-                    <img className="item-cover" src={this.state.item.cover} alt="song art"/>
-                    
-                    <div className="sidebar">
-                        <div className="about">
-                            {/* <div className="username">
-                                {this.state.item.owner_id}
-                            </div> */}
-                            <div
-                                onClick={() => this.props.history.replace(`/artists/${this.state.user.id}`)} 
-                                className="image link">
-                                {image}
-                                {/* <input
-                                    id="user-image"
-                                    type="file"
-                                    // onChange={this.imageSubmit.bind(this)}
-                                /> */}
-                                {/* <div className="change-image">↻</div> */}
-                            </div>
-
-                            <p 
-                                onClick={()=>this.props.history.replace(`/artists/${this.state.user.id}`)}
-                                className='username link'>{this.state.user.username}
-                            </p>
-                            <p className="location">{this.state.user.location}</p>
-                            <p className="side-bio">{this.state.user.bio}</p>
-                            <p className='discography'>discography</p>
-                            {discography}
-
-                            {/* {location}
-                            {bio} */}
-                        </div>
-                    </div>                   
-                </div>
+                {page}
+                
             </div>
         )
     }

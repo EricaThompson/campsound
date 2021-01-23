@@ -38,10 +38,12 @@ class App extends React.Component {
                     <Route exact path='/users/:authorId/stories/:storyId' component={StoryContainer} />
                     <Route exact path="/:userId/new" component={ItemFormContainer} />
                     <Route exact path="/artists/:userId/music/:itemId/edit" component={ItemFormContainer} />
+
                     {/* <Route exact path="/" /> */}
                     {/* <img id="main-story" src={require('../../app/assets/images/pexels.jpg')} alt="main story image" /> */}
                     {/* </div> */}
                     <Route exact path="/artists/:userId/music/:itemId" component={ItemContainer}/>
+                    <Route exact path="/artists/:userId/stories/" component={ItemContainer} />
                     <Route exact path="/search/:result" component={ResultsContainer} />
                     <Route exact path="/artists/:userId" component={ArtistHomepageContainer} />
 

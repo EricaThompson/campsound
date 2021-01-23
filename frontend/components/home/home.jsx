@@ -108,8 +108,8 @@ class Home extends React.Component {
         }
     }
 
-    componentWillReceiveProps(){
-    }
+    // componentWillReceiveProps(){
+    // }
     
     componentDidMount() {
         
@@ -162,7 +162,7 @@ class Home extends React.Component {
         //     .then(res => this.setState({ items: res.items, count: res.items.length}))
             // .then(res => this.setState({count: res.items.length}))
 
-        StoryAPIUtil.readAllStories()
+        StoryAPIUtil.fetchAllStories()
             .then(res => this.setState({
                 stories: Object.values(res).reverse()
             }))

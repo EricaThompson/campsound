@@ -18,7 +18,7 @@ export const readAllStories = () => dispatch => {
         .then(res => dispatch(readAllStories(res)))
 }
 
-export const readAllUserItems = (userId) => dispatch => {
+export const readAllUserStories = (userId) => dispatch => {
     return ItemAPIUtil.fetchAllUserStories(userId)
         .then(res => dispatch(readAllUserStories(res)))
 }

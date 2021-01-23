@@ -391,9 +391,16 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className='slider'>
+                <div className="slider counter">
                         <p className='slider-info'>Artists have uploaded {this.state.items.length} songs using CampSound since established.</p>
+
+                </div>
+                <div>
+                    <h2 className="right-now ">RIGHT NOW</h2>
+                </div>
+                <div className='slider'>
                     <div className='slides'>
+                        
                         {/* {textToDisplay} */}
                         {map}
                         {/* <div className="slide">

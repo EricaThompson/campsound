@@ -1882,6 +1882,12 @@ a {
         }
     }
 
+    .right-now {
+        font-weight: normal;
+        color: #408DA3;
+        margin-left: 140px;
+    }
+
     .slider {
         margin: 50px auto;
         width: 994px;
@@ -1892,13 +1898,15 @@ a {
         margin-bottom: 0px;
         padding-bottom: 50px;
 
+
+
         a {
             color: black;
         }
 
         .slider-info{
             text-align: center;
-            margin-bottom: 20px;
+            // margin-bottom: 20px;
         }
 
         .slides {
@@ -1917,9 +1925,9 @@ a {
                 background-color: #EDF1F2;
                 height: 80%;
                 width: 100%;
-                -webkit-transition: background-color, height 400ms linear;
-                -ms-transition: background-color, height 400ms linear;
-                transition: background-color, height 400ms linear;
+                -webkit-transition: background-color 400ms linear;
+                -ms-transition: background-color 400ms linear;
+                transition: background-color 400ms linear;
                 
 
             }
@@ -1946,6 +1954,10 @@ a {
         }
     }
 
+    .counter {
+        height: 10px;
+    }
+
     .campsound-daily-container {
         background-color: #EEF2F3;
         padding-top: 25px;
@@ -1956,7 +1968,7 @@ a {
             h2 {
                 font-weight: normal;
                 color: #408DA3;
-                margin-left: 134px;
+                margin-left: 140px;
             }
         }
         .stories-container {

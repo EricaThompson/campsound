@@ -30,106 +30,105 @@ item1 = Item.create(
 item1.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/1.jpeg"), filename: "cover-1")
 item1.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/1.mp3"), filename: "song-1")
 
-# item2 = Item.create(
-#                 "owner_id": user2.id,
-#                 "title": '2',
-#                 "genre": 'electronic',
-#                 "about": 'About text.',
-#                 'released': true,
-#                 'artist_name': 'Rainy'
-#                 )
-# item2.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/2.jpeg"), filename: "2.jpeg")
-# item2.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/2.mp3"), filename: "2.mp3")
+item2 = Item.create(
+                "owner_id": user2.id,
+                "title": '2',
+                "genre": 'electronic',
+                "about": 'About text.',
+                'released': true,
+                'artist_name': 'Rainy'
+                )
+item2.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/2.jpeg"), filename: "cover-2")
+item2.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/2.mp3"), filename: "song-2")
 
 
-# item3 = Item.create(
-#                 "owner_id": user1.id,
-#                 "title": '3',
-#                 "genre": 'electronic',
-#                 "about": 'About text.',
-#                 'released': true,
-#                 'artist_name': 'demo'
-#                 )
-# item3.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/3.jpeg"), filename: "3.jpeg")
-# item3.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/3.mp3"), filename: "3.mp3")
+item3 = Item.create(
+                "owner_id": user1.id,
+                "title": '3',
+                "genre": 'electronic',
+                "about": 'About text.',
+                'released': true,
+                'artist_name': 'demo'
+                )
+item3.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/3.jpeg"), filename: "cover-3")
+item3.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/3.mp3"), filename: "song-3")
 
-# item4 = Item.create(
-#                 "owner_id": user2.id,
-#                 "title": '4',
-#                 "genre": 'electronic',
-#                 "about": 'About text.',
-#                 'released': true,
-#                 'artist_name': 'RNYDY'
-#                 )
-# item4.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/4.jpeg"), filename: "4.jpeg")
-# item4.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/4.mp3"), filename: "4.mp3")
+item4 = Item.create(
+                "owner_id": user2.id,
+                "title": '4',
+                "genre": 'electronic',
+                "about": 'About text.',
+                'released': true,
+                'artist_name': 'RNYDY'
+                )
+item4.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/4.jpeg"), filename: "cover-4")
+item4.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/4.mp3"), filename: "song-4")
 
-# item5 = Item.create(
-#                 "owner_id": user1.id,
-#                 "title": '5',
-#                 "genre": 'electronic',
-#                 "about": 'About text.',
-#                 'released': true,
-#                 'artist_name': 'DMO USR'
-#                 )
-# item5.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/5.jpeg"), filename: "5.jpeg")
-# item5.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/5.mp3"), filename: "5.mp3")
+item5 = Item.create(
+                "owner_id": user1.id,
+                "title": '5',
+                "genre": 'electronic',
+                "about": 'About text.',
+                'released': true,
+                'artist_name': 'DMO USR'
+                )
+item5.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/5.jpeg"), filename: "cover-5")
+item5.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/5.mp3"), filename: "song-5")
 
-# item6 = Item.create(
-#                 "owner_id": user2.id,
-#                 "title": '6',
-#                 "genre": 'electronic',
-#                 "about": 'About text.',
-#                 'released': true,
-#                 'artist_name': 'RaRe'
-#                 )
-# item6.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/6.jpeg"), filename: "6.jpeg")
-# item6.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/6.mp3"), filename: "6.mp3")
+item6 = Item.create(
+                "owner_id": user2.id,
+                "title": '6',
+                "genre": 'electronic',
+                "about": 'About text.',
+                'released': true,
+                'artist_name': 'RaRe'
+                )
+item6.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/6.jpeg"), filename: "cover-6")
+item6.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/6.mp3"), filename: "song-6")
 
-# item7 = Item.create(
-#                 "owner_id": user1.id,
-#                 "title": '7',
-#                 "genre": 'electronic',
-#                 "about": 'About text.',
-#                 'released': true,
-#                 'artist_name': 'DU'
-#                 )
-# item7.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/7.jpeg"), filename: "7.jpeg")
-# item7.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/7.mp3"), filename: "7.mp3")
+item7 = Item.create(
+                "owner_id": user1.id,
+                "title": '7',
+                "genre": 'electronic',
+                "about": 'About text.',
+                'released': true,
+                'artist_name': 'DU'
+                )
+item7.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/7.jpeg"), filename: "cover-7")
+item7.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/7.mp3"), filename: "song-7")
 
-# item8 = Item.create(
-#                 "owner_id": user2.id,
-#                 "title": '8',
-#                 "genre": 'electronic',
-#                 "about": 'About text.',
-#                 'released': true,
-#                 'artist_name': 'Rainforest Records'
-#                 )
-# item8.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/8.jpeg"), filename: "8.jpeg")
-# item8.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/8.mp3"), filename: "8.mp3")
+item8 = Item.create(
+                "owner_id": user2.id,
+                "title": '8',
+                "genre": 'electronic',
+                "about": 'About text.',
+                'released': true,
+                'artist_name': 'Rainforest Records'
+                )
+item8.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/8.jpeg"), filename: "cover-8")
+item8.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/8.mp3"), filename: "song-8")
 
-# item9 = Item.create(
-#                 "owner_id": user1.id,
-#                 "title": '9',
-#                 "genre": 'electronic',
-#                 "about": 'About text.',
-#                 'released': true,
-#                 'artist_name': 'Demo User'
-#                 )
-# item9.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/9.jpeg"), filename: "9.jpeg")
-# item9.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/1.mp3"), filename: "1.mp3")
+item9 = Item.create(
+                "owner_id": user1.id,
+                "title": '9',
+                "genre": 'electronic',
+                "about": 'About text.',
+                'released': true,
+                'artist_name': 'Demo User'
+                )
+item9.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/9.jpeg"), filename: "cover-9")
+item9.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/1.mp3"), filename: "song-9")
 
-# item10 = Item.create(
-#                 "owner_id": user2.id,
-#                 "title": '10',
-#                 "genre": 'electronic',
-#                 "about": 'About text.',
-#                 'released': true,
-#                 'artist_name': 'Demo User'
-#                 )
-# item10.cover.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/cover/10.jpeg"), filename: "10.jpeg")
-# item10.song.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/seed/songs/1.mp3"), filename: "1.mp3")
-
+item10 = Item.create(
+                "owner_id": user2.id,
+                "title": '10',
+                "genre": 'electronic',
+                "about": 'About text.',
+                'released': true,
+                'artist_name': 'Demo User'
+                )
+item10.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/10.jpeg"), filename: "cover-10")
+item10.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/2.mp3"), filename: "song-10")
 
 story1 = Story.create(
                 "owner_id": user1.id,

@@ -16,7 +16,9 @@ Story.destroy_all
 puts "All Stories Destroyed!"
 
 user1 = User.create(username: 'Demo User', password: 'Password')
+
 user2 = User.create(username: 'Rainforest Records', password: 'Password', location: 'los angeles', bio: 'engineering!')
+user2.user_img.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/users/rainforest-records.jpg"), filename: 'rainforest-records')
 puts "Users created!"
 
 item1 = Item.create(

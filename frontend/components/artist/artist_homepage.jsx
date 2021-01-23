@@ -1,8 +1,9 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ZeroItems from './zero_items';
 import ShowItems from './show_items';
 import * as UserAPIUtil from '../../util/session_api_util';
+
 
 // import MusicPlayer from '../music_player/music_player';
 
@@ -37,6 +38,11 @@ class ArtistHomepage extends React.Component {
         this.props.readAllUserItems(this.props.match.params.userId)
             // .then(res => this.setState({ items: res }))
 
+    }
+
+    switchToStories() {
+        // console.log(this.props)
+        this.props.history.replace(`/artists/${this.props.match.params.userId}/stories`)
     }
 
     handleSubmit(e){
@@ -255,24 +261,64 @@ class ArtistHomepage extends React.Component {
         }
 
         console.log('this.props ', this.props)
-        return (
-            <div>
-                <div className='artist-home'>
-                    {component}
-                    <div className="sidebar">
-                        <div className="about">
-                            <div className="username">
-                                {this.state.user.username}
-                            </div>
-                            <div className="image">
-                                {image}
-                                {changeImage}
-                            </div>
+        let onMusicPage = false;
+        let onStoriesPage = false;
 
-                            {location}
-                            {bio}
-                        </div>
-                    </div>   
+        if (this.props.match.path.includes('stories')) {
+            onStoriesPage = 'on-page';
+            onMusicPage = false;
+        } else {
+            onMusicPage = 'on-page';
+            onStoriesPage = false;
+
+        }
+        return (
+            <div className='artist-home-container'>
+                <div className='item-nav-bar'>
+                    <div
+                        className={`link nav-music  ${onMusicPage}`}
+                    // onClick={() => this.switchToMusic()}
+                    >
+                        {/* <Link to={`/artists/${this.state.item.owner_id}/music/${this.state.item.id}`}> */}
+                            music
+                    {/* </Link> */}
+
+                    </div>
+                    <div
+                        className={`link nav-stories ${onStoriesPage}`}
+                        onClick={() => this.switchToStories()}
+                    >
+
+                        {/* <Link to={`/artists/${this.state.user.id}/stories`}> */}
+                            stories
+                    {/* </Link> */}
+
+                    </div>
+                </div>
+
+                <div className='artist-home'>
+                    <br />
+                    <br />
+                    <br />
+                    <div>
+                        {component}
+                        <div className="sidebar">
+                            <div className="about">
+                                
+                                <div className="image">
+                                    {image}
+                                    {changeImage}
+                                </div>
+                                <div className="username">
+                                    {this.state.user.username}
+                                </div>
+
+                                {location}
+                                {bio}
+                            </div>
+                        </div>   
+
+                    </div>
                 </div> 
 
                 {/* {/* <MusicPlayer items={items} /> */}

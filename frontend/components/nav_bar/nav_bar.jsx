@@ -29,6 +29,7 @@ class NavBar extends React.Component {
         let avatar;
         let signup = null;
         let authNav = null;
+        let loggedIn;
 
         if (this.props.currentUser){
 
@@ -93,6 +94,8 @@ class NavBar extends React.Component {
                         </Link>
 
                     </div>
+
+            loggedIn = 'logged-in'
                         
         } else {
             auth = <p onClick={() => this.props.openModal('login')}>log in</p> 
@@ -103,14 +106,18 @@ class NavBar extends React.Component {
         if (!this.state.authDropdown){
             authNav = null;
         }
+
+        // if(this.props.currentUser){
+        //     console.log('currentUser',this.props.currentUser)
+        // }
     return (
-            <div className="nav-bar nav-logged-in">
+            <div className={`nav-bar nav-${loggedIn}`}>
                 <div className="nav-top">
-                    <Link to="/"><h1 className='logo logo-logged-in'>🏕 campsound</h1></Link>
+                    <Link to="/"><h1 className={`logo logo-${loggedIn}`}>🏕 campsound</h1></Link>
                 </div>
                 <div className='nav-bar-links'>
                     <div className="nav-bottom ">
-                        <h2 className="slogan support-logged-in">
+                    <h2 className={`slogan support-${loggedIn}`}>
                             Discover amazing new music and 
                             <div className="support"> directly support </div> 
                             the artists who make it.
@@ -118,7 +125,7 @@ class NavBar extends React.Component {
                         <p className="support-note">
                             Sign up today!
                         </p>
-                        <div className='auth-links right-side-logged-in'>
+                        <div className={`auth-links right-side-${loggedIn}`}>
                             <p 
                                 className="announce"
                             >

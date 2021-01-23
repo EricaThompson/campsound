@@ -64,9 +64,16 @@ class Search extends React.Component {
         this.setState({dropdownHidden: true})
     }
 
-
-
+    
+    
+    
+    
     render() {
+        let loggedIn;
+
+        if (this.props.currentUser){
+            loggedIn = 'logged-in'
+        }
 
         let dropdown = <div className="dropdown">
                             <div onClick={() => this.genreSearch('electronic')} className="electronic"><span>electronic</span><span className="caret"><i className="fas fa-chevron-right"></i></span></div>
@@ -93,7 +100,7 @@ class Search extends React.Component {
 
         
         return (
-            <div className="search-bar search-logged-in">
+            <div className={`search-bar search-${loggedIn}`}>
                 <div onClick={()=>this.showDropdown()}>
                     <input
                         onChange={this.handleChange()}

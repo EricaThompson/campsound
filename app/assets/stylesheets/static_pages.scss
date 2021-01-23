@@ -305,9 +305,9 @@ textarea, input{
     margin: 0;
     display: flex;
     align-self: center;
-    font-size: 17px;
+    font-size: 15px;
     background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
-    background-size: 92%;
+    background-size: 95%;
     background-repeat: repeat;
     font-weight: 500;
     -webkit-background-clip: text;
@@ -1619,6 +1619,44 @@ a {
 
 }
 
+.search-logged-in {
+    position: absolute;
+    left: 170px;
+    top: -15px;
+    width: 250px;
+
+}
+
+.search-icon-logged-in {
+    position: absolute;
+    left: 260px;
+    top: -10px;
+}
+
+.logo-logged-in {
+    position: absolute;
+    left: -37px;
+    top: -15px;
+    font-weight: 500;
+
+}
+
+.support-logged-in {
+    display: none;
+}
+
+.nav-logged-in {
+    height: 54px;
+    
+}
+
+.right-side-logged-in {
+    position: absolute;
+    right: 25px;
+    top: 12px;
+    
+    // top: -15px;
+}
 
 //Results
 

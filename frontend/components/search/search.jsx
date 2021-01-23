@@ -93,7 +93,7 @@ class Search extends React.Component {
 
         
         return (
-            <div className="search-bar">
+            <div className="search-bar search-logged-in">
                 <div onClick={()=>this.showDropdown()}>
                     <input
                         onChange={this.handleChange()}
@@ -102,7 +102,7 @@ class Search extends React.Component {
                     />
                     <i 
                         onClick={()=>this.typedSearch} 
-                        className="fas fa-search">
+                        className="fas fa-search search-icon-logged-in">
                     </i>
                 </div>
                 <div hidden={this.state.dropdownHidden}>{dropdown}</div>

@@ -104,13 +104,13 @@ class NavBar extends React.Component {
             authNav = null;
         }
     return (
-            <div className="nav-bar">
+            <div className="nav-bar nav-logged-in">
                 <div className="nav-top">
-                <Link to="/"><h1 className='logo'>🏕 campsound</h1></Link>
+                    <Link to="/"><h1 className='logo logo-logged-in'>🏕 campsound</h1></Link>
                 </div>
                 <div className='nav-bar-links'>
-                    <div className="nav-bottom">
-                        <h2 className="slogan">
+                    <div className="nav-bottom ">
+                        <h2 className="slogan support-logged-in">
                             Discover amazing new music and 
                             <div className="support"> directly support </div> 
                             the artists who make it.
@@ -118,11 +118,11 @@ class NavBar extends React.Component {
                         <p className="support-note">
                             Sign up today!
                         </p>
-                        <div className='auth-links'>
+                        <div className='auth-links right-side-logged-in'>
                             <p 
                                 className="announce"
                             >
-                                Announcements
+                                Announcements!
                             </p>
                             <p className="announcement">
                                 My social links are in the footer!

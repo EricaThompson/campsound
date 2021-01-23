@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import * as StoryAPIUtil from '../../util/stories_api_util';
+import * as SessionAPIUtil from '../../util/session_api_util';
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            users: '',
             items: this.props.items,
             stories: [],
             1: 'https://images.pexels.com/photos/2341290/pexels-photo-2341290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
@@ -121,6 +123,9 @@ class Home extends React.Component {
         // console.log(this.props)
         // let items = []
         // let boolean = false;
+
+        SessionAPIUtil.allUsers()
+            .then(res => this.setState({users: Object.values(res)}))
 
         this.props.browseAll()
             .then(res => this.setState({items: Object.values(res.items)}, console.log(res)))
@@ -363,6 +368,37 @@ class Home extends React.Component {
         })
 
         // console.log(this.state.stories)
+
+        let user1;
+        let user2;
+
+        if (this.state.users !== ''){
+            user1 = <div className='about-user'>
+                        <img className="home-user-image" src={this.state.users[0].userImg} alt=""/>
+                        <div className="middle">
+                            <div className='username'>{this.state.users[0].username}</div>
+                            <div className='location'>{this.state.users[0].location}</div>
+                        </div>
+                        <p className='bio'> {this.state.users[0].bio}</p>
+                        <p className='right'>view full profile</p>
+                    </div>
+            user2 = <div className='about-user'>
+                        <img className="home-user-image" src={this.state.users[1].userImg} alt=""/>
+                        <div className="middle">
+                            <div className='username'>{this.state.users[1].username}</div>
+                            <div className='location'>{this.state.users[1].location}</div>
+                        </div>
+                        <div className='right'>
+                            <div className='bio'>{this.state.users[1].bio}</div>
+                            <div>view full profile</div>
+
+                        </div>
+                    </div>
+        } else {
+        }
+
+        console.log(this.state.users[0])
+
         return (
             <div className="home">
                 <div className="stories">
@@ -457,6 +493,13 @@ class Home extends React.Component {
                     </ul>
                     <div className='bar-two'></div>
                     <div className='bar-three'></div>
+                </div>
+                <div className='spotlight-title'>
+                    Spotlight <span>Recent uploads from Campsound collections</span>
+                </div>
+                <div className='spotlight'>
+                    {user1}
+                    {user2}
                 </div>
                 <div className="dots">
                         

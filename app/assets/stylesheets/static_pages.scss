@@ -2162,6 +2162,60 @@ a {
         // border: 1px solid hotpink;
     }
 
+    .spotlight-title {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-left: 115px;
+
+        span {
+            padding-left: 65px;
+            font-weight: lighter;
+            font-size: 14px;
+        }
+    }
+
+    .spotlight {
+        display: flex;
+        justify-content: space-around;
+        text-align: left;
+        position: relative;
+
+        .about-user {
+            // margin-top: 75px;
+            display: flex;
+
+            .middle {
+                margin-left: 25px;
+                margin-top: 50px;
+                font-size: 16px;
+                .location {
+                    font-weight: lighter;
+                    font-size: 14px;
+                }
+                // background-color: yellow;
+            }
+
+            .right {
+                margin-top: 50px;
+                margin-left: 25px;
+                font-size: 14px;
+                .bio {
+                    font-weight: lighter;
+                    font-size: 14px;
+                }
+            }
+        }
+        
+
+        .home-user-image {
+            
+            height: 125px;
+            width: 125px;
+            border-radius: 55%;
+            // position: absolute;
+        }
+    }
+
     .dots {
         margin-top: 70px;
         // border-top: 5px dotted #ADAF59;

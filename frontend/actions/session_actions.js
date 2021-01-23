@@ -50,3 +50,4 @@ export const updateUser = (user, id) => dispatch => {
     return update(user, id)
         .then((res) => dispatch(receiveCurrentUser(res)))
 }
+

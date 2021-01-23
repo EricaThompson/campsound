@@ -124,8 +124,7 @@ class Home extends React.Component {
         // let items = []
         // let boolean = false;
 
-        SessionAPIUtil.allUsers()
-            .then(res => this.setState({users: Object.values(res)}))
+       
 
         this.props.browseAll()
             .then(res => this.setState({items: Object.values(res.items)}, console.log(res)))
@@ -172,6 +171,9 @@ class Home extends React.Component {
                 stories: Object.values(res).reverse()
             }))
                 // console.log(this.state.stories)))
+
+        SessionAPIUtil.allUsers()
+            .then(res => this.setState({ users: Object.values(res) }))
     }
 
     // genreSearch(genre) {
@@ -495,7 +497,7 @@ class Home extends React.Component {
                     <div className='bar-three'></div>
                 </div>
                 <div className='spotlight-title'>
-                    Spotlight <span>Recent uploads from Campsound collections</span>
+                    Fan Spotlight <span>Recent uploads from Campsound collections</span>
                 </div>
                 <div className='spotlight'>
                     {user1}

@@ -691,21 +691,21 @@ a {
 
 }
 
-@media only screen and (max-width: 865px){
-    .auth-links {
-        margin-top: 25px;
-    }
-}
+// @media only screen and (max-width: 865px){
+//     .auth-links {
+//         margin-top: 25px;
+//     }
+// }
 
-@media only screen and (max-width: 536px){
-    .slogan {
-        display: none;
-    }
+// @media only screen and (max-width: 536px){
+//     .slogan {
+//         display: none;
+//     }
 
-    .auth-links {
-        margin-top: 0;   
-    }
-}
+//     .auth-links {
+//         margin-top: 0;   
+//     }
+// }
 
 //* Artist Homepage
 
@@ -2166,11 +2166,13 @@ a {
         margin-top: 40px;
         margin-bottom: 40px;
         margin-left: 115px;
+        font-size: 19px;
 
         span {
-            padding-left: 65px;
+            padding-left: 39px;
             font-weight: lighter;
             font-size: 14px;
+            color: #999
         }
     }
 

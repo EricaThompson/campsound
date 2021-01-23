@@ -55,7 +55,7 @@ class ArtistItemForm extends React.Component {
     componentDidMount(){
         if (this.props.match.path.includes('edit')){
             this.setState({playerView: true})
-            console.log(this.props.currentUserId, parseInt(this.props.match.params.itemId))
+            // console.log(this.props.currentUserId, parseInt(this.props.match.params.itemId))
             this.props.readItem(this.props.match.params.userId, parseInt(this.props.match.params.itemId))
                 .then(res => this.setState({
                     artistName: res.item.artist_name,

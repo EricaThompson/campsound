@@ -50,7 +50,7 @@ class Item extends React.Component {
     }
 
     switchToStories(){
-        console.log(this.props)
+        // console.log(this.props)
         this.props.history.replace(`/artists/${this.props.match.params.userId}/stories`)
         
             

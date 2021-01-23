@@ -18,7 +18,7 @@ class Story extends React.Component {
         $.ajax({
             url: `/api/users/${this.props.match.params.authorId}/stories/${this.props.match.params.storyId}`,
             method: 'GET'
-        }).then(res => this.setState({ story: res }, console.log(res)))
+        }).then(res => this.setState({ story: res }))
         
 
     }

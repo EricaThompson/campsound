@@ -21,14 +21,15 @@ class LogInForm extends React.Component {
     handleSubmit(e) {      
         e.preventDefault();
         this.props.loginUser({ user: this.state })
-            .then(this.props.closeModal)
-            // .then(setTimeout(() => location.reload(), 200))
+            .then(setTimeout(() => location.reload(), 200))
+            .then(this.props.closeModal())
     }
 
     demoLogin(){
         // e.preventDefault()
         this.setState({ username: 'Demo User', password: 'Password' }, ()=>this.props.loginUser({ user: this.state })
-            .then(this.props.closeModal))
+            .then(setTimeout(() => location.reload(), 200))
+            .then(this.props.closeModal()))
         
     }
 

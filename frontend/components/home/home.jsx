@@ -127,7 +127,7 @@ class Home extends React.Component {
        
 
         this.props.browseAll()
-            .then(res => this.setState({items: Object.values(res.items)}, console.log(res)))
+            .then(res => this.setState({items: Object.values(res.items)}))
 
 
 
@@ -214,8 +214,8 @@ class Home extends React.Component {
                 if (idx < 8){
 
             
-                    return  <div className="slide-container">
-                                <div key={idx} className="slide">
+                    return <div key={idx} className="slide-container">
+                                <div key={idx}className="slide">
                                     <Link to={`/artists/${item.owner_id}/music/${item.id}`}>
                                         <img src={`${item.cover}`} alt="" />
                                         <p>{item.title}</p>
@@ -350,7 +350,7 @@ class Home extends React.Component {
                 } else {
                     img = this.state.review
                 }
-                console.log(story)
+                // console.log(story)
                 return <div
                     onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}`)}
                     className={`story link ${last} ${main}`}
@@ -401,7 +401,7 @@ class Home extends React.Component {
         } else {
         }
 
-        console.log(this.state.users[0])
+        // console.log(this.state.users[0])
 
         return (
             <div className="home">

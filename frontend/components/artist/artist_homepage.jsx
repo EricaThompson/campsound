@@ -84,7 +84,7 @@ class ArtistHomepage extends React.Component {
 
     render(){
         // console.log(this.state.user, this.state.user)
-        console.log('state', this.state)
+        // console.log('state', this.state)
         let items = [];
         Object.values(this.props.items).forEach(item => {
             items.push(item)
@@ -129,7 +129,7 @@ class ArtistHomepage extends React.Component {
         let locationAdded;
 
         if (typeof(this.state.user) !== 'string'){
-            console.log('works')
+            // console.log('works')
 
             if (this.state.location.length > 0) {
                 locationAdded = this.state.location
@@ -260,7 +260,7 @@ class ArtistHomepage extends React.Component {
             </div>
         }
 
-        console.log('this.props ', this.props)
+        // console.log('this.props ', this.props)
         let onMusicPage = false;
         let onStoriesPage = false;
 

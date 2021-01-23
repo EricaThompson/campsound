@@ -31,6 +31,11 @@ class Item extends React.Component {
             this.props.readAllUserItems(this.props.match.params.userId)
                 .then(res => this.setState({discography: Object.values(res.items)}))
         }
+
+        if (this.props.match.path.includes('stories')){
+            StoryAPIUtil.fetchAllUserStories(this.props.match.params.userId)
+                .then(res => this.setState({stories: Object.values(res)}))
+        }
         
 
         
@@ -47,8 +52,7 @@ class Item extends React.Component {
     switchToStories(){
         console.log(this.props)
         this.props.history.replace(`/artists/${this.props.match.params.userId}/stories`)
-        StoryAPIUtil.fetchAllUserStories(this.props.match.params.userId)
-            .then(res => console.log('story res', res))
+        
             
     }
 
@@ -271,15 +275,19 @@ class Item extends React.Component {
         }
 
         let stories;
-        stories = this.state.stories
-        console.log('stories', stories)
+        // stories = this.state.stories
+        if (this.state.stories !== '' && this.props.match.path.includes('stories')){
+            stories = this.state.stories.map((story, idx) => {
+                return <div key={idx}>{story.title}</div>
+            })
+        } 
 
 
         // console.log(this.state.item)
         let page;
         // console.log(this.props)
         if(this.props.match.path.includes('stories')){
-            page = <div>test</div>
+            page = <div>{stories}Test</div>
         }else {
             page = <div className="item-container">
                 <div className='about-item'>
@@ -344,14 +352,24 @@ class Item extends React.Component {
             </div>
         }
 
-        
+        let onMusicPage = false;
+        let onStoriesPage = false;
+
+        if (this.props.match.path.includes('music')){
+            onMusicPage = 'on-page';
+            onStoriesPage = false;
+        } else {
+            onStoriesPage = 'on-page';
+            onMusicPage = false;
+
+        }
 
         return (
             <div className="item-show" key={()=>Math.random()}>
                 <img className='cover-art-header' src={`${this.state.item.cover}`} alt="" />
                 <div className='item-nav-bar'>
                     <div 
-                        className="nav-music on-page"
+                        className={`nav-music ${onMusicPage}`}
                         onClick={()=> this.switchToMusic()}
                         >
                         <Link to={`/artists/${this.state.item.owner_id}/music/${this.state.item.id}`}>
@@ -360,7 +378,7 @@ class Item extends React.Component {
 
                     </div>
                     <div 
-                        className="nav-stories"
+                        className={`nav-stories ${onStoriesPage}`}
                         onClick={()=>this.switchToStories()}
                         >
                         
@@ -371,6 +389,7 @@ class Item extends React.Component {
                     </div>
                 </div>
                 {page}
+                
                 
             </div>
         )

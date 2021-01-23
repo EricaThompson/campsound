@@ -405,32 +405,35 @@ class Home extends React.Component {
 
         return (
             <div className="home">
-                <div className="stories">
-                    <Link to="/stories">
-                        <div className="main">
-                            <p>The Forest Through the Trees</p>
-                            <h6>Songs about healing and hope.</h6>
-                            <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-2395250.jpg" alt="blue flowers"/>
-                        </div>
-                    </Link>
-                    <div className="side">
-                        <div className='set'>
-                            <p>Gold is in Bloom</p>
-                            <h6>Evie Shaffer</h6>
-                            <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-2512282.jpg" alt="tan flowers"/>
-                        </div>
-                        <div className='set'>
-                            <p>Piece by Piece</p>
-                            <h6>Evie Shaffer</h6>
-                            <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-4377081.jpg" alt="pink and blue flowers"/>
-                        </div>
-                        <div className='set bottom'>
-                            <p>Petals All Around</p>
-                            <h6>Evie Shaffer</h6>
-                            <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-3825880+(1).jpg" alt="flower petals and leaves"/>
+               
+                
+                <Link to="/stories">
+                    <div className="stories">
+                            <div className="main">
+                                <p>The Forest Through the Trees</p>
+                                <h6>Songs about healing and hope.</h6>
+                                <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-2395250.jpg" alt="blue flowers"/>
+                            </div>
+                        
+                        <div className="side">
+                            <div className='set'>
+                                <p>Gold is in Bloom</p>
+                                <h6>Evie Shaffer</h6>
+                                <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-2512282.jpg" alt="tan flowers"/>
+                            </div>
+                            <div className='set'>
+                                <p>Piece by Piece</p>
+                                <h6>Evie Shaffer</h6>
+                                <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-4377081.jpg" alt="pink and blue flowers"/>
+                            </div>
+                            <div className='set bottom'>
+                                <p>Petals All Around</p>
+                                <h6>Evie Shaffer</h6>
+                                <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-3825880+(1).jpg" alt="flower petals and leaves"/>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </Link>
                 <div className="slider counter">
                         <p className='slider-info'>Artists have uploaded {this.state.items.length} songs using CampSound since established.</p>
 

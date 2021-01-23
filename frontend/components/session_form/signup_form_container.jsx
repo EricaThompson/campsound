@@ -11,7 +11,7 @@ const mapStateToProps = ({ errors }) => {
         formType: 'an Artist Account',
     };
 };
-
+ 
 const mapDispatchToProps = dispatch => {
     return {
         signupUser: (user) => dispatch(signupUser(user)),

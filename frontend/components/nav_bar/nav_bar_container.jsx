@@ -9,7 +9,8 @@ const mapStateToProps = state => {
     // debugger
     return {
         currentUser: state.users[state.session.currentUser],
-        user: state.users[state.session.currentUser]
+        user: state.users[state.session.currentUser],
+        ui: state.ui
     }
 };
 

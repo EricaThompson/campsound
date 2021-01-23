@@ -20,9 +20,14 @@ class SignUpForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.signupUser({user:this.state})
-            .then(() => this.props.loginUser(this.state))
-            .then(this.props.closeModal)
-            .then(setTimeout(() => location.reload(), 500))
+        
+        
+        
+            this.props.closeModal()
+            setTimeout(() => this.props.loginUser({ user: this.state }), 1000)
+            // setTimeout(() => location.reload(), 400)
+            // setTimeout(() => location.reload(), 400)
+    
     }
 
     openAndClear(){

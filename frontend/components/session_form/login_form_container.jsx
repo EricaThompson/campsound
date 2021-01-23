@@ -7,9 +7,10 @@ import { closeModal, openModal } from '../../actions/modal_actions';
 
 import LogInForm from './log_in_form';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = (state) => {
     return {
-        errors: errors.session
+        currentUser: state.session.currentUser,
+        errors: state.errors.session
     };
 };
 

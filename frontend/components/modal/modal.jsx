@@ -42,7 +42,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal(),setTimeout(() => {
+            window.location.reload()
+        }, 1000))
     };
 };
 

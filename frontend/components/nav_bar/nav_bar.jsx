@@ -6,18 +6,26 @@ class NavBar extends React.Component {
         super(props);
         this.state = {
             img: '',
-            authDropdown: false
+            authDropdown: false,
+            loggedIn: false,
         }
         this.logoutRefresh = this.logoutRefresh.bind(this)
     }
 
     componentDidMount(){
         this.setState({ authDropdown: false })
+        console.log(this.props)
+        
     }
 
     logoutRefresh(){
         this.props.logout()
         this.setState({authDropdown: false})
+    }
+
+    signupRefresh(){
+        this.setState({loggedIn: true})
+        window.location.reload()
     }
 
     toggleDropdown(){
@@ -30,8 +38,15 @@ class NavBar extends React.Component {
         let signup = null;
         let authNav = null;
         let loggedIn;
+        
 
         if (this.props.currentUser){
+            if (!this.state.loggedIn){
+                setTimeout(() => {
+                    ()=>this.signupRefresh()
+                }, 1000);
+            }
+            // window.location.reload()
 
             // console.log('currentUser', this.props.currentUser)
             avatar = 

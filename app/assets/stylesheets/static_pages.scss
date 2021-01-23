@@ -1623,7 +1623,7 @@ a {
 }
 
 .search-logged-in {
-    position: absolute;
+    position: fixed;
     left: 170px;
     top: -15px;
     width: 250px;
@@ -1652,7 +1652,10 @@ a {
 
 .nav-logged-in {
     height: 54px;
-    
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+    top: 0;
 }
 
 .right-side-logged-in {

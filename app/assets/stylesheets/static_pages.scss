@@ -2104,6 +2104,43 @@ a {
         }
     }
 
+    .mailing-list-container {
+        background-color: #EEF2F3;
+        padding-bottom: 43px;
+        .mailing-list-inner-container {
+            border-bottom: 1px solid #E1E5E6;
+            width: 80%;
+            margin: 0 auto;
+            padding-bottom: 43px;
+            .mailing-list {
+                width: 435px;
+                margin: 0 auto;
+                font-size: 16px;
+                border-radius: 4px;
+                text-align: center;
+
+                input {
+                    width: 272px;
+                    height: 12px;
+                }
+                button {
+                    width: 133px;
+                    font-size: 12px;
+                    color: white;
+                    background-color: #232323;
+                    padding-top: 6px;
+                    padding-bottom: 6px;
+                    font-weight: bolder;
+                    border-radius: 4px;
+                    letter-spacing: 1.5px;
+                    height: 32px;
+                    border: none;
+                }
+            }
+        };
+
+    }
+
     .discover {
         width: 100%;
         background-color: #EEF2F3;
@@ -3137,6 +3174,7 @@ a {
                     // width: 20px;
                     text-align: center;
                 }
+                
 
                 .delete {
                     top: -155px;
@@ -3250,7 +3288,7 @@ a {
 
     .delete {
         right: 15px;
-        top: 230px;
+        top: 120px;
         background-color: rgba(215, 106, 144, 0.659);
 
     }

@@ -197,7 +197,7 @@ class StoriesIndex extends React.Component {
                             {this.state.mainStory.summary}
                         </div>
                         <div
-                            onClick={()=> this.props.history.replace(`/users/${this.state.mainStory.author}`)}
+                            onClick={()=> this.props.history.replace(`/users/${this.state.mainStory.author}/stories`)}
                             className='main-story-author'>
                             By <span className='name'>{this.state.mainStory.username}</span>
                         </div>

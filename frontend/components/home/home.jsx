@@ -551,6 +551,15 @@ class Home extends React.Component {
                         {stories}
                     </div>
                 </div>
+                <div className='mailing-list-container'>
+                    <div className='mailing-list-inner-container'>
+                        <div className='mailing-list'>
+                            <div>Get the best of Erica's blog, delivered sometimes</div>
+                            <div><input placeholder='coming soon' type="text"/> <button>SIGN UP</button></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className='discover'>
                     <div className='discover-title'>Discover</div>
                     <ul className="genres">

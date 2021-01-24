@@ -204,7 +204,7 @@ class StoriesIndex extends React.Component {
                     </div>
                 </div>
                 
-                    <div><img className='latest' src={latest} alt="" /></div>
+                <div><img className='latest' src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/latest.png" alt="" /></div>
                 <div className='latest-stories'>
                     
                     {storyDisplay}

@@ -712,6 +712,7 @@ a {
 //* Artist Homepage
 
 .artist-home-container {
+    padding-top: 55px;
 
     .item-nav-bar {
         background-color: #F2F2F2;
@@ -998,6 +999,7 @@ a {
         
     }
 
+    
     .show-items {
         float: left;
         display: flex;
@@ -2393,6 +2395,7 @@ a {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.589);
     position: relative;
+    margin-top: 55px;
 
     .artist-stories-header {
         position: absolute;

@@ -25,6 +25,7 @@ class Item extends React.Component {
     }
 
     componentDidMount(){
+        // console.log(this.state.user);
         UserAPIUtil.getUser(this.props.match.params.ownerId)
             .then(res => this.setState({user: res}))
         
@@ -265,7 +266,7 @@ class Item extends React.Component {
                 <Link to={`/users/${this.state.user.id}/music/${item.id}`} ><img onClick={() => this.refresh()} className="discog-cover" src={`${item.cover}`} alt=""/></Link>
                         <Link to={`/users/${this.state.user.id}/music/${item.id}`} ><p onClick={()=>this.refresh()} className="discog-title">{item.title}</p></Link>
                         <p className="discog-date">{item.date}</p>
-                        {/* {console.log(this.props.user.id)} */}
+                        
                     </div>
         })
 
@@ -369,7 +370,7 @@ class Item extends React.Component {
                         </div>
 
                         <p
-                            onClick={() => this.props.history.replace(`/users/${this.state.user.id}`)}
+                            onClick={() => this.props.history.replace(`/users/${this.state.item.owner_id}`)}
                             className='username link'>{this.state.user.username}
                         </p>
                         <p className="location">{this.state.user.location}</p>
@@ -384,6 +385,7 @@ class Item extends React.Component {
             </div>
         }
 
+        
         let onMusicPage = false;
         let onStoriesPage = false;
 

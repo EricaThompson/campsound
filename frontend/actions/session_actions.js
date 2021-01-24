@@ -11,6 +11,11 @@ const receiveCurrentUser = currentUser => ({
     currentUser, //includes jbuilder stuff .userImg
 });
 
+const retrieveViewedUser = currentUser => ({
+    type: RECEIVE_CURRENT_USER,
+    currentUser, //includes jbuilder stuff .userImg
+});
+
 const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER,
 })
@@ -23,6 +28,8 @@ export const receiveSessionErrors = errors => ({
 export const clearSessionErrors = () => ({
     type: CLEAR_SESSION_ERRORS
 })
+
+
 
 export const signupUser = (user) => dispatch => {
     return signup(user)
@@ -43,8 +50,14 @@ export const logoutUser = () => dispatch => {
 
 export const retrieveUser = (userId) => dispatch => {
     return getUser(userId)
-        .then((res) => dispatch(receiveCurrentUser(res)));
+        .then((res) => dispatch(retrieveViewedUser(res)));
 }
+
+// export const retrieveViewedUser = (userId) => dispatch => {
+//     return getUser(userId)
+//         .then((res) => dispatch(getUser(res)));
+// }
+
 
 export const updateUser = (user, id) => dispatch => {
     return update(user, id)

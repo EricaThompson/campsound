@@ -16,7 +16,7 @@ import {
 
 const mapStateToProps = state => ({
     currentUserId: state.session.currentUser,
-    user: state.users[state.session.currentUser],
+    user: state.users,
     currentItemId: state.items.currentItemId,
     items: state.items
 });

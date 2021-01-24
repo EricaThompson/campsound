@@ -71,9 +71,10 @@ class ShowItems extends React.Component {
         
 
         let itemDisplay = this.props.items.map((item) => {
+            console.log(item)
             return <div key={item.id} className="item-display">
                         {/* <Item /> */}
-                        <Link to={`/users/${this.props.currentUserId}/music/${item.id}`}>
+                        <Link to={`/users/${item.owner_id}/music/${item.id}`}>
                             <img src={`${item.cover}`} alt="" />
                             <h5 className="home-text top">{item.title}</h5>
                         </Link>

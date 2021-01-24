@@ -15,7 +15,7 @@ puts "All Items Destroyed!"
 Story.destroy_all
 puts "All Stories Destroyed!"
 
-user1 = User.create(username: 'Demo User', password: 'Password')
+user1 = User.create(username: 'Demo User', password: 'Password', location: 'SF', bio: 'Musing')
 
 user2 = User.create(username: 'Rainforest Records', password: 'Password', location: 'los angeles', bio: 'engineering!')
 user2.user_img.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/users/rainforest-records.jpg"), filename: 'rainforest-records')
@@ -127,7 +127,7 @@ item10 = Item.create(
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
-                'artist_name': 'Demo User'
+                'artist_name': 'Rainy User'
                 )
 item10.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/10.jpeg"), filename: "cover-10")
 item10.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/2.mp3"), filename: "song-10")

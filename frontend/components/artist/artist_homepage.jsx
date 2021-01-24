@@ -26,7 +26,7 @@ class ArtistHomepage extends React.Component {
 
     componentDidMount() {
         ()=>window.location.reload()
-        UserAPIUtil.getUser(this.props.match.params.userId)
+        UserAPIUtil.getUser(this.props.match.params.ownerId)
             .then(res => this.setState({ 
                 user: res, 
                 image: res.userImg, 
@@ -35,14 +35,14 @@ class ArtistHomepage extends React.Component {
             }))
         // .then(res => this.setState({user: res}))    
 
-        this.props.readAllUserItems(this.props.match.params.userId)
+        this.props.readAllUserItems(this.props.match.params.ownerId)
             // .then(res => this.setState({ items: res }))
 
     }
 
     switchToStories() {
         // console.log(this.props)
-        this.props.history.replace(`/artists/${this.props.match.params.userId}/stories`)
+        this.props.history.replace(`/users/${this.props.match.params.ownerId}/stories`)
     }
 
     handleSubmit(e){

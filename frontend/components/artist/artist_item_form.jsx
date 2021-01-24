@@ -56,7 +56,7 @@ class ArtistItemForm extends React.Component {
         if (this.props.match.path.includes('edit')){
             this.setState({playerView: true})
             // console.log(this.props.currentUserId, parseInt(this.props.match.params.itemId))
-            this.props.readItem(this.props.match.params.userId, parseInt(this.props.match.params.itemId))
+            this.props.readItem(this.props.match.params.ownerId, parseInt(this.props.match.params.itemId))
                 .then(res => this.setState({
                     artistName: res.item.artist_name,
                     genre: res.item.genre,
@@ -108,7 +108,7 @@ class ArtistItemForm extends React.Component {
         if (this.props.match.path.includes('new')) {
             if (this.state.songFile && this.state.coverFile) {
                 this.props.createItem(this.props.currentUserId, formData)
-                    .then(() => this.props.history.replace(`/artists/${this.props.currentUserId}`), () => this.setState({ spinnerShow: false }))
+                    .then(() => this.props.history.replace(`/users/${this.props.currentUserId}`), () => this.setState({ spinnerShow: false }))
             }
 
             if (!this.state.songFile) {
@@ -131,7 +131,7 @@ class ArtistItemForm extends React.Component {
                 }
             }
             this.props.updateItem(this.props.currentUserId, this.props.match.params.itemId, song)
-            this.props.history.replace(`/artists/${this.props.currentUserId}/music/${this.state.id}`)
+            this.props.history.replace(`/users/${this.props.currentUserId}/music/${this.state.id}`)
                 // .catch(err => console.log(err))
         }
         

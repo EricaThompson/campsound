@@ -33,21 +33,21 @@ class App extends React.Component {
                     <Route key={Math.random()} path="/" component={NavBarContainer} />
                     <Route exact path="/" component={HomeContainer} />
                     <Route exact path="/stories" component={StoriesIndexContainer} />
-                    <Route exact path='/users/:authorId/stories/story/new' component={StoryFormContainer}/>
-                    <Route exact path='/users/:authorId/stories/:storyId/edit' component={StoryFormContainer} />
-                    <Route exact path='/users/:authorId/stories/:storyId' component={StoryContainer} />
-                    <Route exact path="/:userId/new" component={ItemFormContainer} />
-                    <Route exact path="/artists/:userId/music/:itemId/edit" component={ItemFormContainer} />
+                    <Route exact path='/users/:ownerId/stories/story/new' component={StoryFormContainer}/>
+                    <Route exact path='/users/:ownerId/stories/:storyId/edit' component={StoryFormContainer} />
+                    <Route exact path='/users/:ownerId/stories/:storyId' component={StoryContainer} />
+                    <Route exact path="/:ownerId/new" component={ItemFormContainer} />
+                    <Route exact path="/users/:ownerId/music/:itemId/edit" component={ItemFormContainer} />
 
                     {/* <Route exact path="/" /> */}
                     {/* <img id="main-story" src={require('../../app/assets/images/pexels.jpg')} alt="main story image" /> */}
                     {/* </div> */}
-                    <Route exact path="/artists/:userId/music/:itemId" component={ItemContainer}/>
-                    <Route exact path="/artists/:userId/stories/" component={ItemContainer} />
+                    <Route exact path="/users/:ownerId/music/:itemId" component={ItemContainer}/>
+                    <Route exact path="/users/:ownerId/stories/" component={ItemContainer} />
                     <Route exact path="/search/:result" component={ResultsContainer} />
-                    <Route exact path="/artists/:userId" component={ArtistHomepageContainer} />
+                    <Route exact path="/users/:ownerId" component={ArtistHomepageContainer} />
 
-                    {/* <Route exact path="/:userId" component={ShowItemsContainer} /> */}
+                    {/* <Route exact path="/:ownerId" component={ShowItemsContainer} /> */}
                     
                 </div>
             </div>

@@ -25,18 +25,18 @@ class Item extends React.Component {
     }
 
     componentDidMount(){
-        UserAPIUtil.getUser(this.props.match.params.userId)
+        UserAPIUtil.getUser(this.props.match.params.ownerId)
             .then(res => this.setState({user: res}))
         
         if (this.props.match.path.includes('music')) {
-            this.props.readItem(this.props.match.params.userId,this.props.match.params.itemId)
+            this.props.readItem(this.props.match.params.ownerId,this.props.match.params.itemId)
                 .then(res => this.setState({ item: res.item}))
-            this.props.readAllUserItems(this.props.match.params.userId)
+            this.props.readAllUserItems(this.props.match.params.ownerId)
                 .then(res => this.setState({discography: Object.values(res.items)}))
         }
 
         if (this.props.match.path.includes('stories')){
-            StoryAPIUtil.fetchAllUserStories(this.props.match.params.userId)
+            StoryAPIUtil.fetchAllUserStories(this.props.match.params.ownerId)
                 .then(res => this.setState({stories: Object.values(res)}))
         }
         
@@ -54,13 +54,13 @@ class Item extends React.Component {
 
     switchToStories(){
         // console.log(this.props)
-        this.props.history.replace(`/artists/${this.props.match.params.userId}/stories`)
+        this.props.history.replace(`/users/${this.props.match.params.ownerId}/stories`)
         
             
     }
 
     switchToMusic(){
-        this.props.history.replace(`/artists/${this.props.match.params.userId}`)
+        this.props.history.replace(`/users/${this.props.match.params.ownerId}`)
     }
 
     refresh(){
@@ -146,7 +146,7 @@ class Item extends React.Component {
 
     deleteSong(){
         this.props.deleteItem(this.props.currentUserId, this.state.item.id)
-        this.props.history.push(`/artists/${this.props.match.params.authorId}`)
+        this.props.history.push(`/users/${this.props.match.params.ownerId}`)
     }
 
     render() {
@@ -262,8 +262,8 @@ class Item extends React.Component {
 
         let discography = reversedDiscography.map(item => {
             return <div key={item.id}>
-                <Link to={`/artists/${this.state.user.id}/music/${item.id}`} ><img onClick={() => this.refresh()} className="discog-cover" src={`${item.cover}`} alt=""/></Link>
-                        <Link to={`/artists/${this.state.user.id}/music/${item.id}`} ><p onClick={()=>this.refresh()} className="discog-title">{item.title}</p></Link>
+                <Link to={`/users/${this.state.user.id}/music/${item.id}`} ><img onClick={() => this.refresh()} className="discog-cover" src={`${item.cover}`} alt=""/></Link>
+                        <Link to={`/users/${this.state.user.id}/music/${item.id}`} ><p onClick={()=>this.refresh()} className="discog-title">{item.title}</p></Link>
                         <p className="discog-date">{item.date}</p>
                         {/* {console.log(this.props.user.id)} */}
                     </div>
@@ -274,7 +274,7 @@ class Item extends React.Component {
 
         if (this.state.item.owner_id === this.props.currentUserId){
             deleteBtn = <button onClick={() => this.deleteSong()}>Delete</button>
-            editBtn = < button onClick={() => this.props.history.replace(`/artists/${this.props.currentUserId}/music/${this.state.item.id}/edit`)}>Edit</button>
+            editBtn = < button onClick={() => this.props.history.replace(`/users/${this.props.currentUserId}/music/${this.state.item.id}/edit`)}>Edit</button>
         }
 
         let stories;
@@ -296,10 +296,12 @@ class Item extends React.Component {
                     img = this.state.review
                     // mostRecentStory = story
                 }
+                console.log(story.author)
                 return <div 
                             key={idx} 
                             className='story link'
-                            onClick={()=>this.props.history.replace(`/users/${story.owner_id}/stories/${story.id}`)}
+
+                            onClick={()=>this.props.history.replace(`/users/${story.author}/stories/${story.id}`)}
                             >
                                 <img className="story-image" src={img} alt=""/>
                                 <div className="upper"><span className='type'>{story.type}</span> · <span className='date'>{story.date}</span></div>
@@ -322,7 +324,7 @@ class Item extends React.Component {
             page = <div className="item-container">
                 <div className='about-item'>
                     <h1>{this.state.item.title}</h1>
-                    <p className='artist'>by <Link to={`/artists/${this.state.item.owner_id}`}>{this.state.item.artist_name}</Link></p>
+                    <p className='artist'>by <Link to={`/users/${this.state.item.owner_id}`}>{this.state.item.artist_name}</Link></p>
                     {editBtn}
                     {deleteBtn}
 
@@ -355,7 +357,7 @@ class Item extends React.Component {
                                 {this.state.item.owner_id}
                             </div> */}
                         <div
-                            onClick={() => this.props.history.replace(`/artists/${this.state.user.id}`)}
+                            onClick={() => this.props.history.replace(`/users/${this.state.user.id}`)}
                             className="image link">
                             {image}
                             {/* <input
@@ -367,7 +369,7 @@ class Item extends React.Component {
                         </div>
 
                         <p
-                            onClick={() => this.props.history.replace(`/artists/${this.state.user.id}`)}
+                            onClick={() => this.props.history.replace(`/users/${this.state.user.id}`)}
                             className='username link'>{this.state.user.username}
                         </p>
                         <p className="location">{this.state.user.location}</p>
@@ -411,7 +413,7 @@ class Item extends React.Component {
                             className={`nav-music ${onMusicPage}`}
                             onClick={() => this.switchToMusic()}
                         >
-                            <Link to={`/artists/${this.state.item.owner_id}/music/${this.state.item.id}`}>
+                            <Link to={`/users/${this.state.item.owner_id}/music/${this.state.item.id}`}>
                                 music
                         </Link>
 
@@ -421,7 +423,7 @@ class Item extends React.Component {
                             onClick={() => this.switchToStories()}
                         >
 
-                            <Link to={`/artists/${this.state.user.id}/stories`}>
+                            <Link to={`/users/${this.state.user.id}/stories`}>
                                 stories
                         </Link>
 
@@ -441,7 +443,7 @@ class Item extends React.Component {
                             className={`nav-music ${onMusicPage}`}
                             onClick={() => this.switchToMusic()}
                         >
-                            <Link to={`/artists/${this.state.item.owner_id}/music/${this.state.item.id}`}>
+                            <Link to={`/users/${this.state.item.owner_id}/music/${this.state.item.id}`}>
                                 music
                         </Link>
 
@@ -451,7 +453,7 @@ class Item extends React.Component {
                             onClick={() => this.switchToStories()}
                         >
 
-                            <Link to={`/artists/${this.state.user.id}/stories`}>
+                            <Link to={`/users/${this.state.user.id}/stories`}>
                                 stories
                         </Link>
 

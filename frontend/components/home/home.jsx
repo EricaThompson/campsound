@@ -216,7 +216,7 @@ class Home extends React.Component {
             
                     return <div key={idx} className="slide-container">
                                 <div key={idx}className="slide">
-                                    <Link to={`/artists/${item.owner_id}/music/${item.id}`}>
+                                    <Link to={`/users/${item.owner_id}/music/${item.id}`}>
                                         <img src={`${item.cover}`} alt="" />
                                         <p>{item.title}</p>
                                         <p>by {item.artist}</p>

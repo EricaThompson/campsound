@@ -60,7 +60,7 @@ class NavBar extends React.Component {
                         </div> 
                     
             authNav = <div className="auth-nav">
-                        <Link to={`/artists/${this.props.currentUser.id}`}>
+                        <Link to={`/users/${this.props.currentUser.id}`}>
                     <div onClick={()=>this.toggleDropdown()}>
                         
                         <p>{this.props.currentUser.username}

@@ -96,7 +96,7 @@ class StoryForm extends React.Component {
         if (this.props.match.path.includes('edit')) {
             // this.setState({ playerView: true })
             // console.log(this.props.currentUserId, parseInt(this.props.match.params.itemId))
-            StoryAPIUtil.readStory(this.props.match.params.authorId, this.props.match.params.storyId)
+            StoryAPIUtil.readStory(this.props.match.params.ownerId, this.props.match.params.storyId)
                 .then(res => this.setState({
                     story: res,
                     title: res.title,
@@ -157,7 +157,7 @@ class StoryForm extends React.Component {
             }
         }
 
-        console.log('params',this.props.match.params)
+        // console.log('params',this.props.match.params)
 
         if (this.props.match.path.includes('new')) {
 

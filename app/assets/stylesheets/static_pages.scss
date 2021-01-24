@@ -2227,6 +2227,16 @@ a {
             }
         }
 
+        .user-1-items {
+            margin-left: -78px;
+            
+        }
+
+        .user-2-items {
+            margin-left: -218px;
+            
+        }
+
         .about-user {
             // margin-top: 75px;
             display: flex;
@@ -2258,7 +2268,7 @@ a {
                 margin-left: 145px;
                 margin-top: 30px;
                 font-size: 16px;
-                z-index: 2;
+                z-index: 1;
                 .location {
                     font-weight: lighter;
                     font-size: 14px;
@@ -2270,6 +2280,7 @@ a {
                 margin-top: 30px;
                 margin-left: 25px;
                 font-size: 14px;
+                // z-index: 1;
                 .bio {
                     font-weight: lighter;
                     font-size: 14px;

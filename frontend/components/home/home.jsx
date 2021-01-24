@@ -576,7 +576,7 @@ class Home extends React.Component {
                     Artist Spotlight <span>Recent uploads from Campsound collections</span>
                 </div>
                 <div className='spotlight'>
-                    <div>
+                    <div className='user-1-items'>
                         {user1}
                         <div className='three-items'>
                             <br />
@@ -587,9 +587,9 @@ class Home extends React.Component {
                             {items1}
                         </div>
                     </div>
-                    <div>
+                    <div className='user-2-items'>
                         {user2}
-                        <div className='three items'>
+                        <div className='three-items-2'>
                             <br />
                             <br />
                             <br />

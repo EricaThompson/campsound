@@ -83,7 +83,7 @@ item6 = Item.create(
                 "genre": 'electronic',
                 "about": 'About text.',
                 'released': true,
-                'artist_name': 'RaRe'
+                'artist_name': 'Rare'
                 )
 item6.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/6.jpeg"), filename: "cover-6")
 item6.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/6.mp3"), filename: "song-6")

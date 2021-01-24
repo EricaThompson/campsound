@@ -13,6 +13,10 @@ class ShowItems extends React.Component {
         }
     }
 
+    componentDidMount(){
+        document.body.scrollTop = 0;
+    }
+
     deleteSong(song){
         this.removeSong(song)
         this.props.deleteItem(this.props.currentUserId,song.id)

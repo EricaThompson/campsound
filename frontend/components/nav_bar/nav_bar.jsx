@@ -14,7 +14,8 @@ class NavBar extends React.Component {
 
     componentDidMount(){
         this.setState({ authDropdown: false })
-        console.log(this.props)
+        // console.log(this.props)
+        // document.body.scrollTop = 0
         
     }
 

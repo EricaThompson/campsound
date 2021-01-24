@@ -761,12 +761,12 @@ a {
 }
 
 .artist-home {
-    display: relative;
+    position: relative;
     display: flex;
     height: 800px;
     width: 968px;
     margin: 0 auto;
-    margin-top: 45px;
+    // margin-top: -200px;
 
     
     
@@ -774,11 +774,12 @@ a {
     
     .sidebar {
         float: right;
+        position: relative;
         .about {
 
             position: absolute;
-            top: 380px;
-            right: 170px;
+            top: 40px;
+            right: 33px;
 
             
             .image {
@@ -786,6 +787,7 @@ a {
                 height: 102px;
                 width: 120px;
                 position: relative;
+                margin-bottom: 22px;
 
                 .change-image {
                     background-color: white;

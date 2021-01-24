@@ -375,7 +375,10 @@ class Home extends React.Component {
         let user2;
 
         if (this.state.users !== ''){
-            user1 = <div className='about-user'>
+            console.log(this.state.users)
+            user1 = <div 
+                        onClick={()=> this.props.history.replace(`/users/${this.state.users[0].id}`)}
+                        className='about-user link'>
                         <div className="user1-triangle"></div>
                         <img className="home-user-image" src={this.state.users[0].userImg} alt="alt"/>
                         <div className="middle">
@@ -385,7 +388,11 @@ class Home extends React.Component {
                         <p className='bio'> {this.state.users[0].bio}</p>
                         <p className='right'>view full profile</p>
                     </div>
-            user2 = <div className='about-user'>
+            user2 = <div 
+                        onClick={ ()=> {
+                            this.props.history.replace(`/users/${this.state.users[1].id}`)
+                        }}
+                        className='about-user link'>
                         <div className="user2-triangle"></div>
                         <img className="home-user-image" src={this.state.users[1].userImg} alt="alt"/>
                         <div className="middle">

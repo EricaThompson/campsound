@@ -25,19 +25,22 @@ class ArtistHomepage extends React.Component {
     }
 
     componentDidMount() {
-        ()=>window.location.reload()
+        // ()=>document.body.scrollTop = 0;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
         UserAPIUtil.getUser(this.props.match.params.ownerId)
-            .then(res => this.setState({ 
-                user: res, 
-                image: res.userImg, 
-                location: res.location || '',
-                bio: res.bio || ''
-            }))
+        .then(res => this.setState({ 
+            user: res, 
+            image: res.userImg, 
+            location: res.location || '',
+            bio: res.bio || ''
+        }));
         // .then(res => this.setState({user: res}))    
-
-        this.props.readAllUserItems(this.props.match.params.ownerId)
-            // .then(res => this.setState({ items: res }))
-
+        
+        this.props.readAllUserItems(this.props.match.params.ownerId);
+        // .then(res => this.setState({ items: res }))
+        
+        ()=>window.location.reload();
     }
 
     switchToStories() {

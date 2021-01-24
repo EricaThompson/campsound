@@ -1,5 +1,6 @@
 @users.each do |user|
     json.set! user.id do
+        json.id user.id
         json.link user.link
         json.bio user.bio
         json.location user.location

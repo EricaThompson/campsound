@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import * as StoryAPIUtil from '../../util/stories_api_util';
 import * as SessionAPIUtil from '../../util/session_api_util';
+// import { readAllUserItems } from '../../util/items_api_util';
 
 class Home extends React.Component {
     constructor(props) {
@@ -10,6 +11,8 @@ class Home extends React.Component {
             users: '',
             items: this.props.items,
             stories: [],
+            items1: '',
+            items2: '',
             1: 'https://images.pexels.com/photos/2341290/pexels-photo-2341290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
             2: 'https://images.pexels.com/photos/1029624/pexels-photo-1029624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=0&w=115',
             3: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
@@ -173,7 +176,16 @@ class Home extends React.Component {
                 // console.log(this.state.stories)))
 
         SessionAPIUtil.allUsers()
-            .then(res => this.setState({ users: Object.values(res) }))
+            .then(res => {
+                this.setState({ users: Object.values(res) });
+                this.props.readAllUserItems(this.state.users[0].id)
+                    .then(res => this.setState({items1: res.items}))
+                this.props.readAllUserItems(this.state.users[1].id)
+                    .then(res => this.setState({ items2: res.items }))
+            })
+
+
+        
     }
 
     // genreSearch(genre) {
@@ -196,6 +208,7 @@ class Home extends React.Component {
     
 
     render() {
+        console.log(this.state)
         const { items } = this.state;
         // const textToDisplay = text.slice(0, lastLetter + 1);
 
@@ -372,22 +385,31 @@ class Home extends React.Component {
         // console.log(this.state.stories)
 
         let user1;
+        let items1;
         let user2;
+        let items2;
 
         if (this.state.users !== ''){
-            console.log(this.state.users)
+            // console.log(this.state.users)
             user1 = <div 
                         onClick={()=> this.props.history.replace(`/users/${this.state.users[0].id}`)}
-                        className='about-user link'>
+                        className='about-user link'
+                    >
                         <div className="user1-triangle"></div>
                         <img className="home-user-image" src={this.state.users[0].userImg} alt="alt"/>
                         <div className="middle">
                             <div className='username'>{this.state.users[0].username}</div>
                             <div className='location'>{this.state.users[0].location}</div>
                         </div>
-                        <p className='bio'> {this.state.users[0].bio}</p>
-                        <p className='right'>view full profile</p>
+                        <div className='right'>
+                            <div className='bio'> {this.state.users[0].bio}</div>
+                            <div>view full profile</div>
+                        </div>
                     </div>
+
+            
+            
+
             user2 = <div 
                         onClick={ ()=> {
                             this.props.history.replace(`/users/${this.state.users[1].id}`)
@@ -405,15 +427,57 @@ class Home extends React.Component {
 
                         </div>
                     </div>
-        } else {
+        } 
+
+
+        if (this.state.items1 !== '') {
+            console.log(this.state.items1)
+            items1 = Object.values(this.state.items1).map((item, idx) => {
+                if (idx < 3){
+                    return <div 
+                                onClick={()=>this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                className='spotlight-items'
+                                key={`${idx}`}>
+                                <img className='spotlight-item-img link' src={item.cover} alt=""/>
+                                <div className='spotlight-item-info link'>
+                                    <div className='spotlight-item-title'>{item.title}</div>
+                                    <div className='spotlight-item-artist'>by {item.artist}</div>
+                                    <div className='spotlight-item-about'>{item.about}</div>
+                                </div>
+                            </div>
+                } else {
+                    return;
+                }
+            })
+
+            items2 = Object.values(this.state.items2).map((item, idx) => {
+                if (idx < 3) {
+                    return <div
+                                onClick={() => this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                className='spotlight-items'
+                                key={`${idx}`}
+                            >
+                                <img className='spotlight-item-img link' src={item.cover} alt="" />
+                                <div className='spotlight-item-info link'>
+                                    <div className='spotlight-item-title'>{item.title}</div>
+                                    <div className='spotlight-item-artist'>by {item.artist}</div>
+                                    <div className='spotlight-item-about'>{item.about}</div>
+                                </div>
+                            </div>
+                } else {
+                    return;
+                }
+            })
         }
+
+
+
+
 
         // console.log(this.state.users[0])
 
         return (
             <div className="home">
-               
-                
                 <Link to="/stories">
                     <div className="stories">
                             <div className="main">
@@ -509,11 +573,32 @@ class Home extends React.Component {
                     <div className='bar-three'></div>
                 </div>
                 <div className='spotlight-title'>
-                    Fan Spotlight <span>Recent uploads from Campsound collections</span>
+                    Artist Spotlight <span>Recent uploads from Campsound collections</span>
                 </div>
                 <div className='spotlight'>
-                    {user1}
-                    {user2}
+                    <div>
+                        {user1}
+                        <div className='three-items'>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            
+                            {items1}
+                        </div>
+                    </div>
+                    <div>
+                        {user2}
+                        <div className='three items'>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            
+                            {items2}
+                        </div>
+                    </div>
+                    
                 </div>
                 <div className="dots">
                         

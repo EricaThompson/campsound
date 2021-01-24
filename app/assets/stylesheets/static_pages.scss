@@ -2197,6 +2197,36 @@ a {
         position: relative;
         padding-bottom: 30px;
 
+        .spotlight-items {
+            display: flex;
+            margin-bottom: 20px;
+            font-size: 13px;
+            margin-left: 6px;
+
+            .spotlight-item-img {
+                width: 112.58px;
+                height: 112.58px;
+            }
+
+            .spotlight-item-info {
+                div {
+                    margin-left: 30px;
+                }
+            }
+
+            .spotlight-item-artist {
+                font-weight: lighter;
+            }
+
+            .spotlight-item-about {
+                margin-top: 18px;
+                font-style: italic;
+                color: #000;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-weight: lighter;
+            }
+        }
+
         .about-user {
             // margin-top: 75px;
             display: flex;

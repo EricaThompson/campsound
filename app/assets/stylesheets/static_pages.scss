@@ -2407,6 +2407,7 @@ a {
             color: #909090;
             font-style: italic;
             font-weight: lighter;
+            padding-left: 18px;
         }
 
         .count {
@@ -2492,12 +2493,36 @@ a {
         background-color: white;
 
         .story {
-            border: 1px solid hotpink;
+            // border: 1px solid hotpink;
             // margin-right: 6px;
             // margin-left: 6px;
             width: 300px;
             height: 286px;
             margin-top: 47px;
+            font-size: 15px;
+
+            .story-image, .upper {
+                width: 300px;
+                margin-bottom: 14px;
+            }
+
+            .type {
+                text-transform: uppercase;
+            }
+
+            .date {
+                font-weight: lighter;
+            }
+
+            .upper {
+                color: #909090;
+            }
+
+            .lower {
+                font-size: 22px;
+                text-transform: capitalize;
+                font-weight: lighter;
+            }
         }
     }
     

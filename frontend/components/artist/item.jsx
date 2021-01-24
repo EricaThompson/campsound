@@ -296,9 +296,16 @@ class Item extends React.Component {
                     img = this.state.review
                     // mostRecentStory = story
                 }
-                return <div key={idx} className='story'>
-                            {story.title}
-                    {/* <img src={img} alt=""/> */}
+                return <div 
+                            key={idx} 
+                            className='story link'
+                            onClick={()=>this.props.history.replace(`/users/${story.owner_id}/stories/${story.id}`)}
+                            >
+                                <img className="story-image" src={img} alt=""/>
+                                <div className="upper"><span className='type'>{story.type}</span> · <span className='date'>{story.date}</span></div>
+                                        {/* <div></div> */}
+                                        <div className='lower'>{story.title}</div>
+                                {/* <img src={img} alt=""/> */}
                         </div>
             })
         } 
@@ -393,7 +400,10 @@ class Item extends React.Component {
                     {/* <img className='cover-art-header stories-header' src={img} alt="" /> */}
                     {/* <div>{username} Good {type} <span>Contributor</span></div> */}
                     <div className='artist-stories-header'>
-                        <div>{this.state.user.username} <span>Good {mostRecentStory} Contributor</span></div>
+                        <div>{this.state.user.username} 
+                            <span> {/* Good {mostRecentStory}  */} Contributor
+                            </span>
+                        </div>
                         <div className='count'>1 to {this.state.stories.length}</div>
                     </div>
                     <div className='item-nav-bar'>

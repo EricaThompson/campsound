@@ -1886,6 +1886,7 @@ a {
                 height: 169px;
                 border-bottom: 2px solid black;
                 background-color: white;
+                color: black;
                 img {
                     width: 326px;
                     height: 169px;
@@ -2102,7 +2103,47 @@ a {
                 margin-right: -20px;
             }
         }
+
+        position: relative;
+        // background-color: white;
+
+        .more {
+            position: absolute;
+            bottom: 30px;
+            right: 140px;
+            background-color: transparent;
+            
+            button {
+                color: #47a1b8;
+                border: 1px solid #589bac;
+                font-size: 12px;
+                border-radius: 3px;
+                // padding: 4px 10px;
+                // padding-right: 10px;
+                width: 75px;
+                // height: 25px;
+                padding-bottom: 5px;
+                position: relative;
+                padding-right: 18px;
+                padding-top: 4px;
+                cursor: pointer;
+
+                div {
+                    position: absolute;
+                    // display: inline-block;
+                    color: #47a1b8;
+                    font-size: 14px;
+                    bottom: 4px;
+                    right: 18px;
+                    // padding-bottom: -10px;
+                    // padding-top: 20px;
+                    font-weight: bolder;
+                }
+            }
+        }
     }
+
+
 
     .mailing-list-container {
         background-color: #EEF2F3;
@@ -2120,11 +2161,12 @@ a {
                 text-align: center;
 
                 input {
-                    width: 272px;
-                    height: 12px;
+                    width: 262px;
+                    height: 9px;
                 }
                 button {
                     width: 133px;
+                    margin-left: 6px;
                     font-size: 12px;
                     color: white;
                     background-color: #232323;

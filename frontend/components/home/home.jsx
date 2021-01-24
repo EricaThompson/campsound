@@ -550,6 +550,11 @@ class Home extends React.Component {
 
                         {stories}
                     </div>
+                    <div 
+                        onClick={()=>this.props.history.replace(`/stories`)}
+                        className='more'>
+                        <button>more <div>+</div></button>
+                    </div>
                 </div>
                 <div className='mailing-list-container'>
                     <div className='mailing-list-inner-container'>

@@ -459,7 +459,7 @@ class Home extends React.Component {
 
 
         if (this.state.items1 !== '') {
-            console.log(this.state.items1)
+            // console.log(this.state.items1)
             items1 = Object.values(this.state.items1).map((item, idx) => {
                 if (idx < 3){
                     return <div 
@@ -589,7 +589,7 @@ class Home extends React.Component {
                     
 
                         <div id="mc_embed_signup" className='mailing-list-inner-container'>
-                            <form action="https://gmail.us7.list-manage.com/subscribe/post?u=9728557eba30595dc97decd94&amp;id=0ea8bb7459" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" novalidate>
+                            <form action="https://gmail.us7.list-manage.com/subscribe/post?u=9728557eba30595dc97decd94&amp;id=0ea8bb7459" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
                                 {/* <label htmlFor="mce-EMAIL">Get the best of Erica's blog, delivered sometimes</label> */}
                                 <div id="mc_embed_signup_scroll" className='mailing-list'>
                                     <div className='mailing-list-label'>Get the best of Erica's blog, delivered sometimes</div>

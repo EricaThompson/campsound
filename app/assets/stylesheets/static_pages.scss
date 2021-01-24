@@ -2406,7 +2406,7 @@ a {
         text-transform: capitalize;
         font-family: 'Roboto', helvetica, sans-serif;
 
-        span {
+        .contributor {
             color: #909090;
             font-style: italic;
             font-weight: lighter;
@@ -2481,10 +2481,7 @@ a {
             border-top: 2px solid #363636;
             background-color:rgba(223, 223, 223, 0.63)
         }
-
-
-
-        
+    
     }
 
     .artist-stories-container {

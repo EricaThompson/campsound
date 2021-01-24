@@ -296,7 +296,7 @@ class Item extends React.Component {
                     img = this.state.review
                     // mostRecentStory = story
                 }
-                console.log(story.author)
+                // console.log(story.author)
                 return <div 
                             key={idx} 
                             className='story link'
@@ -402,8 +402,12 @@ class Item extends React.Component {
                     {/* <img className='cover-art-header stories-header' src={img} alt="" /> */}
                     {/* <div>{username} Good {type} <span>Contributor</span></div> */}
                     <div className='artist-stories-header'>
-                        <div>{this.state.user.username} 
-                            <span> {/* Good {mostRecentStory}  */} Contributor
+                        <div><span 
+                                className='link'
+                                onClick={() => this.props.history.replace(`/users/${this.props.match.params.ownerId}`)}>{this.state.user.username} 
+                            </span>
+                            <span className='contributor'> {/* Good {mostRecentStory}  */} 
+                                Contributor
                             </span>
                         </div>
                         <div className='count'>1 to {this.state.stories.length}</div>

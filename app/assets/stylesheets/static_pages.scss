@@ -2154,22 +2154,41 @@ a {
             margin: 0 auto;
             padding-bottom: 43px;
             .mailing-list {
-                width: 435px;
+                
+                // border: 1px solid hotpink;
+                width: 495px;
                 margin: 0 auto;
                 font-size: 16px;
                 border-radius: 4px;
                 text-align: center;
 
+                .mailing-list-label {
+                    color: #030303;
+
+                }
+
+                .mailing-list-submit {
+                    display: flex;
+                    justify-content: center;
+                }
+
                 input {
                     width: 262px;
                     height: 9px;
+                    border-radius: 4px;
+                    
                 }
+
+                .no-hover:hover {
+                    background-color: #888A8B; 
+                }
+
                 button {
                     width: 133px;
                     margin-left: 6px;
                     font-size: 12px;
                     color: white;
-                    background-color: #232323;
+                    background-color: #888A8B;
                     padding-top: 6px;
                     padding-bottom: 6px;
                     font-weight: bolder;
@@ -2177,7 +2196,22 @@ a {
                     letter-spacing: 1.5px;
                     height: 32px;
                     border: none;
+                    
+                    margin-top: 20px;
+                    transition: background-color 300ms linear;
+
                 }
+                
+                .hover {
+                    
+                    &:hover {
+                        background-color: #1DA0C3 !important;
+                    }
+                }
+                
+                // .text-entered {
+                //     background-color: #232323;
+                // }
             }
         };
 

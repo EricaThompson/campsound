@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import * as StoryAPIUtil from '../../util/stories_api_util';
 import * as SessionAPIUtil from '../../util/session_api_util';
 // import { readAllUserItems } from '../../util/items_api_util';
+import MailchimpSubscribe from "react-mailchimp-subscribe"
 
 class Home extends React.Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class Home extends React.Component {
             stories: [],
             items1: '',
             items2: '',
+            disableButton: true,
             1: 'https://images.pexels.com/photos/2341290/pexels-photo-2341290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
             2: 'https://images.pexels.com/photos/1029624/pexels-photo-1029624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=0&w=115',
             3: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
@@ -205,11 +207,37 @@ class Home extends React.Component {
     //     }
     //     this.slider()
     // }
-    
+    toggleSubmitButton(e){
+
+        if (e.currentTarget.value.length > 0 && e.currentTarget.value.includes('@') && e.currentTarget.value.includes('.') && e.currentTarget.value[0] !== '@' && e.currentTarget.value[0] !== '.'){
+            this.setState({disableButton: false})
+        } else {
+            this.setState({disableButton: true})
+        }
+
+
+    }
 
     render() {
-        console.log(this.state)
-        const { items } = this.state;
+
+        // console.log(this.state)
+        const { items, disableButton } = this.state;
+        let color;
+        let style;
+        let buttonStyle
+        // let disable;
+        if (!disableButton){
+            color = "#232323";
+            buttonStyle = 'hover'
+            style = 'pointer'
+            // disabler = ''; 
+        } else {
+            color = '';
+            style = 'default'
+            buttonStyle = 'no-hover'
+            // disabler = 'disabled';
+
+        }
         // const textToDisplay = text.slice(0, lastLetter + 1);
 
         // let items = Object.values(this.state.items)
@@ -557,13 +585,26 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <div className='mailing-list-container'>
-                    <div className='mailing-list-inner-container'>
-                        <div className='mailing-list'>
-                            <div>Get the best of Erica's blog, delivered sometimes</div>
-                            <div><input placeholder='coming soon' type="text"/> <button>SIGN UP</button></div>
+                    
+                    
+
+                        <div id="mc_embed_signup" className='mailing-list-inner-container'>
+                            <form action="https://gmail.us7.list-manage.com/subscribe/post?u=9728557eba30595dc97decd94&amp;id=0ea8bb7459" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" novalidate>
+                                {/* <label htmlFor="mce-EMAIL">Get the best of Erica's blog, delivered sometimes</label> */}
+                                <div id="mc_embed_signup_scroll" className='mailing-list'>
+                                    <div className='mailing-list-label'>Get the best of Erica's blog, delivered sometimes</div>
+                                    <div className='mailing-list-submit'>
+                                        <input onChange={(e)=>this.toggleSubmitButton(e)} type="email" defaultValue="" name="EMAIL" className="email" id="mce-EMAIL" placeholder="your email address" required />
+                                        <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true"><input type="text" name="b_9728557eba30595dc97decd94_0ea8bb7459" tabIndex="-1" defaultValue="" /></div>
+                                    <div className={`clear`}><button style={{ backgroundColor: color, cursor: style }} type="submit" defaultValue="Subscribe" name="subscribe" id="mc-embedded-subscribe" className={`button link ${buttonStyle}`} disabled={this.state.disableButton}>SIGN UP</button></div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </div>
+
                 </div>
+
+
 
                 <div className='discover'>
                     <div className='discover-title'>Discover</div>

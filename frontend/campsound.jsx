@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import * as StoryAPIUtil from './util/stories_api_util';
 import * as ItemAPIUtil from './util/items_api_util';
+// import MailchimpSubscribe from "react-mailchimp-subscribe"
 // import Root from './components/root';
 // import {deleteItem} from './actions/item_actions';
 

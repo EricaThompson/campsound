@@ -133,6 +133,43 @@ item10.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/s
 item10.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/2.mp3"), filename: "song-10")
 puts "Items created!"
 
+forestStory = Story.create(
+                "owner_id": user2.id,
+                "title": 'The Forest Through the Trees',
+                "story_type": 'review',
+                "text": 'Story 1 review',
+                "summary": 'Songs about healing and hope',
+                "username": 'Evie Shaffer',
+                )
+
+goldStory = Story.create(
+                "owner_id": user2.id,
+                "title": 'Gold is in Bloom',
+                "story_type": 'review',
+                "text": 'Story 1 review',
+                "summary": 'Summary of story 1',
+                "username": 'Evie Shaffer',
+                )
+
+pieceStory = Story.create(
+                "owner_id": user1.id,
+                "title": 'Piece by Piece',
+                "story_type": 'review',
+                "text": 'Story 1 review',
+                "summary": 'Summary of story 1',
+                "username": 'Evie Shaffer',
+                )
+
+petalsStory = Story.create(
+                "owner_id": user1.id,
+                "title": 'Petals All Around',
+                "story_type": 'review',
+                "text": 'Story 1 review',
+                "summary": 'Summary of story 1',
+                "username": 'Evie Shaffer',
+                )
+
+
 story1 = Story.create(
                 "owner_id": user1.id,
                 "title": 'Story 1',

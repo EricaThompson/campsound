@@ -24,9 +24,9 @@ class Search extends React.Component {
     //         .then(() => this.props.history.replace(`/search/${this.props.match.genre}`))
     // }
 
-    componentDidMount(){
-        this.setState({dropdownHidden: false})
-    }
+    // componentDidMount(){
+        
+    // }
 
     genreSearch(genre){
         this.showDropdown()
@@ -62,10 +62,14 @@ class Search extends React.Component {
 
     showDropdown(){
         this.setState({dropdownHidden: !this.state.dropdownHidden})
+        // setTimeout(() => {
+        //     this.setState({ dropdownHidden: false })
+        // }, 4000);
     }
 
     hideDropdown(){
         this.setState({dropdownHidden: true})
+        
     }
 
     
@@ -116,7 +120,7 @@ class Search extends React.Component {
                         className="fas fa-search search-icon-logged-in">
                     </i>
                 </div>
-                <div hidden={this.state.dropdownHidden}>{dropdown}</div>
+                <div className='dropdown-info' hidden={this.state.dropdownHidden}>{dropdown}</div>
                 {component}
             </div>
         )

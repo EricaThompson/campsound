@@ -1491,8 +1491,12 @@ a {
     // top: 0;
     z-index: 4;
     // position: fixed;
-    
 
+    // input {
+
+    // }
+    
+    
     input {
         background-color: #F3F3F3;
         border: none;
@@ -1502,7 +1506,8 @@ a {
         padding: 15px;
         font-size: 14px;
         color: #333;
-
+        
+        
     }
     
     input:focus{
@@ -1618,7 +1623,13 @@ a {
                 background-color:#525252;
             }
         }
+
+
     }
+
+    // input:hover + .dropdown-info {
+    //         background-color: yellow;
+    //     }
 
     .show {
         display: block;

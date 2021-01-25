@@ -137,7 +137,74 @@ forestStory = Story.create(
                 "owner_id": user2.id,
                 "title": 'The Forest Through the Trees',
                 "story_type": 'review',
-                "text": 'Forest review',
+                "text": 'You should lie down now and remember the forest, 
+for it is disappearing--
+no, the truth is it is gone now 
+and so what details you can bring back 
+might have a kind of life.
+
+Not the one you had hoped for, but a life
+--you should lie down now and remember the forest--
+nonetheless, you might call it "in the forest,"
+no the truth is, it is gone now,
+starting somewhere near the beginning, that edge,
+
+Or instead the first layer, the place you remember 
+(not the one you had hoped for, but a life)
+as if it were firm, underfoot, for that place is a sea, 
+nonetheless, you might call it "in the forest,"
+which we can never drift above, we were there or we were not,
+
+No surface, skimming. And blank in life, too, 
+or instead the first layer, the place you remember, 
+as layers fold in time, black humus there, 
+as if it were firm, underfoot, for that place is a sea, 
+like a light left hand descending, always on the same keys.
+
+The flecked birds of the forest sing behind and before 
+no surface, skimming. And blank in life, too, 
+sing without a music where there cannot be an order, 
+as layers fold in time, black humus there, 
+where wide swatches of light slice between gray trunks,
+
+Where the air has a texture of drying moss, 
+the flecked birds of the forest sing behind and before:
+a musk from the mushrooms and scalloped molds. 
+They sing without a music where there cannot be an order, 
+though high in the dry leaves something does fall,
+
+Nothing comes down to us here. 
+Where the air has a texture of drying moss, 
+(in that place where I was raised) the forest was tangled, 
+a musk from the mushrooms and scalloped molds, 
+tangled with brambles, soft-starred and moving, ferns
+
+And the marred twines of cinquefoil, false strawberry, sumac--
+nothing comes down to us here, 
+stained. A low branch swinging above a brook 
+in that place where I was raised, the forest was tangled, 
+and a cave just the width of shoulder blades.
+
+You can understand what I am doing when I think of the entry--
+and the marred twines of cinquefoil, false strawberry, sumac--
+as a kind of limit. Sometimes I imagine us walking there 
+(. . .pokeberry, stained. A low branch swinging above a brook) 
+in a place that is something like a forest.
+
+But perhaps the other kind, where the ground is covered 
+(you can understand what I am doing when I think of the entry) 
+by pliant green needles, there below the piney fronds, 
+a kind of limit. Sometimes I imagine us walking there. 
+And quickening below lie the sharp brown blades,
+
+The disfiguring blackness, then the bulbed phosphorescence of the roots. 
+But perhaps the other kind, where the ground is covered, 
+so strangely alike and yet singular, too, below
+the pliant green needles, the piney fronds.
+Once we were lost in the forest, so strangely alike and yet singular, too, 
+but the truth is, it is, lost to us now. 
+
+-- "The Forest" Susan Stewart',
                 "summary": 'Songs about healing and hope',
                 "username": 'Evie Shaffer',
                 )

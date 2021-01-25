@@ -157,6 +157,15 @@ textarea, input{
 //     width: 1259px;
 // }
 
+//  {
+//     width: 900px;
+// }
+
+// .nav-bar {
+//     border: 1px solid olive;
+    
+// }
+
 .nav-top {
     display: flex;
     justify-content: space-between;
@@ -1008,6 +1017,7 @@ a {
         width: 975px;
         // margin: 0 auto;
         flex-wrap: wrap;
+        padding-top: 39px;
 
         .item-display {
             margin: 0 15px;
@@ -1834,16 +1844,24 @@ a {
     // border: 5px solid hotpink;
     // margin-top: 100px;
     // background-color: #EEF2F3;
+
+    .stories-home-container {
+        width: 100%;
+        background-color: #222222;
+    }
     
     .stories {
         // margin-top: 140px;
         // margin-right: auto;
         // margin-left: auto;
+        // background-color: #EEF2F3;
         display: flex;
-        width: 1263px;
+        // width: 100%;
         margin: 0 auto;
         // margin-top: 140px;
         height: 510px;
+        width: 1260px;
+        // border: 1px solid olive;
         margin-top: 55px;
         // border-bottom: 2px dotted slategray;
         
@@ -2055,6 +2073,7 @@ a {
             padding-top: 15px;
             padding-bottom: 50px;
             font-size: 14px;
+            background-color: #EEF2F3;
 
             .main {
                 width: 585px;
@@ -3472,6 +3491,7 @@ a {
         font-weight: lighter;
         font-size: 17px;
         line-height: 1.76rem;
+        white-space: pre;
     }
 }
 

@@ -129,8 +129,6 @@ class Home extends React.Component {
         // let items = []
         // let boolean = false;
 
-       
-
         this.props.browseAll()
             .then(res => this.setState({items: Object.values(res.items)}))
 
@@ -513,36 +511,44 @@ class Home extends React.Component {
 
 
         // console.log(this.state.users[0])
-
+        // console.log(this.state.items.reverse()[0])
         return (
             <div className="home">
-                <Link to="/stories">
+                
                     <div className="stories">
-                            <div className="main">
+                            <div 
+                                onClick={()=>this.props.history.replace(`/users/${this.state.items.reverse()[0].owner_id}/stories/146`)}
+                                className="main link">
                                 <p>The Forest Through the Trees</p>
                                 <h6>Songs about healing and hope.</h6>
                                 <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-2395250.jpg" alt="blue flowers"/>
                             </div>
                         
-                        <div className="side">
-                            <div className='set'>
+                        <div className="side link">
+                            <div
+                            onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[1].owner_id}/stories/${this.state.stories.reverse()[1].id}`)}
+                                className='set'>
                                 <p>Gold is in Bloom</p>
                                 <h6>Evie Shaffer</h6>
                                 <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-2512282.jpg" alt="tan flowers"/>
                             </div>
-                            <div className='set'>
+                            <div
+                                onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[2].owner_id}/stories/${this.state.stories.reverse()[2].id}`)}
+                                className='set'>
                                 <p>Piece by Piece</p>
                                 <h6>Evie Shaffer</h6>
                                 <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-4377081.jpg" alt="pink and blue flowers"/>
                             </div>
-                            <div className='set bottom'>
+                            <div
+                                onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[3].owner_id}/stories/${this.state.stories.reverse()[3].id}`)} 
+                                className='set bottom'>
                                 <p>Petals All Around</p>
                                 <h6>Evie Shaffer</h6>
                                 <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-3825880+(1).jpg" alt="flower petals and leaves"/>
                             </div>
                         </div>
                     </div>
-                </Link>
+                
                 <div className="slider counter">
                         <p className='slider-info'>Artists have uploaded {this.state.items.length} songs using CampSound since established.</p>
 

@@ -94,7 +94,7 @@ class StoriesIndex extends React.Component {
         
         let img;
         
-        let storyDisplay = this.state.storyList.slice(1).reverse().map((story) => {
+        let storyDisplay = this.state.storyList.reverse().slice(1).map((story) => {
             let editBtn;
             let deleteBtn;
             

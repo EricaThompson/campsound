@@ -145,10 +145,12 @@ class NavBar extends React.Component {
                             <p 
                                 className="announce"
                             >
-                                Announcements!
+                                Announcement!
                             </p>
                             <p className="announcement">
+                                Welcome to my clone of bandcamp.com!
                                 My social links are in the footer!
+                                -erica 
                             </p>
                             <p onClick={() => this.props.openModal('type-signup')}>
                                 {signup}

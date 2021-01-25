@@ -404,11 +404,11 @@ class Item extends React.Component {
                     {/* <img className='cover-art-header stories-header' src={img} alt="" /> */}
                     {/* <div>{username} Good {type} <span>Contributor</span></div> */}
                     <div className='artist-stories-header'>
-                        <div><span 
-                                className='link'
-                                onClick={() => this.props.history.replace(`/users/${this.props.match.params.ownerId}`)}>{this.state.user.username} 
-                            </span>
-                            <span className='contributor'> {/* Good {mostRecentStory}  */} 
+                        <div><span
+                            className='link'
+                            onClick={() => this.props.history.replace(`/users/${this.props.match.params.ownerId}`)}>{this.state.user.username}
+                        </span>
+                            <span className='contributor'> {/* Good {mostRecentStory}  */}
                                 Contributor
                             </span>
                         </div>

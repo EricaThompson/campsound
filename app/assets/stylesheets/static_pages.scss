@@ -162,8 +162,8 @@ textarea, input{
 // }
 
 // .nav-bar {
-//     border: 1px solid olive;
-    
+//     // border: 1px solid olive;
+//     margin-right: 50px;
 // }
 
 .nav-top {
@@ -2621,6 +2621,10 @@ a {
     }
 }
 
+
+
+
+
 //* Item show
 
 .item-show {
@@ -3597,4 +3601,43 @@ a {
 
 
     
+}
+
+// .bottom {
+    
+// }
+
+.short-footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #848484;
+    padding-bottom: 20px;
+    height: 18px;
+    // display: flex;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+    
+    .links {
+        padding-top: 8px;
+        justify-self: center;
+        text-align: center;
+    }
+    
+    a {
+        
+        color: white;
+    }
+
+}
+
+footer {
+    position: relative;
+    .logo {
+        position: absolute;
+        left: -45px;
+        bottom: 9px;
+        background-color: white !important;
+        z-index: 3;
+    }
 }

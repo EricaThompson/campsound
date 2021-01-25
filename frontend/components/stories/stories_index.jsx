@@ -216,6 +216,8 @@ class StoriesIndex extends React.Component {
 
                 {/* <h1 className="stories-title">Stories</h1>
                 <h4>Count of items</h4> */}
+    
+            
             </div>
         )
     }

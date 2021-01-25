@@ -137,7 +137,7 @@ forestStory = Story.create(
                 "owner_id": user2.id,
                 "title": 'The Forest Through the Trees',
                 "story_type": 'review',
-                "text": 'Story 1 review',
+                "text": 'Forest review',
                 "summary": 'Songs about healing and hope',
                 "username": 'Evie Shaffer',
                 )
@@ -145,9 +145,9 @@ forestStory = Story.create(
 goldStory = Story.create(
                 "owner_id": user2.id,
                 "title": 'Gold is in Bloom',
-                "story_type": 'review',
-                "text": 'Story 1 review',
-                "summary": 'Summary of story 1',
+                "story_type": 'news',
+                "text": 'Bloom news',
+                "summary": 'Summary of bloom news',
                 "username": 'Evie Shaffer',
                 )
 
@@ -155,17 +155,17 @@ pieceStory = Story.create(
                 "owner_id": user1.id,
                 "title": 'Piece by Piece',
                 "story_type": 'review',
-                "text": 'Story 1 review',
-                "summary": 'Summary of story 1',
+                "text": 'Piece review',
+                "summary": 'Summary of Piece review',
                 "username": 'Evie Shaffer',
                 )
 
 petalsStory = Story.create(
                 "owner_id": user1.id,
                 "title": 'Petals All Around',
-                "story_type": 'review',
-                "text": 'Story 1 review',
-                "summary": 'Summary of story 1',
+                "story_type": 'news',
+                "text": 'Petals news',
+                "summary": 'Summary of Petals news',
                 "username": 'Evie Shaffer',
                 )
 

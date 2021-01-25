@@ -307,6 +307,7 @@ textarea, input{
     // right: 40px;
     z-index: 2;
     display: none;
+    padding: 10px;
 }
 
 
@@ -1701,6 +1702,10 @@ a {
     display: flex;
     flex-wrap: wrap;
     border-radius: 5px;
+    height: 100%;
+    // padding-top: 200px;
+    padding-bottom: 565px;
+
     // background-color: blue;
     // padding-top: 20px;
     // border: 1px solid purple;
@@ -3633,11 +3638,15 @@ a {
 
 footer {
     position: relative;
-    .logo {
+    #bottom-logo {
         position: absolute;
         left: -45px;
         bottom: 9px;
-        background-color: white !important;
+        background: white;
+        background-clip: text;
+        // text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         z-index: 3;
     }
 }

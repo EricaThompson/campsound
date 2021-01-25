@@ -52,7 +52,7 @@ class App extends React.Component {
                 </div>
                 <div className="bottom">
                     <footer>
-                        <div id='logo' className='logo'>
+                        <div id='bottom-logo' className='logo'>
                             🏕campsound
                         </div>
                         <div className='short-footer'>

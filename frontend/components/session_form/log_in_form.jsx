@@ -10,6 +10,7 @@ class LogInForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
+        this.rainLogin = this.rainLogin.bind(this);
     }
 
     handleChange(field) {
@@ -34,6 +35,12 @@ class LogInForm extends React.Component {
             .then(setTimeout(() => location.reload(), 400))
             .then(this.props.closeModal()))
         
+    }
+
+    rainLogin(){
+        this.setState({ username: 'Rainforest Records', password: 'Password' }, () => this.props.loginUser({ user: this.state })
+            .then(setTimeout(() => location.reload(), 400))
+            .then(this.props.closeModal()))
     }
 
     openAndClear() {
@@ -68,6 +75,7 @@ class LogInForm extends React.Component {
                     < br />
                     <button onClick={this.handleSubmit} className="submit-button" type="submit">Log in</button>
                     <div onClick={this.demoLogin}className="submit-button demo">DEMO</div>
+                    <div onClick={this.rainLogin} className="submit-button demo">Rainforest Records</div>
                     <div className='session-helper'>
                         <a href="#" onClick={() => this.props.openModal('signup')}>Forgot your password?</a>
                         <p className="change-auth">Don't have an account? 

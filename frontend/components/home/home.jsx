@@ -553,7 +553,7 @@ class Home extends React.Component {
                         <p className='slider-info'>Artists have uploaded {this.state.items.length} songs using CampSound since established.</p>
 
                 </div>
-                <div>
+                <div className='right-now-container'>
                     <h2 className="right-now ">RIGHT NOW</h2>
                 </div>
                 <div className='slider'>
@@ -589,7 +589,9 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <div className="campsound-daily-container">
-                    <div className="link" onClick={() => this.props.history.replace(`/stories`)}><h2>CAMPSOUND DAILY</h2></div>
+                <div className='right-now-container daily'>
+                    <h2 className="right-now link" >CAMPSOUND DAILY</h2>
+                </div>
                     <div className="stories-container">
 
                         {stories}
@@ -621,27 +623,28 @@ class Home extends React.Component {
                 </div>
 
 
-
-                <div className='discover'>
-                    <div className='discover-title'>Discover</div>
-                    <ul className="genres">
-                        <Link to="/search/browse-all"><li className='all'>all</li></Link>
-                        <Link to="/search/electronic"><li>electronic</li></Link>
-                        <Link to="/search/rock"><li>rock</li></Link>
-                        <Link to="/search/metal"><li>metal</li></Link>
-                        <Link to="/search/alternative"><li>alternative</li></Link>
-                        <Link to="/search/rap"><li>hip-hop/rap</li></Link>
-                        <Link to="/search/experimental"><li>experimental</li></Link>
-                        <Link to="/search/punk"><li>punk</li></Link>
-                        <Link to="/search/folk"><li>folk</li></Link>
-                        <Link to="/search/pop"><li>pop</li></Link>
-                        <Link to="/search/ambient"><li>ambient</li></Link>
-                        <Link to="/search/soundtrack"><li>soundtrck</li></Link>
-                        <Link to="/search/world"><li>world</li></Link>
-                        <Link to="/search/jazz"><li>jazz</li></Link>
-                    </ul>
-                    <div className='bar-two'></div>
-                    <div className='bar-three'></div>
+                <div className='discover-container'>
+                    <div className='discover'>
+                        <div className='discover-title'>Discover</div>
+                        <ul className="genres">
+                            <Link to="/search/browse-all"><li className='all'>all</li></Link>
+                            <Link to="/search/electronic"><li>electronic</li></Link>
+                            <Link to="/search/rock"><li>rock</li></Link>
+                            <Link to="/search/metal"><li>metal</li></Link>
+                            <Link to="/search/alternative"><li>alternative</li></Link>
+                            <Link to="/search/rap"><li>hip-hop/rap</li></Link>
+                            <Link to="/search/experimental"><li>experimental</li></Link>
+                            <Link to="/search/punk"><li>punk</li></Link>
+                            <Link to="/search/folk"><li>folk</li></Link>
+                            <Link to="/search/pop"><li>pop</li></Link>
+                            <Link to="/search/ambient"><li>ambient</li></Link>
+                            <Link to="/search/soundtrack"><li>soundtrck</li></Link>
+                            <Link to="/search/world"><li>world</li></Link>
+                            <Link to="/search/jazz"><li>jazz</li></Link>
+                        </ul>
+                        <div className='bar-two'></div>
+                        <div className='bar-three'></div>
+                    </div>
                 </div>
                 <div className='spotlight-title'>
                     Artist Spotlight <span>Recent uploads from Campsound collections</span>

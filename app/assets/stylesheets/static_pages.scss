@@ -1946,10 +1946,22 @@ a {
         }
     }
 
-    .right-now {
-        font-weight: normal;
-        color: #408DA3;
-        margin-left: 140px;
+    .right-now-container {
+        width: 994px;
+        margin: 0 auto;
+        .right-now {
+            font-weight: normal;
+            color: #408DA3;
+            margin-left: 5px;
+        }
+
+    }
+    
+    .daily {
+        padding-top: 10px;
+        padding-right: 10px;
+        background-color: #EEF2F3;
+        
     }
 
     .slider {
@@ -2138,10 +2150,17 @@ a {
         // background-color: white;
 
         .more {
-            position: absolute;
-            bottom: 30px;
-            right: 140px;
+            // position: absolute;
+            bottom: 40px;
+            // right: 140px;
+            left: 140px;
             background-color: transparent;
+            width: 988px;
+            // border: 1px solid olive;
+            text-align: right;
+            margin: 0 auto;
+            margin-top: -50px;
+            padding-bottom: 50px;
             
             button {
                 color: #47a1b8;
@@ -2247,9 +2266,15 @@ a {
 
     }
 
-    .discover {
-        width: 100%;
+    .discover-container {
         background-color: #EEF2F3;
+        padding-bottom: 30px;
+    }
+
+    .discover {
+        // width: 968px;
+        background-color: #EEF2F3;
+        margin: 0 auto;
 
         .discover-title {
             width: 1095px;
@@ -2322,8 +2347,10 @@ a {
     .spotlight-title {
         margin-top: 40px;
         margin-bottom: 40px;
-        margin-left: 115px;
+        // margin-left: 115px;
         font-size: 19px;
+        width: 869px;
+        margin: 40px auto;
 
         span {
             padding-left: 39px;
@@ -2332,13 +2359,17 @@ a {
             color: #999
         }
     }
-
+    
     .spotlight {
+        // border: 1px solid olive;
         display: flex;
         justify-content: space-around;
         text-align: left;
         position: relative;
         padding-bottom: 30px;
+        width: 998px;
+        margin: 40px auto;
+        padding-right: 0px;
 
         .spotlight-items {
             display: flex;
@@ -2370,15 +2401,15 @@ a {
             }
         }
 
-        .user-1-items {
-            margin-left: -78px;
+        // .user-1-items {
+        //     margin-left: -78px;
             
-        }
+        // }
 
-        .user-2-items {
-            margin-left: -218px;
+        // .user-2-items {
+        //     margin-left: -218px;
             
-        }
+        // }
 
         .about-user {
             // margin-top: 75px;
@@ -2549,7 +2580,7 @@ a {
         text-align: center;
         font-size: 50px;
         padding-top: 80px;
-        width: 1259px;
+        width: 100%;
         margin-right: 0px;
         // position: fixed;
         // bottom: 0;

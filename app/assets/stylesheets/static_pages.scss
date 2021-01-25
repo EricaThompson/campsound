@@ -2050,6 +2050,8 @@ a {
                     left: 284px;
                     width: 271px;
 
+
+
                     .story-title {
                         position: absolute;
                         top: -10px;
@@ -2063,9 +2065,26 @@ a {
                         color: #000;
                     }
 
+                    .story-summary {
+                        position: absolute;
+                        top: 100px;
+                        font-family: Georgia, 'Times New Roman', Times, serif;
+                        position: relative;
+
+                        .read-more {
+                            position: absolute;
+                            font-weight: bolder;
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 12px;
+                            color: #328BA1;
+                            bottom: -20px;
+                            left: 0px; 
+                        }
+                    }
+
                     .story-type {
                         position: absolute;
-                        bottom: -212px;
+                        bottom: -175px;
                         width: 80%;
                         // left: -10px;
                     }

@@ -24,6 +24,10 @@ class Search extends React.Component {
     //         .then(() => this.props.history.replace(`/search/${this.props.match.genre}`))
     // }
 
+    componentDidMount(){
+        this.setState({dropdownHidden: false})
+    }
+
     genreSearch(genre){
         this.showDropdown()
         this.props.genreSearch(genre)

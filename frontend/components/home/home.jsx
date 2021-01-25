@@ -367,6 +367,7 @@ class Home extends React.Component {
         let main;
         let mainImg;
         let mainText;
+        let mainSummary;
         let img;
         // let stories = this.state.stories.map((story, idx) => {
         // console.log(this.state.stories.story)
@@ -378,12 +379,20 @@ class Home extends React.Component {
                     main = 'main',
                         mainImg = 'mainImg',
                         mainText = 'mainText'
+                        mainSummary = <div className='story-summary'>
+                                        {story.summary}
+                                        <div className='read-more'>read more</div>
+                                    </div>
+
+                
                 } else if (idx === 7 || idx === 2) {
                     last = 'last'
+                    mainSummary = ''
                 } else {
                     last = ''
                     main = ''
                     mainImg = ''
+                    mainSummary = ''
                 }
 
                 if (story.type === 'news') {
@@ -401,6 +410,7 @@ class Home extends React.Component {
                     <div className={`${mainText}`}>
                         <div className='story-title'>{story.title}</div>
                         <div className='story-author'>by {story.username}</div>
+                        {mainSummary}
                         <div className='story-type'>{story.type}</div>
                     </div>
                 </div>

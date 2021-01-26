@@ -161,10 +161,9 @@ textarea, input{
 //     width: 900px;
 // }
 
-// .nav-bar {
-//     // border: 1px solid olive;
-//     margin-right: 50px;
-// }
+.nav-bar {
+    border-bottom: 1px solid #eee;
+}
 
 .nav-top {
     display: flex;
@@ -3637,7 +3636,10 @@ a {
 }
 
 footer {
-    position: relative;
+    position: sticky;
+    bottom: -60px;
+    margin-top: 250px;
+
     #bottom-logo {
         position: absolute;
         left: -45px;

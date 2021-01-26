@@ -19,15 +19,16 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.signupUser({user:this.state})
+        if(this.state.username.length > 0 && this.state.password.length > 0){
+            this.props.signupUser({user:this.state})
+                .then(this.props.loginUser({ user: this.state }), this.props.closeModal())
+        }
         
-        
-        
-            this.props.closeModal()
-            setTimeout(() => this.props.loginUser({ user: this.state }), 1000)
-            // setTimeout(() => location.reload(), 400)
-            // setTimeout(() => location.reload(), 400)
-    
+            // .then()
+            // .catch(err => console.log('err',err))     
+            // .then(this.props.closeModal())
+        // setTimeout(() => location.reload(), 400)
+        // setTimeout(() => location.reload(), 400)
     }
 
     openAndClear(){
@@ -66,7 +67,7 @@ class SignUpForm extends React.Component {
                     />
                     < br />
                     <br />
-                    <div className="error">{this.props.errors.map(error => <div>{error}</div>)}</div>
+                    <div className="error">{this.props.errors.map((error,idx) => <div key={idx}>{error}</div>)}</div>
                     < br />
                     < br />
                     <br />

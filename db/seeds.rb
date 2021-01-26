@@ -222,10 +222,22 @@ pieceStory = Story.create(
                 "owner_id": user1.id,
                 "title": 'Piece by Piece',
                 "story_type": 'review',
-                "text": 'Piece review',
-                "summary": 'Summary of Piece review',
+                "summary": 'Unreasonable People - A Futuristic Novel',
                 "username": 'Evie Shaffer',
-                )
+                "text": "Unreasonable People - A Futuristic Novel
+                        
+                        The night of the release date changes everything for Rainforest Records, a 26-year-old musician from Los Angeles.
+
+                        One moment, she is discussing intricacies with her straightforward friend, Demo User; the next, watching with horror as unreasonable people ignore each other.
+
+                        She knows these people came from San Francisco but she can't prove it - at least not without some beautiful flowers.
+
+                        The honest, optimistic woman knows that her musical life is over. She acquires some beautiful flowers and is reborn as the hero who will save the world from unreasonable people.
+
+                        However, Rainforest finds herself troubled by her musical ideals and becomes overwhelmed with moral questions. Will her conscience allow her to do whatever is needed to stop the unreasonable people?
+                            
+                        -[generated with plot-generator.org.uk] ",
+                                        )
 
 petalsStory = Story.create(
                 "owner_id": user1.id,

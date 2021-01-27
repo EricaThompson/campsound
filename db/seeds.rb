@@ -137,7 +137,10 @@ forestStory = Story.create(
                 "owner_id": user2.id,
                 "title": 'The Forest Through the Trees',
                 "story_type": 'review',
-                "text": 'You should lie down now and remember the forest, 
+                "summary": 'A poem',
+                "username": 'Rainforest Records',
+                "text": '
+                You should lie down now and remember the forest, 
                 for it is disappearing--
                 no, the truth is it is gone now 
                 and so what details you can bring back 
@@ -205,8 +208,7 @@ forestStory = Story.create(
                 but the truth is, it is, lost to us now. 
 
                 -- "The Forest" Susan Stewart',
-                "summary": 'Songs about healing and hope',
-                "username": 'Rainforest Records',
+               
                 )
 
 goldStory = Story.create(
@@ -214,9 +216,9 @@ goldStory = Story.create(
                 "title": 'Gold is in Bloom',
                 "story_type": 'news',
                 "summary": 'A Drabble',
-                "username": 'Evie Shaffer',
+                "username": 'Rainforest Records',
                 "text": 
-                'What Could This Thing With A Special Width Be?
+                '"What Could This Thing With A Special Width Be?"
 
                 It has a special width and a large, light length, which is endearing. Rarely has a special width reminded me more of the heart of a steadfast lion.
 
@@ -237,10 +239,11 @@ pieceStory = Story.create(
                 "owner_id": user1.id,
                 "title": 'Piece by Piece',
                 "story_type": 'review',
-                "summary": 'Unreasonable People - A Futuristic Novel',
+                "summary": 'A Futuristic Novel',
                 "username": 'Rainforest',
                 "text": 
-"Unreasonable People - A Futuristic Novel
+
+"'Unreasonable People'
                         
 The night of the release date changes everything for Rainforest Records, a 26-year-old musician from Los Angeles.
 
@@ -259,10 +262,10 @@ petalsStory = Story.create(
                 "owner_id": user1.id,
                 "title": 'Petals All Around',
                 "story_type": 'news',
-                "summary": 'Summary of Petals news',
+                "summary": 'A Villanelle',
                 "username": 'Demo User',
                 "text": 
-                "A Villanelle by Demo User
+                "
                 Rainforest couldn't stop thinking about the sound
                 It was just so lovely and amazing
                 But she could never forget the rebound
@@ -297,9 +300,10 @@ story1 = Story.create(
                 "owner_id": user1.id,
                 "title": 'Mostly giving',
                 "story_type": 'review',
-                "summary": 'Summary of story 1',
+                "summary": 'Embrace.',
                 "username": 'Demo User',
-                "text": "You find so many people are unforgiving
+                "text": "
+                You find so many people are unforgiving
                 But you, you are mostly giving
 
                 I like the way you give.
@@ -339,11 +343,11 @@ story2 = Story.create(
                 "owner_id": user2.id,
                 "title": 'Soft Music Note Likely To Win Village Show',
                 "story_type": 'news',
-                "summary": 'Summary of story 2',
+                "summary": 'Plot twists',
                 "username": 'Rainforest Records',
                 "text": "
                 There are three friends, Rainforest Records, Demo User and Soft Note.
-                The plot twist generator:
+                
                 
                 1. Soft Note is an imaginary friend.
 
@@ -384,21 +388,91 @@ story2 = Story.create(
                 )
 story3 = Story.create(
                 "owner_id": user1.id,
-                "title": 'Story 3',
+                "title": 'Large, Pink Success',
                 "story_type": 'review',
-                "text": 'Story 3 review',
-                "summary": 'Summary of story 3',
+                "summary": 'A Concrete Poem.',
                 "username": 'Demo User',
+                "text": "
+                        success                                         
+                    ever so pink                                      
+                   positively great                                    
+                  ever so successful                                   
+                 good, capital, funny                                  
+                good, made, prominent                                  
+               good, epic, prosperous                                  
+               so successful   number                                  
+              quite big        friend                                  
+              amusing          speaks                                  
+               up to          hearts                                   
+                great!        amusing                                   
+                number     so great                                    
+                    take   babycakes                                     
+                        a returns                                       
+                    successful                                        
+                  my mother       hippopotamus                       
+                successful    good, capital, funny                   
+              successful   good, capital, prominent                 
+            successful   heroic win growing, quickly               
+            a success   massive lucre growing, quickly             
+            babycakes   its bulky lucre growing, quickly            
+            a success  larger earnings increasing, quickly          
+            prominent lucre, epic returns, liberal optimism         
+            liberal profits, important returns, big optimism        
+            ever so prodigious net profit flourishing, quickly      
+            prominent profit, high returns, important optimism      
+              ever so cock-a-hoop net profit flourishing, quickly    
+                important net income, bad returns, important optimism  
+                  important net profit, bad returns, prominent optimism 
+                    prominent earnings, important returns, large optimism
+                      bad lucre, high returns, bad optimism  blood red a 
+                        its heavy win increasing, quickly      so great  
+                          gravid net thriving, quickly              and  
+                            good, great, prosperous                     
+                                extremely amusing                      
+                                    rather amusing                     
+                                      so successful                     
+                                      people  people                    
+                                        quite   number                   
+                                        up to    large                   
+                                        money     large                  
+                                        sharp      young                 
+                                        human       up to                
+                                        large       number               
+                                        take        large!               
+                                        take      so great               
+                                        begin  very pink                 
+                                        so successful                    
+                                        successful                       
+                                      so great                          
+                                    so great                            
+                                  blood red                             
+                                  take  big                             
+                                  take  get                             
+                                 cause  had                             
+                                 money  rap                             
+                                  pop   was                             
+                                  take  are                             
+                                   in   get                             
+                                        get                             
+                                        can                             
+                                        get                             
+                                        can                             
+                                        young                            
+                                   successful                            
+                                hippopotamus                             
+                                 pineapple                            
+                
+                -generated: https://www.poem-generator.org.uk/104xtd0g/large-pink-success.html
+                
+                "
                 )
 story4 = Story.create(
                 "owner_id": user2.id,
-                "title": 'Story 4',
+                "title": 'Galactic Smart Hunger Pangs Wars',
                 "story_type": 'news',
-                "summary": 'Summary of story 4',
+                "summary": 'A Science Fiction Plot',
                 "username": 'Rainforest Records',
-                "text": "Galactic Smart Hunger Pangs Wars
-                A Science Fiction Plot
-    
+                "text": "
                 A long, long time ago in a smart, smart galaxy...
 
                 After leaving the agile planet Pluto, a group of birds fly toward a distant speck. The speck gradually resolves into an intelligent, space library.
@@ -419,13 +493,11 @@ story4 = Story.create(
                 )
 story5 = Story.create(
                 "owner_id": user1.id,
-                "title": 'Story 5',
+                "title": "The Mysterious, Grateful Painter",
                 "story_type": 'review',
-                "summary": 'Summary of story 5',
+                "summary": "A Summer's Tale",
                 "username": 'Demo User',
-                "text": "The Mysterious, Grateful Painter
-                A Summer's Tale
-                by demo user
+                "text": "
                 Demo User is a thoughtful painter from mysterious Hawaii. She leads a quiet life. However, all that changes when Demo books a summer holiday to airy Caymans.
 
                 At first Demo finds Caymans very beautiful. Then there's the mysterious, grateful scupter, the person next door, who makes her feel glad.
@@ -440,12 +512,11 @@ story5 = Story.create(
                 )
 story6 = Story.create(
                 "owner_id": user2.id,
-                "title": 'Story 6',
+                "title": "20 Prompts to Cure Writer's Block",
                 "story_type": 'news',
-                "summary": 'Summary of story 6',
-                "username": "rainforest records",
+                "summary": 'Ideas To Get You Started',
+                "username": "Rainforest Records",
                 "text": "
-                20 Prompts to Cure Writer's Block
                 Ideas To Get You Started
     
                 1. What if your favourite pet had a super power?
@@ -491,12 +562,12 @@ story6 = Story.create(
                 )
 story7 = Story.create(
                 "owner_id": user1.id,
-                "title": 'Story 7',
+                "title": 'The Bright And Big Hope',
                 "story_type": 'review',
-                "summary": 'Summary of story 7',
+                "summary": 'A Poem.',
                 "username": 'Demo User',
-                "text": "The Bright And Big Hope
-                A Poem by Demo User
+                "text": "
+                
                 Whose hope is that? I think I know.
                 Its owner is quite happy though.
                 Full of joy like a vivid rainbow,
@@ -524,12 +595,11 @@ story7 = Story.create(
                 )
 story8 = Story.create(
                 "owner_id": user2.id,
-                "title": 'Story 8',
+                "title": 'Dolphin',
                 "story_type": 'news',
-                "summary": 'Summary of story 8',
+                "summary": 'A Haiku.',
                 "username": 'Rainforest Records',
-                "text": "Dolphin - A Haiku
-                by rainforest records
+                "text": "
                 Beautiful leaping
                 A sided, nice dolphin sings
                 whilst watching the sky
@@ -542,8 +612,8 @@ story9 = Story.create(
                 "owner_id": user1.id,
                 "title": 'Records',
                 "story_type": 'review',
-                "summary": 'A Didactic Cinquain',
-                "username": "",
+                "summary": 'A Didactic Cinquain.',
+                "username": "Demo User",
                 "text": "
                 Records
                 Vibey, mellow
@@ -555,12 +625,11 @@ story9 = Story.create(
 
 story10 = Story.create(
                 "owner_id": user2.id,
-                "title": 'Story 10',
+                "title": 'Ode to the Inheritance.',
                 "story_type": 'news',
-                "summary": 'Summary of story 10',
+                "summary": 'A Sonnet',
                 "username": 'Rainforest Records',
-                "text": "Ode to the Inheritance
-                A Sonnet by rainforest records
+                "text": "
                 Inheritance, you inspire me to write.
                 How I love the way you give, pass and grow,
                 Invading my mind day and through the night,

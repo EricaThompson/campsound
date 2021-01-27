@@ -393,9 +393,22 @@ story5 = Story.create(
                 "owner_id": user1.id,
                 "title": 'Story 5',
                 "story_type": 'review',
-                "text": 'Story 5 review',
                 "summary": 'Summary of story 5',
                 "username": 'Demo User',
+                "text": "The Mysterious, Grateful Painter
+                A Summer's Tale
+                by demo user
+                Demo User is a thoughtful painter from mysterious Hawaii. She leads a quiet life. However, all that changes when Demo books a summer holiday to airy Caymans.
+
+                At first Demo finds Caymans very beautiful. Then there's the mysterious, grateful scupter, the person next door, who makes her feel glad.
+
+                When the person invites her on a spend time expedition, Demo begins to realise that the person is a deeply genuine and lovable man.
+
+                Demo knows in her heart that the person is the man for her. However, to secure her happiness, Demo must fend off the endearing writer, across the street neighbor, who wants to get his claws into the person.
+
+                Using her smooth shells and a mutual love of love, Demo sets out to snare the person once and for all. But will the grateful painter return her affections?
+                -generated: https://www.plot-generator.org.uk/1nygxkl9/mysterious-grateful-painter.html
+                ",
                 )
 story6 = Story.create(
                 "owner_id": user2.id,
@@ -403,15 +416,83 @@ story6 = Story.create(
                 "story_type": 'news',
                 "text": 'Story 6 news',
                 "summary": 'Summary of story 6',
-                "username": 'Rainforest Records',
+                "username": "20 Prompts to Cure Writer's Block
+                Ideas To Get You Started
+                by rainforest records
+                1. What if your favourite pet had a super power?
+
+                2. You're on a jury and you admire one of your fellow jurors. Why?
+
+                3. What was the last thing you lost that never turned up? Write a story describing somebody stealing it.
+
+                4. Look at the last message you sent. What would have happened if you'd accidentally sent it to your mum?
+
+                5. Look into your family tree. Is there somebody nobody knows anything about? Make up an explanation.
+
+                6. Think about your favourite teacher. If he or she was hiding a super power what would it be?
+
+                7. Think of your last job interview or school lesson. In what way would it have been different if you were blind?
+
+                8. Look at the nearest object to you. What would its life be like if it could understand every word you say?
+
+                9. You find a letter from your grandmother that was never sent. Why not?
+
+                10. Think of your favourite place by the coast. Describe the scene if the sea level were 100 metres higher.
+
+                11. Look at the dating section in your local paper. Write a fictional account about the first date between one of the advertisers and a reader.
+
+                12. Imagine you're a criminal. Write a letter to your partner asking for forgiveness.
+
+                13. Google your own name. Find somebody with the same name. Write a piece describing the thoughts he/she might have whilst brushing his/her teeth.
+
+                14. Think of a child in your life. Write a page designed to make him/her fall on the floor with laughter.
+
+                15. What would happen if your older self met your current self?
+
+                16. Next time you have a dream, write it down. Write a story continuing the dream.
+
+                17. Take the names of the songs on your favourite albums. What if they were chapter headings?
+
+                18. Imagine you can travel back in time to give yourself one piece of advice. What would it be?
+
+                19. Imagine you're a wolf for a day. How would you spend your time?
+
+                20. Think of a villain from history. Imagine you're trapped in a lift together.
+                -generated: https://www.plot-generator.org.uk/tf4ocyn/20-prompts-to-cure-writers-block.html
+    ",
                 )
 story7 = Story.create(
                 "owner_id": user1.id,
                 "title": 'Story 7',
                 "story_type": 'review',
-                "text": 'Story 7 review',
                 "summary": 'Summary of story 7',
                 "username": 'Demo User',
+                "text": "The Bright And Big Hope
+                A Poem by Demo User
+                Whose hope is that? I think I know.
+                Its owner is quite happy though.
+                Full of joy like a vivid rainbow,
+                I watch him laugh. I cry hello.
+
+                He gives his hope a shake,
+                And laughs until her belly aches.
+                The only other sound's the break,
+                Of distant waves and birds awake.
+
+                The hope is bright, big and deep,
+                But he has promises to keep,
+                After cake and lots of sleep.
+                Sweet dreams come to him cheap.
+
+                He rises from his gentle bed,
+                With thoughts of kittens in his head,
+                He eats his jam with lots of bread.
+                Ready for the day ahead.
+
+                With thanks to the poet, Robert Frost, for the underlying structure.
+
+                -generator: https://www.poem-generator.org.uk/10cyq711/bright-and-big-hope.html
+",
                 )
 story8 = Story.create(
                 "owner_id": user2.id,

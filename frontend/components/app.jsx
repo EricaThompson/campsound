@@ -52,16 +52,19 @@ class App extends React.Component {
                 </div>
                 <div className="bottom">
                     <footer>
-                        <div id='bottom-logo' className='logo'>
+                        <div 
+                            //! Add onClick to home
+                            id='bottom-logo' 
+                            className='logo'>
                             🏕campsound
                         </div>
                         <div className='short-footer'>
                             <div className="links">
 
-                                <a href="https://github.com/EricaThompson"><i className="fab fa-github"></i></a>
+                                <a target="_blank" href="https://github.com/EricaThompson"><i className="fab fa-github"></i></a>
                                 {/* <a href=""><i className="fab fa-twitter"></i></a> */}
                                 {/* <a href=""><i className="fas fa-at"></i></a> */}
-                                <a href="https://www.linkedin.com/in/ericamt/"><i className="fab fa-linkedin"></i></a>
+                                <a target="_blank" href="https://www.linkedin.com/in/ericamt/"><i className="fab fa-linkedin"></i></a>
                                 {/* <p>ericathompson.io</p> */}
                             </div>
                         </div>

@@ -213,11 +213,10 @@ goldStory = Story.create(
                 "owner_id": user2.id,
                 "title": 'Gold is in Bloom',
                 "story_type": 'news',
-                "summary": 'Summary of bloom news',
+                "summary": 'A Drabble',
                 "username": 'Evie Shaffer',
-                "text": 'What Could This Thing With A Special Width Be?
-                A Drabble
-                by Rainforest
+                "text": 
+                'What Could This Thing With A Special Width Be?
 
                 It has a special width and a large, light length, which is endearing. Rarely has a special width reminded me more of the heart of a steadfast lion.
 
@@ -240,19 +239,20 @@ pieceStory = Story.create(
                 "story_type": 'review',
                 "summary": 'Unreasonable People - A Futuristic Novel',
                 "username": 'Rainforest',
-                "text": "Unreasonable People - A Futuristic Novel
+                "text": 
+"Unreasonable People - A Futuristic Novel
                         
-                        The night of the release date changes everything for Rainforest Records, a 26-year-old musician from Los Angeles.
+    The night of the release date changes everything for Rainforest Records, a 26-year-old musician from Los Angeles.
 
-                        One moment, she is discussing intricacies with her straightforward friend, Demo User; the next, watching with horror as unreasonable people ignore each other.
+        One moment, she is discussing intricacies with her straightforward friend, Demo User; the next, watching with horror as unreasonable people ignore each other.
 
-                        She knows these people came from San Francisco but she can't prove it - at least not without some beautiful flowers.
+                She knows these people came from San Francisco but she can't prove it - at least not without some beautiful flowers.
 
-                        The honest, optimistic woman knows that her musical life is over. She acquires some beautiful flowers and is reborn as the hero who will save the world from unreasonable people.
+                The honest, optimistic woman knows that her musical life is over. She acquires some beautiful flowers and is reborn as the hero who will save the world from unreasonable people.
 
-                        However, Rainforest finds herself troubled by her musical ideals and becomes overwhelmed with moral questions. Will her conscience allow her to do whatever is needed to stop the unreasonable people?
-                            
-                        -[generated with https://www.plot-generator.org.uk/?i=1utb7xnl] ",
+                However, Rainforest finds herself troubled by her musical ideals and becomes overwhelmed with moral questions. Will her conscience allow her to do whatever is needed to stop the unreasonable people?
+                    
+                -generated: https://www.plot-generator.org.uk/?i=1utb7xnl] ",
                                         )
 
 petalsStory = Story.create(
@@ -261,7 +261,8 @@ petalsStory = Story.create(
                 "story_type": 'news',
                 "summary": 'Summary of Petals news',
                 "username": 'Demo User',
-                "text": "A Villanelle by Demo User
+                "text": 
+                "A Villanelle by Demo User
                 Rainforest couldn't stop thinking about the sound
                 It was just so lovely and amazing
                 But she could never forget the rebound

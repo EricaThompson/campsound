@@ -206,16 +206,32 @@ but the truth is, it is, lost to us now.
 
 -- "The Forest" Susan Stewart',
                 "summary": 'Songs about healing and hope',
-                "username": 'Evie Shaffer',
+                "username": 'Rainforest Records',
                 )
 
 goldStory = Story.create(
                 "owner_id": user2.id,
                 "title": 'Gold is in Bloom',
                 "story_type": 'news',
-                "text": 'Bloom news',
                 "summary": 'Summary of bloom news',
                 "username": 'Evie Shaffer',
+                "text": 'What Could This Thing With A Special Width Be?
+A Drabble
+by erica
+
+It has a special width and a large, light length, which is endearing. Rarely has a special width reminded me more of the heart of a steadfast lion.
+
+Its height is as flawless as an exemplary, truthful leaf, which has been living happily in the magical, dependable snow (pop!).
+
+Naturally, it has all the glory of a breeze, which once loved wonderfully. There is nothing like a breeze that once loved wonderfully.
+
+Lest not forget the damaged, damp demeanor of a dangerous depth boldly breathing.
+
+sir likes its special width. madam likes its endearing length.
+
+It is a beautiful love! 
+
+-generated https://www.plot-generator.org.uk/2p6i5a3k/what-could-this-thing-with-special-width-be.html' ,
                 )
 
 pieceStory = Story.create(
@@ -223,7 +239,7 @@ pieceStory = Story.create(
                 "title": 'Piece by Piece',
                 "story_type": 'review',
                 "summary": 'Unreasonable People - A Futuristic Novel',
-                "username": 'Evie Shaffer',
+                "username": 'Rainforest',
                 "text": "Unreasonable People - A Futuristic Novel
                         
                         The night of the release date changes everything for Rainforest Records, a 26-year-old musician from Los Angeles.
@@ -236,7 +252,7 @@ pieceStory = Story.create(
 
                         However, Rainforest finds herself troubled by her musical ideals and becomes overwhelmed with moral questions. Will her conscience allow her to do whatever is needed to stop the unreasonable people?
                             
-                        -[generated with plot-generator.org.uk] ",
+                        -[generated with https://www.plot-generator.org.uk/?i=1utb7xnl] ",
                                         )
 
 petalsStory = Story.create(

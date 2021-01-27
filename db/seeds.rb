@@ -272,40 +272,40 @@ story1 = Story.create(
                 "summary": 'Summary of story 1',
                 "username": 'Demo User',
                 "text": "You find so many people are unforgiving
-But you, you are mostly giving
+                But you, you are mostly giving
 
-I like the way you give.
-You do it like live.
-I like the way you take.
-You do it like a namesake.
-I like the way you replace.
-Embrace.
+                I like the way you give.
+                You do it like live.
+                I like the way you take.
+                You do it like a namesake.
+                I like the way you replace.
+                Embrace.
 
-You find so many people are fighting
-But you, you are mostly exciting
+                You find so many people are fighting
+                But you, you are mostly exciting
 
-I love the way you have no hair,
-Spreading your style everywhere.
-You're like a style fountain.
-Enough zazz for a whole mountain.
+                I love the way you have no hair,
+                Spreading your style everywhere.
+                You're like a style fountain.
+                Enough zazz for a whole mountain.
 
-You find so many people are unforgiving
-But you, you are mostly giving
+                You find so many people are unforgiving
+                But you, you are mostly giving
 
-You're the perfect person.
-You could meet a worse one.
+                You're the perfect person.
+                You could meet a worse one.
 
-You find so many people are fighting
-But you, you are mostly exciting
+                You find so many people are fighting
+                But you, you are mostly exciting
 
-Giving, loving and nurturing,
-Exciting and intuitive too,
-Are the qualities of you
+                Giving, loving and nurturing,
+                Exciting and intuitive too,
+                Are the qualities of you
 
-You find so many people are unforgiving
-But you, you are mostly giving
+                You find so many people are unforgiving
+                But you, you are mostly giving
 
-- generated: https://www.song-lyrics-generator.org.uk/1ttbnfk9/way-you-give-the-giving-loving-and-nurturing-person-song.html",
+                - generated: https://www.song-lyrics-generator.org.uk/1ttbnfk9/way-you-give-the-giving-loving-and-nurturing-person-song.html",
                 )
 story2 = Story.create(
                 "owner_id": user2.id,
@@ -319,40 +319,40 @@ story2 = Story.create(
                 
                 1. Soft Note is an imaginary friend.
 
-2. The whole things is not a story but a brainwashing tool used by the government.
+                2. The whole things is not a story but a brainwashing tool used by the government.
 
-3. It turns out Rainforest Records only exists in the cloud.
+                3. It turns out Rainforest Records only exists in the cloud.
 
-4. The story is just one iteration of an infinite loop.
+                4. The story is just one iteration of an infinite loop.
 
-5. Demo User was just using Rainforest Records for information.
+                5. Demo User was just using Rainforest Records for information.
 
-6. Demo User poisoned Rainforest Records at the beginning of the story, and it's taken the whole story to take effect.
+                6. Demo User poisoned Rainforest Records at the beginning of the story, and it's taken the whole story to take effect.
 
-7. Rainforest Records was bitten by a vampire much earlier in the story but signs were delayed.
+                7. Rainforest Records was bitten by a vampire much earlier in the story but signs were delayed.
 
-8. The person claiming to be Soft Note is actually an imposter.
+                8. The person claiming to be Soft Note is actually an imposter.
 
-9. Soft Note wasn't born but created in a lab.
+                9. Soft Note wasn't born but created in a lab.
 
-10. A perceived misfortune in Rainforest Records's past was actually set up to protect her.
+                10. A perceived misfortune in Rainforest Records's past was actually set up to protect her.
 
-11. The entire story is a figment of Rainforest Records's imagination. She is actually in jail.
+                11. The entire story is a figment of Rainforest Records's imagination. She is actually in jail.
 
-12. The person we think is the villain is actually working for a bigger villain.
+                12. The person we think is the villain is actually working for a bigger villain.
 
-13. Rainforest Records turns to the dark side.
+                13. Rainforest Records turns to the dark side.
 
-14. Rainforest Records is the villain.
+                14. Rainforest Records is the villain.
 
-15. Rainforest Records is not really dead.
+                15. Rainforest Records is not really dead.
 
-16. Demo User has been in love with Rainforest Records all along.
+                16. Demo User has been in love with Rainforest Records all along.
 
-17. Soft Note is actually a zombie.
+                17. Soft Note is actually a zombie.
 
-https://www.plot-generator.org.uk/13a4vdgw/20-twist-ideas-for-adventures-of-rainforest-records.html
-",
+                https://www.plot-generator.org.uk/13a4vdgw/20-twist-ideas-for-adventures-of-rainforest-records.html
+                ",
                 )
 story3 = Story.create(
                 "owner_id": user1.id,
@@ -366,9 +366,28 @@ story4 = Story.create(
                 "owner_id": user2.id,
                 "title": 'Story 4',
                 "story_type": 'news',
-                "text": 'Story 4 news',
                 "summary": 'Summary of story 4',
                 "username": 'Rainforest Records',
+                "text": "Galactic Smart Hunger Pangs Wars
+                A Science Fiction Plot
+    
+                A long, long time ago in a smart, smart galaxy...
+
+                After leaving the agile planet Pluto, a group of birds fly toward a distant speck. The speck gradually resolves into an intelligent, space library.
+
+                Civil war strikes the galaxy, which is ruled by Spam Email, a dependable hummingbird capable of ignoring and even ghosting.
+
+                Terrified, a necessary goldfish known as Rainforest Records flees the Empire, with her protector, Demo User.
+
+                They head for The Emerald on the planet Mercury. When they finally arrive, a fight breaks out. User uses her smart hunger pangs to defend Rainforest.
+
+                User and Goldfish Rainforest decide it's time to leave Mercury and steal a rocket to shoot their way out.
+
+                They encounter a tribe of robots. User is attacked and the goldfish is captured by the robots and taken back to The Emerald.
+
+                User must fight to save Goldfish Rainforest but when she accidentally unearths an exciting key, the entire future of the smart, agile galaxy is at stake.
+                
+                -generated: https://www.plot-generator.org.uk/1cqt89bn/galactic-smart-hunger-pangs-wars.html ",
                 )
 story5 = Story.create(
                 "owner_id": user1.id,

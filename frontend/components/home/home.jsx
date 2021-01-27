@@ -682,23 +682,25 @@ class Home extends React.Component {
                         
                 </div>
                 <div className="learn-more">
-                    <div>
-                        <h3>Fans</h3>
-                        <img className="headphones" src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-17+at+8.57.07+PM.png" alt="headhones"/>
-                        <p className="headphones-copy">Get instant streaming of your purchases, follow your favorite artists, keep a wishlist, showcase your collection, and explore the music of like-minded fans.</p>
-                        <button onClick={() => this.props.openModal('type-signup')}>Learn more</button>
-                    </div>
-                    <div>
-                        <h3>Artists</h3>
-                        <img className="mic" src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-17+at+9.03.10+PM.png" alt="microphone"/>
-                        <p className="artists">Sell directly to your fans with total control over your music and pricing. Easy access to your customers’ data, real-time stats, music chart reporting, and more.</p>
-                        <button onClick={() => this.props.openModal('type-signup')}>Learn more</button>
-                    </div>
-                    <div>
-                        <h3>Labels</h3>
-                        <img className="label" src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-17+at+9.15.00+PM.png" alt="gramophone"/>
-                        <p>Unified accounting and stats across all your artists, a single fulfillment interface for all your merch, direct payments on a per release basis, and a whole lot more.</p>
-                        <button onClick={() => this.props.openModal('type-signup')}>Learn more</button>
+                    <div className="choice-container">
+                        <div>
+                            <h3>Fans</h3>
+                            <img className="headphones" src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-17+at+8.57.07+PM.png" alt="headhones"/>
+                            <p className="headphones-copy">Get instant streaming of your purchases, follow your favorite artists, keep a wishlist, showcase your collection, and explore the music of like-minded fans.</p>
+                            <button onClick={() => this.props.openModal('type-signup')}>Learn more</button>
+                        </div>
+                        <div>
+                            <h3>Artists</h3>
+                            <img className="mic" src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-17+at+9.03.10+PM.png" alt="microphone"/>
+                            <p className="artists">Sell directly to your fans with total control over your music and pricing. Easy access to your customers’ data, real-time stats, music chart reporting, and more.</p>
+                            <button onClick={() => this.props.openModal('type-signup')}>Learn more</button>
+                        </div>
+                        <div>
+                            <h3>Labels</h3>
+                            <img className="label" src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-17+at+9.15.00+PM.png" alt="gramophone"/>
+                            <p>Unified accounting and stats across all your artists, a single fulfillment interface for all your merch, direct payments on a per release basis, and a whole lot more.</p>
+                            <button onClick={() => this.props.openModal('type-signup')}>Learn more</button>
+                        </div>
                     </div>
                 </div>
                 

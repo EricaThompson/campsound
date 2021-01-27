@@ -2557,27 +2557,39 @@ a {
 
     
     .learn-more {
-        display: flex;
+        
         background-color: white;
-        justify-content: space-between;
         bottom: 281px;
-        width: 1259px;
+        width: 1099px;
         height: 421px;
         padding-top: 50px;
         margin: 0 auto;
         line-height: 18px;
         font-size: 18px;
         color: #2B2B2B;
+        // border: 1px solid olive;
+        // margin: 0 auto;
+        
+        .choice-container {
+            display: flex;
+            // margin: 0 auto;
+            margin: 0 auto;
+            // border: 1px solid olive;
+            width: 1122px;
+            justify-content: center;
+            justify-content: space-between;
 
+            img {
+                width: 100px;
+                padding-left: 90px;
+            }
 
-        img {
-            width: 100px;
-            padding-left: 90px;
-        }
+            div {
+                // border: 1px solid olive;
+                position: relative;
+                // margin-right: 30px;
+                // margin-left: 30px;
 
-        div {
-            position: relative;
-            margin: 0 80px;
 
             .headphones {               
                 position: absolute;
@@ -2590,7 +2602,7 @@ a {
 
             .mic {
                 position: absolute;
-                bottom: 245px;
+                bottom: 125px;
                 left: 3px;
                 height: 95px;
                 width: 80px;
@@ -2635,6 +2647,10 @@ a {
             cursor: pointer;
 
         }
+        }
+
+
+        
         
     }
 

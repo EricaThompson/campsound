@@ -361,6 +361,7 @@ class Home extends React.Component {
         // console.log(count)
 
         let things = ["1", "2", "1", "2", "1", "2", "1", "2", "1", "2",];
+        // let top;
         let last;
         let main;
         let mainImg;
@@ -382,13 +383,12 @@ class Home extends React.Component {
                                         <div className='read-more'>read more</div>
                                     </div>
 
-                
                 } else if (idx === 7 || idx === 2) {
                     last = 'last'
                     mainSummary = ''
                 } else {
                     last = ''
-                    main = ''
+                    main = 'smaller-stories'
                     mainImg = ''
                     mainSummary = ''
                 }

@@ -1853,6 +1853,10 @@ a {
         width: 100%;
         background-color: #222222;
     }
+
+    .smaller-stories {
+        width: 180px;
+    }
     
     .stories {
         // margin-top: 140px;
@@ -1874,6 +1878,13 @@ a {
         // p {
             //     background-color: transparent;
             // }
+
+
+        
+
+
+
+
         .main {
             // border: 1px solid purple;
             position: relative;
@@ -1983,8 +1994,10 @@ a {
         padding-top: 10px;
         padding-right: 10px;
         background-color: #EEF2F3;
+
         
     }
+   
 
     .slider {
         margin: 50px auto;
@@ -2132,6 +2145,7 @@ a {
                         position: absolute;
                         bottom: -175px;
                         width: 80%;
+                        
                         // left: -10px;
                     }
                 }
@@ -2139,12 +2153,16 @@ a {
 
             }
 
+            
+
             .story {
                 margin-right: 22px;
                 margin-bottom: 25px;
                 // width: 185px;
                 background-color: white;
                 height: 260px;
+                position: relative;
+                
                 div {
                     padding: 10px;
                 }
@@ -2161,12 +2179,19 @@ a {
                     color: #777;
                     font-size: 10px;
                     text-transform: uppercase;
+                    position: absolute;
+                    bottom: 8px;
                 }
             }
 
             .last {
                 margin-right: -20px;
             }
+
+            // .top {
+            //     position: absolute;
+            //     bottom: 500px;
+            // }
         }
 
         position: relative;
@@ -3528,6 +3553,7 @@ a {
                     // margin-top: 8px;
                     margin-bottom: 20px;
                     margin-top: 4px;
+                    
                 }
                 
                 .story-title {
@@ -3652,3 +3678,4 @@ footer {
         z-index: 3;
     }
 }
+

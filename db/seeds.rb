@@ -138,73 +138,73 @@ forestStory = Story.create(
                 "title": 'The Forest Through the Trees',
                 "story_type": 'review',
                 "text": 'You should lie down now and remember the forest, 
-for it is disappearing--
-no, the truth is it is gone now 
-and so what details you can bring back 
-might have a kind of life.
+                for it is disappearing--
+                no, the truth is it is gone now 
+                and so what details you can bring back 
+                might have a kind of life.
 
-Not the one you had hoped for, but a life
---you should lie down now and remember the forest--
-nonetheless, you might call it "in the forest,"
-no the truth is, it is gone now,
-starting somewhere near the beginning, that edge,
+                Not the one you had hoped for, but a life
+                --you should lie down now and remember the forest--
+                nonetheless, you might call it "in the forest,"
+                no the truth is, it is gone now,
+                starting somewhere near the beginning, that edge,
 
-Or instead the first layer, the place you remember 
-(not the one you had hoped for, but a life)
-as if it were firm, underfoot, for that place is a sea, 
-nonetheless, you might call it "in the forest,"
-which we can never drift above, we were there or we were not,
+                Or instead the first layer, the place you remember 
+                (not the one you had hoped for, but a life)
+                as if it were firm, underfoot, for that place is a sea, 
+                nonetheless, you might call it "in the forest,"
+                which we can never drift above, we were there or we were not,
 
-No surface, skimming. And blank in life, too, 
-or instead the first layer, the place you remember, 
-as layers fold in time, black humus there, 
-as if it were firm, underfoot, for that place is a sea, 
-like a light left hand descending, always on the same keys.
+                No surface, skimming. And blank in life, too, 
+                or instead the first layer, the place you remember, 
+                as layers fold in time, black humus there, 
+                as if it were firm, underfoot, for that place is a sea, 
+                like a light left hand descending, always on the same keys.
 
-The flecked birds of the forest sing behind and before 
-no surface, skimming. And blank in life, too, 
-sing without a music where there cannot be an order, 
-as layers fold in time, black humus there, 
-where wide swatches of light slice between gray trunks,
+                The flecked birds of the forest sing behind and before 
+                no surface, skimming. And blank in life, too, 
+                sing without a music where there cannot be an order, 
+                as layers fold in time, black humus there, 
+                where wide swatches of light slice between gray trunks,
 
-Where the air has a texture of drying moss, 
-the flecked birds of the forest sing behind and before:
-a musk from the mushrooms and scalloped molds. 
-They sing without a music where there cannot be an order, 
-though high in the dry leaves something does fall,
+                Where the air has a texture of drying moss, 
+                the flecked birds of the forest sing behind and before:
+                a musk from the mushrooms and scalloped molds. 
+                They sing without a music where there cannot be an order, 
+                though high in the dry leaves something does fall,
 
-Nothing comes down to us here. 
-Where the air has a texture of drying moss, 
-(in that place where I was raised) the forest was tangled, 
-a musk from the mushrooms and scalloped molds, 
-tangled with brambles, soft-starred and moving, ferns
+                Nothing comes down to us here. 
+                Where the air has a texture of drying moss, 
+                (in that place where I was raised) the forest was tangled, 
+                a musk from the mushrooms and scalloped molds, 
+                tangled with brambles, soft-starred and moving, ferns
 
-And the marred twines of cinquefoil, false strawberry, sumac--
-nothing comes down to us here, 
-stained. A low branch swinging above a brook 
-in that place where I was raised, the forest was tangled, 
-and a cave just the width of shoulder blades.
+                And the marred twines of cinquefoil, false strawberry, sumac--
+                nothing comes down to us here, 
+                stained. A low branch swinging above a brook 
+                in that place where I was raised, the forest was tangled, 
+                and a cave just the width of shoulder blades.
 
-You can understand what I am doing when I think of the entry--
-and the marred twines of cinquefoil, false strawberry, sumac--
-as a kind of limit. Sometimes I imagine us walking there 
-(. . .pokeberry, stained. A low branch swinging above a brook) 
-in a place that is something like a forest.
+                You can understand what I am doing when I think of the entry--
+                and the marred twines of cinquefoil, false strawberry, sumac--
+                as a kind of limit. Sometimes I imagine us walking there 
+                (. . .pokeberry, stained. A low branch swinging above a brook) 
+                in a place that is something like a forest.
 
-But perhaps the other kind, where the ground is covered 
-(you can understand what I am doing when I think of the entry) 
-by pliant green needles, there below the piney fronds, 
-a kind of limit. Sometimes I imagine us walking there. 
-And quickening below lie the sharp brown blades,
+                But perhaps the other kind, where the ground is covered 
+                (you can understand what I am doing when I think of the entry) 
+                by pliant green needles, there below the piney fronds, 
+                a kind of limit. Sometimes I imagine us walking there. 
+                And quickening below lie the sharp brown blades,
 
-The disfiguring blackness, then the bulbed phosphorescence of the roots. 
-But perhaps the other kind, where the ground is covered, 
-so strangely alike and yet singular, too, below
-the pliant green needles, the piney fronds.
-Once we were lost in the forest, so strangely alike and yet singular, too, 
-but the truth is, it is, lost to us now. 
+                The disfiguring blackness, then the bulbed phosphorescence of the roots. 
+                But perhaps the other kind, where the ground is covered, 
+                so strangely alike and yet singular, too, below
+                the pliant green needles, the piney fronds.
+                Once we were lost in the forest, so strangely alike and yet singular, too, 
+                but the truth is, it is, lost to us now. 
 
--- "The Forest" Susan Stewart',
+                -- "The Forest" Susan Stewart',
                 "summary": 'Songs about healing and hope',
                 "username": 'Rainforest Records',
                 )
@@ -216,22 +216,22 @@ goldStory = Story.create(
                 "summary": 'Summary of bloom news',
                 "username": 'Evie Shaffer',
                 "text": 'What Could This Thing With A Special Width Be?
-A Drabble
-by erica
+                A Drabble
+                by Rainforest
 
-It has a special width and a large, light length, which is endearing. Rarely has a special width reminded me more of the heart of a steadfast lion.
+                It has a special width and a large, light length, which is endearing. Rarely has a special width reminded me more of the heart of a steadfast lion.
 
-Its height is as flawless as an exemplary, truthful leaf, which has been living happily in the magical, dependable snow (pop!).
+                Its height is as flawless as an exemplary, truthful leaf, which has been living happily in the magical, dependable snow (pop!).
 
-Naturally, it has all the glory of a breeze, which once loved wonderfully. There is nothing like a breeze that once loved wonderfully.
+                Naturally, it has all the glory of a breeze, which once loved wonderfully. There is nothing like a breeze that once loved wonderfully.
 
-Lest not forget the damaged, damp demeanor of a dangerous depth boldly breathing.
+                Lest not forget the damaged, damp demeanor of a dangerous depth boldly breathing.
 
-sir likes its special width. madam likes its endearing length.
+                sir likes its special width. madam likes its endearing length.
 
-It is a beautiful love! 
+                It is a beautiful love! 
 
--generated https://www.plot-generator.org.uk/2p6i5a3k/what-could-this-thing-with-special-width-be.html' ,
+                -generated https://www.plot-generator.org.uk/2p6i5a3k/what-could-this-thing-with-special-width-be.html' ,
                 )
 
 pieceStory = Story.create(
@@ -260,8 +260,35 @@ petalsStory = Story.create(
                 "title": 'Petals All Around',
                 "story_type": 'news',
                 "summary": 'Summary of Petals news',
-                "username": 'Evie Shaffer',
-                "text": 'Petals news',
+                "username": 'Demo User',
+                "text": "A Villanelle by Demo User
+                Rainforest couldn't stop thinking about the sound
+                It was just so lovely and amazing
+                But she could never forget the rebound
+
+                That morning, Rainforest was shocked by the turnaround
+                She had to calm herself with an overgrazing
+                Rainforest couldn't stop thinking about the sound
+
+                Later, she realised that the sound was compound
+                She tried to focus on a glazing
+                But she could never forget the rebound
+
+                Demo tried to distract her with a surround
+                Said it was time to start thinking about a hazing
+                Rainforest couldn't stop thinking about the sound
+
+                Rainforest took action like a hound
+                The sound was like a toxic phasing
+                But she could never forget the rebound
+
+                Rainforest's demise was renowned
+                Her mind turned into a phrasing
+                Rainforest couldn't stop thinking about the sound
+                But she could never forget the rebound
+
+                -generated: https://www.poem-generator.org.uk/1sim5mcq/rainforests-torment-villanelle-of-sound.html     
+                ",
                 )
 
 
@@ -498,9 +525,16 @@ story8 = Story.create(
                 "owner_id": user2.id,
                 "title": 'Story 8',
                 "story_type": 'news',
-                "text": 'Story 8 news',
                 "summary": 'Summary of story 8',
                 "username": 'Rainforest Records',
+                "text": "Dolphin - A Haiku
+                by rainforest records
+                Beautiful leaping
+                A sided, nice dolphin sings
+                whilst watching the sky
+                
+                -generated: https://www.poem-generator.org.uk/27lfds8x/dolphin-haiku.html
+                ",
                 )
 
 story9 = Story.create(
@@ -509,18 +543,48 @@ story9 = Story.create(
                 "story_type": 'review',
                 "text": 'Story 9 review',
                 "summary": 'Summary of story 9',
-                "username": 'Demo User',
+                "username": "Records - A Didactic Cinquain
+                            by Demo User
+                            Records
+                            Vibey, mellow
+                            Recording, performing, listen
+                            Ever so authentic
+                            Music
+
+                            -generated: https://www.poem-generator.org.uk/1t01078y/records-didactic-cinquain.html
+                            ",
                 )
 
 story10 = Story.create(
                 "owner_id": user2.id,
                 "title": 'Story 10',
                 "story_type": 'news',
-                "text": 'Story 10 news',
                 "summary": 'Summary of story 10',
                 "username": 'Rainforest Records',
+                "text": "Ode to the Inheritance
+                A Sonnet by rainforest records
+                Inheritance, you inspire me to write.
+                How I love the way you give, pass and grow,
+                Invading my mind day and through the night,
+                Always dreaming about the adagio.
+
+                Let me compare you to a helpful bay?
+                You are more giant, concerned and heavy.
+                Earned breeze flaps the pensive dancers of May,
+                And the springtime has the tensive brevi.
+
+                How do I love you? Let me count the ways.
+                I love your family and history.
+                Thinking of your heritage fills my days.
+                My love for you is the grown mystery.
+
+                Now I must away with a pliant heart,
+                Remember my burned words whilst we're apart
+
+                -generated: https://www.poem-generator.org.uk/kf5862s/ode-to-inheritance.html
+",
                 )
-puts "10 stories created!"
+puts "14 stories created!"
 # user.user_img.attach(io: File.open("/Users/EricaThompson/Desktop/app_academy/class-home/campsound/app/assets/images/tape.png"), filename: "tape.png")
 
 

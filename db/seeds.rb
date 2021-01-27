@@ -23,9 +23,9 @@ puts "Users created!"
 
 item1 = Item.create(
                 "owner_id": user1.id,
-                "title": '1',
+                "title": 'This Clarity',
                 "genre": 'electronic',
-                "about": 'About text.',
+                "about": 'Electronic Clarity',
                 'released': true,
                 'artist_name': 'DU'
                 )
@@ -34,9 +34,9 @@ item1.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item2 = Item.create(
                 "owner_id": user2.id,
-                "title": '2',
-                "genre": 'electronic',
-                "about": 'About text.',
+                "title": 'True Evening',
+                "genre": 'metal',
+                "about": 'Metal evening.',
                 'released': true,
                 'artist_name': 'Rainy'
                 )
@@ -46,9 +46,9 @@ item2.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item3 = Item.create(
                 "owner_id": user1.id,
-                "title": '3',
-                "genre": 'electronic',
-                "about": 'About text.',
+                "title": 'Ten Brave Life',
+                "genre": 'rock',
+                "about": 'Rock Life',
                 'released': true,
                 'artist_name': 'demo'
                 )
@@ -57,9 +57,9 @@ item3.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item4 = Item.create(
                 "owner_id": user2.id,
-                "title": '4',
-                "genre": 'electronic',
-                "about": 'About text.',
+                "title": 'Lounge Nocturn',
+                "genre": 'alternative',
+                "about": 'Alternative Lounge.',
                 'released': true,
                 'artist_name': 'RNYDY'
                 )
@@ -68,9 +68,9 @@ item4.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item5 = Item.create(
                 "owner_id": user1.id,
-                "title": '5',
-                "genre": 'electronic',
-                "about": 'About text.',
+                "title": 'Just Relax',
+                "genre": 'hip hop',
+                "about": 'Hip Hop and relax.',
                 'released': true,
                 'artist_name': 'DMO USR'
                 )
@@ -79,9 +79,9 @@ item5.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item6 = Item.create(
                 "owner_id": user2.id,
-                "title": '6',
-                "genre": 'electronic',
-                "about": 'About text.',
+                "title": 'Low Voice',
+                "genre": 'experimental',
+                "about": 'Experimental Voice.',
                 'released': true,
                 'artist_name': 'Rare'
                 )
@@ -90,9 +90,9 @@ item6.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item7 = Item.create(
                 "owner_id": user1.id,
-                "title": '7',
-                "genre": 'electronic',
-                "about": 'About text.',
+                "title": 'Another Thoughts',
+                "genre": 'punk',
+                "about": 'Punk thoughts.',
                 'released': true,
                 'artist_name': 'DU'
                 )
@@ -101,9 +101,9 @@ item7.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item8 = Item.create(
                 "owner_id": user2.id,
-                "title": '8',
-                "genre": 'electronic',
-                "about": 'About text.',
+                "title": 'Relax Level',
+                "genre": 'pop',
+                "about": 'Pop level',
                 'released': true,
                 'artist_name': 'Rainforest Records'
                 )
@@ -112,9 +112,9 @@ item8.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item9 = Item.create(
                 "owner_id": user1.id,
-                "title": '9',
-                "genre": 'electronic',
-                "about": 'About text.',
+                "title": 'Is This Commission',
+                "genre": 'ambient',
+                "about": 'Ambient Commission.',
                 'released': true,
                 'artist_name': 'Demo User'
                 )
@@ -123,9 +123,9 @@ item9.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item10 = Item.create(
                 "owner_id": user2.id,
-                "title": '10',
-                "genre": 'electronic',
-                "about": 'About text.',
+                "title": 'First Year With My Ways',
+                "genre": 'other',
+                "about": 'Other ways.',
                 'released': true,
                 'artist_name': 'Rainy User'
                 )
@@ -468,7 +468,7 @@ story3 = Story.create(
                 )
 story4 = Story.create(
                 "owner_id": user2.id,
-                "title": 'Galactic Smart Hunger Pangs Wars',
+                "title": 'Galactic Smart',
                 "story_type": 'news',
                 "summary": 'A Science Fiction Plot',
                 "username": 'Rainforest Records',

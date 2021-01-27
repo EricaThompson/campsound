@@ -443,7 +443,7 @@ class Item extends React.Component {
         } else {
             return (
                 <div className="item-show" key={() => Math.random()}>
-                    {/* <img className='cover-art-header' src={`${this.state.item.cover}`} alt="" /> */}
+                    <img className='cover-art-header' src={`${this.state.item.cover}`} alt="" />
                     <div className='item-nav-bar'>
                         <div
                             className={`nav-music ${onMusicPage}`}

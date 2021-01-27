@@ -83,28 +83,28 @@ class NavBar extends React.Component {
                         <Link
                             to={`/${this.props.currentUser.id}/new`}>
                             <p>
-                                <div
+                                <span
                                     onClick={() => setTimeout(() => location.reload(), 200)}>
                                     add new song
-                                </div>  
+                                </span>  
                             </p>
                         </Link>
                         <Link
                             to={`/users/${this.props.currentUser.id}/stories/story/new`}>
                             <p>
-                                <div
+                                <span
                                     onClick={() => setTimeout(() => location.reload(), 200)}>
                                     add new story
-                                </div>
+                                </span>
                             </p>
                         </Link>
                         <Link
                             to={`/`}>
                             <p>
-                            <div
+                            <span
                                 onClick={() => this.logoutRefresh()}>
                                 logout
-                            </div>
+                            </span>
                             </p>
                         </Link>
 

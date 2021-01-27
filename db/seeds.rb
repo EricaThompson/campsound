@@ -242,17 +242,17 @@ pieceStory = Story.create(
                 "text": 
 "Unreasonable People - A Futuristic Novel
                         
-    The night of the release date changes everything for Rainforest Records, a 26-year-old musician from Los Angeles.
+The night of the release date changes everything for Rainforest Records, a 26-year-old musician from Los Angeles.
 
-        One moment, she is discussing intricacies with her straightforward friend, Demo User; the next, watching with horror as unreasonable people ignore each other.
+One moment, she is discussing intricacies with her straightforward friend, Demo User; the next, watching with horror as unreasonable people ignore each other.
 
-                She knows these people came from San Francisco but she can't prove it - at least not without some beautiful flowers.
+She knows these people came from San Francisco but she can't prove it - at least not without some beautiful flowers.
 
-                The honest, optimistic woman knows that her musical life is over. She acquires some beautiful flowers and is reborn as the hero who will save the world from unreasonable people.
+The honest, optimistic woman knows that her musical life is over. She acquires some beautiful flowers and is reborn as the hero who will save the world from unreasonable people.
 
-                However, Rainforest finds herself troubled by her musical ideals and becomes overwhelmed with moral questions. Will her conscience allow her to do whatever is needed to stop the unreasonable people?
+However, Rainforest finds herself troubled by her musical ideals and becomes overwhelmed with moral questions. Will her conscience allow her to do whatever is needed to stop the unreasonable people?
                     
-                -generated: https://www.plot-generator.org.uk/?i=1utb7xnl] ",
+-generated: https://www.plot-generator.org.uk/?i=1utb7xnl ",
                                         )
 
 petalsStory = Story.create(

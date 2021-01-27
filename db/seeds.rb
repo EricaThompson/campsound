@@ -25,7 +25,7 @@ item1 = Item.create(
                 "owner_id": user1.id,
                 "title": 'This Clarity',
                 "genre": 'electronic',
-                "about": 'Electronic Clarity',
+                "about": 'Electronic Clarity.',
                 'released': true,
                 'artist_name': 'DU'
                 )
@@ -112,7 +112,7 @@ item8.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item9 = Item.create(
                 "owner_id": user1.id,
-                "title": 'Is This Commission',
+                "title": 'The Commission',
                 "genre": 'ambient',
                 "about": 'Ambient Commission.',
                 'released': true,

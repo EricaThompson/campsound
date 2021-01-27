@@ -89,7 +89,7 @@ class Search extends React.Component {
                             <div onClick={()=>this.genreSearch('rock')} className="rock">rock<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
                             <div onClick={()=>this.genreSearch('alternative')} className="alt">alternative<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
                             <div onClick={()=>this.genreSearch('hip-hop')} className="hip-hop">hip-hop/rap<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
-                            <div onClick={()=>this.genreSearch('expermimental')} className="exp">experimental<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
+                            <div onClick={()=>this.genreSearch('experimental')} className="exp">experimental<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
                             <div onClick={()=>this.genreSearch('punk')} className="punk">punk<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
                             <div onClick={()=>this.genreSearch('pop')} className="pop">pop<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
                             <div onClick={()=>this.genreSearch('ambient')} className="ambient">ambient<span className="caret"><i className="fas fa-chevron-right"></i></span></div>

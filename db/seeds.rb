@@ -523,7 +523,7 @@ story6 = Story.create(
 
                 2. You're on a jury and you admire one of your fellow jurors. Why?
 
-                3. What was the last thing you lost that never turned up? Write a story describing somebody stealing it.
+                3. What was the last thing you lost that never turned up? Write a story describing what happened.
 
                 4. Look at the last message you sent. What would have happened if you'd accidentally sent it to your mum?
 

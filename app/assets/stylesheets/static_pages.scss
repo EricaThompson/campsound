@@ -3551,13 +3551,14 @@ a {
     
 
     .story-show-text {
-        width: 610px;
+        width: 100%;
         text-align: left;
         margin: 67px auto;
         font-weight: lighter;
         font-size: 17px;
         line-height: 1.76rem;
         white-space: pre;
+        word-wrap: normal;
     }
 }
 

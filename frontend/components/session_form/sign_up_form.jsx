@@ -6,7 +6,7 @@ class SignUpForm extends React.Component {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -19,10 +19,23 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        if(this.state.username.length > 0 && this.state.password.length > 0){
-            this.props.signupUser({user:this.state})
-                .then(this.props.loginUser({ user: this.state }), this.props.closeModal())
-        }
+
+        // let isSignedUp = false;
+
+        this.props.signupUser({user:this.state})
+            .then(()=> {
+                // isSignedUp = true
+                // setTimeout(() => {
+                    window.location.reload();
+                    // this.props.closeModal()
+                // }, 500);
+            
+            })
+
+        // if(isSignedUp && this.state.username.length > 0 && this.state.password.length > 5){
+        //         this.props.loginUser({ user: this.state })
+        //             .then(()=> window.location.reload())
+        // }
         
             // .then()
             // .catch(err => console.log('err',err))     

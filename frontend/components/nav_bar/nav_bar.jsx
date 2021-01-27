@@ -16,7 +16,6 @@ class NavBar extends React.Component {
         this.setState({ authDropdown: false })
         // console.log(this.props)
         // document.body.scrollTop = 0
-        
     }
 
     logoutRefresh(){
@@ -24,10 +23,10 @@ class NavBar extends React.Component {
         this.setState({authDropdown: false})
     }
 
-    signupRefresh(){
-        this.setState({loggedIn: true})
-        window.location.reload()
-    }
+    // signupRefresh(){
+    //     this.setState({loggedIn: true})
+    //     window.location.reload()
+    // }
 
     toggleDropdown(){
         this.setState({authDropdown: !this.state.authDropdown})

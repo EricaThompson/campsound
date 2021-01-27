@@ -722,6 +722,25 @@ a {
 
 .artist-home-container {
     padding-top: 55px;
+    position: relative;
+
+    width: 978px;
+    margin: 0px auto;
+    border: 1px solid #E5E5E5;
+    border-bottom: none;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.589);
+    position: relative;
+    margin-top: 55px;
+
+    .cover-art-header {
+        position: absolute;
+        z-index: -1;
+        width: 978px;
+        margin-top: -300px;
+
+        // height: 182px;
+    }
 
     .item-nav-bar {
         background-color: #F2F2F2;
@@ -775,6 +794,7 @@ a {
     height: 800px;
     width: 968px;
     margin: 0 auto;
+    background-color: white;
     // margin-top: -200px;
 
     

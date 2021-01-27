@@ -442,11 +442,12 @@ story6 = Story.create(
                 "owner_id": user2.id,
                 "title": 'Story 6',
                 "story_type": 'news',
-                "text": 'Story 6 news',
                 "summary": 'Summary of story 6',
-                "username": "20 Prompts to Cure Writer's Block
+                "username": "rainforest records",
+                "text": "
+                20 Prompts to Cure Writer's Block
                 Ideas To Get You Started
-                by rainforest records
+    
                 1. What if your favourite pet had a super power?
 
                 2. You're on a jury and you admire one of your fellow jurors. Why?
@@ -486,8 +487,7 @@ story6 = Story.create(
                 19. Imagine you're a wolf for a day. How would you spend your time?
 
                 20. Think of a villain from history. Imagine you're trapped in a lift together.
-                -generated: https://www.plot-generator.org.uk/tf4ocyn/20-prompts-to-cure-writers-block.html
-    ",
+                -generated: https://www.plot-generator.org.uk/tf4ocyn/20-prompts-to-cure-writers-block.html",
                 )
 story7 = Story.create(
                 "owner_id": user1.id,
@@ -540,20 +540,17 @@ story8 = Story.create(
 
 story9 = Story.create(
                 "owner_id": user1.id,
-                "title": 'Story 9',
+                "title": 'Records',
                 "story_type": 'review',
-                "text": 'Story 9 review',
-                "summary": 'Summary of story 9',
-                "username": "Records - A Didactic Cinquain
-                            by Demo User
-                            Records
-                            Vibey, mellow
-                            Recording, performing, listen
-                            Ever so authentic
-                            Music
-
-                            -generated: https://www.poem-generator.org.uk/1t01078y/records-didactic-cinquain.html
-                            ",
+                "summary": 'A Didactic Cinquain',
+                "username": "",
+                "text": "
+                Records
+                Vibey, mellow
+                Recording, performing, listen
+                Ever so authentic
+                Music
+                -generated: https://www.poem-generator.org.uk/1t01078y/records-didactic-cinquain.html",
                 )
 
 story10 = Story.create(

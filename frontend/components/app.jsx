@@ -10,6 +10,7 @@ import ItemContainer from './artist/item_container';
 import StoriesIndexContainer from './stories/stories_index_container';
 import StoryContainer from './stories/story_container';
 import StoryFormContainer from './stories/story_form_container';
+import Footer from './Footer/footer';
 // import ShowItemsContainer from './artist/show_items_container';
 import { ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
@@ -51,24 +52,7 @@ class App extends React.Component {
                     
                 </div>
                 <div className="bottom">
-                    <footer>
-                        <div 
-                            //! Add onClick to home
-                            id='bottom-logo' 
-                            className='logo'>
-                            🏕campsound
-                        </div>
-                        <div className='short-footer'>
-                            <div className="links">
-
-                                <a target="_blank" href="https://github.com/EricaThompson"><i className="fab fa-github"></i></a>
-                                {/* <a href=""><i className="fab fa-twitter"></i></a> */}
-                                {/* <a href=""><i className="fas fa-at"></i></a> */}
-                                <a target="_blank" href="https://www.linkedin.com/in/ericamt/"><i className="fab fa-linkedin"></i></a>
-                                {/* <p>ericathompson.io</p> */}
-                            </div>
-                        </div>
-                    </footer>
+                    <Route path="/" component={Footer} />
                 </div>
             </div>
         )

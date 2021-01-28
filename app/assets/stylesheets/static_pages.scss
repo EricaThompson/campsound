@@ -721,23 +721,24 @@ a {
 //* Artist Homepage
 
 .artist-home-container {
-    padding-top: 55px;
+    // padding-top: 55px;
     position: relative;
 
     width: 978px;
     margin: 0px auto;
-    border: 1px solid #E5E5E5;
+    // border: 1px solid #E5E5E5;
     border-bottom: none;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.589);
     position: relative;
-    margin-top: 55px;
+    // margin-top: 55px;
 
     .cover-art-header {
         position: absolute;
         z-index: -1;
         width: 978px;
         margin-top: -300px;
+        opacity: .5;
 
         // height: 182px;
     }
@@ -792,7 +793,7 @@ a {
     position: relative;
     display: flex;
     height: 800px;
-    width: 968px;
+    width: 978px;
     margin: 0 auto;
     background-color: white;
     // margin-top: -200px;
@@ -1890,7 +1891,7 @@ a {
         height: 510px;
         width: 1260px;
         // border: 1px solid olive;
-        margin-top: 55px;
+        // margin-top: 55px;
         // border-bottom: 2px dotted slategray;
         
         
@@ -2717,7 +2718,7 @@ a {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.589);
     position: relative;
-    margin-top: 55px;
+    // margin-top: 55px;
 
     .artist-stories-header {
         position: absolute;
@@ -2733,6 +2734,7 @@ a {
             font-style: italic;
             font-weight: lighter;
             padding-left: 18px;
+            // margin-top: -255px;
         }
 
         .count {
@@ -2776,6 +2778,7 @@ a {
         margin-top: 182px;
         // padding: 10px;
         display: flex;
+        // margin-top: 55px;
 
         .nav-music, .nav-stories {
             

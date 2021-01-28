@@ -8,7 +8,7 @@ class Footer extends React.Component{
 
         }
     }
-      render(){
+    render(){
         console.log(this.props)
         if ((this.props.match.isExact)){
             console.log('home')

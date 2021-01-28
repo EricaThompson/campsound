@@ -1692,6 +1692,10 @@ a {
 
 }
 
+.home-logged-in {
+    margin-top: 55px;
+}
+
 .support-logged-in {
     display: none;
 }
@@ -1866,6 +1870,11 @@ a {
     // display: flex;
     // height: 1000px;
     height: 100%;
+
+    .home-logged-in {
+        margin-top: 55px;
+    }
+    
     // border: 5px solid hotpink;
     // margin-top: 100px;
     // background-color: #EEF2F3;
@@ -1873,7 +1882,10 @@ a {
     .stories-home-container {
         width: 100%;
         background-color: #222222;
+        
     }
+
+    
 
     .smaller-stories {
         width: 180px;
@@ -2112,6 +2124,7 @@ a {
             padding-bottom: 50px;
             font-size: 14px;
             background-color: #EEF2F3;
+            // margin-top: 55px;
 
             .main {
                 width: 585px;

@@ -166,6 +166,7 @@ class StoriesIndex extends React.Component {
 
         return (
             <div className="stories-container">
+                
                 <div className='stories-nav'>
                     <h1 
                         className='link'

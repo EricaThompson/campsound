@@ -512,8 +512,13 @@ class Home extends React.Component {
 
         // console.log(this.state.users[0])
         // console.log(this.state.items.reverse()[0])
+        console.log('home', this.props)
+        let loggedIn;  
+        if (this.props.currentUser){
+            loggedIn = '-logged-in'
+        }
         return (
-            <div className="home">
+            <div className={`home home${loggedIn}`}>
                     <div className='stories-home-container'>
                         <div className="stories">
                                 <div 

@@ -421,7 +421,7 @@ class Item extends React.Component {
         if (this.state.spinnerShow){
             return (
                 <div className="spinner">
-                    <i className="far fa-compass fa-spin"></i>
+                    <i className="fas fa-compass fa-spin"></i>
                 </div>
             )
         } else if (this.props.match.path.includes('stories')){

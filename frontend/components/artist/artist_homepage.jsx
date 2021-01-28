@@ -21,11 +21,13 @@ class ArtistHomepage extends React.Component {
             newImage: null,
             link: '',
             items: null,
-            biggerImage: false
+            biggerImage: false,
+            spinnerShow: false
         }
     }
 
     componentDidMount() {
+        this.setState({spinnerShow: true})
         // ()=>document.body.scrollTop = 0;
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
@@ -38,7 +40,8 @@ class ArtistHomepage extends React.Component {
         }));
         // .then(res => this.setState({user: res}))    
         
-        this.props.readAllUserItems(this.props.match.params.ownerId);
+        this.props.readAllUserItems(this.props.match.params.ownerId)
+            .then( ()=>this.setState({spinnerShow: false}));
         // .then(res => this.setState({ items: res }))
         
         ()=>window.location.reload();
@@ -302,62 +305,75 @@ class ArtistHomepage extends React.Component {
             onStoriesPage = false;
 
         }
-        return (
-            <div className='artist-home-container'>
-                <img className='cover-art-header' src={`${this.state.user.userImg}`} alt="" />
-                <div className='item-nav-bar'>
-                    <div
-                        className={`link nav-music  ${onMusicPage}`}
-                    // onClick={() => this.switchToMusic()}
-                    >
-                        {/* <Link to={`/artists/${this.state.item.owner_id}/music/${this.state.item.id}`}> */}
+
+        if (this.state.spinnerShow) {
+            return (
+                <div className="spinner">
+                    <i className="fas fa-compass fa-spin"></i>
+                </div>
+            )
+
+        } else {
+            return (
+                <div className='artist-home-container'>
+                    <img className='cover-art-header' src={`${this.state.user.userImg}`} alt="" />
+                    <div className='item-nav-bar'>
+                        <div
+                            className={`link nav-music  ${onMusicPage}`}
+                        // onClick={() => this.switchToMusic()}
+                        >
+                            {/* <Link to={`/artists/${this.state.item.owner_id}/music/${this.state.item.id}`}> */}
                             music
                     {/* </Link> */}
 
-                    </div>
-                    <div
-                        className={`link nav-stories ${onStoriesPage}`}
-                        onClick={() => this.switchToStories()}
-                    >
+                        </div>
+                        <div
+                            className={`link nav-stories ${onStoriesPage}`}
+                            onClick={() => this.switchToStories()}
+                        >
 
-                        {/* <Link to={`/artists/${this.state.user.id}/stories`}> */}
+                            {/* <Link to={`/artists/${this.state.user.id}/stories`}> */}
                             stories
                     {/* </Link> */}
 
+                        </div>
                     </div>
-                </div>
 
-                <div className='artist-home'>
-                    <br />
-                    <br />
-                    <br />
-                    <div>
-                        {component}
-                        <div className="sidebar">
-                            <div className="about">
-                                
-                                <div className="image">
-                                    {image}
-                                    {changeImage}
-                                </div>
-                                <div className={`larger-user-image ${largerUserImage}`}>
-                                    {image}
-                                </div>
-                                <div className="username">
-                                    {this.state.user.username}
-                                </div>
+                    <div className='artist-home'>
+                        <br />
+                        <br />
+                        <br />
+                        <div>
+                            {component}
+                            <div className="sidebar">
+                                <div className="about">
 
-                                {location}
-                                {bio}
+                                    <div className="image">
+                                        {image}
+                                        {changeImage}
+                                    </div>
+                                    <div className={`larger-user-image ${largerUserImage}`}>
+                                        {image}
+                                    </div>
+                                    <div className="username">
+                                        {this.state.user.username}
+                                    </div>
+
+                                    {location}
+                                    {bio}
+                                </div>
                             </div>
-                        </div>   
 
+                        </div>
                     </div>
-                </div> 
 
-                {/* {/* <MusicPlayer items={items} /> */}
-            </div>
-        )
+                    {/* {/* <MusicPlayer items={items} /> */}
+                </div>
+            )
+        }
+
+
+        
     }
 }
 

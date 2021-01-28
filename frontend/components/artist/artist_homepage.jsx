@@ -116,11 +116,14 @@ class ArtistHomepage extends React.Component {
             bigger = ''
 
         }
+
+        
+
             
         let image = <div>
                         <img 
                             onClick={()=> this.makeBigger()}
-                            className={`image ${bigger}`} 
+                            className={`link image ${bigger}`} 
                             src={this.state.user.userImg} 
                             alt="user profile"
                         />

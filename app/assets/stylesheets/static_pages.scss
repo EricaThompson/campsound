@@ -1094,6 +1094,7 @@ a {
         // margin: 0 auto;
         flex-wrap: wrap;
         padding-top: 39px;
+        height: 100%;
 
         .item-display {
             margin: 0 15px;
@@ -2902,7 +2903,8 @@ a {
         padding: 29px;
         padding-top: 19px;
         position: relative;
-        height: 900px;
+        min-height: 1227px;
+
         
         // margin-top: 40px;
         // background-color: hotpink;

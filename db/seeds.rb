@@ -36,7 +36,8 @@ item2 = Item.create(
                 "owner_id": user2.id,
                 "title": 'True Evening',
                 "genre": 'metal',
-                "about": 'Metal evening.',
+                "about": 'Metal Evening: the period of time at the end of the day, usually from about 6 p.m. to bedtime.
+                          "it was 7:00 in the evening"',
                 'released': true,
                 'artist_name': 'Rainy'
                 )
@@ -243,20 +244,20 @@ pieceStory = Story.create(
                 "username": 'Rainforest',
                 "text": 
 
-"'Unreasonable People'
-                        
-The night of the release date changes everything for Rainforest Records, a 26-year-old musician from Los Angeles.
+                "'Unreasonable People'
+                                        
+                The night of the release date changes everything for Rainforest Records, a 26-year-old musician from Los Angeles.
 
-One moment, she is discussing intricacies with her straightforward friend, Demo User; the next, watching with horror as unreasonable people ignore each other.
+                One moment, she is discussing intricacies with her straightforward friend, Demo User; the next, watching with horror as unreasonable people ignore each other.
 
-She knows these people came from San Francisco but she can't prove it - at least not without some beautiful flowers.
+                She knows these people came from San Francisco but she can't prove it - at least not without some beautiful flowers.
 
-The honest, optimistic woman knows that her musical life is over. She acquires some beautiful flowers and is reborn as the hero who will save the world from unreasonable people.
+                The honest, optimistic woman knows that her musical life is over. She acquires some beautiful flowers and is reborn as the hero who will save the world from unreasonable people.
 
-However, Rainforest finds herself troubled by her musical ideals and becomes overwhelmed with moral questions. Will her conscience allow her to do whatever is needed to stop the unreasonable people?
-                    
--generated: https://www.plot-generator.org.uk/?i=1utb7xnl ",
-                                        )
+                However, Rainforest finds herself troubled by her musical ideals and becomes overwhelmed with moral questions. Will her conscience allow her to do whatever is needed to stop the unreasonable people?
+                                    
+                -generated: https://www.plot-generator.org.uk/?i=1utb7xnl ",
+                                                        )
 
 petalsStory = Story.create(
                 "owner_id": user1.id,

@@ -15,6 +15,14 @@ class Footer extends React.Component{
             return (
     
                 <div className="footer">
+                    <div className='left-column'>
+                        <ul>
+                            <li>About</li>
+                            <li>Campsound Daily</li>
+                            <li>Contact</li>
+                            <li>Log out</li>
+                        </ul>
+                    </div>
                     <div className="links">
                         <a target="_blank" href="https://github.com/EricaThompson"><i className="fab fa-github"></i></a>
                         <a target="_blank" href="https://www.linkedin.com/in/ericamt/"><i className="fab fa-linkedin"></i></a>

@@ -2430,8 +2430,9 @@ a {
                 display: flex;
                 justify-content: center;
                 margin: 0 auto;
-                position: relative;
+                position: absolute;
                 white-space: nowrap;
+                left: 10px;
             }
 
             
@@ -2759,6 +2760,12 @@ a {
     position: absolute;
     top: 12vw;
     right: 44vw;
+    // height: 600px;
+    // .spinner-space {
+    //     height: 400px;
+    //     margin-bottom: 400px;
+    // }
+    // padding-bottom: 400px;
 }
 
 .item-show {
@@ -3816,5 +3823,16 @@ footer {
             color: white;
 
         }
+}
+
+@media only screen and (max-width: 1021px) {
+    .home .stories .main {
+        // margin: 0 auto;
+        left: 35px;
     }
 
+    .home .stories .side .set {
+        display: none;
+    }
+}
+// 

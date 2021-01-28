@@ -15,11 +15,13 @@ class StoriesIndex extends React.Component {
             // songList: [],
             // currentSong: null,
             // playerView: false
-            mainStory: 1
+            mainStory: 1,
+            spinnerShow: true
         }
     }
 
     componentDidMount(){
+        this.setState({spinnerShow: true})
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
 
@@ -30,7 +32,10 @@ class StoriesIndex extends React.Component {
         $.ajax({
             url: `/api/stories`,
             method: 'GET'
-        }).then(res => this.setState({ storyList: Object.values(Object.values(res))}))
+        }).then(res => {
+            this.setState({storyList: Object.values(Object.values(res))})
+            this.setState({spinnerShow: false})
+        })
         // }).then(res => console.log(Object.values(Object.values(res))))
         // }).then(res => console.log(Object.values(Object.values(res))[0].text))
     }
@@ -163,6 +168,16 @@ class StoriesIndex extends React.Component {
             img = this.state.review
         }
 
+        if (this.state.spinnerShow) {
+            return (
+                <div className="spinner">
+                    <i className="fas fa-compass fa-spin"></i>
+                    {/* <div className='spinner-space'></div> */}
+                </div>
+            )
+
+        } else {
+
 
         return (
             <div className="stories-container">
@@ -221,6 +236,7 @@ class StoriesIndex extends React.Component {
             
             </div>
         )
+        }
     }
 }
 

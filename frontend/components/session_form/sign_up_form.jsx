@@ -26,8 +26,8 @@ class SignUpForm extends React.Component {
             .then(()=> {
                 // isSignedUp = true
                 // setTimeout(() => {
-                    window.location.reload();
                     // this.props.closeModal()
+                    window.location.reload();
                 // }, 500);
             
             })

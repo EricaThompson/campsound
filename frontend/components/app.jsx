@@ -52,6 +52,9 @@ class App extends React.Component {
                     
                 </div>
                 <div className="bottom">
+                    {/* <Route path="/" component={Footer1} /> */}
+                </div>
+                <div className="bottom">
                     <Route path="/" component={Footer} />
                 </div>
             </div>

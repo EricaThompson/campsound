@@ -2675,33 +2675,7 @@ a {
         
     }
 
-    .footer {
-        background-color: #467986;
-        height: 160px;
-        color: white;
-        text-align: center;
-        font-size: 50px;
-        padding-top: 80px;
-        width: 100%;
-        margin-right: 0px;
-        // position: fixed;
-        // bottom: 0;
-        .links{
-            // text-align: center;
-            margin: 0 auto;
-            width: 150px;
-            background-image: linear-gradient(45deg,gray, 45%, #1E9FC4,white);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; 
-            background-clip: text;
-            -moz-background-clip: text;
-            -moz-text-fill-color: transparent;
-        }
-        a  {
-            color: white;
-
-        }
-    }
+    
 }
 
 
@@ -3735,4 +3709,32 @@ footer {
         z-index: 3;
     }
 }
+
+.footer {
+        background-color: #467986;
+        height: 160px;
+        color: white;
+        text-align: center;
+        font-size: 50px;
+        padding-top: 80px;
+        width: 100%;
+        margin-right: 0px;
+        // position: fixed;
+        // bottom: 0;
+        .links{
+            // text-align: center;
+            margin: 0 auto;
+            width: 150px;
+            // background-image: linear-gradient(45deg,gray, 45%, #1E9FC4,white);
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent; 
+            // background-clip: text;
+            // -moz-background-clip: text;
+            // -moz-text-fill-color: transparent;
+        }
+        a  {
+            color: white;
+
+        }
+    }
 

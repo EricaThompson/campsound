@@ -705,13 +705,7 @@ class Home extends React.Component {
                 </div>
                 
 
-                {/* <div className="footer">
-                    <div className="links">
-                        <a href="https://github.com/EricaThompson"><i className="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/ericamt/"><i className="fab fa-linkedin"></i></a>
-                        <p>ericathompson.io</p>
-                    </div>
-                </div> */}
+                
             </div>
         )
     }

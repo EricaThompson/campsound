@@ -9,26 +9,43 @@ class Footer extends React.Component{
         }
     }
       render(){
+        console.log(this.props)
+        if ((this.props.match.isExact)){
+            console.log('home')
+            return (
+    
+                <div className="footer">
+                    <div className="links">
+                        <a target="_blank" href="https://github.com/EricaThompson"><i className="fab fa-github"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/ericamt/"><i className="fab fa-linkedin"></i></a>
+                        <p>ericathompson.io</p>
+                    </div>
+                </div>
+            )
 
-          return (<footer>
-              <div
+        } else {
+            console.log('not home')
+
+            return (<footer>
+                <div
                 onClick={()=>this.props.history.replace('/')}
-                  id='bottom-logo'
-                  className='logo link'>
-                  🏕campsound
-                                  </div>
-              <div className='short-footer'>
-                  <div className="links">
-  
-                      <a target="_blank" href="https://github.com/EricaThompson"><i className="fab fa-github"></i></a>
-                      {/* <a href=""><i className="fab fa-twitter"></i></a> */}
-                      {/* <a href=""><i className="fas fa-at"></i></a> */}
-                      <a target="_blank" href="https://www.linkedin.com/in/ericamt/"><i className="fab fa-linkedin"></i></a>
-                      {/* <p>ericathompson.io</p> */}
-                  </div>
-              </div>
-          </footer>)
-      }
+                    id='bottom-logo'
+                    className='logo link'>
+                    🏕campsound
+                                    </div>
+                <div className='short-footer'>
+                    <div className="links">
+
+                        <a target="_blank" href="https://github.com/EricaThompson"><i className="fab fa-github"></i></a>
+                        {/* <a href=""><i className="fab fa-twitter"></i></a> */}
+                        {/* <a href=""><i className="fas fa-at"></i></a> */}
+                        <a target="_blank" href="https://www.linkedin.com/in/ericamt/"><i className="fab fa-linkedin"></i></a>
+                        {/* <p>ericathompson.io</p> */}
+                    </div>
+                </div>
+            </footer>)
+            }
+        }
 
 }
 

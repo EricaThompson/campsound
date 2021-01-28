@@ -20,25 +20,38 @@ class Item extends React.Component {
             discography: [],
             news: 'https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
             review: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620',
+            spinnerShow: false
             
         }
     }
 
     componentDidMount(){
         // console.log(this.state.user);
+        this.setState({spinnerShow: true})
         UserAPIUtil.getUser(this.props.match.params.ownerId)
-            .then(res => this.setState({user: res}))
+            .then(res => {
+                this.setState({user: res})
+                // this.setState({spinnerShow: false})
+            })
+
         
         if (this.props.match.path.includes('music')) {
             this.props.readItem(this.props.match.params.ownerId,this.props.match.params.itemId)
                 .then(res => this.setState({ item: res.item}))
             this.props.readAllUserItems(this.props.match.params.ownerId)
-                .then(res => this.setState({discography: Object.values(res.items)}))
+                .then(res => {
+                    this.setState({discography: Object.values(res.items)})
+                    this.setState({ spinnerShow: false })
+                })
+        
         }
 
         if (this.props.match.path.includes('stories')){
             StoryAPIUtil.fetchAllUserStories(this.props.match.params.ownerId)
-                .then(res => this.setState({stories: Object.values(res)}))
+                .then(res => {
+                    this.setState({stories: Object.values(res)})
+                    this.setState({ spinnerShow: false })
+                })
         }
         
 
@@ -150,11 +163,18 @@ class Item extends React.Component {
         this.props.history.push(`/users/${this.props.match.params.ownerId}`)
     }
 
+    
+
     render() {
-        // console.log(this.state)
-        // console.log('prop item', this.props.items)
-        // console.log('state song', this.state.item.song)
-        // console.log(this.state.duration)
+
+        if (this.state.spinnerShow) {
+            console.log(true)
+
+        } else {
+            console.log(false)
+        }
+
+
         let renderPlayer;
         let currentButton;
 
@@ -398,7 +418,13 @@ class Item extends React.Component {
 
         }
 
-        if (this.props.match.path.includes('stories')){
+        if (this.state.spinnerShow){
+            return (
+                <div className="spinner">
+                    <i className="far fa-compass fa-spin"></i>
+                </div>
+            )
+        } else if (this.props.match.path.includes('stories')){
             return (
                 <div className="item-show" key={() => Math.random()}>
                     {/* <img className='cover-art-header stories-header' src={img} alt="" /> */}

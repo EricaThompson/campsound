@@ -21,7 +21,7 @@ class ArtistHomepage extends React.Component {
             newImage: null,
             link: '',
             items: null,
-            biggerImage: true
+            biggerImage: false
         }
     }
 

@@ -123,9 +123,9 @@ item9.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item10 = Item.create(
                 "owner_id": user2.id,
-                "title": 'First Year With My Ways',
+                "title": 'First Year',
                 "genre": 'other',
-                "about": 'Other ways.',
+                "about": 'Other Year.',
                 'released': true,
                 'artist_name': 'Rainy User'
                 )

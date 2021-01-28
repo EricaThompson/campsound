@@ -143,26 +143,26 @@ class Home extends React.Component {
 
 
 
-        this.timer = setInterval(() => {
-            if (this.state.slider.length > 7) {
-                clearInterval(this.timer);
-                return
-            }
-            sliderCopy.push(this.state.demo.pop())
-            let tempItems = []
-            // this.props.browseAll()
-            //     .then(res => tempItems = res.items)
+        // this.timer = setInterval(() => {
+        //     if (this.state.slider.length > 7) {
+        //         clearInterval(this.timer);
+        //         return
+        //     }
+        //     sliderCopy.push(this.state.demo.pop())
+        //     let tempItems = []
+        //     // this.props.browseAll()
+        //     //     .then(res => tempItems = res.items)
 
 
-            if (tempItems.length > 1){
-                sliderCopy.push(tempItems.pop())
-                // console.log('prop items!')
-            }
+        //     if (tempItems.length > 1){
+        //         sliderCopy.push(tempItems.pop())
+        //         // console.log('prop items!')
+        //     }
 
-            this.setState({slider: sliderCopy});
+        //     this.setState({slider: sliderCopy});
         
 
-        }, 1000);
+        // }, 1000);
         //!^^^^^
 
         // this.props.browseAll()
@@ -505,14 +505,27 @@ class Home extends React.Component {
                 }
             })
         }
+        let summary0;
+        let type1;
+        let type2;
+        let type3;
 
+        if (this.state.stories.length > 1){
+            let summaryItems = this.state.stories.reverse()
+            summary0 = summaryItems[0].summary
+            type1 = summaryItems[1].type
+            type2 = summaryItems[2].type
+            type3 = summaryItems[3].type
+        }
+
+        console.log(this.state.items)
 
 
 
 
         // console.log(this.state.users[0])
         // console.log(this.state.items.reverse()[0])
-        console.log('home', this.props)
+        // console.log('home', this.props)
         let loggedIn;  
         if (this.props.currentUser){
             loggedIn = '-logged-in'
@@ -525,7 +538,7 @@ class Home extends React.Component {
                             onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[0].owner_id}/stories/${this.state.stories.reverse()[0].id}`)}
                                     className="main link">
                                     <p>The Forest Through the Trees</p>
-                                    <h6>Songs about healing and hope.</h6>
+                                    <h6>{summary0}</h6>
                                     <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-2395250.jpg" alt="blue flowers"/>
                                 </div>
                             
@@ -534,21 +547,21 @@ class Home extends React.Component {
                                 onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[1].owner_id}/stories/${this.state.stories.reverse()[1].id}`)}
                                     className='set'>
                                     <p>Gold is in Bloom</p>
-                                    <h6>Evie Shaffer</h6>
+                                    <h6>{type1}</h6>
                                     <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-2512282.jpg" alt="tan flowers"/>
                                 </div>
                                 <div
                                     onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[2].owner_id}/stories/${this.state.stories.reverse()[2].id}`)}
                                     className='set'>
                                     <p>Piece by Piece</p>
-                                    <h6>Evie Shaffer</h6>
+                                    <h6>{type2}</h6>
                                     <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-4377081.jpg" alt="pink and blue flowers"/>
                                 </div>
                                 <div
                                     onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[3].owner_id}/stories/${this.state.stories.reverse()[3].id}`)} 
                                     className='set bottom'>
                                     <p>Petals All Around</p>
-                                    <h6>Evie Shaffer</h6>
+                                    <h6>{type3}</h6>
                                     <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-3825880+(1).jpg" alt="flower petals and leaves"/>
                                 </div>
                             </div>

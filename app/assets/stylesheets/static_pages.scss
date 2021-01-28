@@ -807,10 +807,64 @@ a {
         position: relative;
         .about {
 
+
             position: absolute;
             top: 40px;
             right: 33px;
 
+            .x {
+                display: none;
+            }
+
+            
+
+            .larger-user-image {
+                    position: absolute;
+                    bottom: 78px;
+                    // display: none;
+                    
+
+                    
+                    // display: none;
+
+            }
+
+            .larger-user-image-bigger {
+                    position: absolute;
+                    bottom: 78px;
+                .x {
+                        display: block;
+                        background-color: black;
+                        color: white;
+                        border-radius: 55%;
+                        height: 14px;
+                        width: 14px;
+                        position: absolute;
+                        bottom: 263px;
+                        left: -794px;
+                        z-index: 4;
+                        font-size: 14px;
+                        text-align: center;
+                        padding: 3px;
+                        border: 1px solid white;
+                        
+                    }
+
+                    .bigger {
+                        right: 62vw;
+                        top: 50vw;
+                        width: 70vw;
+                        height: 70vw;
+                        background-color: rgba(0, 0, 0, 0.45);
+                        border-radius: 4px;
+                        transition: width 100ms, height 100ms;
+                        // transition: height 100ms;
+                    }
+
+                    
+            }
+
+            
             
             .image {
                 display: flex;
@@ -818,6 +872,7 @@ a {
                 width: 120px;
                 position: relative;
                 margin-bottom: 22px;
+                // transition: width 1s, height 1s ease;
 
                 .change-image {
                     background-color: white;
@@ -3039,6 +3094,8 @@ a {
             width: 120px;
 
             .about {
+                
+
                 .image {
                     display: flex;
                     height: 120px;

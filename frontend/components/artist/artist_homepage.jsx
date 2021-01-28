@@ -20,7 +20,8 @@ class ArtistHomepage extends React.Component {
             bio: '',
             newImage: null,
             link: '',
-            items: null
+            items: null,
+            biggerImage: true
         }
     }
 
@@ -41,6 +42,10 @@ class ArtistHomepage extends React.Component {
         // .then(res => this.setState({ items: res }))
         
         ()=>window.location.reload();
+    }
+
+    makeBigger(){
+        this.setState({biggerImage: !this.state.biggerImage})
     }
 
     switchToStories() {
@@ -98,13 +103,32 @@ class ArtistHomepage extends React.Component {
             component = <ZeroItems userId={this.props.currentUser} />
         } else {
             component = <ShowItems currentUserId={this.props.currentUser} items={items} deleteItem={this.props.deleteItem}/>
-        }        
+        }     
+        
+        let bigger;
+        let largerUserImage;
+
+        if (this.state.biggerImage){
+            bigger = 'bigger'
+            largerUserImage = 'larger-user-image-bigger'
+        } else {
+            largerUserImage = 'larger-user-image'
+            bigger = ''
+
+        }
             
-        let image = <img 
-                        className="image" 
-                        src={this.state.user.userImg} 
-                        alt=""
-                    />
+        let image = <div>
+                        <img 
+                            onClick={()=> this.makeBigger()}
+                            className={`image ${bigger}`} 
+                            src={this.state.user.userImg} 
+                            alt="user profile"
+                        />
+                    <div 
+                        onClick={()=>this.makeBigger()}
+                        className="x link">✕</div>
+                    </div>
+        
         
         let location = null;
         let bio = null;
@@ -312,6 +336,9 @@ class ArtistHomepage extends React.Component {
                                 <div className="image">
                                     {image}
                                     {changeImage}
+                                </div>
+                                <div className={`larger-user-image ${largerUserImage}`}>
+                                    {image}
                                 </div>
                                 <div className="username">
                                     {this.state.user.username}

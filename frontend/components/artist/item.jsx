@@ -37,7 +37,10 @@ class Item extends React.Component {
         
         if (this.props.match.path.includes('music')) {
             this.props.readItem(this.props.match.params.ownerId,this.props.match.params.itemId)
-                .then(res => this.setState({ item: res.item}))
+                .then(res => {
+                    this.setState({ item: res.item})
+                    // this.setState({ spinnerShow: false })
+                })
             this.props.readAllUserItems(this.props.match.params.ownerId)
                 .then(res => {
                     this.setState({discography: Object.values(res.items)})
@@ -50,7 +53,7 @@ class Item extends React.Component {
             StoryAPIUtil.fetchAllUserStories(this.props.match.params.ownerId)
                 .then(res => {
                     this.setState({stories: Object.values(res)})
-                    this.setState({ spinnerShow: false })
+                    // this.setState({ spinnerShow: false })
                 })
         }
         
@@ -64,6 +67,10 @@ class Item extends React.Component {
 
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
+    }
+
+    stopSpinner(){
+        this.setState({spinnerShow: false})
     }
 
     switchToStories(){
@@ -260,7 +267,8 @@ class Item extends React.Component {
                 setTimeout(() => {
                     this.getDuration();
                     // console.log(this.state.currentTime)
-                }, 1000);
+                    this.stopSpinner();
+                }, 100);
                 
             }
         

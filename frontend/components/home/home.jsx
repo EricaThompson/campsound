@@ -610,7 +610,9 @@ class Home extends React.Component {
                 </div>
                 <div className="campsound-daily-container">
                 <div className='right-now-container daily'>
-                    <h2 className="right-now link" >CAMPSOUND DAILY</h2>
+                    <h2 
+                        onClick={()=>this.props.history.replace('/stories')}
+                        className="right-now link" >CAMPSOUND DAILY</h2>
                 </div>
                     <div className="stories-container">
 

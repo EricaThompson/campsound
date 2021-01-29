@@ -588,10 +588,10 @@ story7 = Story.create(
                 He eats his jam with lots of bread.
                 Ready for the day ahead.
 
-                With thanks to the poet, Robert Frost, for the underlying structure.
+                'With thanks to the poet, Robert Frost, 
+                for the underlying structure.'
 
-                -generator: https://www.poem-generator.org.uk/10cyq711/bright-and-big-hope.html
-",
+                -generator: https://www.poem-generator.org.uk/10cyq711/bright-and-big-hope.html",
                 )
 story8 = Story.create(
                 "owner_id": user2.id,

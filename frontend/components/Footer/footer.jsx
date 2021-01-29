@@ -1,12 +1,16 @@
 import React from 'react';
-import {withRouter} from 'react-router'
-
+import {withRouter} from 'react-router';
+import {logoutUser} from '../../actions/session_actions';
 class Footer extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-
         }
+    }
+
+    logoutRefresh() {
+        logoutUser()
+        // this.setState({authDropdown: false})
     }
     render(){
         console.log(this.props)
@@ -17,10 +21,17 @@ class Footer extends React.Component{
                 <div className="footer">
                     <div className='left-column'>
                         <ul>
-                            <li>About</li>
-                            <li>Campsound Daily</li>
-                            <li>Contact</li>
-                            <li>Log out</li>
+                            {/* <li>About</li> */}
+                            <li
+                                className='link'
+                                onClick={() => this.props.history.replace('/stories')}
+                            >
+                                Campsound Daily</li>
+                            {/* <li>Contact</li> */}
+                            <li
+                                className='link'
+                                onClick={() => logoutUser()}
+                            >Log out</li>
                         </ul>
                     </div>
                     <div className="links">

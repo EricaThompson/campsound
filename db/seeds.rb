@@ -59,7 +59,7 @@ item4 = Item.create(
                 "owner_id": user2.id,
                 "title": 'Lounge Notturno',
                 "genre": 'alternative',
-                "about": 'Alternative Lounge: an 18th century piece for an instrumental group composed in several movements and resembling the serenade or divertimento.',
+                "about": 'Alternative Notturno: an 18th century piece for an instrumental group composed in several movements and resembling the serenade or divertimento.',
                 'released': true,
                 'artist_name': 'RNYDY'
                 )
@@ -351,39 +351,37 @@ story2 = Story.create(
                 
                 1. Soft Note is an imaginary friend.
 
-                2. The whole things is not a story but a brainwashing tool used by the government.
+                2. It turns out Rainforest Records only exists in the cloud.
 
-                3. It turns out Rainforest Records only exists in the cloud.
+                3. The story is just one iteration of an infinite loop.
 
-                4. The story is just one iteration of an infinite loop.
+                4. Demo User was just using Rainforest Records for information.
 
-                5. Demo User was just using Rainforest Records for information.
+                5. Demo User poisoned Rainforest Records at the beginning of the story, and it's taken the whole story to take effect.
 
-                6. Demo User poisoned Rainforest Records at the beginning of the story, and it's taken the whole story to take effect.
+                6. Rainforest Records was bitten by a vampire much earlier in the story but signs were delayed.
 
-                7. Rainforest Records was bitten by a vampire much earlier in the story but signs were delayed.
+                7. The person claiming to be Soft Note is actually an imposter.
 
-                8. The person claiming to be Soft Note is actually an imposter.
+                8. Soft Note wasn't born but created in a lab.
 
-                9. Soft Note wasn't born but created in a lab.
+                9. A perceived misfortune in Rainforest Records's past was actually set up to protect her.
 
-                10. A perceived misfortune in Rainforest Records's past was actually set up to protect her.
+                10. The entire story is a figment of Rainforest Records's imagination. She is actually in jail.
 
-                11. The entire story is a figment of Rainforest Records's imagination. She is actually in jail.
+                11. The person we think is the villain is actually working for a bigger villain.
 
-                12. The person we think is the villain is actually working for a bigger villain.
+                12. Rainforest Records turns to the dark side.
 
-                13. Rainforest Records turns to the dark side.
+                13. Rainforest Records is the villain.
 
-                14. Rainforest Records is the villain.
+                14. Rainforest Records is not really dead.
 
-                15. Rainforest Records is not really dead.
+                15. Demo User has been in love with Rainforest Records all along.
 
-                16. Demo User has been in love with Rainforest Records all along.
+                16. Soft Note is actually a zombie.
 
-                17. Soft Note is actually a zombie.
-
-                https://www.plot-generator.org.uk/13a4vdgw/20-twist-ideas-for-adventures-of-rainforest-records.html
+                -generated: https://www.plot-generator.org.uk/13a4vdgw/20-twist-ideas-for-adventures-of-rainforest-records.html
                 ",
                 )
 story3 = Story.create(

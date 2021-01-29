@@ -198,6 +198,10 @@ class Item extends React.Component {
             }
 
             durationRender = <span>{minute}:{second}</span>
+        } else if (timeDuration < 10){
+            durationRender = <span>0:0{timeDuration}</span>
+        } else {
+            durationRender = <span>0:{timeDuration}</span>
         }
         
         // console.log(this.state.currentTime)

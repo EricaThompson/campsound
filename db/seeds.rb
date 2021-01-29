@@ -36,8 +36,7 @@ item2 = Item.create(
                 "owner_id": user2.id,
                 "title": 'True Evening',
                 "genre": 'metal',
-                "about": 'Metal Evening: the period of time at the end of the day, usually from about 6 p.m. to bedtime.
-                          "it was 7:00 in the evening"',
+                "about": 'Metal Evening: the period of time at the end of the day, usually from about 6 p.m. to bedtime. "it was 7:00 in the evening"',
                 'released': true,
                 'artist_name': 'Rainy'
                 )

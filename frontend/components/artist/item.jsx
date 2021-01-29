@@ -20,7 +20,8 @@ class Item extends React.Component {
             discography: [],
             news: 'https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
             review: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620',
-            spinnerShow: false
+            spinnerShow: false,
+            once: false
             
         }
     }
@@ -39,12 +40,12 @@ class Item extends React.Component {
             this.props.readItem(this.props.match.params.ownerId,this.props.match.params.itemId)
                 .then(res => {
                     this.setState({ item: res.item})
-                    // this.setState({ spinnerShow: false })
+                    this.setState({ spinnerShow: false })
                 })
             this.props.readAllUserItems(this.props.match.params.ownerId)
                 .then(res => {
                     this.setState({discography: Object.values(res.items)})
-                    this.setState({ spinnerShow: false })
+                    // this.setState({ spinnerShow: false })
                 })
         
         }
@@ -70,7 +71,11 @@ class Item extends React.Component {
     }
 
     stopSpinner(){
-        this.setState({spinnerShow: false})
+        if (!this.state.once){
+            this.setState({spinnerShow: false})
+            this.setState({once: true})
+        }
+
     }
 
     switchToStories(){
@@ -126,14 +131,14 @@ class Item extends React.Component {
             }
 
             if (ct < 10) {
-                player.innerHTML = `0:0${Math.floor(ct)}`;
+                player.innerHTML = `00:0${Math.floor(ct)}`;
             } else if (ct < 60) {
-                player.innerHTML = `0:${Math.floor(ct)}`;
+                player.innerHTML = `00:${Math.floor(ct)}`;
             } else {
                 if (second < 10) {
-                    player.innerHTML = `${minute}:0${second}`;
+                    player.innerHTML = `0${minute}:0${second}`;
                 } else {
-                    player.innerHTML = `${minute}:${second}`
+                    player.innerHTML = `0${minute}:${second}`
                 }
             }
         }
@@ -174,12 +179,12 @@ class Item extends React.Component {
 
     render() {
 
-        if (this.state.spinnerShow) {
-            console.log(true)
+        // if (this.state.spinnerShow) {
+        //     console.log(true)
 
-        } else {
-            console.log(false)
-        }
+        // } else {
+        //     console.log(false)
+        // }
 
 
         let renderPlayer;
@@ -203,13 +208,18 @@ class Item extends React.Component {
             if (second < 10) {
                 second = `0${second}`
             }
-
+            
             durationRender = <span>{minute}:{second}</span>
         } else if (timeDuration < 10){
-            durationRender = <span>0:0{timeDuration}</span>
+            durationRender = <span>00:0{timeDuration}</span>
         } else {
-            durationRender = <span>0:{timeDuration}</span>
+            durationRender = <span>00:{timeDuration}</span>
+            // this.stopSpinner();
         }
+
+        // if (this.state.duration){
+        //     this.stopSpinner();
+        // }
         
         // console.log(this.state.currentTime)
         // let timeLeft = this.state.currentTime
@@ -256,8 +266,25 @@ class Item extends React.Component {
                                         {currentButton}                                            
                                     </div>
                                     <div className='right-side'>
-                                        <div className="time"><span id='elapsed-time'>0:00</span> / {durationRender}</div>
+                                        <div className="time"><span id='elapsed-time'>00:00</span> / {durationRender}</div>
+                                        
                                         <div className="time-location"></div>
+
+                                        {/* <div
+                                            style={{ transform: `scaleX(${this.state.currentTime})` }}
+                                            id="progress-bar"
+                                        >
+                                            Progress Bar
+                                        </div> */}
+                                        <progress
+                                            value={this.state.currentTime}
+                                            max={timeDuration}
+                                            id="main-song-progress"
+                                        >
+
+                                        </progress>
+
+                                        {/* Progress Bar */}
                                     </div>
                                     {/* <div onClick={()=>this.volumeUp()}>Volume Up</div>
                                     <div onClick={()=>this.volumeDown()}>Volume Down</div> */}
@@ -265,10 +292,11 @@ class Item extends React.Component {
                             </div>
             if (!this.state.timeRendered){
                 setTimeout(() => {
+                    // this.stopSpinner();
                     this.getDuration();
                     // console.log(this.state.currentTime)
-                    this.stopSpinner();
-                }, 100);
+                    
+                }, 1000);
                 
             }
         

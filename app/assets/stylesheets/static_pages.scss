@@ -2792,6 +2792,29 @@ a {
     // padding-bottom: 400px;
 }
 
+progress {
+    // background-color: purple;
+    height: 10px;
+    border: 0;
+    border: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+    margin-left: 10px;
+    width: 246px; 
+}
+
+progress::-webkit-progress-bar {
+    background-color: white;
+    border: 0;
+    // height: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #F5F5F5;
+    border: 0;
+    height: 9px;
+    border-bottom: 1px solid #D9D9D9;
+}
+
 .item-show {
     width: 978px;
     margin: 0px auto;

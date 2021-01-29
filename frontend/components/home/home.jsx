@@ -562,7 +562,7 @@ class Home extends React.Component {
                                     className='set bottom'>
                                     <p>Petals All Around</p>
                                     <h6>{type3}</h6>
-                                    <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-3825880+(1).jpg" alt="flower petals and leaves"/>
+                                <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-bottom.jpg" alt="flower petals and leaves"/>
                                 </div>
                             </div>
                         </div>

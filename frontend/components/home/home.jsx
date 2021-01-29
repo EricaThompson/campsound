@@ -548,7 +548,7 @@ class Home extends React.Component {
                                     className='set'>
                                     <p>Gold is in Bloom</p>
                                     <h6>{type1}</h6>
-                                    <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-2512282.jpg" alt="tan flowers"/>
+                                <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-top.jpg" alt="tan flowers"/>
                                 </div>
                                 <div
                                     onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[2].owner_id}/stories/${this.state.stories.reverse()[2].id}`)}

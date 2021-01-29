@@ -196,6 +196,10 @@ class Item extends React.Component {
             currentButton = <div className='pause-button' onClick={() => this.pause()}><i className="fas fa-pause"></i></div>
         }
 
+        if (this.state.currentTime === this.state.duration){
+            currentButton = <div className='play-button' onClick={() => this.play()}><i className="fas fa-play"></i></div>
+        }
+
         let remainder;
         let minute;
         let second;

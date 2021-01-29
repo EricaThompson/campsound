@@ -882,7 +882,11 @@ a {
                     // width: 12px;
                     // height: 12px;
                     // padding: 3px;
-                    padding: 1px 3.5px;
+                    padding: 1px 5.5px;
+                    color: #0887F4;
+                    border: 1px solid  #eee;
+                    cursor: pointer;
+                    z-index: 5;
 
                 }
 
@@ -3138,6 +3142,7 @@ a {
                         position: absolute;
                         right: 3px;
                         bottom: 3px;
+                        
 
                     }
 

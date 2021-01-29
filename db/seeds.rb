@@ -25,7 +25,7 @@ item1 = Item.create(
                 "owner_id": user1.id,
                 "title": 'This Clarity',
                 "genre": 'electronic',
-                "about": 'Electronic Clarity.',
+                "about": 'Electronic Clarity: clearness or lucidity as to perception or understanding; freedom from indistinctness or ambiguity. the state or quality of being clear or transparent to the eye; pellucidity: the clarity of pure water.',
                 'released': true,
                 'artist_name': 'DU'
                 )
@@ -48,7 +48,7 @@ item3 = Item.create(
                 "owner_id": user1.id,
                 "title": 'Ten Brave Life',
                 "genre": 'rock',
-                "about": 'Rock Life',
+                "about": 'Rock Life: the condition that distinguishes animals and plants from inorganic matter, including the capacity for growth, reproduction, functional activity, and continual change.',
                 'released': true,
                 'artist_name': 'demo'
                 )
@@ -57,9 +57,9 @@ item3.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item4 = Item.create(
                 "owner_id": user2.id,
-                "title": 'Lounge Nocturn',
+                "title": 'Lounge Notturno',
                 "genre": 'alternative',
-                "about": 'Alternative Lounge.',
+                "about": 'Alternative Lounge: an 18th century piece for an instrumental group composed in several movements and resembling the serenade or divertimento.',
                 'released': true,
                 'artist_name': 'RNYDY'
                 )
@@ -70,7 +70,7 @@ item5 = Item.create(
                 "owner_id": user1.id,
                 "title": 'Just Relax',
                 "genre": 'hip hop',
-                "about": 'Hip Hop and relax.',
+                "about": 'Hip Hop and relax: make or become less tense or anxious.',
                 'released': true,
                 'artist_name': 'DMO USR'
                 )
@@ -81,7 +81,7 @@ item6 = Item.create(
                 "owner_id": user2.id,
                 "title": 'Low Voice',
                 "genre": 'experimental',
-                "about": 'Experimental Voice.',
+                "about": "Experimental Voice: the sound produced in a person's larynx and uttered through the mouth, as speech or song.",
                 'released': true,
                 'artist_name': 'Rare'
                 )

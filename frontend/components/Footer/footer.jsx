@@ -28,10 +28,10 @@ class Footer extends React.Component{
                             >
                                 Campsound Daily</li>
                             {/* <li>Contact</li> */}
-                            <li
+                            {/* <li
                                 className='link'
                                 onClick={() => logoutUser()}
-                            >Log out</li>
+                            >Log out</li> */}
                         </ul>
                     </div>
                     <div className="links">

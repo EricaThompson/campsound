@@ -130,9 +130,10 @@ class ArtistHomepage extends React.Component {
                             src={this.state.user.userImg} 
                             alt="user profile"
                         />
-                    <div 
-                        onClick={()=>this.makeBigger()}
-                        className="x link">✕</div>
+                        <div 
+                            onClick={()=>this.makeBigger()}
+                            className="x link">✕
+                        </div>
                     </div>
         
         
@@ -277,12 +278,16 @@ class ArtistHomepage extends React.Component {
 
 
         let changeImage;
+        let currentUserImage;
 
         if ( this.state.user.id !== this.props.currentUser){
             location = <p className='side-location'>{this.state.location}</p>
             bio = <p className='side-bio'>{this.state.bio}</p>
+            currentUserImage = image;
             
         } else {
+
+            currentUserImage = '';
             changeImage = <div>
                 <input
                     id="user-image"
@@ -290,6 +295,8 @@ class ArtistHomepage extends React.Component {
                     onChange={this.imageSubmit.bind(this)}
                 />
                 <div className="change-image">&#215;</div>
+
+                
             </div>
         }
 
@@ -354,7 +361,7 @@ class ArtistHomepage extends React.Component {
                                         {changeImage}
                                     </div>
                                     <div className={`larger-user-image ${largerUserImage}`}>
-                                        {image}
+                                        {currentUserImage}
                                     </div>
                                     <div className="username">
                                         {this.state.user.username}

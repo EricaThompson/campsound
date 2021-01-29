@@ -539,7 +539,7 @@ class Home extends React.Component {
                                     className="main link">
                                     <p>The Forest Through the Trees</p>
                                     <h6>{summary0}</h6>
-                                    <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-evie-shaffer-2395250.jpg" alt="blue flowers"/>
+                            <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-main.jpg" alt="blue flowers"/>
                                 </div>
                             
                             <div className="side link">

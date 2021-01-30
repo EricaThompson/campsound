@@ -21,7 +21,11 @@ class Footer extends React.Component{
                 <div className="footer">
                     <div className='left-column'>
                         <ul>
-                            {/* <li>About</li> */}
+                            <li
+                                className='link'
+                                onClick={() => this.props.history.replace('/about')}
+                                >
+                                About</li>
                             <li
                                 className='link'
                                 onClick={() => this.props.history.replace('/stories')}

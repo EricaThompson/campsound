@@ -14,6 +14,7 @@ import Footer from './Footer/footer';
 // import ShowItemsContainer from './artist/show_items_container';
 import { ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
+import About from './about/about';
 import stories_index_container from './stories/stories_index_container';
 // import Home from './home/home';
 
@@ -35,6 +36,7 @@ class App extends React.Component {
                     <Route key={Math.random()} path="/" component={NavBarContainer} />
                     <Route exact path="/" component={HomeContainer} />
                     <Route exact path="/stories" component={StoriesIndexContainer} />
+                    <Route exact path='/about' component={About}/>
                     <Route exact path='/users/:ownerId/stories/story/new' component={StoryFormContainer}/>
                     <Route exact path='/users/:ownerId/stories/:storyId/edit' component={StoryFormContainer} />
                     <Route exact path='/users/:ownerId/stories/:storyId' component={StoryContainer} />
@@ -48,7 +50,7 @@ class App extends React.Component {
                     <Route exact path="/users/:ownerId/stories/" component={ItemContainer} />
                     <Route exact path="/search/:result" component={ResultsContainer} />
                     <Route exact path="/users/:ownerId" component={ArtistHomepageContainer} />
-
+                    
                     {/* <Route exact path="/:ownerId" component={ShowItemsContainer} /> */}
                     
                 </div>

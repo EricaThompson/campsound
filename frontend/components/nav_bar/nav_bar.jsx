@@ -99,6 +99,15 @@ class NavBar extends React.Component {
                             </p>
                         </Link>
                         <Link
+                            to={`/about`}>
+                            <p>
+                                <span
+                                    onClick={() => this.props.history.replace('/about')}>
+                                    about
+                                </span>
+                            </p>
+                        </Link>
+                        <Link
                             to={`/`}>
                             <p>
                             <span

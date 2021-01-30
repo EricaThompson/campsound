@@ -2798,28 +2798,88 @@ a {
     height: 900px;
 }
 
-progress {
-    // background-color: purple;
+// .seeker {
+//     // background-color: purple;
+//     -webkit-appearance: none;
+//     height: 10px;
+//     border: 0;
+//     border: 1px solid #D9D9D9;
+//     border-bottom: 1px solid #D9D9D9;
+//     margin-left: 10px;
+//     width: 246px; 
+// }
+
+// .seeker::-webkit-slider-thumb {
+//     -webkit-appearance: none;
+//     appearance: none;
+//     width: 45px;
+//     height: 10px;
+//     background:white;
+//     cursor: pointer;
+//     border: 1px solid #D9D9D9;
+// }
+
+// .seeker::-webkit-range-thumb {
+//     -webkit-appearance: none;
+//     appearance: none;
+//     width: 45px;
+//     height: 10px;
+//     background:white;
+//     cursor: pointer;
+//     border: 1px solid #D9D9D9;
+// }
+
+.seeker {
+    -webkit-appearance: none;
+    width: 100%;
     height: 10px;
-    border: 0;
-    border: 1px solid #D9D9D9;
-    border-bottom: 1px solid #D9D9D9;
-    margin-left: 10px;
-    width: 246px; 
+    // background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    padding: 0px;
+    border-radius: 2px;
 }
 
-progress::-webkit-progress-bar {
-    background-color: white;
-    border: 0;
-    // height: 10px;
+.seeker:hover {
+    opacity: 1;
 }
 
-progress::-webkit-progress-value {
-    background-color: #F5F5F5;
-    border: 0;
-    height: 9px;
-    border-bottom: 1px solid #D9D9D9;
+.seeker::-webkit-progress-value {
+    background-color: #BFBFBF;
 }
+
+.seeker::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 14px;
+    background: white;
+    cursor: pointer;
+    border: 1px solid #BFBFBF;
+}
+
+.seeker::-moz-range-thumb {
+    width: 25px;
+    height: 14px;
+    background: white;
+    cursor: pointer;
+    border: 1px solid #BFBFBF;
+}
+
+// input[range]::-webkit-range-bar {
+//     background-color: white;
+//     border: 0;
+//     // height: 10px;
+// }
+
+// input[range]::-webkit-progress-value {
+//     background-color: #F5F5F5;
+//     border: 0;
+//     height: 9px;
+//     border-bottom: 1px solid #D9D9D9;
+// }
 
 .item-show {
     width: 978px;
@@ -3883,7 +3943,7 @@ footer {
         // bottom: 0;
         .links{
             // text-align: center;
-            margin: 0 auto;
+            margin: auto auto;
             width: 150px;
             // background-image: linear-gradient(45deg,gray, 45%, #1E9FC4,white);
             // -webkit-background-clip: text;

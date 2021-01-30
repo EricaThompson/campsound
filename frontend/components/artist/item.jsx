@@ -221,6 +221,8 @@ class Item extends React.Component {
             // this.stopSpinner();
         }
 
+
+
         // if (this.state.duration){
         //     this.stopSpinner();
         // }
@@ -282,12 +284,20 @@ class Item extends React.Component {
                                         >
                                             Progress Bar
                                         </div> */}
-                                        <progress
+                                        {/* <progress
                                             value={this.state.currentTime}
                                             max={timeDuration}
                                             id="main-song-progress"
                                         >
-                                        </progress>
+                                        </progress> */}
+                                        <input
+                                            // id='seeker'
+                                            className='seeker'
+                                            type="range"
+                                            value={this.state.currentTime}
+                                            max={timeDuration}
+                                            // min="-5"    
+                                        />
                                         {/* <div 
                                             style={{backgroundColor: 'blue', height: '10px', width: '10px', position: 'absolute', left: `10`}}
                                             className='progress-square'>

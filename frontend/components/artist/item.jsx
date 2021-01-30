@@ -269,7 +269,9 @@ class Item extends React.Component {
                                     <div className="play-pause">
                                         {currentButton}                                            
                                     </div>
-                                    <div className='right-side'>
+                                    <div 
+                                        style={{position: 'relative'}}
+                                        className='right-side'>
                                         <div className="time"><span id='elapsed-time'>00:00</span> / {durationRender}</div>
                                         
                                         <div className="time-location"></div>
@@ -285,8 +287,12 @@ class Item extends React.Component {
                                             max={timeDuration}
                                             id="main-song-progress"
                                         >
-
                                         </progress>
+                                        {/* <div 
+                                            style={{backgroundColor: 'blue', height: '10px', width: '10px', position: 'absolute', left: `10`}}
+                                            className='progress-square'>
+
+                                        </div> */}
 
                                         {/* Progress Bar */}
                                     </div>

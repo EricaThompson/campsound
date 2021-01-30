@@ -76,6 +76,11 @@ body {
 .container {
     width: 100%;
     // border: 1px solid purple;
+    height: 900px;
+}
+
+.top {
+    min-height: 1090px;
 }
 
 h2 {
@@ -2790,6 +2795,7 @@ a {
     //     margin-bottom: 400px;
     // }
     // padding-bottom: 400px;
+    height: 900px;
 }
 
 progress {

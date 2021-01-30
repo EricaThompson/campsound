@@ -45,7 +45,7 @@ class Item extends React.Component {
             this.props.readAllUserItems(this.props.match.params.ownerId)
                 .then(res => {
                     this.setState({discography: Object.values(res.items)})
-                    // this.setState({ spinnerShow: false })
+                    this.setState({ spinnerShow: false })
                 })
         
         }
@@ -54,7 +54,7 @@ class Item extends React.Component {
             StoryAPIUtil.fetchAllUserStories(this.props.match.params.ownerId)
                 .then(res => {
                     this.setState({stories: Object.values(res)})
-                    // this.setState({ spinnerShow: false })
+                    this.setState({ spinnerShow: false })
                 })
         }
         
@@ -368,6 +368,7 @@ class Item extends React.Component {
         
         // stories = this.state.stories
         if (this.state.stories !== '' && this.props.match.path.includes('stories')){
+            
         
             stories = this.state.stories.reverse().map((story, idx) => {
                 if (story.type === "news"){
@@ -485,11 +486,15 @@ class Item extends React.Component {
                 </div>
             )
         } else if (this.props.match.path.includes('stories')){
+            let loggedIn;
+            if (this.props.currentUserId) {
+                loggedIn = '-logged-in';
+            }
             return (
-                <div className="item-show" key={() => Math.random()}>
+                <div className={`item-show item-show${loggedIn}`} key={() => Math.random()}>
                     {/* <img className='cover-art-header stories-header' src={img} alt="" /> */}
                     {/* <div>{username} Good {type} <span>Contributor</span></div> */}
-                    <div className='artist-stories-header'>
+                    <div className={`artist-stories-header `}>
                         <div><span
                             className='link'
                             onClick={() => this.props.history.replace(`/users/${this.props.match.params.ownerId}`)}>{this.state.user.username}

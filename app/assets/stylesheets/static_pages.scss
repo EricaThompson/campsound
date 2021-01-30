@@ -814,7 +814,7 @@ a {
 
 
             position: absolute;
-            top: -40px;
+            top: 40px;
             right: 33px;
 
             .x {
@@ -1127,6 +1127,7 @@ a {
                 font-weight: lighter;
                 margin: 6px;
                 padding: 0px;
+                height: 8px;
                 
             }
             .delete:hover {
@@ -1137,7 +1138,7 @@ a {
                 cursor: default;
             }
 
-            .top {
+            .top-text {
                 font-weight: bolder;
                 cursor: default;
                 // margin-top: 264px;
@@ -1784,7 +1785,19 @@ a {
     // top: -15px;
 }
 
-//Results
+.item-show-logged-in {
+    padding-top: 55px;
+
+    .artist-stories-header {
+        padding-top: 35px;
+    }
+}
+
+.item-nav-bar-logged-in {
+    margin-top: 155px;
+}
+
+//* Results
 
 .results {
     width: 955px;
@@ -1905,10 +1918,11 @@ a {
                 margin: 6px;
                 padding: 0px;
             }
-
             
-        
+            
+            
             .top {
+                // height: 10px;
                 font-weight: bolder;
                 
             }

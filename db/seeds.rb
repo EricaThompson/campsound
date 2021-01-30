@@ -126,11 +126,19 @@ item9.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item10 = Item.create(
                 "owner_id": user2.id,
-                "title": 'First Year',
+                "title": 'Many Years',
                 "genre": 'other',
-                "about": 'Other Year.',
                 'released': true,
                 'artist_name': 'Rainy User'
+                "about": 
+                'Other Years.
+                
+                A different or additional one the others came later. One 
+                that remains of two or more. A thing opposite to or excluded 
+                by something else went from one side to the other nature as the 
+                other of culture.
+                
+                ',
                 )
 item10.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/10.jpeg"), filename: "cover-10")
 item10.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/2.mp3"), filename: "song-10")

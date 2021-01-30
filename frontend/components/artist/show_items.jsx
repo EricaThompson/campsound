@@ -71,12 +71,12 @@ class ShowItems extends React.Component {
         
 
         let itemDisplay = this.props.items.map((item) => {
-            console.log(item)
+            // console.log(item)
             return <div key={item.id} className="item-display">
                         {/* <Item /> */}
                         <Link to={`/users/${item.owner_id}/music/${item.id}`}>
                             <img src={`${item.cover}`} alt="" />
-                            <h5 className="home-text top">{item.title}</h5>
+                            <h5 className="home-text top-text">{item.title}</h5>
                         </Link>
                         {/* <h5 className="home-text artist">{item.artist}</h5> */}
                         <h5 onClick={() => this.addToItemList(item)} className="home-text add">Add to Playlist</h5>
@@ -125,9 +125,11 @@ class ShowItems extends React.Component {
             playerTitle = <div className="playlistTitle">playlist</div>
         }
 
+        
+
 
         return (
-            <div className="show-items">
+            <div className={`show-items`}>
                 {itemDisplay}
                 <div className="music-player">
                     {/* {itemDisplay} */}

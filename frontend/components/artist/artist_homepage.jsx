@@ -322,10 +322,18 @@ class ArtistHomepage extends React.Component {
             )
 
         } else {
+
+            let loggedIn;
+
+            if (this.props.currentUserId) {
+                loggedIn = '-logged-in';
+
+            }
+
             return (
-                <div className='artist-home-container'>
+                <div className={`artist-home-container`}>
                     <img className='cover-art-header' src={`${this.state.user.userImg}`} alt="" />
-                    <div className='item-nav-bar'>
+                    <div className={`item-nav-bar item-nav-bar${loggedIn}`}>
                         <div
                             className={`link nav-music  ${onMusicPage}`}
                         // onClick={() => this.switchToMusic()}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { logoutUser } from '../../actions/session_actions';
+// import { logoutUser } from '../../actions/session_actions';
 
 class About extends React.Component {
     constructor(props) {
@@ -12,9 +12,7 @@ class About extends React.Component {
     render() {
 
         return (
-
-        // <div>
-            <div className='about'>
+            <div className='about-page'>
                 <h3>About</h3>
                 <h4>
                     Hi, I'm Erica Thompson and welcome to my clone of <a target="_blank" href="http://bandcamp.com">bandcamp.com </a> 
@@ -84,14 +82,9 @@ class About extends React.Component {
                     <a href="https://www.freepik.com/freepik">Freepik</a>
                     <ul>
                         <li><a href="https://www.freepik.com/free-vector/hand-drawn-gadget-collection_877589.htm#page=1&query=headphones&position=14">Hand-Drawn Gadget Collection</a></li>
-                    </ul>
-
-                    
-                    
+                    </ul>                                       
                 </div>
-
             </div>
-        // </div>
         )
     }
 

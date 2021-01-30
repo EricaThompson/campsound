@@ -25,7 +25,11 @@ item1 = Item.create(
                 "owner_id": user1.id,
                 "title": 'This Clarity',
                 "genre": 'electronic',
-                "about": 'Electronic Clarity: clearness or lucidity as to perception or understanding; freedom from indistinctness or ambiguity. the state or quality of being clear or transparent to the eye; pellucidity: the clarity of pure water.',
+                "about": 
+                'Electronic Clarity: clearness or lucidity as to 
+                perception or understanding; freedom from indistinctness or 
+                ambiguity. the state or quality of being clear or transparent to 
+                the eye; pellucidity: the clarity of pure water.',
                 'released': true,
                 'artist_name': 'DU'
                 )
@@ -36,9 +40,11 @@ item2 = Item.create(
                 "owner_id": user2.id,
                 "title": 'True Evening',
                 "genre": 'metal',
-                "about": 'Metal Evening: the period of time at the end of the day, usually from about 6 p.m. to bedtime. "it was 7:00 in the evening"',
                 'released': true,
-                'artist_name': 'Rainy'
+                'artist_name': 'Rainy',
+                "about": 'Metal Evening: the period of time at the end of the 
+                day, usually from about 6 p.m. to bedtime. "it was 7:00 in the 
+                evening"',
                 )
 item2.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/2.jpeg"), filename: "cover-2")
 item2.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/2.mp3"), filename: "song-2")
@@ -49,7 +55,10 @@ item3 = Item.create(
                 "title": 'Ten Brave Life',
                 "genre": 'rock',
                 "about": 
-                  'Rock Life: the condition that distinguishes animals and plants from inorganic matter, including the capacity for growth, reproduction, functional activity, and continual change.
+                  'Rock Life: the condition that distinguishes animals and 
+                  plants from inorganic matter, including the capacity for 
+                  growth, reproduction, functional activity, and continual 
+                  change.
                   
                   ',
                 'released': true,
@@ -62,9 +71,11 @@ item4 = Item.create(
                 "owner_id": user2.id,
                 "title": 'Lounge Notturno',
                 "genre": 'alternative',
-                "about": 'Alternative Notturno: an 18th century piece for an instrumental group composed in several movements and resembling the serenade or divertimento.',
                 'released': true,
-                'artist_name': 'RNYDY'
+                'artist_name': 'RNYDY',
+                "about": 'Alternative Notturno: an 18th century piece for an 
+                instrumental group composed in several movements and resembling 
+                the serenade or divertimento.',
                 )
 item4.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/4.jpeg"), filename: "cover-4")
 item4.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/4.mp3"), filename: "song-4")
@@ -73,9 +84,11 @@ item5 = Item.create(
                 "owner_id": user1.id,
                 "title": 'Just Relax',
                 "genre": 'hip hop',
-                "about": 'Hip Hop and relax: make or become less tense or anxious.',
                 'released': true,
-                'artist_name': 'DMO USR'
+                'artist_name': 'DMO USR',
+                "about": 
+                'Hip Hop and relax: make or become less tense or 
+                anxious.',
                 )
 item5.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/5.jpeg"), filename: "cover-5")
 item5.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/5.mp3"), filename: "song-5")
@@ -84,9 +97,11 @@ item6 = Item.create(
                 "owner_id": user2.id,
                 "title": 'Low Voice',
                 "genre": 'experimental',
-                "about": "Experimental Voice: the sound produced in a person's larynx and uttered through the mouth, as speech or song.",
                 'released': true,
-                'artist_name': 'Rare'
+                'artist_name': 'Rare',
+                "about": 
+                "Experimental Voice: the sound produced in a person's 
+                larynx and uttered through the mouth, as speech or song.",
                 )
 item6.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/6.jpeg"), filename: "cover-6")
 item6.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/6.mp3"), filename: "song-6")
@@ -95,9 +110,23 @@ item7 = Item.create(
                 "owner_id": user1.id,
                 "title": 'Another Thoughts',
                 "genre": 'punk',
-                "about": 'Punk thoughts.',
                 'released': true,
-                'artist_name': 'DU'
+                'artist_name': 'DU',
+                "about": '
+                Punk thoughts.
+                
+                something that is thought: such as, an individual act or product 
+                of thinking a developed intention or plan had no thought of 
+                leaving home, something (such as an opinion or belief) in the mind
+                he spoke his thoughts freely.
+                
+                The intellectual product or the organized views and principles 
+                of a period, place, group, or individual, contemporary Western 
+                thought. The action or process of thinking : COGITATION, serious 
+                consideration : REGARD carchaic : RECOLLECTION, REMEMBRANCE 
+                reasoning power the power to imagine : CONCEPTION. A thought a 
+                little : SOMEWHAT a thought too much vinegar in the dressing
+                ',
                 )
 item7.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/7.jpeg"), filename: "cover-7")
 item7.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/7.mp3"), filename: "song-7")
@@ -106,9 +135,21 @@ item8 = Item.create(
                 "owner_id": user2.id,
                 "title": 'Relax Level',
                 "genre": 'pop',
-                "about": 'Pop level',
                 'released': true,
-                'artist_name': 'Rainforest Records'
+                'artist_name': 'Rainforest Records',
+                "about": 
+                'Pop level
+                
+                A device for establishing a horizontal line or plane by means of 
+                a bubble in a liquid that shows adjustment to the horizontal by 
+                movement to the center of a slightly bowed glass tube. 
+                
+                A measurement of the difference of altitude of two points by means 
+                of a level. Horizontal condition. Especially, equilibrium of a 
+                fluid marked by a horizontal surface of even altitude
+
+                // water seeks its own level
+                ',
                 )
 item8.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/8.jpeg"), filename: "cover-8")
 item8.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/8.mp3"), filename: "song-8")
@@ -117,9 +158,19 @@ item9 = Item.create(
                 "owner_id": user1.id,
                 "title": 'The Commission',
                 "genre": 'ambient',
-                "about": 'Ambient Commission.',
                 'released': true,
                 'artist_name': 'Demo User'
+                "about": "Ambient Commission.
+                
+                A formal written warrant granting the power to perform various 
+                acts or duties a certificate conferring military rank and 
+                authority. Also, the rank and authority so conferred 
+                received a lieutenant's commission in the army. An authorization 
+                or command to act in a prescribed manner or to perform 
+                prescribed acts : CHARGE. A commission to serve as notary public.
+                A formal request to produce something (especially an artistic 
+                work) in exchange for payment
+                ",
                 )
 item9.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/9.jpeg"), filename: "cover-9")
 item9.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/1.mp3"), filename: "song-9")
@@ -129,7 +180,7 @@ item10 = Item.create(
                 "title": 'Many Years',
                 "genre": 'other',
                 'released': true,
-                'artist_name': 'Rainy User'
+                'artist_name': 'Rainy User',
                 "about": 
                 'Other Years.
                 

@@ -89,7 +89,8 @@ class About extends React.Component {
                     </ul>
                     <h4>Definitions</h4>
                     <ul>
-                        <li><a href="">Merriam Webster</a></li>
+                        <li><a href="https://www.merriam-webster.com/">Merriam Webster</a></li>
+                        <li><a href="https://www.dictionary.com/">Dictionary.com</a></li>
                     </ul>  
                 </div>
             </div>

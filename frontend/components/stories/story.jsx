@@ -9,7 +9,9 @@ class Story extends React.Component {
             story: [],
             review: "https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620",
             news: "https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620",
-            spinnerShow: false
+            spinnerShow: false,
+            nextStory: null,
+
         }
     }
 
@@ -24,6 +26,15 @@ class Story extends React.Component {
             this.setState({ story: res })
             this.setState({spinnerShow: false})
         })
+
+        $.ajax({
+            url: `/api/users/${this.props.match.params.ownerId}/stories/${this.props.match.params.storyId - 1}`,
+            method: 'GET'
+        }).then(res => {
+            this.setState({ nextStory: res })
+            // this.setState({ spinnerShow: false })
+        })
+
         
 
     }
@@ -50,6 +61,22 @@ class Story extends React.Component {
                             delete
                         </button>
 
+        }
+
+        let nextBtn;
+
+        if (this.state.nextStory){
+            nextBtn = <i 
+                            className="next-btn link fas fa-play"
+                            onClick={
+                            () => {
+                                this.props.history.replace(`/users/${this.state.story.owner_id}/stories/${this.state.nextStory.id}`)
+                                window.location.reload()
+                            }
+                            }>
+                        
+                        </i>
+                    // </button>
         }
 
         let img;
@@ -89,6 +116,7 @@ class Story extends React.Component {
                         <div className='story-show-title'>{this.state.story.title}</div>
                         <div className='story-show-summary'>{this.state.story.summary}</div>
                         <div className='story-show-author'>By <span className="author" onClick={() => this.props.history.replace(`/users/${this.state.story.owner_id}/stories`)}>{this.state.story.username}</span> · {this.state.story.date}</div>
+                        {nextBtn}
                         <div className='story-show-img'><img src={img} alt=""/></div>
                         <div className='story-show-text'>{this.state.story.text}</div>
                         

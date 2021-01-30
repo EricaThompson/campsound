@@ -37,9 +37,9 @@ class App extends React.Component {
                     <Route exact path="/" component={HomeContainer} />
                     <Route exact path="/stories" component={StoriesIndexContainer} />
                     <Route exact path='/about' component={About}/>
+                    <Route exact path='/users/:ownerId/stories/:storyId' component={StoryContainer} />
                     <Route exact path='/users/:ownerId/stories/story/new' component={StoryFormContainer}/>
                     <Route exact path='/users/:ownerId/stories/:storyId/edit' component={StoryFormContainer} />
-                    <Route exact path='/users/:ownerId/stories/:storyId' component={StoryContainer} />
                     <Route exact path="/:ownerId/new" component={ItemFormContainer} />
                     <Route exact path="/users/:ownerId/music/:itemId/edit" component={ItemFormContainer} />
 

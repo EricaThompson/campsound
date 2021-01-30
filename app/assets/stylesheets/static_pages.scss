@@ -3445,10 +3445,10 @@ a {
         display: flex;
         border-right: none;
         border-left: none;
-        padding-left: 10px;
+        // padding-left: 10px;
         padding-top: 0px;
         justify-content: space-between;
-        width: 55%;
+        width: 895px;
         height: 45px;
         margin-bottom: 25px;
         h1 {
@@ -3671,17 +3671,33 @@ a {
     border-top: 1px solid #eee;
     margin-top: 15px;
 
+    .next-btn {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 55%;
+        padding: 19px 20px;
+        
+        position: absolute;
+        top: 420px;
+        left: 595px;
+        font-size: 24px;
+        padding-left: 21px;
+
+    }
+
     .stories-nav {
         display: flex;
         border-right: none;
         border-left: none;
-        padding-left: 10px;
+        // padding-left: 10px;
         padding-top: 0px;
         justify-content: space-between;
-        width: 55%;
+        width: 895px;
         height: 45px;
+        margin: 0 auto;
         margin-bottom: 25px;
         border-bottom: 1px solid #eee;
+
         h1 {
             font-size: 16.25px;
             color: #909090;

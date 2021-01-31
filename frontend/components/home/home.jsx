@@ -595,26 +595,29 @@ class Home extends React.Component {
                                 // onClick={()=>this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
                                 className='spotlight-items'
                                 key={`${idx}`}>
-                                <img className='spotlight-item-img link' src={item.cover} alt="cover art"/>
-                                <div className='spotlight-item-info link'>
-                                    <div className='spotlight-item-title'>{item.title}</div>
-                                    <div className='spotlight-item-artist'>by {item.artist}</div>
-                                    <div className='spotlight-item-about'>{item.about}</div>
-                                    <div className='audio-control'>
-                                            <audio 
-                                                // controls
-                                                id={`${idx}`}
-                                                src={`${item.song}`}>
-                                            </audio>
-                                            
-                                            <div
-                                                
-                                                className="play-pause">
-                                                {playPauseBtn}
-                                            </div>
+                                    <div>
 
-                                            
+                                        <img className='spotlight-item-img link' src={item.cover} alt="cover art"/>
+                                            <div className='audio-control'>
+                                                    <audio 
+                                                        // controls
+                                                        id={`${idx}`}
+                                                        src={`${item.song}`}>
+                                                    </audio>
+                                                    
+                                                    <div
+                                                        
+                                                        className="play-pause">
+                                                        {playPauseBtn}
+                                                    </div>
+
+                                                    
+                                            </div>
                                     </div>
+                                <div className='spotlight-item-info'>
+                                    <div className='spotlight-item-title link'>{item.title}</div>
+                                    <div className='spotlight-item-artist link'>by {item.artist}</div>
+                                    <div className='spotlight-item-about'>{item.about}</div>
                                 </div>
                                 {/* Test2
                                 <audio src={`${item.song}`}></audio> */}
@@ -656,28 +659,28 @@ class Home extends React.Component {
                                 key={`${idx}`}
                             >
                                 <img className='spotlight-item-img link' src={item.cover} alt="" />
+                                <div className='audio-control'>
+                                    <audio
+                                        // controls
+                                        id={`${idx}`}
+                                        src={`${item.song}`}>
+                                    </audio>
+
+                                    <div
+                                        // onClick={() => {
+                                        //     this.displayPlay1(idx)
+                                        //     this.play(idx)
+                                        // }}
+                                        className="play-pause">
+                                        {playPauseBtn}
+                                    </div>
+
+
+                                </div>
                                 <div className='spotlight-item-info link'>
                                     <div className='spotlight-item-title'>{item.title}</div>
                                     <div className='spotlight-item-artist'>by {item.artist}</div>
                                     <div className='spotlight-item-about'>{item.about}</div>
-                                    <div className='audio-control'>
-                                        <audio
-                                            // controls
-                                            id={`${idx}`}
-                                            src={`${item.song}`}>
-                                        </audio>
-
-                                        <div
-                                            // onClick={() => {
-                                            //     this.displayPlay1(idx)
-                                            //     this.play(idx)
-                                            // }}
-                                            className="play-pause">
-                                            {playPauseBtn}
-                                        </div>
-
-
-                                    </div>
                                 </div>
                             </div>
                 } else {

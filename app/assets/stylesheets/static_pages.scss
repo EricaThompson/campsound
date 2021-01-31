@@ -2550,6 +2550,46 @@ a {
             color: #999
         }
     }
+
+    div {
+
+        // border: 1px solid olive;
+        position: relative;
+        
+            .play-pause {
+                cursor: pointer;
+                position: absolute;
+                font-size: 25px;
+                background-color: rgba(0, 0, 0, 0.726);
+                color: white;
+                // left: 0px;
+                // right: 880px;
+                bottom: 25px;
+                left: 6px;
+                padding: 20px;
+                width: 60px;
+                // padding-left: 20px;
+                margin: 0;
+                // width: 50px;
+                border-radius: 6px;
+                text-align: center;
+                // display: none;
+    
+    
+                .fa-play {
+                    margin: 0 auto;
+                    // width: 10px;
+                    // display: none;
+                }
+        
+        }
+
+        
+    }
+    
+    div:hover + .play-pause {
+        display: block;
+    }
     
     .spotlight {
         // border: 1px solid olive;
@@ -2561,6 +2601,7 @@ a {
         width: 998px;
         margin: 40px auto;
         padding-right: 0px;
+
 
         .spotlight-items {
             display: flex;

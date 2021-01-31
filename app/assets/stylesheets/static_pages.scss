@@ -255,14 +255,14 @@ textarea, input{
         top: 30px;
         border-radius: 5px;
         width: 236px;
-        padding: 10px;
+        // padding: 10px;
 
         p {
             // display: flex;
             img {
                 position: absolute;
                 right: 10px;
-                top: 15px;
+                top: 5px;
                 // justify-self: flex-end;
             }
 
@@ -271,6 +271,12 @@ textarea, input{
                 background-color: rgb(236, 236, 236);
             }
         }
+
+        div {
+            width: 100%;
+            margin: 0;
+        }
+        
 
         a {
             color: black;

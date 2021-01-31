@@ -15,11 +15,27 @@ class Home extends React.Component {
             items1: '',
             items2: '',
             disableButton: true,
-            1: 'https://images.pexels.com/photos/2341290/pexels-photo-2341290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
-            2: 'https://images.pexels.com/photos/1029624/pexels-photo-1029624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=0&w=115',
-            3: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
+            // 1: 'https://images.pexels.com/photos/2341290/pexels-photo-2341290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
+            // 2: 'https://images.pexels.com/photos/1029624/pexels-photo-1029624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=0&w=115',
+            // 3: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
             news: 'https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
             review: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
+            i1: {
+                0: false,
+                1: false,
+                2: false,
+            },
+            i2: {
+                0: false,
+                1: false,
+                2: false,
+            },
+            0: true,
+            1: true,
+            2: true,
+            3: true,
+            4: true,
+            5: true,
             demo: [{
                 owner_id: 85, id: 155, title: "Test", artist: "test", genre: "electronic", date: "Dec 2020", cover: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ce8112185079b5f5c603e5bf3a66223b05ce0b83/pexels-cliford-mervil-2469122.jpg", song: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajRCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a2849dcaae069bb71f8428866d00819bf1027f9f/19-Spring-Day-Forest%20(1).mp3"
                 }, 
@@ -215,6 +231,84 @@ class Home extends React.Component {
 
 
     }
+
+    play(idx) {
+        document.getElementById(`${idx}`).play(idx)
+        // this.setState({ playShow: false })
+        // document.querySelector('.fa-play').classList.add('disappear')
+        // document.querySelector('.fa-pause').classList.remove('disappear')
+        // this.setState({[idx]: true})
+
+
+    }
+
+    pause(idx) {
+        document.getElementById(`${idx}`).pause(idx)
+        // this.setState
+    }
+
+    displayPause1(idx) {
+        document.getElementById(`${idx}`).pause()
+
+        let i1 = {...this.state.i1}
+        i1[idx] = true;
+        console.log('i1 pause',i1)
+
+        // this.setState({ playShow: false })
+        // document.querySelector('.fa-play').classList.add('disappear')
+        // document.querySelector('.fa-pause').classList.remove('disappear')
+        this.setState({i1})
+
+
+    }
+
+    displayPlay1(idx) {
+        document.getElementById(`${idx}`).play()
+
+        let i1 = { ...this.state.i1 }
+        i1[idx] = false;
+        console.log('i1 play', i1)
+
+        // this.setState({ playShow: false })
+        // document.querySelector('.fa-play').classList.add('disappear')
+        // document.querySelector('.fa-pause').classList.remove('disappear')
+        this.setState({ i1 })
+
+
+    }
+
+    displayPause2(idx) {
+        document.getElementById(`${idx}`).pause()
+
+        let i2 = { ...this.state.i2 }
+        i2[idx] = true;
+        console.log('i2 pause', i2)
+
+        // this.setState({ playShow: false })
+        // document.querySelector('.fa-play').classList.add('disappear')
+        // document.querySelector('.fa-pause').classList.remove('disappear')
+        this.setState({ i2 })
+
+
+    }
+
+    displayPlay2(idx) {
+        document.getElementById(`${idx}`).play()
+
+        let i2 = { ...this.state.i2 }
+        i2[idx] = false;
+        console.log('i2 play', i2)
+
+        // this.setState({ playShow: false })
+        // document.querySelector('.fa-play').classList.add('disappear')
+        // document.querySelector('.fa-pause').classList.remove('disappear')
+        this.setState({ i2 })
+
+
+    }
+
+
+
 
     render() {
 
@@ -425,6 +519,8 @@ class Home extends React.Component {
         let user2;
         let items2;
 
+
+
         if (this.state.users !== ''){
             // console.log(this.state.users)
             user1 = <div 
@@ -467,19 +563,61 @@ class Home extends React.Component {
 
 
         if (this.state.items1 !== '') {
-            // console.log(this.state.items1)
+            console.log('i1', this.state.i1)
             items1 = Object.values(this.state.items1).map((item, idx) => {
+                
                 if (idx < 3){
+                    let playPauseBtn;
+                    // let stateName = "song" + idx
+                    if (!this.state.i1[idx]){
+                        // console.log('i1[idx]', this.state.i1[idx])
+                        // console.log(`concat ${this.state}${stateName}`)
+                        playPauseBtn = <div className='pause-button' onClick={
+                            () => {
+                                
+                                this.displayPause1(idx)
+                                this.play(idx)
+                        }}
+                        >
+                            <i className="fas fa-play"></i></div>
+                    } else {
+                        playPauseBtn = <div 
+                                            className='pause-button' 
+                                            onClick={() => {
+                                                this.displayPlay1(idx)
+                                                this.pause(idx)
+                                                
+                                            }}>
+                                                <i className="fas fa-pause"></i>
+                                        </div>
+                    }
                     return <div 
-                                onClick={()=>this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                // onClick={()=>this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
                                 className='spotlight-items'
                                 key={`${idx}`}>
-                                <img className='spotlight-item-img link' src={item.cover} alt=""/>
+                                <img className='spotlight-item-img link' src={item.cover} alt="cover art"/>
                                 <div className='spotlight-item-info link'>
                                     <div className='spotlight-item-title'>{item.title}</div>
                                     <div className='spotlight-item-artist'>by {item.artist}</div>
                                     <div className='spotlight-item-about'>{item.about}</div>
+                                    <div className='audio-control'>
+                                            <audio 
+                                                // controls
+                                                id={`${idx}`}
+                                                src={`${item.song}`}>
+                                            </audio>
+                                            
+                                            <div
+                                                
+                                                className="play-pause">
+                                                {playPauseBtn}
+                                            </div>
+
+                                            
+                                    </div>
                                 </div>
+                                {/* Test2
+                                <audio src={`${item.song}`}></audio> */}
                             </div>
                 } else {
                     return;
@@ -487,9 +625,33 @@ class Home extends React.Component {
             })
 
             items2 = Object.values(this.state.items2).map((item, idx) => {
+                
                 if (idx < 3) {
+                    let playPauseBtn;
+                    if(!this.state.i2[idx]){
+                        // console.log('i1[idx]', this.state.i1[idx])
+                        // console.log(`concat ${this.state}${stateName}`)
+                        playPauseBtn = <div className='pause-button' onClick={
+                            () => {
+
+                                this.displayPause2(idx)
+                                this.play(idx)
+                            }}
+                        >
+                            <i className="fas fa-play"></i></div>
+                    } else {
+                        playPauseBtn = <div
+                            className='pause-button'
+                            onClick={() => {
+                                this.displayPlay2(idx)
+                                this.pause(idx)
+
+                            }}>
+                            <i className="fas fa-pause"></i>
+                        </div>
+                    }
                     return <div
-                                onClick={() => this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                // onClick={() => this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
                                 className='spotlight-items'
                                 key={`${idx}`}
                             >
@@ -498,6 +660,24 @@ class Home extends React.Component {
                                     <div className='spotlight-item-title'>{item.title}</div>
                                     <div className='spotlight-item-artist'>by {item.artist}</div>
                                     <div className='spotlight-item-about'>{item.about}</div>
+                                    <div className='audio-control'>
+                                        <audio
+                                            // controls
+                                            id={`${idx}`}
+                                            src={`${item.song}`}>
+                                        </audio>
+
+                                        <div
+                                            // onClick={() => {
+                                            //     this.displayPlay1(idx)
+                                            //     this.play(idx)
+                                            // }}
+                                            className="play-pause">
+                                            {playPauseBtn}
+                                        </div>
+
+
+                                    </div>
                                 </div>
                             </div>
                 } else {
@@ -505,6 +685,8 @@ class Home extends React.Component {
                 }
             })
         }
+
+
         let summary0;
         let type1;
         let type2;
@@ -518,7 +700,7 @@ class Home extends React.Component {
             type3 = summaryItems[3].type
         }
 
-        console.log(this.state.items)
+        // console.log(this.state.items)
 
 
 
@@ -530,6 +712,12 @@ class Home extends React.Component {
         if (this.props.currentUser){
             loggedIn = '-logged-in'
         }
+
+
+        
+
+
+
         return (
             <div className={`home home${loggedIn}`}>
                     <div className='stories-home-container'>

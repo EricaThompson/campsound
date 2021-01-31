@@ -50,10 +50,7 @@ item3 = Item.create(
                 "title": 'Ten Brave Life',
                 "genre": 'rock',
                 "about": 
-                  'Rock Life: the condition that distinguishes animals and 
-plants from inorganic matter, including the capacity for 
-growth, reproduction, functional activity, and continual 
-change.
+                'Rock Life: the condition that distinguishes animals and plants from inorganic matter, including the capacity for growth, reproduction, functional activity, and continual change.
                   
                   ',
                 'released': true,

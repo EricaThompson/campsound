@@ -232,8 +232,8 @@ class Home extends React.Component {
 
     }
 
-    play(idx) {
-        document.getElementById(`${idx}`).play(idx)
+    play1(idx) {
+        document.getElementById(`i1${idx}`).play(idx)
         // this.setState({ playShow: false })
         // document.querySelector('.fa-play').classList.add('disappear')
         // document.querySelector('.fa-pause').classList.remove('disappear')
@@ -242,13 +242,28 @@ class Home extends React.Component {
 
     }
 
-    pause(idx) {
-        document.getElementById(`${idx}`).pause(idx)
+    play2(idx) {
+        document.getElementById(`i2${idx}`).play(idx)
+        // this.setState({ playShow: false })
+        // document.querySelector('.fa-play').classList.add('disappear')
+        // document.querySelector('.fa-pause').classList.remove('disappear')
+        // this.setState({[idx]: true})
+
+
+    }
+
+    paus1(idx) {
+        document.getElementById(`i1${idx}`).pause(idx)
+        // this.setState
+    }
+
+    pause2(idx) {
+        document.getElementById(`i2${idx}`).pause(idx)
         // this.setState
     }
 
     displayPause1(idx) {
-        document.getElementById(`${idx}`).pause()
+        document.getElementById(`i1${idx}`).pause()
 
         let i1 = {...this.state.i1}
         i1[idx] = true;
@@ -263,7 +278,7 @@ class Home extends React.Component {
     }
 
     displayPlay1(idx) {
-        document.getElementById(`${idx}`).play()
+        document.getElementById(`i1${idx}`).play()
 
         let i1 = { ...this.state.i1 }
         i1[idx] = false;
@@ -277,8 +292,30 @@ class Home extends React.Component {
 
     }
 
+    reset1(idx){
+        let i1 = { ...this.state.i1 }
+        i1[idx] = false;
+        console.log('i1 reset', i1)
+
+        // this.setState({ playShow: false })
+        // document.querySelector('.fa-play').classList.add('disappear')
+        // document.querySelector('.fa-pause').classList.remove('disappear')
+        this.setState({ i1 })
+    }
+
+    reset2(idx) {
+        let i2 = { ...this.state.i2 }
+        i2[idx] = false;
+        console.log('i2 reset', i2)
+
+        // this.setState({ playShow: false })
+        // document.querySelector('.fa-play').classList.add('disappear')
+        // document.querySelector('.fa-pause').classList.remove('disappear')
+        this.setState({ i2 })
+    }
+
     displayPause2(idx) {
-        document.getElementById(`${idx}`).pause()
+        document.getElementById(`i2${idx}`).pause()
 
         let i2 = { ...this.state.i2 }
         i2[idx] = true;
@@ -293,7 +330,7 @@ class Home extends React.Component {
     }
 
     displayPlay2(idx) {
-        document.getElementById(`${idx}`).play()
+        document.getElementById(`i2${idx}`).play()
 
         let i2 = { ...this.state.i2 }
         i2[idx] = false;
@@ -563,7 +600,7 @@ class Home extends React.Component {
 
 
         if (this.state.items1 !== '') {
-            console.log('i1', this.state.i1)
+            // console.log('i1', this.state.i1)
             items1 = Object.values(this.state.items1).map((item, idx) => {
                 
                 if (idx < 3){
@@ -576,7 +613,7 @@ class Home extends React.Component {
                             () => {
                                 
                                 this.displayPause1(idx)
-                                this.play(idx)
+                                this.play1(idx)
                         }}
                         >
                             <i className="fas fa-play"></i></div>
@@ -585,7 +622,7 @@ class Home extends React.Component {
                                             className='pause-button' 
                                             onClick={() => {
                                                 this.displayPlay1(idx)
-                                                this.pause(idx)
+                                                this.pause1(idx)
                                                 
                                             }}>
                                                 <i className="fas fa-pause"></i>
@@ -601,8 +638,10 @@ class Home extends React.Component {
                                             <div className='audio-control'>
                                                     <audio 
                                                         // controls
-                                                        id={`${idx}`}
-                                                        src={`${item.song}`}>
+                                                        id={`i1${idx}`}
+                                                        src={`${item.song}`}
+                                                        onEnded={()=>this.reset1(idx)}
+                                                        >
                                                     </audio>
                                                     
                                                     <div
@@ -638,7 +677,7 @@ class Home extends React.Component {
                             () => {
 
                                 this.displayPause2(idx)
-                                this.play(idx)
+                                this.play2(idx)
                             }}
                         >
                             <i className="fas fa-play"></i></div>
@@ -647,7 +686,7 @@ class Home extends React.Component {
                             className='pause-button'
                             onClick={() => {
                                 this.displayPlay2(idx)
-                                this.pause(idx)
+                                this.pause2(idx)
 
                             }}>
                             <i className="fas fa-pause"></i>
@@ -658,24 +697,29 @@ class Home extends React.Component {
                                 className='spotlight-items'
                                 key={`${idx}`}
                             >
-                                <img className='spotlight-item-img link' src={item.cover} alt="" />
-                                <div className='audio-control'>
-                                    <audio
-                                        // controls
-                                        id={`${idx}`}
-                                        src={`${item.song}`}>
-                                    </audio>
+                                <div>
 
-                                    <div
-                                        // onClick={() => {
-                                        //     this.displayPlay1(idx)
-                                        //     this.play(idx)
-                                        // }}
-                                        className="play-pause">
-                                        {playPauseBtn}
+                                    <img className='spotlight-item-img link' src={item.cover} alt="" />
+                                    <div className='audio-control'>
+                                        <audio
+                                            // controls
+                                            id={`i2${idx}`}
+                                            src={`${item.song}`}
+                                            onEnded={() => this.reset2(idx)}
+                                            >
+                                        </audio>
+
+                                        <div
+                                            // onClick={() => {
+                                            //     this.displayPlay1(idx)
+                                            //     this.play(idx)
+                                            // }}
+                                            className="play-pause">
+                                            {playPauseBtn}
+                                        </div>
+
+
                                     </div>
-
-
                                 </div>
                                 <div className='spotlight-item-info link'>
                                     <div className='spotlight-item-title'>{item.title}</div>

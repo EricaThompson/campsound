@@ -609,7 +609,7 @@ class Home extends React.Component {
                     if (!this.state.i1[idx]){
                         // console.log('i1[idx]', this.state.i1[idx])
                         // console.log(`concat ${this.state}${stateName}`)
-                        playPauseBtn = <div className='pause-button' onClick={
+                        playPauseBtn = <div className='play-button' onClick={
                             () => {
                                 
                                 this.displayPause1(idx)
@@ -673,7 +673,7 @@ class Home extends React.Component {
                     if(!this.state.i2[idx]){
                         // console.log('i1[idx]', this.state.i1[idx])
                         // console.log(`concat ${this.state}${stateName}`)
-                        playPauseBtn = <div className='pause-button' onClick={
+                        playPauseBtn = <div className='play-button' onClick={
                             () => {
 
                                 this.displayPause2(idx)

@@ -3671,18 +3671,42 @@ a {
     border-top: 1px solid #eee;
     margin-top: 15px;
 
-    .next-btn {
+    
+    .previous-btn {
         background-color: white;
-        border: 1px solid black;
+        border: 2px solid black;
         border-radius: 55%;
         padding: 19px 20px;
         
         position: absolute;
         top: 420px;
-        left: 595px;
+        left: 565px;
+        font-size: 24px;
+        padding-left: 21px;
+        transform: rotate(180deg);
+        // opacity: .5;
+        
+    }
+    .next-btn {
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 55%;
+        padding: 19px 20px;
+        
+        position: absolute;
+        top: 420px;
+        // left: 625px;
         font-size: 24px;
         padding-left: 21px;
 
+    }
+
+    .next-solo {
+        left: 47.5%;
+    }
+
+    .previous-solo {
+        left: 47.5%;
     }
 
     .stories-nav {

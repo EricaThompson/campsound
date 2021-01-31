@@ -2612,6 +2612,10 @@ a {
                     
                 }
 
+                .show {
+                    display: block;
+                }
+
                 
                 
             }
@@ -2619,6 +2623,8 @@ a {
             &:hover .play-pause {
                 display: block;
             }
+
+            
 
 
 

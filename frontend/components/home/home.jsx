@@ -602,11 +602,14 @@ class Home extends React.Component {
         if (this.state.items1 !== '') {
             // console.log('i1', this.state.i1)
             items1 = Object.values(this.state.items1).map((item, idx) => {
+
+                let show;
                 
                 if (idx < 3){
                     let playPauseBtn;
                     // let stateName = "song" + idx
                     if (!this.state.i1[idx]){
+                        
                         // console.log('i1[idx]', this.state.i1[idx])
                         // console.log(`concat ${this.state}${stateName}`)
                         playPauseBtn = <div className='play-button' onClick={
@@ -618,6 +621,7 @@ class Home extends React.Component {
                         >
                             <i className="fas fa-play"></i></div>
                     } else {
+                        show = 'show'
                         playPauseBtn = <div 
                                             className='pause-button' 
                                             onClick={() => {
@@ -646,7 +650,7 @@ class Home extends React.Component {
                                                     
                                                     <div
                                                         
-                                                        className="play-pause">
+                                                        className={`play-pause ${show}`}>
                                                         {playPauseBtn}
                                                     </div>
 
@@ -667,7 +671,7 @@ class Home extends React.Component {
             })
 
             items2 = Object.values(this.state.items2).map((item, idx) => {
-                
+                let show;
                 if (idx < 3) {
                     let playPauseBtn;
                     if(!this.state.i2[idx]){
@@ -682,6 +686,7 @@ class Home extends React.Component {
                         >
                             <i className="fas fa-play"></i></div>
                     } else {
+                        show = 'show'
                         playPauseBtn = <div
                             className='pause-button'
                             onClick={() => {
@@ -714,7 +719,7 @@ class Home extends React.Component {
                                             //     this.displayPlay1(idx)
                                             //     this.play(idx)
                                             // }}
-                                            className="play-pause">
+                                            className={`play-pause ${show}`}>
                                             {playPauseBtn}
                                         </div>
 

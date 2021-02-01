@@ -37,7 +37,115 @@ class NavBar extends React.Component {
         let avatar;
         let signup = null;
         let authNav = null;
-        let loggedIn;
+        let loggedIn;   
+        let view;
+
+        if (this.props.currentUser){
+            if (this.props.currentUser.user_type === 'fan'){
+                console.log(this.props.currentUser.user_type)
+
+                view = <div className="auth-nav">
+                    
+                        <div onClick={() => this.toggleDropdown()}>
+
+                            <p>{this.props.currentUser.username}
+                                <img
+                                    className="avatar"
+                                    src={this.props.currentUser.userImg}
+                                />
+                            </p>
+
+                    
+                        </div>
+                        <br />
+                    
+                    <Link
+                        to={`/about`}>
+                        <p>
+                            <span
+                                onClick={() => this.props.history.replace('/about')}>
+                                about
+                                </span>
+                        </p>
+                    </Link>
+                    <Link
+                        to={`/`}>
+                        <p>
+                            <span
+                                onClick={() => this.logoutRefresh()}>
+                                logout
+                            </span>
+                        </p>
+                    </Link>
+
+                </div>
+            } else {
+                view = <div className="auth-nav">
+                    <Link to={`/users/${this.props.currentUser.id}`}>
+                        <div onClick={() => this.toggleDropdown()}>
+
+                            <p>{this.props.currentUser.username}
+                                <img
+                                    className="avatar"
+                                    src={this.props.currentUser.userImg}
+                                />
+                            </p>
+
+                            <p>
+                                {/* className="view-site" */}
+                                {/* onClick={()=>setTimeout(()=>location.reload(), 200)}> */}
+                                view site
+
+                        </p>
+
+                        </div>
+                        <br />
+                    </Link>
+                    <Link
+                        to={`/${this.props.currentUser.id}/new`}>
+                        <p>
+                            <span
+                                onClick={() => setTimeout(() => location.reload(), 200)}>
+                                add new song
+                                </span>
+                        </p>
+                    </Link>
+                    <Link
+                        to={`/users/${this.props.currentUser.id}/stories/story/new`}>
+                        <p>
+                            <span
+                                onClick={() => setTimeout(() => location.reload(), 200)}>
+                                add new story
+                                </span>
+                        </p>
+                    </Link>
+                    <Link
+                        to={`/about`}>
+                        <p>
+                            <span
+                                onClick={() => this.props.history.replace('/about')}>
+                                about
+                                </span>
+                        </p>
+                    </Link>
+                    <Link
+                        to={`/`}>
+                        <p>
+                            <span
+                                onClick={() => this.logoutRefresh()}>
+                                logout
+                            </span>
+                        </p>
+                    </Link>
+
+                </div>
+            }
+
+
+        }
+
+        
+
         
 
         if (this.props.currentUser){
@@ -59,65 +167,7 @@ class NavBar extends React.Component {
                                 />
                         </div> 
                     
-            authNav = <div className="auth-nav">
-                        <Link to={`/users/${this.props.currentUser.id}`}>
-                    <div onClick={()=>this.toggleDropdown()}>
-                        
-                        <p>{this.props.currentUser.username}
-                            <img
-                                className="avatar"
-                                src={this.props.currentUser.userImg}
-                            />
-                        </p>
-
-                        <p>
-                                {/* className="view-site" */}
-                                {/* onClick={()=>setTimeout(()=>location.reload(), 200)}> */}
-                                view site
-
-                        </p>
-
-                    </div>
-                        <br />
-                        </Link>
-                        <Link
-                            to={`/${this.props.currentUser.id}/new`}>
-                            <p>
-                                <span
-                                    onClick={() => setTimeout(() => location.reload(), 200)}>
-                                    add new song
-                                </span>  
-                            </p>
-                        </Link>
-                        <Link
-                            to={`/users/${this.props.currentUser.id}/stories/story/new`}>
-                            <p>
-                                <span
-                                    onClick={() => setTimeout(() => location.reload(), 200)}>
-                                    add new story
-                                </span>
-                            </p>
-                        </Link>
-                        <Link
-                            to={`/about`}>
-                            <p>
-                                <span
-                                    onClick={() => this.props.history.replace('/about')}>
-                                    about
-                                </span>
-                            </p>
-                        </Link>
-                        <Link
-                            to={`/`}>
-                            <p>
-                            <span
-                                onClick={() => this.logoutRefresh()}>
-                                logout
-                            </span>
-                            </p>
-                        </Link>
-
-                    </div>
+            authNav = view
 
             loggedIn = 'logged-in'
                         

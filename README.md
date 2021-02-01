@@ -157,4 +157,3 @@ let playlist = this.state.itemList.map((song, idx) => {
 
 ## Future Directions
 * Add a payment feature where artists can set a price for a download or give their fans the ability to name their price.
-* Add item pages for songs and albums to display lyrics and copyrights.

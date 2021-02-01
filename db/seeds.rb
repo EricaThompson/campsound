@@ -15,9 +15,9 @@ puts "All Items Destroyed!"
 Story.destroy_all
 puts "All Stories Destroyed!"
 
-user1 = User.create(username: 'Demo User', password: 'Password', location: 'SF', bio: 'Musing')
+user1 = User.create(username: 'Demo User', password: 'Password', location: 'SF', bio: 'Musing', type: 'artist')
 
-user2 = User.create(username: 'Rainforest Records', password: 'Password', location: 'los angeles', bio: 'engineering!')
+user2 = User.create(username: 'Rainforest Records', password: 'Password', location: 'los angeles', bio: 'engineering!', type: 'label')
 user2.user_img.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/users/rainforest-records.jpg"), filename: 'rainforest-records')
 puts "Users created!"
 

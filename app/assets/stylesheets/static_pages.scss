@@ -1327,6 +1327,7 @@ a {
                     .spinner {
                         font-size: 22px;
                         margin-top: 2px;
+                        
                     }
 
                     p {
@@ -2898,6 +2899,14 @@ a {
     // }
     // padding-bottom: 400px;
     height: 900px;
+
+    // display: flex;
+    // justify-content: center;
+    p {
+        text-align: center;
+        
+        // margin-left: 140px;
+    }
 }
 
 // .seeker {

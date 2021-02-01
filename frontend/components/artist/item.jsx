@@ -483,6 +483,7 @@ class Item extends React.Component {
             return (
                 <div className="spinner">
                     <i className="fas fa-compass fa-spin"></i>
+                    <p>Loading</p>
                 </div>
             )
         } else if (this.props.match.path.includes('stories')){

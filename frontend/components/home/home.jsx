@@ -20,6 +20,8 @@ class Home extends React.Component {
             // 3: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
             news: 'https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
             review: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
+            // news: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/news.jpg',
+            // review: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/review.jpg',
             i1: {
                 0: false,
                 1: false,
@@ -193,7 +195,7 @@ class Home extends React.Component {
 
         SessionAPIUtil.allUsers()
             .then(res => {
-                this.setState({ users: Object.values(res) });
+                this.setState({ users: Object.values(res)});
                 this.props.readAllUserItems(this.state.users[0].id)
                     .then(res => this.setState({items1: res.items}))
                 this.props.readAllUserItems(this.state.users[1].id)
@@ -252,7 +254,7 @@ class Home extends React.Component {
 
     }
 
-    paus1(idx) {
+    pause1(idx) {
         document.getElementById(`i1${idx}`).pause(idx)
         // this.setState
     }
@@ -548,6 +550,8 @@ class Home extends React.Component {
 
             
         })
+
+        console.log('stories',)
 
         // console.log(this.state.stories)
 

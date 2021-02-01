@@ -317,6 +317,7 @@ class ArtistHomepage extends React.Component {
             return (
                 <div className="spinner">
                     <i className="fas fa-compass fa-spin"></i>
+                    <p>Loading</p>
                     {/* <div className='spinner-space'></div> */}
                 </div>
             )

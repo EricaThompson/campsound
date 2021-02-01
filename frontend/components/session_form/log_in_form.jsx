@@ -33,14 +33,16 @@ class LogInForm extends React.Component {
         // e.preventDefault()
         this.setState({ username: 'Demo User', password: 'Password' }, ()=>this.props.loginUser({ user: this.state })
             .then(setTimeout(() => window.location.reload(), 400))
-            .then(this.props.closeModal()))
+            // .then(this.props.closeModal())
+            )
         
     }
 
     rainLogin(){
         this.setState({ username: 'Rainforest Records', password: 'Password' }, () => this.props.loginUser({ user: this.state })
             .then(setTimeout(() => window.location.reload(), 400))
-            .then(this.props.closeModal()))
+            // .then(this.props.closeModal())
+            )
     }
 
     openAndClear() {

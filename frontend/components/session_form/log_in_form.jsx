@@ -31,18 +31,23 @@ class LogInForm extends React.Component {
 
     demoLogin(){
         // e.preventDefault()
-        this.setState({ username: 'Demo User', password: 'Password' }, ()=>this.props.loginUser({ user: this.state })
-            .then(setTimeout(() => window.location.reload(), 400))
-            // .then(this.props.closeModal())
-            )
+        this.props.loginUser({ user: { username: 'Demo User', password: 'Password' } })
+            .then(()=> window.location.reload())
+        
+        // this.setState({ username: 'Demo User', password: 'Password' }, ()=>this.props.loginUser({ user: this.state })
+        //     .then(setTimeout(() => window.location.reload(), 400))
+        //     // .then(this.props.closeModal())
+        //     )
         
     }
 
     rainLogin(){
-        this.setState({ username: 'Rainforest Records', password: 'Password' }, () => this.props.loginUser({ user: this.state })
-            .then(setTimeout(() => window.location.reload(), 400))
-            // .then(this.props.closeModal())
-            )
+        this.props.loginUser({ user: { username: 'Rainforest Records', password: 'Password' } })
+            .then(() => window.location.reload())
+        // this.setState({ username: 'Rainforest Records', password: 'Password' }, () => this.props.loginUser({ user: this.state })
+        //     .then(setTimeout(() => window.location.reload(), 400))
+        //     // .then(this.props.closeModal())
+        //     )
     }
 
     openAndClear() {

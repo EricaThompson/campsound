@@ -57,7 +57,12 @@ class Results extends React.Component {
             } else {
                 
             }
-            return <div key={result.id} className="result-parent">
+            
+            let loggedIn;
+            if (this.props.currentUserId){
+                loggedIn = '-logged-in'
+            }
+            return <div key={result.id} className={`result-parent result-parent${loggedIn}`}>
                         
                 <div key={result.id} className="result-display">
                         {/* <Link to={`artists/${this.props.currentUserId}/music/${result.id}`}> */}
@@ -86,11 +91,16 @@ class Results extends React.Component {
             searchTitle = 'no results, add one..'
         }
 
+        let loggedIn;
+        if (this.props.currentUserId) {
+            loggedIn = '-logged-in'
+        }
+        
         return (
-            <div className="results">
+            <div className={`results results${loggedIn}`}>
                 <br />
                 <br />
-                <div className="search-title">{searchTitle}</div>
+                <div className={`search-title search-title${loggedIn}`}>{searchTitle}</div>
                 <br />
                 <br />
                 {results}

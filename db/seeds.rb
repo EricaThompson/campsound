@@ -100,11 +100,8 @@ item7 = Item.create(
                 "genre": 'punk',
                 'released': true,
                 'artist_name': 'DU',
-                "about": '
-                Punk thoughts.
-                
+                "about": 'Punk thoughts.
                 something that is thought: such as, an individual act or product of thinking a developed intention or plan had no thought of leaving home, something (such as an opinion or belief) in the mindhe spoke his thoughts freely.
-                
                 The intellectual product or the organized views and principles of a period, place, group, or individual, contemporary Western thought. The action or process of thinking : COGITATION, serious consideration : REGARD carchaic : RECOLLECTION, REMEMBRANCE reasoning power the power to imagine : CONCEPTION. A thought a little : SOMEWHAT a thought too much vinegar in the dressing
                 ',
                 )

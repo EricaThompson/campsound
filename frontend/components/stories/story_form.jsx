@@ -321,8 +321,50 @@ class StoryForm extends React.Component {
 
             let newDate = new Date()
             let date = newDate.getDate();
-            let month = newDate.getMonth() + 1;
+            let month = newDate.getMonth();
             let year = newDate.getFullYear();
+
+            switch (month) {
+                case 0:
+                    month = "Jan"
+                    break;
+                case 1:
+                    month = "Feb"
+                    break;
+                case 2:
+                    month = "Mar"
+                    break;
+                case 3:
+                    month = "Apr"
+                    break;
+                case 4:
+                    month = "May"
+                    break;
+                case 5:
+                    month = "Jun"
+                    break;
+                case 6:
+                    month = "Jul"
+                    break;
+                case 7:
+                    month = "Aug"
+                    break;
+                case 8:
+                    month = "Sep"
+                    break;
+                case 9:
+                    month = "Oct"
+                    break;
+                case 10:
+                    month = "Nov"
+                    break;
+                case 11:
+                    month = "Dec"
+                    break;
+
+                default:
+                    break;
+            }
 
             return (
                 <div className="artist-input-form story-form">
@@ -333,7 +375,7 @@ class StoryForm extends React.Component {
                                 <div className='details'>
                                     <div className='story-type'>{this.state.genre}</div>
                                     <div className="story-title">{this.state.title}</div>
-                                    <div className="author"><div className="by">by </div> {this.state.artistName} · {this.state.date}</div>
+                                    <div className="author"><div className="by">by </div> {this.state.artistName} · {month} {date}, {year}</div>
                                     <div className="summary">{this.state.summary}</div>
                                     <div className="story-text">{this.state.text}</div>
                                 </div>

@@ -16,6 +16,14 @@ class NavBar extends React.Component {
         this.setState({ authDropdown: false })
         // console.log(this.props)
         // document.body.scrollTop = 0
+
+
+    }
+
+    closeDropdown(){
+        if (this.state.authDropdown){
+            this.setState({authDropdown: false})
+        }
     }
 
     logoutRefresh(){
@@ -33,6 +41,14 @@ class NavBar extends React.Component {
     }
 
     render(){
+        if (this.props.match.url != "/"){
+            this.closeDropdown()
+        }
+        
+    
+
+
+
         let auth;
         let avatar;
         let signup = null;

@@ -658,8 +658,12 @@ class Home extends React.Component {
                                             </div>
                                     </div>
                                 <div className='spotlight-item-info'>
-                                    <div className='spotlight-item-title link'>{item.title}</div>
-                                    <div className='spotlight-item-artist link'>by {item.artist}</div>
+                                    <div 
+                                        onClick={() => this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                        className='spotlight-item-title link'>{item.title}</div>
+                                    <div 
+                                        onClick={() => this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                        className='spotlight-item-artist link'>by {item.artist}</div>
                                     <div className='spotlight-item-about'>{item.about}</div>
                                 </div>
                                 {/* Test2
@@ -698,7 +702,7 @@ class Home extends React.Component {
                         </div>
                     }
                     return <div
-                                // onClick={() => this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                
                                 className='spotlight-items'
                                 key={`${idx}`}
                             >
@@ -726,9 +730,14 @@ class Home extends React.Component {
 
                                     </div>
                                 </div>
-                                <div className='spotlight-item-info link'>
-                                    <div className='spotlight-item-title'>{item.title}</div>
-                                    <div className='spotlight-item-artist'>by {item.artist}</div>
+                                <div className='spotlight-item-info'>
+                                        <div 
+                                            onClick={() => this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                            className='spotlight-item-title link'>{item.title}</div>
+                                        <div 
+                                            onClick={() => this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                            className='spotlight-item-artist link'>by {item.artist}</div>
+                            
                                     <div className='spotlight-item-about'>{item.about}</div>
                                 </div>
                             </div>

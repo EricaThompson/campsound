@@ -2639,8 +2639,30 @@ a {
                 }
             }
 
+            .spotlight-item-title:hover + .spotlight-item-artist {
+                text-decoration: underline;
+
+            }
+
+            .spotlight-item-artist:hover, .spotlight-item-title:hover {
+                text-decoration: underline;
+            }
+
+            .spotlight-item-artist:hover + .spotlight-item-title {
+                text-decoration: underline;
+
+            }
+
+            .spotlight-item-title:hover, .spotlight-item-artist:hover {
+                text-decoration: underline;
+            }
+
+            
             .spotlight-item-artist {
                 font-weight: lighter;
+                margin-top: 4px;
+
+
             }
 
             .spotlight-item-about {

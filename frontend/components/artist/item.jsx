@@ -489,7 +489,10 @@ class Item extends React.Component {
             let loggedIn;
             if (this.props.currentUserId) {
                 loggedIn = '-logged-in';
-            }
+        }
+
+        console.log(this.state.user)
+
             return (
                 <div className={`item-show item-show${loggedIn}`} key={() => Math.random()}>
                     {/* <img className='cover-art-header stories-header' src={img} alt="" /> */}
@@ -500,7 +503,7 @@ class Item extends React.Component {
                             onClick={() => this.props.history.replace(`/users/${this.props.match.params.ownerId}`)}>{this.state.user.username}
                         </span>
                             <span className='contributor'> {/* Good {mostRecentStory}  */}
-                                Contributor
+                                {this.state.user.user_type} Contributor
                             </span>
                         </div>
                         <div className='count'>1 to {this.state.stories.length}</div>

@@ -34,7 +34,7 @@ class App extends React.Component {
                     <Modal />
                     <Route path="/" component={SearchContainer}/>
                     <Route key={Math.random()} path="/" component={NavBarContainer} />
-                    <Route exact path="/" component={HomeContainer} />
+                    <Route path="/" component={HomeContainer} />
                     <Route exact path="/stories" component={StoriesIndexContainer} />
                     <Route exact path='/about' component={About}/>
                     <Route exact path='/users/:ownerId/stories/:storyId' component={StoryContainer} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router'
 class TypeSignup extends React.Component {
 
     render() {
@@ -15,7 +16,13 @@ class TypeSignup extends React.Component {
                         <div className="info">
                             <p
                                 className="session-type-button"
-                                onClick={() => this.props.openModal('signup')}>
+                                onClick={() => {
+
+                                    this.props.history.replace('/fan')
+                                    this.props.openModal('signup')
+
+                                }}
+                                >
                                 Sign up as a fan
                         </p>
                             <p className="session-helper">
@@ -35,7 +42,13 @@ class TypeSignup extends React.Component {
                         <div className="info">
                             <p
                                 className="session-type-button"
-                                onClick={() => this.props.openModal('signup')}>
+                                onClick={() => {
+
+                                    this.props.history.replace('/artist')
+                                    this.props.openModal('signup')
+
+                                }}
+                                >
                                 Sign up as an artist
                         </p>
                             <p className="session-helper">
@@ -56,7 +69,13 @@ class TypeSignup extends React.Component {
                         <div className="info">
                             <p
                                 className="session-type-button"
-                                onClick={() => this.props.openModal('signup')}>
+                                onClick={() => {
+
+                                    this.props.history.replace('/label')
+                                    this.props.openModal('signup')
+
+                                }}
+                            >
                                 Sign up as a label
                         </p>
                             <p className="session-helper">
@@ -64,7 +83,13 @@ class TypeSignup extends React.Component {
                                 artists, a single fulfillment interface for 
                                 all your merch, direct payments on a per-release 
                                 basis, and a whole lot more.
-                            <a className="type-link" onClick={() => this.props.openModal('signup')}> learn more</a>
+                            <a 
+                                className="type-link"
+         
+                                
+                                > 
+                                    learn more
+                                </a>
                             </p>
                         </div>
                     </div>
@@ -79,4 +104,4 @@ class TypeSignup extends React.Component {
     }
 }
 
-export default TypeSignup;
+export default withRouter(TypeSignup);

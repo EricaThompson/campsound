@@ -50,11 +50,23 @@ class SignUpForm extends React.Component {
     }
 
     render() {
+        // console.log('url', )
+
+        let type;
+
+        if (this.props.location.pathname.slice(1) === 'fan'){
+            type = 'a fan'
+        } else if (this.props.location.pathname.slice(1) === 'label'){
+            type = 'a label'
+        } else {
+            type = 'an artist'
+        }
+
         return (
             <div className="session-form-box">
                 <form onSubmit={this.handleSubmit}>
                     {/* <h1 className="title" >Sign up for {this.props.formType}</h1> */}
-                    <h1 className="title" >Sign up for an account</h1>
+                    <h1 className="title" >Sign up for {type} account</h1>
                     {/* <label className="session-label shift-left">Artist name</label> */}
                     {/* <input type="text" defaultValue='Add to db?'/> */}
                     < br/>

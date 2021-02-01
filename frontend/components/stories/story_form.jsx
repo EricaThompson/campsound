@@ -493,6 +493,8 @@ class StoryForm extends React.Component {
                     </form>
                 </div>
             )
+        } else {
+            return (null)
         }
 
 

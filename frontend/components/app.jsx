@@ -30,7 +30,7 @@ class App extends React.Component {
         console.log(this.props)
         return(
             <div className="container">
-                <div className="top">
+                <div className="app-top">
                     <Modal />
                     <Route path="/" component={SearchContainer}/>
                     <Route key={Math.random()} path="/" component={NavBarContainer} />

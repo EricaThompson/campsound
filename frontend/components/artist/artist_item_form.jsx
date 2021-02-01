@@ -249,7 +249,7 @@ class ArtistItemForm extends React.Component {
         if (this.state.spinnerShow){
 
             disabler = true
-            link = <div className="spinner">
+            link = <div id="spinner">
                         {spinner}        
                     </div>
         } else {

@@ -1810,12 +1810,14 @@ a {
 
     width: 100%;
     margin: 0 auto;
-    margin-top: -165px;
+    margin-top: -55px;
     display: flex;
     flex-wrap: wrap;
     border-radius: 5px;
     height: 410px;
     width: 100%;
+    position: absolute;
+    z-index: -1;
 
     // height: 300px;
     background: linear-gradient(270deg, #5E47FD, #1E9FC4);
@@ -1846,11 +1848,12 @@ a {
 .results {
     width: 100%;
     margin: 0 auto;
-    margin-top: 55px;
+    margin-top: 155px;
     display: flex;
     flex-wrap: wrap;
     border-radius: 5px;
     height: 100%;
+    
     
     // padding-top: 200px;
     // padding-bottom: 565px;
@@ -1880,7 +1883,7 @@ a {
         // #5E47FD, 55%, #1E9FC4,#1ec4b9
 
    
-
+        // z-index: -1;
     .search-title {
         margin-bottom: 20px;
         // padding-bottom: 20px;
@@ -1892,6 +1895,7 @@ a {
         color: black;
         font-weight: bolder;
         font-style: italic;
+        
         // padding: 20px;
         // background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
         // background-size: 100%;
@@ -1907,15 +1911,17 @@ a {
 
     // width: 993px;
 
+    
+
     .result-parent {
         // display: relative;
         margin: 0 auto;
 
-        // margin-top: 70px;
+        margin-top: 220px;
         margin-left: 15px;
         margin-right: 15px;
-        margin-bottom: 40px;
-        margin-top: 90px;
+        // margin-bottom: 40px;
+        
         // border: 1px solid olive;
     
         .result-display {
@@ -1946,8 +1952,10 @@ a {
                 cursor: pointer;
                 color: #7ea2b5;
             }
+
+            
             .home-text {
-                font-weight: lighter;
+                font-weight: bolder;
                 margin: 6px;
                 padding: 0px;
             }
@@ -1977,12 +1985,12 @@ a {
             }
 
             .result-about {
-                font-weight: lighter;
                 font-family: 'Times New Roman', Times, serif;
+                font-weight: lighter !important;
                 word-wrap: break-word;
                 // width: 168px;
                 padding-left: 10px;
-                color: gray;
+                color: black;
                 max-height: 100px;
                 overflow: hidden;
                 text-overflow: ellipsis;

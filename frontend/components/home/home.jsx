@@ -132,7 +132,8 @@ class Home extends React.Component {
             text: "Hello world",
             lastLetter: 0,
             count: 0,
-            clicked: false
+            clicked: false,
+            color: '#323232'
         }
     }
 
@@ -230,10 +231,15 @@ class Home extends React.Component {
     toggleSubmitButton(e){
 
         if (e.currentTarget.value.length > 0 && e.currentTarget.value.includes('@') && e.currentTarget.value.includes('.') && e.currentTarget.value[0] !== '@' && e.currentTarget.value[0] !== '.'){
+            this.setState({ color: '#323232' })
             this.setState({disableButton: false})
         } else {
             this.setState({disableButton: true})
+            this.setState({color: 'gray'})
         }
+
+        // if (e.currentTarget.value.length > 0){
+        // }
 
         
 
@@ -801,42 +807,7 @@ class Home extends React.Component {
         return (
             <div className={`home home${loggedIn}`}>
                 <MainStories />
-                    {/* <div className='stories-home-container'>
-                        <div className="stories">
-                                <div 
-                            onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[0].owner_id}/stories/${this.state.stories.reverse()[0].id}`)}
-                                    className="main link">
-                                    <p>The Forest Through the Trees</p>
-                                    <h6>{summary0}</h6>
-                            <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-main.jpg" alt="blue flowers"/>
-                                </div>
-                            
-                            <div className="side link">
-                                <div
-                                onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[1].owner_id}/stories/${this.state.stories.reverse()[1].id}`)}
-                                    className='set'>
-                                    <p>Gold is in Bloom</p>
-                                    <h6>{type1}</h6>
-                                <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-top.jpg" alt="tan flowers"/>
-                                </div>
-                                <div
-                                    onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[2].owner_id}/stories/${this.state.stories.reverse()[2].id}`)}
-                                    className='set'>
-                                    <p>Piece by Piece</p>
-                                    <h6>{type2}</h6>
-                                <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-middle.jpg" alt="pink and blue flowers"/>
-                                </div>
-                                <div
-                                    onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[3].owner_id}/stories/${this.state.stories.reverse()[3].id}`)} 
-                                    className='set bottom'>
-                                    <p>Petals All Around</p>
-                                    <h6>{type3}</h6>
-                                <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-bottom.jpg" alt="flower petals and leaves"/>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> */}
+                
                 
                 <div className="slider counter">
                         <p className='slider-info'>Artists have uploaded {this.state.items.length} songs using CampSound since established.</p>
@@ -878,22 +849,7 @@ class Home extends React.Component {
                     </div>
                 </div>
 
-                {/* <div className="campsound-daily-container">
-                    <div className='right-now-container daily'>
-                        <h2 
-                            onClick={()=>this.props.history.replace('/stories')}
-                            className="right-now link" >CAMPSOUND DAILY</h2>
-                    </div>
-                    <div className="stories-container">
-
-                        {stories}
-                    </div>
-                    <div 
-                        onClick={()=>this.props.history.replace(`/stories`)}
-                        className='more'>
-                        <button>more <div>+</div></button>
-                    </div>
-                </div> */}
+        
                 <Daily />
                 <div className='mailing-list-container'>
                     
@@ -907,7 +863,7 @@ class Home extends React.Component {
                                     <div className='mailing-list-submit'>
                                         <input onChange={(e)=>this.toggleSubmitButton(e)} type="email" defaultValue="" name="EMAIL" className="email" id="mce-EMAIL" placeholder="your email address" required />
                                         <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true"><input type="text" name="b_9728557eba30595dc97decd94_0ea8bb7459" tabIndex="-1" defaultValue="" /></div>
-                                    <div className={`clear`}><button style={{ backgroundColor: color, cursor: style }} type="submit" defaultValue="Subscribe" name="subscribe" id="mc-embedded-subscribe" className={`button link ${buttonStyle}`} disabled={this.state.disableButton}>SIGN UP</button></div>
+                                    <div className={`clear`}><button style={{ backgroundColor: this.state.color, cursor: style }} type="submit" defaultValue="Subscribe" name="subscribe" id="mc-embedded-subscribe" className={`button link ${buttonStyle}`} disabled={this.state.disableButton}>SIGN UP</button></div>
                                     </div>
                                 </div>
                             </form>

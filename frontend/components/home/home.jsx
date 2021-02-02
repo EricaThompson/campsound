@@ -4,6 +4,7 @@ import * as StoryAPIUtil from '../../util/stories_api_util';
 import * as SessionAPIUtil from '../../util/session_api_util';
 // import { readAllUserItems } from '../../util/items_api_util';
 import MailchimpSubscribe from "react-mailchimp-subscribe"
+import Daily from './daily';
 
 class Home extends React.Component {
     constructor(props) {
@@ -129,7 +130,8 @@ class Home extends React.Component {
             slider: [],
             text: "Hello world",
             lastLetter: 0,
-            count: 0
+            count: 0,
+            clicked: false
         }
     }
 
@@ -223,6 +225,7 @@ class Home extends React.Component {
     //     }
     //     this.slider()
     // }
+
     toggleSubmitButton(e){
 
         if (e.currentTarget.value.length > 0 && e.currentTarget.value.includes('@') && e.currentTarget.value.includes('.') && e.currentTarget.value[0] !== '@' && e.currentTarget.value[0] !== '.'){
@@ -231,8 +234,19 @@ class Home extends React.Component {
             this.setState({disableButton: true})
         }
 
+        
+
 
     }
+
+    clickAndDisable(){
+        if (!this.state.clicked){
+
+            this.setState({clicked: true})
+        }
+    }
+
+
 
     play1(idx) {
         document.getElementById(`i1${idx}`).play(idx)
@@ -493,65 +507,65 @@ class Home extends React.Component {
         // console.log(count)
         // console.log(count)
 
-        let things = ["1", "2", "1", "2", "1", "2", "1", "2", "1", "2",];
-        // let top;
-        let last;
-        let main;
-        let mainImg;
-        let mainText;
-        let mainSummary;
-        let img;
-        // let stories = this.state.stories.map((story, idx) => {
-        // console.log(this.state.stories.story)
-        let reversedStories = this.state.stories;
+        // let things = ["1", "2", "1", "2", "1", "2", "1", "2", "1", "2",];
+        // // let top;
+        // let last;
+        // let main;
+        // let mainImg;
+        // let mainText;
+        // let mainSummary;
+        // let img;
+        // // let stories = this.state.stories.map((story, idx) => {
+        // // console.log(this.state.stories.story)
+        // let reversedStories = this.state.stories;
 
-        let stories = reversedStories.map((story, idx)=>{
-            if (idx < 8){
-                if (idx === 0) {
-                    main = 'main',
-                        mainImg = 'mainImg',
-                        mainText = 'mainText'
-                        mainSummary = <div className='story-summary'>
-                                        {story.summary}
-                                        <div className='read-more'>read more</div>
-                                    </div>
+        // let stories = reversedStories.map((story, idx)=>{
+        //     if (idx < 8){
+        //         if (idx === 0) {
+        //             main = 'main',
+        //                 mainImg = 'mainImg',
+        //                 mainText = 'mainText'
+        //                 mainSummary = <div className='story-summary'>
+        //                                 {story.summary}
+        //                                 <div className='read-more'>read more</div>
+        //                             </div>
 
-                } else if (idx === 7 || idx === 2) {
-                    last = 'last'
-                    mainSummary = ''
-                } else {
-                    last = ''
-                    main = 'smaller-stories'
-                    mainImg = ''
-                    mainSummary = ''
-                }
+        //         } else if (idx === 7 || idx === 2) {
+        //             last = 'last'
+        //             mainSummary = ''
+        //         } else {
+        //             last = ''
+        //             main = 'smaller-stories'
+        //             mainImg = ''
+        //             mainSummary = ''
+        //         }
 
-                if (story.type === 'news') {
-                    img = this.state.news
-                } else {
-                    img = this.state.review
-                }
-                // console.log(story)
-                return <div
-                    onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}`)}
-                    className={`story link ${last} ${main}`}
-                    key={idx}
-                >
-                    <img className={`${mainImg}`} src={img} alt="" />
-                    <div className={`${mainText}`}>
-                        <div className='story-title'>{story.title}</div>
-                        <div className='story-author'>by {story.username}</div>
-                        {mainSummary}
-                        <div className='story-type'>{story.type}</div>
-                    </div>
-                </div>
+        //         if (story.type === 'news') {
+        //             img = this.state.news
+        //         } else {
+        //             img = this.state.review
+        //         }
+        //         // console.log(story)
+        //         return <div
+        //             onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}`)}
+        //             className={`story link ${last} ${main}`}
+        //             key={idx}
+        //         >
+        //             <img className={`${mainImg}`} src={img} alt="" />
+        //             <div className={`${mainText}`}>
+        //                 <div className='story-title'>{story.title}</div>
+        //                 <div className='story-author'>by {story.username}</div>
+        //                 {mainSummary}
+        //                 <div className='story-type'>{story.type}</div>
+        //             </div>
+        //         </div>
 
-            }
+        //     }
 
             
-        })
+        // })
 
-        console.log('stories',)
+        // console.log('stories',)
 
         // console.log(this.state.stories)
 
@@ -861,12 +875,13 @@ class Home extends React.Component {
 
                     </div>
                 </div>
-                <div className="campsound-daily-container">
-                <div className='right-now-container daily'>
-                    <h2 
-                        onClick={()=>this.props.history.replace('/stories')}
-                        className="right-now link" >CAMPSOUND DAILY</h2>
-                </div>
+
+                {/* <div className="campsound-daily-container">
+                    <div className='right-now-container daily'>
+                        <h2 
+                            onClick={()=>this.props.history.replace('/stories')}
+                            className="right-now link" >CAMPSOUND DAILY</h2>
+                    </div>
                     <div className="stories-container">
 
                         {stories}
@@ -876,7 +891,8 @@ class Home extends React.Component {
                         className='more'>
                         <button>more <div>+</div></button>
                     </div>
-                </div>
+                </div> */}
+                <Daily />
                 <div className='mailing-list-container'>
                     
                     

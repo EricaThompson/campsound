@@ -10,7 +10,8 @@ class Results extends React.Component {
         super(props);
         this.state = {
             searchTitle: '',
-            discoverResults: []
+            discoverResults: [],
+            allResults: [],
             // audioPlayer: false
         }
     }
@@ -22,10 +23,14 @@ class Results extends React.Component {
     componentDidMount(){
         this.props.genreSearch(this.props.match.params.result)
             .then(res => this.setState({discoverResults: res.items}))
+
+        this.props.browseAll()
+            .then(res => this.setState({allResults: res.items}))
         // console.log(this.props)
     }
 
     render() {
+        console.log('results state',this.state)
         let searchTitle;
         let arrayOfResults = [];
         // console.log(arrayOfResults)
@@ -37,6 +42,13 @@ class Results extends React.Component {
         })
 
         // let player = 
+
+        if (this.props.match.url === '/search/browse-all'){
+            arrayOfResults = [];
+            Object.values(this.state.allResults).forEach(result => {
+                arrayOfResults.push(result)
+            })
+        }
 
         
         
@@ -52,11 +64,7 @@ class Results extends React.Component {
                 result.genre === 'ambient' 
             ){
                 searchTitle = result.genre
-            } else if (Object.values(this.props.items).length > 0){
-                searchTitle = 'all results'
-            } else {
-                
-            }
+            } 
             
             let loggedIn;
             if (this.props.currentUserId){
@@ -95,6 +103,14 @@ class Results extends React.Component {
         if (this.props.currentUserId) {
             loggedIn = '-logged-in'
         }
+
+        if (this.props.match.url === '/search/browse-all') {
+            searchTitle = 'all results'
+        } 
+
+        console.log(this.props.match)
+
+        
         
         return (
             <div className={`results results${loggedIn}`}>

@@ -108,7 +108,7 @@ class ArtistItemForm extends React.Component {
         if (this.props.match.path.includes('new')) {
             if (this.state.songFile && this.state.coverFile) {
                 this.props.createItem(this.props.currentUserId, formData)
-                    .then(() => this.props.history.replace(`/users/${this.props.currentUserId}`), () => this.setState({ spinnerShow: false }))
+                    .then(() => this.props.history.push(`/users/${this.props.currentUserId}`), () => this.setState({ spinnerShow: false }))
             }
 
             if (!this.state.songFile) {
@@ -131,7 +131,7 @@ class ArtistItemForm extends React.Component {
                 }
             }
             this.props.updateItem(this.props.currentUserId, this.props.match.params.itemId, song)
-            this.props.history.replace(`/users/${this.props.currentUserId}/music/${this.state.id}`)
+            this.props.history.push(`/users/${this.props.currentUserId}/music/${this.state.id}`)
                 // .catch(err => console.log(err))
         }
         

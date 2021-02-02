@@ -23,12 +23,12 @@ class Footer extends React.Component{
                         <ul>
                             <li
                                 className='link'
-                                onClick={() => this.props.history.replace('/page/about')}
+                                onClick={() => this.props.history.push('/page/about')}
                                 >
                                 About</li>
                             <li
                                 className='link'
-                                onClick={() => this.props.history.replace('/page/stories')}
+                                onClick={() => this.props.history.push('/page/stories')}
                             >
                                 Campsound Daily</li>
                             {/* <li>Contact</li> */}
@@ -51,7 +51,7 @@ class Footer extends React.Component{
 
             return (<footer>
                 <div
-                onClick={()=>this.props.history.replace('/')}
+                onClick={()=>this.props.history.push('/')}
                     id='bottom-logo'
                     className='logo link'>
                     🏕campsound

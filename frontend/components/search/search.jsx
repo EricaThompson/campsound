@@ -21,7 +21,7 @@ class Search extends React.Component {
 
     // componentDidMount(){
     //     this.props.genreSearch(this.props.match.genre)
-    //         .then(() => this.props.history.replace(`/search/${this.props.match.genre}`))
+    //         .then(() => this.props.history.push(`/search/${this.props.match.genre}`))
     // }
 
     // componentDidMount(){
@@ -31,14 +31,14 @@ class Search extends React.Component {
     genreSearch(genre){
         this.showDropdown()
         this.props.genreSearch(genre)
-            .then(() => this.props.history.replace(`/search/${genre}`))
+            .then(() => this.props.history.push(`/search/${genre}`))
             .then(()=> window.location.reload())
     }
 
     browseAll(){
         this.showDropdown()
         this.props.browseAll()
-            .then(() => this.props.history.replace(`/search/browse-all`))
+            .then(() => this.props.history.push(`/search/browse-all`))
     }
     typedSearch(){
         // if (e){
@@ -49,7 +49,7 @@ class Search extends React.Component {
         
         if (this.state.typedSearch.length > 0){
             this.props.anySearch(this.state.typedSearch)
-            .then(() => this.props.history.replace(`/search/${this.state.typedSearch}`))
+            .then(() => this.props.history.push(`/search/${this.state.typedSearch}`))
         } 
         this.showDropdown()
     }

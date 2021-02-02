@@ -80,13 +80,13 @@ class Item extends React.Component {
 
     switchToStories(){
         // console.log(this.props)
-        this.props.history.replace(`/users/${this.props.match.params.ownerId}/stories`)
+        this.props.history.push(`/users/${this.props.match.params.ownerId}/stories`)
         
             
     }
 
     switchToMusic(){
-        this.props.history.replace(`/users/${this.props.match.params.ownerId}`)
+        this.props.history.push(`/users/${this.props.match.params.ownerId}`)
     }
 
     refresh(){
@@ -355,7 +355,7 @@ class Item extends React.Component {
 
         if (this.state.item.owner_id === this.props.currentUserId){
             deleteBtn = <button onClick={() => this.deleteSong()}>Delete</button>
-            editBtn = < button onClick={() => this.props.history.replace(`/users/${this.props.currentUserId}/music/${this.state.item.id}/edit`)}>Edit</button>
+            editBtn = < button onClick={() => this.props.history.push(`/users/${this.props.currentUserId}/music/${this.state.item.id}/edit`)}>Edit</button>
         }
 
         let stories;
@@ -383,7 +383,7 @@ class Item extends React.Component {
                             key={idx} 
                             className='story link'
 
-                            onClick={()=>this.props.history.replace(`/users/${story.author}/stories/${story.id}`)}
+                            onClick={()=>this.props.history.push(`/users/${story.author}/stories/${story.id}`)}
                             >
                                 <img className="story-image" src={img} alt=""/>
                                 <div className="upper"><span className='type'>{story.type}</span> · <span className='date'>{story.date}</span></div>
@@ -439,7 +439,7 @@ class Item extends React.Component {
                                 {this.state.item.owner_id}
                             </div> */}
                         <div
-                            onClick={() => this.props.history.replace(`/users/${this.state.user.id}`)}
+                            onClick={() => this.props.history.push(`/users/${this.state.user.id}`)}
                             className="image link">
                             {image}
                             {/* <input
@@ -451,7 +451,7 @@ class Item extends React.Component {
                         </div>
 
                         <p
-                            onClick={() => this.props.history.replace(`/users/${this.state.item.owner_id}`)}
+                            onClick={() => this.props.history.push(`/users/${this.state.item.owner_id}`)}
                             className='username link'>{this.state.user.username}
                         </p>
                         <p className="location">{this.state.user.location}</p>
@@ -501,7 +501,7 @@ class Item extends React.Component {
                     <div className={`artist-stories-header `}>
                         <div><span
                             className='link'
-                            onClick={() => this.props.history.replace(`/users/${this.props.match.params.ownerId}`)}>{this.state.user.username}
+                            onClick={() => this.props.history.push(`/users/${this.props.match.params.ownerId}`)}>{this.state.user.username}
                         </span>
                             <span className='contributor'> {/* Good {mostRecentStory}  */}
                                 {this.state.user.user_type} Contributor

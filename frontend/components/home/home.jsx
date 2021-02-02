@@ -213,7 +213,7 @@ class Home extends React.Component {
     // genreSearch(genre) {
     //     // this.showDropdown()
     //     this.props.genreSearch(genre)
-    //         .then(() => this.props.history.replace(`/search/${genre}`))
+    //         .then(() => this.props.history.push(`/search/${genre}`))
     // }
 
     // slider(){
@@ -554,7 +554,7 @@ class Home extends React.Component {
         //         }
         //         // console.log(story)
         //         return <div
-        //             onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}`)}
+        //             onClick={() => this.props.history.push(`/users/${story.author}/stories/${story.id}`)}
         //             className={`story link ${last} ${main}`}
         //             key={idx}
         //         >
@@ -586,7 +586,7 @@ class Home extends React.Component {
         if (this.state.users !== ''){
             // console.log(this.state.users)
             user1 = <div 
-                        onClick={()=> this.props.history.replace(`/users/${this.state.users[0].id}`)}
+                        onClick={()=> this.props.history.push(`/users/${this.state.users[0].id}`)}
                         className='about-user link'
                     >
                         <div className="user1-triangle"></div>
@@ -606,7 +606,7 @@ class Home extends React.Component {
 
             user2 = <div 
                         onClick={ ()=> {
-                            this.props.history.replace(`/users/${this.state.users[1].id}`)
+                            this.props.history.push(`/users/${this.state.users[1].id}`)
                         }}
                         className='about-user link'>
                         <div className="user2-triangle"></div>
@@ -658,7 +658,7 @@ class Home extends React.Component {
                                         </div>
                     }
                     return <div 
-                                // onClick={()=>this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                // onClick={()=>this.props.history.push(`/users/${item.owner_id}/music/${item.id}`)}
                                 className='spotlight-items'
                                 key={`${idx}`}>
                                     <div>
@@ -684,10 +684,10 @@ class Home extends React.Component {
                                     </div>
                                 <div className='spotlight-item-info'>
                                     <div 
-                                        onClick={() => this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                        onClick={() => this.props.history.push(`/users/${item.owner_id}/music/${item.id}`)}
                                         className='spotlight-item-title link'>{item.title}</div>
                                     <div 
-                                        onClick={() => this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                        onClick={() => this.props.history.push(`/users/${item.owner_id}/music/${item.id}`)}
                                         className='spotlight-item-artist link'>by {item.artist}</div>
                                     <div className='spotlight-item-about'>{item.about}</div>
                                 </div>
@@ -757,10 +757,10 @@ class Home extends React.Component {
                                 </div>
                                 <div className='spotlight-item-info'>
                                         <div 
-                                            onClick={() => this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                            onClick={() => this.props.history.push(`/users/${item.owner_id}/music/${item.id}`)}
                                             className='spotlight-item-title link'>{item.title}</div>
                                         <div 
-                                            onClick={() => this.props.history.replace(`/users/${item.owner_id}/music/${item.id}`)}
+                                            onClick={() => this.props.history.push(`/users/${item.owner_id}/music/${item.id}`)}
                                             className='spotlight-item-artist link'>by {item.artist}</div>
                             
                                     <div className='spotlight-item-about'>{item.about}</div>
@@ -807,7 +807,7 @@ class Home extends React.Component {
         return (
             <div className={`home home${loggedIn}`}>
                 <div className='gradient'>
-                    
+
                 </div>
                 <MainStories />
                 

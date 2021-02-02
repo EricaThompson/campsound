@@ -162,13 +162,13 @@ class StoryForm extends React.Component {
         if (this.props.match.path.includes('new')) {
 
             StoryAPIUtil.createStory(this.props.currentUserId, storyObj)
-                .then((res) => this.props.history.replace(`/users/${this.props.currentUserId}/stories/${res.id}`)) 
+                .then((res) => this.props.history.push(`/users/${this.props.currentUserId}/stories/${res.id}`)) 
 
             // this.props.createStory(this.props.currentUserId, formData)
             
         } else if (this.props.match.path.includes('edit')) {
             StoryAPIUtil.updateStory(this.props.currentUserId, storyObj)
-                .then(this.props.history.replace(`/users/${this.props.currentUserId}/stories/${storyObj.story.id}`))
+                .then(this.props.history.push(`/users/${this.props.currentUserId}/stories/${storyObj.story.id}`))
             // .catch(err => console.log(err))
         }
 

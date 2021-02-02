@@ -18,7 +18,7 @@ class TypeSignup extends React.Component {
                                 className="session-type-button"
                                 onClick={() => {
 
-                                    this.props.history.replace('/fan')
+                                    this.props.history.push('/fan')
                                     this.props.openModal('signup')
 
                                 }}
@@ -44,7 +44,7 @@ class TypeSignup extends React.Component {
                                 className="session-type-button"
                                 onClick={() => {
 
-                                    this.props.history.replace('/artist')
+                                    this.props.history.push('/artist')
                                     this.props.openModal('signup')
 
                                 }}
@@ -71,7 +71,7 @@ class TypeSignup extends React.Component {
                                 className="session-type-button"
                                 onClick={() => {
 
-                                    this.props.history.replace('/label')
+                                    this.props.history.push('/label')
                                     this.props.openModal('signup')
 
                                 }}

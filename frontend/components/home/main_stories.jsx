@@ -48,7 +48,7 @@ class MainStories extends React.Component {
             <div className='stories-home-container'>
                 <div className="stories">
                     <div
-                        onClick={() => this.props.history.replace(`/users/${this.state.stories.reverse()[0].owner_id}/stories/${this.state.stories.reverse()[0].id}`)}
+                        onClick={() => this.props.history.push(`/users/${this.state.stories.reverse()[0].owner_id}/stories/${this.state.stories.reverse()[0].id}`)}
                         className="main link">
                         <p>The Forest Through the Trees</p>
                         <h6>{summary0}</h6>
@@ -57,21 +57,21 @@ class MainStories extends React.Component {
 
                     <div className="side link">
                         <div
-                            onClick={() => this.props.history.replace(`/users/${this.state.stories.reverse()[1].owner_id}/stories/${this.state.stories.reverse()[1].id}`)}
+                            onClick={() => this.props.history.push(`/users/${this.state.stories.reverse()[1].owner_id}/stories/${this.state.stories.reverse()[1].id}`)}
                             className='set'>
                             <p>Gold is in Bloom</p>
                             <h6>{type1}</h6>
                             <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-top.jpg" alt="tan flowers" />
                         </div>
                         <div
-                            onClick={() => this.props.history.replace(`/users/${this.state.stories.reverse()[2].owner_id}/stories/${this.state.stories.reverse()[2].id}`)}
+                            onClick={() => this.props.history.push(`/users/${this.state.stories.reverse()[2].owner_id}/stories/${this.state.stories.reverse()[2].id}`)}
                             className='set'>
                             <p>Piece by Piece</p>
                             <h6>{type2}</h6>
                             <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-middle.jpg" alt="pink and blue flowers" />
                         </div>
                         <div
-                            onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[3].owner_id}/stories/${this.state.stories.reverse()[3].id}`)}
+                            onClick={() => this.props.history.push(`/users/${this.state.items.reverse()[3].owner_id}/stories/${this.state.stories.reverse()[3].id}`)}
                             className='set bottom'>
                             <p>Petals All Around</p>
                             <h6>{type3}</h6>

@@ -79,11 +79,11 @@ class Results extends React.Component {
                         
                 <div key={result.id} className="result-display">
                         {/* <Link to={`artists/${this.props.currentUserId}/music/${result.id}`}> */}
-                            <span onClick={() => this.props.history.replace(`/users/${this.props.currentUserId}/music/${result.id}`)}>
+                            <span onClick={() => this.props.history.push(`/users/${this.props.currentUserId}/music/${result.id}`)}>
                                 <img src={`${result.cover}`} alt="song cover art" />
                                 <h5 className="home-text top">{result.title}</h5>
                             </span>
-                            <span onClick={() => this.props.history.replace(`/users/${this.props.currentUserId}`)}>
+                            <span onClick={() => this.props.history.push(`/users/${this.props.currentUserId}`)}>
                                 <h5 className="home-text">by {result.artist}</h5>
                             </span>
                             <span className='result-about'>

@@ -89,7 +89,7 @@ class NavBar extends React.Component {
                         to={`/page/about`}>
                         <p>
                             <span
-                                onClick={() => this.props.history.replace('/page/about')}>
+                                onClick={() => this.props.history.push('/page/about')}>
                                 about
                                 </span>
                         </p>
@@ -149,7 +149,7 @@ class NavBar extends React.Component {
                         to={`/page/about`}>
                         <p>
                             <span
-                                onClick={() => this.props.history.replace('/page/about')}>
+                                onClick={() => this.props.history.push('/page/about')}>
                                 about
                                 </span>
                         </p>

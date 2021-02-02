@@ -111,7 +111,7 @@ class StoriesIndex extends React.Component {
 
             if (story.author === this.props.currentUserId) {
                 editBtn = <button
-                                onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}/edit`)}
+                                onClick={() => this.props.history.push(`/users/${story.author}/stories/${story.id}/edit`)}
                                 className="edit"
                             >
                                 edit
@@ -132,7 +132,7 @@ class StoriesIndex extends React.Component {
                 {/* <div className="story-image"></div> */}
                 <img 
                     className="story-image"
-                    onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}/`)}
+                    onClick={() => this.props.history.push(`/users/${story.author}/stories/${story.id}/`)}
                     src={img} alt=""
                 />
                 <div className='buttons'>
@@ -147,7 +147,7 @@ class StoriesIndex extends React.Component {
                 {/* <Link to={`stories/${this.props.currentUserId}/story/${story.id}`}> */}
                     {/* <img src={`${story.title}`} alt="" /> */}
                     <h5 
-                    onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}/`)}
+                    onClick={() => this.props.history.push(`/users/${story.author}/stories/${story.id}/`)}
                         className='main-story-title'>{story.title}</h5>
                     {/* <div className="main-story-summary">{story.text}</div> */}
 
@@ -198,7 +198,7 @@ class StoriesIndex extends React.Component {
                 <div className="main-story">
 
                     <img 
-                        onClick={() => this.props.history.replace(`/users/${this.state.mainStory.author}/stories/${this.state.mainStory.id}/`)}
+                        onClick={() => this.props.history.push(`/users/${this.state.mainStory.author}/stories/${this.state.mainStory.id}/`)}
                         src={img}
                         alt="main-cover" 
                     />
@@ -208,7 +208,7 @@ class StoriesIndex extends React.Component {
                         </div>
                         
                         <div
-                            onClick={() => this.props.history.replace(`/users/${this.state.mainStory.author}/stories/${this.state.mainStory.id}/`)} 
+                            onClick={() => this.props.history.push(`/users/${this.state.mainStory.author}/stories/${this.state.mainStory.id}/`)} 
                             className='main-story-title'
                         >
                                 {this.state.mainStory.title}
@@ -217,7 +217,7 @@ class StoriesIndex extends React.Component {
                             {this.state.mainStory.summary}
                         </div>
                         <div
-                            onClick={()=> this.props.history.replace(`/users/${this.state.mainStory.author}/stories`)}
+                            onClick={()=> this.props.history.push(`/users/${this.state.mainStory.author}/stories`)}
                             className='main-story-author'>
                             By <span className='name'>{this.state.mainStory.username}</span>
                         </div>

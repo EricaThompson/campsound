@@ -70,7 +70,7 @@ class Story extends React.Component {
         
         if (this.state.story.owner_id === this.props.currentUserId){
             editBtn = <button 
-                            onClick={()=>this.props.history.replace(`/users/${this.state.story.owner_id}/stories/${this.state.story.id}/edit`)}
+                            onClick={()=>this.props.history.push(`/users/${this.state.story.owner_id}/stories/${this.state.story.id}/edit`)}
                             className="edit"
                         >
                             edit
@@ -78,7 +78,7 @@ class Story extends React.Component {
             deleteBtn = <button
                 onClick={() => {
                     StoryAPIUtil.deleteStory(this.props.currentUserId, this.state.story.id )
-                    this.props.history.replace(`/stories`)
+                    this.props.history.push(`/stories`)
                 } }
                             className="delete"
                         >
@@ -96,7 +96,7 @@ class Story extends React.Component {
                             className="next-btn link fas fa-play next-solo"
                             onClick={
                             () => {
-                                this.props.history.replace(`/users/${this.state.story.owner_id}/stories/${this.state.nextStory.id}`)
+                                this.props.history.push(`/users/${this.state.story.owner_id}/stories/${this.state.nextStory.id}`)
                                 window.location.reload()
                             }
                             }>
@@ -108,7 +108,7 @@ class Story extends React.Component {
                 className="next-btn link fas fa-play"
                 onClick={
                     () => {
-                        this.props.history.replace(`/users/${this.state.story.owner_id}/stories/${this.state.nextStory.id}`)
+                        this.props.history.push(`/users/${this.state.story.owner_id}/stories/${this.state.nextStory.id}`)
                         window.location.reload()
                     }
                 }>
@@ -121,7 +121,7 @@ class Story extends React.Component {
                 className="previous-btn link fas fa-play previous-solo"
                 onClick={
                     () => {
-                        this.props.history.replace(`/users/${this.state.story.owner_id}/stories/${this.state.previousStory.id}`)
+                        this.props.history.push(`/users/${this.state.story.owner_id}/stories/${this.state.previousStory.id}`)
                         window.location.reload()
                     }
                 }>
@@ -133,7 +133,7 @@ class Story extends React.Component {
                 className="previous-btn link fas fa-play"
                 onClick={
                     () => {
-                        this.props.history.replace(`/users/${this.state.story.owner_id}/stories/${this.state.previousStory.id}`)
+                        this.props.history.push(`/users/${this.state.story.owner_id}/stories/${this.state.previousStory.id}`)
                         window.location.reload()
                     }
                 }>
@@ -165,10 +165,10 @@ class Story extends React.Component {
                         <div className='stories-nav'>
                             <h1 
                                 className='link'
-                                onClick={() => this.props.history.replace('/page/stories')}>Campsound Daily</h1>
+                                onClick={() => this.props.history.push('/page/stories')}>Campsound Daily</h1>
                             <ul>
                                 <li>
-                                    <span onClick={() => this.props.history.replace('page/stories')}>stories</span> · view all
+                                    <span onClick={() => this.props.history.push('page/stories')}>stories</span> · view all
                                 </li>
 
                             </ul>
@@ -178,7 +178,7 @@ class Story extends React.Component {
                         <div className='story-show-type'>{this.state.story.story_type}</div>
                         <div className='story-show-title'>{this.state.story.title}</div>
                         <div className='story-show-summary'>{this.state.story.summary}</div>
-                        <div className='story-show-author'>By <span className="author" onClick={() => this.props.history.replace(`/users/${this.state.story.owner_id}/stories`)}>{this.state.story.username}</span> · {this.state.story.date}</div>
+                        <div className='story-show-author'>By <span className="author" onClick={() => this.props.history.push(`/users/${this.state.story.owner_id}/stories`)}>{this.state.story.username}</span> · {this.state.story.date}</div>
                         {previousBtn}
                         {nextBtn}
                         <div className='story-show-img'><img src={img} alt=""/></div>

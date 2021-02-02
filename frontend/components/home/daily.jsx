@@ -188,7 +188,7 @@ class Daily extends React.Component {
                     img = this.state.review
                 }
                 return <div
-                    onClick={() => this.props.history.replace(`/users/${story.author}/stories/${story.id}`)}
+                    onClick={() => this.props.history.push(`/users/${story.author}/stories/${story.id}`)}
                     className={`story link ${last} ${main}`}
                     key={idx}
                 >
@@ -212,7 +212,7 @@ class Daily extends React.Component {
             <div className="campsound-daily-container">
                 <div className='right-now-container daily'>
                     <h2
-                        onClick={() => this.props.history.replace('/page/stories')}
+                        onClick={() => this.props.history.push('/page/stories')}
                         className="right-now link" >CAMPSOUND DAILY</h2>
                 </div>
                 <div className="stories-container">
@@ -220,7 +220,7 @@ class Daily extends React.Component {
                     {stories}
                 </div>
                 <div
-                    onClick={() => this.props.history.replace(`/page/stories`)}
+                    onClick={() => this.props.history.push(`/page/stories`)}
                     className='more'>
                     <button>more <div>+</div></button>
                 </div>

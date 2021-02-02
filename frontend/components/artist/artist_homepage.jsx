@@ -53,7 +53,7 @@ class ArtistHomepage extends React.Component {
 
     switchToStories() {
         // console.log(this.props)
-        this.props.history.replace(`/users/${this.props.match.params.ownerId}/stories`)
+        this.props.history.push(`/users/${this.props.match.params.ownerId}/stories`)
     }
 
     handleSubmit(e){

@@ -26,8 +26,7 @@ item1 = Item.create(
                 "owner_id": user1.id,
                 "title": 'This Clarity',
                 "genre": 'electronic',
-                "about": 
-                'Electronic Clarity: clearness or lucidity as to perception or understanding; freedom from indistinctness or ambiguity. the state or quality of being clear or transparent to the eye; pellucidity: the clarity of pure water.',
+                "about": 'Electronic Clarity: clearness or lucidity as to perception or understanding; freedom from indistinctness or ambiguity. the state or quality of being clear or transparent to the eye; pellucidity: the clarity of pure water.',
                 'released': true,
                 'artist_name': 'DU'
                 )
@@ -77,8 +76,7 @@ item5 = Item.create(
                 "genre": 'hip hop',
                 'released': true,
                 'artist_name': 'DMO USR',
-                "about": 
-                'Hip Hop and relax: make or become less tense or anxious.',
+                "about": 'Hip Hop and relax: make or become less tense or anxious.',
                 )
 item5.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/5.jpeg"), filename: "cover-5")
 item5.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/5.mp3"), filename: "song-5")
@@ -101,8 +99,8 @@ item7 = Item.create(
                 "genre": 'punk',
                 'released': true,
                 'artist_name': 'DU',
-                "about": 'Punk thoughts.
-                something that is thought: such as, an individual act or product of thinking a developed intention or plan had no thought of leaving home, something (such as an opinion or belief) in the mindhe spoke his thoughts freely.
+                "about": 'Punk thoughts: Something that is thought: such as, an individual act or product of thinking a developed intention or plan had no thought of leaving home, something (such as an opinion or belief) in the mindhe spoke his thoughts freely.
+                
                 The intellectual product or the organized views and principles of a period, place, group, or individual, contemporary Western thought. The action or process of thinking : COGITATION, serious consideration : REGARD carchaic : RECOLLECTION, REMEMBRANCE reasoning power the power to imagine : CONCEPTION. A thought a little : SOMEWHAT a thought too much vinegar in the dressing
                 ',
                 )
@@ -116,9 +114,7 @@ item8 = Item.create(
                 'released': true,
                 'artist_name': 'Rainforest Records',
                 "about": 
-                'Pop level
-                
-                A device for establishing a horizontal line or plane by means of a bubble in a liquid that shows adjustment to the horizontal by movement to the center of a slightly bowed glass tube. 
+                'Pop level: A device for establishing a horizontal line or plane by means of a bubble in a liquid that shows adjustment to the horizontal by movement to the center of a slightly bowed glass tube. 
                 
                 A measurement of the difference of altitude of two points by means of a level. Horizontal condition. Especially, equilibrium of a fluid marked by a horizontal surface of even altitude
 
@@ -134,9 +130,7 @@ item9 = Item.create(
                 "genre": 'ambient',
                 'released': true,
                 'artist_name': 'Demo User',
-                "about": "Ambient Commission.
-                
-                A formal written warrant granting the power to perform various acts or duties a certificate conferring military rank and authority. Also, the rank and authority so conferred received a lieutenant's commission in the army. An authorization or command to act in a prescribed manner or to perform prescribed acts : CHARGE. A commission to serve as notary public.A formal request to produce something (especially an artistic work) in exchange for payment
+                "about": "Ambient Commission: A formal written warrant granting the power to perform various acts or duties a certificate conferring military rank and authority. Also, the rank and authority so conferred received a lieutenant's commission in the army. An authorization or command to act in a prescribed manner or to perform prescribed acts : CHARGE. A commission to serve as notary public.A formal request to produce something (especially an artistic work) in exchange for payment
                 ",
                 )
 item9.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/9.jpeg"), filename: "cover-9")
@@ -149,9 +143,7 @@ item10 = Item.create(
                 'released': true,
                 'artist_name': 'Rainy User',
                 "about": 
-                'Other Years.
-                
-                A different or additional one the others came later. One that remains of two or more. A thing opposite to or excluded by something else went from one side to the other nature as the other of culture.
+                'Other Years: A different or additional one the others came later. One that remains of two or more. A thing opposite to or excluded by something else went from one side to the other nature as the other of culture.
                 
                 ',
                 )

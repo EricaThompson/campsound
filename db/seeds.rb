@@ -641,7 +641,7 @@ story9 = Story.create(
 
 story10 = Story.create(
                 "owner_id": user2.id,
-                "title": 'Ode to the Inheritance.',
+                "title": 'Ode to the Inheritance',
                 "story_type": 'news',
                 "summary": 'A Sonnet',
                 "username": 'Rainforest Records',

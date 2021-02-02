@@ -19,10 +19,10 @@ class Daily extends React.Component {
             // 1: 'https://images.pexels.com/photos/2341290/pexels-photo-2341290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
             // 2: 'https://images.pexels.com/photos/1029624/pexels-photo-1029624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=0&w=115',
             // 3: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
-            news: 'https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
-            review: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
-            // news: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/news.jpg',
-            // review: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/review.jpg',
+            // news: 'https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
+            // review: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
+            news: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/news.jpg',
+            review: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/review.jpg',
             i1: {
                 0: false,
                 1: false,
@@ -178,7 +178,7 @@ class Daily extends React.Component {
                 } else {
                     last = ''
                     main = 'smaller-stories'
-                    mainImg = ''
+                    mainImg = 'story-image'
                     mainSummary = ''
                 }
 
@@ -192,7 +192,7 @@ class Daily extends React.Component {
                     className={`story link ${last} ${main}`}
                     key={idx}
                 >
-                    <img className={`${mainImg}`} src={img} alt="" />
+                    <img className={`${mainImg}`} src={img} alt="story" />
                     <div className={`${mainText}`}>
                         <div className='story-title'>{story.title}</div>
                         <div className='story-author'>by {story.username}</div>

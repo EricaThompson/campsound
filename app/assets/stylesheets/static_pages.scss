@@ -2311,7 +2311,7 @@ a {
         height: 10px;
     }
 
-    .campsound-daily-container {
+.campsound-daily-container {
         background-color: #EEF2F3;
         padding-top: 25px;
 
@@ -2335,16 +2335,27 @@ a {
             background-color: #EEF2F3;
             // margin-top: 55px;
 
+            .story-image {
+                    width: 181px;
+                    height: 134px;
+                    clip-path: inset(0px 0px 0px 0px);
+            }
+
             .main {
                 width: 585px;
                 position: relative;
 
                 .mainImg {
                     position: absolute;
-                    top: 25px;
-                    left: 25px;
-                    height: 160px;
+                    top: 0px;
+                    left: 0px;
+                    height: 260px;
+                    // display: none;
+                    clip-path: inset(0px 110px 0px 0px);
                 }
+
+                
+
 
                 .mainText {
                     position: absolute;
@@ -2352,6 +2363,8 @@ a {
                     left: 284px;
                     width: 271px;
 
+
+                    
 
 
                     .story-title {

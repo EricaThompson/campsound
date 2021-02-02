@@ -32,7 +32,7 @@ class User < ApplicationRecord
     def ensure_image
         if !self.user_img.attached?
             require 'open-uri'
-            self.user_img.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/users/tape.png"), filename: 'default_image_name')   
+            self.user_img.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/users/new-user.png"), filename: 'default_image_name')   
         end
     end
 

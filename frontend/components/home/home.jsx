@@ -806,6 +806,9 @@ class Home extends React.Component {
 
         return (
             <div className={`home home${loggedIn}`}>
+                <div className='gradient'>
+                    
+                </div>
                 <MainStories />
                 
                 

@@ -60,8 +60,9 @@ class Results extends React.Component {
                 result.genre === 'metal' ||
                 result.genre === 'rock' ||
                 result.genre === 'alternative' ||
-                result.genre === 'hip-hop/rap' ||
+                result.genre.includes('hip-hop') ||
                 result.genre === 'experimental' ||
+                result.genre === 'pop' ||
                 result.genre === 'punk' ||
                 result.genre === 'ambient' 
             ){
@@ -72,6 +73,8 @@ class Results extends React.Component {
             if (this.props.currentUserId){
                 loggedIn = '-logged-in'
             }
+            console.log(result)
+
             return <div key={result.id} className={`result-parent result-parent${loggedIn}`}>
                         
                 <div key={result.id} className="result-display">
@@ -81,11 +84,14 @@ class Results extends React.Component {
                                 <h5 className="home-text top">{result.title}</h5>
                             </span>
                             <span onClick={() => this.props.history.replace(`/users/${this.props.currentUserId}`)}>
-                                <h5 className="home-text">{result.artist}</h5>
+                                <h5 className="home-text">by {result.artist}</h5>
                             </span>
-                                <h5 
+                            <span className='result-about'>
+                                <h5>{result.about}</h5>
+                            </span>
+                                {/* <h5 
                                     className="home-text add">Add to Playlist
-                                </h5>
+                                </h5> */}
                                 <h5 className="home-text"><a href={`${result.song}`} download>Download</a></h5>
                                 {/* <h5 onClick={()=>this.toggleAudioPlayer()} className="home-text">Listen</h5> */}
                                 <audio key={result.id} id="results-single-player" controls>
@@ -118,12 +124,19 @@ class Results extends React.Component {
             <div className={`results results${loggedIn}`}>
                 <br />
                 <br />
-                <div className={`search-title search-title${loggedIn}`}>{searchTitle}</div>
+                <div className='title-container'>
+                    
+                    <div className={`search-title search-title${loggedIn}`}>{searchTitle}</div>
+                </div>
                 <br />
                 <br />
                 {results}
                 {/* <MusicPlayer /> */}
+                <div>
+                    
+                </div>
             </div>
+
         )
     }
 }

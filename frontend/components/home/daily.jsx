@@ -212,7 +212,7 @@ class Daily extends React.Component {
             <div className="campsound-daily-container">
                 <div className='right-now-container daily'>
                     <h2
-                        onClick={() => this.props.history.replace('/stories')}
+                        onClick={() => this.props.history.replace('/page/stories')}
                         className="right-now link" >CAMPSOUND DAILY</h2>
                 </div>
                 <div className="stories-container">
@@ -220,7 +220,7 @@ class Daily extends React.Component {
                     {stories}
                 </div>
                 <div
-                    onClick={() => this.props.history.replace(`/stories`)}
+                    onClick={() => this.props.history.replace(`/page/stories`)}
                     className='more'>
                     <button>more <div>+</div></button>
                 </div>

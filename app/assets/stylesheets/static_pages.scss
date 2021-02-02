@@ -1806,16 +1806,54 @@ a {
 
 //* Results
 
-.results {
-    width: 955px;
+.title-container {
+
+    width: 100%;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: -165px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    height: 410px;
+    width: 100%;
+
+    // height: 300px;
+    background: linear-gradient(270deg, #5E47FD, #1E9FC4);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+
+
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+}
+
+.results {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 55px;
     display: flex;
     flex-wrap: wrap;
     border-radius: 5px;
     height: 100%;
+    
     // padding-top: 200px;
-    padding-bottom: 565px;
+    // padding-bottom: 565px;
 
     // background-color: blue;
     // padding-top: 20px;
@@ -1841,58 +1879,44 @@ a {
 
         // #5E47FD, 55%, #1E9FC4,#1ec4b9
 
-    background: linear-gradient(270deg, #5E47FD, #1E9FC4);
-    background-size: 400% 400%;
-
-    -webkit-animation: AnimationName 30s ease infinite;
-    -moz-animation: AnimationName 30s ease infinite;
-    animation: AnimationName 30s ease infinite;
-
-
-    @-webkit-keyframes AnimationName {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
-    }
-    @-moz-keyframes AnimationName {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
-    }
-    @keyframes AnimationName {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
-    }
+   
 
     .search-title {
         margin-bottom: 20px;
         // padding-bottom: 20px;
         position: absolute;
-        left: 55px;
-        top: 175px;
+        left: 41%;
+        top: 125px;
         font-weight: lighter;
-        font-size: 40px;
-        color: white;
+        font-size: 60px;
+        color: black;
+        font-weight: bolder;
+        font-style: italic;
         // padding: 20px;
-        background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
-        background-size: 100%;
-        background-repeat: repeat;
-        // font-weight: 500;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        background-clip: text;
-        -moz-background-clip: text;
-        -moz-text-fill-color: transparent;
+        // background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
+        // background-size: 100%;
+        // background-repeat: repeat;
+        // // font-weight: 500;
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent; 
+        // background-clip: text;
+        // -moz-background-clip: text;
+        // -moz-text-fill-color: transparent;
         // text-shadow: 2px 2px 8px #8b8b8b;
     }
 
+    // width: 993px;
 
     .result-parent {
         // display: relative;
+        margin: 0 auto;
 
-        margin: 10px;
-        // margin-top: 155px;
+        // margin-top: 70px;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 40px;
+        margin-top: 90px;
+        // border: 1px solid olive;
     
         .result-display {
 
@@ -1901,7 +1925,8 @@ a {
 
             padding: 0;
             margin: 0;
-            color: white;
+            color: black;
+            width: 168px;
 
             span {
                 cursor: pointer;
@@ -1926,6 +1951,8 @@ a {
                 margin: 6px;
                 padding: 0px;
             }
+
+           
             
             
             
@@ -1947,6 +1974,19 @@ a {
                 // background-image: linear-gradient(45deg,white, 75%, #1E9FC4,#1ec4b9);
                 background-color: transparent;
         
+            }
+
+            .result-about {
+                font-weight: lighter;
+                font-family: 'Times New Roman', Times, serif;
+                word-wrap: break-word;
+                // width: 168px;
+                padding-left: 10px;
+                color: gray;
+                max-height: 100px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
             }
         }
     }

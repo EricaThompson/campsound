@@ -12,5 +12,6 @@
         json.about item.about
         json.cover url_for(item.cover)
         json.song url_for(item.song)
+        # json.summary item.summary
     end
 end

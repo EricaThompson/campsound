@@ -165,10 +165,10 @@ class Story extends React.Component {
                         <div className='stories-nav'>
                             <h1 
                                 className='link'
-                                onClick={() => this.props.history.replace('/stories')}>Campsound Daily</h1>
+                                onClick={() => this.props.history.replace('/page/stories')}>Campsound Daily</h1>
                             <ul>
                                 <li>
-                                    <span onClick={() => this.props.history.replace('/stories')}>stories</span> · view all
+                                    <span onClick={() => this.props.history.replace('page/stories')}>stories</span> · view all
                                 </li>
 
                             </ul>

@@ -23,12 +23,12 @@ class Footer extends React.Component{
                         <ul>
                             <li
                                 className='link'
-                                onClick={() => this.props.history.replace('/about')}
+                                onClick={() => this.props.history.replace('/page/about')}
                                 >
                                 About</li>
                             <li
                                 className='link'
-                                onClick={() => this.props.history.replace('/stories')}
+                                onClick={() => this.props.history.replace('/page/stories')}
                             >
                                 Campsound Daily</li>
                             {/* <li>Contact</li> */}

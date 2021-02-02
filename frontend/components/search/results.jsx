@@ -21,6 +21,8 @@ class Results extends React.Component {
     // }
 
     componentDidMount(){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
         this.props.genreSearch(this.props.match.params.result)
             .then(res => this.setState({discoverResults: res.items}))
 

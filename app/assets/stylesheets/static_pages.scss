@@ -2232,15 +2232,19 @@ a {
         .slide {
             min-width: 112px;
             margin-right: 10px;
+            // padding: 3px;
             height: 80%;
             // border: 1px solid hotpink;
             img {
                 width: 112px;
                 height: 112px;
+                margin-left: 3px;
+                padding-top: 3px;
             }
             p {
                 font-size: 11px;
                 margin: 0px;
+                margin-left: 3px;
                 padding: 0px;
                 margin-top: 7px;
                 font-weight: lighter;

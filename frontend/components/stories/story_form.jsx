@@ -14,7 +14,7 @@ class StoryForm extends React.Component {
                 text: '....',
                 summary: 'tl;dr',
                 story_type: '',
-                genre: 'news',
+                // genre: 'news',
                 date: Date.now(),
                 currentStory: [],
                 username: this.props.user.username,
@@ -244,7 +244,7 @@ class StoryForm extends React.Component {
     // }
 
     render() {
-        // console.log(this.updateItem)
+        console.log('story type',this.state.story_type)
 
 
         
@@ -373,7 +373,7 @@ class StoryForm extends React.Component {
                             <div className='preview'>
                                 {/* <img src={this.state.coverPreviewUrl} alt="" /> */}
                                 <div className='details'>
-                                    <div className='story-type'>{this.state.genre}</div>
+                                    <div className='story-type'>{this.state.story_type}</div>
                                     <div className="story-title">{this.state.title}</div>
                                     <div className="author"><div className="by">by </div> {this.state.artistName} · {month} {date}, {year}</div>
                                     <div className="summary">{this.state.summary}</div>
@@ -404,7 +404,7 @@ class StoryForm extends React.Component {
                                     story type:
                                 </div>
                                 <br />
-                                <input className="artist-item-input" placeholder="review, news, blog.." type="dropdown" onChange={this.handleChange('genre')} />
+                                <input className="artist-item-input" placeholder="review, news, blog.." type="dropdown" onChange={this.handleChange('story_type')} />
                             </div>
                             <div>
                                 <div className="input-helper upper">

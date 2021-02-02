@@ -9,6 +9,7 @@ class Story extends React.Component {
             story: [],
             review: "https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620",
             news: "https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620",
+            
             spinnerShow: false,
             nextStory: null,
             previousStory: null,

@@ -203,23 +203,29 @@ class Item extends React.Component {
         let remainder;
         let minute;
         let second;
-        let timeDuration = Math.round(this.state.duration)
+        let timeDuration
         let durationRender;
-        if (timeDuration > 59) {
-            minute = Math.floor(timeDuration / 60)
-            remainder = minute * 60
-            second = timeDuration - remainder
-            if (second < 10) {
-                second = `0${second}`
+
+        if (this.state.duration != 'time'){
+            timeDuration = Math.round(this.state.duration)
+            if (timeDuration > 59) {
+                minute = Math.floor(timeDuration / 60)
+                remainder = minute * 60
+                second = timeDuration - remainder
+                if (second < 10) {
+                    second = `0${second}`
+                }
+
+                durationRender = <span>{minute}:{second}</span>
+            } else if (timeDuration < 10) {
+                durationRender = <span>00:0{timeDuration}</span>
+            } else {
+                durationRender = <span>00:{timeDuration}</span>
+                // this.stopSpinner();
             }
-            
-            durationRender = <span>{minute}:{second}</span>
-        } else if (timeDuration < 10){
-            durationRender = <span>00:0{timeDuration}</span>
-        } else {
-            durationRender = <span>00:{timeDuration}</span>
-            // this.stopSpinner();
         }
+
+        
 
 
 
@@ -296,6 +302,7 @@ class Item extends React.Component {
                                             type="range"
                                             value={this.state.currentTime}
                                             max={timeDuration}
+                                            readOnly
                                             // min="-5"    
                                         />
                                         {/* <div 
@@ -490,9 +497,10 @@ class Item extends React.Component {
             let loggedIn;
             if (this.props.currentUserId) {
                 loggedIn = '-logged-in';
+
         }
 
-        console.log(this.state.user)
+        console.log('cui',this.props.currentUserId)
 
             return (
                 <div className={`item-show item-show${loggedIn}`} key={() => Math.random()}>

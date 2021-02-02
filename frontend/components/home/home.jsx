@@ -5,6 +5,7 @@ import * as SessionAPIUtil from '../../util/session_api_util';
 // import { readAllUserItems } from '../../util/items_api_util';
 import MailchimpSubscribe from "react-mailchimp-subscribe"
 import Daily from './daily';
+import MainStories from './main_stories';
 
 class Home extends React.Component {
     constructor(props) {
@@ -189,10 +190,10 @@ class Home extends React.Component {
         //     .then(res => this.setState({ items: res.items, count: res.items.length}))
             // .then(res => this.setState({count: res.items.length}))
 
-        StoryAPIUtil.fetchAllStories()
-            .then(res => this.setState({
-                stories: Object.values(res).reverse()
-            }))
+        // StoryAPIUtil.fetchAllStories()
+        //     .then(res => this.setState({
+        //         stories: Object.values(res).reverse()
+        //     }))
                 // console.log(this.state.stories)))
 
         SessionAPIUtil.allUsers()
@@ -766,18 +767,18 @@ class Home extends React.Component {
         }
 
 
-        let summary0;
-        let type1;
-        let type2;
-        let type3;
+        // let summary0;
+        // let type1;
+        // let type2;
+        // let type3;
 
-        if (this.state.stories.length > 1){
-            let summaryItems = this.state.stories.reverse()
-            summary0 = summaryItems[0].summary
-            type1 = summaryItems[1].type
-            type2 = summaryItems[2].type
-            type3 = summaryItems[3].type
-        }
+        // if (this.state.stories.length > 1){
+        //     let summaryItems = this.state.stories.reverse()
+        //     summary0 = summaryItems[0].summary
+        //     type1 = summaryItems[1].type
+        //     type2 = summaryItems[2].type
+        //     type3 = summaryItems[3].type
+        // }
 
         // console.log(this.state.items)
 
@@ -799,7 +800,8 @@ class Home extends React.Component {
 
         return (
             <div className={`home home${loggedIn}`}>
-                    <div className='stories-home-container'>
+                <MainStories />
+                    {/* <div className='stories-home-container'>
                         <div className="stories">
                                 <div 
                             onClick={() => this.props.history.replace(`/users/${this.state.items.reverse()[0].owner_id}/stories/${this.state.stories.reverse()[0].id}`)}
@@ -834,7 +836,7 @@ class Home extends React.Component {
                             </div>
                         </div>
 
-                    </div>
+                    </div> */}
                 
                 <div className="slider counter">
                         <p className='slider-info'>Artists have uploaded {this.state.items.length} songs using CampSound since established.</p>

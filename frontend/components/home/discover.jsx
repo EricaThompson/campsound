@@ -35,7 +35,7 @@ class Discover extends React.Component {
             <div className='discover-container'>
                 <div className='discover'>
                     <div className='discover-title'>Discover</div>
-                    <div className='genres-container'>
+                    <div className='genres-container' style={{ backgroundColor: this.state.bar1 }}>
                         <ul 
                             className="genres"
                             style={{backgroundColor:this.state.bar1}}

@@ -199,7 +199,9 @@ class NavBar extends React.Component {
                         
         } else {
             auth = <p onClick={() => this.props.openModal('login')}>log in</p> 
-            signup = 'sign up'
+            signup = <p onClick={() => this.props.openModal('type-signup')}>
+                        sign up
+                        </p>
             avatar = ''
         }
 
@@ -236,9 +238,9 @@ class NavBar extends React.Component {
                                 My social links are in the footer!
                                 -erica 
                             </p>
-                            <p onClick={() => this.props.openModal('type-signup')}>
-                                {signup}
-                            </p>
+                            {/* <p onClick={() => this.props.openModal('type-signup')}> */}
+                            {signup}
+                            {/* </p> */}
                             {auth}
                             {avatar}
                             {authNav}

@@ -62,8 +62,8 @@ class Daily extends React.Component {
                         mainImg = 'mainImg',
                         mainText = 'mainText'
                     mainSummary = <div className='story-summary'>
-                        {story.summary}
-                        <div className='read-more'>read more</div>
+                        {story.summary}. <span className='read-more'>read more</span>
+                        {/* <div >read more</div> */}
                     </div>
 
                 } else if (idx === 7 || idx === 2) {

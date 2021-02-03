@@ -20,8 +20,8 @@ class Home extends React.Component {
             // 1: 'https://images.pexels.com/photos/2341290/pexels-photo-2341290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
             // 2: 'https://images.pexels.com/photos/1029624/pexels-photo-1029624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=0&w=115',
             // 3: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
-            news: 'https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
-            review: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
+            // news: 'https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
+            // review: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=60&w=125',
             // news: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/news.jpg',
             // review: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/review.jpg',
             i1: {
@@ -397,6 +397,54 @@ class Home extends React.Component {
 
         // items[0] = items[1]
 
+        const timeSince = function (date) {
+            if (typeof date !== 'object') {
+                date = new Date(date);
+            }
+
+            let seconds = Math.floor((new Date() - date) / 1000);
+            let intervalType;
+
+            let interval = Math.floor(seconds / 31536000);
+            if (interval >= 1) {
+                intervalType = 'year';
+            } else {
+                interval = Math.floor(seconds / 2592000);
+                if (interval >= 1) {
+                    intervalType = 'month';
+                } else {
+                    interval = Math.floor(seconds / 86400);
+                    if (interval >= 1) {
+                        intervalType = 'day';
+                    } else {
+                        interval = Math.floor(seconds / 3600);
+                        if (interval >= 1) {
+                            intervalType = "hour";
+                        } else {
+                            interval = Math.floor(seconds / 60);
+                            if (interval >= 1) {
+                                intervalType = "minute";
+                            } else {
+                                interval = seconds;
+                                intervalType = "second";
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (interval > 1 || interval === 0) {
+                intervalType += 's';
+            }
+
+            return interval + ' ' + intervalType;
+        };
+        let aDay = 24 * 60 * 60 * 1000;
+        console.log(timeSince(new Date(Date.now() - aDay)));
+        console.log(timeSince(new Date(Date.now() - aDay * 2)));
+
+
+
         //!this.state.slider instead
         let map = Object.values(this.state.items).reverse().map((item, idx) => {
             // let wait = 3;
@@ -406,6 +454,8 @@ class Home extends React.Component {
 
                 if (idx < 8){
 
+                    
+
             
                     return <div key={idx} className="slide-container">
                                 <div key={idx}className="slide">
@@ -414,7 +464,7 @@ class Home extends React.Component {
                                         <p>{item.title}</p>
                                         <p>by {item.artist}</p>
                                         <p>{item.price}</p>
-                                        <p>{item.date}</p>
+                                        <p className="since">{timeSince(item.date)} ago</p>
                                     </Link>
                                 </div>
                             </div>
@@ -511,70 +561,8 @@ class Home extends React.Component {
         if (this.state.items.length > 1){
             count = this.state.demo.length
         }
-        // console.log(count)
-        // console.log(count)
 
-        // let things = ["1", "2", "1", "2", "1", "2", "1", "2", "1", "2",];
-        // // let top;
-        // let last;
-        // let main;
-        // let mainImg;
-        // let mainText;
-        // let mainSummary;
-        // let img;
-        // // let stories = this.state.stories.map((story, idx) => {
-        // // console.log(this.state.stories.story)
-        // let reversedStories = this.state.stories;
-
-        // let stories = reversedStories.map((story, idx)=>{
-        //     if (idx < 8){
-        //         if (idx === 0) {
-        //             main = 'main',
-        //                 mainImg = 'mainImg',
-        //                 mainText = 'mainText'
-        //                 mainSummary = <div className='story-summary'>
-        //                                 {story.summary}
-        //                                 <div className='read-more'>read more</div>
-        //                             </div>
-
-        //         } else if (idx === 7 || idx === 2) {
-        //             last = 'last'
-        //             mainSummary = ''
-        //         } else {
-        //             last = ''
-        //             main = 'smaller-stories'
-        //             mainImg = ''
-        //             mainSummary = ''
-        //         }
-
-        //         if (story.type === 'news') {
-        //             img = this.state.news
-        //         } else {
-        //             img = this.state.review
-        //         }
-        //         // console.log(story)
-        //         return <div
-        //             onClick={() => this.props.history.push(`/users/${story.author}/stories/${story.id}`)}
-        //             className={`story link ${last} ${main}`}
-        //             key={idx}
-        //         >
-        //             <img className={`${mainImg}`} src={img} alt="" />
-        //             <div className={`${mainText}`}>
-        //                 <div className='story-title'>{story.title}</div>
-        //                 <div className='story-author'>by {story.username}</div>
-        //                 {mainSummary}
-        //                 <div className='story-type'>{story.type}</div>
-        //             </div>
-        //         </div>
-
-        //     }
-
-            
-        // })
-
-        // console.log('stories',)
-
-        // console.log(this.state.stories)
+        
 
         let user1;
         let items1;
@@ -799,6 +787,8 @@ class Home extends React.Component {
             loggedIn = '-logged-in'
         }
 
+
+        
 
         
 

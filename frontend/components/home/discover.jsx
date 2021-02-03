@@ -16,18 +16,151 @@ class Discover extends React.Component {
             bar2: '#4390A8',
             bar3: '#418194',
             all: 'selected',
-            electronic: ''
+            electronic: '',
+            rock: '',
+            metal: '',
+            metal: '',
+            alternative: '',
+            hip_hop: '',
+            experimental: '',
+            punk: '',
+            folk: '',
+            pop: '',
+            ambient: '',
+            soundtrck: '',
+            world: '',
+            jazz : '',
+
         }
 
     }
 
     changeColor(genre){
-        if (genre === 'electronic'){
-            this.setState({ bar1: '#31C723' })
-            this.setState({ bar2: '#30B125' })
-            this.setState({ bar3: '#309B28' })
-            this.setState({ all: '' })
-            this.setState({ electronic: 'selected' })
+        this.setState({
+            all: '',
+            electronic: '',
+            rock: '',
+            metal: '',
+            metal: '',
+            alternative: '',
+            hip_hop: '',
+            experimental: '',
+            punk: '',
+            folk: '',
+            pop: '',
+            ambient: '',
+            soundtrck: '',
+            world: '',
+            jazz: ''
+        })
+
+        // if (genre != 'all'){
+        //     this.setState({ all: '' })
+        // }
+        
+        this.setState({ [genre]: 'selected' })
+
+        switch (genre) {
+            case 'all':
+                this.setState({ 
+                    bar1: '#41A0BD',
+                    bar2: '#4390A8',
+                    bar3: '#418194',
+                })
+                break;
+            case 'electronic':
+                this.setState({ 
+                    bar1: '#31C723',
+                    bar2: '#30B125',
+                    bar3: '#309B28' 
+                })
+                break;
+            case 'rock':
+                this.setState({ 
+                    bar1: '#D42127',
+                    bar2: '#BE2428',
+                    bar3: '#A72529' 
+                })
+                break;
+            case 'metal':
+                this.setState({ 
+                    bar1: '#990201',
+                    bar2: '#820504',
+                    bar3: '#6B0807' 
+                })
+                break;
+            case 'alternative':
+                this.setState({ 
+                    bar1: '#31C723',
+                    bar2: '#30B125',
+                    bar3: '#309B28' 
+                })
+                break;
+            case 'hip-hop':
+                this.setState({ 
+                    bar1: '#31C723',
+                    bar2: '#30B125',
+                    bar3: '#309B28' 
+                })
+                break;
+            case 'experimental':
+                this.setState({ 
+                    bar1: '#31C723',
+                    bar2: '#30B125',
+                    bar3: '#309B28' 
+                })
+                break;
+            case 'punk':
+                this.setState({ 
+                    bar1: '#31C723',
+                    bar2: '#30B125',
+                    bar3: '#309B28' 
+                })
+                break;
+            case 'folk':
+                this.setState({ 
+                    bar1: '#31C723',
+                    bar2: '#30B125',
+                    bar3: '#309B28' 
+                })
+                break;
+            case 'pop':
+                this.setState({ 
+                    bar1: '#31C723',
+                    bar2: '#30B125',
+                    bar3: '#309B28' 
+                })
+                break;
+            case 'ambient':
+                this.setState({ 
+                    bar1: '#31C723',
+                    bar2: '#30B125',
+                    bar3: '#309B28' 
+                })
+                break;
+            case 'soundtrack':
+                this.setState({ 
+                    bar1: '#31C723',
+                    bar2: '#30B125',
+                    bar3: '#309B28' 
+                })
+                break;
+            case 'world':
+                this.setState({ 
+                    bar1: '#31C723',
+                    bar2: '#30B125',
+                    bar3: '#309B28' 
+                })
+                break;
+            case 'jazz':
+                this.setState({ 
+                    bar1: '#31C723',
+                    bar2: '#30B125',
+                    bar3: '#309B28' 
+                })
+                break;
+            default:
+                break;
         }
     }
 
@@ -44,20 +177,20 @@ class Discover extends React.Component {
                             className="genres"
                             style={{backgroundColor:this.state.bar1}}
                             >
-                            <Link to="/search/browse-all"><li className={this.state.all}>all</li></Link>
+                            <Link to="#"><li className={this.state.all} onClick={() => this.changeColor('all')}>all</li></Link>
                             <Link to="#"><li className={this.state.electronic} onClick={() => this.changeColor('electronic')}>electronic</li></Link>
-                            <Link to="/search/rock"><li>rock</li></Link>
-                            <Link to="/search/metal"><li>metal</li></Link>
-                            <Link to="/search/alternative"><li>alternative</li></Link>
-                            <Link to="/search/rap"><li>hip-hop/rap</li></Link>
-                            <Link to="/search/experimental"><li>experimental</li></Link>
-                            <Link to="/search/punk"><li>punk</li></Link>
-                            <Link to="/search/folk"><li>folk</li></Link>
-                            <Link to="/search/pop"><li>pop</li></Link>
-                            <Link to="/search/ambient"><li>ambient</li></Link>
-                            <Link to="/search/soundtrack"><li>soundtrck</li></Link>
-                            <Link to="/search/world"><li>world</li></Link>
-                            <Link to="/search/jazz"><li>jazz</li></Link>
+                            <Link to="#"><li className={this.state.rock} onClick={() => this.changeColor('rock')}>rock</li></Link>
+                            <Link to="#"><li className={this.state.metal} onClick={() => this.changeColor('metal')}>metal</li></Link>
+                            <Link to="#"><li className={this.state.alternative} onClick={() => this.changeColor('alternative')}>alternative</li></Link>
+                            <Link to="#"><li className={this.state.hip_hop} onClick={() => this.changeColor('hip_hop')}>hip-hop/rap</li></Link>
+                            <Link to="#"><li className={this.state.experimental} onClick={() => this.changeColor('experimental')}>experimental</li></Link>
+                            <Link to="#"><li className={this.state.punk} onClick={() => this.changeColor('punk')}>punk</li></Link>
+                            <Link to="#"><li className={this.state.folk} onClick={() => this.changeColor('folk')}>folk</li></Link>
+                            <Link to="#"><li className={this.state.pop} onClick={() => this.changeColor('pop')}>pop</li></Link>
+                            <Link to="#"><li className={this.state.ambient} onClick={() => this.changeColor('ambient')}>ambient</li></Link>
+                            <Link to="#"><li className={this.state.soundtrck} onClick={() => this.changeColor('soundtrack')}>soundtrck</li></Link>
+                            <Link to="#"><li className={this.state.world} onClick={() => this.changeColor('world')}>world</li></Link>
+                            <Link to="#"><li className={this.state.jazz} onClick={() => this.changeColor('jazz')}>jazz</li></Link>
                         </ul>
                     </div>
                     <div className='bar-two' style={{ backgroundColor: this.state.bar2 }}></div>

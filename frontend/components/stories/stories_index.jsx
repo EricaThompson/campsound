@@ -9,8 +9,11 @@ class StoriesIndex extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            news: `https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260`,
-            review:'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620',
+            // news: `https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260`,
+            // review:'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620',
+            news: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/news.jpg',
+            review: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/review.jpg',
+            other: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/other.jpg',
             storyList: [],
             // songList: [],
             // currentSong: null,
@@ -164,8 +167,10 @@ class StoriesIndex extends React.Component {
 
         if (this.state.mainStory.type === 'news'){
             img = this.state.news
-        } else {
+        } else if (this.state.mainStory.type === 'review') {
             img = this.state.review
+        } else {
+            img = this.state.other
         }
 
         if (this.state.spinnerShow) {

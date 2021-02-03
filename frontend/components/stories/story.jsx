@@ -81,7 +81,7 @@ class Story extends React.Component {
             deleteBtn = <button
                 onClick={() => {
                     StoryAPIUtil.deleteStory(this.props.currentUserId, this.state.story.id )
-                    this.props.history.push(`/stories`)
+                    this.props.history.push(`/users/${this.props.currentUserId}/stories`)
                 } }
                             className="delete"
                         >

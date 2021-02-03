@@ -28,7 +28,8 @@ item1 = Item.create(
                 "genre": 'electronic',
                 "about": 'Electronic Clarity: clearness or lucidity as to perception or understanding; freedom from indistinctness or ambiguity. the state or quality of being clear or transparent to the eye; pellucidity: the clarity of pure water.',
                 'released': true,
-                'artist_name': 'DU'
+                'artist_name': 'DU',
+              
                 )
 item1.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/1.jpeg"), filename: "cover-1")
 item1.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/1.mp3"), filename: "song-1")
@@ -54,7 +55,8 @@ item3 = Item.create(
                   
                   ',
                 'released': true,
-                'artist_name': 'demo'
+                'artist_name': 'demo',
+                'location': user1.location
                 )
 item3.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/3.jpeg"), filename: "cover-3")
 item3.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/3.mp3"), filename: "song-3")

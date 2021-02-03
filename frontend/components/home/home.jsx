@@ -439,14 +439,16 @@ class Home extends React.Component {
 
             return interval + ' ' + intervalType;
         };
-        let aDay = 24 * 60 * 60 * 1000;
-        console.log(timeSince(new Date(Date.now() - aDay)));
-        console.log(timeSince(new Date(Date.now() - aDay * 2)));
+        // let aDay = 24 * 60 * 60 * 1000;
+        // console.log(timeSince(new Date(Date.now() - aDay)));
+        // console.log(timeSince(new Date(Date.now() - aDay * 2)));
 
-
-
+        
+        
+        
         //!this.state.slider instead
         let map = Object.values(this.state.items).reverse().map((item, idx) => {
+            console.log('item', item)
             // let wait = 3;
             // let second = 0;
 
@@ -464,6 +466,7 @@ class Home extends React.Component {
                                         <p>{item.title}</p>
                                         <p>by {item.artist}</p>
                                         <p>{item.price}</p>
+                                        <p>in {item.zone}</p>
                                         <p className="since">{timeSince(item.timestamp)} ago</p>
                                     </Link>
                                 </div>

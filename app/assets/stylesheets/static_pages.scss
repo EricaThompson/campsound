@@ -780,7 +780,7 @@ a {
             // margin-top: 0 auto;
             text-align: center;
             font-size: 14px;
-            padding-top: 9px;
+            padding-top: 11px;
             margin-left: 13px;
             font-weight: bolder;
 
@@ -800,7 +800,8 @@ a {
 
         .on-page {
             border-top: 2px solid #363636;
-            background-color:rgba(223, 223, 223, 0.63)
+            background-color:rgba(223, 223, 223, 0.63);
+            padding-top: 9px;
         }
 
         
@@ -3223,9 +3224,11 @@ a {
             // margin-top: 0 auto;
             text-align: center;
             font-size: 14px;
-            padding-top: 9px;
+            padding-top: 11px;
             margin-left: 13px;
             font-weight: bolder;
+            // border-top: 2px solid #F2F2F2;
+
 
             &:hover {
                 background-color:rgba(223, 223, 223, 0.63)
@@ -3238,10 +3241,13 @@ a {
 
 
         }
+        
+        
 
         .on-page {
             border-top: 2px solid #363636;
-            background-color:rgba(223, 223, 223, 0.63)
+            background-color:rgba(223, 223, 223, 0.63);
+            padding-top: 9px;
         }
     
     }

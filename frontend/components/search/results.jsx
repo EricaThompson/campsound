@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import { withRouter } from 'react-router';
 import { withRouter } from 'react-router-dom';
+import Daily from '../home/daily';
 import MusicPlayer from '../music_player/music_player';
 
 
@@ -130,10 +131,17 @@ class Results extends React.Component {
                 </div>
                 <br />
                 <br />
-                {results}
                 {/* <MusicPlayer /> */}
                 <div>
                     
+                </div>
+                <div className={`home home${loggedIn} results-daily`}>
+                {results}
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                <Daily />
                 </div>
             </div>
 

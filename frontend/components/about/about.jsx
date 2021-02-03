@@ -82,12 +82,16 @@ class About extends React.Component {
                     <a href="https://www.freepik.com/freepik">Freepik</a>
                     <ul>
                         <li><a href="https://www.freepik.com/free-vector/hand-drawn-gadget-collection_877589.htm#page=1&query=headphones&position=14">Hand-Drawn Gadget Collection</a></li>
+                        <li><a href="https://www.flaticon.com/free-icon/united-states_206626?term=usa%20flag&page=1&position=4&page=1&position=4&related_id=206626&origin=tag">US Flag Icon</a></li>
                     </ul>  
+
                     <a href="https://www.youtube.com/channel/UCWLWZRyRo453negrq0_BQUg">RJ</a>
                     <ul>
                         <li><a href="https://www.youtube.com/watch?v=bnUUoLYmH3M">Ambient Sounds</a></li>
                     </ul>
+
                     <h4>Definitions</h4>
+
                     <ul>
                         <li><a href="https://www.merriam-webster.com/">Merriam Webster</a></li>
                         <li><a href="https://www.dictionary.com/">Dictionary.com</a></li>

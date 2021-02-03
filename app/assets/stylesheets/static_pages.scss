@@ -1873,6 +1873,8 @@ a {
     flex-wrap: wrap;
     border-radius: 5px;
     height: 100%;
+
+    
     
     
     // padding-top: 200px;
@@ -2071,6 +2073,10 @@ a {
 //     color: white;
 //     background-color: rgba(0, 255, 0, 0.26);
 // }
+
+    .results-daily {
+        margin: 0 auto;
+    }
 
 
 }
@@ -2324,6 +2330,7 @@ a {
                 padding-top: 3px;
                 margin-top: 2px;
             }
+
             p {
                 font-size: 11px;
                 margin: 0px;

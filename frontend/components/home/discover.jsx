@@ -27,7 +27,7 @@ class Discover extends React.Component {
             folk: '',
             pop: '',
             ambient: '',
-            soundtrck: '',
+            soundtrack: '',
             world: '',
             jazz : '',
 
@@ -49,7 +49,7 @@ class Discover extends React.Component {
             folk: '',
             pop: '',
             ambient: '',
-            soundtrck: '',
+            soundtrack: '',
             world: '',
             jazz: ''
         })
@@ -91,72 +91,72 @@ class Discover extends React.Component {
                 break;
             case 'alternative':
                 this.setState({ 
-                    bar1: '#31C723',
-                    bar2: '#30B125',
-                    bar3: '#309B28' 
+                    bar1: '#E65719',
+                    bar2: '#CD521E',
+                    bar3: '#B64E21' 
                 })
                 break;
-            case 'hip-hop':
+            case 'hip_hop':
                 this.setState({ 
-                    bar1: '#31C723',
-                    bar2: '#30B125',
-                    bar3: '#309B28' 
+                    bar1: '#3764A1',
+                    bar2: '#365B8D',
+                    bar3: '#355379' 
                 })
                 break;
             case 'experimental':
                 this.setState({ 
-                    bar1: '#31C723',
-                    bar2: '#30B125',
-                    bar3: '#309B28' 
+                    bar1: '#5D1AE6',
+                    bar2: '#581DCD',
+                    bar3: '#5220B6' 
                 })
                 break;
             case 'punk':
                 this.setState({ 
-                    bar1: '#31C723',
-                    bar2: '#30B125',
-                    bar3: '#309B28' 
+                    bar1: '#F25202',
+                    bar2: '#D94D0A',
+                    bar3: '#C0480D' 
                 })
                 break;
             case 'folk':
                 this.setState({ 
-                    bar1: '#31C723',
-                    bar2: '#30B125',
-                    bar3: '#309B28' 
+                    bar1: '#984AB5',
+                    bar2: '#8A4AA2',
+                    bar3: '#7B498D' 
                 })
                 break;
             case 'pop':
                 this.setState({ 
-                    bar1: '#31C723',
-                    bar2: '#30B125',
-                    bar3: '#309B28' 
+                    bar1: '#F20F93',
+                    bar2: '#D91386',
+                    bar3: '#C11579' 
                 })
                 break;
             case 'ambient':
                 this.setState({ 
-                    bar1: '#31C723',
-                    bar2: '#30B125',
-                    bar3: '#309B28' 
+                    bar1: '#A3C2BD',
+                    bar2: '#9BB5B1',
+                    bar3: '#94A8A5' 
                 })
                 break;
             case 'soundtrack':
                 this.setState({ 
-                    bar1: '#31C723',
-                    bar2: '#30B125',
-                    bar3: '#309B28' 
+                    bar1: '#5E9FC9',
+                    bar2: '#5594BE',
+                    bar3: '#4C8AB4' 
                 })
                 break;
             case 'world':
                 this.setState({ 
-                    bar1: '#31C723',
-                    bar2: '#30B125',
-                    bar3: '#309B28' 
+                    bar1: '#E61964',
+                    bar2: '#CD1E5E',
+                    bar3: '#B62058' 
                 })
                 break;
             case 'jazz':
                 this.setState({ 
-                    bar1: '#31C723',
-                    bar2: '#30B125',
-                    bar3: '#309B28' 
+                    bar1: '#07B89F',
+                    bar2: '#049F8A',
+                    bar3: '#0A8877' 
                 })
                 break;
             default:
@@ -188,7 +188,7 @@ class Discover extends React.Component {
                             <Link to="#"><li className={this.state.folk} onClick={() => this.changeColor('folk')}>folk</li></Link>
                             <Link to="#"><li className={this.state.pop} onClick={() => this.changeColor('pop')}>pop</li></Link>
                             <Link to="#"><li className={this.state.ambient} onClick={() => this.changeColor('ambient')}>ambient</li></Link>
-                            <Link to="#"><li className={this.state.soundtrck} onClick={() => this.changeColor('soundtrack')}>soundtrck</li></Link>
+                            <Link to="#"><li className={this.state.soundtrack} onClick={() => this.changeColor('soundtrack')}>soundtrack</li></Link>
                             <Link to="#"><li className={this.state.world} onClick={() => this.changeColor('world')}>world</li></Link>
                             <Link to="#"><li className={this.state.jazz} onClick={() => this.changeColor('jazz')}>jazz</li></Link>
                         </ul>

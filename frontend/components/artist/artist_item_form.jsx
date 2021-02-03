@@ -71,7 +71,11 @@ class ArtistItemForm extends React.Component {
             
 
                 // .then(res => console.log('res: ',res))
+
+            
         }
+
+        console.log('item form props',this.props)
     }
 
     handleSubmit(e) {
@@ -96,6 +100,7 @@ class ArtistItemForm extends React.Component {
         formData.append('item[about]', this.state.about)
         formData.append('item[released]', true)
         formData.append('item[collection_id]', null)
+        formData.append('item[location]', this.props.user.location)
 
         // if (this.props.match.path.includes('edit')){
         //     formData.append('item[id]', this.props.match.params.itemId)

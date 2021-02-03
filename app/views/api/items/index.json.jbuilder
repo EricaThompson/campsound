@@ -11,6 +11,7 @@
         json.date item.created_at.strftime("%b %Y")
         json.timestamp item.created_at
         json.zone item.created_at.zone
+        json.location item.location
         # json.country ::ISO3166::Country[item.country].name
         json.about item.about
         json.cover url_for(item.cover)

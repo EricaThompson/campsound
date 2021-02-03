@@ -326,13 +326,15 @@ class ArtistHomepage extends React.Component {
 
             let loggedIn;
 
-            if (this.props.currentUserId) {
+            if (this.props.currentUser) {
                 loggedIn = '-logged-in';
 
             }
 
+            console.log('li',this.props)
+
             return (
-                <div className={`artist-home-container`}>
+                <div className={`artist-home-container artist-home-container${loggedIn}`}>
                     <img className='cover-art-header' src={`${this.state.user.userImg}`} alt="" />
                     <div className={`item-nav-bar item-nav-bar${loggedIn}`}>
                         <div

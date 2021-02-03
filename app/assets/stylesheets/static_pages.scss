@@ -737,6 +737,8 @@ a {
 
 //* Artist Homepage
 
+
+
 .artist-home-container {
     // padding-top: 55px;
     position: relative;
@@ -804,7 +806,18 @@ a {
         
     }
 
+    .item-nav-bar-logged-in {
+        margin-top: 235px;
+        // background-color: yellow;
+    }
 }
+
+
+
+// .artist-home-container-logged-in, .item-nav-bar-logged-in {
+//     margin-top: 555px;
+//     background-color: yellow;
+// }
 
 .artist-home {
     position: relative;

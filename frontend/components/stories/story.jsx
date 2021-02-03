@@ -182,7 +182,7 @@ class Story extends React.Component {
                         <div>{deleteBtn}</div>
                         <div className='story-show-type'>{this.state.story.story_type}</div>
                         <div className='story-show-title'>{this.state.story.title}</div>
-                        <div className='story-show-summary'>{this.state.story.summary}</div>
+                        {/* <div className='story-show-summary'>{this.state.story.summary}</div> */}
                         <div className='story-show-author'>By <span className="author" onClick={() => this.props.history.push(`/users/${this.state.story.owner_id}/stories`)}>{this.state.story.username}</span> · {this.state.story.date}</div>
                         {previousBtn}
                         {nextBtn}

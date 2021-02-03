@@ -3914,13 +3914,13 @@ a {
     
     .previous-btn {
         background-color: white;
-        border: 2px solid black;
+        border: 1px solid black;
         border-radius: 55%;
         padding: 19px 20px;
         
         position: absolute;
-        top: 290px;
-        left: 565px;
+        top: 310px;
+        left: 45%;
         font-size: 24px;
         padding-left: 21px;
         transform: rotate(180deg);
@@ -3929,12 +3929,12 @@ a {
     }
     .next-btn {
         background-color: white;
-        border: 2px solid black;
+        border: 1px solid black;
         border-radius: 55%;
         padding: 19px 20px;
         
         position: absolute;
-        top: 290px;
+        top: 310px;
         // left: 625px;
         font-size: 24px;
         padding-left: 21px;
@@ -4024,7 +4024,7 @@ a {
     }
 
     .story-show-author {
-        margin-bottom: 40px;
+        margin-bottom: 80px;
         color: #909090;
         font-size: 17px;
         font-weight: normal;

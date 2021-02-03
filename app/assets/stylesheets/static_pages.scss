@@ -3919,7 +3919,7 @@ a {
         padding: 19px 20px;
         
         position: absolute;
-        top: 310px;
+        top: 365px;
         left: 45%;
         font-size: 24px;
         padding-left: 21px;
@@ -3934,7 +3934,7 @@ a {
         padding: 19px 20px;
         
         position: absolute;
-        top: 310px;
+        top: 365px;
         // left: 625px;
         font-size: 24px;
         padding-left: 21px;
@@ -3980,6 +3980,10 @@ a {
         }
     }
 
+    .stories-nav-logged-in {
+        margin-top: 55px;
+    }
+
     .story-show-type {
         color: #909090;
         text-transform: uppercase;
@@ -4003,7 +4007,7 @@ a {
 
     .delete {
         right: 15px;
-        top: 120px;
+        top: 175px;
         background-color: rgba(215, 106, 144, 0.659);
 
     }

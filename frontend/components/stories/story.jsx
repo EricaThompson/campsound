@@ -164,10 +164,14 @@ class Story extends React.Component {
             )
 
         } else {
+            let loggedIn;
+            if (this.props.currentUserId){
+                loggedIn = '-logged-in'
+            }
         
                 return (
                     <div className="story-show" key={() => Math.random()}>
-                        <div className='stories-nav'>
+                        <div className={`stories-nav stories-nav${loggedIn}`}>
                             <h1 
                                 className='link'
                                 onClick={() => this.props.history.push('/page/stories')}>Campsound Daily</h1>

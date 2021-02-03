@@ -2249,7 +2249,7 @@ a {
 
         
     }
-   
+
 
     .slider {
         margin: 50px auto;
@@ -2286,16 +2286,7 @@ a {
             padding-right: 0px;
             width: 30%;
 
-            &:hover {
-                background-color: #EDF1F2;
-                height: 80%;
-                width: 100%;
-                -webkit-transition: background-color 400ms linear;
-                -ms-transition: background-color 400ms linear;
-                transition: background-color 400ms linear;
-                
-
-            }
+            
 
         }
 
@@ -2304,20 +2295,39 @@ a {
 
             
             min-width: 112px;
-            margin-right: 10px;
-            // padding: 3px;
-            height: 80%;
+            // margin: 5px;
+            padding: 3px;
+            height: 100%;
+            // padding-left: 6px;
+
+            // padding-right: 3px;
             // border: 1px solid hotpink;
+            // background-size: 10px 10px;
+
+            &:hover {
+                background-color: #EDF1F2;
+                height: 115%;
+                width: 100%;
+                // -webkit-transition: background-size 400ms linear;
+                // -ms-transition: background-size 400ms linear;
+                // transition: background-size 400ms linear;
+                -webkit-transition: background-color, 400ms linear;
+                -ms-transition: background-color 400ms linear;
+                transition: background-color 400ms linear;
+                
+            }
+            
             img {
                 width: 112px;
                 height: 112px;
-                margin-left: 3px;
+                margin-left: 5px;
                 padding-top: 3px;
+                margin-top: 2px;
             }
             p {
                 font-size: 11px;
                 margin: 0px;
-                margin-left: 3px;
+                margin-left: 5px;
                 padding: 0px;
                 margin-top: 7px;
                 font-weight: lighter;

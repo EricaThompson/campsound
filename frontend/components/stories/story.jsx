@@ -7,9 +7,11 @@ class Story extends React.Component {
         super(props);
         this.state = {
             story: [],
-            review: "https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620",
-            news: "https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620",
-            
+            // review: "https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620",
+            // news: "https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620",
+            news: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/news.jpg',
+            review: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/review.jpg',
+            other: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/other.jpg',
             spinnerShow: false,
             nextStory: null,
             previousStory: null,
@@ -146,8 +148,10 @@ class Story extends React.Component {
 
         if (this.state.story.story_type === "news"){
             img = this.state.news
-        } else {
+        } else if (this.state.story.story_type === 'review'){
             img = this.state.review
+        } else {
+            img = this.state.other
         }
 
         if (this.state.spinnerShow) {
@@ -182,7 +186,7 @@ class Story extends React.Component {
                         <div className='story-show-author'>By <span className="author" onClick={() => this.props.history.push(`/users/${this.state.story.owner_id}/stories`)}>{this.state.story.username}</span> · {this.state.story.date}</div>
                         {previousBtn}
                         {nextBtn}
-                        <div className='story-show-img'><img src={img} alt=""/></div>
+                        <div className='story-show-img'><img src={img} alt="story"/></div>
                         <div className='story-show-text'>{this.state.story.text}</div>
                         
                     </div>

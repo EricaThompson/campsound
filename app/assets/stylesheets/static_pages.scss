@@ -2595,6 +2595,13 @@ a {
 
         .genres-container {
             background-color: #41A0BD;
+            mask-image: -webkit-gradient(linear, left top, right bottom, 
+            color-stop(0.00,  rgba(0,0,0,1)),
+            color-stop(0.35,  rgba(0,0,0,1)),
+            color-stop(0.50,  rgba(0,0,0,0)),
+            color-stop(0.65,  rgba(0,0,0,0)),
+            color-stop(1.00,  rgba(0,0,0,0)));
+
 
             .genres {
                 width: 996px;
@@ -3931,6 +3938,7 @@ a {
         // left: 625px;
         font-size: 24px;
         padding-left: 21px;
+        z-index: 20;
 
     }
 
@@ -4030,9 +4038,17 @@ a {
         }
     }
 
-    .story-show-image {
-        width: 150%;
-    }
+    // .story-show-img {
+    //     // width: 50px;
+    //     // height: 50px;
+    //     // width: 1300px;
+    //     // height: 286px;
+    //     // // position: absolute;
+    //     // // z-index: 10;
+    //     // clip-path: inset(0px 0px 0px -20px);
+    //     // z-index: -2;
+    //     // display: none;
+    // }
     
 
     .story-show-text {

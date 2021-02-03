@@ -2261,6 +2261,8 @@ a {
         margin-bottom: 0px;
         padding-bottom: 50px;
 
+        
+
 
 
         a {
@@ -2297,7 +2299,10 @@ a {
 
         }
 
+        
         .slide {
+
+            
             min-width: 112px;
             margin-right: 10px;
             // padding: 3px;
@@ -2316,6 +2321,15 @@ a {
                 padding: 0px;
                 margin-top: 7px;
                 font-weight: lighter;
+            }
+
+            #us-flag {
+                height: 17px;
+                width: 17px;
+                padding: 0px;
+                margin-bottom: -3px;
+                // border: 1px solid olive;
+                clip-path: inset(2px 0px 2px 0px);
             }
 
             .since {

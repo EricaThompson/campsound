@@ -459,9 +459,11 @@ class Home extends React.Component {
 
                 if (item.location){
                     if (us_city_names.includes(item.location) || lowercase_us_city_names.includes(item.location)){
-                        flag = '🇺🇸'
+                        flag = <img id='us-flag' src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/united-states.png" alt="USA Flag"></img>
+                        location = <p>in {flag} United States</p>
+                    } else {
+                        location = <p>in {item.location}</p>
                     }
-                    location = <p>in {flag} {item.location}</p>
 
                 } else {
                     location = ""

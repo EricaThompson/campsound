@@ -29,7 +29,7 @@ item1 = Item.create(
                 "about": 'Electronic Clarity: clearness or lucidity as to perception or understanding; freedom from indistinctness or ambiguity. the state or quality of being clear or transparent to the eye; pellucidity: the clarity of pure water.',
                 'released': true,
                 'artist_name': 'DU',
-              
+                'location': user1.location
                 )
 item1.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/1.jpeg"), filename: "cover-1")
 item1.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/1.mp3"), filename: "song-1")
@@ -41,7 +41,7 @@ item2 = Item.create(
                 'released': true,
                 'artist_name': 'Rainy',
                 "about": 'Metal Evening: the period of time at the end of the day, usually from about 6 p.m. to bedtime. "it was 7:00 in the evening"',
-                )
+                'location': user2.location)
 item2.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/2.jpeg"), filename: "cover-2")
 item2.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/2.mp3"), filename: "song-2")
 
@@ -51,9 +51,7 @@ item3 = Item.create(
                 "title": 'Ten Brave Life',
                 "genre": 'rock',
                 "about": 
-                'Rock Life: the condition that distinguishes animals and plants from inorganic matter, including the capacity for growth, reproduction, functional activity, and continual change.
-                  
-                  ',
+                'Rock Life: the condition that distinguishes animals and plants from inorganic matter, including the capacity for growth, reproduction, functional activity, and continual change.',
                 'released': true,
                 'artist_name': 'demo',
                 'location': user1.location
@@ -68,7 +66,7 @@ item4 = Item.create(
                 'released': true,
                 'artist_name': 'RNYDY',
                 "about": 'Alternative Notturno: an 18th century piece for an instrumental group composed in several movements and resembling the serenade or divertimento.',
-                )
+                'location': user2.location)
 item4.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/4.jpeg"), filename: "cover-4")
 item4.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/4.mp3"), filename: "song-4")
 
@@ -79,6 +77,7 @@ item5 = Item.create(
                 'released': true,
                 'artist_name': 'DMO USR',
                 "about": 'Hip Hop and relax: make or become less tense or anxious.',
+                'location': user1.location
                 )
 item5.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/5.jpeg"), filename: "cover-5")
 item5.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/5.mp3"), filename: "song-5")
@@ -91,7 +90,7 @@ item6 = Item.create(
                 'artist_name': 'Rare',
                 "about": 
                 "Experimental Voice: the sound produced in a person's larynx and uttered through the mouth, as speech or song.",
-                )
+                'location': user2.location)
 item6.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/6.jpeg"), filename: "cover-6")
 item6.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/6.mp3"), filename: "song-6")
 
@@ -103,8 +102,8 @@ item7 = Item.create(
                 'artist_name': 'DU',
                 "about": 'Punk thoughts: Something that is thought: such as, an individual act or product of thinking a developed intention or plan had no thought of leaving home, something (such as an opinion or belief) in the mindhe spoke his thoughts freely.
                 
-                The intellectual product or the organized views and principles of a period, place, group, or individual, contemporary Western thought. The action or process of thinking : COGITATION, serious consideration : REGARD carchaic : RECOLLECTION, REMEMBRANCE reasoning power the power to imagine : CONCEPTION. A thought a little : SOMEWHAT a thought too much vinegar in the dressing
-                ',
+                The intellectual product or the organized views and principles of a period, place, group, or individual, contemporary Western thought. The action or process of thinking : COGITATION, serious consideration : REGARD carchaic : RECOLLECTION, REMEMBRANCE reasoning power the power to imagine : CONCEPTION. A thought a little : SOMEWHAT a thought too much vinegar in the dressing',
+                'location': user1.location
                 )
 item7.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/7.jpeg"), filename: "cover-7")
 item7.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/7.mp3"), filename: "song-7")
@@ -120,9 +119,8 @@ item8 = Item.create(
                 
                 A measurement of the difference of altitude of two points by means of a level. Horizontal condition. Especially, equilibrium of a fluid marked by a horizontal surface of even altitude
 
-                // water seeks its own level
-                ',
-                )
+                // water seeks its own level',
+                'location': user2.location)
 item8.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/8.jpeg"), filename: "cover-8")
 item8.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/8.mp3"), filename: "song-8")
 
@@ -132,8 +130,8 @@ item9 = Item.create(
                 "genre": 'ambient',
                 'released': true,
                 'artist_name': 'Demo User',
-                "about": "Ambient Commission: A formal written warrant granting the power to perform various acts or duties a certificate conferring military rank and authority. Also, the rank and authority so conferred received a lieutenant's commission in the army. An authorization or command to act in a prescribed manner or to perform prescribed acts : CHARGE. A commission to serve as notary public.A formal request to produce something (especially an artistic work) in exchange for payment
-                ",
+                "about": "Ambient Commission: A formal written warrant granting the power to perform various acts or duties a certificate conferring military rank and authority. Also, the rank and authority so conferred received a lieutenant's commission in the army. An authorization or command to act in a prescribed manner or to perform prescribed acts : CHARGE. A commission to serve as notary public.A formal request to produce something (especially an artistic work) in exchange for payment",
+                'location': user1.location
                 )
 item9.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/9.jpeg"), filename: "cover-9")
 item9.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/1.mp3"), filename: "song-9")
@@ -145,10 +143,8 @@ item10 = Item.create(
                 'released': true,
                 'artist_name': 'Rainy User',
                 "about": 
-                'Other Years: A different or additional one the others came later. One that remains of two or more. A thing opposite to or excluded by something else went from one side to the other nature as the other of culture.
-                
-                ',
-                )
+                'Other Years: A different or additional one the others came later. One that remains of two or more. A thing opposite to or excluded by something else went from one side to the other nature as the other of culture.',
+                'location': user2.location)
 item10.cover.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/covers/10.jpeg"), filename: "cover-10")
 item10.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/seeds/songs/2.mp3"), filename: "song-10")
 puts "Items created!"

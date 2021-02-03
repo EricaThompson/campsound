@@ -18,8 +18,11 @@ class Item extends React.Component {
             currentTime: 'current',
             timeRendered: false,
             discography: [],
-            news: 'https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-            review: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620',
+            // news: 'https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            // review: 'https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=620',
+            news: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/news.jpg',
+            review: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/review.jpg',
+            other: 'https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/other.jpg',
             spinnerShow: false,
             once: false
             
@@ -53,7 +56,7 @@ class Item extends React.Component {
         if (this.props.match.path.includes('stories')){
             StoryAPIUtil.fetchAllUserStories(this.props.match.params.ownerId)
                 .then(res => {
-                    this.setState({stories: Object.values(res)})
+                    this.setState({stories: Object.values(res).reverse()})
                     this.setState({ spinnerShow: false })
                 })
         }
@@ -377,13 +380,15 @@ class Item extends React.Component {
         if (this.state.stories !== '' && this.props.match.path.includes('stories')){
             
         
-            stories = this.state.stories.reverse().map((story, idx) => {
+            stories = this.state.stories.map((story, idx) => {
                 if (story.type === "news"){
                     img = this.state.news
                     // mostRecentStory = story
-                } else {
+                } else if (story.type === 'review'){
                     img = this.state.review
                     // mostRecentStory = story
+                } else {
+                    img = this.state.other
                 }
                 // console.log(story.author)
                 return <div 

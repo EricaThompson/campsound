@@ -31,14 +31,19 @@ class StoriesIndex extends React.Component {
         $.ajax({
             url: `/api/stories`,
             method: 'GET'
-        }).then(res => this.setState({ mainStory: Object.values(Object.values(res)).reverse()[0]}))
-        $.ajax({
-            url: `/api/stories`,
-            method: 'GET'
         }).then(res => {
-            this.setState({storyList: Object.values(Object.values(res))})
+            this.setState({ mainStory: Object.values(Object.values(res)).reverse()[0]})
+            this.setState({ storyList: Object.values(Object.values(res)).reverse().slice(1)})
             this.setState({spinnerShow: false})
+        
+        
         })
+        // $.ajax({
+        //     url: `/api/stories`,
+        //     method: 'GET'
+        // }).then(res => {
+        //     this.setState({storyList: Object.values(Object.values(res)).reverse()})
+        // })
         // }).then(res => console.log(Object.values(Object.values(res))))
         // }).then(res => console.log(Object.values(Object.values(res))[0].text))
     }
@@ -101,15 +106,18 @@ class StoriesIndex extends React.Component {
         
         
         let img;
-        
-        let storyDisplay = this.state.storyList.reverse().slice(1).map((story) => {
+
+        let reverseStoryDisplay = this.state.storyList
+        let storyDisplay = reverseStoryDisplay.map((story) => {
             let editBtn;
             let deleteBtn;
             
             if (story.type === 'news'){
                 img = this.state.news
-            } else {
+            } else if (story.type === 'review'){
                 img = this.state.review
+            } else {
+                img = this.state.other
             }
 
             if (story.author === this.props.currentUserId) {

@@ -2660,6 +2660,7 @@ a {
                 margin: 0 auto;
                 // position: absolute;
                 white-space: nowrap;
+                align-items: center;
                 // left: 10px;
             }
 
@@ -2695,7 +2696,7 @@ a {
             // border: 1px solid hotpink;
             // width: 816px;
             
-            .all {
+            .selected {
                 justify-content: center;
                 display: flex;
                 align-items: center;

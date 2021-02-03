@@ -14,7 +14,9 @@ class Discover extends React.Component {
         this.state = {
             bar1: '#41A0BD',
             bar2: '#4390A8',
-            bar3: '#418194'
+            bar3: '#418194',
+            all: 'selected',
+            electronic: ''
         }
 
     }
@@ -24,6 +26,8 @@ class Discover extends React.Component {
             this.setState({ bar1: '#31C723' })
             this.setState({ bar2: '#30B125' })
             this.setState({ bar3: '#309B28' })
+            this.setState({ all: '' })
+            this.setState({ electronic: 'selected' })
         }
     }
 
@@ -40,8 +44,8 @@ class Discover extends React.Component {
                             className="genres"
                             style={{backgroundColor:this.state.bar1}}
                             >
-                            <Link to="/search/browse-all"><li className='all'>all</li></Link>
-                            <li onClick={()=>this.changeColor('electronic')}>electronic</li>
+                            <Link to="/search/browse-all"><li className={this.state.all}>all</li></Link>
+                            <Link to="#"><li className={this.state.electronic} onClick={() => this.changeColor('electronic')}>electronic</li></Link>
                             <Link to="/search/rock"><li>rock</li></Link>
                             <Link to="/search/metal"><li>metal</li></Link>
                             <Link to="/search/alternative"><li>alternative</li></Link>

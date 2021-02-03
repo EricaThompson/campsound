@@ -5,6 +5,7 @@ import * as SessionAPIUtil from '../../util/session_api_util';
 // import { readAllUserItems } from '../../util/items_api_util';
 import MailchimpSubscribe from "react-mailchimp-subscribe"
 import Daily from './daily';
+import Discover from './discover';
 import MainStories from './main_stories';
 
 class Home extends React.Component {
@@ -883,31 +884,7 @@ class Home extends React.Component {
                 </div>
 
 
-                <div className='discover-container'>
-                    <div className='discover'>
-                        <div className='discover-title'>Discover</div>
-                        <div className='genres-container'>
-                            <ul className="genres">
-                                <Link to="/search/browse-all"><li className='all'>all</li></Link>
-                                <Link to="/search/electronic"><li>electronic</li></Link>
-                                <Link to="/search/rock"><li>rock</li></Link>
-                                <Link to="/search/metal"><li>metal</li></Link>
-                                <Link to="/search/alternative"><li>alternative</li></Link>
-                                <Link to="/search/rap"><li>hip-hop/rap</li></Link>
-                                <Link to="/search/experimental"><li>experimental</li></Link>
-                                <Link to="/search/punk"><li>punk</li></Link>
-                                <Link to="/search/folk"><li>folk</li></Link>
-                                <Link to="/search/pop"><li>pop</li></Link>
-                                <Link to="/search/ambient"><li>ambient</li></Link>
-                                <Link to="/search/soundtrack"><li>soundtrck</li></Link>
-                                <Link to="/search/world"><li>world</li></Link>
-                                <Link to="/search/jazz"><li>jazz</li></Link>
-                            </ul>
-                        </div>
-                        <div className='bar-two'></div>
-                        <div className='bar-three'></div>
-                    </div>
-                </div>
+                <Discover />
                 <div className='spotlight-title'>
                     Artist Spotlight <span>Recent uploads from Campsound collections</span>
                 </div>

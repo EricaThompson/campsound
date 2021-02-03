@@ -464,7 +464,7 @@ class Home extends React.Component {
                                         <p>{item.title}</p>
                                         <p>by {item.artist}</p>
                                         <p>{item.price}</p>
-                                        <p className="since">{timeSince(item.date)} ago</p>
+                                        <p className="since">{timeSince(item.timestamp)} ago</p>
                                     </Link>
                                 </div>
                             </div>

@@ -14,6 +14,7 @@ class Discover extends React.Component {
         this.state = {
             items: [],
             loading: false,
+            selectedItem: '',
             selectedSongImage: '',
             selectedSong: '',
             viewPlayer: false,
@@ -52,6 +53,7 @@ class Discover extends React.Component {
         
         this.props.browseAll()
             .then((res) => this.setState({ 
+                selectedItem: Object.values(res.items)[0],
                 selectedSongImage: Object.values(res.items)[0].cover,
                 
                 selectedSong: Object.values(res.items)[0].song
@@ -243,7 +245,7 @@ class Discover extends React.Component {
         let itemSong = this.state.items[idx].song
         let itemCover = this.state.items[idx].cover
         
-        this.setState({ selectedSong: itemSong, selectedSongImage: itemCover })
+        this.setState({ selectedItem: this.state.items[idx], selectedSong: itemSong, selectedSongImage: itemCover })
         
         setTimeout(() => {
             this.setState({ viewPlayer: true })
@@ -500,6 +502,8 @@ class Discover extends React.Component {
                                                     id="main-song-progress"
                                                 >
                                                 </progress> */}
+
+                                    <p>{this.state.selectedItem.title}</p>
                                     <input
                                         id='seeker'
                                         className='seeker'
@@ -509,6 +513,10 @@ class Discover extends React.Component {
                                         readOnly
                                     min="0"    
                                     />
+                                    <p>by {this.state.selectedItem.artist}</p>
+                                    <p>by {this.state.selectedItem.location}</p>
+                                    <button>hear more</button>
+                                    <p>direct from artist</p>
                                     {/* <div 
                                                     style={{backgroundColor: 'blue', height: '10px', width: '10px', position: 'absolute', left: `10`}}
                                                     className='progress-square'>

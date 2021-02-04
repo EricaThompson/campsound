@@ -2920,8 +2920,8 @@ a {
         margin-top: 40px;
         margin-bottom: 40px;
         // margin-left: 115px;
-        font-size: 19px;
-        width: 869px;
+        font-size: 18px;
+        width: 949px;
         margin: 40px auto;
 
         span {
@@ -2941,15 +2941,11 @@ a {
         justify-content: space-around;
         text-align: left;
         position: relative;
-        padding-bottom: 30px;
+        // padding-bottom: 30px;
         width: 998px;
         margin: 40px auto;
+        margin-bottom: 20px;
         padding-right: 0px;
-
-
-        
-    
-
 
         .spotlight-items {
             display: flex;
@@ -2959,8 +2955,6 @@ a {
 
 
             div {
-                
-
             // border: 1px solid olive;
                 position: relative;
             
@@ -3135,7 +3129,7 @@ a {
     }
 
     .dots {
-        margin-top: 70px;
+        // margin-top: 70px;
         // border-top: 5px dotted #ADAF59;
         height: 10px;
         background-image: linear-gradient(to right, #6c9c9e64 20%, rgba(255,255,255,0) 0%);

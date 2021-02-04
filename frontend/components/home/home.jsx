@@ -7,6 +7,7 @@ import MailchimpSubscribe from "react-mailchimp-subscribe"
 import Daily from './daily';
 import Discover from './discover';
 import MainStories from './main_stories';
+import NewAndNotable from './new_and_notable';
 
 class Home extends React.Component {
     constructor(props) {
@@ -883,6 +884,7 @@ class Home extends React.Component {
 
                 </div>
 
+                <NewAndNotable browseAll={this.props.browseAll}/>
 
                 <Discover 
                     browseAll={this.props.browseAll} 

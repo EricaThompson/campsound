@@ -13,6 +13,7 @@ class Discover extends React.Component {
         super(props);
         this.state = {
             items: [],
+            loading: false,
             bar1: '#41A0BD',
             bar2: '#4390A8',
             bar3: '#418194',
@@ -51,15 +52,26 @@ class Discover extends React.Component {
     // }
 
     search(genre){
+        this.setState({loading: true})
+        
         if (genre === 'all'){
             this.props.browseAll()
-                .then(res => this.setState({ items: Object.values(res.items) }))
+                .then(res => {
+                    this.setState({ items: Object.values(res.items) })
+                    this.setState({loading: false})
+                })
         } else if (genre.includes("hop") || genre.includes('rap')){
             this.props.genreSearch('hip hop')
-                .then(res => this.setState({ items: Object.values(res.items) }))
+                .then(res => {
+                    this.setState({ items: Object.values(res.items) })
+                    this.setState({loading: false})
+                })
         } else {
             this.props.genreSearch(genre)
-                .then(res => this.setState({ items: Object.values(res.items) }))
+                .then(res => {
+                    this.setState({ items: Object.values(res.items) })
+                    this.setState({loading: false})
+                })
         }
     }
 
@@ -232,12 +244,12 @@ class Discover extends React.Component {
 
         console.log(this.props)
 
-        if (this.props.currentUser && this.state.items.length < 1){
+        if (this.props.currentUser && this.state.items.length < 1 && this.state.loading === false){
             signInOrAddSong = <div><p>No results, <span 
                                                         style={{ color: '#5CB8D4'}}
                                                         className="link"
                                                         onClick={() => this.props.history.push(`/${this.props.currentUser}/new`)}>add one</span>..</p></div>
-        } else  if (!this.props.currentUser && this.state.items.length < 1){
+        } else if (!this.props.currentUser && this.state.items.length < 1 && this.state.loading === false){
             signInOrAddSong = <div>
                                 <p>
                                     No results, sign up as an 

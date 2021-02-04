@@ -266,7 +266,7 @@ class Discover extends React.Component {
                     <div className={`result-parent discover-results`}>
                         {results}
                     </div>
-                    <div className="discover-player">Player</div>
+                    <div className="discover-player"></div>
                 </div>
             </div>
         )

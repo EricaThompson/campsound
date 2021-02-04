@@ -2647,10 +2647,13 @@ a {
                 flex-wrap: wrap;
                 width: 675px;
                 font-size: 12px;
+                position: relative;
 
                 .page-buttons {
                     display: flex;
                     margin-left: -7px;
+                    position: absolute;
+                    bottom: 0;
 
                     .previous, .next {
                         padding: 5px 14px;

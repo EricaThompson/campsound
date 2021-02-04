@@ -17,6 +17,7 @@ class Discover extends React.Component {
             selectedSongImage: '',
             selectedSong: '',
             viewPlayer: false,
+            playShow: true,
             bar1: '#41A0BD',
             bar2: '#4390A8',
             bar3: '#418194',
@@ -248,6 +249,20 @@ class Discover extends React.Component {
 
     }
 
+    play() {
+        this.setState({ playShow: false })
+        document.getElementById('item-player').play()
+        // document.querySelector('.fa-play').classList.add('disappear')
+        // document.querySelector('.fa-pause').classList.remove('disappear')
+    }
+
+    pause() {
+        this.setState({ playShow: true })
+        document.getElementById('item-player').pause()
+        // document.querySelector('.fa-play').classList.remove('disappear')
+        // document.querySelector('.fa-pause').classList.add('disappear')
+    }
+
 
 
     render() {
@@ -330,6 +345,18 @@ class Discover extends React.Component {
         let itemCover;
         let itemSong;
         let audio = '';
+
+        let currentButton;
+
+        if (this.state.playShow) {
+            currentButton = <div className='play-button' onClick={() => this.play()}><i className="fas fa-play"></i></div>
+        } else {
+            currentButton = <div className='pause-button' onClick={() => this.pause()}><i className="fas fa-pause"></i></div>
+        }
+
+        // if (this.state.currentTime === this.state.duration) {
+        //     currentButton = <div className='play-button' onClick={() => this.play()}><i className="fas fa-play"></i></div>
+        // }
         
 
         if (this.state.items.length > 0){
@@ -340,10 +367,60 @@ class Discover extends React.Component {
 
             if (this.state.viewPlayer) {
                 // console.log('song', this.state.selectedSong)
-                audio = <audio id="discover-result-player" controls>
-                    <source src={this.state.selectedSong} type="audio/mpeg" />
-                        Your browser does not support the audio tag.
-                    </audio>
+                audio = <div>
+                            <audio
+                                id="item-player"
+                                controls="controls"
+                                // onTimeUpdate={() => this.timeUpdate()}
+                            >
+                                <source src={this.state.selectedSong} type="audio/mpeg" />
+                                                Your browser does not support the audio tag.
+                                        </audio>
+                            <div className="controls">
+                                <div className="play-pause">
+                                    {currentButton}
+                                </div>
+                                <div
+                                    style={{ position: 'relative' }}
+                                    className='right-side'>
+                                    {/* <div className="time"><span id='elapsed-time'>00:00</span> / {durationRender}</div> */}
+
+                                    <div className="time-location"></div>
+
+                                    {/* <div
+                                                    style={{ transform: `scaleX(${this.state.currentTime})` }}
+                                                    id="progress-bar"
+                                                >
+                                                    Progress Bar
+                                                </div> */}
+                                    {/* <progress
+                                                    value={this.state.currentTime}
+                                                    max={timeDuration}
+                                                    id="main-song-progress"
+                                                >
+                                                </progress> */}
+                                    <input
+                                        // id='seeker'
+                                        className='seeker'
+                                        type="range"
+                                        // value={this.state.currentTime}
+                                        // max={timeDuration}
+                                        readOnly
+                                    // min="-5"    
+                                    />
+                                    {/* <div 
+                                                    style={{backgroundColor: 'blue', height: '10px', width: '10px', position: 'absolute', left: `10`}}
+                                                    className='progress-square'>
+
+                                                </div> */}
+
+                                    {/* Progress Bar */}
+                                </div>
+                                {/* <div onClick={()=>this.volumeUp()}>Volume Up</div>
+                                            <div onClick={()=>this.volumeDown()}>Volume Down</div> */}
+                            </div>
+                </div>
+                        
 
                 
             } else {
@@ -393,6 +470,7 @@ class Discover extends React.Component {
                                 Your browser does not support the audio tag.
                             </audio> */}
                             {audio}
+
                         </div>
                     </div>
                 </div>

@@ -3163,6 +3163,49 @@ a {
     
 }
 
+// .play-pause {
+//         cursor: pointer;
+//         position: absolute;
+//         font-size: 25px;
+//         background-color: rgba(0, 0, 0, 0.726);
+//         color: white;
+//         // left: 0px;
+//         // right: 880px;
+//         bottom: 25px;
+//         left: 6px;
+//         padding: 20px;
+//         width: 60px;
+//         // padding-left: 20px;
+//         margin: 0;
+//         // width: 50px;
+//         border-radius: 6px;
+//         text-align: center;
+//         display: none;
+
+
+//         .fa-play {
+//             margin: 0 auto;
+//             // width: 10px;
+//             // display: none;
+//         }
+
+        
+    
+
+//             .show {
+//                 display: block;
+//             }
+
+            
+// }
+        
+
+//         .play-pause {
+//             display: block;
+//         }
+
+
+
 
 
 
@@ -3813,6 +3856,57 @@ a {
         }
     }
 }  
+
+
+
+#item-player {
+    display: none;
+}
+
+
+.controls {
+    width: 315px;
+    .right-side {
+        padding-top: 10px;
+        width: 254px;
+        float: right;
+        .time {
+            padding-left: 10px;
+            color: #888888;
+            font-weight: lighter;
+            font-size: 12px;
+        }
+
+    }
+    .play-pause {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        float: left;
+
+        .fa-play, .fa-pause {
+            // display: flex;
+            justify-content: center;
+            align-items: center; 
+            // border: 1px solid hotpink;
+            // min-height: 50px;
+            // min-width: 54px;
+        }
+        
+        .pause-button, .play-button {
+            display: flex;
+            justify-content: center;
+            border: 1px solid #d9d9d9;
+            border-radius: 2px;
+            cursor: pointer;
+            align-items: center;
+            min-height: 50px;
+            min-width: 54px;
+            
+        }
+
+    }
+}
 
 
 //* Stories

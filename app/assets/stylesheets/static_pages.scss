@@ -2648,6 +2648,47 @@ a {
                 width: 675px;
                 font-size: 12px;
 
+                .page-buttons {
+                    display: flex;
+                    margin-left: -7px;
+
+                    .previous, .next {
+                        padding: 5px 14px;
+                    }
+
+                    button {
+                        color: #3F8EA3;
+                        border: none;
+                        border: 1px solid #D4D4D4;
+                        margin: 3px;
+                        background-color: white;
+                        border-radius: 4px;
+                        font-size: 13px;
+                        height: 26px;
+                        min-width: 32px;
+                        
+
+                        &:disabled {
+                            color: #ccc;
+                            border-color: #d1d1d1;
+
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        
+                    }
+
+                    .current-page {
+                        &:disabled {
+                            color: #222222;
+                            border-color: #afafaf;
+                        }
+                    }
+                }
+                
 
 
 

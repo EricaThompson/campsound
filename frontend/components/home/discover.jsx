@@ -13,7 +13,7 @@ class Discover extends React.Component {
         super(props);
         this.state = {
             page: 1,
-            pageCount: 0,
+            pageCount: 1,
             items: [],
             loading: false,
             selectedItem: '',
@@ -71,6 +71,7 @@ class Discover extends React.Component {
             .then(res => {
                 this.setState({
                     items: Object.values(res.items),
+                    //!pageCount here
                     pageCount: Math.ceil(Object.values(res.items).length / 8)
                 })
             })
@@ -113,6 +114,7 @@ class Discover extends React.Component {
 
         this.setState({
             items: [],
+            page: 1,
             all: '',
             electronic: '',
             rock: '',
@@ -593,32 +595,21 @@ class Discover extends React.Component {
         let previousDisabler = false;
         let nextDisabler = false;
         let lastPageDisabler = false;
+        let currentPage = ''
 
         //! 8 here
-        for (let i = 0; i < 8; i++){
+        for (let i = 0; i < this.state.pageCount; i++){
             if (this.state.page === i + 1){
                 otherPageDisabler = true;
+                currentPage = 'current-page'
             } else {
                 otherPageDisabler = false;
+                currentPage = ''
             }
-            pages.push(<button onClick={()=>this.selectPage(i+1)} disabled={otherPageDisabler}>{i+1}</button>)
-        }
 
-        if (pages.length > 7){
-            ellipsis = <p>   ...   </p>;
-
-            if (this.state.page === pages.length){
-                lastPageDisabler = true;
-            } else {
-                lastPageDisabler = false;
+            if (i < 7 && i >= 0){
+                pages.push(<button key={i} className={`${currentPage}`} onClick={()=>this.selectPage(i+1)} disabled={otherPageDisabler}>{i+1}</button>)
             }
-            lastPage = <button disabled={lastPageDisabler} onClick={() => this.selectPage(pages.length)}>{pages.length}</button>;
-        }
-
-        if (this.state.page === 1){
-            previousDisabler = true;
-        } else {
-            previousDisabler = false;
         }
 
         if (this.state.page === this.state.pageCount){
@@ -627,7 +618,46 @@ class Discover extends React.Component {
             nextDisabler = false;
         }
 
+        if (pages.length > 6){
+            ellipsis = <p>   ...   </p>;
+
+            if (this.state.page === this.state.pageCount){
+                lastPageDisabler = true;
+                nextDisabler = true;
+                currentPage = 'current-page';
+                ellipsis = ''
+                lastPage = ''
+            } else {
+                lastPageDisabler = false;
+                nextDisabler = false;
+                lastPage = <button className={`${currentPage}`} disabled={lastPageDisabler} onClick={() => this.selectPage(pages.length)}>{this.state.pageCount}</button>;
+            }
+
+        }
+
+        if (this.state.page === 1){
+            previousDisabler = true;
+        } else {
+            previousDisabler = false;
+        }
+
+
         // console.log(pages)
+
+        let pageButtons;
+        
+        if (this.state.items.length < 9){
+            pageButtons = '';
+        } else {
+            pageButtons = <div className="page-buttons">
+                            <button className="previous" disabled={previousDisabler} onClick={() => this.previous()}>previous</button>
+                            {pages}
+                            {ellipsis}
+                            {lastPage}
+                            <button className="next"disabled={nextDisabler} onClick={() => this.next()}>next</button>
+                        </div>
+        }
+        
 
 
 
@@ -665,13 +695,7 @@ class Discover extends React.Component {
                     <div className={`result-parent discover-results`}>
                         {results}
                         {signInOrAddSong}
-                        <div className="page-buttons">
-                            <button disabled={previousDisabler}onClick={()=>this.previous()}>previous</button>
-                            {pages}
-                            {ellipsis}
-                            {lastPage}
-                            <button disabled={nextDisabler}onClick={()=>this.next()}>next</button>
-                        </div>
+                        {pageButtons}
                     </div>
                     <div className="discover-player">
                         <div className="image-player">

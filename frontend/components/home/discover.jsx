@@ -226,11 +226,46 @@ class Discover extends React.Component {
                     {/* </Link> */}
                 </div>
             }
-            
-
         })
 
-        console.log(this.state.items)
+        let signInOrAddSong = ''
+
+        console.log(this.props)
+
+        if (this.props.currentUser && this.state.items.length < 1){
+            signInOrAddSong = <div><p>No results, <span 
+                                                        style={{ color: '#5CB8D4'}}
+                                                        className="link"
+                                                        onClick={() => this.props.history.push(`/${this.props.currentUser}/new`)}>add one</span>..</p></div>
+        } else  if (!this.props.currentUser && this.state.items.length < 1){
+            signInOrAddSong = <div>
+                                <p>
+                                    No results, sign up as an 
+                                    <span 
+                                        className="link"
+                                        style={{ color: "#9CB67C"}}
+                                        onClick={() => {
+                                            this.props.history.push('/artist')
+                                            this.props.openModal('signup')
+                                        }}> artist</span> or 
+                                    <span 
+                                        className="link"
+                                        style={{ color: '#8B6BB2'}}
+                                        onClick={() => {
+                                            this.props.history.push('/label')
+                                            this.props.openModal('signup')
+                                        }}> label</span> to add one..</p>
+                            </div>
+        } else {
+            signInOrAddSong = ''
+        }
+
+        // if (results.length < 1){
+        //     results = <div>No results, <span onClick={()=>this.props.history.push(`/${this.props.currentUser.id}/new`)}></span>add one..</div>
+        // }
+
+
+        // console.log(this.state.items)
 
 
 
@@ -265,6 +300,7 @@ class Discover extends React.Component {
                 <div className="discover-results-container">
                     <div className={`result-parent discover-results`}>
                         {results}
+                        {signInOrAddSong}
                     </div>
                     <div className="discover-player"></div>
                 </div>

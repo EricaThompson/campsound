@@ -53,6 +53,9 @@ class ArtistItemForm extends React.Component {
     }
 
     componentDidMount(){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+
         if (this.props.match.path.includes('edit')){
             this.setState({playerView: true})
             // console.log(this.props.currentUserId, parseInt(this.props.match.params.itemId))

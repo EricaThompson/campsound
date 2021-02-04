@@ -96,7 +96,7 @@ item6.song.attach(io: open("https://campsound-dev.s3-us-west-1.amazonaws.com/see
 
 item7 = Item.create(
                 "owner_id": user1.id,
-                "title": 'Another Thoughts',
+                "title": 'Another Thought',
                 "genre": 'punk',
                 'released': true,
                 'artist_name': 'DU',

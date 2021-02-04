@@ -2643,6 +2643,9 @@ a {
                 // padding: 10px;
                 flex-wrap: wrap;
                 width: 675px;
+                font-size: 12px;
+
+
 
 
                 .result-display {
@@ -2650,9 +2653,25 @@ a {
                     // margin-right: 14px;
                     padding: 0px;
 
+                    h5 {
+                        margin-left: 0px;
+                        padding-left: 0px;
+                    }
+
                     .discover-result-image {
                         width: 155px;
                         height: 155px;
+                    }
+
+                    .discover-result-artist {
+                        font-weight: lighter;
+                        margin-top: 8px;
+                    }
+
+                    .discover-result-genre {
+                        margin-top: 8px;
+                        font-weight: lighter;
+                        color: #999999;
                     }
                 }
             }

@@ -190,12 +190,12 @@ class Discover extends React.Component {
                     {/* <Link to={`artists/${this.props.currentUserId}/music/${result.id}`}> */}
                     <span onClick={() => this.props.history.push(`/users/${this.props.currentUserId}/music/${result.id}`)}>
                         <img className="discover-result-image" src={`${result.cover}`} alt="song cover art" />
-                        <h5 className="home-text top">{result.title}</h5>
+                        <h5 className="home-text top discover-result-title">{result.title}</h5>
                     </span>
                     <span onClick={() => this.props.history.push(`/users/${this.props.currentUserId}`)}>
-                        <h5 className="home-text">by {result.artist}</h5>
+                        <h5 className="home-text discover-result-artist">by {result.artist}</h5>
                     </span>
-                    <span><h5>{result.genre}</h5></span>
+                    <span><h5 className='discover-result-genre'>{result.genre}</h5></span>
                     {/* <span className='result-about'>
                             <h5>{result.about}</h5>
                         </span> */}

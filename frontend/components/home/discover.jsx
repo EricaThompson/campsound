@@ -20,6 +20,7 @@ class Discover extends React.Component {
             selectedSongImage: '',
             selectedSong: '',
             viewPlayer: false,
+            viewSelected: true,
             playShow: true,
             duration: 'time',
             currentTime: 'current',
@@ -49,9 +50,9 @@ class Discover extends React.Component {
     }
 
     componentDidMount(){
-        this.setState({viewPlayer: false})
+        // this.setState({viewPlayer: false})
 
-        this.setState({loading: true})
+        // this.setState({loading: true})
 
 
         
@@ -72,10 +73,12 @@ class Discover extends React.Component {
                 this.setState({
                     items: Object.values(res.items),
                     //!pageCount here
-                    pageCount: Math.ceil(Object.values(res.items).length / 8)
+                    pageCount: Math.ceil(Object.values(res.items).length / 8),
+                    loading: false
                 })
-            })
 
+            })
+        // this.setState({ loading: true })
         // this.setState({ viewPlayer: true })
     }
 
@@ -85,6 +88,7 @@ class Discover extends React.Component {
     // }
 
     search(genre){
+        this.setState({viewSelected: true})
         
         
         if (genre === 'all'){
@@ -92,26 +96,47 @@ class Discover extends React.Component {
                 .then(res => {
                     this.setState({ items: Object.values(res.items) })
                     this.setState({loading: false, selectedSongImage: Object.values(res.items)[0].cover})
+                    this.setState({ viewSelected: true })
+                    // this.setState({ loading: true })
                 })
         } else if (genre.includes("hop") || genre.includes('rap')){
             this.props.genreSearch('hip hop')
                 .then(res => {
                     this.setState({ items: Object.values(res.items) })
-                    this.setState({loading: false, selectedSongImage: Object.values(res.items)[0].cover})
+                    this.setState({
+                        loading: false, 
+                        selectedSongImage: Object.values(res.items)[0].cover,
+                        selectedSong: Object.values(res.items)[0].song,
+                        selectedItem: Object.values(res.items)[0]
+                    
+                    })
+                    this.setState({ viewSelected: true })
                 })
         } else {
             this.props.genreSearch(genre)
                 .then(res => {
-                    this.setState({ items: Object.values(res.items) })
-                    this.setState({loading: false, selectedSongImage: Object.values(res.items)[0].cover})
+                    if (Object.values(res.items).length < 1){
+                        // this.setState({loading: false, selectedSongImage: Object.values(res.items)[0].cover})
+                        this.setState({ viewSelected: false })
+                    } else {
+                        this.setState({ items: Object.values(res.items) })
+                        
+                        this.setState({ 
+                            loading: false, 
+                            selectedSongImage: Object.values(res.items)[0].cover,
+                            selectedSong: Object.values(res.items)[0].song,
+                            selectedItem: Object.values(res.items)[0] 
+                        
+                        })
+                        this.setState({viewSelected: true})
+                    }
                 })
         }
     }
 
     switchTab(genre){
     
-        this.search(genre);
-
+        
         this.setState({
             items: [],
             page: 1,
@@ -129,9 +154,13 @@ class Discover extends React.Component {
             ambient: '',
             soundtrack: '',
             world: '',
-            jazz: ''
+            jazz: '',
+            playShow: false
+            // loading: 'true',
+            // viewPlayer: true
         })
-
+        
+        this.search(genre);
 
         // if (genre != 'all'){
         //     this.setState({ all: '' })
@@ -250,6 +279,7 @@ class Discover extends React.Component {
         //         return item
         //     }
         // })
+        
         this.getDuration();
         this.setState({viewPlayer: false});
 
@@ -313,11 +343,14 @@ class Discover extends React.Component {
     getDuration() {
         // let time = document.getElementById('item-player').duration
 
+        if (this.state.items.length > 0){
+
+            this.setState({ duration: document.getElementById('item-player').duration })
+            this.setState({ currentTime: document.getElementById('item-player').currentTime })
+            this.setState({ timeRendered: true })
+            return this.state.currentTime
+        }
         
-        this.setState({ duration: document.getElementById('item-player').duration })
-        this.setState({ currentTime: document.getElementById('item-player').currentTime })
-        this.setState({ timeRendered: true })
-        return this.state.currentTime
     
     }
 
@@ -336,6 +369,7 @@ class Discover extends React.Component {
     }
 
     selectPage(num){
+        // this.setState({ loading: true })
         this.setState({page: num})
     }
 
@@ -392,33 +426,49 @@ class Discover extends React.Component {
 
         // console.log(this.props)
 
-        if (this.props.currentUser && this.state.items.length < 1 && this.state.loading === false){
-            signInOrAddSong = <div><p>no results, <span 
-                                                        style={{ color: '#5CB8D4'}}
-                                                        className="link"
-                                                        onClick={() => this.props.history.push(`/${this.props.currentUser}/new`)}>add one</span>..</p></div>
-        } else if (!this.props.currentUser && this.state.items.length < 1 && this.state.loading === false){
+        // setTimeout(() => {
+            
+        // }, 1000);
+
+
+
+        if (this.state.loading === true) {
             signInOrAddSong = <div>
-                                <p>
-                                    no results, sign up as an 
-                                    <span 
-                                        className="link"
-                                        style={{ color: "#9CB67C"}}
-                                        onClick={() => {
-                                            this.props.history.push('/artist')
-                                            this.props.openModal('signup')
-                                        }}> artist</span> or 
-                                    <span 
-                                        className="link"
-                                        style={{ color: '#8B6BB2'}}
-                                        onClick={() => {
-                                            this.props.history.push('/label')
-                                            this.props.openModal('signup')
-                                        }}> label</span> to add one..</p>
+                                <i className="fas fa-asterisk fa-spin"></i>
                             </div>
+        } else if (this.props.currentUser && this.state.items.length < 1 && this.state.loading === false){
+            // setTimeout(() => {
+                signInOrAddSong = <div><p>no results, <span 
+                                                            style={{ color: '#5CB8D4'}}
+                                                            className="link"
+                                                            onClick={() => this.props.history.push(`/${this.props.currentUser}/new`)}>add one</span>..</p></div>
+                
+            // }, 10);
+        } else if (!this.props.currentUser && this.state.items.length < 1 && this.state.loading === false){
+            // setTimeout(() => {
+                signInOrAddSong = <div>
+                                    <p>
+                                        no results, sign up as an 
+                                        <span 
+                                            className="link"
+                                            style={{ color: "#9CB67C"}}
+                                            onClick={() => {
+                                                this.props.history.push('/artist')
+                                                this.props.openModal('signup')
+                                            }}> artist</span> or 
+                                        <span 
+                                            className="link"
+                                            style={{ color: '#8B6BB2'}}
+                                            onClick={() => {
+                                                this.props.history.push('/label')
+                                                this.props.openModal('signup')
+                                            }}> label</span> to add one..</p>
+                                </div>
+            // }, 10);
         } else {
             signInOrAddSong = ''
         }
+
 
         // if (results.length < 1){
         //     results = <div>No results, <span onClick={()=>this.props.history.push(`/${this.props.currentUser.id}/new`)}></span>add one..</div>
@@ -657,6 +707,35 @@ class Discover extends React.Component {
                             <button className="next"disabled={nextDisabler} onClick={() => this.next()}>next</button>
                         </div>
         }
+
+        let viewSelected;
+        if (!this.state.viewSelected){
+            viewSelected = ''
+        } else {
+            viewSelected = <div className="discover-player">
+                <div className="image-player">
+                    <img className="image" src={this.state.selectedSongImage} alt="" />
+                    {/* <audio id="discover-result-player" controls>
+                                <source src={this.state.selectedSong} type="audio/mpeg" />
+                                Your browser does not support the audio tag.
+                            </audio> */}
+                    {audio}
+                    {/* {document.getElementById('item-player').duration()} */}
+
+                </div>
+                <div className="discover-player-info">
+                    <p>by <span
+                        onClick={() => this.props.history.push(`/users/${this.state.selectedItem.owner_id}`)}
+                        className="discover-player-artist">{this.state.selectedItem.artist}</span></p>
+                    <p>{this.state.selectedItem.location}</p>
+                    <button onClick={() => this.props.history.push(`/users/${this.state.selectedItem.owner_id}/music/${this.state.selectedItem.id}`)}>hear more</button>
+
+                    {/* <p className='origin-note'>direct from artist</p> */}
+                </div>
+            </div>
+        }
+
+        console.log(this.state.viewSelected)
         
 
 
@@ -697,27 +776,8 @@ class Discover extends React.Component {
                         {signInOrAddSong}
                         {pageButtons}
                     </div>
-                    <div className="discover-player">
-                        <div className="image-player">
-                            <img className="image" src={this.state.selectedSongImage} alt=""/>
-                            {/* <audio id="discover-result-player" controls>
-                                <source src={this.state.selectedSong} type="audio/mpeg" />
-                                Your browser does not support the audio tag.
-                            </audio> */}
-                            {audio}
-                            {/* {document.getElementById('item-player').duration()} */}
-
-                        </div>
-                        <div className="discover-player-info">
-                            <p>by <span
-                                onClick={() => this.props.history.push(`/users/${this.state.selectedItem.owner_id}`)} 
-                                className="discover-player-artist">{this.state.selectedItem.artist}</span></p>
-                            <p>{this.state.selectedItem.location}</p>
-                            <button onClick={()=> this.props.history.push(`/users/${this.state.selectedItem.owner_id}/music/${this.state.selectedItem.id}`)}>hear more</button>
-                            
-                            {/* <p className='origin-note'>direct from artist</p> */}
-                        </div>
-                    </div>
+                    {viewSelected}
+                    
                 </div>
             </div>
         )

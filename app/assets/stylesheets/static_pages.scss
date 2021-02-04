@@ -2834,6 +2834,9 @@ a {
                 // position: absolute;
                 white-space: nowrap;
                 align-items: center;
+                -webkit-transition: background-color, 100ms linear;
+                -ms-transition: background-color 100ms linear;
+                transition: background-color 100ms linear;
                 // left: 10px;
             }
             //  -webkit-transition: background-color, 400ms linear;
@@ -2856,17 +2859,17 @@ a {
         .bar-two {
             background-color: #4390A8;
             height: 42px;
-             -webkit-transition: background-color, 200ms linear;
-                -ms-transition: background-color 200ms linear;
-                transition: background-color 200ms linear;
+             -webkit-transition: background-color, 300ms linear;
+                -ms-transition: background-color 300ms linear;
+                transition: background-color 300ms linear;
         }
 
         .bar-three {
             background-color: #418194;
             height: 42px;
-             -webkit-transition: background-color, 300ms linear;
-                -ms-transition: background-color 300ms linear;
-                transition: background-color 300ms linear;
+             -webkit-transition: background-color, 500ms linear;
+                -ms-transition: background-color 500ms linear;
+                transition: background-color 500ms linear;
 
         }
         ul {

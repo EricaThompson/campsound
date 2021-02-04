@@ -2681,7 +2681,7 @@ a {
             }
 
             .discover-player {
-                width: 299px;
+                width: 319px;
 
                 .image-player {
                     width: 299px;
@@ -3861,13 +3861,65 @@ a {
 
 #item-player {
     display: none;
+
+    
 }
 
+.discover-player {
+    width: 319px; 
+    background-color: white;
+    
+    p {
+        font-size: 12px;
+        padding: 0px;
+
+    }
+
+    .player-top-container {
+        border-bottom: 1px solid #E5E5E5;
+        border-left: 1px solid #E5E5E5;
+        border-right: 1px solid #E5E5E5;
+        padding-bottom:10px;
+        height: 50px;
+        margin-left: -1px;
+        width: 232px;
+        
+    }
+    .player-top {
+        // border: 1px solid olive;
+        display: flex;
+        justify-content: space-between;
+        margin-top: -3px;
+        align-items: center;
+        margin-right: 25px;
+        // border-left: 1px solid #E5E5E5;
+        // height: 62px;
+        margin-left: -5px;
+        height: 29px;
+        width: 215px;
+        padding-left: 8px;
+    }
+
+    .seeker {
+        height: 10px;
+        width: 215px;
+        margin-top: 0px;
+    }
+    // input {
+    //     height: 20px;
+    // }
+
+    // .time {
+
+    // }
+
+}
 
 .controls {
-    width: 315px;
+    width: 320px;
     .right-side {
-        padding-top: 10px;
+        // background-color: red;
+        // padding-top: 10px;
         width: 254px;
         float: right;
         .time {
@@ -3903,6 +3955,19 @@ a {
             min-height: 50px;
             min-width: 54px;
             
+        }
+
+        .discover-pause-play {
+            border: none;
+            border-radius: 0%;
+            border-left: 1px solid #E5E5E5;
+            border-bottom: 1px solid #E5E5E5;
+            height: 62px;
+            margin-top: -10px;
+            padding-left: 4px;
+            padding-top: 5px;
+            width: 60px;
+
         }
 
     }

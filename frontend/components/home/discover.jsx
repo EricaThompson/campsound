@@ -396,9 +396,9 @@ class Discover extends React.Component {
         let currentButton;
 
         if (this.state.playShow) {
-            currentButton = <div className='play-button' onClick={() => this.play()}><i className="fas fa-play"></i></div>
+            currentButton = <div className='play-button discover-pause-play' onClick={() => this.play()}><i className="fas fa-play"></i></div>
         } else {
-            currentButton = <div className='pause-button' onClick={() => this.pause()}><i className="fas fa-pause"></i></div>
+            currentButton = <div className='pause-button discover-pause-play' onClick={() => this.pause()}><i className="fas fa-pause"></i></div>
         }
 
         if (this.state.currentTime === this.state.duration) {
@@ -470,7 +470,7 @@ class Discover extends React.Component {
 
             if (this.state.viewPlayer) {
                 // console.log('song', this.state.selectedSong)
-                audio = <div>
+                audio = <div className="discover-player">
                             <audio
                                 id="item-player"
                                 controls="controls"
@@ -486,7 +486,22 @@ class Discover extends React.Component {
                                 <div
                                     style={{ position: 'relative' }}
                                     className='right-side'>
-                                    <div className="time"><span id='elapsed-time'>00:00</span> / {durationRender}</div>
+                                        <div className="player-top-container">
+                                            <div className='player-top'>
+                                                <p>{this.state.selectedItem.title}</p>
+                                                <div className="time"><span id='elapsed-time'>00:00</span> / {durationRender}</div>
+                                            
+                                            </div>
+                                            <input
+                                                id='seeker'
+                                                className='seeker'
+                                                type="range"
+                                                value={this.state.currentTime}
+                                                max={`${this.state.duration}`}
+                                                readOnly
+                                                min="0"
+                                            />
+                                        </div>
 
                                     <div className="time-location"></div>
 
@@ -503,18 +518,10 @@ class Discover extends React.Component {
                                                 >
                                                 </progress> */}
 
-                                    <p>{this.state.selectedItem.title}</p>
-                                    <input
-                                        id='seeker'
-                                        className='seeker'
-                                        type="range"
-                                        value={this.state.currentTime}
-                                        max={`${this.state.duration}`}
-                                        readOnly
-                                    min="0"    
-                                    />
+                                    
+                                    
                                     <p>by {this.state.selectedItem.artist}</p>
-                                    <p>by {this.state.selectedItem.location}</p>
+                                    <p>{this.state.selectedItem.location}</p>
                                     <button>hear more</button>
                                     <p>direct from artist</p>
                                     {/* <div 

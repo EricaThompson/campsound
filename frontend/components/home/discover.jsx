@@ -18,6 +18,9 @@ class Discover extends React.Component {
             selectedSong: '',
             viewPlayer: false,
             playShow: true,
+            duration: 'time',
+            currentTime: 'current',
+            timeRendered: false,
             bar1: '#41A0BD',
             bar2: '#4390A8',
             bar3: '#418194',
@@ -130,7 +133,7 @@ class Discover extends React.Component {
                     bar2: '#4390A8',
                     bar3: '#418194',
                 })
-                this.allTab();
+                // this.allTab();
                 break;
             case 'electronic':
                 this.setState({ 
@@ -263,6 +266,48 @@ class Discover extends React.Component {
         // document.querySelector('.fa-pause').classList.add('disappear')
     }
 
+    timeUpdate() {
+        let player = document.getElementById('elapsed-time')
+        // console.log(player.currentTime)
+        this.getDuration()
+        let second;
+        let minute;
+        let ct = this.state.currentTime
+        if (this.props.match.path.includes('music')) {
+            if (ct % 60 === 0 || ct > 60) {
+                minute = Math.floor(ct / 60)
+                second = Math.floor(ct - (minute * 60))
+            } else {
+                minute = 0
+            }
+
+            if (ct < 10) {
+                player.innerHTML = `00:0${Math.floor(ct)}`;
+            } else if (ct < 60) {
+                player.innerHTML = `00:${Math.floor(ct)}`;
+            } else {
+                if (second < 10) {
+                    player.innerHTML = `0${minute}:0${second}`;
+                } else {
+                    player.innerHTML = `0${minute}:${second}`
+                }
+            }
+        }
+
+    }
+
+
+    getDuration() {
+        // let time = document.getElementById('item-player').duration
+
+        
+        this.setState({ duration: document.getElementById('item-player').duration })
+        this.setState({ currentTime: document.getElementById('item-player').currentTime })
+        this.setState({ timeRendered: true })
+        return this.state.currentTime
+    
+    }
+
 
 
     render() {
@@ -354,10 +399,66 @@ class Discover extends React.Component {
             currentButton = <div className='pause-button' onClick={() => this.pause()}><i className="fas fa-pause"></i></div>
         }
 
-        // if (this.state.currentTime === this.state.duration) {
-        //     currentButton = <div className='play-button' onClick={() => this.play()}><i className="fas fa-play"></i></div>
+        if (this.state.currentTime === this.state.duration) {
+            currentButton = <div className='play-button' onClick={() => this.play()}><i className="fas fa-play"></i></div>
+        }
+
+        let remainder;
+        let minute;
+        let second;
+        let timeDuration
+        let durationRender;
+
+
+
+        if (this.state.duration != 'time') {
+            timeDuration = Math.round(this.state.duration)
+            if (timeDuration > 59) {
+                minute = Math.floor(timeDuration / 60)
+                remainder = minute * 60
+                second = timeDuration - remainder
+                if (second < 10) {
+                    second = `0${second}`
+                }
+
+                durationRender = <span>{minute}:{second}</span>
+            } else if (timeDuration < 10) {
+                durationRender = <span>00:0{timeDuration}</span>
+            } else {
+                durationRender = <span>00:{timeDuration}</span>
+                // this.stopSpinner();
+            }
+        }
+            
+
+        // if (document.getElementById('item-player').duration() != null){
+
+            
+        //     timeDuration = Math.round(document.getElementById('item-player').duration())
+        //     if (timeDuration > 59) {
+        //         minute = Math.floor(timeDuration / 60)
+        //         remainder = minute * 60
+        //         second = timeDuration - remainder
+        //         if (second < 10) {
+        //             second = `0${second}`
+        //         }
+
+        //         durationRender = <span>{minute}:{second}</span>
+        //     } else if (timeDuration < 10) {
+        //         durationRender = <span>00:0{timeDuration}</span>
+        //     } else {
+        //         durationRender = <span>00:{timeDuration}</span>
+        //         // this.stopSpinner();
+        //     }
         // }
+
+        // if (this.state.duration != 'time'){
+        //     durationRender = <p>{document.getElementById('item-player').duration()}</p>
+
+        // }
+
         
+
 
         if (this.state.items.length > 0){
             // featured = this.state.items[0]
@@ -371,7 +472,7 @@ class Discover extends React.Component {
                             <audio
                                 id="item-player"
                                 controls="controls"
-                                // onTimeUpdate={() => this.timeUpdate()}
+                                onTimeUpdate={() => this.timeUpdate()}
                             >
                                 <source src={this.state.selectedSong} type="audio/mpeg" />
                                                 Your browser does not support the audio tag.
@@ -383,7 +484,7 @@ class Discover extends React.Component {
                                 <div
                                     style={{ position: 'relative' }}
                                     className='right-side'>
-                                    {/* <div className="time"><span id='elapsed-time'>00:00</span> / {durationRender}</div> */}
+                                    <div className="time"><span id='elapsed-time'>00:00</span> / {durationRender}</div>
 
                                     <div className="time-location"></div>
 
@@ -400,13 +501,13 @@ class Discover extends React.Component {
                                                 >
                                                 </progress> */}
                                     <input
-                                        // id='seeker'
+                                        id='seeker'
                                         className='seeker'
                                         type="range"
-                                        // value={this.state.currentTime}
-                                        // max={timeDuration}
+                                        value={this.state.currentTime}
+                                        max={`${timeDuration}`}
                                         readOnly
-                                    // min="-5"    
+                                    min="0"    
                                     />
                                     {/* <div 
                                                     style={{backgroundColor: 'blue', height: '10px', width: '10px', position: 'absolute', left: `10`}}
@@ -419,14 +520,26 @@ class Discover extends React.Component {
                                 {/* <div onClick={()=>this.volumeUp()}>Volume Up</div>
                                             <div onClick={()=>this.volumeDown()}>Volume Down</div> */}
                             </div>
+                            
                 </div>
                         
+                if (!this.state.timeRendered) {
+                    setTimeout(() => {
+                        // this.stopSpinner();
+                        this.getDuration();
+                        // console.log(this.state.currentTime)
 
+                    }, 1000);
+
+                }
                 
             } else {
                 audio = ""
             }
         }
+
+
+
 
 
         return (
@@ -470,6 +583,7 @@ class Discover extends React.Component {
                                 Your browser does not support the audio tag.
                             </audio> */}
                             {audio}
+                            {/* {document.getElementById('item-player').duration()} */}
 
                         </div>
                     </div>

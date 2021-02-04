@@ -13,9 +13,9 @@ class Footer extends React.Component{
         // this.setState({authDropdown: false})
     }
     render(){
-        console.log(this.props)
+        // console.log(this.props)
         if ((this.props.match.isExact)){
-            console.log('home')
+            // console.log('home')
             return (
     
                 <div className="footer">
@@ -47,7 +47,7 @@ class Footer extends React.Component{
             )
 
         } else {
-            console.log('not home')
+            // console.log('not home')
 
             return (<footer>
                 <div

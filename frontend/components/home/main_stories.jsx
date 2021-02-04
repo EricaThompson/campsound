@@ -26,7 +26,7 @@ class MainStories extends React.Component {
 
     render() {
 
-        console.log(this.state.stories)
+        // console.log(this.state.stories)
 
 
         let summary0;

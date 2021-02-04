@@ -291,7 +291,7 @@ class Home extends React.Component {
 
         let i1 = {...this.state.i1}
         i1[idx] = true;
-        console.log('i1 pause',i1)
+        // console.log('i1 pause',i1)
 
         // this.setState({ playShow: false })
         // document.querySelector('.fa-play').classList.add('disappear')
@@ -306,7 +306,7 @@ class Home extends React.Component {
 
         let i1 = { ...this.state.i1 }
         i1[idx] = false;
-        console.log('i1 play', i1)
+        // console.log('i1 play', i1)
 
         // this.setState({ playShow: false })
         // document.querySelector('.fa-play').classList.add('disappear')
@@ -319,7 +319,7 @@ class Home extends React.Component {
     reset1(idx){
         let i1 = { ...this.state.i1 }
         i1[idx] = false;
-        console.log('i1 reset', i1)
+        // console.log('i1 reset', i1)
 
         // this.setState({ playShow: false })
         // document.querySelector('.fa-play').classList.add('disappear')
@@ -330,7 +330,7 @@ class Home extends React.Component {
     reset2(idx) {
         let i2 = { ...this.state.i2 }
         i2[idx] = false;
-        console.log('i2 reset', i2)
+        // console.log('i2 reset', i2)
 
         // this.setState({ playShow: false })
         // document.querySelector('.fa-play').classList.add('disappear')
@@ -343,7 +343,7 @@ class Home extends React.Component {
 
         let i2 = { ...this.state.i2 }
         i2[idx] = true;
-        console.log('i2 pause', i2)
+        // console.log('i2 pause', i2)
 
         // this.setState({ playShow: false })
         // document.querySelector('.fa-play').classList.add('disappear')
@@ -358,7 +358,7 @@ class Home extends React.Component {
 
         let i2 = { ...this.state.i2 }
         i2[idx] = false;
-        console.log('i2 play', i2)
+        // console.log('i2 play', i2)
 
         // this.setState({ playShow: false })
         // document.querySelector('.fa-play').classList.add('disappear')
@@ -449,7 +449,7 @@ class Home extends React.Component {
         
         //!this.state.slider instead
         let map = Object.values(this.state.items).reverse().map((item, idx) => {
-            console.log('item', item)
+            // console.log('item', item)
             // let wait = 3;
             // let second = 0;
 
@@ -884,7 +884,7 @@ class Home extends React.Component {
                 </div>
 
 
-                <Discover />
+                <Discover browseAll={this.props.browseAll}/>
                 <div className='spotlight-title'>
                     Artist Spotlight <span>Recent uploads from Campsound collections</span>
                 </div>

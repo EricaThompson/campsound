@@ -12,6 +12,7 @@ class Discover extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            items: [],
             bar1: '#41A0BD',
             bar2: '#4390A8',
             bar3: '#418194',
@@ -30,13 +31,28 @@ class Discover extends React.Component {
             soundtrack: '',
             world: '',
             jazz : '',
-
         }
+
+
 
     }
 
-    changeColor(genre){
+    componentDidMount(){
+        // this.props.genreSearch(this.props.match.params.result)
+        //     .then(res => this.setState({ discoverResults: res.items }))
+
+        this.props.browseAll()
+            .then(res => this.setState({items: Object.values(res.items)}))
+    }
+
+    allTab(){
+        this.props.browseAll()
+            .then(res => this.setState({ items: Object.values(res.items) }))
+    }
+
+    switchTab(genre){
         this.setState({
+            items: [],
             all: '',
             electronic: '',
             rock: '',
@@ -54,6 +70,7 @@ class Discover extends React.Component {
             jazz: ''
         })
 
+
         // if (genre != 'all'){
         //     this.setState({ all: '' })
         // }
@@ -67,6 +84,7 @@ class Discover extends React.Component {
                     bar2: '#4390A8',
                     bar3: '#418194',
                 })
+                this.allTab();
                 break;
             case 'electronic':
                 this.setState({ 
@@ -166,6 +184,39 @@ class Discover extends React.Component {
 
     render() {
 
+        let results = this.state.items.map((result,idx) => {
+            if (idx < 8){
+                return <div key={result.id} className="result-display">
+                    {/* <Link to={`artists/${this.props.currentUserId}/music/${result.id}`}> */}
+                    <span onClick={() => this.props.history.push(`/users/${this.props.currentUserId}/music/${result.id}`)}>
+                        <img className="discover-result-image" src={`${result.cover}`} alt="song cover art" />
+                        <h5 className="home-text top">{result.title}</h5>
+                    </span>
+                    <span onClick={() => this.props.history.push(`/users/${this.props.currentUserId}`)}>
+                        <h5 className="home-text">by {result.artist}</h5>
+                    </span>
+                    <span><h5>{result.genre}</h5></span>
+                    {/* <span className='result-about'>
+                            <h5>{result.about}</h5>
+                        </span> */}
+                    {/* <h5 
+                                            className="home-text add">Add to Playlist
+                                        </h5> */}
+                    {/* <h5 className="home-text"><a href={`${result.song}`} download>Download</a></h5> */}
+                    {/* <h5 onClick={()=>this.toggleAudioPlayer()} className="home-text">Listen</h5> */}
+                    {/* <audio key={result.id} id="results-single-player" controls>
+                            <source src={result.song} type="audio/mpeg" />
+                                            Your browser does not support the audio tag.
+                                        </audio> */}
+                    {/* </Link> */}
+                </div>
+            }
+            
+
+        })
+
+        console.log(this.state.items)
+
 
 
         return (
@@ -177,24 +228,30 @@ class Discover extends React.Component {
                             className="genres"
                             style={{backgroundColor:this.state.bar1}}
                             >
-                            <Link to="#"><li className={this.state.all} onClick={() => this.changeColor('all')}>all</li></Link>
-                            <Link to="#"><li className={this.state.electronic} onClick={() => this.changeColor('electronic')}>electronic</li></Link>
-                            <Link to="#"><li className={this.state.rock} onClick={() => this.changeColor('rock')}>rock</li></Link>
-                            <Link to="#"><li className={this.state.metal} onClick={() => this.changeColor('metal')}>metal</li></Link>
-                            <Link to="#"><li className={this.state.alternative} onClick={() => this.changeColor('alternative')}>alternative</li></Link>
-                            <Link to="#"><li className={this.state.hip_hop} onClick={() => this.changeColor('hip_hop')}>hip-hop/rap</li></Link>
-                            <Link to="#"><li className={this.state.experimental} onClick={() => this.changeColor('experimental')}>experimental</li></Link>
-                            <Link to="#"><li className={this.state.punk} onClick={() => this.changeColor('punk')}>punk</li></Link>
-                            <Link to="#"><li className={this.state.folk} onClick={() => this.changeColor('folk')}>folk</li></Link>
-                            <Link to="#"><li className={this.state.pop} onClick={() => this.changeColor('pop')}>pop</li></Link>
-                            <Link to="#"><li className={this.state.ambient} onClick={() => this.changeColor('ambient')}>ambient</li></Link>
-                            <Link to="#"><li className={this.state.soundtrack} onClick={() => this.changeColor('soundtrack')}>soundtrack</li></Link>
-                            <Link to="#"><li className={this.state.world} onClick={() => this.changeColor('world')}>world</li></Link>
-                            <Link to="#"><li className={this.state.jazz} onClick={() => this.changeColor('jazz')}>jazz</li></Link>
+                            <Link to="#"><li className={this.state.all} onClick={() => this.switchTab('all')}>all</li></Link>
+                            <Link to="#"><li className={this.state.electronic} onClick={() => this.switchTab('electronic')}>electronic</li></Link>
+                            <Link to="#"><li className={this.state.rock} onClick={() => this.switchTab('rock')}>rock</li></Link>
+                            <Link to="#"><li className={this.state.metal} onClick={() => this.switchTab('metal')}>metal</li></Link>
+                            <Link to="#"><li className={this.state.alternative} onClick={() => this.switchTab('alternative')}>alternative</li></Link>
+                            <Link to="#"><li className={this.state.hip_hop} onClick={() => this.switchTab('hip_hop')}>hip-hop/rap</li></Link>
+                            <Link to="#"><li className={this.state.experimental} onClick={() => this.switchTab('experimental')}>experimental</li></Link>
+                            <Link to="#"><li className={this.state.punk} onClick={() => this.switchTab('punk')}>punk</li></Link>
+                            <Link to="#"><li className={this.state.folk} onClick={() => this.switchTab('folk')}>folk</li></Link>
+                            <Link to="#"><li className={this.state.pop} onClick={() => this.switchTab('pop')}>pop</li></Link>
+                            <Link to="#"><li className={this.state.ambient} onClick={() => this.switchTab('ambient')}>ambient</li></Link>
+                            <Link to="#"><li className={this.state.soundtrack} onClick={() => this.switchTab('soundtrack')}>soundtrack</li></Link>
+                            <Link to="#"><li className={this.state.world} onClick={() => this.switchTab('world')}>world</li></Link>
+                            <Link to="#"><li className={this.state.jazz} onClick={() => this.switchTab('jazz')}>jazz</li></Link>
                         </ul>
                     </div>
                     <div className='bar-two' style={{ backgroundColor: this.state.bar2 }}></div>
                     <div className='bar-three' style={{ backgroundColor: this.state.bar3 }}></div>
+                </div>
+                <div className="discover-results-container">
+                    <div className={`result-parent discover-results`}>
+                        {results}
+                    </div>
+                    <div className="discover-player">Player</div>
                 </div>
             </div>
         )

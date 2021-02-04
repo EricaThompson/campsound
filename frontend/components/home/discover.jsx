@@ -592,9 +592,10 @@ class Discover extends React.Component {
         let otherPageDisabler = false;
         let previousDisabler = false;
         let nextDisabler = false;
+        let lastPageDisabler = false;
 
         //! 8 here
-        for (let i = 0; i < this.state.pageCount; i++){
+        for (let i = 0; i < 8; i++){
             if (this.state.page === i + 1){
                 otherPageDisabler = true;
             } else {
@@ -605,7 +606,13 @@ class Discover extends React.Component {
 
         if (pages.length > 7){
             ellipsis = <p>   ...   </p>;
-            lastPage = <button>{pages.length}</button>;
+
+            if (this.state.page === pages.length){
+                lastPageDisabler = true;
+            } else {
+                lastPageDisabler = false;
+            }
+            lastPage = <button disabled={lastPageDisabler} onClick={() => this.selectPage(pages.length)}>{pages.length}</button>;
         }
 
         if (this.state.page === 1){

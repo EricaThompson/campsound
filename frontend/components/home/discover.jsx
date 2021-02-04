@@ -14,6 +14,9 @@ class Discover extends React.Component {
         this.state = {
             items: [],
             loading: false,
+            selectedSongImage: '',
+            selectedSong: '',
+            viewPlayer: false,
             bar1: '#41A0BD',
             bar2: '#4390A8',
             bar3: '#418194',
@@ -39,11 +42,24 @@ class Discover extends React.Component {
     }
 
     componentDidMount(){
+        this.setState({viewPlayer: false})
+
+        this.setState({loading: true})
+        
+        this.props.browseAll()
+            .then((res) => this.setState({ 
+                selectedSongImage: Object.values(res.items)[0].cover,
+                selectedSong: Object.values(res.items)[0].song
+            }, this.setState({ viewPlayer: true })))
+
+
         // this.props.genreSearch(this.props.match.params.result)
         //     .then(res => this.setState({ discoverResults: res.items }))
 
         this.props.browseAll()
             .then(res => this.setState({items: Object.values(res.items)}))
+
+        // this.setState({ viewPlayer: true })
     }
 
     // allTab(){
@@ -52,7 +68,7 @@ class Discover extends React.Component {
     // }
 
     search(genre){
-        this.setState({loading: true})
+        
         
         if (genre === 'all'){
             this.props.browseAll()
@@ -76,6 +92,7 @@ class Discover extends React.Component {
     }
 
     switchTab(genre){
+    
         this.search(genre);
 
         this.setState({
@@ -209,13 +226,42 @@ class Discover extends React.Component {
         }
     }
 
+    selectSong(idx){
+        // let itemCover = Object.values(this.state.items).map(item => {
+        //     if (item.id === id){
+        //         return item
+        //     }
+        // })
+
+        this.setState({viewPlayer: false});
+
+        let itemSong = this.state.items[idx].song
+        let itemCover = this.state.items[idx].cover
+
+        console.log(itemSong, itemCover)
+
+        this.setState({ selectedSong: itemSong, selectedSongImage: itemCover }, this.setState({ viewPlayer: true }))
+        
+
+    }
+
+
+
     render() {
+        
+        
+
+        // console.log('ssi', this.state.selectedSongImage)
 
         let results = this.state.items.map((result,idx) => {
             if (idx < 8){
-                return <div key={result.id} className="result-display">
+                return <div key={result.id} 
+                            onClick={()=>this.selectSong(idx)}
+                            className="result-display">
                     {/* <Link to={`artists/${this.props.currentUserId}/music/${result.id}`}> */}
-                    <span onClick={() => this.props.history.push(`/users/${this.props.currentUserId}/music/${result.id}`)}>
+                    <span 
+                    // onClick={() => this.props.history.push(`/users/${this.props.currentUserId}/music/${result.id}`)}
+                    >
                         <img className="discover-result-image" src={`${result.cover}`} alt="song cover art" />
                         <h5 className="home-text top discover-result-title">{result.title}</h5>
                     </span>
@@ -242,17 +288,17 @@ class Discover extends React.Component {
 
         let signInOrAddSong = ''
 
-        console.log(this.props)
+        // console.log(this.props)
 
         if (this.props.currentUser && this.state.items.length < 1 && this.state.loading === false){
-            signInOrAddSong = <div><p>No results, <span 
+            signInOrAddSong = <div><p>no results, <span 
                                                         style={{ color: '#5CB8D4'}}
                                                         className="link"
                                                         onClick={() => this.props.history.push(`/${this.props.currentUser}/new`)}>add one</span>..</p></div>
         } else if (!this.props.currentUser && this.state.items.length < 1 && this.state.loading === false){
             signInOrAddSong = <div>
                                 <p>
-                                    No results, sign up as an 
+                                    no results, sign up as an 
                                     <span 
                                         className="link"
                                         style={{ color: "#9CB67C"}}
@@ -278,6 +324,26 @@ class Discover extends React.Component {
 
 
         // console.log(this.state.items)
+        let itemCover;
+        let itemSong;
+
+        if (this.state.items.length > 0){
+            itemCover = this.state.items[0].cover
+            itemSong = this.state.items[0].song
+            // console.log('items',this.state.items[0].cover);
+        }
+
+        let audio = '';
+        if (this.state.viewPlayer) {
+            // console.log('song', this.state.selectedSong)
+            audio = <audio id="discover-result-player" controls>
+                        <source src={this.state.selectedSong} type="audio/mpeg" />
+                        Your browser does not support the audio tag.
+                    </audio>
+        } else {
+            audio = ""
+        }
+
 
 
 
@@ -314,7 +380,12 @@ class Discover extends React.Component {
                         {results}
                         {signInOrAddSong}
                     </div>
-                    <div className="discover-player"></div>
+                    <div className="discover-player">
+                        <div className="image-player">
+                            <img className="image" src={this.state.selectedSongImage} alt=""/>
+                            {audio}
+                        </div>
+                    </div>
                 </div>
             </div>
         )

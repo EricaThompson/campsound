@@ -2624,20 +2624,23 @@ a {
     .discover-container {
         background-color: #EEF2F3;
         padding-bottom: 30px;
+        
 
         .discover-results-container {
             margin: 0 auto;
-            margin-top: 10px;
+            // margin-top: 10px;
             display: flex;
             width: 993px;
             height: 582px;
             // border: 1px solid olive;
 
 
+
+
             .discover-results {
                 margin: 0px;
                 // padding: 0px;
-                margin-top: 10px;
+                // margin-top: 10px;
 
                 display: flex;
                 // padding: 10px;
@@ -2661,6 +2664,7 @@ a {
                     .discover-result-image {
                         width: 155px;
                         height: 155px;
+                        padding-top: 24px;
                     }
 
                     .discover-result-artist {
@@ -2676,9 +2680,24 @@ a {
                 }
             }
 
-            .player {
+            .discover-player {
                 width: 299px;
+
+                .image-player {
+                    width: 299px;
+                    height: 360px;
+                    padding: 10px;
+                    background-color: white;
+
+                    .image {
+                        width: 299px;
+                        height: 299px;
+                        padding-top: 15px;
+                        // clip-path: inset(0px 0px 0px 0px);
+                    }
+                }
             }
+
         }
 
 
@@ -2708,6 +2727,9 @@ a {
             color-stop(0.50,  rgba(0,0,0,0)),
             color-stop(0.65,  rgba(0,0,0,0)),
             color-stop(1.00,  rgba(0,0,0,0)));
+             -webkit-transition: background-color, 100ms linear;
+                -ms-transition: background-color 100ms linear;
+                transition: background-color 100ms linear;
 
 
             .genres {
@@ -2720,6 +2742,9 @@ a {
                 align-items: center;
                 // left: 10px;
             }
+            //  -webkit-transition: background-color, 400ms linear;
+            //     -ms-transition: background-color 400ms linear;
+            //     transition: background-color 400ms linear;
 
             
         }
@@ -2737,11 +2762,17 @@ a {
         .bar-two {
             background-color: #4390A8;
             height: 42px;
+             -webkit-transition: background-color, 200ms linear;
+                -ms-transition: background-color 200ms linear;
+                transition: background-color 200ms linear;
         }
 
         .bar-three {
             background-color: #418194;
             height: 42px;
+             -webkit-transition: background-color, 300ms linear;
+                -ms-transition: background-color 300ms linear;
+                transition: background-color 300ms linear;
 
         }
         ul {

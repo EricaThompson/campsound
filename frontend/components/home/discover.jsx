@@ -49,6 +49,7 @@ class Discover extends React.Component {
         this.props.browseAll()
             .then((res) => this.setState({ 
                 selectedSongImage: Object.values(res.items)[0].cover,
+                
                 selectedSong: Object.values(res.items)[0].song
             }, this.setState({ viewPlayer: true })))
 
@@ -74,19 +75,19 @@ class Discover extends React.Component {
             this.props.browseAll()
                 .then(res => {
                     this.setState({ items: Object.values(res.items) })
-                    this.setState({loading: false})
+                    this.setState({loading: false, selectedSongImage: Object.values(res.items)[0].cover})
                 })
         } else if (genre.includes("hop") || genre.includes('rap')){
             this.props.genreSearch('hip hop')
                 .then(res => {
                     this.setState({ items: Object.values(res.items) })
-                    this.setState({loading: false})
+                    this.setState({loading: false, selectedSongImage: Object.values(res.items)[0].cover})
                 })
         } else {
             this.props.genreSearch(genre)
                 .then(res => {
                     this.setState({ items: Object.values(res.items) })
-                    this.setState({loading: false})
+                    this.setState({loading: false, selectedSongImage: Object.values(res.items)[0].cover})
                 })
         }
     }
@@ -237,10 +238,12 @@ class Discover extends React.Component {
 
         let itemSong = this.state.items[idx].song
         let itemCover = this.state.items[idx].cover
-
-        console.log(itemSong, itemCover)
-
-        this.setState({ selectedSong: itemSong, selectedSongImage: itemCover }, this.setState({ viewPlayer: true }))
+        
+        this.setState({ selectedSong: itemSong, selectedSongImage: itemCover })
+        
+        setTimeout(() => {
+            this.setState({ viewPlayer: true })
+        }, 1);
         
 
     }
@@ -326,25 +329,27 @@ class Discover extends React.Component {
         // console.log(this.state.items)
         let itemCover;
         let itemSong;
+        let audio = '';
+        
 
         if (this.state.items.length > 0){
+            // featured = this.state.items[0]
             itemCover = this.state.items[0].cover
             itemSong = this.state.items[0].song
             // console.log('items',this.state.items[0].cover);
-        }
 
-        let audio = '';
-        if (this.state.viewPlayer) {
-            // console.log('song', this.state.selectedSong)
-            audio = <audio id="discover-result-player" controls>
-                        <source src={this.state.selectedSong} type="audio/mpeg" />
+            if (this.state.viewPlayer) {
+                // console.log('song', this.state.selectedSong)
+                audio = <audio id="discover-result-player" controls>
+                    <source src={this.state.selectedSong} type="audio/mpeg" />
                         Your browser does not support the audio tag.
                     </audio>
-        } else {
-            audio = ""
+
+                
+            } else {
+                audio = ""
+            }
         }
-
-
 
 
         return (
@@ -383,6 +388,10 @@ class Discover extends React.Component {
                     <div className="discover-player">
                         <div className="image-player">
                             <img className="image" src={this.state.selectedSongImage} alt=""/>
+                            {/* <audio id="discover-result-player" controls>
+                                <source src={this.state.selectedSong} type="audio/mpeg" />
+                                Your browser does not support the audio tag.
+                            </audio> */}
                             {audio}
                         </div>
                     </div>

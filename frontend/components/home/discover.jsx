@@ -600,9 +600,11 @@ class Discover extends React.Component {
 
                         </div>
                         <div className="discover-player-info">
-                            <p>by <span className="discover-player-artist">{this.state.selectedItem.artist}</span></p>
+                            <p>by <span
+                                onClick={() => this.props.history.push(`/users/${this.state.selectedItem.owner_id}`)} 
+                                className="discover-player-artist">{this.state.selectedItem.artist}</span></p>
                             <p>{this.state.selectedItem.location}</p>
-                            <button>hear more</button>
+                            <button onClick={()=> this.props.history.push(`/users/${this.state.selectedItem.owner_id}/music/${this.state.selectedItem.id}`)}>hear more</button>
                             
                             {/* <p className='origin-note'>direct from artist</p> */}
                         </div>

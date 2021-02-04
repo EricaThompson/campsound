@@ -2733,6 +2733,10 @@ a {
                             cursor: pointer;
                         }
 
+                        &:focus {
+                            outline: 0;
+                        }
+
                     }
 
                     .origin-note {

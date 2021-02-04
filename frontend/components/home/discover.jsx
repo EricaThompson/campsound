@@ -333,6 +333,10 @@ class Discover extends React.Component {
         }
     }
 
+    selectPage(num){
+        this.setState({page: num})
+    }
+
 
 
     render() {
@@ -585,9 +589,18 @@ class Discover extends React.Component {
         let pages = []
         let ellipsis;
         let lastPage;
+        let otherPageDisabler = false;
+        let previousDisabler = false;
+        let nextDisabler = false;
 
-        for (let i = 0; i < 8; i++){
-            pages.push(<button>{i+1}</button>)
+        //! 8 here
+        for (let i = 0; i < this.state.pageCount; i++){
+            if (this.state.page === i + 1){
+                otherPageDisabler = true;
+            } else {
+                otherPageDisabler = false;
+            }
+            pages.push(<button onClick={()=>this.selectPage(i+1)} disabled={otherPageDisabler}>{i+1}</button>)
         }
 
         if (pages.length > 7){
@@ -595,7 +608,19 @@ class Discover extends React.Component {
             lastPage = <button>{pages.length}</button>;
         }
 
-        console.log(pages)
+        if (this.state.page === 1){
+            previousDisabler = true;
+        } else {
+            previousDisabler = false;
+        }
+
+        if (this.state.page === this.state.pageCount){
+            nextDisabler = true;
+        } else {
+            nextDisabler = false;
+        }
+
+        // console.log(pages)
 
 
 
@@ -634,11 +659,11 @@ class Discover extends React.Component {
                         {results}
                         {signInOrAddSong}
                         <div className="page-buttons">
-                            <button onClick={()=>this.previous()}>previous</button>
+                            <button disabled={previousDisabler}onClick={()=>this.previous()}>previous</button>
                             {pages}
                             {ellipsis}
                             {lastPage}
-                            <button onClick={()=>this.next()}>next</button>
+                            <button disabled={nextDisabler}onClick={()=>this.next()}>next</button>
                         </div>
                     </div>
                     <div className="discover-player">

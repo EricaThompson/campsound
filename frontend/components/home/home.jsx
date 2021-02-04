@@ -884,7 +884,7 @@ class Home extends React.Component {
                 </div>
 
 
-                <Discover browseAll={this.props.browseAll}/>
+                <Discover browseAll={this.props.browseAll} genreSearch={this.props.genreSearch}/>
                 <div className='spotlight-title'>
                     Artist Spotlight <span>Recent uploads from Campsound collections</span>
                 </div>

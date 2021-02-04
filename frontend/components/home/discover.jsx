@@ -45,12 +45,27 @@ class Discover extends React.Component {
             .then(res => this.setState({items: Object.values(res.items)}))
     }
 
-    allTab(){
-        this.props.browseAll()
-            .then(res => this.setState({ items: Object.values(res.items) }))
+    // allTab(){
+    //     this.props.browseAll()
+    //         .then(res => this.setState({ items: Object.values(res.items) }))
+    // }
+
+    search(genre){
+        if (genre === 'all'){
+            this.props.browseAll()
+                .then(res => this.setState({ items: Object.values(res.items) }))
+        } else if (genre.includes("hop") || genre.includes('rap')){
+            this.props.genreSearch('hip hop')
+                .then(res => this.setState({ items: Object.values(res.items) }))
+        } else {
+            this.props.genreSearch(genre)
+                .then(res => this.setState({ items: Object.values(res.items) }))
+        }
     }
 
     switchTab(genre){
+        this.search(genre);
+
         this.setState({
             items: [],
             all: '',

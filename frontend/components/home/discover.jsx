@@ -520,10 +520,7 @@ class Discover extends React.Component {
 
                                     
                                     
-                                    <p>by {this.state.selectedItem.artist}</p>
-                                    <p>{this.state.selectedItem.location}</p>
-                                    <button>hear more</button>
-                                    <p>direct from artist</p>
+                                    
                                     {/* <div 
                                                     style={{backgroundColor: 'blue', height: '10px', width: '10px', position: 'absolute', left: `10`}}
                                                     className='progress-square'>
@@ -536,7 +533,8 @@ class Discover extends React.Component {
                                             <div onClick={()=>this.volumeDown()}>Volume Down</div> */}
                             </div>
                             
-                </div>
+                            
+                        </div>
                         
                 if (!this.state.timeRendered) {
                     setTimeout(() => {
@@ -600,6 +598,13 @@ class Discover extends React.Component {
                             {audio}
                             {/* {document.getElementById('item-player').duration()} */}
 
+                        </div>
+                        <div className="discover-player-info">
+                            <p>by <span className="discover-player-artist">{this.state.selectedItem.artist}</span></p>
+                            <p>{this.state.selectedItem.location}</p>
+                            <button>hear more</button>
+                            
+                            {/* <p className='origin-note'>direct from artist</p> */}
                         </div>
                     </div>
                 </div>

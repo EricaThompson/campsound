@@ -237,7 +237,7 @@ class Discover extends React.Component {
         //         return item
         //     }
         // })
-
+        this.getDuration();
         this.setState({viewPlayer: false});
 
         let itemSong = this.state.items[idx].song
@@ -273,7 +273,7 @@ class Discover extends React.Component {
         let second;
         let minute;
         let ct = this.state.currentTime
-        if (this.props.match.path.includes('music')) {
+        
             if (ct % 60 === 0 || ct > 60) {
                 minute = Math.floor(ct / 60)
                 second = Math.floor(ct - (minute * 60))
@@ -292,7 +292,7 @@ class Discover extends React.Component {
                     player.innerHTML = `0${minute}:${second}`
                 }
             }
-        }
+    
 
     }
 
@@ -505,7 +505,7 @@ class Discover extends React.Component {
                                         className='seeker'
                                         type="range"
                                         value={this.state.currentTime}
-                                        max={`${timeDuration}`}
+                                        max={`${this.state.duration}`}
                                         readOnly
                                     min="0"    
                                     />

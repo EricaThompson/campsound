@@ -12,6 +12,8 @@ class Discover extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            page: 1,
+            pageCount: 0,
             items: [],
             loading: false,
             selectedItem: '',
@@ -50,6 +52,8 @@ class Discover extends React.Component {
         this.setState({viewPlayer: false})
 
         this.setState({loading: true})
+
+
         
         this.props.browseAll()
             .then((res) => this.setState({ 
@@ -64,7 +68,12 @@ class Discover extends React.Component {
         //     .then(res => this.setState({ discoverResults: res.items }))
 
         this.props.browseAll()
-            .then(res => this.setState({items: Object.values(res.items)}))
+            .then(res => {
+                this.setState({
+                    items: Object.values(res.items),
+                    pageCount: Math.ceil(Object.values(res.items).length / 8)
+                })
+            })
 
         // this.setState({ viewPlayer: true })
     }
@@ -310,46 +319,68 @@ class Discover extends React.Component {
     
     }
 
+    next(){
+        if (this.state.pageCount > this.state.page){
+            let nextPage = this.state.page + 1
+            this.setState({page: nextPage})
+        }
+    }
+
+    previous() {
+        if (this.state.page > 1) {
+            let prevPage = this.state.page - 1
+            this.setState({ page: prevPage })
+        }
+    }
+
 
 
     render() {
-        
+        console.log('pc', this.state.pageCount)
         
 
         // console.log('ssi', this.state.selectedSongImage)
+        let results;
+        // if (this.state.page === 1){
+            results = this.state.items.map((result,idx) => {
+                if (idx < (this.state.page * 8) && idx >= (this.state.page * 8 - 8)){
+                    return <div key={result.id} 
+                                onClick={()=>this.selectSong(idx)}
+                                className="result-display">
+                        {/* <Link to={`artists/${this.props.currentUserId}/music/${result.id}`}> */}
+                        <span 
+                        // onClick={() => this.props.history.push(`/users/${this.props.currentUserId}/music/${result.id}`)}
+                        >
+                            <img className="discover-result-image" src={`${result.cover}`} alt="song cover art" />
+                            <h5 className="home-text top discover-result-title">{result.title}</h5>
+                        </span>
+                        <span onClick={() => this.props.history.push(`/users/${this.props.currentUserId}`)}>
+                            <h5 className="home-text discover-result-artist">by {result.artist}</h5>
+                        </span>
+                        <span><h5 className='discover-result-genre'>{result.genre}</h5></span>
+                        {/* <span className='result-about'>
+                                <h5>{result.about}</h5>
+                            </span> */}
+                        {/* <h5 
+                                                className="home-text add">Add to Playlist
+                                            </h5> */}
+                        {/* <h5 className="home-text"><a href={`${result.song}`} download>Download</a></h5> */}
+                        {/* <h5 onClick={()=>this.toggleAudioPlayer()} className="home-text">Listen</h5> */}
+                        {/* <audio key={result.id} id="results-single-player" controls>
+                                <source src={result.song} type="audio/mpeg" />
+                                                Your browser does not support the audio tag.
+                                            </audio> */}
+                        {/* </Link> */}
+                    </div>
+                }
+            })
+        // } else {
 
-        let results = this.state.items.map((result,idx) => {
-            if (idx < 8){
-                return <div key={result.id} 
-                            onClick={()=>this.selectSong(idx)}
-                            className="result-display">
-                    {/* <Link to={`artists/${this.props.currentUserId}/music/${result.id}`}> */}
-                    <span 
-                    // onClick={() => this.props.history.push(`/users/${this.props.currentUserId}/music/${result.id}`)}
-                    >
-                        <img className="discover-result-image" src={`${result.cover}`} alt="song cover art" />
-                        <h5 className="home-text top discover-result-title">{result.title}</h5>
-                    </span>
-                    <span onClick={() => this.props.history.push(`/users/${this.props.currentUserId}`)}>
-                        <h5 className="home-text discover-result-artist">by {result.artist}</h5>
-                    </span>
-                    <span><h5 className='discover-result-genre'>{result.genre}</h5></span>
-                    {/* <span className='result-about'>
-                            <h5>{result.about}</h5>
-                        </span> */}
-                    {/* <h5 
-                                            className="home-text add">Add to Playlist
-                                        </h5> */}
-                    {/* <h5 className="home-text"><a href={`${result.song}`} download>Download</a></h5> */}
-                    {/* <h5 onClick={()=>this.toggleAudioPlayer()} className="home-text">Listen</h5> */}
-                    {/* <audio key={result.id} id="results-single-player" controls>
-                            <source src={result.song} type="audio/mpeg" />
-                                            Your browser does not support the audio tag.
-                                        </audio> */}
-                    {/* </Link> */}
-                </div>
-            }
-        })
+        // }
+
+        let resultPages;
+
+
 
         let signInOrAddSong = ''
 
@@ -551,6 +582,21 @@ class Discover extends React.Component {
             }
         }
 
+        let pages = []
+        let ellipsis;
+        let lastPage;
+
+        for (let i = 0; i < 8; i++){
+            pages.push(<button>{i+1}</button>)
+        }
+
+        if (pages.length > 7){
+            ellipsis = <p>   ...   </p>;
+            lastPage = <button>{pages.length}</button>;
+        }
+
+        console.log(pages)
+
 
 
 
@@ -587,6 +633,13 @@ class Discover extends React.Component {
                     <div className={`result-parent discover-results`}>
                         {results}
                         {signInOrAddSong}
+                        <div className="page-buttons">
+                            <button onClick={()=>this.previous()}>previous</button>
+                            {pages}
+                            {ellipsis}
+                            {lastPage}
+                            <button onClick={()=>this.next()}>next</button>
+                        </div>
                     </div>
                     <div className="discover-player">
                         <div className="image-player">

@@ -823,7 +823,7 @@ class Home extends React.Component {
                 
                 
                 <div className="slider counter">
-                    <p className='slider-info'>Artists have uploaded <span className="right-now-count">{this.state.items.length}</span> songs using CampSound since established.</p>
+                    <p className='slider-info'>Artists have uploaded <span className="right-now-count">{this.state.items.length} sounds</span> using Campsound since established.</p>
 
                 </div>
                 <div className='right-now-container'>

@@ -32,7 +32,7 @@ class App extends React.Component {
             <div className="container">
                 <div className="app-top">
                     <Modal />
-                    <Route path="/" component={SearchContainer}/>
+                    {/* <Route path="/" component={SearchContainer}/> */}
                     <Route key={Math.random()} path="/" component={NavBarContainer} />
                     <Route exact path="/" component={HomeContainer} />
                     <Route exact path="/page/stories" component={StoriesIndexContainer} />

@@ -155,7 +155,7 @@ class Discover extends React.Component {
             soundtrack: '',
             world: '',
             jazz: '',
-            playShow: false
+            playShow: true
             // loading: 'true',
             // viewPlayer: true
         })

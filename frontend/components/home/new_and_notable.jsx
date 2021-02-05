@@ -227,26 +227,43 @@ class NewAndNotable extends React.Component {
                     let playPauseBtn;
                     // let stateName = "song" + idx
                     if (!this.state.i1[idx]) {
+                        // show = 'show'
 
                         // console.log('i1[idx]', this.state.i1[idx])
                         // console.log(`concat ${this.state}${stateName}`)
-                        playPauseBtn = <div className='play-button' onClick={
-                            () => {
+                        playPauseBtn = 
+                        // <div className='play-button' onClick={
+                        //     () => {
 
-                                this.displayPause1(idx)
-                                this.play1(idx)
-                            }}
-                        >
-                            <i className="fas fa-play"></i></div>
+                        //         this.displayPause1(idx)
+                        //         this.play1(idx)
+                        //     }}
+                        // >
+
+                            <div
+
+                                className={`play-pause play-button`}
+                            onClick={
+                                () => {
+
+                                    this.displayPause1(idx)
+                                    this.play1(idx)
+                                }}
+                                >
+                                
+                            <i className="fas fa-play"></i>
+                            </div>
                     } else {
                         show = 'show'
                         playPauseBtn = <div
-                            className='pause-button'
+                            className={`play-pause pause-button ${show}`}
                             onClick={() => {
                                 this.displayPlay1(idx)
                                 this.pause1(idx)
 
                             }}>
+
+
                             <i className="fas fa-pause"></i>
                         </div>
                     }
@@ -266,11 +283,7 @@ class NewAndNotable extends React.Component {
                                 >
                                 </audio>
 
-                                <div
-
-                                    className={`play-pause ${show}`}>
-                                    {playPauseBtn}
-                                </div>
+                                {playPauseBtn}
 
 
                             </div>

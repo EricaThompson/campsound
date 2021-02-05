@@ -21,10 +21,17 @@ class NavBar extends React.Component {
 
     }
 
+    toggleDropdown() {
+        this.setState({ authDropdown: !this.state.authDropdown })
+    }
+
+
     closeDropdown(){
-        if (this.state.authDropdown){
-            this.setState({authDropdown: false})
-        }
+        this.setState({authDropdown: false})
+    }
+
+    openDropdown(){
+        this.setState({authDropdown: true})
     }
 
     logoutRefresh(){
@@ -37,10 +44,7 @@ class NavBar extends React.Component {
     //     window.location.reload()
     // }
 
-    toggleDropdown(){
-        this.setState({authDropdown: !this.state.authDropdown})
-    }
-
+    
     render(){
         if (this.props.match.url != "/"){
             this.closeDropdown()
@@ -61,9 +65,16 @@ class NavBar extends React.Component {
             if (this.props.currentUser.user_type === 'fan'){
                 console.log(this.props.currentUser.user_type)
 
-                view = <div className="auth-nav">
+                view = <div 
+                            className="auth-nav"
+                            onMouseEnter={() => this.openDropdown()}
+                            onMouseLeave={() => this.closeDropdown()}
+                            >
                     
-                        <div onClick={() => this.toggleDropdown()}>
+                        <div 
+                            // onMouseEnter={() => this.openDropdown()}
+                            // onMouseLeave={() => this.closeDropdown()}
+                        >
 
                             <p>{this.props.currentUser.username}
                                 <img
@@ -107,9 +118,16 @@ class NavBar extends React.Component {
 
                 </div>
             } else {
-                view = <div className="auth-nav">
+                view = <div 
+                            onMouseEnter={() => this.openDropdown()}
+                            onMouseLeave={() => this.closeDropdown()}
+                            className="auth-nav"
+                
+                >
                     <Link to={`/users/${this.props.currentUser.id}`}>
-                        <div onClick={() => this.toggleDropdown()}>
+                        <div 
+                            
+                        >
 
                             <p>{this.props.currentUser.username}
                                 <img
@@ -186,7 +204,8 @@ class NavBar extends React.Component {
             // console.log('currentUser', this.props.currentUser)
             avatar = 
                         <div 
-                            onClick={() => this.toggleDropdown()} 
+                            onMouseEnter={() => this.openDropdown()}
+                            onMouseLeave={() => this.closeDropdown()}
                             className="avatar">
                                 <img 
                                     className="avatar" 
@@ -263,7 +282,10 @@ class NavBar extends React.Component {
                         <Search currentUser={this.props.currentUser} genreSearch={this.props.genreSearch} browseAll={this.props.browseAll} anySearch={this.props.anySearch} readAllItems={this.props.readAllItems} />
 
                     
-                        <div className='nav-bar-links'>
+                        <div 
+                            className='nav-bar-links'
+                            // onMouseLeave={() => this.closeDropdown()}    
+                        >
                             <div className="nav-bottom ">
                                 <h2 className={`slogan support-${loggedIn}`}>
                                     Discover amazing new music and
@@ -273,7 +295,10 @@ class NavBar extends React.Component {
                                 <p className="support-note">
                                     Sign up today!
                             </p>
-                                <div className={`auth-links auth-links-${loggedIn} right-side-${loggedIn}`}>
+                                <div 
+                                    className={`auth-links auth-links-${loggedIn} right-side-${loggedIn}`}
+                                    // onMouseLeave={() => this.closeDropdown()}
+                                >
                                     <p
                                         className="announce"
                                     >

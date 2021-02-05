@@ -213,44 +213,91 @@ class NavBar extends React.Component {
         // if(this.props.currentUser){
         //     console.log('currentUser',this.props.currentUser)
         // }
-    return (
-            <div className={`nav-bar nav-${loggedIn}`}>
-                <div className="nav-top">
-                    <Link to="/"><h1 className={`logo logo-${loggedIn}`}>🏕 campsound</h1></Link>
-                    <Search />
-                </div>
-                <div className='nav-bar-links'>
-                    <div className="nav-bottom ">
-                    <h2 className={`slogan support-${loggedIn}`}>
-                            Discover amazing new music and 
-                            <div className="support"> directly support </div> 
+
+        if (!this.props.currentUser){
+            return (
+                <div className={`nav-bar nav-${loggedIn}`}>
+                    <div className="nav-top">
+                        <Link to="/"><h1 className={`logo logo-${loggedIn}`}>🏕 campsound</h1></Link>
+                        <Search currentUser={this.props.currentUser} />
+
+                    </div>
+                    <div className='nav-bar-links'>
+                        <div className="nav-bottom ">
+                            <h2 className={`slogan support-${loggedIn}`}>
+                                Discover amazing new music and
+                            <div className="support"> directly support </div>
                             the artists who make it.
                         </h2>
-                        <p className="support-note">
-                            Sign up today!
+                            <p className="support-note">
+                                Sign up today!
                         </p>
-                        <div className={`auth-links right-side-${loggedIn}`}>
-                            <p 
-                                className="announce"
-                            >
-                                Announcement!
+                            <div className={`auth-links right-side-${loggedIn}`}>
+                                <p
+                                    className="announce"
+                                >
+                                    Announcement!
                             </p>
-                            <p className="announcement">
-                                Welcome to my clone of bandcamp.com!
-                                My social links are in the footer!
-                                -erica 
+                                <p className="announcement">
+                                    Welcome to my clone of bandcamp.com!
+                                    My social links are in the footer!
+                                    -erica
                             </p>
-                            {/* <p onClick={() => this.props.openModal('type-signup')}> */}
-                            {signup}
-                            {/* </p> */}
-                            {auth}
-                            {avatar}
-                            {authNav}
+                                {/* <p onClick={() => this.props.openModal('type-signup')}> */}
+                                {signup}
+                                {/* </p> */}
+                                {auth}
+                                {avatar}
+                                {authNav}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-    )
+            )
+        } else {
+            return (
+                <div className={`nav-bar nav-${loggedIn}`}>
+                    <div className="nav-top">
+                        
+                        <Link to="/"><h1 className={`logo logo-${loggedIn}`}>🏕 campsound</h1></Link>
+                        <Search currentUser={this.props.currentUser} />
+
+                    
+                        <div className='nav-bar-links'>
+                            <div className="nav-bottom ">
+                                <h2 className={`slogan support-${loggedIn}`}>
+                                    Discover amazing new music and
+                                <div className="support"> directly support </div>
+                                the artists who make it.
+                            </h2>
+                                <p className="support-note">
+                                    Sign up today!
+                            </p>
+                                <div className={`auth-links auth-links-${loggedIn} right-side-${loggedIn}`}>
+                                    <p
+                                        className="announce"
+                                    >
+                                        Announcement!
+                                </p>
+                                    <p className="announcement">
+                                        Welcome to my clone of bandcamp.com!
+                                        My social links are in the footer!
+                                        -erica
+                                </p>
+                                    {/* <p onClick={() => this.props.openModal('type-signup')}> */}
+                                    {signup}
+                                    {/* </p> */}
+                                    {auth}
+                                    {avatar}
+                                    {authNav}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+    
     }
 }
 

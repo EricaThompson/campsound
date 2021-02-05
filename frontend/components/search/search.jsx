@@ -79,8 +79,14 @@ class Search extends React.Component {
     render() {
         let loggedIn;
 
+
+
         if (this.props.currentUser){
-            loggedIn = 'logged-in'
+            loggedIn = 'search-logged-in'
+            console.log(this.props.currentUser, loggedIn)
+        } else {
+            loggedIn = 'search-bar'
+            console.log(this.props.currentUser, loggedIn)
         }
 
         let dropdown = <div className="dropdown">
@@ -108,7 +114,7 @@ class Search extends React.Component {
 
         
         return (
-            <div className={`search-bar search-${loggedIn}`}>
+            <div className={`${loggedIn}`}>
                 <div onClick={()=>this.showDropdown()}>
                     <input
                         onChange={this.handleChange()}

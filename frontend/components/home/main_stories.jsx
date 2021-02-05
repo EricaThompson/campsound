@@ -52,6 +52,7 @@ class MainStories extends React.Component {
                         className="main link">
                         <p>The Forest Through the Trees</p>
                         <h6>{summary0}</h6>
+                        <button className="read-more">read more</button>
                         <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-main.jpg" alt="blue flowers" />
                     </div>
 

@@ -62,7 +62,7 @@ class Search extends React.Component {
     }
 
     showDropdown(){
-        this.setState({dropdownHidden: !this.state.dropdownHidden})
+        this.setState({dropdownHidden: false})
         // setTimeout(() => {
         //     this.setState({ dropdownHidden: false })
         // }, 4000);
@@ -113,10 +113,15 @@ class Search extends React.Component {
         //     component = null;
         // }
 
+        // document.getElementById()
+
         
         return (
             <div className={`${loggedIn}`}>
-                <div onClick={()=>this.showDropdown()}>
+                <div 
+                    onMouseEnter={()=>this.showDropdown()}
+                    onMouseLeave={()=> this.hideDropdown()}
+                >
                     <input
                         onChange={this.handleChange()}
                         placeholder="Search and discover music"
@@ -127,7 +132,10 @@ class Search extends React.Component {
                         className="fas fa-search search-icon-logged-in">
                     </i>
                 </div>
-                <div className='dropdown-info' hidden={this.state.dropdownHidden}>{dropdown}</div>
+                <div
+                    onMouseEnter={()=>this.showDropdown()}
+                    onMouseLeave={()=> this.hideDropdown()}
+                    className='dropdown-info' hidden={this.state.dropdownHidden}>{dropdown}</div>
                 {component}
             </div>
         )

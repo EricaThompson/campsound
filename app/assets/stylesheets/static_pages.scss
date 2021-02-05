@@ -2259,14 +2259,19 @@ a {
             }
         }
     }
-
+    
+    
     .right-now-container {
-        width: 994px;
+        width: 991px;
         margin: 0 auto;
+
+
+
         .right-now {
             font-weight: normal;
             color: #408DA3;
             margin-left: 5px;
+
         }
 
     }
@@ -2281,7 +2286,7 @@ a {
 
 
     .slider {
-        margin: 50px auto;
+        margin: 11px auto;
         width: 994px;
         position: relative;
         height: 228px;
@@ -2289,7 +2294,7 @@ a {
         text-align: left;
         margin-bottom: 0px;
         padding-bottom: 50px;
-
+        padding-right: 20px;
         
 
 
@@ -2311,7 +2316,7 @@ a {
 
         .slide-container {
             height: 78%;
-            padding: 6px;
+            padding: 4px;
             padding-right: 0px;
             width: 30%;
 
@@ -2385,7 +2390,14 @@ a {
         height: 10px;
     }
 
-.campsound-daily-container {
+    .slider {
+        font-weight: lighter;
+        .right-now-count {
+            font-weight: bolder;
+        }
+    }
+
+    .campsound-daily-container {
         background-color: #EEF2F3;
         padding-top: 25px;
 

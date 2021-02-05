@@ -291,13 +291,18 @@ class Discover extends React.Component {
         setTimeout(() => {
             this.setState({ viewPlayer: true })
         }, 1);
+
+        // this.play();
         
 
     }
 
     play() {
         this.setState({ playShow: false })
-        document.getElementById('item-player').play()
+        setTimeout(() => {
+            
+            document.getElementById('item-player').play()
+        }, 100);
         // document.querySelector('.fa-play').classList.add('disappear')
         // document.querySelector('.fa-pause').classList.remove('disappear')
     }
@@ -383,7 +388,65 @@ class Discover extends React.Component {
         let results;
         // if (this.state.page === 1){
             results = this.state.items.map((result,idx) => {
+                let show;
                 if (idx < (this.state.page * 8) && idx >= (this.state.page * 8 - 8)){
+                    let playPauseBtn;
+
+                    playPauseBtn =
+
+                        <div
+
+                            className={`play-pause play-button`}
+                            onClick={
+                                () => {
+
+                                    // this.displayPause1(idx)
+                                    this.play()
+                                }}
+                        >
+
+                            <i className="fas fa-play"></i>
+                        </div>
+
+                    if (this.state.playShow && result.id === this.state.selectedItem.id) {
+
+                        playPauseBtn =
+
+                            <div
+
+                                className={`play-pause play-button`}
+                                onClick={
+                                    () => {
+
+                                        // this.displayPause1(idx)
+                                        this.play()
+                                    }}
+                            >
+
+                                <i className="fas fa-play"></i>
+                            </div>
+                    } else if (result.id === this.state.selectedItem.id) {
+                        show = 'show'
+                        playPauseBtn = <div
+                            className={`play-pause pause-button ${show}`}
+                            onClick={() => {
+                                // this.displayPlay1(idx)
+                                this.pause()
+
+                            }}>
+
+
+                            <i className="fas fa-pause"></i>
+                        </div>
+                    }
+
+
+
+
+
+
+
+
                     return <div key={result.id} 
                                 onClick={()=>this.selectSong(idx)}
                                 className="result-display">
@@ -392,6 +455,19 @@ class Discover extends React.Component {
                         // onClick={() => this.props.history.push(`/users/${this.props.currentUserId}/music/${result.id}`)}
                         >
                             <img className="discover-result-image" src={`${result.cover}`} alt="song cover art" />
+                            <div className='audio-control'>
+                                <audio
+                                    // controls
+                                    id={`${this.state.selectedItem.id}`}
+                                    src={`${this.state.selectedSong}`}
+                                    onEnded={() => this.reset1(idx)}
+                                >
+                                </audio>
+
+                                {playPauseBtn}
+
+
+                            </div>
                             <h5 className="home-text top discover-result-title">{result.title}</h5>
                         </span>
                         <span onClick={() => this.props.history.push(`/users/${this.props.currentUserId}`)}>

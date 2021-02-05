@@ -2388,6 +2388,17 @@ a {
                     clip-path: inset(0px 0px 0px 0px);
             }
 
+            .story-title {
+                font-size: 13px;
+                // background-color: yellow;
+                        // margin-bottom: 4px;
+    
+                        &:hover {
+                            text-decoration: underline;
+                        }
+            }
+
+
             .main {
                 width: 585px;
                 position: relative;
@@ -2624,16 +2635,23 @@ a {
 
     .discover-container {
         background-color: #EEF2F3;
-        padding-bottom: 30px;
+        padding-bottom: 60px;
+        height: 130%;
         
 
         .discover-results-container {
             margin: 0 auto;
             // margin-top: 10px;
             display: flex;
+            // flex-direction: column;
             width: 993px;
-            height: 582px;
+            // height: 582px;
+            height: 100%;
+            // transition: all 0.3s ease-out;
             // border: 1px solid olive;
+            // -webkit-transform: height 100ms;
+            //     -ms-transform: height 100ms;
+            //     transform: height 100ms;
 
 
 
@@ -2654,7 +2672,7 @@ a {
                     display: flex;
                     margin-left: -7px;
                     position: absolute;
-                    bottom: 0;
+                    bottom: -30px;
 
                     .previous, .next {
                         padding: 5px 14px;
@@ -2850,6 +2868,8 @@ a {
                     border-radius: 6px;
                     text-align: center;
                     display: none;
+
+
         
         
                     .fa-play {
@@ -2991,9 +3011,9 @@ a {
             color-stop(0.50,  rgba(0,0,0,0)),
             color-stop(0.65,  rgba(0,0,0,0)),
             color-stop(1.00,  rgba(0,0,0,0)));
-             -webkit-transition: background-color, 100ms linear;
-                -ms-transition: background-color 100ms linear;
-                transition: background-color 100ms linear;
+            -webkit-transition: background-color, 100ms linear;
+            -ms-transition: background-color 100ms linear;
+            transition: background-color 100ms linear;
 
 
             .genres {
@@ -4673,7 +4693,8 @@ a {
                     font-weight: 3vw;
                     font-size: 2vw;
                     text-transform: capitalize;
-                    // margin-bottom: 4px;
+                    font-size: 13px;
+                    
 
                 }
                 

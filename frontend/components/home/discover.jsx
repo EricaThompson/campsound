@@ -736,12 +736,6 @@ class Discover extends React.Component {
         }
 
         // console.log(this.state.viewSelected)
-        
-
-
-
-
-
         return (
             <div className='discover-container'>
                 <div className='discover'>

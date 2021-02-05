@@ -2341,6 +2341,7 @@ a {
                 width: 17px;
                 padding: 0px;
                 margin-bottom: -3px;
+                margin-left: 0px;
                 // border: 1px solid olive;
                 clip-path: inset(2px 0px 2px 0px);
             }
@@ -2828,11 +2829,107 @@ a {
                 padding-bottom: 10px;
 
                 div {
-                    &:hover {
-                        text-decoration: underline;
-                        cursor: pointer;
+            // border: 1px solid olive;
+                position: relative;
+            
+                .play-pause {
+                    cursor: pointer;
+                    position: absolute;
+                    font-size: 25px;
+                    background-color: rgba(0, 0, 0, 0.726);
+                    color: white;
+                    // left: 0px;
+                    // right: 880px;
+                    bottom: 62px;
+                    left: 38px;
+                    padding: 20px;
+                    width: 60px;
+                    // padding-left: 20px;
+                    margin: 0;
+                    // width: 50px;
+                    border-radius: 6px;
+                    text-align: center;
+                    display: none;
+        
+        
+                    .fa-play {
+                        margin: 0 auto;
+                        // width: 10px;
+                        // display: none;
                     }
+
+                    
                 }
+
+                .show {
+                    display: block;
+                }
+
+                
+                
+            }
+
+            &:hover .play-pause {
+                display: block;
+            }
+
+            
+
+
+
+            // .spotlight-item-img {
+            //     width: 112.58px;
+            //     height: 112.58px;
+            // }
+
+            // .spotlight-item-info {
+            //     div {
+            //         margin-left: 30px;
+            //     }
+            // }
+
+            // .spotlight-item-title:hover + .spotlight-item-artist {
+            //     text-decoration: underline;
+
+            // }
+
+            // .spotlight-item-artist:hover, .spotlight-item-title:hover {
+            //     text-decoration: underline;
+            // }
+
+            // .spotlight-item-artist:hover + .spotlight-item-title {
+            //     text-decoration: underline;
+
+            // }
+
+            // .spotlight-item-title:hover, .spotlight-item-artist:hover {
+            //     text-decoration: underline;
+            // }
+
+            
+            .spotlight-item-artist {
+                font-weight: lighter;
+                margin-top: 4px;
+
+
+            }
+
+            .spotlight-item-about {
+                margin-top: 18px;
+                font-style: italic;
+                color: #000;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-weight: lighter;
+                white-space: pre-wrap;
+                width: 313px;
+            }
+
+                // div {
+                //     &:hover {
+                //         text-decoration: underline;
+                //         cursor: pointer;
+                //     }
+                // }
                 
                 
                 h3 {
@@ -2879,7 +2976,7 @@ a {
 
 
         .discover-title {
-            width: 997px;
+            width: 977px;
             margin: 0 auto;
             padding-top: 10px;
             margin-bottom: 20px;

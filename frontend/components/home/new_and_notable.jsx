@@ -341,7 +341,7 @@ class NewAndNotable extends React.Component {
         return (
             <div className="new-and-notable-container">
                 <h1 className="new-and-notable-title">NEW AND NOTABLE</h1>
-                <div className='results-container'>
+                <div className='new-results-container'>
                     {renderResults}
 
                 </div>

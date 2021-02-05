@@ -168,9 +168,9 @@ textarea, input{
 
 .nav-bar {
     border-bottom: 1px solid #eee;
-    width: 100%;
+    width: 1105px;
     margin: 0 auto;
-    // position: fixed;
+    position: relative;
     // z-index: 4;
 
     
@@ -552,7 +552,7 @@ textarea, input{
 
 .nav-bar-links {
     display: flex;
-    width: 80%;
+    width: 100%;
     background-color: white;
     // padding-right: 0px;
     // justify-content: flex-end;
@@ -3126,7 +3126,7 @@ a {
             font-weight: normal;
 
         }
-        .results-container {
+        .new-results-container {
             display: flex;
             width: 991px;
             margin: 0 auto;

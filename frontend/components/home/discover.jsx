@@ -376,7 +376,7 @@ class Discover extends React.Component {
 
 
     render() {
-        console.log('pc', this.state.pageCount)
+        // console.log('pc', this.state.pageCount)
         
 
         // console.log('ssi', this.state.selectedSongImage)
@@ -735,7 +735,7 @@ class Discover extends React.Component {
             </div>
         }
 
-        console.log(this.state.viewSelected)
+        // console.log(this.state.viewSelected)
         
 
 

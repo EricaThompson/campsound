@@ -2798,6 +2798,79 @@ a {
 
     }
 
+
+    .new-and-notable-container {
+        background-color: #EEF2F3;
+        margin-top: -10px;
+        padding-top: 50px;
+
+        .new-and-notable-title {
+            font-size: 14px;
+            color: #408ea3;
+            width: 971px;
+            margin: 0 auto;
+            padding-bottom: 30px;
+            font-weight: normal;
+
+        }
+        .results-container {
+            display: flex;
+            width: 991px;
+            margin: 0 auto;
+
+            .result {
+                width: 185px;
+                height: 400px;
+                // font-weight: bold;
+                overflow: hidden;
+                margin: 8px;
+                background-color: white;
+                padding-bottom: 10px;
+
+                div {
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+                
+                
+                h3 {
+                    font-size: 13px;
+                    margin: 5px 10px;
+                
+                }
+
+                .new-title {
+                    border-bottom: none;
+
+                }
+
+                .new-genre {
+                    font-weight: lighter;
+                    color: #999;
+                    font-size: 12px;
+                }
+
+                .new-about {
+                    font-family: 'Times New Roman', Times, serif;
+                    font-weight: lighter;
+                    white-space: wrap;
+                    height: 130px;
+                    overflow: scroll;
+                    text-overflow: ellipsis;
+                }
+    
+                img {
+                    width: 185px;
+                    height: 185px;
+                    // clip-path: inset(0px 0px 5px 0px);
+                }
+            }
+
+        }
+    }
+
     .discover {
         // width: 968px;
         background-color: #EEF2F3;

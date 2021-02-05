@@ -2718,6 +2718,62 @@ a {
                     margin: 0px;
                     // margin-right: 14px;
                     padding: 0px;
+                    //!here !
+
+                //     width: 185px;
+                // height: 400px;
+                // // font-weight: bold;
+                // overflow: hidden;
+                // margin: 8px;
+                // background-color: white;
+                // padding-bottom: 10px;
+
+                div {
+            // border: 1px solid olive;
+                position: relative;
+            
+                .play-pause {
+                    cursor: pointer;
+                    position: absolute;
+                    font-size: 25px;
+                    background-color: rgba(0, 0, 0, 0.726);
+                    color: white;
+                    // left: 0px;
+                    // right: 880px;
+                    bottom: 55px;
+                    left: 28px;
+                    padding: 20px;
+                    width: 60px;
+                    // padding-left: 20px;
+                    margin: 0;
+                    // width: 50px;
+                    border-radius: 6px;
+                    text-align: center;
+                    display: none;
+
+
+        
+        
+                    .fa-play {
+                        margin: 0 auto;
+                        // width: 10px;
+                        // display: none;
+                    }
+
+                    
+                }
+
+                .show {
+                    display: block;
+                }
+
+                
+                
+            }
+
+            &:hover .play-pause {
+                display: block;
+            }
 
                     h5 {
                         margin-left: 0px;

@@ -7,6 +7,7 @@ class NewAndNotable extends React.Component {
         this.state = {
             items: [],
             selectedItem: '',
+            chosenItems: [],
             i1: {
                 0: false,
                 1: false,
@@ -23,9 +24,48 @@ class NewAndNotable extends React.Component {
                 this.setState({
                     items: Object.values(res.items),
                 })
+
+
+                let results = [];
+                let indices = [];
+
+                if (Object.values(res.items).length > 0) {
+
+                    if (results.length < 6) {
+
+                        for (let i = results.length; results.length < 5; i++) {
+                            let randomNum = Math.floor(Math.random() * 9)
+                            if (!indices.includes(randomNum) && results.length < 5) {
+                                results.push(Object.values(res.items)[randomNum])
+
+
+                            } else {
+                            }
+
+                            indices.push(randomNum)
+                        }
+
+                    }
+
+                }
+
+                // if (this.state.chosenItems.length < 1) {
+                    this.setState({ chosenItems: results })
+
+                // }
+
+
             })
 
+
+        
+
     }
+
+    // choseItems(){
+        
+    //     return results;
+    // }
 
     selectSong(idx) {
         // let itemCover = Object.values(this.state.items).map(item => {
@@ -168,36 +208,18 @@ class NewAndNotable extends React.Component {
         // console.log(this.state.items)
 
         
-
-        let results = [];
-        let indices = [];
-        
-        if (this.state.items.length > 0){
-            
-            if (results.length < 6){
-                
-                for (let i = results.length; results.length < 5; i++){
-                    let randomNum = Math.floor(Math.random() * 9)
-                    if (!indices.includes(randomNum) && results.length < 5){
-                        results.push(this.state.items[randomNum])
-
-                        
-                    } else {
-                    }
-                    
-                    indices.push(randomNum)
-                }
-        
-            }
-            
-        }
-        
-        // console.log(results)
-        
         let renderResults;
+        let results;
+
+        // if (this.state.chosenItems.length < 1){
+        //     results = this.choseItems()
+        // }
         
-        if (results.length > 0){
-            renderResults = results.map((item, idx) => {
+        console.log(this.state.chosenItems)
+        //  = this.state.chosenItems
+        
+        if (this.state.chosenItems.length > 0){
+            renderResults = this.state.chosenItems.map((item, idx) => {
 
                 let show;
 

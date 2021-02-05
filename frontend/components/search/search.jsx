@@ -30,6 +30,7 @@ class Search extends React.Component {
 
     genreSearch(genre){
         this.showDropdown()
+        
         this.props.genreSearch(genre)
             .then(() => this.props.history.push(`/search/${genre}`))
             .then(()=> window.location.reload())
@@ -83,10 +84,10 @@ class Search extends React.Component {
 
         if (this.props.currentUser){
             loggedIn = 'search-logged-in'
-            console.log(this.props.currentUser, loggedIn)
+            // console.log(this.props.currentUser, loggedIn)
         } else {
             loggedIn = 'search-bar'
-            console.log(this.props.currentUser, loggedIn)
+            // console.log(this.props.currentUser, loggedIn)
         }
 
         let dropdown = <div className="dropdown">
@@ -94,7 +95,7 @@ class Search extends React.Component {
                             <div onClick={()=>this.genreSearch('metal')} className="metal">metal<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
                             <div onClick={()=>this.genreSearch('rock')} className="rock">rock<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
                             <div onClick={()=>this.genreSearch('alternative')} className="alt">alternative<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
-                            <div onClick={()=>this.genreSearch('hip-hop')} className="hip-hop">hip-hop/rap<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
+                            <div onClick={()=>this.genreSearch('hip')} className="hip-hop">hip-hop/rap<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
                             <div onClick={()=>this.genreSearch('experimental')} className="exp">experimental<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
                             <div onClick={()=>this.genreSearch('punk')} className="punk">punk<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
                             <div onClick={()=>this.genreSearch('pop')} className="pop">pop<span className="caret"><i className="fas fa-chevron-right"></i></span></div>
@@ -134,4 +135,4 @@ class Search extends React.Component {
 }
 
 
-export default Search
+export default withRouter(Search);

@@ -219,7 +219,7 @@ class NavBar extends React.Component {
                 <div className={`nav-bar nav-${loggedIn}`}>
                     <div className="nav-top">
                         <Link to="/"><h1 className={`logo logo-${loggedIn}`}>🏕 campsound</h1></Link>
-                        <Search currentUser={this.props.currentUser} />
+                        <Search currentUser={this.props.currentUser} genreSearch={this.props.genreSearch} browseAll={this.props.browseAll} anySearch={this.props.anySearch} readAllItems={this.props.readAllItems} />
 
                     </div>
                     <div className='nav-bar-links'>
@@ -260,7 +260,7 @@ class NavBar extends React.Component {
                     <div className="nav-top">
                         
                         <Link to="/"><h1 className={`logo logo-${loggedIn}`}>🏕 campsound</h1></Link>
-                        <Search currentUser={this.props.currentUser} />
+                        <Search currentUser={this.props.currentUser} genreSearch={this.props.genreSearch} browseAll={this.props.browseAll} anySearch={this.props.anySearch} readAllItems={this.props.readAllItems} />
 
                     
                         <div className='nav-bar-links'>

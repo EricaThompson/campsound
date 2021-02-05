@@ -136,7 +136,9 @@ class Results extends React.Component {
                     
                 </div>
                 <div className={`home home${loggedIn} results-daily`}>
-                {results}
+                    <div className='results-container'>
+                        {results}
+                    </div>
                     <br />
                     <br />
                     <br />

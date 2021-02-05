@@ -12,9 +12,7 @@ const mapStateToProps = state => {
         user: state.users[state.session.currentUser],
         // items: state.items
     };
-
 }
-
 
 const mapDispatchToProps = dispatch => ({
     readAllItems: (userId) => dispatch(readAllItems(userId)),

@@ -837,8 +837,21 @@ class Discover extends React.Component {
                             <Link to="#"><li className={this.state.jazz} onClick={() => this.switchTab('jazz')}>jazz</li></Link>
                         </ul>
                     </div>
-                    <div className='bar-two' style={{ backgroundColor: this.state.bar2 }}></div>
-                    <div className='bar-three' style={{ backgroundColor: this.state.bar3 }}></div>
+                    <div className='bar-two genres-container all' style={{ backgroundColor: this.state.bar2 }}>
+                        <ul
+                            className="genres-bar-three "
+                        >
+                            <Link to="#"><li className="selected">new arrivals</li></Link>
+                        </ul>
+                    </div>
+                    <div className='bar-three genres-container all' style={{ backgroundColor: this.state.bar3 }}>
+                        <ul
+                            className="genres-bar-three "
+                        >
+                            <Link to="#"><li className="selected">any format</li></Link>
+
+                        </ul>
+                    </div>
                 </div>
                 <div className="discover-results-container">
                     <div className={`result-parent discover-results`}>

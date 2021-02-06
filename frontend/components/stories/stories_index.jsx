@@ -97,7 +97,7 @@ class StoriesIndex extends React.Component {
 
 
     render() {
-        console.log('storyList', this.state.mainStory)
+        // console.log('storyList', this.state.mainStory)
 
         
 

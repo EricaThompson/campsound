@@ -2300,6 +2300,9 @@ a {
     .stories-home-container {
         width: 100%;
         background-color: #222222;
+        height: 511px;
+        // margin-bottom: 20px;
+        // padding-bottom: 1px;
 
         // color: white;
 
@@ -2486,13 +2489,13 @@ a {
     
     
     .right-now-container {
-        width: 991px;
+        width: 1001px;
         margin: 0 auto;
 
 
 
         .right-now {
-            margin-top: 0px;
+            margin-top: 10px;
             font-weight: normal;
             color: #408DA3;
             margin-left: 5px;
@@ -2521,6 +2524,7 @@ a {
         padding-bottom: 50px;
         padding-right: 20px;
         
+        
 
 
 
@@ -2530,12 +2534,13 @@ a {
 
         .slider-info{
             text-align: center;
-            // margin-bottom: 20px;
+            padding-top: 35px;
         }
 
         .slides {
             display: flex;
             height: 100%;
+            margin-left: -5px;
             
         }
 
@@ -2666,6 +2671,7 @@ a {
             .main {
                 width: 585px;
                 position: relative;
+                clip-path: inset(0px 0px 2px 0px);
 
                 .mainImg {
                     position: absolute;
@@ -3478,7 +3484,7 @@ a {
         margin-bottom: 40px;
         // margin-left: 115px;
         font-size: 18px;
-        width: 949px;
+        width: 997px;
         margin: 40px auto;
 
         span {
@@ -5204,19 +5210,23 @@ footer {
         color: white;
         text-align: center;
         font-size: 50px;
-        padding-top: 80px;
+        padding-top: 40px;
         width: 100%;
         margin-right: 0px;
         position: relative;
 
         .left-column {
-            margin-top: 44px; 
-            position: absolute;
-            left: 20px;
-            top: 0px;
+            // margin-top: 44px; 
+            // position: absolute;
+            // left: 20px;
+            // top: 0px;
             font-size: 13px;
             font-weight: lighter;
             text-align: left;
+            width: 1001px;
+            margin: 0 auto;
+            // border: 1px solid white;
+            // padding-top: 50px;
             // color: red;
             li {
                 margin-bottom: 18px;

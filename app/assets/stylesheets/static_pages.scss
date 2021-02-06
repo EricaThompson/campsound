@@ -67,7 +67,7 @@ html {
 body {
     height: 100%;
     width: 100%;
-    margin: 0;
+    // margin-top: 55px;
     padding: 0;
     // background-color: #F8F8F8;
     // background-image: linear-gradient(to top, #6f757f, 35%, white);
@@ -168,10 +168,12 @@ textarea, input{
 
 .nav-bar {
     border-bottom: 1px solid #eee;
-    width: 1105px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
-    // z-index: 4;
+    position: fixed;
+    z-index: 4;
+    background-color: white;
 
     
 }
@@ -182,6 +184,8 @@ textarea, input{
     // width: 1239px;
     // width: 591px;
     background-color: white;
+    width: 1010px;
+    margin: 0 auto;
 
 
     .search-bar {
@@ -339,9 +343,13 @@ textarea, input{
     }
 
     .search-bar {
-        position: absolute; 
+        position: absolute;
+        width: 1010px;
+        margin: 0 auto;
+        // right: 0px; 
+        padding-left: 686px;
         // // top: 5px;
-        right: 40px;
+        // right: 40px;
         // // top: 0;
         z-index: 4;
         // position: fixed;
@@ -383,6 +391,7 @@ textarea, input{
         right: -20px;
         color: #888888;
         font-size: 14px;
+        z-index: 5;
         // font-weight: lighter;
     }
 
@@ -502,6 +511,8 @@ textarea, input{
     justify-content: space-between;
     margin-top: 15px;
     background-color: white;
+    width: 1010px;
+    margin: 0 auto;
 
     .support-note {
             background-color: rgba(112, 128, 144, 0.815);
@@ -552,7 +563,8 @@ textarea, input{
 
 .nav-bar-links {
     display: flex;
-    width: 100%;
+    width: 1010px;
+    margin: 0 auto;
     background-color: white;
     // padding-right: 0px;
     // justify-content: flex-end;
@@ -563,7 +575,10 @@ textarea, input{
     display: flex;
     justify-self: flex-end;
     position: absolute;
-    right: 62px;
+    // right: 62px;
+    // border: 1px solid olive;
+    width: 1010px;
+    padding-left: 729px;
 
     .auth-nav {
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -2288,9 +2303,10 @@ a {
     // display: flex;
     // height: 1000px;
     height: 100%;
+    padding-top: 98px;
 
     .home-logged-in {
-        margin-top: 55px;
+        // margin-top: -55px;
     }
     
     // border: 5px solid hotpink;

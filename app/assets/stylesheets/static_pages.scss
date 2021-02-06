@@ -5336,23 +5336,85 @@ footer {
 .about-page {
     margin: 0 auto;
     margin-top: 200px;
-    width: 450px;
+    width: 750px;
     white-space: pre-wrap;
+    font-size: 28px;
+    
     // font-weight: bolder;
     // text-align: center;
     .credits {
         font-weight: lighter;
     }
 
+    
+
+    li {
+        display: flex;
+        margin-left: -20px;
+        // border-bottom: 2px solid black;
+        // border-left: 2px solid black;
+                // border-right: 2px dashed black;
+
+        // border-top: 2px solid black;
+
+        img {
+            width: 25px;
+            border: 2px solid black;
+            padding: 3px;
+            margin-right: 5px;
+            // margin-top: 10px;
+        }
+        a {
+            // border: 2px solid black;
+            // padding: 3px;
+            // margin-bottom: 10px;
+            align-self: center;
+            font-size: 22px;
+        }
+    }
+
+    .owner {
+        margin-top: 15px;
+        font-weight: bolder;
+        width: 100%;
+        margin-bottom: 15px;
+        // padding-bottom: 0px;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+        
+        a {
+            background-color: rgba(238, 232, 170, 0.714);
+            border: 3px solid black;
+            // border-bottom: none;
+            // border-right: none;
+            color:black;
+            padding: 3px;
+
+            &:hover {
+                background-color: rgba(175, 238, 238, 0.714);
+            }
+
+        }
+
+    }
+
+
+
     h3 {
         color: black;
+        text-align: center;
     }
     ul {
         margin-left: 20px;
     }
-
+    
     a {
+        // border: 2px solid black;
         color: purple;
+        font-weight: bolder;
+        
 
     }
 }

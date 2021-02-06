@@ -11,7 +11,7 @@ class TypeSignup extends React.Component {
                     <div className="fan">
                         <div className="art">
                             <div className="circle"></div>
-                            <img className="headphones" src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-17+at+8.57.07+PM.png" alt="headphones" />
+                            <img className="headphones" src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/headphones.png" alt="headphones" />
                         </div>
                         <div className="info">
                             <p
@@ -37,7 +37,7 @@ class TypeSignup extends React.Component {
                     <div className='artist'>
                         <div className="art">
                             <div className="circle"></div>
-                            <img className="mic" src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-17+at+9.03.10+PM.png" alt="microphone" />
+                            <img className="mic" src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/microphone.png" alt="microphone" />
                         </div>
                         <div className="info">
                             <p
@@ -64,7 +64,7 @@ class TypeSignup extends React.Component {
                     <div className="label">
                         <div className="art">
                             <div className="circle"></div>
-                            <img className="gramophone" src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-17+at+9.15.00+PM.png" alt="gramophone" />
+                            <img className="gramophone" src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/gramophone.png" alt="gramophone" />
                         </div>
                         <div className="info">
                             <p

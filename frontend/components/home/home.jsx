@@ -820,49 +820,49 @@ class Home extends React.Component {
 
                 </div>
                 <MainStories />
-                
-                
-                <div className="slider counter">
-                    <p className='slider-info'>Artists have uploaded <span className="right-now-count">{this.state.items.length} sounds</span> using Campsound since established.</p>
 
-                </div>
-                <div className='right-now-container'>
-                    <h2 className="right-now ">RIGHT NOW</h2>
-                </div>
-                <div className='slider'>
-                    <div className='slides'>
-                        
-                        {/* {textToDisplay} */}
-                        {map}
-                        {/* <div className="slide">
-                            1
-                        </div>
-                        <div className="slide">
-                            2
-                        </div>
-                        <div className="slide">
-                            3
-                        </div>
-                        <div className="slide">
-                            4
-                        </div>
-                        <div className="slide">
-                            5
-                        </div>
-                        <div className="slide">
-                            6
-                        </div>
-                        <div className="slide">
-                            7
-                        </div>
-                        <div className="slide">
-                            8
-                        </div> */}
+                <div className="right-now-outer-container">
+                    <div className="slider counter">
+                        <p className='slider-info'>Artists have uploaded <span className="right-now-count">{this.state.items.length} sounds</span> using Campsound since established.</p>
 
                     </div>
-                </div>
+                    <div className='right-now-container'>
+                        <h2 className="right-now ">RIGHT NOW</h2>
+                    </div>
+                    <div className='slider'>
+                        <div className='slides'>
+                            
+                            {/* {textToDisplay} */}
+                            {map}
+                            {/* <div className="slide">
+                                1
+                            </div>
+                            <div className="slide">
+                                2
+                            </div>
+                            <div className="slide">
+                                3
+                            </div>
+                            <div className="slide">
+                                4
+                            </div>
+                            <div className="slide">
+                                5
+                            </div>
+                            <div className="slide">
+                                6
+                            </div>
+                            <div className="slide">
+                                7
+                            </div>
+                            <div className="slide">
+                                8
+                            </div> */}
 
-        
+                        </div>
+                    </div>
+                </div>
+                
                 <Daily />
                 <div className='mailing-list-container'>
                     
@@ -892,38 +892,42 @@ class Home extends React.Component {
                     currentUser={this.props.currentUser}
                     openModal={this.props.openModal}
                 />
-                
-                <div className='spotlight-title'>
-                    Artist Spotlight <span>Recent uploads from Campsound collections</span>
-                </div>
-                <div className='spotlight'>
-                    <div className='user-1-items'>
-                        {user1}
-                        <div className='three-items'>
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            
-                            {items1}
-                        </div>
+
+                <div className="spotlight-container">
+
+                    <div className='spotlight-title'>
+                        Artist Spotlight <span>Recent uploads from Campsound collections</span>
                     </div>
-                    <div className='user-2-items'>
-                        {user2}
-                        <div className='three-items-2'>
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            
-                            {items2}
+                    <div className='spotlight'>
+                        <div className='user-1-items'>
+                            {user1}
+                            <div className='three-items'>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                
+                                {items1}
+                            </div>
                         </div>
-                    </div>
-                    
-                </div>
-                <div className="dots">
+                        <div className='user-2-items'>
+                            {user2}
+                            <div className='three-items-2'>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                
+                                {items2}
+                            </div>
+                        </div>
                         
+                    </div>
+                    <div className="dots">
+                            
+                    </div>
                 </div>
+                
                 <div className="learn-more">
                     <div className="choice-container">
                         <div>

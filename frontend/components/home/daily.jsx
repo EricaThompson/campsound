@@ -105,22 +105,25 @@ class Daily extends React.Component {
 
 
         return (
-            <div className="campsound-daily-container">
-                <div className='right-now-container daily'>
-                    <h2
-                        onClick={() => this.props.history.push('/page/stories')}
-                        className="right-now link" >CAMPSOUND DAILY</h2>
-                </div>
-                <div className="stories-container">
+                <div className="campsound-daily-outer-container">
 
-                    {stories}
+                    <div className="campsound-daily-container">
+                        <div className='right-now-container daily'>
+                            <h2
+                                onClick={() => this.props.history.push('/page/stories')}
+                                className="right-now link" >CAMPSOUND DAILY</h2>
+                        </div>
+                        <div className="stories-container">
+
+                            {stories}
+                        </div>
+                        <div
+                            onClick={() => this.props.history.push(`/page/stories`)}
+                            className='more'>
+                            <button>more <div>+</div></button>
+                        </div>
+                    </div>
                 </div>
-                <div
-                    onClick={() => this.props.history.push(`/page/stories`)}
-                    className='more'>
-                    <button>more <div>+</div></button>
-                </div>
-            </div>
         )
     }
 }

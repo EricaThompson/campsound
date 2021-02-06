@@ -27,7 +27,8 @@ class Discover extends React.Component {
             timeRendered: false,
             bar1: '#41A0BD',
             bar2: '#4390A8',
-            bar3: '#418194',
+            bar3: '#4390A8',
+            bar4: '#418194',
             all: 'selected',
             electronic: '',
             rock: '',
@@ -42,7 +43,8 @@ class Discover extends React.Component {
             ambient: '',
             soundtrack: '',
             world: '',
-            jazz : '',
+            jazz: '',
+            currentGenre: ''
         }
 
 
@@ -166,14 +168,16 @@ class Discover extends React.Component {
         //     this.setState({ all: '' })
         // }
         
-        this.setState({ [genre]: 'selected' })
+        this.setState({ [genre]: 'selected', currentGenre: genre })
+        
 
         switch (genre) {
             case 'all':
                 this.setState({ 
                     bar1: '#41A0BD',
                     bar2: '#4390A8',
-                    bar3: '#418194',
+                    bar3: '#4390A8',
+                    bar4: '#418194',
                 })
                 // this.allTab();
                 break;
@@ -181,91 +185,104 @@ class Discover extends React.Component {
                 this.setState({ 
                     bar1: '#31C723',
                     bar2: '#30B125',
-                    bar3: '#309B28' 
+                    bar3: '#309B28',
+                    bar4: '#2F8628' 
                 })
                 break;
             case 'rock':
                 this.setState({ 
                     bar1: '#D42127',
                     bar2: '#BE2428',
-                    bar3: '#A72529' 
+                    bar3: '#A72529',
+                    bar4: '#92262A' 
                 })
                 break;
             case 'metal':
                 this.setState({ 
                     bar1: '#990201',
                     bar2: '#820504',
-                    bar3: '#6B0807' 
+                    bar3: '#6B0807',
+                    bar4: '#550808' 
                 })
                 break;
             case 'alternative':
                 this.setState({ 
                     bar1: '#E65719',
                     bar2: '#CD521E',
-                    bar3: '#B64E21' 
+                    bar3: '#B64E21',
+                    bar4: '#A04823' 
                 })
                 break;
             case 'hip_hop':
                 this.setState({ 
                     bar1: '#3764A1',
                     bar2: '#365B8D',
-                    bar3: '#355379' 
+                    bar3: '#355379',
+                    bar4: '#324967' 
                 })
                 break;
             case 'experimental':
                 this.setState({ 
                     bar1: '#5D1AE6',
                     bar2: '#581DCD',
-                    bar3: '#5220B6' 
+                    bar3: '#5220B6',
+                    bar4: '#4C22A0' 
                 })
                 break;
             case 'punk':
                 this.setState({ 
                     bar1: '#F25202',
                     bar2: '#D94D0A',
-                    bar3: '#C0480D' 
+                    bar3: '#C0480D',
+                    bar4: '#A94211' 
                 })
                 break;
             case 'folk':
                 this.setState({ 
                     bar1: '#984AB5',
                     bar2: '#8A4AA2',
-                    bar3: '#7B498D' 
+                    bar3: '#7B498D',
+                    bar4: '#6D477B' 
                 })
                 break;
             case 'pop':
                 this.setState({ 
                     bar1: '#F20F93',
                     bar2: '#D91386',
-                    bar3: '#C11579' 
+                    bar3: '#C11579',
+                    bar4: '#AA196D' 
                 })
                 break;
             case 'ambient':
                 this.setState({ 
                     bar1: '#A3C2BD',
                     bar2: '#9BB5B1',
-                    bar3: '#94A8A5' 
+                    bar3: '#94A8A5',
+                    bar4: '#8F9997' 
                 })
                 break;
             case 'soundtrack':
                 this.setState({ 
                     bar1: '#5E9FC9',
                     bar2: '#5594BE',
-                    bar3: '#4C8AB4' 
+                    bar3: '#4C8AB4',
+                    bar4: '#4C7E9E' 
                 })
                 break;
             case 'world':
                 this.setState({ 
                     bar1: '#E61964',
                     bar2: '#CD1E5E',
-                    bar3: '#B62058' 
+                    bar3: '#B62058',
+                    bar4: '#A02250' 
                 })
                 break;
             case 'jazz':
                 this.setState({ 
                     bar1: '#07B89F',
                     bar2: '#049F8A',
-                    bar3: '#0A8877' 
+                    bar3: '#0A8877',
+                    bar4: '#077263'
                 })
                 break;
             default:
@@ -812,6 +829,22 @@ class Discover extends React.Component {
         }
 
         // console.log(this.state.viewSelected)
+
+        let barTwo;
+
+        if (this.state.currentGenre === '' || this.state.currentGenre === 'all'){
+            barTwo = ''
+        } else {
+            barTwo = <div className='bar-two genres-container all' style={{ backgroundColor: this.state.bar2 }}>
+                <ul
+                    className="genres-bar-three "
+                >
+                    <Link to="#"><li className="selected">all {this.state.currentGenre}</li></Link>
+                </ul>
+            </div>
+        }
+
+
         return (
             <div className='discover-container'>
                 <div className='discover'>
@@ -837,14 +870,15 @@ class Discover extends React.Component {
                             <Link to="#"><li className={this.state.jazz} onClick={() => this.switchTab('jazz')}>jazz</li></Link>
                         </ul>
                     </div>
-                    <div className='bar-two genres-container all' style={{ backgroundColor: this.state.bar2 }}>
+                    {barTwo}
+                    <div className='bar-three genres-container all' style={{ backgroundColor: this.state.bar3 }}>
                         <ul
                             className="genres-bar-three "
                         >
                             <Link to="#"><li className="selected">new arrivals</li></Link>
                         </ul>
                     </div>
-                    <div className='bar-three genres-container all' style={{ backgroundColor: this.state.bar3 }}>
+                    <div className='bar-four genres-container all' style={{ backgroundColor: this.state.bar4 }}>
                         <ul
                             className="genres-bar-three "
                         >

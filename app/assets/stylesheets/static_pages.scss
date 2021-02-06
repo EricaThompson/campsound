@@ -3400,6 +3400,15 @@ a {
                 transition: background-color 500ms linear;
 
         }
+
+        .bar-four {
+            background-color: #418194;
+            height: 42px;
+             -webkit-transition: background-color, 700ms linear;
+                -ms-transition: background-color 700ms linear;
+                transition: background-color 700ms linear;
+        }
+
         ul {
             // margin: 0 auto;
             display: flex;

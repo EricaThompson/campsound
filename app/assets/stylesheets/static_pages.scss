@@ -176,6 +176,8 @@ textarea, input{
     background-color: white;
     // margin-right: 40px; 
     // margin-left: 50px;
+    top: 0;
+    
 
     
 }
@@ -2046,6 +2048,10 @@ a {
     width: 100%;
     position: absolute;
     z-index: -1;
+    min-width: 1262px;
+        width: 100%;
+        margin: 0 auto;
+    
 
     // height: 300px;
     background: linear-gradient(270deg, #5E47FD, #1E9FC4);
@@ -5235,6 +5241,9 @@ a {
     align-items: center;
     width: 100%;
     z-index: 1;
+    min-width: 1262px;
+        width: 100%;
+        margin: 0 auto;
     
     .links {
         padding-top: 8px;

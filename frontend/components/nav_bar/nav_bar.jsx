@@ -129,7 +129,7 @@ class NavBar extends React.Component {
                             className="auth-nav"
                 
                 >
-                    <a to={`/users/${this.props.currentUser.id}`}>
+                    <Link to={`/users/${this.props.currentUser.id}`}>
                         <div 
                             
                         >
@@ -150,7 +150,7 @@ class NavBar extends React.Component {
 
                         </div>
                         <br />
-                    </a>
+                    </Link>
                     <Link
                         onClick={() => setTimeout(() => location.reload(), 200)}
                         to={`/${this.props.currentUser.id}/new`}>

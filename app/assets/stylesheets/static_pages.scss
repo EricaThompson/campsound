@@ -4793,6 +4793,23 @@ a {
     margin-top: 15px;
     position: relative;
 
+    .story {
+        position: relative;
+        width: 1261px;
+        margin: 0 auto;
+
+        .story-buttons {
+            position: absolute;
+            width: 130px;
+            // left: 50%;
+            left: 565px;
+            // right: 50%;
+            top: -32px;
+            // border: 1px solid olive;
+            
+        }
+    }
+    
     
     .previous-btn {
         background-color: white;
@@ -4800,9 +4817,9 @@ a {
         border-radius: 55%;
         padding: 19px 20px;
         
-        position: absolute;
-        top: 365px;
-        left: 45%;
+        // position: absolute;
+        // top: 365px;
+        // left: 45%;
         font-size: 24px;
         padding-left: 21px;
         transform: rotate(180deg);
@@ -4815,12 +4832,12 @@ a {
         border-radius: 55%;
         padding: 19px 20px;
         
-        position: absolute;
-        top: 365px;
+        // position: absolute;
+        // top: 365px;
         // left: 625px;
         font-size: 24px;
         padding-left: 21px;
-        z-index: 20;
+        // z-index: 20;
 
     }
 

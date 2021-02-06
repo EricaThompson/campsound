@@ -188,9 +188,13 @@ class Story extends React.Component {
                         <div className='story-show-title'>{this.state.story.title}</div>
                         {/* <div className='story-show-summary'>{this.state.story.summary}</div> */}
                         <div className='story-show-author'>By <span className="author" onClick={() => this.props.history.push(`/users/${this.state.story.owner_id}/stories`)}>{this.state.story.username}</span> · {this.state.story.date}</div>
-                        {previousBtn}
-                        {nextBtn}
-                        <div className='story-show-img'><img src={img} alt="story"/></div>
+                        <div className="story">
+                            <div className="story-buttons">
+                                {previousBtn}
+                                {nextBtn}
+                            </div>
+                            <div className='story-show-img'><img src={img} alt="story"/></div>
+                        </div>
                         <div className='story-show-text'>{this.state.story.text}</div>
                         
                     </div>

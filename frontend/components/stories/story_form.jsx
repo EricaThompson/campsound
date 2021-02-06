@@ -244,7 +244,7 @@ class StoryForm extends React.Component {
     // }
 
     render() {
-        console.log('story type',this.state.story_type)
+        // console.log('story type',this.state.story_type)
 
 
         

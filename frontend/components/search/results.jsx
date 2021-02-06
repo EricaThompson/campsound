@@ -33,7 +33,7 @@ class Results extends React.Component {
     }
 
     render() {
-        console.log('results state',this.state)
+        // console.log('results state',this.state)
         let searchTitle;
         let arrayOfResults = [];
         // console.log(arrayOfResults)
@@ -74,7 +74,7 @@ class Results extends React.Component {
             if (this.props.currentUserId){
                 loggedIn = '-logged-in'
             }
-            console.log(result)
+            // console.log(result)
 
             return <div key={result.id} className={`result-parent result-parent${loggedIn}`}>
                         
@@ -117,7 +117,7 @@ class Results extends React.Component {
             searchTitle = 'all results'
         } 
 
-        console.log(this.props.match)
+        // console.log(this.props.match)
 
         
         

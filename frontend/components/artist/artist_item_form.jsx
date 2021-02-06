@@ -78,7 +78,7 @@ class ArtistItemForm extends React.Component {
             
         }
 
-        console.log('item form props',this.props)
+        // console.log('item form props',this.props)
     }
 
     handleSubmit(e) {

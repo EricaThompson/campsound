@@ -215,7 +215,7 @@ class NewAndNotable extends React.Component {
         //     results = this.choseItems()
         // }
         
-        console.log(this.state.chosenItems)
+        // console.log(this.state.chosenItems)
         //  = this.state.chosenItems
         
         if (this.state.chosenItems.length > 0){

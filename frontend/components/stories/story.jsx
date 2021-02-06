@@ -37,25 +37,25 @@ class Story extends React.Component {
         let idx = parseInt(this.props.match.params.storyId)
         // console.log('id',this.props.match.params.storyId)
 
-        console.log(idx)
+        // console.log(idx)
         $.ajax({
             url: `/api/stories/${idx + 1}`,
             method: 'GET'
         }).then(res => {
             this.setState({ previousStory: res })
-            console.log('prev',this.state.previousStory)
+            // console.log('prev',this.state.previousStory)
             // this.setState({ spinnerShow: false })
         })
 
         let nextIdx = idx + 1
-        console.log('nextidx', nextIdx) 
+        // console.log('nextidx', nextIdx) 
 
         $.ajax({
             url: `/api/stories/${idx - 1}`,
             method: 'GET'
         }).then(res => {
             this.setState({ nextStory: res })
-            console.log('next:',this.state.nextStory)
+            // console.log('next:',this.state.nextStory)
             // this.setState({ spinnerShow: false })
         })
 

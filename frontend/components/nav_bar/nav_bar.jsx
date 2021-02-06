@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { a } from 'react-router-dom';
 import Search from '../search/search';
 
 class NavBar extends React.Component {
@@ -63,7 +63,7 @@ class NavBar extends React.Component {
 
         if (this.props.currentUser){
             if (this.props.currentUser.user_type === 'fan'){
-                console.log(this.props.currentUser.user_type)
+                // console.log(this.props.currentUser.user_type)
 
                 view = <div 
                             className="auth-nav"
@@ -87,7 +87,7 @@ class NavBar extends React.Component {
                         </div>
                         <br />
 
-                    <Link
+                    <a
                         to={`/users/${this.props.currentUser.id}/stories/story/new`}>
                         <p>
                             <span
@@ -95,9 +95,9 @@ class NavBar extends React.Component {
                                 add new story
                                 </span>
                         </p>
-                    </Link>    
+                    </a>    
                     
-                    <Link
+                    <a
                         to={`/page/about`}>
                         <p>
                             <span
@@ -105,16 +105,19 @@ class NavBar extends React.Component {
                                 about
                                 </span>
                         </p>
-                    </Link>
-                    <Link
-                        to={`/`}>
+                    </a>
+                    <a
+                        onClick={() => this.logoutRefresh()}
+                        // to={`/`}
+                    >
                         <p>
                             <span
-                                onClick={() => this.logoutRefresh()}>
+                                // onClick={() => this.logoutRefresh()}
+                                >
                                 logout
                             </span>
                         </p>
-                    </Link>
+                    </a>
 
                 </div>
             } else {
@@ -124,7 +127,7 @@ class NavBar extends React.Component {
                             className="auth-nav"
                 
                 >
-                    <Link to={`/users/${this.props.currentUser.id}`}>
+                    <a to={`/users/${this.props.currentUser.id}`}>
                         <div 
                             
                         >
@@ -145,8 +148,8 @@ class NavBar extends React.Component {
 
                         </div>
                         <br />
-                    </Link>
-                    <Link
+                    </a>
+                    <a
                         to={`/${this.props.currentUser.id}/new`}>
                         <p>
                             <span
@@ -154,8 +157,8 @@ class NavBar extends React.Component {
                                 add new song
                                 </span>
                         </p>
-                    </Link>
-                    <Link
+                    </a>
+                    <a
                         to={`/users/${this.props.currentUser.id}/stories/story/new`}>
                         <p>
                             <span
@@ -163,8 +166,8 @@ class NavBar extends React.Component {
                                 add new story
                                 </span>
                         </p>
-                    </Link>
-                    <Link
+                    </a>
+                    <a
                         to={`/page/about`}>
                         <p>
                             <span
@@ -172,8 +175,8 @@ class NavBar extends React.Component {
                                 about
                                 </span>
                         </p>
-                    </Link>
-                    <Link
+                    </a>
+                    <a
                         to={`/`}>
                         <p>
                             <span
@@ -181,7 +184,7 @@ class NavBar extends React.Component {
                                 logout
                             </span>
                         </p>
-                    </Link>
+                    </a>
 
                 </div>
             }
@@ -237,7 +240,7 @@ class NavBar extends React.Component {
             return (
                 <div className={`nav-bar nav-${loggedIn}`}>
                     <div className="nav-top">
-                        <Link to="/"><h1 className={`logo logo-${loggedIn}`}>🏕 campsound</h1></Link>
+                        <a to="/"><h1 className={`logo logo-${loggedIn}`}>🏕 campsound</h1></a>
                         <Search currentUser={this.props.currentUser} genreSearch={this.props.genreSearch} browseAll={this.props.browseAll} anySearch={this.props.anySearch} readAllItems={this.props.readAllItems} />
 
                     </div>
@@ -278,7 +281,7 @@ class NavBar extends React.Component {
                 <div className={`nav-bar nav-${loggedIn}`}>
                     <div className="nav-top">
                         
-                        <Link to="/"><h1 className={`logo logo-${loggedIn}`}>🏕 campsound</h1></Link>
+                        <a to="/"><h1 className={`logo logo-${loggedIn}`}>🏕 campsound</h1></a>
                         <Search currentUser={this.props.currentUser} genreSearch={this.props.genreSearch} browseAll={this.props.browseAll} anySearch={this.props.anySearch} readAllItems={this.props.readAllItems} />
 
                     

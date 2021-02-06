@@ -331,7 +331,7 @@ class ArtistHomepage extends React.Component {
 
             }
 
-            console.log('li',this.props)
+            // console.log('li',this.props)
 
             return (
                 <div className={`artist-home-container artist-home-container${loggedIn}`}>

@@ -505,7 +505,7 @@ class Item extends React.Component {
 
         }
 
-        console.log('cui',this.props.currentUserId)
+        //console.log('cui',this.props.currentUserId)
 
             return (
                 <div className={`item-show item-show${loggedIn}`} key={() => Math.random()}>

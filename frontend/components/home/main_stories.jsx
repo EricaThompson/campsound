@@ -72,7 +72,7 @@ class MainStories extends React.Component {
                             <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-middle.jpg" alt="pink and blue flowers" />
                         </div>
                         <div
-                            onClick={() => this.props.history.push(`/users/${this.state.items.reverse()[3].owner_id}/stories/${this.state.stories.reverse()[3].id}`)}
+                            onClick={() => this.props.history.push(`/users/${this.state.stories.reverse()[3].owner_id}/stories/${this.state.stories.reverse()[3].id}`)}
                             className='set bottom'>
                             <p>Petals All Around</p>
                             <h6>{type3}</h6>

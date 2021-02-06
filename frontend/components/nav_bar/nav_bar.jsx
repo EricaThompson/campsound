@@ -1,5 +1,5 @@
 import React from 'react';
-// import { a } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Search from '../search/search';
 
 class NavBar extends React.Component {
@@ -87,25 +87,27 @@ class NavBar extends React.Component {
                         </div>
                         <br />
 
-                    <a
+                    <Link
+                        onClick={() => setTimeout(() => location.reload(), 200)}
                         to={`/users/${this.props.currentUser.id}/stories/story/new`}>
                         <p>
                             <span
-                                onClick={() => setTimeout(() => location.reload(), 200)}>
+                                >
                                 add new story
                                 </span>
                         </p>
-                    </a>    
+                    </Link>    
                     
-                    <a
+                    <Link
+                        onClick={() => this.props.history.push('/page/about')}
                         to={`/page/about`}>
                         <p>
                             <span
-                                onClick={() => this.props.history.push('/page/about')}>
+                                >
                                 about
                                 </span>
                         </p>
-                    </a>
+                    </Link>
                     <a
                         onClick={() => this.logoutRefresh()}
                         // to={`/`}
@@ -149,16 +151,18 @@ class NavBar extends React.Component {
                         </div>
                         <br />
                     </a>
-                    <a
+                    <Link
+                        onClick={() => setTimeout(() => location.reload(), 200)}
                         to={`/${this.props.currentUser.id}/new`}>
                         <p>
                             <span
-                                onClick={() => setTimeout(() => location.reload(), 200)}>
+                                >
                                 add new song
                                 </span>
                         </p>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
+                        onClick={() => setTimeout(() => location.reload(), 200)}
                         to={`/users/${this.props.currentUser.id}/stories/story/new`}>
                         <p>
                             <span
@@ -166,8 +170,9 @@ class NavBar extends React.Component {
                                 add new story
                                 </span>
                         </p>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
+                        onClick={() => this.props.history.push('/page/about')}
                         to={`/page/about`}>
                         <p>
                             <span
@@ -175,16 +180,17 @@ class NavBar extends React.Component {
                                 about
                                 </span>
                         </p>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
+                        onClick={() => this.logoutRefresh()}
                         to={`/`}>
                         <p>
                             <span
-                                onClick={() => this.logoutRefresh()}>
+                                >
                                 logout
                             </span>
                         </p>
-                    </a>
+                    </Link>
 
                 </div>
             }
@@ -240,7 +246,7 @@ class NavBar extends React.Component {
             return (
                 <div className={`nav-bar nav-${loggedIn}`}>
                     <div className="nav-top">
-                        <a to="/"><h1 className={`logo logo-${loggedIn}`}>🏕 campsound</h1></a>
+                        <Link to="/"><h1 className={`logo logo-${loggedIn} link`}>🏕 campsound</h1></Link>
                         <Search currentUser={this.props.currentUser} genreSearch={this.props.genreSearch} browseAll={this.props.browseAll} anySearch={this.props.anySearch} readAllItems={this.props.readAllItems} />
 
                     </div>
@@ -281,7 +287,7 @@ class NavBar extends React.Component {
                 <div className={`nav-bar nav-${loggedIn}`}>
                     <div className="nav-top">
                         
-                        <a to="/"><h1 className={`logo logo-${loggedIn}`}>🏕 campsound</h1></a>
+                        <Link to="/"><h1 className={`logo logo-${loggedIn}`}>🏕 campsound</h1></Link>
                         <Search currentUser={this.props.currentUser} genreSearch={this.props.genreSearch} browseAll={this.props.browseAll} anySearch={this.props.anySearch} readAllItems={this.props.readAllItems} />
 
                     

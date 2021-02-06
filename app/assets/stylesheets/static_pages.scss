@@ -67,7 +67,7 @@ html {
 body {
     height: 100%;
     width: 100%;
-    // margin-top: 55px;
+    margin: 0;
     padding: 0;
     // background-color: #F8F8F8;
     // background-image: linear-gradient(to top, #6f757f, 35%, white);
@@ -174,6 +174,8 @@ textarea, input{
     position: fixed;
     z-index: 4;
     background-color: white;
+    // margin-right: 40px; 
+    // margin-left: 50px;
 
     
 }
@@ -184,11 +186,14 @@ textarea, input{
     // width: 1239px;
     // width: 591px;
     background-color: white;
-    width: 1010px;
+    width: 1110px;
     margin: 0 auto;
+    // margin-left: 90px;
 
 
     .search-bar {
+        // border: 1px solid olive;
+        // margin-right: 30px;
 
         // position: absolute; 
         // // top: 5px;
@@ -343,21 +348,18 @@ textarea, input{
     }
 
     .search-bar {
-        position: absolute;
-        width: 1010px;
-        margin: 0 auto;
-        // right: 0px; 
-        padding-left: 686px;
+        position: absolute; 
         // // top: 5px;
         // right: 40px;
         // // top: 0;
         z-index: 4;
         // position: fixed;
+        margin-left: 778px;
     }
 
     .search-logged-in {
         position: fixed;
-        left: 170px;
+        left: 90px;
         top: -15px;
         width: 250px;
         
@@ -391,7 +393,6 @@ textarea, input{
         right: -20px;
         color: #888888;
         font-size: 14px;
-        z-index: 5;
         // font-weight: lighter;
     }
 
@@ -534,8 +535,8 @@ textarea, input{
         }
 
     .slogan {
-        margin-left: 54px;
-    
+        // margin-left: 19px;
+        
     
         .support {
             background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
@@ -573,12 +574,14 @@ textarea, input{
 
 .auth-links {
     display: flex;
-    justify-self: flex-end;
+    // justify-self: flex-end;
     position: absolute;
     // right: 62px;
+    // width: 1010px;
+
+    // right: 0px;
     // border: 1px solid olive;
-    width: 1010px;
-    padding-left: 729px;
+    margin-left: 770px;
 
     .auth-nav {
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -1963,7 +1966,7 @@ a {
 
 .logo-logged-in {
     position: absolute;
-    left: -37px;
+    left: -115px;
     top: -12px;
     font-weight: 500;
 
@@ -1972,7 +1975,7 @@ a {
 }
 
 .home-logged-in {
-    margin-top: 55px;
+    margin-top: 0px;
 }
 
 .support-logged-in {
@@ -1986,13 +1989,14 @@ a {
     z-index: 2;
     top: 0;
     width: 100%;
+    // border: 1px solid olive;
 
     // border: 1px solid olive;
     .nav-top {
         width: 1105px;
         margin: 0 auto;
-        // border: 1px solid olive;
         position: relative;
+        // margin-left: 125px;
 
         .search-logged-in {
             position: absolute;
@@ -2000,6 +2004,7 @@ a {
 
         .auth-links-logged-in {
             top: 11px;
+            right: -50px;
             // position: absolute;
             // z-index: 4;
             // bottom: 10px;
@@ -2298,16 +2303,18 @@ a {
 }
 
 //* Homepage
+
+
+
+
 .home {
     // width: 100%;
     // display: flex;
     // height: 1000px;
     height: 100%;
-    padding-top: 98px;
+    padding-top: 99px;
 
-    .home-logged-in {
-        // margin-top: -55px;
-    }
+    
     
     // border: 5px solid hotpink;
     // margin-top: 100px;
@@ -2843,6 +2850,8 @@ a {
             }
         }
     }
+
+    
 
 
 
@@ -3831,6 +3840,10 @@ a {
     }
 
     
+}
+
+.home-logged-in {
+    padding-top: 0px;
 }
 
 // .play-pause {

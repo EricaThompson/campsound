@@ -833,7 +833,13 @@ class Discover extends React.Component {
         let barTwo;
 
         if (this.state.currentGenre === '' || this.state.currentGenre === 'all'){
-            barTwo = ''
+            barTwo = <div className='bar-two genres-container all bar-two-collapsed' style={{ backgroundColor: this.state.bar2 }}>
+                <ul
+                    className="genres-bar-three "
+                >
+                    <Link to="#"><li className="selected">all {this.state.currentGenre}</li></Link>
+                </ul>
+            </div>
         } else {
             barTwo = <div className='bar-two genres-container all' style={{ backgroundColor: this.state.bar2 }}>
                 <ul

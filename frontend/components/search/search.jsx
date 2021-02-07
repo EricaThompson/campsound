@@ -11,7 +11,8 @@ class Search extends React.Component {
         this.state = {
             dropdownHidden: true,
             results: null,
-            typedSearch: ''
+            typedSearch: '',
+            users: ''
         }
 
         this.hideDropdown = this.hideDropdown.bind(this)
@@ -50,9 +51,11 @@ class Search extends React.Component {
         
         if (this.state.typedSearch.length > 0){
             this.props.anySearch(this.state.typedSearch)
-            .then(() => this.props.history.push(`/search/${this.state.typedSearch}`))
+                .then(() => this.props.history.push(`/search/any/${this.state.typedSearch}`))
+                .then(() => window.location.reload())
+                // .catch((err)=> console.log(err))
         } 
-        this.showDropdown()
+        this.hideDropdown()
     }
 
     handleChange(){
@@ -122,11 +125,14 @@ class Search extends React.Component {
                     onMouseEnter={()=>this.showDropdown()}
                     onMouseLeave={()=> this.hideDropdown()}
                 >
-                    <input
-                        onChange={this.handleChange()}
-                        placeholder="Search and discover music"
-                        type="text"
-                    />
+                    <form onSubmit={()=>this.typedSearch()}>
+                        <input
+                            onChange={this.handleChange()}
+
+                            placeholder="Search and discover music"
+                            type="text"
+                        />
+                    </form>
                     <i 
                         onClick={()=>this.typedSearch} 
                         className="fas fa-search search-icon-logged-in">

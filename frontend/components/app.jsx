@@ -50,6 +50,7 @@ class App extends React.Component {
                     <Route exact path="/users/:ownerId/music/:itemId" component={ItemContainer}/>
                     <Route exact path="/users/:ownerId/stories/" component={ItemContainer} />
                     <Route exact path="/search/:result" component={ResultsContainer} />
+                    <Route exact path="/search/any/:result/" component={ResultsContainer} />
                     <Route exact path="/users/:ownerId" component={ArtistHomepageContainer} />
                     
                     {/* <Route exact path="/:ownerId" component={ShowItemsContainer} /> */}

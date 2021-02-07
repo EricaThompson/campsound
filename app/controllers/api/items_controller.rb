@@ -24,17 +24,18 @@ class Api::ItemsController < ApplicationController
     end
     
     def index
-        # debugger
         if params[:user_id]
             # active record
             @items = Item.where(owner_id: params[:user_id])
         elsif params['genre']
             @items = Item.where('genre ~ ?', params['genre'])
         elsif params['any']
-            @items = Item.where('artist_name ~ ?', params['any']).or(Item.where('title ~ ?', params['any']))
-        #     @items = Item.where('title ~ ?', params['any'] 'or artist_name ~ ?', params['any'])
-        # elsif !request.query_string.blank?
-        #     @items = Item.where(' ~ ?', request.query_string)
+            # debugger
+            @items = Item.where('title ~ ?', params['any'].or('artist_name ~ ?', params['any']))
+            # term = `%${params['any']}%`
+            # @items = Item.where('title LIKE ?', term)
+        ## elsif !request.query_string.blank?
+        ##     @items = Item.where(' ~ ?', request.query_string)
         else
             @items = Item.all
         end
@@ -77,7 +78,8 @@ class Api::ItemsController < ApplicationController
             :song,
             :artist_name,
             :id,
-            :location
+            :location,
+            :any
             # remove from schema :bio
         )
     end

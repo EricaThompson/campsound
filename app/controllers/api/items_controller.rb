@@ -31,7 +31,7 @@ class Api::ItemsController < ApplicationController
             @items = Item.where('genre ~ ?', params['genre'])
         elsif params['any']
             # debugger
-            @items = Item.where('title ~ ?', params['any'].or('artist_name ~ ?', params['any']))
+            @items = Item.where('title ~ ?', params['any']).or('artist_name ~ ?', params['any'])
             # term = `%${params['any']}%`
             # @items = Item.where('title LIKE ?', term)
         ## elsif !request.query_string.blank?

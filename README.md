@@ -12,11 +12,11 @@ This fullstack single-page application was created with Ruby on Rails, React, Re
 To run this application, after cloning the repository run `npm install` in the root directory to add the node dependencies. In one terminal run `npm start`, with Ruby on Rails installed, run `rails server` in another terminal, navigate to `localhost:3000` in your web browser.
 
 ## Feature Highlight No. 1
-![screenshot of artist page](https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-22+at+10.55.11+PM.png)
+![screenshot of artist page](https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/Screen+Shot+2020-12-22+at+10.47.43+PM.png)
 
 The artist page encapsulates most of the most important technical features included in this site including: 
 * Link to forms that enable users to upload their song with searchable genre, artist name which will default to their username, an about for each song as well as album art. On this form, the user is also able to preview any songs before uploading to be sure of the correct file being uploaded. This page also includes a live preview area of all of the information input by the user.
-![view of item input form](https://campsound-dev.s3-us-west-1.amazonaws.com/campsound+demo/Screen+Shot+2020-12-27+at+5.42.48+PM.png)
+![view of item input form](https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/Screen+Shot+2020-12-27+at+5.42.48+PM.png)
 * Conditionally if the user has music uploaded and released or not, the entire page will render and index of all of their released audio files or a welcome to upload, respectively.
 * My site also doesn't include a signup form to receive user information like for their profile picture, location and bio from and instead I have created formless inputs for each artist to change individual parts of their information as desired. Each of the typed inputs features a countdown for the remaining characters available for each input. 
 * Each musical release can be downloaded or added to a playlist that conditionally renders if there are music items currently in the playlist. Songs automatically play when added, can be removed and automatically remove when they have completed playing.
@@ -27,7 +27,7 @@ Challenges:
 ## Feature Highlight No. 2
 
 <p align="center">
-  <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/Screen+Shot+2020-12-22+at+10.46.05+PM.png" alt="filled artist input form" />
+  <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/Screen+Shot+2020-12-22+at+10.46.05+PM.png" alt="filled artist input form" />
 </p>
 
 Search feature:

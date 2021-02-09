@@ -30,7 +30,6 @@ class Api::ItemsController < ApplicationController
         elsif params['genre']
             @items = Item.where('genre ~ ?', params['genre'])
         elsif params['any']
-            # debugger
             @items = Item.where('lower(title) ~ ?', params['any'].downcase)
             @items += Item.where('lower(artist_name) ~ ?', params['any'].downcase)
             # term = `%${params['any']}%`

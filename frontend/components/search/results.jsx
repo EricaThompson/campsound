@@ -24,7 +24,7 @@ class Results extends React.Component {
     componentDidMount(){
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
-        console.log(this.props.match.params.result)
+        // console.log(this.props.match.params.result)
         if (this.props.match.url.includes('any')){
             this.props.anySearch(this.props.match.params.result)
             .then(res => this.setState({ discoverResults: res.items }))
@@ -82,7 +82,7 @@ class Results extends React.Component {
             }
             // console.log(result)
 
-                console.log(result)
+                // console.log(result)
             return <div key={result.id} className={`result-parent result-parent${loggedIn}`}>
                         
                 <div key={result.id} className="result-display">
@@ -125,6 +125,10 @@ class Results extends React.Component {
         } 
 
         // console.log(this.props.match)
+
+        if (this.props.match.url.includes("any")){
+            searchTitle = 'searching all sound titles and artists..'
+        }
 
         
         

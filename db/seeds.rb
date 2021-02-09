@@ -229,7 +229,7 @@ forestStory = Story.create(
 
 goldStory = Story.create(
                 "owner_id": user2.id,
-                "title": 'Gold is in Bloom',
+                "title": 'Gold is in Flow',
                 "story_type": 'news',
                 "summary": 'A Drabble',
                 "username": 'Rainforest Records',
@@ -276,7 +276,7 @@ pieceStory = Story.create(
 
 petalsStory = Story.create(
                 "owner_id": user1.id,
-                "title": 'Petals All Around',
+                "title": 'Waves All Around',
                 "story_type": 'news',
                 "summary": 'A Villanelle',
                 "username": 'Demo User',
@@ -284,15 +284,15 @@ petalsStory = Story.create(
                 "
                 Rainforest couldn't stop thinking about the sound
                 It was just so lovely and amazing
-                But she could never forget the rebound
+                But she could never forget the resound
 
                 That morning, Rainforest was shocked by the turnaround
                 She had to calm herself with an overgrazing
                 Rainforest couldn't stop thinking about the sound
 
-                Later, she realised that the sound was compound
+                Later, she realized that the sound was compound
                 She tried to focus on a glazing
-                But she could never forget the rebound
+                But she could never forget the resound
 
                 Demo tried to distract her with a surround
                 Said it was time to start thinking about a hazing
@@ -300,12 +300,12 @@ petalsStory = Story.create(
 
                 Rainforest took action like a hound
                 The sound was like a toxic phasing
-                But she could never forget the rebound
+                But she could never forget the resound
 
                 Rainforest's demise was renowned
                 Her mind turned into a phrasing
                 Rainforest couldn't stop thinking about the sound
-                But she could never forget the rebound
+                But she could never forget the resound
 
                 -generated: https://www.poem-generator.org.uk/1sim5mcq/rainforests-torment-villanelle-of-sound.html     
                 ",

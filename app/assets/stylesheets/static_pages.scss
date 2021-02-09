@@ -2127,13 +2127,15 @@ a {
         margin-bottom: 20px;
         // padding-bottom: 20px;
         position: absolute;
-        left: 41%;
+        // left: 41%;
         top: 170px;
         font-weight: lighter;
         font-size: 60px;
         color: black;
         font-weight: bolder;
         font-style: italic;
+        width: 100%;
+        text-align: center;
         
         // padding: 20px;
         // background-image: linear-gradient(45deg, #5E47FD, 55%, #1E9FC4,#1ec4b9);
@@ -2221,6 +2223,10 @@ a {
     flex-wrap: wrap;
     width: 991px;
     min-height: 500px;
+    margin: 200px auto;
+    margin-bottom: -100px;
+    margin-top: 400px;
+
 }
 
 // .search-title-logged-in {
@@ -2231,7 +2237,7 @@ a {
         // display: relative;
         margin: 0 auto;
 
-        margin-top: 220px;
+        // margin-top: 220px;
         margin-left: 15px;
         margin-right: 15px;
         // margin-bottom: 40px;
@@ -2246,6 +2252,7 @@ a {
             margin: 0;
             color: black;
             width: 168px;
+            margin-bottom: 50px;
 
             span {
                 cursor: pointer;

@@ -41,8 +41,18 @@ class MainStories extends React.Component {
             type2 = summaryItems[2].type
             type3 = summaryItems[3].type
         }
+        
+        let storyZeroTitle;
+        let storyOneTitle;
+        let storyTwoTitle;
+        let storyThreeTitle;
 
-
+        if (this.state.stories.length > 0) {
+            storyZeroTitle = this.state.stories[0].title
+            storyOneTitle = this.state.stories[1].title
+            storyTwoTitle = this.state.stories[2].title
+            storyThreeTitle = this.state.stories[3].title
+        } 
 
         return (
             <div className='stories-home-container'>
@@ -50,7 +60,7 @@ class MainStories extends React.Component {
                     <div
                         onClick={() => this.props.history.push(`/users/${this.state.stories.reverse()[0].owner_id}/stories/${this.state.stories.reverse()[0].id}`)}
                         className="main link">
-                        <p>The Forest Through the Trees</p>
+                        <p>{storyZeroTitle}</p>
                         <h6>{summary0}</h6>
                         <button className="read-more">read more <span>    </span>  <span className="arrow">      ➝</span></button>
                         <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-main.jpg" alt="blue flowers" />
@@ -60,23 +70,23 @@ class MainStories extends React.Component {
                         <div
                             onClick={() => this.props.history.push(`/users/${this.state.stories.reverse()[1].owner_id}/stories/${this.state.stories.reverse()[1].id}`)}
                             className='set'>
-                            <p>Gold is in Bloom</p>
+                            <p>{storyOneTitle}</p>
                             <h6>{type1}</h6>
-                            <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-top.jpg" alt="tan flowers" />
+                            <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-top.jpg" alt="koi fish" />
                         </div>
                         <div
                             onClick={() => this.props.history.push(`/users/${this.state.stories.reverse()[2].owner_id}/stories/${this.state.stories.reverse()[2].id}`)}
                             className='set'>
-                            <p>Piece by Piece</p>
+                            <p>{storyTwoTitle}</p>
                             <h6>{type2}</h6>
-                            <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-middle.jpg" alt="pink and blue flowers" />
+                            <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-middle.jpg" alt="turquoise sand" />
                         </div>
                         <div
                             onClick={() => this.props.history.push(`/users/${this.state.stories.reverse()[3].owner_id}/stories/${this.state.stories.reverse()[3].id}`)}
                             className='set bottom'>
-                            <p>Petals All Around</p>
+                            <p>{storyThreeTitle}</p>
                             <h6>{type3}</h6>
-                            <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-bottom.jpg" alt="flower petals and leaves" />
+                            <img src="https://campsound-dev.s3-us-west-1.amazonaws.com/assets/images/home-stories-side-bottom.jpg" alt="waves in water" />
                         </div>
                     </div>
                 </div>

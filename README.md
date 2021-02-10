@@ -40,14 +40,14 @@ Challenges:
 
 ## Code Snippets
 Artist Homepage: With character limits on input fields, I came up with a simple solution to show the artist the amount of characters they have left to use for their inputs for their location and biography:
-```
+```js
 let locationCharCount = this.state.location.length;
 let locationCharLeft = 35 - locationCharCount;
 let bioCharCount = this.state.bio.length;
 let bioCharLeft = 400 - bioCharCount;
 ```
 Artist Homepage Item Form: Since there is a wait while an artist uploads audio to the database, I created a visual queue that the audio is uploading, disabling the `Save` button and redirecting the artist after the audio has successfully loaded to the database.
-```
+```js
 let spinner = <i className="fas fa-compact-disc fa-spin"></i>;
 let save = <p>Save</p>; 
 let disabler;
@@ -69,7 +69,7 @@ if (this.state.spinnerShow){
 ```
 
 Artist Collection Index: I added a music player to their index page so that fans will be able to create their own experiences with each artist's released audio.
-```
+```js
 playSong(song){
     this.setState({ currentSong: song, playerView: true })
 }
